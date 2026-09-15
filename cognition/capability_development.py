@@ -224,6 +224,9 @@ class CapabilityDevelopmentEngine:
                         experiment["status"] = "provisionally_verified"
                         experiment.setdefault("stabilization", [])
                         experiment.setdefault("stabilization_windows", [])
+                        # The previous certificate is provisional evidence now;
+                        # do not expose it as verified during revalidation.
+                        self._state["verified_capability"] = None
         except Exception as exc:
             logger.warning("[CapabilityExperiment] load failed: %s", exc)
 
