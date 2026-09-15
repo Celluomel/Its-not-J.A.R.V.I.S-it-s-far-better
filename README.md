@@ -60,6 +60,21 @@ The project therefore treats failures, empty outputs and “no evidence” state
 
 The detailed architecture and evaluation protocol are documented in [A Persistent Cognitive Organism: Architecture, Mechanisms and Evaluation Protocol](docs/COGNITIVE_ORGANISM_RESEARCH_PAPER.md).
 
+## A useful research companion
+
+The research harness is also intended to be useful in ordinary intellectual work. Its companion layer can use the configured web-research tools to:
+
+- investigate scientific subjects and connect a discussion to papers, including **arXiv** sources;
+- fetch and compare current information or news when recency matters;
+- inspect a website supplied as a URL in the conversation;
+- discuss a proposed goal, identify assumptions and constraints, and examine its feasibility;
+- help refine an argument, question, hypothesis or design through back-and-forth dialogue;
+- retain relevant user preferences, project context and prior corrections so later discussion has continuity.
+
+This is not a separate chatbot persona. The useful distinction is that the language model supplies language and synthesis while the organism contributes memory, grounding, source retrieval, goal context and observable reasoning signals. Research tasks can therefore be examined both as conversation and as evidence flowing through the cognitive system.
+
+Psychology-related conversations should be treated as reflective exploration and question refinement, not diagnosis, therapy or professional advice. Health, legal, safety-critical and other high-consequence decisions require qualified human professionals and appropriate primary sources.
+
 ## A collaborative organism, not a static demo
 
 The organism is designed to evolve through a feedback loop between the person using it and the cognitive system being studied. A user can propose a new capability, tool, sensor or embodiment idea from the **Capability incubator**. The organism can inspect that proposal using its current goals, memories, Workspace state and subsystem context, while the user remains the external evaluator who decides whether the result is useful and trustworthy.
