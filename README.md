@@ -104,19 +104,31 @@ flowchart LR
 ## Cognitive cycle
 
 ```mermaid
-sequenceDiagram
-    participant E as Environment / person
-    participant S as Cognitive streams
-    participant W as Global workspace
-    participant D as Deliberation and planning
-    participant L as Learning and memory
-    E->>S: New observation or interaction
-    S->>W: Compete, integrate and prioritise signals
-    W->>D: Select focus, intention and next operation
-    D->>E: Produce a response or action
-    E-->>L: Outcome, correction or new evidence
-    L->>S: Update models, confidence and future behaviour
+flowchart TB
+    subgraph I[Interaction path]
+        E[User or environment<br/>text · voice · camera] --> P[Cognitive organism<br/>input and context assembly]
+        P --> R[Relevant memory<br/>identity · preferences · world state]
+        R --> LLM[Configured local or remote LLM]
+        LLM --> O[Response<br/>text · TTS · visible vision result]
+        O --> F[Outcome and correction evidence]
+    end
+
+    subgraph B[Background path: InternalThoughtLoop]
+        T[Slow cognitive cycle] --> D[Drives, affect, identity<br/>curiosity and pressure]
+        D --> C[Workspace competition<br/>attention and dominant thought]
+        C --> G[Goals, intention and planning]
+        G --> X[Background actions<br/>reflection · experiments · maintenance]
+    end
+
+    P --> W[Global Workspace<br/>shared observable state]
+    C --> W
+    X --> W
+    W --> R
+    F --> M[Learning and persistence<br/>memory · skills · self-correction]
+    M --> W
 ```
+
+The two paths are deliberately distinct. A user interaction can publish signals to the Workspace and receive context from it, while the background loop continues on its own schedule. Background cognition does not automatically become a chat response: it must first compete for Workspace attention, pass through the relevant subsystem, and produce an observable outcome.
 
 ## What the organism does
 
