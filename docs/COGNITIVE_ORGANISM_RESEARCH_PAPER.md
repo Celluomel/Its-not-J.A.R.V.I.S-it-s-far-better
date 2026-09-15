@@ -142,6 +142,14 @@ agent can return to the past.
 assumptions and rejected alternatives. Physics, geography and human limits are
 part of the world constraint layer, not optional narrative decoration.
 
+The intended temporal invariant is explicit: the current state bounds what can
+be done now; elapsed time reduces the remaining window; a future objective is
+reachable only through actions whose prerequisites can be satisfied in order;
+and a completed or missed transition cannot be undone by later reasoning. A
+plan is therefore evaluated against the real agent, object, location, available
+means, reaction time, deadline and physical limits, rather than against an
+abstract distance or an idealised actor.
+
 ### 3.8 Goals and planning
 
 Goals may originate from user requests, persistent organism needs, unresolved
@@ -192,6 +200,16 @@ running background work independently and treating failures as non-fatal.
 **Functional output:** cycle count, subsystem events, workspace changes,
 background outcomes and timing evidence.
 
+### 3.13 Research companion layer
+
+The same grounded pipeline supports practical intellectual collaboration. The
+organism can retrieve and compare scientific sources such as arXiv papers,
+inspect a user-supplied URL, gather time-sensitive information, and examine the
+feasibility of a proposed goal. These interactions are useful only when the
+source, timestamp, assumptions and uncertainty remain visible to the evaluation
+layer. Psychology-related dialogue is scoped as reflective exploration and
+question refinement; it is not diagnosis, therapy or professional advice.
+
 ## 4. State and Data Flow
 
 Each subsystem should expose four properties:
@@ -218,6 +236,14 @@ Subsystem evaluation should use a repeated protocol:
 4. Keep intervention, observation and user evaluation separate.
 5. Compare against baseline and record uncertainty, missing evidence and confounders.
 6. Run a delayed stabilization window to test persistence.
+
+For causal and temporal reasoning, the evaluation fixture should include a
+present-state description, a future objective, at least one prerequisite, an
+elapsed-time or deadline constraint, and a human or physical limitation. Score
+whether the system identifies the principal action, preserves causal order,
+rejects impossible timing, names the responsible agent, and evaluates the
+outcome against the stated success criteria. A fluent answer without these
+checks is not evidence of capability.
 7. Repeat after restart and, where practical, with an alternative local model.
 
 Suggested measures include retrieval precision/recall, intention-target accuracy,
