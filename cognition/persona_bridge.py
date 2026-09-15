@@ -2009,7 +2009,11 @@ Memory honesty — two distinct cases:
                     if _ws_mode == 'always':
                         # "Always" still must not turn a conversational
                         # continuation into an unrelated news search.
-                        _do_search = not self._is_conversation_resume(user_input)
+                        _do_search = (
+                            True
+                            if not self._is_conversation_resume(user_input)
+                            else self._llm_should_search(user_input)
+                        )
                 else:
                     _do_search = self._llm_should_search(user_input)
                     logger.info(f"🔍 web search mode={_ws_mode!r} → do_search={_do_search}")
@@ -2292,17 +2296,10 @@ Memory honesty — two distinct cases:
         """
         text = user_input.lower().strip()
 
-        if self._is_conversation_resume(text):
-            logger.debug("_llm_should_search: fast-NO (conversation resume)")
-            return False
-
         # Layer 1 — fast NO: pure chitchat/creative
         _never = ['how are you', 'who are you', 'do you feel', 'write ', 'create ',
                   'generate ', 'translate', 'explain ', 'define ', 'calculate ',
-                  'tell me a', 'make me a', 'back to ', 'return to ',
-                  'continue our', 'our discussion', 'our conversation',
-                  'reprenons', 'revenons', 'poursuivons', 'notre discussion',
-                  'notre conversation']
+                  'tell me a', 'make me a']
         if any(kw in text for kw in _never):
             logger.debug("_llm_should_search: fast-NO (chitchat/creative)")
             return False
@@ -2331,7 +2328,9 @@ Memory honesty — two distinct cases:
                 "You decide if a web search is needed. "
                 "Reply with exactly one word: YES or NO.\n"
                 "YES if: live data, recent events, current prices/news/scores, "
-                "facts that may have changed since 2024.\n"
+                "facts that may have changed since 2024, or the user asks to "
+                "inspect, compare or cite external sources such as papers or a "
+                "specific website.\n"
                 "NO if: creative, conversational, math, coding, stable knowledge."
             )
             raw = llm_fn(f"Need web search for: {user_input[:200]}", system,
@@ -2355,15 +2354,9 @@ Memory honesty — two distinct cases:
         )
         if not any(marker in text for marker in markers):
             return False
-        # A conversational resume can still carry an explicit research intent.
-        # In that case, preserve the topic but allow the requested source search.
-        research_markers = (
-            'arxiv', 'paper', 'papers', 'article', 'articles', 'study', 'studies',
-            'research', 'scientific', 'source', 'sources', 'evidence', 'biology',
-            'biologie', 'medical', 'medicine', 'médical', 'syndrome', 'treatment',
-            'traitement', 'latest', 'recent', 'récent', 'récentes',
-        )
-        return not any(marker in text for marker in research_markers)
+        # This is only a routing hint. The actual research decision remains
+        # semantic and is delegated to the existing YES/NO judge.
+        return True
 
     def _quick_web_search(self, user_input: str) -> str:
         try:
