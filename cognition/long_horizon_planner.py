@@ -45,6 +45,7 @@ import json, logging, re, threading, time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from managers.settings_manager import get_persona_name
 
 logger = logging.getLogger(__name__)
 
@@ -100,7 +101,7 @@ class LongHorizonPlanner:
     def __init__(self, organism: Any, ai_system: Any, path: str = SAVE_PATH):
         self._organism = organism
         self._ai       = ai_system
-        self._path     = Path(path)
+        self._path     = self._resolve_path(path)
         self._lock     = threading.Lock()
         self._plans:   Dict[str, Plan] = {}
         self._reasoner = None
@@ -115,6 +116,22 @@ class LongHorizonPlanner:
             active_count,
             len(self._plans),
         )
+
+    @staticmethod
+    def _resolve_path(path: str) -> Path:
+        """Keep independent persona processes from overwriting one plan file."""
+        if path != SAVE_PATH:
+            return Path(path)
+        persona = re.sub(r"[^a-z0-9]+", "_", get_persona_name().lower()).strip("_") or "lumina"
+        scoped = Path("data/persona") / f"long_horizon_plans_{persona}.json"
+        legacy = Path(path)
+        if persona == "lumina" and not scoped.exists() and legacy.exists():
+            try:
+                scoped.write_text(legacy.read_text(encoding="utf-8"), encoding="utf-8")
+                logger.info("[LongHorizonPlanner] migrated legacy plan store to %s", scoped)
+            except Exception as exc:
+                logger.warning("[LongHorizonPlanner] plan store migration failed: %s", exc)
+        return scoped
 
     def tick(self, slow_cycle: int) -> None:
         self._synchronize_goal_plans()
@@ -858,7 +875,7 @@ class LongHorizonPlanner:
             self._path.parent.mkdir(parents=True, exist_ok=True)
             with self._lock:
                 data = {d: asdict(p) for d, p in self._plans.items()}
-                data["_meta"] = {"version":"v61","ts":time.time()}
+                data["_meta"] = {"version":"v62","persona":get_persona_name(),"ts":time.time()}
             with open(self._path,"w") as f: json.dump(data,f,indent=2,default=str)
         except Exception as e:
             logger.debug(f"[LongHorizonPlanner] save error: {e}")
