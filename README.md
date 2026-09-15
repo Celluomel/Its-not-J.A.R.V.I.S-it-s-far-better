@@ -29,6 +29,21 @@ Most public AI products optimise for a polished response loop. Most agent framew
 
 This is a capability comparison, not a claim that the organism outperforms every commercial system on general language quality. The comparison concerns **architecture, persistence and inspectability**. Response quality still depends on the selected model, prompt context, hardware and the quality of the evidence collected by each subsystem.
 
+## Comparison with public cognitive research
+
+This project is best understood alongside public cognitive architectures and agent-memory research, not only alongside commercial assistants:
+
+| Public project or research line | Primary contribution | Difference in emphasis here |
+|---|---|---|
+| [Soar](https://github.com/SoarGroup/Soar) | A long-running general cognitive architecture with production rules, working memory and decision cycles | This harness uses a Python-first, LLM-assisted stack and focuses on multimodal interaction, persistent personal context and live operational telemetry |
+| [OpenCog / Hyperon](https://github.com/opencog) | Symbolic and neuro-symbolic knowledge representation, reasoning and cognitive architecture research | This harness is less symbolic at its core and instead studies how memory, embeddings, model calls, drives and world-state signals can be composed into a continuously running organism |
+| [ACT-R](https://act-r.psy.cmu.edu/) | A psychologically grounded architecture for modelling human cognition and task performance | This project is an engineering testbed, not a validated computational theory of human cognition; its value is in instrumented integration and reproducible failure analysis |
+| [Generative Agents](https://github.com/joonspk-research/generative_agents) | Memory, reflection and planning for believable agents in a simulated social world | This harness carries those ideas into a persistent local process with real user interaction, voice, camera perception, correction learning and subsystem-level traces |
+| [MemGPT / Letta](https://github.com/letta-ai/letta) | Stateful agents with explicit memory management and context control | This harness treats memory as one part of a broader cognitive ecology that also includes attention, affect, identity, goals, planning, perception and orchestration |
+| ReAct-style and tool-agent frameworks | Structured reasoning followed by tool use and external action | This harness investigates background cognition and internal state evolution even when no tool call or user task is active |
+
+The comparison is about **research posture and system boundaries**, not a leaderboard. These projects are important reference points, and this repository should be evaluated against them with shared tasks: memory retrieval precision, planning validity, temporal consistency, correction retention, interruption latency, grounding accuracy and long-horizon behavioural stability.
+
 ## Why “harness” matters
 
 The harness is intended to make cognitive claims testable rather than merely conversational. A subsystem should be able to produce observable functional output:
