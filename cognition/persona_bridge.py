@@ -178,6 +178,7 @@ class PersonaBridge:
         self._llm_stream_fn   = external_llm_stream_fn
         self._last_emo_dict: dict = {}
         self._last_cond_dict: dict = {}
+        self._last_web_sources: list[dict] = []
         self._organism        = None   # CognitiveOrganism — wired after _init_lumina
         # Session-scoped visual memory buffer — survives until restart
         # Indexed immediately so recall works within same session
@@ -596,6 +597,8 @@ class PersonaBridge:
             user_id,
             _suppress_external_search,
         )
+        if self._last_web_sources:
+            yield {"type": "web_sources", "sources": self._last_web_sources}
         self._last_emo_dict  = emo_dict
         self._last_cond_dict = cond_dict
         _factual_self_report = "[Cognitive telemetry - factual self-report]" in system_prompt
@@ -1268,6 +1271,7 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
         All four are needed for the post-turn lifecycle.
         """
         s = self._system
+        self._last_web_sources = []
         arb_temperature: float | None = None   # set by CognitiveOrganism if available
 
         # ── CognitiveOrganism pre-interaction cycle ───────────────────────────
@@ -2331,6 +2335,29 @@ Memory honesty — two distinct cases:
         try:
             from cognition.research_mcp.web_agent import _CFG
             from cognition.research_mcp.search_providers import get_results
+            from cognition.research_mcp.web_agent import _sync_fetch
+            urls = re.findall(r"https?://[^\s<>()]+", user_input)
+            if urls:
+                lines = ["━━ DIRECT WEB PAGE ━━", "Use the fetched page as factual grounding. Cite naturally."]
+                for url in dict.fromkeys(urls)[:3]:
+                    url = url.rstrip(".,;:!?)]}")
+                    title, content, error = _sync_fetch(url)
+                    if error or not content.strip():
+                        self._last_web_sources.append({
+                            "url": url, "title": title or url, "kind": "fetch_failed",
+                            "status": "failed", "detail": str(error or "empty page")[:180],
+                        })
+                        continue
+                    self._last_web_sources.append({
+                        "url": url, "title": title or url, "kind": "page",
+                        "status": "fetched", "detail": "Page content fetched for this turn",
+                    })
+                    lines.append(f"[PAGE] {title or url}\n{content.strip()[:5000]}")
+                if len(lines) > 2:
+                    logger.info("🔍 Direct web page fetch: %d URL(s)", len(self._last_web_sources))
+                    return "\n".join(lines)
+                return ""
+
             logger.info(f"🔍 Web search triggered for: '{user_input[:60]}' | backend={_CFG.backend!r} brave={'yes' if _CFG.brave_key else 'no'} rss={_CFG.use_rss}")
             results = get_results(user_input, cfg=_CFG, num=3)
             if not results:
@@ -2341,6 +2368,11 @@ Memory honesty — two distinct cases:
             for i, r in enumerate(results, 1):
                 snippet = (r.get("content") or r.get("snippet") or "").strip()[:300]
                 if snippet:
+                    self._last_web_sources.append({
+                        "url": r.get("url", ""), "title": r.get("title", ""),
+                        "kind": "search_result", "status": "snippet",
+                        "detail": f"Search result via {r.get('source', 'unknown')}",
+                    })
                     lines.append(f"[{i}] {r.get('title','').strip()}\n{snippet}")
             logger.info(f"🔍 Web search: {len(results)} results via {[r.get('source','?') for r in results]}")
             return "\n".join(lines) if len(lines) > 2 else ""

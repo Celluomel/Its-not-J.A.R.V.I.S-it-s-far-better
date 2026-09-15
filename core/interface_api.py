@@ -1333,6 +1333,8 @@ async def chat(payload: Turn, request: Request):
                     if isinstance(chunk, dict):
                         if chunk.get('type') == 'reasoning' and chunk.get('text'):
                             await emit('reasoning', text=str(chunk['text'])[:4000])
+                        elif chunk.get('type') == 'web_sources' and chunk.get('sources'):
+                            await emit('web_sources', sources=chunk['sources'])
                         continue
                     if first:
                         _timings['first_token_ms'] = round((time.perf_counter() - started) * 1000)
