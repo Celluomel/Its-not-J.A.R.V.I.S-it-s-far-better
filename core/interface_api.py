@@ -697,9 +697,89 @@ async def update_capability_proposal(proposal_id: str, payload: CapabilityPropos
         raise HTTPException(404, 'Capability proposal not found.')
     changes = payload.model_dump(exclude_none=True)
     item.update(changes)
+    if changes.get('status') == 'in_progress' and item.get('category') == 'experiment':
+        state = _runtime()
+        organism = getattr(getattr(state, 'persona', None), '_organism', None)
+        if organism is None:
+            raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+        try:
+            from cognition.capability_development import CapabilityDevelopmentEngine
+            loop = getattr(organism, '_loop', None)
+            engine = getattr(loop, '_capability_development', None) if loop else None
+            if engine is None:
+                engine = CapabilityDevelopmentEngine(organism)
+                if loop is not None:
+                    loop._capability_development = engine
+            snapshot = engine.start(item)
+            experiment = snapshot.get('experiment') or {}
+            item['experiment_id'] = experiment.get('id')
+            item['experiment_status'] = experiment.get('status')
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+        except Exception as exc:
+            logger.warning('Capability experiment start failed: %s', exc)
+            raise HTTPException(500, 'Capability experiment could not start.') from exc
     item['updated_at'] = time.time()
     _save_capability_proposals(proposals)
     return _json_safe(item)
+
+
+@router.post('/capability-proposals/{proposal_id}/start')
+async def start_capability_experiment(proposal_id: str):
+    """Start a proposal-driven local experiment without entering chat."""
+    proposals = _load_capability_proposals()
+    item = next((entry for entry in proposals if entry.get('id') == proposal_id), None)
+    if item is None:
+        raise HTTPException(404, 'Capability proposal not found.')
+    if item.get('category') != 'experiment':
+        raise HTTPException(400, 'Only experiment proposals can be started directly.')
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+    try:
+        from cognition.capability_development import CapabilityDevelopmentEngine
+        loop = getattr(organism, '_loop', None)
+        engine = getattr(loop, '_capability_development', None) if loop else None
+        if engine is None:
+            engine = CapabilityDevelopmentEngine(organism)
+            if loop is not None:
+                loop._capability_development = engine
+        snapshot = engine.start(item)
+    except ValueError as exc:
+        raise HTTPException(409, str(exc)) from exc
+    except Exception as exc:
+        logger.warning('Capability experiment start failed: %s', exc)
+        raise HTTPException(500, 'Capability experiment could not start.') from exc
+    experiment = snapshot.get('experiment') or {}
+    item.update({
+        'status': 'in_progress',
+        'experiment_id': experiment.get('id'),
+        'experiment_status': experiment.get('status'),
+        'updated_at': time.time(),
+    })
+    _save_capability_proposals(proposals)
+    _event(f"Capability experiment started: {item['title'][:80]}")
+    return _json_safe({**item, 'experiment': experiment, 'verified_capability': snapshot.get('verified_capability')})
+
+
+@router.get('/capability-proposals/{proposal_id}/experiment')
+async def capability_experiment_status(proposal_id: str):
+    """Return the persisted experiment state for one proposal."""
+    proposals = _load_capability_proposals()
+    item = next((entry for entry in proposals if entry.get('id') == proposal_id), None)
+    if item is None:
+        raise HTTPException(404, 'Capability proposal not found.')
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    loop = getattr(organism, '_loop', None) if organism else None
+    try:
+        from cognition.capability_development import CapabilityDevelopmentEngine
+        engine = getattr(loop, '_capability_development', None) if loop else None
+        snapshot = engine.snapshot() if engine else CapabilityDevelopmentEngine(organism).snapshot()
+    except Exception as exc:
+        raise HTTPException(500, 'Capability experiment status unavailable.') from exc
+    return _json_safe({'proposal': item, 'experiment': snapshot.get('experiment'), 'verified_capability': snapshot.get('verified_capability')})
 
 
 @router.post('/capability-proposals/{proposal_id}/analyze')

@@ -113,6 +113,8 @@ class InternalThoughtLoop:
         self._slow_cycle_count = 0
         self._pending_thoughts: list[str] = []   # queued for next interaction
         self._lock = threading.Lock()
+        # Proposal-driven capability experiments run only in the slow loop.
+        self._capability_development = None
 
         # Bug fix (v59): _slow_cycle_count had no persistence at all —
         # every restart reset it to 0. This single counter gates a whole
@@ -1463,6 +1465,17 @@ class InternalThoughtLoop:
                 self._auto_experiment.tick(self._slow_cycle_count)
         except Exception as _ae:
             logger.debug(f"[InternalLoop] AutoExperiment error (non-fatal): {_ae}")
+
+        # Proposal-driven Workspace capability experiment. This is deliberately
+        # independent from chat and from the LLM-backed experimentation engine.
+        try:
+            if self._capability_development is None:
+                from cognition.capability_development import CapabilityDevelopmentEngine
+                self._capability_development = CapabilityDevelopmentEngine(o)
+                logger.info("[InternalLoop] CapabilityDevelopmentEngine ready")
+            self._capability_development.tick(self._slow_cycle_count)
+        except Exception as _cde:
+            logger.debug(f"[InternalLoop] Capability development error (non-fatal): {_cde}")
 
         # ── Multi-causal cognitive restructuring ──────────────────────────
         # Clusters persistent tensions and evaluates correction strategies in
