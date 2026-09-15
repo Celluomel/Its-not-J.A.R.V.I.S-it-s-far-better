@@ -597,6 +597,60 @@ async def create_capability_proposal(payload: CapabilityProposalCreate):
     return _json_safe(item)
 
 
+@router.post('/capability-proposals/generate')
+async def generate_capability_proposal():
+    """Let Lumina suggest one bounded capability for the research backlog."""
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    llm = getattr(state, 'llm', None)
+    if organism is None or llm is None:
+        raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+    workspace = getattr(organism, 'workspace', None)
+    workspace_state = workspace.summary() if workspace and hasattr(workspace, 'summary') else {}
+    prompt = (
+        'Propose one genuinely new capability for this cognitive organism. It may be a '
+        'cognitive function, external tool, sensor, embodiment or learning mechanism. '
+        'Base it on a plausible limitation or opportunity in the current architecture, '
+        'not on a generic chatbot feature. Return JSON only with exactly these string '
+        'fields: title, description, category, motivation, expected_capability, '
+        'constraints, success_criteria; category must be one of cognitive, tool, sensor, '
+        'embodiment, learning, interaction, experiment; priority must be an integer 1-5. '
+        f'Current workspace snapshot: {json.dumps(_json_safe(workspace_state), ensure_ascii=False)[:2500]}'
+    )
+    system_prompt = (
+        'You are Lumina proposing research directions for your own development. Be '
+        'concrete, falsifiable and modest. Do not claim that anything is implemented. '
+        'Prefer a small prototype with observable evidence and a safe fallback.'
+    )
+    try:
+        result = await asyncio.to_thread(llm.generate_bare_result, prompt, system_prompt=system_prompt, max_tokens=600, temperature=0.5)
+    except Exception as exc:
+        logger.warning('Autonomous capability proposal failed: %s', exc)
+        raise HTTPException(502, 'Lumina could not generate a proposal.') from exc
+    if result.get('status') != 'ok':
+        raise HTTPException(503, f"Lumina returned no proposal ({result.get('reason', 'unknown reason')}).")
+    raw = result.get('text', '').strip()
+    try:
+        start, end = raw.find('{'), raw.rfind('}')
+        generated = json.loads(raw[start:end + 1]) if start >= 0 and end > start else {}
+    except (json.JSONDecodeError, TypeError):
+        generated = {}
+    required = ('title', 'description', 'category', 'motivation', 'expected_capability', 'constraints', 'success_criteria')
+    if not all(str(generated.get(key, '')).strip() for key in required):
+        raise HTTPException(502, 'Lumina returned an incomplete proposal.')
+    category = str(generated['category']).lower().strip()
+    if category not in _PROPOSAL_CATEGORIES:
+        category = 'experiment'
+    item = {key: str(generated[key]).strip() for key in required}
+    item.update({'category': category, 'priority': max(1, min(5, int(generated.get('priority', 3)))), 'source': 'organism', 'status': 'draft', 'id': str(uuid.uuid4()), 'created_at': time.time(), 'updated_at': time.time()})
+    item.update(_proposal_analysis(item))
+    proposals = _load_capability_proposals()
+    proposals.append(item)
+    _save_capability_proposals(proposals)
+    _event(f"Lumina generated capability proposal: {item['title'][:80]}")
+    return _json_safe(item)
+
+
 @router.patch('/capability-proposals/{proposal_id}')
 async def update_capability_proposal(proposal_id: str, payload: CapabilityProposalUpdate):
     proposals = _load_capability_proposals()
