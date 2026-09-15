@@ -1,0 +1,205 @@
+Folder PATH listing
+Volume serial number is FAD3-B1BC
+C:\USERS\FREDE\TEST\LUMINA_V33\COGNITION\*.*
+Invalid path - \USERS\FREDE\TEST\LUMINA_V33\COGNITION\*.*
+No subfolders exist 
+
+Folder PATH listing
+Volume serial number is 000000ED FAD3:B1BC
+C:.
+¦   abstract_reasoning_engine.py
+¦   active_cognitive_context.py
+¦   active_empathy.py
+¦   advanced_thought_evaluator.py
+¦   ai_identity.py
+¦   ai_system.py
+¦   arbitration.py
+¦   aspirational_self.py
+¦   attention_system.py
+¦   attractor_system.py
+¦   behavioral_conditioning.py
+¦   belief_bootstrapper.py
+¦   cognition_engine.py
+¦   cognition_engine_v2.py
+¦   cognitive_dissonance_engine.py
+¦   cognitive_observatory.py
+¦   cognitive_organism.py
+¦   cognitive_preprocessor.py
+¦   cognitive_stack.py
+¦   cognitive_validator.py
+¦   communication_calibrator.py
+¦   conginition_modules.txt
+¦   contradiction_handler.py
+¦   creative_divergence.py
+¦   curiosity_engine.py
+¦   decision_commitment.py
+¦   decision_pressure.py
+¦   dominant_thought_selector.py
+¦   emergence_metrics.py
+¦   emotional_state.py
+¦   empathy_engine.py
+¦   ethical_reasoning_engine.py
+¦   experiential_learning.py
+¦   genuine_choice.py
+¦   global_workspace.py
+¦   goal_action_executor.py
+¦   goal_consolidator.py
+¦   goal_engine.py
+¦   goal_quality_filter.py
+¦   goal_system.py
+¦   grounded_introspection.py
+¦   inner_monologue_engine.py
+¦   liberty_integration.py
+¦   life_stage_prompting.py
+¦   lumina_network.py
+¦   memory_intrusion.py
+¦   metacognitive_interrupt.py
+¦   meta_cognition.py
+¦   meta_reflection.py
+¦   meta_thread_evaluator.py
+¦   narrative_arc_writer.py
+¦   narrative_identity.py
+¦   narrative_synthesizer.py
+¦   personality_evolution.py
+¦   persona_bridge.py
+¦   phenomenal_binder.py
+¦   predictive_mind.py
+¦   presence_engine.py
+¦   pressure_system.py
+¦   priority_engine.py
+¦   relational_memory.py
+¦   safety_constraints.py
+¦   self_concept.py
+¦   self_concept_synchronizer.py
+¦   self_model.py
+¦   self_modification.py
+¦   semantic_consolidator.py
+¦   semantic_extractor.py
+¦   semantic_graph_cleaner.py
+¦   semantic_memory.py
+¦   simple_thought_evaluator - Copy.py
+¦   simple_thought_evaluator.py
+¦   societal_awareness.py
+¦   strategic_cognitive_engine.py
+¦   temporal_weave.py
+¦   tension_engine.py
+¦   thought_goal_linker.py
+¦   thought_stream.py
+¦   thought_thread_engine.py
+¦   thread_identity_linker.py
+¦   thread_lifecycle_manager.py
+¦   thread_resolver.py
+¦   topic_quality.py
+¦   workspace_competition.py
+¦   world_model.py
+¦   __init__.py
+¦   
++---research_mcp
+¦   ¦   claude_search.py
+¦   ¦   controller.py
+¦   ¦   evaluator.py
+¦   ¦   memory_integrator.py
+¦   ¦   planner.py
+¦   ¦   rac.py
+¦   ¦   schemas.py
+¦   ¦   search_providers.py
+¦   ¦   stealth_browser.py
+¦   ¦   synthesizer.py
+¦   ¦   web_agent.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           controller.cpython-311.pyc
+¦           evaluator.cpython-311.pyc
+¦           memory_integrator.cpython-311.pyc
+¦           planner.cpython-311.pyc
+¦           rac.cpython-311.pyc
+¦           schemas.cpython-311.pyc
+¦           search_providers.cpython-311.pyc
+¦           stealth_browser.cpython-311.pyc
+¦           synthesizer.cpython-311.pyc
+¦           web_agent.cpython-311.pyc
+¦           __init__.cpython-311.pyc
+¦           
++---__pycache__
+        abstract_reasoning_engine.cpython-311.pyc
+        active_cognitive_context.cpython-311.pyc
+        active_empathy.cpython-311.pyc
+        advanced_thought_evaluator.cpython-311.pyc
+        ai_identity.cpython-311.pyc
+        ai_system.cpython-311.pyc
+        arbitration.cpython-311.pyc
+        aspirational_self.cpython-311.pyc
+        attention_system.cpython-311.pyc
+        attractor_system.cpython-311.pyc
+        behavioral_conditioning.cpython-311.pyc
+        belief_bootstrapper.cpython-311.pyc
+        cognitive_dissonance_engine.cpython-311.pyc
+        cognitive_observatory.cpython-311.pyc
+        cognitive_organism.cpython-311.pyc
+        cognitive_preprocessor.cpython-311.pyc
+        cognitive_stack.cpython-311.pyc
+        cognitive_validator.cpython-311.pyc
+        communication_calibrator.cpython-311.pyc
+        contradiction_handler.cpython-311.pyc
+        creative_divergence.cpython-311.pyc
+        curiosity_engine.cpython-311.pyc
+        decision_commitment.cpython-311.pyc
+        decision_pressure.cpython-311.pyc
+        dominant_thought_selector.cpython-311.pyc
+        emergence_metrics.cpython-311.pyc
+        emotional_state.cpython-311.pyc
+        empathy_engine.cpython-311.pyc
+        ethical_reasoning_engine.cpython-311.pyc
+        experiential_learning.cpython-311.pyc
+        genuine_choice.cpython-311.pyc
+        global_workspace.cpython-311.pyc
+        goal_action_executor.cpython-311.pyc
+        goal_consolidator.cpython-311.pyc
+        goal_engine.cpython-311.pyc
+        goal_quality_filter.cpython-311.pyc
+        goal_system.cpython-311.pyc
+        grounded_introspection.cpython-311.pyc
+        inner_monologue_engine.cpython-311.pyc
+        life_stage_prompting.cpython-311.pyc
+        lumina_network.cpython-311.pyc
+        memory_intrusion.cpython-311.pyc
+        metacognitive_interrupt.cpython-311.pyc
+        meta_cognition.cpython-311.pyc
+        meta_reflection.cpython-311.pyc
+        meta_thread_evaluator.cpython-311.pyc
+        narrative_arc_writer.cpython-311.pyc
+        narrative_identity.cpython-311.pyc
+        narrative_synthesizer.cpython-311.pyc
+        personality_evolution.cpython-311.pyc
+        persona_bridge.cpython-311.pyc
+        phenomenal_binder.cpython-311.pyc
+        predictive_mind.cpython-311.pyc
+        presence_engine.cpython-311.pyc
+        pressure_system.cpython-311.pyc
+        priority_engine.cpython-311.pyc
+        relational_memory.cpython-311.pyc
+        safety_constraints.cpython-311.pyc
+        self_concept.cpython-311.pyc
+        self_concept_synchronizer.cpython-311.pyc
+        self_model.cpython-311.pyc
+        self_modification.cpython-311.pyc
+        semantic_extractor.cpython-311.pyc
+        semantic_graph_cleaner.cpython-311.pyc
+        semantic_memory.cpython-311.pyc
+        simple_thought_evaluator.cpython-311.pyc
+        societal_awareness.cpython-311.pyc
+        strategic_cognitive_engine.cpython-311.pyc
+        temporal_weave.cpython-311.pyc
+        tension_engine.cpython-311.pyc
+        thought_goal_linker.cpython-311.pyc
+        thought_stream.cpython-311.pyc
+        thought_thread_engine.cpython-311.pyc
+        thread_identity_linker.cpython-311.pyc
+        thread_lifecycle_manager.cpython-311.pyc
+        thread_resolver.cpython-311.pyc
+        topic_quality.cpython-311.pyc
+        workspace_competition.cpython-311.pyc
+        world_model.cpython-311.pyc
+        __init__.cpython-311.pyc
+        

@@ -1,0 +1,48 @@
+# Local graph cache
+/graft/
+
+# Python environments and generated caches
+/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Runtime state, personal data, logs and generated indexes
+/data/
+/data/persona/
+/data/faces/
+/data/voices/
+/data/*.db
+/data/*.bin
+/logs/
+*.log
+*_restart.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+/config.json
+/config_*.json
+/config_backups/
+/config.json.old
+
+# Historical snapshots and local progress files
+/archive/
+/scribe_progress.json
+
+# Frontend dependencies and build output
+/frontend/node_modules/
+/frontend/dist/
+/frontend/artifacts/
+/frontend/public/voice/
+/frontend/test-results/
+/frontend/.vite/
+/frontend/*.log
+
+# Local scratch and audit output
+/_audit_graph.json
+/_debug_*.py
+/_test_*.py
+/session_log_*.md

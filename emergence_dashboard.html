@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumina · Emergence Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #09090f;
+    --surface:  #111118;
+    --border:   #1e1e2e;
+    --dim:      #2a2a3e;
+    --text:     #e2e2f0;
+    --muted:    #5a5a7a;
+    --accent:   #7c6af7;
+    --teal:     #3dd9b3;
+    --amber:    #f5a623;
+    --rose:     #f06292;
+    --gir-c:    #7c6af7;
+    --hlcr-c:   #3dd9b3;
+    --hre-c:    #f5a623;
+    --csis-c:   #56b4e9;
+    --wds-c:    #f06292;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+
+  /* ── Header ── */
+  header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px var(--teal);
+    animation: pulse 2.4s ease-in-out infinite;
+    margin-left: auto;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ── Grid ── */
+  .grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  @media(max-width:900px){ .grid-5{ grid-template-columns: repeat(2,1fr); } }
+
+  /* ── Metric Card ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .2s, transform .2s;
+  }
+  .card:hover { border-color: var(--dim); transform: translateY(-2px); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--c);
+    opacity: 0.8;
+  }
+  .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .card-abbr {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--c);
+    letter-spacing: 1px;
+  }
+  .card-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 8px 0 4px;
+    color: var(--c);
+  }
+  .card-pct { font-size: 18px; opacity: 0.5; }
+  .card-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── Arc gauge ── */
+  .gauge-wrap { margin: 12px 0 8px; }
+  .gauge-track {
+    width: 100%; height: 4px;
+    background: var(--dim);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .gauge-fill {
+    height: 100%;
+    background: var(--c);
+    border-radius: 2px;
+    transition: width 1.2s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 0 8px var(--c);
+  }
+
+  /* ── Threshold badge ── */
+  .badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+  .badge-ok   { background: rgba(61,217,179,.12); color: var(--teal); }
+  .badge-warn { background: rgba(245,166,35,.12); color: var(--amber); }
+  .badge-low  { background: rgba(240,98,146,.12);  color: var(--rose); }
+
+  /* ── Bottom row ── */
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media(max-width:700px){ .row-2{ grid-template-columns:1fr; } }
+
+  /* ── History chart ── */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .chart-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  canvas { display: block; width: 100%; }
+
+  /* ── Threshold legend ── */
+  .threshold-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .threshold-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .t-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .t-row:last-child { border: none; }
+  .t-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .t-name { font-weight: 600; min-width: 44px; }
+  .t-desc { color: var(--muted); font-family:'DM Mono',monospace; font-size:10px; flex:1; }
+  .t-val  { font-family:'DM Mono',monospace; font-size:11px; color: var(--muted); }
+
+  /* ── Emergence composite ── */
+  .composite-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .composite-ring { position: relative; width: 120px; height: 120px; }
+  .ring-svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+  .ring-bg { fill: none; stroke: var(--dim); stroke-width: 8; }
+  .ring-fill { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1); }
+  .ring-value {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'DM Mono', monospace;
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .composite-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .emergence-status {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+
+  /* ── Timestamp ── */
+  .ts {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>Lumina</span> · Emergence</div>
+  <div class="subtitle">cognitive threshold monitor</div>
+  <div class="status-dot" id="dot"></div>
+</header>
+
+<!-- 5 Metric Cards -->
+<div class="grid-5">
+  <div class="card" style="--c:var(--gir-c)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="card-label">Grounded Introspection</div>
+      <div class="card-abbr">GIR</div>
+    </div>
+    <div class="card-value" id="gir-val">—</div>
+    <div class="gauge-wrap"><div class="gauge-track"><div class="gauge-fill" id="gir-bar" style="width:0%"></div></div></div>
+    <div class="card-sub" id="gir-sub">grounded vs fallback events</div>
+    <div id="gir-badge"></div>
+  </div>
+
+  <div class="card" style="--c:var(--hlcr-c)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="card-label">Hypothesis Closure</div>
+      <div class="card-abbr">HLCR</div>
+    </div>
+    <div class="card-value" id="hlcr-val">—</div>
+    <div class="gauge-wrap"><div class="gauge-track"><div class="gauge-fill" id="hlcr-bar" style="width:0%"></div></div></div>
+    <div class="card-sub" id="hlcr-sub">hypotheses reaching test phase</div>
+    <div id="hlcr-badge"></div>
+  </div>
+
+  <div class="card" style="--c:var(--hre-c)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="card-label">Hypothesis Evolution</div>
+      <div class="card-abbr">HRE</div>
+    </div>
+    <div class="card-value" id="hre-val">—</div>
+    <div class="gauge-wrap"><div class="gauge-track"><div class="gauge-fill" id="hre-bar" style="width:0%"></div></div></div>
+    <div class="card-sub" id="hre-sub">variation between hypotheses</div>
+    <div id="hre-badge"></div>
+  </div>
+
+  <div class="card" style="--c:var(--csis-c)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="card-label">Cross-Session Influence</div>
+      <div class="card-abbr">CSIS</div>
+    </div>
+    <div class="card-value" id="csis-val">—</div>
+    <div class="gauge-wrap"><div class="gauge-track"><div class="gauge-fill" id="csis-bar" style="width:0%"></div></div></div>
+    <div class="card-sub" id="csis-sub">FAISS recalls / total recalls</div>
+    <div id="csis-badge"></div>
+  </div>
+
+  <div class="card" style="--c:var(--wds-c)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="card-label">Weight Drift Stability</div>
+      <div class="card-abbr">WDS</div>
+    </div>
+    <div class="card-value" id="wds-val">—</div>
+    <div class="gauge-wrap"><div class="gauge-track"><div class="gauge-fill" id="wds-bar" style="width:0%"></div></div></div>
+    <div class="card-sub" id="wds-sub">tension weight: —</div>
+    <div id="wds-badge"></div>
+  </div>
+</div>
+
+<!-- Bottom row: history chart + composite + threshold guide -->
+<div class="row-2">
+  <div class="chart-card">
+    <div class="chart-title">5-metric history (last 50 ticks · 2 min each)</div>
+    <canvas id="chart" height="140"></canvas>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+    <div class="composite-card">
+      <div class="composite-label">emergence index</div>
+      <div class="composite-ring">
+        <svg class="ring-svg" viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle class="ring-fill" id="ring" cx="60" cy="60" r="52"
+            stroke="url(#rg)"
+            stroke-dasharray="326.7"
+            stroke-dashoffset="326.7"/>
+          <defs>
+            <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7c6af7"/>
+              <stop offset="100%" stop-color="#3dd9b3"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="ring-value" id="ei-val">—</div>
+      </div>
+      <div class="emergence-status" id="ei-status" style="color:var(--muted)">awaiting data</div>
+    </div>
+
+    <div class="threshold-card">
+      <div class="threshold-title">thresholds</div>
+      <div class="t-row">
+        <div class="t-dot" style="background:var(--gir-c)"></div>
+        <div class="t-name" style="color:var(--gir-c)">GIR</div>
+        <div class="t-desc">state grounding</div>
+        <div class="t-val">&gt;0.6 ✓</div>
+      </div>
+      <div class="t-row">
+        <div class="t-dot" style="background:var(--hlcr-c)"></div>
+        <div class="t-name" style="color:var(--hlcr-c)">HLCR</div>
+        <div class="t-desc">thought execution</div>
+        <div class="t-val">&gt;0.5 ✓</div>
+      </div>
+      <div class="t-row">
+        <div class="t-dot" style="background:var(--hre-c)"></div>
+        <div class="t-name" style="color:var(--hre-c)">HRE</div>
+        <div class="t-desc">adaptive learning</div>
+        <div class="t-val">0.4–0.8 ✓</div>
+      </div>
+      <div class="t-row">
+        <div class="t-dot" style="background:var(--csis-c)"></div>
+        <div class="t-name" style="color:var(--csis-c)">CSIS</div>
+        <div class="t-desc">memory continuity</div>
+        <div class="t-val">&gt;0.3 ✓</div>
+      </div>
+      <div class="t-row">
+        <div class="t-dot" style="background:var(--wds-c)"></div>
+        <div class="t-name" style="color:var(--wds-c)">WDS</div>
+        <div class="t-desc">feedback stability</div>
+        <div class="t-val">&gt;0.6 ✓</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ts" id="ts">no data loaded</div>
+
+<script>
+// ── Data source ──────────────────────────────────────────────────────────────
+// Reads emergence_metrics.json from the same directory.
+// In production, replace the URL with the actual Lumina API endpoint:
+//   const DATA_URL = 'http://localhost:8080/api/emergence_metrics';
+const DATA_URL = './emergence_metrics.json';
+const REFRESH_MS = 15000;   // re-read every 15 seconds
+
+// ── Colours ──────────────────────────────────────────────────────────────────
+const COLORS = {
+  gir:  '#7c6af7',
+  hlcr: '#3dd9b3',
+  hre:  '#f5a623',
+  csis: '#56b4e9',
+  wds:  '#f06292',
+};
+
+// ── Badge helper ─────────────────────────────────────────────────────────────
+function badge(id, v, lo, hi) {
+  const el = document.getElementById(id);
+  if (v === null) { el.innerHTML = ''; return; }
+  let cls, txt;
+  if (v >= hi)        { cls = 'badge-ok';   txt = '● healthy'; }
+  else if (v >= lo)   { cls = 'badge-warn'; txt = '◐ building'; }
+  else                { cls = 'badge-low';  txt = '○ low'; }
+  el.innerHTML = `<span class="badge ${cls}">${txt}</span>`;
+}
+
+// ── Emergence index computation ──────────────────────────────────────────────
+function computeEI(snap) {
+  // Each metric contributes equally but with individual thresholds
+  const scores = [
+    Math.min(1, snap.gir  / 0.6),
+    Math.min(1, snap.hlcr / 0.5),
+    // HRE: sweetspot 0.4-0.8 → remap
+    snap.hre >= 0.4 && snap.hre <= 0.8 ? 1.0 : snap.hre < 0.4 ? snap.hre/0.4 : (1.0 - snap.hre),
+    Math.min(1, snap.csis / 0.3),
+    Math.min(1, snap.wds  / 0.6),
+  ];
+  return scores.reduce((a,b)=>a+b,0) / scores.length;
+}
+
+function eiStatus(ei) {
+  if (ei >= 0.80) return { text: '🔥 emergent threshold crossed', color: '#3dd9b3' };
+  if (ei >= 0.60) return { text: '⚡ pre-emergent dynamics',       color: '#f5a623' };
+  if (ei >= 0.35) return { text: '◐ system building state',        color: '#7c6af7' };
+  return                  { text: '○ accumulating baseline',        color: '#5a5a7a' };
+}
+
+// ── Canvas chart ─────────────────────────────────────────────────────────────
+let history = [];
+
+function drawChart(canvas, data) {
+  const W = canvas.offsetWidth, H = 140;
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, W, H);
+
+  const keys = ['gir','hlcr','hre','csis','wds'];
+  const PAD = 8;
+  const n = data.length;
+  if (n < 2) {
+    ctx.fillStyle = '#2a2a3e';
+    ctx.font = '11px DM Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('accumulating data...', W/2, H/2);
+    return;
+  }
+
+  // grid lines
+  ctx.strokeStyle = '#1e1e2e';
+  ctx.lineWidth = 1;
+  [0.25,0.5,0.75].forEach(y => {
+    const py = PAD + (1-y)*(H-PAD*2);
+    ctx.beginPath(); ctx.moveTo(PAD, py); ctx.lineTo(W-PAD, py);
+    ctx.stroke();
+  });
+
+  keys.forEach(key => {
+    const c = COLORS[key];
+    ctx.beginPath();
+    ctx.strokeStyle = c;
+    ctx.lineWidth = 1.5;
+    ctx.shadowColor = c;
+    ctx.shadowBlur = 4;
+    data.forEach((snap, i) => {
+      const x = PAD + (i/(n-1))*(W-PAD*2);
+      const y = PAD + (1-snap[key])*(H-PAD*2);
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  });
+}
+
+// ── Update UI ────────────────────────────────────────────────────────────────
+function update(snap) {
+  const fmt = v => (v*100).toFixed(0);
+
+  // GIR
+  document.getElementById('gir-val').textContent = fmt(snap.gir) + '%';
+  document.getElementById('gir-bar').style.width = (snap.gir*100)+'%';
+  document.getElementById('gir-sub').textContent =
+    `${snap.gir_grounded} grounded / ${snap.gir_fallback} fallback`;
+  badge('gir-badge', snap.gir, 0.35, 0.6);
+
+  // HLCR
+  document.getElementById('hlcr-val').textContent = fmt(snap.hlcr) + '%';
+  document.getElementById('hlcr-bar').style.width = (snap.hlcr*100)+'%';
+  document.getElementById('hlcr-sub').textContent =
+    `${snap.hlcr_tested} tested / ${snap.hlcr_generated} generated`;
+  badge('hlcr-badge', snap.hlcr, 0.2, 0.5);
+
+  // HRE
+  document.getElementById('hre-val').textContent = fmt(snap.hre) + '%';
+  document.getElementById('hre-bar').style.width = (snap.hre*100)+'%';
+  const hreDesc = snap.hre < 0.3 ? 'stuck · repetition' : snap.hre > 0.8 ? 'high novelty · scattered' : 'evolving · healthy';
+  document.getElementById('hre-sub').textContent = hreDesc;
+  const hreOk = snap.hre >= 0.4 && snap.hre <= 0.8;
+  const hreWarn = snap.hre >= 0.2 || snap.hre > 0.8;
+  badge('hre-badge', hreOk ? 0.7 : hreWarn ? 0.4 : 0.1, 0.35, 0.6);
+
+  // CSIS
+  document.getElementById('csis-val').textContent = fmt(snap.csis) + '%';
+  document.getElementById('csis-bar').style.width = (snap.csis*100)+'%';
+  document.getElementById('csis-sub').textContent =
+    `${snap.csis_faiss_hits} FAISS / ${snap.csis_total_recalls} total`;
+  badge('csis-badge', snap.csis, 0.15, 0.3);
+
+  // WDS
+  document.getElementById('wds-val').textContent = fmt(snap.wds) + '%';
+  document.getElementById('wds-bar').style.width = (snap.wds*100)+'%';
+  document.getElementById('wds-sub').textContent =
+    `tension weight: ${snap.wds_current_weight.toFixed(3)} · σ=${snap.wds_drift_std.toFixed(4)}`;
+  badge('wds-badge', snap.wds, 0.3, 0.6);
+
+  // Composite
+  const ei = computeEI(snap);
+  const circ = 326.7;
+  document.getElementById('ring').style.strokeDashoffset = circ*(1-ei);
+  document.getElementById('ei-val').textContent = (ei*100).toFixed(0)+'%';
+  const st = eiStatus(ei);
+  const eiEl = document.getElementById('ei-status');
+  eiEl.textContent = st.text;
+  eiEl.style.color = st.color;
+
+  // Timestamp
+  const d = new Date(snap.timestamp * 1000);
+  document.getElementById('ts').textContent =
+    `last update · ${d.toLocaleTimeString()} · tick data`;
+
+  // Status dot
+  document.getElementById('dot').style.background = ei >= 0.6 ? '#3dd9b3' : ei >= 0.35 ? '#f5a623' : '#5a5a7a';
+  document.getElementById('dot').style.boxShadow = `0 0 8px ${ei >= 0.6 ? '#3dd9b3' : '#f5a623'}`;
+}
+
+// ── Fetch loop ────────────────────────────────────────────────────────────────
+async function fetchData() {
+  try {
+    // Try loading live JSON first
+    const r = await fetch(DATA_URL + '?t=' + Date.now());
+    if (r.ok) {
+      const data = await r.json();
+      const hist = (data.history || []);
+      if (hist.length > 0) {
+        history = hist.slice(-50);
+        const snap = history[history.length-1];
+        update(snap);
+        drawChart(document.getElementById('chart'), history);
+        return;
+      }
+    }
+  } catch(e) {}
+
+  // Demo mode — show what healthy emergence looks like
+  if (history.length === 0) {
+    const now = Date.now()/1000;
+    history = Array.from({length:30}, (_,i) => ({
+      timestamp: now - (29-i)*120,
+      gir:  0.05 + i*0.025 + Math.random()*0.05,
+      hlcr: 0.0  + i*0.018 + Math.random()*0.04,
+      hre:  0.3  + i*0.015 + Math.sin(i/4)*0.1,
+      csis: 0.0  + i*0.01  + Math.random()*0.03,
+      wds:  0.4  + i*0.012 - Math.abs(Math.sin(i/6))*0.08,
+      gir_grounded: i*2, gir_fallback: Math.max(0,20-i*2),
+      hlcr_generated: i*3, hlcr_tested: Math.floor(i*1.5),
+      csis_faiss_hits: i, csis_total_recalls: Math.max(1,i*3+5),
+      wds_current_weight: 0.65 + i*0.003,
+      wds_drift_std: Math.max(0, 0.02 - i*0.0005),
+    })).map(s => ({...s,
+      gir: Math.min(0.95,s.gir), hlcr: Math.min(0.95,s.hlcr),
+      hre: Math.min(0.95,s.hre), csis: Math.min(0.95,s.csis),
+      wds: Math.min(0.95,s.wds),
+    }));
+    document.getElementById('ts').textContent =
+      '⚠ demo mode · place emergence_metrics.json in same directory to show live data';
+  }
+  const snap = history[history.length-1];
+  update(snap);
+  drawChart(document.getElementById('chart'), history);
+}
+
+fetchData();
+setInterval(fetchData, REFRESH_MS);
+window.addEventListener('resize', () => {
+  if (history.length) drawChart(document.getElementById('chart'), history);
+});
+</script>
+</body>
+</html>

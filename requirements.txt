@@ -1,0 +1,123 @@
+# =============================================================================
+#  Lumina Cognitive Organism — Python 3.11 Requirements
+#  Validated stack: Python 3.11.9 / Windows 11 + Ubuntu 22.04
+#
+#  READ BEFORE pip install -r requirements.txt:
+#
+#   1. face-recognition / dlib require a C compiler:
+#      Windows  -> Visual C++ Build Tools 2022
+#                  https://visualstudio.microsoft.com/visual-cpp-build-tools/
+#      Linux    -> sudo apt install build-essential cmake libopenblas-dev
+#
+#   2. Install PyTorch FIRST (hardware-specific, see section below)
+#
+#   3. ffmpeg must be on PATH for openai-whisper.
+#      Windows  -> winget install ffmpeg
+#      Linux    -> sudo apt install ffmpeg
+#
+# =============================================================================
+
+# -- Core UI ------------------------------------------------------------------
+nicegui>=1.4.21,<2.0.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+pydantic>=2.0.0,<3.0.0
+# face_recognition_models still imports pkg_resources; setuptools 81+ removes it.
+setuptools<81
+
+# -- Audio I/O ----------------------------------------------------------------
+sounddevice>=0.4.6
+soundfile>=0.12.1
+pyttsx3>=2.90
+
+# -- STT - offline Whisper ----------------------------------------------------
+openai-whisper>=20231117
+# Faster CTranslate2-based Whisper backend used by the Voice settings selector.
+faster-whisper>=1.0.0
+# Optional grammar/POS validation for autonomous insight quality gating.
+spacy>=3.7,<4.0
+
+# -- VAD - always-listen mode -------------------------------------------------
+# Python 3.11 OK | Python 3.12: use pip install webrtcvad-wheels instead
+webrtcvad>=2.0.10
+
+# -- Vision - OpenCV ----------------------------------------------------------
+opencv-python>=4.9.0,<5.0.0
+
+# -- Vision - Face Recognition ------------------------------------------------
+#
+#  dlib must be installed BEFORE face-recognition.
+#  Easiest path on Python 3.11 is a prebuilt wheel:
+#
+#    Windows (Python 3.11 x64):
+#      pip install https://github.com/z-mahmud22/Dlib_Windows_Python3.x/raw/main/dlib-19.24.1-cp311-cp311-win_amd64.whl
+#
+#    Linux (build from source - cmake + build-essential required):
+#      pip install dlib
+#
+#  Then: pip install face-recognition>=1.3.0
+#
+#  Commented out so pip install -r does not fail without build tools.
+#  start.bat / setup.sh handle the conditional install with error messages.
+#
+# dlib>=19.24.0
+# face-recognition>=1.3.0
+
+# -- Memory - Semantic Search -------------------------------------------------
+faiss-cpu>=1.7.4,<2.0.0
+sentence-transformers>=2.7.0,<4.0.0
+scikit-learn>=1.3.0,<2.0.0
+
+# -- Cloud providers ----------------------------------------------------------
+openai>=1.30.0,<2.0.0
+
+# -- Coqui XTTS-v2 voice cloning - PINNED WORKING STACK ----------------------
+#
+#  PyTorch must be installed FIRST, separately:
+#
+#    CPU only:
+#      pip install torch torchaudio
+#
+#    NVIDIA CUDA 12.1:
+#      pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+#
+#    AMD ROCm 6.2 (Linux):
+#      pip install torch torchaudio --index-url https://download.pytorch.org/whl/rocm6.2
+#
+#  Then in order:
+#    pip install "numpy<2.0" "pandas<2.0"
+#    pip install "transformers>=4.43.0,<=4.46.2"
+#    pip install "coqui-tts==0.25.3" librosa pydub
+#    (do not reinstall torchaudio after the matched pair above)
+#
+#  DO NOT run: pip install TTS  (abandoned, last updated 2023)
+#
+numpy<2.0
+pandas<2.0
+transformers>=4.43.0,<=4.46.2
+coqui-tts==0.25.3
+# Installed together with torch by start.bat/setup.sh so versions stay matched.
+librosa>=0.10.0
+pydub>=0.25.1
+
+# -- Lumina Cognitive Engine --------------------------------------------------
+ollama>=0.1.0
+aiosqlite>=0.19.0
+scipy>=1.11.0,<2.0.0
+tqdm>=4.66.0
+aiofiles>=23.2.0
+fastapi>=0.104.0,<1.0.0
+uvicorn[standard]>=0.24.0
+
+# -- Research MCP - Web browsing ----------------------------------------------
+# After pip install, run once: playwright install chromium
+playwright>=1.44.0
+playwright-stealth>=1.0.0
+anthropic>=0.25.0
+
+# -- Brain Visualizer (optional) ----------------------------------------------
+# Comment out if not using 3D brain window.
+# Python 3.12: PyOpenGL_accelerate has no wheel - safe to remove that line.
+PyOpenGL>=3.1.7
+PyOpenGL_accelerate>=3.1.7
+glfw>=2.7.0

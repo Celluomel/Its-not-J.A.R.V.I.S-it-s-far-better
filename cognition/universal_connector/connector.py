@@ -1,0 +1,251 @@
+"""
+UniversalConnector — Phase 6.0/6.2 (minimal, evidence-scoped slice)
+=====================================================================
+One shared instance per organism (see get_universal_connector() below —
+PresenceEngine and PerceptionLoop both feed the same buffer, otherwise
+recursive_deliberation would only ever see whichever consumer happened
+to construct its own separate connector).
+
+perceive() does two real things for a sufficiently salient percept:
+  1. Makes it durable — real semantic memory (v93) + a narrative chapter
+     (v93, routes through the same v91 self_concept pipeline).
+  2. Makes it a genuine competing candidate for attention THIS turn —
+     recursive_deliberation.deliberate() already has an unused `thoughts`
+     slot in WorkspaceCompetition.compete() (always called with
+     thoughts=[]). A percept becomes a real "thought" candidate there,
+     scored by the same fair competition goals already go through — not
+     injected sideways via GlobalWorkspace.set_hypotheses(), which
+     REPLACES active_hypotheses wholesale and would race with whatever
+     deliberate() sets on the very next turn (verified: set_hypotheses()
+     replaces the full list, so a background-thread camera tick calling
+     it directly would just get overwritten a moment later).
+
+Deliberately NOT built (would be speculation, no code to audit against):
+  - act() for outbound device/actuator control
+  - a modality registry/adapters/ package — one real modality (vision)
+    plus mic, which is already fully connected via the ordinary chat path
+    (STT transcription -> state.transcription_queue -> handle_send() ->
+    the same respond() pipeline as typed text — verified, no gap there,
+    so mic doesn't need routing through this connector at all)
+  - Flux as a peer-cognition hypothesis source — already a real, running
+    Lumina instance (brain-only, client of master, conversation mode) per
+    the user, not a peer-cognition system to build; a real next step, but
+    a distinct piece of work from this vision/mic slice
+"""
+from __future__ import annotations
+
+import logging
+import time
+from typing import Any, Dict, List, Optional
+
+from cognition.universal_connector.event import Percept
+
+logger = logging.getLogger(__name__)
+
+MIN_SALIENCE_FOR_MEMORY = 0.35   # below this, not worth a permanent memory/chapter
+MIN_SALIENCE_FOR_WORKSPACE = 0.45  # below this, not worth competing for attention
+RECENT_TTL_S = 180.0              # same order as GlobalWorkspace.HYPOTHESIS_TTL
+MAX_RECENT = 5
+MAX_HOP_COUNT = 2                 # anti-echo cap, per the peer-cognition proposal
+DUPLICATE_WINDOW_S = 60.0         # same source + near-identical text within this
+                                   # window is treated as one percept, not spammed
+                                   # into the workspace competition every occurrence
+                                   # (concretely matters for Flux's autonomous dialogue
+                                   # loop, which can stay on one topic for many turns)
+
+# Phase 6.4 — small, honest keyword heuristic (not real semantic disagreement
+# detection). Same pattern already used elsewhere in this codebase for
+# similar low-cost signals (VALUE_KEYWORDS, ETHICAL_ONLY_KEYWORDS).
+_DISAGREEMENT_MARKERS = (
+    "i don't think", "i disagree", "not sure that's right", "however,",
+    "but actually", "i'd push back", "that doesn't add up", "i'm not convinced",
+    "on the contrary", "actually, i think", "counterpoint",
+)
+
+
+class UniversalConnector:
+    def __init__(self, organism: Any):
+        self._organism = organism
+        self._recent: List[Percept] = []
+        logger.info("[UniversalConnector] initialised (Phase 6.0/6.2 slice)")
+
+    def perceive(self, percept: Percept) -> None:
+        if percept.hop_count > MAX_HOP_COUNT:
+            logger.debug(
+                f"[UniversalConnector] dropped percept from {percept.source} — "
+                f"hop_count {percept.hop_count} exceeds cap {MAX_HOP_COUNT}"
+            )
+            return
+        if self._is_recent_duplicate(percept):
+            return
+
+        # Phase 6.4 — "disagreement itself becomes a cognitive signal": for
+        # a peer_cognition percept specifically, a small, honest keyword
+        # heuristic (same style as VALUE_KEYWORDS/ETHICAL_ONLY_KEYWORDS
+        # elsewhere in this codebase — not real semantic disagreement
+        # detection, which would need an embedding comparison this
+        # environment can't cheaply do) checks for explicit disagreement
+        # markers and, if found, boosts REAL epistemic pressure via
+        # PressureSystem.boost() — whose own docstring already says
+        # "after detecting a contradiction". This is the same pressure
+        # dimension already verified (closed-loop audit) to flow into
+        # curiosity_drive -> derive_motivations() -> real goal formation,
+        # so a disagreement can genuinely trigger investigation, not just
+        # get logged.
+        if percept.modality == "peer_cognition":
+            self._maybe_boost_epistemic_pressure(percept)
+
+        if percept.salience >= MIN_SALIENCE_FOR_WORKSPACE:
+            self._recent.append(percept)
+            self._recent = self._recent[-MAX_RECENT:]
+
+        if percept.salience < MIN_SALIENCE_FOR_MEMORY:
+            return
+
+        self._store_memory(percept)
+        self._record_chapter(percept)
+
+    def _maybe_boost_epistemic_pressure(self, percept: Percept) -> None:
+        try:
+            text = str(percept.payload).lower()
+            if not any(marker in text for marker in _DISAGREEMENT_MARKERS):
+                return
+            pressure = getattr(self._organism, "pressure", None)
+            if pressure is None or not hasattr(pressure, "boost"):
+                return
+            pressure.boost("epistemic", amount=0.08)
+            logger.debug(
+                f"[UniversalConnector] disagreement marker in {percept.source} "
+                f"percept -> epistemic pressure boosted"
+            )
+        except Exception as e:
+            logger.debug(f"[UniversalConnector] disagreement boost failed (non-fatal): {e}")
+
+    def _is_recent_duplicate(self, percept: Percept) -> bool:
+        now = time.time()
+        needle = str(percept.payload)[:60].lower()
+        for p in self._recent:
+            if p.source != percept.source:
+                continue
+            if now - p.timestamp > DUPLICATE_WINDOW_S:
+                continue
+            if str(p.payload)[:60].lower() == needle:
+                return True
+        return False
+
+    def pending_thought_candidates(self) -> List[Dict]:
+        """
+        Recent, non-expired percepts as candidate dicts for
+        WorkspaceCompetition.compete(thoughts=...) — the same shape as any
+        other thought candidate there (priority/actionability), so they
+        compete fairly rather than being force-injected as the focus.
+
+        Two real bugs fixed here (found by an external analysis that
+        actually ran the v97 code, not just read it — same standard this
+        whole engagement holds itself to):
+
+        Fix A — every percept previously produced the same candidate id
+        (compete() defaults thought.get('id', 'unknown_thought') when the
+        key is absent, which it always was here). WorkspaceCompetition
+        tracks win-history and focus-persistence PER id (_win_counts), so
+        distinct Flux hypotheses were accidentally sharing attention
+        history — a genuinely new hypothesis could inherit an older one's
+        stagnation penalty, or vice versa. Fixed with a deterministic id
+        built from modality+source+timestamp — stable for the same
+        percept across repeated compete() calls within its TTL life
+        (consistent tracking of THAT hypothesis), distinct across
+        different percepts (no more cross-contamination).
+
+        Fix B — compete() reads thought.get("source", "thought") at the
+        TOP level to classify which module/attention-channel a thought
+        belongs to (_CANDIDATE_MODULE_MAP). This dict only ever put
+        modality/source inside a nested source_data — never at the top
+        level — so every percept silently fell through to the
+        "curiosity_engine" default regardless of modality. Fixed by
+        exposing source = percept.modality at the top level, and
+        registering the real modalities in _CANDIDATE_MODULE_MAP
+        (workspace_competition.py) so the attention economy can actually
+        tell a Flux hypothesis apart from a camera percept apart from
+        ordinary curiosity, instead of all three looking identical to it.
+        """
+        now = time.time()
+        self._recent = [p for p in self._recent if now - p.timestamp < RECENT_TTL_S]
+        out = []
+        for p in self._recent:
+            content = str(p.payload)[:200]
+            out.append({
+                # compete()'s THOUGHTS branch builds name/label from
+                # content/thought_type (verified by direct testing — it
+                # does NOT read a 'label' key), not from arbitrary keys,
+                # so this must match that real shape or the percept's own
+                # text never surfaces past source_data.
+                "id":            f"percept_{p.modality}_{p.source}_{int(p.timestamp * 1000)}",
+                "source":        p.modality,  # top-level — see Fix B above
+                "content":       content,
+                "thought_type":  "percept",
+                "topic":         content[:80],
+                "priority":      round(min(1.0, p.salience * p.confidence * (1.0 + 0.3 * p.novelty)), 3),
+                "actionability": 0.3,  # a percept isn't directly actionable like a goal
+                "source_data":   {"modality": p.modality, "source": p.source, "provenance": p.provenance},
+            })
+        return out
+
+    # ── internal ─────────────────────────────────────────────────────────
+
+    def _store_memory(self, percept: Percept) -> None:
+        try:
+            ai_system = getattr(self._organism, "ai_system", None)
+            mem = getattr(ai_system, "memory_system", None)
+            if mem is None or not hasattr(mem, "add_memory"):
+                return
+            text = self._describe(percept)
+            # importance scales with salience/confidence, category tags the
+            # modality so it's distinguishable from conversational memories
+            importance = round(0.4 + 0.4 * percept.salience * percept.confidence, 2)
+            mem.add_memory(text, importance, f"percept:{percept.modality}", "Neutral", "Low")
+        except Exception as e:
+            logger.debug(f"[UniversalConnector] memory store failed (non-fatal): {e}")
+
+    def _record_chapter(self, percept: Percept) -> None:
+        try:
+            ni = getattr(self._organism, "narrative_identity", None)
+            if ni is None or not hasattr(ni, "record_chapter"):
+                return
+            ni.record_chapter(
+                title       = f"A moment via {percept.source}",
+                description = self._describe(percept),
+                emotion     = "aware",
+                significance= round(min(0.6, 0.3 + 0.3 * percept.salience), 3),
+            )
+        except Exception as e:
+            logger.debug(f"[UniversalConnector] chapter record failed (non-fatal): {e}")
+
+    @staticmethod
+    def _describe(percept: Percept) -> str:
+        base = str(percept.payload)
+        bits = [base]
+        if percept.confidence < 1.0:
+            bits.append(f"(confidence {percept.confidence:.2f})")
+        if percept.novelty > 0.5:
+            bits.append("— this felt unexpected")
+        return " ".join(bits)
+
+
+def get_universal_connector(organism: Any) -> UniversalConnector:
+    """
+    One shared connector per organism — PresenceEngine, PerceptionLoop,
+    and recursive_deliberation.deliberate() all need the SAME recent-
+    percepts buffer, not one each. Cached directly on the organism object
+    (matches the lazy-init-on-first-use pattern already used throughout
+    this codebase, e.g. internal_loop.py's try/except component inits)
+    rather than requiring a change to CognitiveOrganism.__init__.
+    """
+    existing = getattr(organism, "_universal_connector", None)
+    if existing is not None:
+        return existing
+    conn = UniversalConnector(organism)
+    try:
+        organism._universal_connector = conn
+    except Exception:
+        pass
+    return conn
