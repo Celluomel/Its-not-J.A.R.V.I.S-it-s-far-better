@@ -68,6 +68,9 @@ The research harness is also intended to be useful in ordinary intellectual work
 - fetch and compare current information or news when recency matters;
 - inspect a website supplied as a URL in the conversation;
 - discuss a proposed goal, identify assumptions and constraints, and examine its feasibility;
+- reason about causal order in time: what is already true, what must happen next, what can only happen later, and which past events cannot be undone;
+- distinguish an objective from incidental details, map prerequisites and deadlines, and test whether the proposed action is physically or practically achievable;
+- evaluate an action or plan against explicit success criteria, record corrections and use the outcome to revise future planning;
 - help refine an argument, question, hypothesis or design through back-and-forth dialogue;
 - retain relevant user preferences, project context and prior corrections so later discussion has continuity.
 
