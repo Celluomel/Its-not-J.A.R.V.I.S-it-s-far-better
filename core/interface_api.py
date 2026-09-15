@@ -776,7 +776,18 @@ async def capability_experiment_status(proposal_id: str):
     try:
         from cognition.capability_development import CapabilityDevelopmentEngine
         engine = getattr(loop, '_capability_development', None) if loop else None
-        snapshot = engine.snapshot() if engine else CapabilityDevelopmentEngine(organism).snapshot()
+        if engine is None:
+            engine = CapabilityDevelopmentEngine(organism)
+            if loop is not None:
+                loop._capability_development = engine
+        snapshot = engine.snapshot()
+        if not snapshot.get('experiment') and item.get('status') == 'in_progress' and item.get('category') == 'experiment':
+            snapshot = engine.start(item)
+            experiment = snapshot.get('experiment') or {}
+            item['experiment_id'] = experiment.get('id')
+            item['experiment_status'] = experiment.get('status')
+            item['updated_at'] = time.time()
+            _save_capability_proposals(proposals)
     except Exception as exc:
         raise HTTPException(500, 'Capability experiment status unavailable.') from exc
     return _json_safe({'proposal': item, 'experiment': snapshot.get('experiment'), 'verified_capability': snapshot.get('verified_capability')})
