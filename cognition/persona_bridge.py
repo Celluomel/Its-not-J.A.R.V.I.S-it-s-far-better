@@ -2353,7 +2353,17 @@ Memory honesty — two distinct cases:
             'our conversation', 'reprenons', 'revenons', 'poursuivons',
             'notre discussion', 'notre conversation',
         )
-        return any(marker in text for marker in markers)
+        if not any(marker in text for marker in markers):
+            return False
+        # A conversational resume can still carry an explicit research intent.
+        # In that case, preserve the topic but allow the requested source search.
+        research_markers = (
+            'arxiv', 'paper', 'papers', 'article', 'articles', 'study', 'studies',
+            'research', 'scientific', 'source', 'sources', 'evidence', 'biology',
+            'biologie', 'medical', 'medicine', 'médical', 'syndrome', 'treatment',
+            'traitement', 'latest', 'recent', 'récent', 'récentes',
+        )
+        return not any(marker in text for marker in research_markers)
 
     def _quick_web_search(self, user_input: str) -> str:
         try:
