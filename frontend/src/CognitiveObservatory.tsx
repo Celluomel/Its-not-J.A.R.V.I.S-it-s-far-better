@@ -11,7 +11,7 @@ const words = (v: unknown, empty = 'Awaiting data') => typeof v === 'string' && 
 const percent = (v: number | null) => v === null ? '--' : `${Math.round(v * 100)}%`;
 const duration = (v: unknown) => { const n = number(v); const seconds = Math.round(Math.max(0, n ?? 0)); return n === null ? '--' : `${Math.floor(seconds / 60)}m ${seconds % 60}s`; };
 
-export default function CognitiveObservatory({ data, mode, connected, reduced }: { data: Record<string, unknown> | null; mode: string; connected: boolean; reduced: boolean }) {
+export default function CognitiveObservatory({ data, mode, connected, reduced, personaName = 'Lumina' }: { data: Record<string, unknown> | null; mode: string; connected: boolean; reduced: boolean; personaName?: string }) {
   const [selected, setSelected] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reset, setReset] = useState(0);
@@ -48,7 +48,7 @@ export default function CognitiveObservatory({ data, mode, connected, reduced }:
   const sculptureLevels = networks.map((network, index) => index === 2 ? reasoningConfidence : network.metric);
   const state = !live ? data ? 'Last snapshot' : 'Connecting' : mode === 'processing' ? 'Thinking' : mode === 'responding' ? 'Responding' : mode === 'listening' ? 'Listening' : 'Present';
   return <section className={`observatory ${live ? 'is-live' : ''}`} aria-label="Live cognitive activity" style={{ '--signal': colors[selected] } as CSSProperties}>
-    <header className="observatory-heading"><div><span className="observatory-overline">COGNITIVE OBSERVATORY / 01</span><h2>Lumina<span>In motion.</span></h2></div><div className="observatory-live"><i/>{state}<span>Cycle {number(data?.slow_cycle) ?? '--'}</span></div></header>
+    <header className="observatory-heading"><div><span className="observatory-overline">COGNITIVE OBSERVATORY / 01</span><h2>{personaName}<span>In motion.</span></h2></div><div className="observatory-live"><i/>{state}<span>Cycle {number(data?.slow_cycle) ?? '--'}</span></div></header>
     <div className="observatory-stage">
       <div className="observatory-art">
         <Suspense fallback={<div className="sculpture-fallback">Loading cognitive sculpture...</div>}><Sculpture selected={selected} onSelect={setSelected} levels={sculptureLevels} workspace={workspace} moving={!paused && !reduced && live} live={live} reset={reset}/></Suspense>
@@ -66,6 +66,6 @@ export default function CognitiveObservatory({ data, mode, connected, reduced }:
       <div className="orchestration-clock"><span>EVOLUTION</span><strong>{duration(clock.evolution_in_sec)}</strong><small>{live && running ? 'Until next cycle' : 'Recorded countdown'}</small></div>
       <div className="orchestration-drives"><span>DRIVE VECTOR</span><div>{['curiosity', 'coherence', 'energy', 'social', 'goal_progress', 'homeostasis'].map((key, i) => <div key={key} title={`${words(key)}: ${percent(unit(drives[key]))}`}><i style={{ height: `${(unit(drives[key]) ?? 0) * 100}%`, background: colors[i] }}/><small>{['CU', 'CO', 'EN', 'SO', 'GO', 'HO'][i]}</small></div>)}</div></div>
     </section>
-    <footer className="observatory-foot"><span>{live ? 'LIVE SUBSYSTEM STATE' : 'AWAITING FRESH TELEMETRY'}</span><span>{timestamp ? new Date(timestamp > 1e12 ? timestamp : timestamp * 1000).toLocaleTimeString() : '--'} / LUMINA</span></footer>
+    <footer className="observatory-foot"><span>{live ? 'LIVE SUBSYSTEM STATE' : 'AWAITING FRESH TELEMETRY'}</span><span>{timestamp ? new Date(timestamp > 1e12 ? timestamp : timestamp * 1000).toLocaleTimeString() : '--'} / {personaName.toUpperCase()}</span></footer>
   </section>;
 }

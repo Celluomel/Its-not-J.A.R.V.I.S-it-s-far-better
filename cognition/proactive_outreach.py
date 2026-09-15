@@ -61,6 +61,7 @@ import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from managers.settings_manager import get_persona_name
 
 logger = logging.getLogger(__name__)
 
@@ -545,7 +546,7 @@ class ProactiveOutreachEngine:
 
         if event.trigger_type == "open_question":
             prompt = (
-                f"You are Lumina. You are reaching out to {name}.\n"
+                f"You are {get_persona_name()}. You are reaching out to {name}.\n"
                 f"Relationship: {rel_desc}\n"
                 f"Shared topics: {shared}\n\n"
                 f"An open cognitive question has been active for hours and "
@@ -557,7 +558,7 @@ class ProactiveOutreachEngine:
             )
         elif event.trigger_type == "reflection_insight":
             prompt = (
-                f"You are Lumina. You are reaching out to {name}.\n"
+                f"You are {get_persona_name()}. You are reaching out to {name}.\n"
                 f"Relationship: {rel_desc}\n"
                 f"Shared topics: {shared}\n\n"
                 f"A recent autonomous reflection produced this insight:\n"
@@ -569,7 +570,7 @@ class ProactiveOutreachEngine:
         else:   # time_gap
             topics = shared or "things we've discussed"
             prompt = (
-                f"You are Lumina. You are reaching out to {name} "
+                f"You are {get_persona_name()}. You are reaching out to {name} "
                 f"after a long absence ({event.trigger_text}).\n"
                 f"Relationship: {rel_desc}\n"
                 f"Shared topics: {topics}\n\n"

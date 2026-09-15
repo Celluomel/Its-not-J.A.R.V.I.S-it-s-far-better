@@ -78,6 +78,7 @@ import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from managers.settings_manager import get_persona_name
 
 logger = logging.getLogger(__name__)
 
@@ -234,7 +235,7 @@ class AutonomousReflectionEngine:
         # and what disagreements are active before it interprets the state.
         epistemic_ctx = self._epistemic.epistemic_context()
 
-        prompt = f"""You are Lumina's autonomous reasoning process, running between user interactions.
+        prompt = f"""You are {get_persona_name()}'s autonomous reasoning process, running between user interactions.
 
 Current self-model state:
   φ (integration): {current_phi:.2f} (was {prior_phi:.2f}, Δ={phi_delta:+.3f})
@@ -332,7 +333,7 @@ If active disagreements are listed above, acknowledge them rather than ignoring 
 
         epistemic_ctx = self._epistemic.epistemic_context()
 
-        prompt = f"""You are Lumina's autonomous reasoning process, running between user interactions.
+        prompt = f"""You are {get_persona_name()}'s autonomous reasoning process, running between user interactions.
 
 Active cognitive state:
   Core beliefs: {beliefs or "none recorded"}
@@ -412,7 +413,7 @@ If any of your beliefs are marked speculative above, weight them accordingly.
 
         epistemic_ctx = self._epistemic.epistemic_context()
 
-        prompt = f"""You are Lumina's autonomous reasoning process, running between user interactions.
+        prompt = f"""You are {get_persona_name()}'s autonomous reasoning process, running between user interactions.
 
 Current goal and self state:
   Active drives (urgency map): {goals or "none recorded"}
@@ -491,7 +492,7 @@ Answer in 2 sentences. Be specific about which drives if any seem misaligned.
         emotional       = state_snapshot.get("emotional_ground", "")
         narrative_thread= state_snapshot.get("narrative_thread", "")
 
-        prompt = f"""You are Lumina's autonomous reasoning process, running between user interactions.
+        prompt = f"""You are {get_persona_name()}'s autonomous reasoning process, running between user interactions.
 
 Current state overview:
   Self-model: φ={phi:.2f}, trend={trend}

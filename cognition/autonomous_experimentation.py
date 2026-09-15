@@ -82,6 +82,7 @@ import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from managers.settings_manager import get_persona_name
 
 logger = logging.getLogger(__name__)
 
@@ -352,9 +353,9 @@ class AutonomousExperimentationEngine:
             return
 
         prompt = (
-            f"You are Lumina's experimentation process.\n\n"
+            f"You are {get_persona_name()}'s experimentation process.\n\n"
             f"Current cognitive context:\n{context}\n\n"
-            f"Design one small, bounded experiment Lumina can run over "
+            f"Design one small, bounded experiment {get_persona_name()} can run over "
             f"the next {MAX_INTERACTIONS_PER_EXP} interactions to test "
             f"a specific hypothesis about how she engages.\n\n"
             f"The experiment must:\n"
@@ -371,7 +372,7 @@ class AutonomousExperimentationEngine:
             + (
                 # DecisionPolicy: bias hypothesis selection toward active values
                 lambda: (
-                    f"VALUE ALIGNMENT: Lumina's current active values are "
+                    f"VALUE ALIGNMENT: {get_persona_name()}'s current active values are "
                     f"{_policy_summary}. Prefer hypotheses that test or express "
                     f"these values in interaction.\n\n"
                     if (_policy_summary := self._get_policy_summary()) else ""

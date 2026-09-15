@@ -53,7 +53,7 @@ if sys.platform == 'win32':
 
 # ── Config + manager wiring ───────────────────────────────────────────
 import managers.settings_manager as _settings_mod
-from managers.settings_manager import config, on_settings_changed
+from managers.settings_manager import config, on_settings_changed, get_persona_name
 
 from core.state import state
 from core.agent_controller import AgentController
@@ -160,7 +160,7 @@ async def _diag_trigger_chat():
         if fn is None:
             return {'ok': False, 'error': 'no respond() method found'}
         try:
-            resp = fn("Hi Lumina — quick dashboard test, just say hi back.")
+            resp = fn(f"Hi {get_persona_name()} — quick dashboard test, just say hi back.")
             return {'ok': True, 'response_preview': str(resp)[:200]}
         except Exception as e:
             return {'ok': False, 'error': f'{type(e).__name__}: {e}'}
@@ -326,7 +326,7 @@ if __name__ in {'__main__', '__mp_main__'}:
 
     # ── Launch ────────────────────────────────────────────────────────
     ui.run(
-        title='Lumina — Embodied AI',
+        title=f'{get_persona_name()} — Embodied AI',
         host=getattr(config, 'NICEGUI_HOST', '127.0.0.1'),
         port=config.NICEGUI_PORT,
         reload=False,

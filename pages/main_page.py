@@ -1400,7 +1400,7 @@ async def main_page():
     else:
             # Welcome bubble — grounded wake-up when narrative exists, generic otherwise
         if not (state.llm and state.llm.history):
-            _bubble("Hello. I'm **Lumina**. What's on your mind?", 'bot')
+            _bubble(f"Hello. I'm **{_gpn()}**. What's on your mind?", 'bot')
         else:
             # Try to build a grounded wake-up from persisted narrative
             _wake_text = "Welcome back. I remember our previous conversation."
@@ -1473,7 +1473,7 @@ async def main_page():
                         )
                         _generated = state.llm.generate_bare(
                             _wake_prompt,
-                            "You are Lumina, an AI with genuine memory, continuity, and visual perception.",
+                            f"You are {_gpn()}, an AI with genuine memory, continuity, and visual perception.",
                             max_tokens=60,
                             temperature=0.7,
                         )
@@ -1669,4 +1669,3 @@ async def main_page():
 # ─────────────────────────────────────────────
 #  Vision Page with Fixed Size Container
 # ─────────────────────────────────────────────
-

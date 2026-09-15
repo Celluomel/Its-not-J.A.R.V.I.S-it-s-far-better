@@ -14,6 +14,7 @@ import queue as _queue_mod
 
 from utils.enhanced_css import ENHANCED_GLOBAL_CSS
 from core.state import state as _state          # used by _build_proactive_prompt
+from managers.settings_manager import get_persona_name
 
 logger = logging.getLogger(__name__)
 
@@ -159,6 +160,7 @@ def _build_proactive_prompt(state) -> str:
               > emotional colour > minimal fallback.
     """
     try:
+        persona_name = get_persona_name()
         pb  = getattr(state, 'persona', None)
         org = getattr(pb, '_organism', None) if pb else None
 
@@ -215,7 +217,6 @@ def _build_proactive_prompt(state) -> str:
 
     # 5. Minimal fallback
     return (
-        "Something genuine is on your mind. Say it in one natural sentence. "
+        f"Something genuine is on {persona_name}'s mind. Say it in one natural sentence. "
         "Don't ask a question. Don't explain. Just say it."
     )
-

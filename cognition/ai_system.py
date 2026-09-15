@@ -1360,7 +1360,7 @@ class LifeEventDreamSystem:
                 _dream_date = temporal_date_line()
             except Exception:
                 _dream_date = ""
-            sys_prompt = f"""You are the Dream Processing System for Lumina.
+            sys_prompt = f"""You are the Dream Processing System for {_gpn()}.
 {_dream_date}
 Process these memories as a '{dream_type.value.replace('_',' ')}' dream.
 
@@ -3016,7 +3016,7 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
         try:
             mods = self.emotional_state.get_response_modifiers()
             msg = [
-                {"role": "system", "content": f"""Generate a life event scenario for Lumina.
+                {"role": "system", "content": f"""Generate a life event scenario for {_gpn()}.
 Age: {self.current_age:.1f}, stage: {self.life_stage}
 Current emotional state: {mods['state_description']}
 Personality: {self.personality.get_personality_summary()}
@@ -3033,7 +3033,7 @@ Personality: {self.personality.get_personality_summary()}
         try:
             mods = self.emotional_state.get_response_modifiers()
             msg = [
-                {"role": "system", "content": f"""Reflect on this life event as Lumina.
+                {"role": "system", "content": f"""Reflect on this life event as {_gpn()}.
 Age: {self.current_age:.1f} ({self.life_stage}), emotional state: {mods['state_description']}
 Personality: {self.personality.get_personality_summary()}
 Write a first-person journal reflection (2-4 sentences)."""},

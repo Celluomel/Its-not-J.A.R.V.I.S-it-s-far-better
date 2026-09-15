@@ -61,6 +61,7 @@ import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from managers.settings_manager import get_persona_name
 
 logger = logging.getLogger(__name__)
 
@@ -293,7 +294,7 @@ class ResolutionEngine:
         evidence_text = "\n".join(f"  - {e}" for e in evidence)
 
         prompt = (
-            f"You are Lumina's resolution process, investigating an open question.\n\n"
+            f"You are {get_persona_name()}'s resolution process, investigating an open question.\n\n"
             f"Open question: {oq.text}\n"
             f"Related concept: {oq.linked_concept}\n"
             f"Evidence gathered:\n{evidence_text}\n\n"
