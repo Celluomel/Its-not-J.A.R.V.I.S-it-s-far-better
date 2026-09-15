@@ -292,6 +292,16 @@ if __name__ in {'__main__', '__mp_main__'}:
     # ── Graceful shutdown ─────────────────────────────────────────────
     def _on_shutdown():
         logger.info('App shutting down — saving session...')
+        try:
+            organism = getattr(getattr(state, 'persona', None), '_organism', None)
+            if organism is not None and hasattr(organism, 'shutdown'):
+                organism.shutdown()
+            else:
+                loop = getattr(organism, '_loop', None) if organism else None
+                if loop is not None and hasattr(loop, 'shutdown'):
+                    loop.shutdown()
+        except Exception as exc:
+            logger.warning('Background loop shutdown save failed: %s', exc)
         from managers.session_manager import get_session_manager
         sess = get_session_manager()
         if state and state.llm:

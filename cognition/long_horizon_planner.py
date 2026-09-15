@@ -543,6 +543,10 @@ class LongHorizonPlanner:
             ],
         }
 
+    def persist_now(self) -> None:
+        """Flush the latest in-memory plan before the host process exits."""
+        self._save()
+
     def prompt_fragment(self) -> str:
         return self.prompt_fragment_for("")
 
@@ -876,7 +880,11 @@ class LongHorizonPlanner:
             with self._lock:
                 data = {d: asdict(p) for d, p in self._plans.items()}
                 data["_meta"] = {"version":"v62","persona":get_persona_name(),"ts":time.time()}
-            with open(self._path,"w") as f: json.dump(data,f,indent=2,default=str)
+            temp = self._path.with_suffix(".tmp")
+            with open(temp, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, default=str)
+                f.flush()
+            temp.replace(self._path)
         except Exception as e:
             logger.debug(f"[LongHorizonPlanner] save error: {e}")
 

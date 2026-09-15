@@ -365,6 +365,12 @@ class InternalThoughtLoop:
         self._running = False
         if self._thread:
             self._thread.join(timeout=5.0)
+        planner = getattr(self, '_long_horizon_planner', None)
+        if planner is not None and hasattr(planner, 'persist_now'):
+            try:
+                planner.persist_now()
+            except Exception as exc:
+                logger.debug("[InternalLoop] planner shutdown save failed: %s", exc)
         logger.info("[InternalLoop] Background thought loop stopped")
 
     def attach_vision(self, vision_manager) -> None:
