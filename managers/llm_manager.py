@@ -252,14 +252,20 @@ class LMStudioProvider(BaseLLMProvider):
 
     def _generate_messages(self, messages: List[Dict], **kwargs) -> str:
         try:
+            request_body = {
+                "model":       kwargs.get("model", self.model),
+                "messages":    messages,
+                "temperature": kwargs.get("temperature", 0.7),
+                "max_tokens":  kwargs.get("max_tokens", 600)
+            }
+            # Some reasoning-capable local models can stop after emitting only
+            # a hidden reasoning channel. Structured background tasks need a
+            # normal assistant content channel, so callers may opt out locally.
+            if "reasoning_format" in kwargs:
+                request_body["reasoning_format"] = kwargs["reasoning_format"]
             r = requests.post(
                 f"{self.base_url}/chat/completions",
-                json={
-                    "model":       kwargs.get("model", self.model),
-                    "messages":    messages,
-                    "temperature": kwargs.get("temperature", 0.7),
-                    "max_tokens":  kwargs.get("max_tokens", 600)
-                },
+                json=request_body,
                 timeout=60
             )
             if r.status_code == 200:

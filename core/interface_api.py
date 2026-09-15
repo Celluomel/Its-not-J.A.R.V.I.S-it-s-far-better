@@ -623,7 +623,27 @@ async def generate_capability_proposal():
         'Prefer a small prototype with observable evidence and a safe fallback.'
     )
     try:
-        result = await asyncio.to_thread(llm.generate_bare_result, prompt, system_prompt=system_prompt, max_tokens=600, temperature=0.5)
+        result = await asyncio.to_thread(
+            llm.generate_bare_result,
+            prompt,
+            system_prompt=system_prompt,
+            max_tokens=700,
+            temperature=0.35,
+            reasoning_format='none',
+        )
+        # A separate lightweight text model may be configured for background
+        # work. If it cannot produce structured content, retry once with the
+        # primary model rather than presenting a false "no proposal" state.
+        if result.get('status') != 'ok' and getattr(llm, 'text_model', '') != getattr(getattr(llm, 'provider', None), 'model', ''):
+            result = await asyncio.to_thread(
+                llm.generate_bare_result,
+                prompt,
+                system_prompt=system_prompt,
+                model=getattr(getattr(llm, 'provider', None), 'model', ''),
+                max_tokens=700,
+                temperature=0.35,
+                reasoning_format='none',
+            )
     except Exception as exc:
         logger.warning('Autonomous capability proposal failed: %s', exc)
         raise HTTPException(502, 'Lumina could not generate a proposal.') from exc
@@ -689,6 +709,28 @@ async def analyze_capability_proposal(proposal_id: str):
     workspace = getattr(organism, 'workspace', None)
     if workspace is not None:
         workspace.broadcast('development_proposal', submission, priority=0.78)
+    persona = getattr(state, 'persona', None)
+    persona_context = persona.get_prompt_context('default') if persona and hasattr(persona, 'get_prompt_context') else {}
+    memory_context = []
+    try:
+        memory = getattr(persona, 'memory_system', None)
+        if memory is not None and hasattr(memory, 'retrieve_memories'):
+            memory_context = memory.retrieve_memories(item.get('title', ''), limit=5)
+    except Exception as exc:
+        logger.debug('Development dialogue memory retrieval unavailable: %s', exc)
+    active_goals = []
+    try:
+        goal_engine = getattr(persona, 'goal_engine', None)
+        if goal_engine is not None and hasattr(goal_engine, 'get_active_goals'):
+            active_goals = [getattr(goal, 'topic', str(goal)) for goal in goal_engine.get_active_goals()[:5]]
+    except Exception as exc:
+        logger.debug('Development dialogue goal context unavailable: %s', exc)
+    context_block = (
+        f"Persona context: {json.dumps(_json_safe(persona_context), ensure_ascii=False)[:3000]}\n"
+        f"Active goals: {json.dumps(_json_safe(active_goals), ensure_ascii=False)}\n"
+        f"Relevant memories: {json.dumps(_json_safe(memory_context), ensure_ascii=False)[:3000]}\n"
+        f"Workspace: {json.dumps(_json_safe(workspace.summary() if workspace and hasattr(workspace, 'summary') else {}), ensure_ascii=False)[:2500]}"
+    )
     system_prompt = (
         'You are the cognitive development analyst inside a persistent cognitive organism. '
         'Analyze the proposal as a possible new capability, tool, sensor or embodiment. '
@@ -699,10 +741,11 @@ async def analyze_capability_proposal(proposal_id: str):
     try:
         result = await asyncio.to_thread(
             llm.generate_bare_result,
-            submission,
-            system_prompt=system_prompt,
+            f"{context_block}\n\n{submission}",
+            system_prompt=system_prompt + ' This is a private Development dialogue, not a user-facing chat turn.',
             max_tokens=700,
             temperature=0.25,
+            reasoning_format='none',
         )
     except Exception as exc:
         logger.warning('Capability proposal analysis failed: %s', exc)
