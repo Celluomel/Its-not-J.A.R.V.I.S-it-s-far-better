@@ -1,14 +1,46 @@
-# Lumina - Beyond J.A.R.V.I.S.
+# Cognitive Organism - Beyond J.A.R.V.I.S.
 
-Lumina is an open personal cognitive organism: a local-first system that combines conversation, memory, perception, voice, reflection, planning and an evolving visual representation of its internal activity.
+This repository contains an experimental **cognitive organism**: a local-first research system that combines memory, perception, voice, reflection, planning, self-correction and an evolving visual representation of internal activity.
 
-The ambition is simple: build something more useful than a fictional assistant. Lumina is designed to become a persistent, inspectable and correctable cognitive partner that can remember context, learn from feedback, reason about goals, observe the world through vision, and continue background cognitive work without turning every internal operation into a chat request.
+The ambition is to investigate how persistent state, internal drives, world models, memory, perception and self-evaluation can be assembled into a continuously operating cognitive architecture. It is not a chatbot project and is not presented as artificial general intelligence.
 
-This project is experimental. It is not presented as artificial general intelligence. Its value will come from careful engineering, honest evaluation and repeated testing with real people.
+Its value will come from careful engineering, explicit instrumentation, honest evaluation and repeated testing with real people.
 
-## What Lumina does
+## System at a glance
 
-- **Conversation:** local or remote OpenAI-compatible LLM providers, with concise and extended response modes.
+```mermaid
+flowchart LR
+    P[Perception\ntext · voice · vision] --> W[Global Workspace]
+    W --> A[Attention and\ninternal state]
+    A --> R[Reasoning and\nworld model]
+    R --> G[Goals and\nlong-horizon plans]
+    G --> X[Actions and\nsubsystem outcomes]
+    X --> C[Self-correction\nand cognitive learning]
+    C --> M[(Persistent memory)]
+    M --> W
+    W --> O[Inspectable organism\nvisualisation and traces]
+```
+
+## Cognitive cycle
+
+```mermaid
+sequenceDiagram
+    participant E as Environment / person
+    participant S as Cognitive streams
+    participant W as Global workspace
+    participant D as Deliberation and planning
+    participant L as Learning and memory
+    E->>S: New observation or interaction
+    S->>W: Compete, integrate and prioritise signals
+    W->>D: Select focus, intention and next operation
+    D->>E: Produce a response or action
+    E-->>L: Outcome, correction or new evidence
+    L->>S: Update models, confidence and future behaviour
+```
+
+## What the organism does
+
+- **Interaction layer:** local or remote OpenAI-compatible model providers are used as one component of the organism, not as the organism itself.
 - **Memory:** episodic and semantic memory, persistent user/interlocutor profiles, relations and retrieval.
 - **Reasoning and planning:** intention extraction, causal and temporal reasoning, autonomous goals, long-horizon plans and action outcomes.
 - **Self-correction:** explicit user corrections become behavioural evidence; complex tensions can be grouped into competing corrective strategies and evaluated over time.
@@ -20,7 +52,7 @@ This project is experimental. It is not presented as artificial general intellig
 
 ## Current status
 
-Lumina is an active research prototype. Some subsystems are mature enough for daily testing; others are deliberately exposed so that their limits can be measured. The interface and internal architecture are evolving together.
+The cognitive organism is an active research prototype. Some subsystems are mature enough for daily testing; others are deliberately exposed so that their limits can be measured. The interface and internal architecture are evolving together.
 
 ## Installation
 
@@ -39,9 +71,9 @@ The new interface is served at `http://localhost:8080/next/`.
 
 The frontend is intentionally built during installation. A published checkout needs `frontend/src`, `frontend/public`, `frontend/package.json` and `frontend/package-lock.json`; `frontend/node_modules` and `frontend/dist` are generated and should not be committed.
 
-## Local LLM setup
+## Local model setup
 
-Lumina works best for local testing with an OpenAI-compatible server such as LM Studio or Ollama. Configure the provider, model and base URL in the LLM settings page or `config.json`. Keep API keys in `.env` or local configuration; never commit them.
+The organism works best for local testing with an OpenAI-compatible server such as LM Studio or Ollama. Configure the provider, model and base URL in the settings page or `config.json`. Keep API keys in `.env` or local configuration; never commit them.
 
 ## Testing
 
@@ -55,9 +87,9 @@ npm test
 
 Some optional tests require the full virtual environment and external services. A test report should mention which providers, models and optional hardware were available.
 
-## Help make Lumina better
+## Help advance the research
 
-New testers are welcome, especially people who can test one of these areas:
+New research testers are welcome, especially people who can evaluate one of these areas:
 
 - multilingual conversation and response-length modes;
 - LM Studio, Ollama and other OpenAI-compatible providers;
@@ -71,7 +103,7 @@ Useful tester reports include the operating system, Python and Node versions, pr
 
 ## Privacy and safety
 
-Lumina can process conversations, microphone input, camera frames and face data. Run it only on a trusted machine, keep LAN exposure disabled unless deliberately needed, and review the local data directories before sharing diagnostics. The project is experimental and should not be used as the sole basis for medical, legal, safety-critical or personal security decisions.
+The organism can process text, microphone input, camera frames and face data. Run it only on a trusted machine, keep LAN exposure disabled unless deliberately needed, and review the local data directories before sharing diagnostics. The project is experimental and should not be used as the sole basis for medical, legal, safety-critical or personal security decisions.
 
 ## License
 
