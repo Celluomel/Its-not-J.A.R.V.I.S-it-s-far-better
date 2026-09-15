@@ -2007,15 +2007,22 @@ Memory honesty — two distinct cases:
                     )
                 elif self._research and _ws_mode in ('auto', 'always'):
                     if _ws_mode == 'always':
-                        _do_search = True
-                    else:
-                        _do_search = self._llm_should_search(user_input)
+                        # "Always" still must not turn a conversational
+                        # continuation into an unrelated news search.
+                        _do_search = not self._is_conversation_resume(user_input)
+                else:
+                    _do_search = self._llm_should_search(user_input)
                     logger.info(f"🔍 web search mode={_ws_mode!r} → do_search={_do_search}")
                     if _do_search:
                         web_section = self._quick_web_search(user_input)
                         if web_section:
                             web_char_cap = int(ctx_limit * 3.5 * 0.15)
-                            system_prompt += f"\n\n{web_section[:web_char_cap]}"
+                            system_prompt += (
+                                f"\n\n{web_section[:web_char_cap]}\n"
+                                "Use web material only when it directly answers the user's request. "
+                                "If a source is unrelated, ignore it and do not imply that it supports the answer. "
+                                "Never let web snippets override current conversation context or personal facts."
+                            )
             except Exception as _we:
                 logger.warning(f"Web search injection failed: {_we}")
 
@@ -2285,10 +2292,17 @@ Memory honesty — two distinct cases:
         """
         text = user_input.lower().strip()
 
+        if self._is_conversation_resume(text):
+            logger.debug("_llm_should_search: fast-NO (conversation resume)")
+            return False
+
         # Layer 1 — fast NO: pure chitchat/creative
         _never = ['how are you', 'who are you', 'do you feel', 'write ', 'create ',
                   'generate ', 'translate', 'explain ', 'define ', 'calculate ',
-                  'tell me a', 'make me a']
+                  'tell me a', 'make me a', 'back to ', 'return to ',
+                  'continue our', 'our discussion', 'our conversation',
+                  'reprenons', 'revenons', 'poursuivons', 'notre discussion',
+                  'notre conversation']
         if any(kw in text for kw in _never):
             logger.debug("_llm_should_search: fast-NO (chitchat/creative)")
             return False
@@ -2329,7 +2343,17 @@ Memory honesty — two distinct cases:
         except Exception as e:
             logger.warning(f"_llm_should_search LLM call failed: {e} — keyword fallback")
             _fallback = ['news', 'today', 'current', 'latest', 'who is', 'what is the']
-            return any(kw in text for kw in _fallback)
+        return any(kw in text for kw in _fallback)
+
+    @staticmethod
+    def _is_conversation_resume(user_input: str) -> bool:
+        text = str(user_input or '').lower().strip()
+        markers = (
+            'back to ', 'return to ', 'continue our', 'our discussion',
+            'our conversation', 'reprenons', 'revenons', 'poursuivons',
+            'notre discussion', 'notre conversation',
+        )
+        return any(marker in text for marker in markers)
 
     def _quick_web_search(self, user_input: str) -> str:
         try:
