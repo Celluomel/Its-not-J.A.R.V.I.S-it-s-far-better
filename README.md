@@ -131,6 +131,16 @@ The frontend is intentionally built during installation. A published checkout ne
 
 The organism works best for local testing with an OpenAI-compatible server such as LM Studio or Ollama. Configure the provider, model and base URL in the settings page or `config.json`. Keep API keys in `.env` or local configuration; never commit them.
 
+### Tested LM Studio configuration
+
+In current local testing, the strongest results have been observed with:
+
+- **Server:** LM Studio with its OpenAI-compatible API enabled;
+- **Model:** `gemma-4-e4b-uncensored-hauhaucs-aggressive`;
+- **Inference:** reasoning enabled in LM Studio.
+
+This is an empirical compatibility note, not a benchmark claim. Results may vary with the LM Studio version, prompt context, context length, inference settings and available hardware. When reporting a result, include whether reasoning was enabled and the exact model identifier so other testers can reproduce the comparison.
+
 ## Testing
 
 Python tests are in `tests/`. Frontend tests are in `frontend/tests/`.
