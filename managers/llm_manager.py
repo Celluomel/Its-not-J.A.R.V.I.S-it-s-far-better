@@ -263,6 +263,8 @@ class LMStudioProvider(BaseLLMProvider):
             # normal assistant content channel, so callers may opt out locally.
             if "reasoning_format" in kwargs:
                 request_body["reasoning_format"] = kwargs["reasoning_format"]
+            if kwargs.get("json_mode"):
+                request_body["response_format"] = {"type": "json_object"}
             r = requests.post(
                 f"{self.base_url}/chat/completions",
                 json=request_body,

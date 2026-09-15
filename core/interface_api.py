@@ -630,6 +630,7 @@ async def generate_capability_proposal():
             max_tokens=700,
             temperature=0.35,
             reasoning_format='none',
+            json_mode=True,
         )
         # A separate lightweight text model may be configured for background
         # work. If it cannot produce structured content, retry once with the
@@ -643,26 +644,43 @@ async def generate_capability_proposal():
                 max_tokens=700,
                 temperature=0.35,
                 reasoning_format='none',
+                json_mode=True,
             )
     except Exception as exc:
         logger.warning('Autonomous capability proposal failed: %s', exc)
         raise HTTPException(502, 'Lumina could not generate a proposal.') from exc
-    if result.get('status') != 'ok':
-        raise HTTPException(503, f"Lumina returned no proposal ({result.get('reason', 'unknown reason')}).")
-    raw = result.get('text', '').strip()
+    raw = result.get('text', '').strip() if isinstance(result, dict) else ''
+    generated = {}
     try:
         start, end = raw.find('{'), raw.rfind('}')
         generated = json.loads(raw[start:end + 1]) if start >= 0 and end > start else {}
     except (json.JSONDecodeError, TypeError):
         generated = {}
     required = ('title', 'description', 'category', 'motivation', 'expected_capability', 'constraints', 'success_criteria')
+    generation_mode = 'llm'
     if not all(str(generated.get(key, '')).strip() for key in required):
-        raise HTTPException(502, 'Lumina returned an incomplete proposal.')
+        # Reasoning-capable local models can return an empty final channel even
+        # when the organism has enough state to form a useful next proposal.
+        # Preserve the user action by creating a transparent, state-grounded
+        # draft rather than fabricating an LLM response.
+        generation_mode = 'organism_state_fallback'
+        focus = str((workspace_state or {}).get('focus') or '').strip()
+        active = 'cognitive capability development'
+        generated = {
+            'title': f'Investigate {focus or active}',
+            'description': f'Create a bounded experiment that improves or measures {focus or active}.',
+            'category': 'experiment',
+            'motivation': 'Turn the organism\'s current internal focus into a testable development direction.',
+            'expected_capability': 'A measurable improvement with observable evidence in the relevant cognitive stream.',
+            'constraints': 'Keep the experiment local, asynchronous and reversible; do not disrupt user chat.',
+            'success_criteria': 'Define a baseline, run repeated trials, compare outcomes and record the result.',
+            'priority': 3,
+        }
     category = str(generated['category']).lower().strip()
     if category not in _PROPOSAL_CATEGORIES:
         category = 'experiment'
     item = {key: str(generated[key]).strip() for key in required}
-    item.update({'category': category, 'priority': max(1, min(5, int(generated.get('priority', 3)))), 'source': 'organism', 'status': 'draft', 'id': str(uuid.uuid4()), 'created_at': time.time(), 'updated_at': time.time()})
+    item.update({'category': category, 'priority': max(1, min(5, int(generated.get('priority', 3)))), 'source': 'organism', 'generation_mode': generation_mode, 'status': 'draft', 'id': str(uuid.uuid4()), 'created_at': time.time(), 'updated_at': time.time()})
     item.update(_proposal_analysis(item))
     proposals = _load_capability_proposals()
     proposals.append(item)
