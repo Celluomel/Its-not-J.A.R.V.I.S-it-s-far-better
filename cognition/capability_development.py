@@ -72,7 +72,7 @@ class CapabilityDevelopmentEngine:
 
     def tick(self, slow_cycle: int) -> None:
         """Advance one bounded observation; never performs generative work."""
-        if slow_cycle < 1 or slow_cycle % 2:
+        if slow_cycle < 1:
             return
         try:
             with self._lock:
