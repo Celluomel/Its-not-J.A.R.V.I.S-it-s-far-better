@@ -493,6 +493,176 @@ _SETTING_FIELDS = {
 _SECRET_FIELDS = {'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'BRAVE_SEARCH_KEY', 'SERPAPI_KEY', 'ELEVENLABS_API_KEY'}
 
 
+# Development proposals are deliberately independent from chat state. They are
+# a durable research backlog that can later be reviewed by the user or handed
+# to a coding agent as an explicit implementation brief.
+_PROPOSAL_PATH = Path('data/persona/capability_proposals.json')
+_PROPOSAL_CATEGORIES = {'cognitive', 'tool', 'sensor', 'embodiment', 'learning', 'interaction', 'experiment'}
+_PROPOSAL_STATUSES = {'draft', 'accepted', 'in_progress', 'completed', 'deferred', 'rejected'}
+
+
+class CapabilityProposalCreate(BaseModel):
+    title: str = Field(min_length=3, max_length=160)
+    description: str = Field(default='', max_length=8000)
+    category: str = Field(default='cognitive', pattern=r'^(cognitive|tool|sensor|embodiment|learning|interaction|experiment)$')
+    motivation: str = Field(default='', max_length=3000)
+    expected_capability: str = Field(default='', max_length=3000)
+    constraints: str = Field(default='', max_length=3000)
+    success_criteria: str = Field(default='', max_length=3000)
+    priority: int = Field(default=3, ge=1, le=5)
+    source: str = Field(default='user', pattern=r'^(user|organism)$')
+
+
+class CapabilityProposalUpdate(BaseModel):
+    status: str | None = Field(default=None, pattern=r'^(draft|accepted|in_progress|completed|deferred|rejected)$')
+    user_evaluation: str | None = Field(default=None, max_length=3000)
+
+
+def _load_capability_proposals():
+    try:
+        if _PROPOSAL_PATH.exists():
+            value = json.loads(_PROPOSAL_PATH.read_text(encoding='utf-8'))
+            return value if isinstance(value, list) else []
+    except Exception as exc:
+        logger.warning('Capability proposal store unreadable: %s', exc)
+    return []
+
+
+def _save_capability_proposals(items):
+    _PROPOSAL_PATH.parent.mkdir(parents=True, exist_ok=True)
+    temp = _PROPOSAL_PATH.with_suffix('.tmp')
+    temp.write_text(json.dumps(items[-200:], ensure_ascii=False, indent=2), encoding='utf-8')
+    temp.replace(_PROPOSAL_PATH)
+
+
+def _proposal_analysis(item):
+    text = ' '.join(str(item.get(key, '')) for key in ('title', 'description', 'expected_capability')).lower()
+    mapping = {
+        'memory': ('memory', 'episodic and semantic memory'),
+        'reason': ('reasoning', 'causal, temporal or abstract reasoning'),
+        'plan': ('planning', 'intention and long-horizon planning'),
+        'goal': ('goals', 'autonomous goal formation and execution'),
+        'camera': ('vision', 'camera perception and visual grounding'),
+        'face': ('vision', 'face recognition and identity grounding'),
+        'sensor': ('embodiment', 'sensor integration and physical context'),
+        'arduino': ('embodiment', 'hardware I/O and actuator control'),
+        'robot': ('embodiment', 'robotic embodiment and action'),
+        'voice': ('audio', 'speech recognition and synthesis'),
+        'tool': ('tools', 'external tools and research actions'),
+        'learn': ('learning', 'evidence-based adaptation and self-correction'),
+    }
+    affected = []
+    for needle, result in mapping.items():
+        if needle in text and result[0] not in [name for name, _ in affected]:
+            affected.append(result)
+    if not affected:
+        affected = [('workspace', 'global workspace routing and observable cognitive state')]
+    subsystem_names = ', '.join(name for name, _ in affected)
+    outputs = '; '.join(description for _, description in affected)
+    prompt = f'''Implement the capability proposal "{item['title']}" in the cognitive organism.
+
+Objective:
+{item.get('description') or 'Define and implement the proposed capability.'}
+
+Category: {item.get('category', 'cognitive')}
+Motivation: {item.get('motivation') or 'Make the organism more capable while preserving inspectability.'}
+Expected capability: {item.get('expected_capability') or item.get('description') or 'A working, observable capability.'}
+Affected subsystems: {subsystem_names} ({outputs})
+Constraints: {item.get('constraints') or 'Keep existing chat, audio, perception and background loops working; keep slow work asynchronous.'}
+Success criteria: {item.get('success_criteria') or 'Add focused tests, expose observable output, persist required state, and verify no regression in existing workflows.'}
+
+Implementation requirements:
+- Inspect the existing architecture before editing.
+- Reuse existing managers, event streams and persistence patterns.
+- Keep hardware or external-service integrations optional with a local/mock fallback.
+- Separate proposal, experiment and verified capability states.
+- Report files changed, tests run, evidence collected and unresolved risks.'''
+    return {'affected_subsystems': [name for name, _ in affected], 'analysis': f'Likely affected: {subsystem_names}.', 'generated_prompt': prompt}
+
+
+@router.get('/capability-proposals')
+async def list_capability_proposals():
+    return {'proposals': _json_safe(list(reversed(_load_capability_proposals())))}
+
+
+@router.post('/capability-proposals')
+async def create_capability_proposal(payload: CapabilityProposalCreate):
+    item = payload.model_dump()
+    item.update({'id': str(uuid.uuid4()), 'status': 'draft', 'created_at': time.time(), 'updated_at': time.time()})
+    item.update(_proposal_analysis(item))
+    proposals = _load_capability_proposals()
+    proposals.append(item)
+    _save_capability_proposals(proposals)
+    _event(f'Capability proposal created: {payload.title[:80]}')
+    return _json_safe(item)
+
+
+@router.patch('/capability-proposals/{proposal_id}')
+async def update_capability_proposal(proposal_id: str, payload: CapabilityProposalUpdate):
+    proposals = _load_capability_proposals()
+    item = next((entry for entry in proposals if entry.get('id') == proposal_id), None)
+    if item is None:
+        raise HTTPException(404, 'Capability proposal not found.')
+    changes = payload.model_dump(exclude_none=True)
+    item.update(changes)
+    item['updated_at'] = time.time()
+    _save_capability_proposals(proposals)
+    return _json_safe(item)
+
+
+@router.post('/capability-proposals/{proposal_id}/analyze')
+async def analyze_capability_proposal(proposal_id: str):
+    """Submit a proposal to Lumina's cognitive layer without adding chat history."""
+    proposals = _load_capability_proposals()
+    item = next((entry for entry in proposals if entry.get('id') == proposal_id), None)
+    if item is None:
+        raise HTTPException(404, 'Capability proposal not found.')
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    llm = getattr(state, 'llm', None)
+    if organism is None or llm is None:
+        raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+
+    submission = (
+        f"Development proposal: {item['title']}\n"
+        f"Category: {item.get('category', 'cognitive')}\n"
+        f"Description: {item.get('description', '')}\n"
+        f"Motivation: {item.get('motivation', '')}\n"
+        f"Expected capability: {item.get('expected_capability', '')}\n"
+        f"Constraints: {item.get('constraints', '')}\n"
+        f"Success criteria: {item.get('success_criteria', '')}"
+    )
+    workspace = getattr(organism, 'workspace', None)
+    if workspace is not None:
+        workspace.broadcast('development_proposal', submission, priority=0.78)
+    system_prompt = (
+        'You are the cognitive development analyst inside a persistent cognitive organism. '
+        'Analyze the proposal as a possible new capability, tool, sensor or embodiment. '
+        'Do not claim implementation. Return a concise assessment with: interpretation, '
+        'cognitive value, affected systems, dependencies, risks, prototype steps and '
+        'measurable evidence of success.'
+    )
+    try:
+        result = await asyncio.to_thread(
+            llm.generate_bare_result,
+            submission,
+            system_prompt=system_prompt,
+            max_tokens=700,
+            temperature=0.25,
+        )
+    except Exception as exc:
+        logger.warning('Capability proposal analysis failed: %s', exc)
+        raise HTTPException(502, 'Lumina could not analyze the proposal.') from exc
+    if result.get('status') != 'ok' or not result.get('text', '').strip():
+        raise HTTPException(503, f"Lumina returned no analysis ({result.get('reason', 'unknown reason')}).")
+    item['organism_analysis'] = result['text'].strip()
+    item['analysis_at'] = time.time()
+    item['updated_at'] = time.time()
+    _save_capability_proposals(proposals)
+    _event(f"Capability proposal analyzed: {item['title'][:80]}")
+    return _json_safe(item)
+
+
 def _settings_snapshot():
     from managers.settings_manager import config
     values = {}
