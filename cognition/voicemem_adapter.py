@@ -9,6 +9,7 @@ from __future__ import annotations
 import importlib
 import json
 import logging
+import os
 import threading
 import time
 from pathlib import Path
@@ -21,9 +22,13 @@ class VoiceMemAdapter:
     """Lazy, best-effort VoiceMem integration using Lumina's existing transcript."""
 
     def __init__(self, enabled: bool = False, data_path: str = "data/persona/voicemem",
-                 top_k: int = 5, local_mode: bool = True) -> None:
+                 top_k: int = 5, local_mode: bool = True,
+                 local_base_url: str = "http://localhost:1234/v1",
+                 local_model: str = "local-model") -> None:
         self.enabled = bool(enabled)
         self.local_mode = bool(local_mode)
+        self.local_base_url = str(local_base_url or "http://localhost:1234/v1").rstrip("/")
+        self.local_model = str(local_model or "local-model")
         self.data_path = Path(data_path or "data/persona/voicemem")
         self.top_k = max(1, min(int(top_k or 5), 20))
         self._vm: Any = None
@@ -70,6 +75,8 @@ class VoiceMemAdapter:
             "data_path": str(self.data_path),
             "top_k": self.top_k,
             "local_mode": self.local_mode,
+            "local_base_url": self.local_base_url,
+            "local_model": self.local_model,
             "backend_mode": self._backend_mode,
             "error": self._error,
             "observations": len(self._ledger.get("observations", [])),
@@ -94,11 +101,18 @@ class VoiceMemAdapter:
                     # components. Inject local embedding and slot routing.
                     from voicemem.leftbrain.local_e5_embedder import LocalE5Embedder, shared_e5
                     from voicemem.leftbrain.cognitive_graph.local_query_classifier import LocalQueryClassifier
+                    os.environ["OPENAI_MODEL"] = self.local_model
                     self._vm = cls(
                         mode="text_mode", memory_root=str(self.data_path),
                         user_id="default", embedding=lambda: LocalE5Embedder(),
                         schema=lambda: LocalQueryClassifier(model=shared_e5()),
                         enable_emotion=False,
+                        # OpenAI-compatible clients validate that a key value
+                        # exists even for local servers. This is not a real
+                        # credential and is sent only to the configured local
+                        # endpoint.
+                        api_key="lm-studio-local",
+                        base_url=self.local_base_url,
                     )
                     self._backend_mode = "local"
                     return self._vm

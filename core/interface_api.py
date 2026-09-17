@@ -895,6 +895,8 @@ async def voicemem_status():
             data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
             top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
             local_mode=bool(getattr(config, 'VOICEMEM_LOCAL_MODE', True)),
+            local_base_url=getattr(config, 'LLM_BASE_URL', 'http://localhost:1234/v1'),
+            local_model=getattr(config, 'TEXT_MODEL', '') or getattr(config, 'LLM_MODEL', 'local-model'),
         )
         result = adapter.status()
         result['evaluation'] = adapter.evaluation()
@@ -915,6 +917,8 @@ async def voicemem_space():
             data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
             top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
             local_mode=bool(getattr(config, 'VOICEMEM_LOCAL_MODE', True)),
+            local_base_url=getattr(config, 'LLM_BASE_URL', 'http://localhost:1234/v1'),
+            local_model=getattr(config, 'TEXT_MODEL', '') or getattr(config, 'LLM_MODEL', 'local-model'),
         )
         return _json_safe(adapter.space_snapshot())
     except Exception as exc:
