@@ -8,6 +8,15 @@ const record = (v: unknown): Record<string, any> => v && typeof v === 'object' &
 const number = (v: unknown): number | null => typeof v === 'number' && Number.isFinite(v) ? v : null;
 const unit = (v: unknown) => { const n = number(v); return n === null ? null : Math.max(0, Math.min(1, n)); };
 const words = (v: unknown, empty = 'Awaiting data') => typeof v === 'string' && v ? v.replaceAll('_', ' ') : empty;
+const readableWorkspaceFocus = (workspace: Record<string, any>) => {
+  const focus = typeof workspace.focus === 'string' ? workspace.focus.trim() : '';
+  // Workspace IDs are useful for traces, but not as user-facing cognition.
+  const opaqueId = /^[a-f0-9]{8,}$/i.test(focus.replaceAll('-', ''));
+  if (opaqueId) return words(workspace.intention) !== 'Awaiting data'
+    ? words(workspace.intention)
+    : words(workspace.narrative_state, 'Active workspace focus');
+  return words(focus, 'No active focus');
+};
 const percent = (v: number | null) => v === null ? '--' : `${Math.round(v * 100)}%`;
 const duration = (v: unknown) => { const n = number(v); const seconds = Math.round(Math.max(0, n ?? 0)); return n === null ? '--' : `${Math.floor(seconds / 60)}m ${seconds % 60}s`; };
 
@@ -39,7 +48,7 @@ export default function CognitiveObservatory({ data, mode, connected, reduced, p
   const networks = [
     { name: 'Attention', value: words(attention.primary, 'No active focus'), metric: unit(record(attention.weights)[attention.primary]), label: 'Attention allocation', detail: words(attention.workspace_topic, 'No workspace topic recorded') },
     { name: 'Motivation', value: words(motivation.dominant, 'No dominant drive'), metric: unit(record(motivation.drive_vector)[motivation.dominant]), label: 'Dominant drive intensity', detail: `${number(motivation.needs_detected) ?? '--'} needs detected` },
-    { name: 'Workspace', value: words(workspace.focus, 'No active focus'), metric: unit(workspace.confidence), label: 'Workspace confidence', detail: `${Array.isArray(workspace.active_hypotheses) ? workspace.active_hypotheses.length : '--'} active hypotheses` },
+    { name: 'Workspace', value: readableWorkspaceFocus(workspace), metric: unit(workspace.confidence), label: 'Workspace confidence', detail: `${Array.isArray(workspace.active_hypotheses) ? workspace.active_hypotheses.length : '--'} active hypotheses` },
     { name: 'Planning', value: currentPlan?.objective || 'No active plan recorded', metric: planningActivity, label: 'Active planning signal', detail: currentPlan ? `Progress ${currentPlan.completed} of ${currentPlan.steps} steps · next ${words(currentPlan.next)}` : 'Awaiting a recorded plan' },
     { name: 'Energy', value: resources.in_dream_mode ? 'Dream mode' : 'Cognitive reserve', metric: unit(resources.cognitive_energy), label: 'Cognitive energy', detail: `Attention reserve ${percent(unit(resources.attention))}` },
     { name: 'Orchestrator', value: available ? words(orchestrator.last_activity) : 'Telemetry unavailable', metric: unit(drives.coherence), label: 'Drive coherence', detail: available ? `${number(orchestrator.queued_events) ?? '--'} queued events / cycle ${number(orchestrator.cycle_count) ?? '--'}` : 'Awaiting Orchestrator telemetry' },
