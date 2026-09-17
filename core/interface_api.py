@@ -993,6 +993,7 @@ async def update_settings(payload: SettingsUpdate):
         state = _runtime()
         if state.audio is not None:
             await asyncio.to_thread(state.reload_audio)
+    state = _runtime()
     if {'UNIVERSAL_CONNECTOR_ENABLED', 'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED', 'HOME_ASSISTANT_URL',
         'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL', 'HOME_ASSISTANT_POLL_INTERVAL',
         'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_DISCOVERED_ENTITIES'}.intersection(changed):
