@@ -1346,6 +1346,10 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
         s = self._system
         self._last_web_sources = []
         arb_temperature: float | None = None   # set by CognitiveOrganism if available
+        # Keep live external observations aside until the prompt cap has been
+        # applied. Otherwise a large cognitive context can silently remove the
+        # newest sensor reading before it reaches the model.
+        _ha_context = ""
 
         # ── CognitiveOrganism pre-interaction cycle ───────────────────────────
         # Runs energy regen, tension compute, goal ecology, arbitration, and
@@ -2050,20 +2054,11 @@ Memory honesty — two distinct cases:
             try:
                 from cognition.universal_connector import get_universal_connector
                 _ha_connector = get_universal_connector(self._organism) if self._organism else None
-                if _ha_connector is not None:
-                    _ha_connector.refresh_home_assistant_for_prompt()
+                if not _ha_connector or not _ha_connector.refresh_home_assistant_for_prompt():
+                    logger.debug("[HomeAssistant] live prompt refresh unavailable; using cached snapshot if present")
                 _ha_context = _ha_connector.home_assistant_context() if _ha_connector else ""
-                if _ha_context:
-                    system_prompt += (
-                        f"\n\n━━ SELECTED HOME ASSISTANT SENSORS ━━\n{_ha_context}\n"
-                        "These are the authoritative current read-only sensor observations. "
-                        "When the user asks for a current value, answer from this block exactly; "
-                        "never substitute an older memory or invent a value. Use them only when relevant, "
-                        "and do not infer a person's identity from an occupancy sensor. "
-                        "Do not claim to have read a sensor unless its value appears in this block."
-                    )
             except Exception:
-                pass
+                logger.debug("[HomeAssistant] prompt context unavailable", exc_info=True)
 
             # ── Inject v2 autonomous architecture context ─────────────────
             try:
@@ -2197,6 +2192,19 @@ Memory honesty — two distinct cases:
                     "This applies to the complete visible answer, including headings, "
                     "lists, recovery output, and audio text. Do not switch to English "
                     "unless the user explicitly requests it or quotes English text."
+                )
+
+            # This block is deliberately last. It must survive the general
+            # prompt cap and remain adjacent to generation as authoritative,
+            # timestamped evidence for current-value questions.
+            if _ha_context:
+                system_prompt += (
+                    f"\n\n━━ CURRENT HOME ASSISTANT OBSERVATIONS ━━\n{_ha_context}\n"
+                    "These are authoritative read-only observations captured for this turn. "
+                    "For a current-value question, use the exact value and sensor timestamp above. "
+                    "Never substitute an older memory, cached conversation value, or invented estimate. "
+                    "If the requested sensor is absent, say it is unavailable. Use these observations "
+                    "only when relevant, and do not infer identity from an occupancy sensor."
                 )
 
             return system_prompt, emo_dict, cond_dict, arb_temperature
