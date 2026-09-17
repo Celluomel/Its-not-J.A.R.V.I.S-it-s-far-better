@@ -1684,14 +1684,25 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                 try:
                     # Retrieval is opt-in and runs in this existing prompt
                     # worker thread. Native memory remains the first source.
-                    _voice_mems = self._voicemem.search(user_input, user_id=rel.user_id)
+                    # Use the request identity directly. The relationship
+                    # object is not the VoiceMem identity boundary and can
+                    # otherwise make retrieval silently disappear when its
+                    # shape changes between chat paths.
+                    _voice_mems = self._voicemem.search(user_input, user_id=user_id)
                     if not _voice_mems:
-                        _voice_mems = self._voicemem.cached(rel.user_id)
+                        _voice_mems = self._voicemem.cached(user_id)
                     _known = {m.get('text', '') for m in top_memories}
                     top_memories.extend(m for m in _voice_mems if m.get('text', '') not in _known)
                     top_memories = top_memories[:8]
-                except Exception:
-                    pass
+                    logger.info(
+                        "[VoiceMem] retrieval query=%r user=%r results=%d",
+                        user_input[:80], user_id, len(_voice_mems),
+                    )
+                except Exception as _voice_retrieval_error:
+                    logger.warning(
+                        "[VoiceMem] retrieval path failed for user %r: %s",
+                        user_id, _voice_retrieval_error,
+                    )
             mem_ctx = "\n".join(_fmt_memory(m) for m in top_memories) if top_memories else ""
 
             cond_section = ("━━ EXPERIENCE-BASED CAUTION ━━\n" + cond_dict["prompt_note"]) if cond_dict.get("prompt_note") else ""
