@@ -10,6 +10,7 @@ import importlib
 import json
 import logging
 import os
+import re
 import threading
 import time
 from pathlib import Path
@@ -92,6 +93,8 @@ class VoiceMemAdapter:
                 return self._vm
             try:
                 module = importlib.import_module("voicemem")
+                if self.local_mode:
+                    self._enable_local_response_format_compatibility()
                 self.data_path.mkdir(parents=True, exist_ok=True)
                 cls = getattr(module, "VoiceMem", None)
                 if cls is None:
@@ -134,6 +137,57 @@ class VoiceMemAdapter:
                 self._error = str(exc)
                 logger.warning("VoiceMem unavailable; continuing with native memory: %s", exc)
                 return None
+
+    @staticmethod
+    def _enable_local_response_format_compatibility() -> None:
+        """Make VoiceMem's OpenAI client calls compatible with LM Studio.
+
+        VoiceMem currently requests ``json_object``. LM Studio versions used
+        by this project accept ``text`` or ``json_schema`` instead. The
+        extraction prompt still requests JSON, so changing only the transport
+        hint preserves VoiceMem's existing parser and avoids patching the
+        installed third-party package.
+        """
+        try:
+            openai = importlib.import_module("openai")
+            original = getattr(openai, "OpenAI", None)
+            if original is None or getattr(original, "_lumina_local_compat", False):
+                return
+
+            class _CompletionsProxy:
+                def __init__(self, target: Any) -> None:
+                    self._target = target
+
+                def create(self, **kwargs: Any) -> Any:
+                    response_format = kwargs.get("response_format")
+                    if isinstance(response_format, dict) and response_format.get("type") == "json_object":
+                        kwargs["response_format"] = {"type": "text"}
+                    return self._target.create(**kwargs)
+
+                def __getattr__(self, name: str) -> Any:
+                    return getattr(self._target, name)
+
+            class _ChatProxy:
+                def __init__(self, target: Any) -> None:
+                    self._target = target
+                    self.completions = _CompletionsProxy(target.completions)
+
+                def __getattr__(self, name: str) -> Any:
+                    return getattr(self._target, name)
+
+            class _LocalOpenAI:
+                _lumina_local_compat = True
+
+                def __init__(self, *args: Any, **kwargs: Any) -> None:
+                    self._target = original(*args, **kwargs)
+                    self.chat = _ChatProxy(self._target.chat)
+
+                def __getattr__(self, name: str) -> Any:
+                    return getattr(self._target, name)
+
+            openai.OpenAI = _LocalOpenAI
+        except Exception as exc:
+            logger.debug("Could not enable LM Studio response-format compatibility: %s", exc)
 
     @staticmethod
     def _text(value: Any) -> str:
@@ -223,16 +277,15 @@ class VoiceMemAdapter:
         if not self.enabled or not str(query or "").strip():
             return []
         vm = self._load()
-        if vm is None:
-            return []
-        try:
-            raw = vm.search(str(query).strip(), top_k=self.top_k)
-        except TypeError:
-            raw = vm.search(str(query).strip())
-        except Exception as exc:
-            self._error = str(exc)
-            logger.warning("VoiceMem retrieval skipped: %s", exc)
-            return []
+        raw: Any = []
+        if vm is not None:
+            try:
+                raw = vm.search(str(query).strip(), top_k=self.top_k)
+            except TypeError:
+                raw = vm.search(str(query).strip())
+            except Exception as exc:
+                self._error = str(exc)
+                logger.warning("VoiceMem retrieval skipped: %s", exc)
         if isinstance(raw, dict):
             raw = raw.get("memories") or raw.get("results") or raw.get("items") or []
         result = []
@@ -240,16 +293,43 @@ class VoiceMemAdapter:
             text = self._text(item)
             if text:
                 result.append({"text": text, "source": "voicemem", "memory_type": "voice_memory"})
+        # Keep the feature useful without cloud credentials or a backend that
+        # has not indexed the current space yet. This is deliberately a small,
+        # transparent lexical fallback over the adapter's own transcript
+        # ledger; it never promotes a result to a verified personal fact.
+        if not result:
+            result = self._local_search(query, user_id)
         self._latest[user_id] = result
         with self._lock:
             retrievals = self._ledger.setdefault("retrievals", [])
             retrievals.append({
                 "timestamp": time.time(), "user_id": user_id,
                 "query": str(query).strip()[:500], "result_count": len(result),
+                "source": "voicemem" if raw and result and result[0].get("source") == "voicemem" else "local_fallback",
             })
             del retrievals[:-200]
             self._write_state()
         return result
+
+    def _local_search(self, query: str, user_id: str) -> list[dict[str, Any]]:
+        """Rank stored transcript observations when indexed retrieval is empty."""
+        terms = {term.lower() for term in re.findall(r"\w+", str(query)) if len(term) > 2}
+        if not terms:
+            return []
+        ranked: list[tuple[float, dict[str, Any]]] = []
+        for item in self._ledger.get("observations", []):
+            if item.get("user_id") != user_id or item.get("status") == "duplicate":
+                continue
+            text = str(item.get("text", "")).strip()
+            words = {term.lower() for term in re.findall(r"\w+", text) if len(term) > 2}
+            overlap = len(terms & words)
+            if overlap:
+                ranked.append((overlap / len(terms), item))
+        ranked.sort(key=lambda pair: (pair[0], pair[1].get("timestamp", 0)), reverse=True)
+        return [
+            {"text": str(item["text"]), "source": "local_fallback", "memory_type": "voice_memory"}
+            for _, item in ranked[: self.top_k]
+        ]
 
     def evaluation(self, user_id: str | None = None) -> dict[str, Any]:
         """Return observable retrieval/consolidation evidence, not a quality claim."""
@@ -273,8 +353,13 @@ class VoiceMemAdapter:
             "note": "Voice observations are not promoted to verified facts without confirmation.",
         }
 
-    def cached(self, user_id: str = "default") -> list[dict[str, Any]]:
-        return list(self._latest.get(user_id, []))
+    def cached(self, user_id: str | None = None) -> list[dict[str, Any]]:
+        if user_id is not None:
+            return list(self._latest.get(user_id, []))
+        latest: list[dict[str, Any]] = []
+        for items in self._latest.values():
+            latest.extend(items)
+        return latest[-self.top_k:]
 
     def space_snapshot(self, user_id: str | None = None) -> dict[str, Any]:
         """Return a UI-safe view of the local VoiceMem memory space."""
