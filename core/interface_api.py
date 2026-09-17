@@ -461,7 +461,7 @@ async def discover_home_assistant():
     from cognition.universal_connector import get_universal_connector
     result = await asyncio.to_thread(get_universal_connector(organism).discover_home_assistant)
     if result.get('ok'):
-        from managers.settings_manager import save_settings
+        from managers.settings_manager import config, save_settings
         config.HOME_ASSISTANT_DISCOVERED_ENTITIES = json.dumps(result.get('entities', []), ensure_ascii=False)
         save_settings(config, silent=True)
     return _json_safe(result)
