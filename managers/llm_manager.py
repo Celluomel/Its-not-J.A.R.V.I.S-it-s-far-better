@@ -573,6 +573,12 @@ class LLMManager:
         # lighter conversational model. Embedding models are rejected by the
         # constructor and fall back to the main chat model.
         kwargs.setdefault("model", self.text_model)
+        # Reasoning-capable local models can spend a short autonomous call in
+        # the hidden reasoning channel and return an empty final content field.
+        # Background cognition needs a usable result, not hidden reasoning;
+        # LM Studio supports this explicit opt-out and other providers ignore
+        # the provider-specific kwarg in their existing adapters.
+        kwargs.setdefault("reasoning_format", "none")
         # Proactive cognition must never compete with an active user turn.
         # Skipping is preferable to delaying the chat or filling its model
         # queue with an obsolete background thought.
