@@ -293,6 +293,16 @@ class AppState:
             except Exception as _e:
                 logger.error(f"PresenceEngine wire failed: {_e}")
 
+        # Start the optional Home Assistant monitor only when explicitly
+        # enabled in config.json. It is read-only and remains outside chat.
+        try:
+            organism = getattr(self.persona, '_organism', None) if self.persona else None
+            if organism is not None:
+                from cognition.universal_connector import get_universal_connector
+                await get_universal_connector(organism).reconcile_home_assistant_monitor()
+        except Exception as _e:
+            logger.warning("Home Assistant monitor startup failed (non-fatal): %s", _e)
+
     def ensure_audio_ready(self) -> bool:
         if self.audio:
             return True

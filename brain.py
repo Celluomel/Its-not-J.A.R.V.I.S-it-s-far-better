@@ -775,6 +775,13 @@ async def _main():
     logger.info("🛑 Shutting down…")
     if _messaging:
         await _messaging.stop()
+    try:
+        organism = getattr(getattr(state, "persona", None), "_organism", None)
+        if organism is not None:
+            from cognition.universal_connector import get_universal_connector
+            await get_universal_connector(organism).stop_home_assistant_monitor()
+    except Exception:
+        logger.debug("Home Assistant monitor shutdown failed", exc_info=True)
     if state.orchestrator:
         await state.orchestrator.stop()
     try:

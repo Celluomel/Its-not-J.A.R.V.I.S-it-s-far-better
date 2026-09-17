@@ -73,6 +73,9 @@ class UniversalConnector:
     def __init__(self, organism: Any):
         self._organism = organism
         self._recent: List[Percept] = []
+        self._ha_task = None
+        self._ha_stop = None
+        self._ha_states: Dict[str, Any] = {}
         logger.info("[UniversalConnector] initialised (Phase 6.0/6.2 slice)")
 
     def perceive(self, percept: Percept) -> None:
@@ -176,6 +179,90 @@ class UniversalConnector:
         except Exception as exc:
             logger.warning("[UniversalConnector] Home Assistant discovery failed: %s", exc)
             return {"ok": False, "status": "error", "entities": [], "message": str(exc)}
+
+    async def reconcile_home_assistant_monitor(self) -> None:
+        """Start or stop the low-rate HA monitor after config changes."""
+        try:
+            from managers.settings_manager import config
+            enabled = bool(getattr(config, "UNIVERSAL_CONNECTOR_ENABLED", False)) and bool(
+                getattr(config, "HOME_ASSISTANT_ENABLED", False)
+            )
+        except Exception:
+            enabled = False
+        if enabled and self._ha_task is None:
+            import asyncio
+            self._ha_stop = asyncio.Event()
+            self._ha_task = asyncio.create_task(self._home_assistant_loop())
+            logger.info("[UniversalConnector] Home Assistant monitor started")
+        elif not enabled and self._ha_task is not None:
+            await self.stop_home_assistant_monitor()
+
+    async def stop_home_assistant_monitor(self) -> None:
+        """Stop the HA monitor without leaving a pending asyncio task."""
+        task = self._ha_task
+        if task is None:
+            return
+        if self._ha_stop is not None:
+            self._ha_stop.set()
+        try:
+            await task
+        except Exception:
+            logger.debug("[UniversalConnector] Home Assistant monitor stopped with an error", exc_info=True)
+        self._ha_task = None
+        self._ha_stop = None
+
+    async def _home_assistant_loop(self) -> None:
+        import asyncio
+        while self._ha_stop is not None and not self._ha_stop.is_set():
+            try:
+                # The interactive turn owns the local LLM and attention path;
+                # do not add network work or percepts while it is active.
+                from core.interface_api import interactive_turn_active
+                if not interactive_turn_active():
+                    result = await asyncio.to_thread(self.discover_home_assistant)
+                    if result.get("ok"):
+                        self._ingest_home_assistant_changes(result.get("entities", []))
+            except asyncio.CancelledError:
+                raise
+            except Exception as exc:
+                logger.debug("[UniversalConnector] Home Assistant monitor cycle failed: %s", exc)
+            try:
+                from managers.settings_manager import config
+                interval = max(1, min(300, int(getattr(config, "HOME_ASSISTANT_POLL_INTERVAL", 5))))
+            except Exception:
+                interval = 5
+            try:
+                await asyncio.wait_for(self._ha_stop.wait(), timeout=interval)
+            except asyncio.TimeoutError:
+                pass
+
+    def _ingest_home_assistant_changes(self, entities: List[Dict[str, Any]]) -> None:
+        current = {str(item.get("entity_id")): item for item in entities if item.get("entity_id")}
+        if not self._ha_states:
+            self._ha_states = {key: self._state_signature(item) for key, item in current.items()}
+            logger.info("[UniversalConnector] Home Assistant baseline captured: %d entities", len(current))
+            return
+        for entity_id, item in current.items():
+            signature = self._state_signature(item)
+            if self._ha_states.get(entity_id) == signature:
+                continue
+            self._ha_states[entity_id] = signature
+            signal = item.get("signal") or "state_changed"
+            payload = f"Home Assistant {item.get('friendly_name') or entity_id}: {signal} ({item.get('state')})"
+            self.perceive(Percept(
+                modality="home_assistant",
+                source="home_assistant",
+                payload=payload,
+                confidence=0.95,
+                salience=0.72 if signal in {"presence_detected", "no_presence"} else 0.45,
+                novelty=0.65,
+                provenance={"entity_id": entity_id, "device_class": item.get("device_class")},
+            ))
+            logger.info("[UniversalConnector] Home Assistant change: %s -> %s", entity_id, signal)
+
+    @staticmethod
+    def _state_signature(item: Dict[str, Any]) -> str:
+        return f"{item.get('state')}|{item.get('signal')}|{item.get('unit')}"
 
     def _maybe_boost_epistemic_pressure(self, percept: Percept) -> None:
         try:

@@ -988,6 +988,13 @@ async def update_settings(payload: SettingsUpdate):
         state = _runtime()
         if state.audio is not None:
             await asyncio.to_thread(state.reload_audio)
+    if {'UNIVERSAL_CONNECTOR_ENABLED', 'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_URL',
+        'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL', 'HOME_ASSISTANT_POLL_INTERVAL',
+        'HOME_ASSISTANT_ALLOWED_DOMAINS'}.intersection(changed):
+        organism = getattr(getattr(state, 'persona', None), '_organism', None)
+        if organism is not None:
+            from cognition.universal_connector import get_universal_connector
+            await get_universal_connector(organism).reconcile_home_assistant_monitor()
     _event(f'Settings saved ({len(changed)} fields)')
     state = _runtime()
     active_audio = getattr(state, 'audio', None)
