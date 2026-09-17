@@ -141,6 +141,17 @@ class AppSettings(BaseModel):
     # builder for where this is read.
     PEER_COGNITIVE_STANCE: str = "collaborative"
 
+    # Universal Connector / Home Assistant bridge.  The bridge is opt-in:
+    # storing these values prepares the integration without opening a
+    # connection or exposing a network service by default.
+    UNIVERSAL_CONNECTOR_ENABLED: bool = False
+    HOME_ASSISTANT_ENABLED: bool = False
+    HOME_ASSISTANT_URL: str = "http://homeassistant.local:8123"
+    HOME_ASSISTANT_TOKEN: str = ""
+    HOME_ASSISTANT_VERIFY_SSL: bool = True
+    HOME_ASSISTANT_POLL_INTERVAL: int = 5
+    HOME_ASSISTANT_ALLOWED_DOMAINS: str = "person,device_tracker,sensor,binary_sensor,zone"
+
     # Headless brain API (brain.py)
     BRAIN_API_PORT: int = 8765         # REST + webhook listen port
     BRAIN_API_HOST: str = "127.0.0.1"  # change to 0.0.0.0 to expose externally
