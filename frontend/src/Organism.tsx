@@ -34,11 +34,20 @@ void main() {
   vec3 n = normalize(cross(dFdx(vView),dFdy(vView)));
   float facing = abs(dot(n,normalize(-vView)));
   float rim = pow(1.0-facing,2.4);
+  float fresnel = pow(1.0-facing,3.0);
   float silk = pow(abs(dot(n,normalize(vec3(-.6,.8,1.0)))),12.0);
+  float reflection = pow(max(0.0,dot(n,normalize(vec3(-.4,.7,1.0)))),22.0);
   float warmth = smoothstep(-1.0,1.0,vPosition.x-vPosition.y*.45);
+  // Thin-film interference shifts through teal, rose, amber and violet as
+  // the folded surface turns toward the viewer, like iridescent glass.
+  float phase = vPosition.x*1.7 + vPosition.y*2.2 + vPosition.z*3.1 + fresnel*4.5;
+  vec3 spectral = .5 + .5*cos(vec3(phase, phase+2.1, phase+4.2));
+  spectral = mix(vec3(.20,.78,.70), spectral, .58);
   vec3 pearl = mix(vec3(.25,.70,.66),vec3(.95,.66,.58),warmth);
-  vec3 color = pearl*(.28+rim*.95)+vec3(.82,.94,.91)*silk*.55;
-  gl_FragColor = vec4(color,.025+rim*.48+silk*.10);
+  vec3 color = mix(pearl, spectral, .28 + fresnel*.62);
+  color += vec3(1.0,.72,.58)*reflection*1.8;
+  color += vec3(.72,1.0,.94)*silk*.72;
+  gl_FragColor = vec4(color,.018+rim*.46+fresnel*.24+silk*.12);
 }`;
 const pointVertex = `
 uniform float time; uniform float energy;
@@ -147,6 +156,6 @@ export default function Organism({ active, energy = 0, reduced, mode = active ? 
   const [lost, setLost] = useState(false);
   useEffect(() => { const change = () => setVisible(!document.hidden); document.addEventListener('visibilitychange', change); return () => document.removeEventListener('visibilitychange', change); }, []);
   return <div className="organism" role="img" aria-label={`Lumina visual organism, ${mode}`}>
-    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }} onCreated={({gl}) => { gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.45}/><pointLight position={[2,2,3]} intensity={2.2} color="#b8e4d2"/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
+    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl}) => { gl.toneMappingExposure = 1.12; gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.32}/><pointLight position={[2.4,2.8,3.5]} intensity={3.4} color="#d6fff2"/><pointLight position={[-2.6,.4,2.2]} intensity={2.1} color="#f09bb3"/><pointLight position={[.5,-2.4,1.2]} intensity={1.6} color="#a7b7ff"/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
   </div>;
 }
