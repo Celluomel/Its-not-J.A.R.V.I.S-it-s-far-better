@@ -263,7 +263,7 @@ class UniversalConnector:
             signal = item.get("signal") or "state_changed"
             if signal in {"presence_detected", "no_presence"}:
                 self._forward_external_presence(entity_id, signal == "presence_detected")
-            payload = f"Home Assistant {item.get('friendly_name') or entity_id}: {signal} ({item.get('state')})"
+            payload = f"Home Assistant sensor {self._entity_label(item)}: {signal} ({item.get('state')})"
             self.perceive(Percept(
                 modality="home_assistant",
                 source="home_assistant",
@@ -292,15 +292,28 @@ class UniversalConnector:
                 continue
             value = item.get("state")
             unit = item.get("unit") or ""
-            label = item.get("friendly_name") or item.get("entity_id")
+            label = self._entity_label(item)
             signal = item.get("signal")
             if signal == "presence_detected":
                 value = "presence detected"
             elif signal == "no_presence":
                 value = "no presence"
             updated = item.get("last_updated") or item.get("last_changed") or "timestamp unavailable"
-            lines.append(f"- {label} [{item.get('entity_id')}]: {value}{(' ' + unit) if unit else ''} (sensor updated {updated})")
+            lines.append(f"- {label}: {value}{(' ' + unit) if unit else ''} (sensor updated {updated})")
         return "\n".join(lines)
+
+    @classmethod
+    def _entity_label(cls, item: Dict[str, Any]) -> str:
+        entity_id = str(item.get("entity_id") or "sensor")
+        try:
+            from managers.settings_manager import config
+            tags = json.loads(str(getattr(config, "HOME_ASSISTANT_ENTITY_TAGS", "{}") or "{}"))
+            tag = tags.get(entity_id) if isinstance(tags, dict) else None
+            if isinstance(tag, str) and tag.strip():
+                return tag.strip()
+        except Exception:
+            pass
+        return entity_id.rsplit(".", 1)[-1].replace("_", " ")
 
     @staticmethod
     def _selected_home_assistant_entities() -> set[str]:

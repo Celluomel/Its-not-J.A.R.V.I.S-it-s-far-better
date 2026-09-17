@@ -154,6 +154,7 @@ class AppSettings(BaseModel):
     HOME_ASSISTANT_ALLOWED_DOMAINS: str = ""
     HOME_ASSISTANT_SELECTED_ENTITIES: str = ""
     HOME_ASSISTANT_DISCOVERED_ENTITIES: str = ""
+    HOME_ASSISTANT_ENTITY_TAGS: str = "{}"
 
     # Headless brain API (brain.py)
     BRAIN_API_PORT: int = 8765         # REST + webhook listen port
