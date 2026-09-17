@@ -132,6 +132,11 @@
 .message-telemetry dl { margin: 0; }.message-telemetry dl > div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 9px; padding: 3px 0; }.message-telemetry dt { color: #789087; }.message-telemetry dd { margin: 0; color: #c4d8d0; overflow-wrap: anywhere; }
 @media(max-width:540px){.message-telemetry{margin-left:0;padding:10px}.telemetry-goals{grid-template-columns:1fr}.message-telemetry dl>div{grid-template-columns:76px minmax(0,1fr)}}
 
+.voicemem-space { margin: 14px 0 18px; padding: 14px 16px; border: 1px solid rgba(103, 232, 249, .22); border-left: 2px solid #67e8f9; background: rgba(10, 27, 34, .72); }
+.voicemem-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }.voicemem-heading h2 { margin: 5px 0 0; color: #e2f8f5; font-size: 14px; font-weight: 500; }.voicemem-heading .eyebrow { display: flex; align-items: center; gap: 6px; color: #67e8f9; }
+.voicemem-state { flex: 0 0 auto; color: #94a3b8; font: 10px ui-monospace, monospace; text-transform: uppercase; }.voicemem-state.ready { color: #5ee6b0; }.voicemem-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-top: 14px; border: 1px solid rgba(148, 163, 184, .16); background: rgba(148, 163, 184, .16); }.voicemem-metrics > div { padding: 9px 10px; background: #0d1821; }.voicemem-metrics span, .voicemem-metrics b { display: block; }.voicemem-metrics span { color: #7896a0; font-size: 10px; }.voicemem-metrics b { margin-top: 4px; color: #b9f4e0; font: 14px ui-monospace, monospace; }.voicemem-label { display: block; margin: 13px 0 7px; color: #81cbd2; font: 10px ui-monospace, monospace; text-transform: uppercase; }.voicemem-cached p { margin: 5px 0; color: #c7d9db; font-size: 11px; line-height: 1.45; }.voicemem-empty, .voicemem-note { margin: 13px 0 0; color: #8295a2; font-size: 11px; line-height: 1.45; }.voicemem-note { color: #fbbf24; }
+@media(max-width:540px){.voicemem-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.voicemem-space{padding:12px}.voicemem-heading{gap:10px}}
+
 /* Keep the live camera as a readable secondary surface below the organism.
    It must not compete with or sit behind the WebGL canvas. */
 .presence > .presence-heading{order:0}

@@ -903,6 +903,24 @@ async def voicemem_status():
         return {'enabled': False, 'available': False, 'ready': False, 'error': str(exc)}
 
 
+@router.get('/voicemem/space')
+async def voicemem_space():
+    """Expose the active local VoiceMem space for the main interface."""
+    try:
+        from cognition.voicemem_adapter import VoiceMemAdapter
+        from managers.settings_manager import config
+        adapter = VoiceMemAdapter(
+            enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
+            data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
+            top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
+        )
+        return _json_safe(adapter.space_snapshot())
+    except Exception as exc:
+        logger.debug('VoiceMem space unavailable: %s', exc)
+        return {'status': {'enabled': False, 'available': False, 'ready': False, 'error': str(exc)},
+                'evaluation': {}, 'observations': [], 'retrievals': [], 'cached': []}
+
+
 @router.post('/settings')
 async def update_settings(payload: SettingsUpdate):
     from managers.settings_manager import config, save_settings

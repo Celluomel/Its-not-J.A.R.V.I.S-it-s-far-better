@@ -221,3 +221,23 @@ class VoiceMemAdapter:
 
     def cached(self, user_id: str = "default") -> list[dict[str, Any]]:
         return list(self._latest.get(user_id, []))
+
+    def space_snapshot(self, user_id: str = "default") -> dict[str, Any]:
+        """Return a UI-safe view of the local VoiceMem memory space."""
+        with self._lock:
+            observations = [
+                dict(item) for item in self._ledger.get("observations", [])
+                if item.get("user_id", "default") == user_id
+            ][-12:]
+            retrievals = [
+                dict(item) for item in self._ledger.get("retrievals", [])
+                if item.get("user_id", "default") == user_id
+            ][-8:]
+        return {
+            "status": self.status(),
+            "evaluation": self.evaluation(user_id),
+            "observations": observations,
+            "retrievals": retrievals,
+            "cached": self.cached(user_id),
+            "storage": str(self._state_path),
+        }
