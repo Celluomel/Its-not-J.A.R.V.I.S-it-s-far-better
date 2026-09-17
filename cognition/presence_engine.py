@@ -135,6 +135,9 @@ class PresenceEngine:
         self._social_battery         = 0.8   # starts healthy
         self._social_battery_lock    = threading.Lock()
         self._recent_utterances: List[Tuple[float, str]] = []  # (ts, text)
+        # External occupancy signals (Home Assistant, future sensors). These
+        # establish co-presence without asserting an unverified identity.
+        self._external_presence: Dict[str, Dict[str, Any]] = {}
 
         # Social hunger — accumulates during isolation / prolonged cognition
         self._social_hunger:         float = 0.0
@@ -249,6 +252,41 @@ class PresenceEngine:
                     if topic:
                         ps.last_topic    = topic[:120]
                         ps.last_topic_ts = now
+
+    def on_external_presence(
+        self, source_id: str, present: bool, *, source: str = "external"
+    ) -> None:
+        """Record sensor presence without converting it into an identity.
+
+        Home Assistant can tell us that an area is occupied, while the camera
+        may later establish who is present. External signals are therefore
+        useful context for co-presence and attention, but never trigger a
+        person-specific greeting on their own.
+        """
+        key = str(source_id or source).strip()
+        if not key:
+            return
+        now = time.time()
+        with self._lock:
+            previous = self._external_presence.get(key)
+            state = bool(present)
+            self._external_presence[key] = {
+                "present": state,
+                "source": str(source),
+                "last_changed_ts": now if previous is None or previous["present"] != state else previous["last_changed_ts"],
+                "last_seen_ts": now,
+            }
+        if previous is None or previous["present"] != state:
+            logger.info(
+                "👁️  [EXTERNAL] %s → %s (identity pending camera confirmation)",
+                key,
+                "someone_present" if state else "no_presence",
+            )
+
+    def someone_present(self) -> bool:
+        """Return whether any current external sensor reports occupancy."""
+        with self._lock:
+            return any(item.get("present", False) for item in self._external_presence.values())
 
     def chat_is_active(self) -> bool:
         """Return whether recent user chat should suppress ambient speech."""

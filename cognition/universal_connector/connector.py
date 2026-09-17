@@ -240,6 +240,10 @@ class UniversalConnector:
         current = {str(item.get("entity_id")): item for item in entities if item.get("entity_id")}
         if not self._ha_states:
             self._ha_states = {key: self._state_signature(item) for key, item in current.items()}
+            for entity_id, item in current.items():
+                signal = item.get("signal")
+                if signal in {"presence_detected", "no_presence"}:
+                    self._forward_external_presence(entity_id, signal == "presence_detected")
             logger.info("[UniversalConnector] Home Assistant baseline captured: %d entities", len(current))
             return
         for entity_id, item in current.items():
@@ -248,6 +252,8 @@ class UniversalConnector:
                 continue
             self._ha_states[entity_id] = signature
             signal = item.get("signal") or "state_changed"
+            if signal in {"presence_detected", "no_presence"}:
+                self._forward_external_presence(entity_id, signal == "presence_detected")
             payload = f"Home Assistant {item.get('friendly_name') or entity_id}: {signal} ({item.get('state')})"
             self.perceive(Percept(
                 modality="home_assistant",
@@ -263,6 +269,17 @@ class UniversalConnector:
     @staticmethod
     def _state_signature(item: Dict[str, Any]) -> str:
         return f"{item.get('state')}|{item.get('signal')}|{item.get('unit')}"
+
+    def _forward_external_presence(self, entity_id: str, present: bool) -> None:
+        """Forward occupancy to PresenceEngine without assigning identity."""
+        try:
+            from core.state import state
+            vision = getattr(state, "vision", None)
+            presence = getattr(vision, "presence_engine", None)
+            if presence is not None and hasattr(presence, "on_external_presence"):
+                presence.on_external_presence(entity_id, present, source="home_assistant")
+        except Exception as exc:
+            logger.debug("[UniversalConnector] external presence forwarding failed: %s", exc)
 
     def _maybe_boost_epistemic_pressure(self, percept: Percept) -> None:
         try:
