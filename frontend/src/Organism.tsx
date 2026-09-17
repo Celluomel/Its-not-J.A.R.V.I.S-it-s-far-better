@@ -137,37 +137,23 @@ function SculpturalLighting({ energy, reduced }: { energy: number; reduced: bool
   </>;
 }
 
-function Shell({ energy, reduced }: { energy: number; reduced: boolean }) {
-  const group = useRef<THREE.Group>(null);
-  const ribs = useMemo(() => {
-    return Array.from({ length: 7 }, (_, index) => {
-      const points = Array.from({ length: 28 }, (_, sample) => {
-        const t = sample / 27;
-        const angle = Math.PI * (t * .92 + .04);
-        const width = 1.58 - index * .10;
-        return new THREE.Vector3(
-          Math.cos(angle) * width,
-          (Math.sin(angle) * (1.23 - index * .055)) - .08,
-          -.54 + Math.sin(angle * 2 + index * .65) * .10,
-        );
-      });
-      return new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 64, .008 + (6 - index) * .001, 5, false);
-    });
-  }, []);
-  useEffect(() => () => ribs.forEach(rib => rib.dispose()), [ribs]);
+const shadowVertex = `varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
+const shadowFragment = `varying vec2 vUv; uniform float energy;
+void main(){ float d=length((vUv-.5)*2.); float softness=pow(max(0.,1.-d),2.2); float inner=pow(max(0.,1.-d*.72),3.); gl_FragColor=vec4(.05,.16,.16,softness*(.18+energy*.12)+inner*.08); }`;
+
+function GroundShadow({ energy, reduced }: { energy: number; reduced: boolean }) {
+  const material = useRef<THREE.ShaderMaterial>(null);
+  const mesh = useRef<THREE.Mesh>(null);
   useFrame((state, delta) => {
-    if (!group.current || reduced) return;
-    group.current.rotation.y = Math.sin(state.clock.elapsedTime * .12) * .055;
-    group.current.rotation.x = Math.cos(state.clock.elapsedTime * .10) * .025;
-    group.current.scale.setScalar(1 + Math.sin(state.clock.elapsedTime * .55) * (.008 + energy * .008));
+    if (!material.current || reduced) return;
+    material.current.uniforms.energy.value = energy;
+    const scale = 1 + Math.sin(state.clock.elapsedTime * .7) * (.018 + energy * .012);
+    mesh.current?.scale.set(1.18 * scale, .34 / scale, 1);
   });
-  return <group ref={group} position={[0, 0, -.48]} renderOrder={-1}>
-    <mesh scale={[1.04, .84, .36]}>
-      <sphereGeometry args={[1.55, 96, 64]}/>
-      <meshPhysicalMaterial color="#5aa99d" metalness={.18} roughness={.14} transmission={.72} thickness={1.1} clearcoat={1} clearcoatRoughness={.08} transparent opacity={.16 + energy * .035} side={THREE.BackSide} depthWrite={false}/>
-    </mesh>
-    {ribs.map((rib, index) => <mesh key={index} geometry={rib}><meshBasicMaterial color={index % 2 ? '#78d8c8' : '#d79da4'} transparent opacity={.15 + energy * .08} depthWrite={false}/></mesh>)}
-  </group>;
+  return <mesh ref={mesh} position={[0, -1.58, .18]} scale={[1.18, .34, 1]} rotation={[0, 0, 0]} renderOrder={-1}>
+    <circleGeometry args={[1, 96]}/>
+    <shaderMaterial ref={material} vertexShader={shadowVertex} fragmentShader={shadowFragment} uniforms={{ energy: { value: energy } }} transparent depthWrite={false}/>
+  </mesh>;
 }
 
 type OrganismMode = 'idle' | 'listening' | 'processing' | 'responding';
@@ -245,6 +231,6 @@ export default function Organism({ active, energy = 0, reduced, mode = active ? 
   const [lost, setLost] = useState(false);
   useEffect(() => { const change = () => setVisible(!document.hidden); document.addEventListener('visibilitychange', change); return () => document.removeEventListener('visibilitychange', change); }, []);
   return <div className="organism" role="img" aria-label={`Lumina visual organism, ${mode}`}>
-    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl, scene}) => { gl.toneMappingExposure = 1.12; scene.background = new THREE.Color('#060d12'); scene.fog = new THREE.Fog('#060d12', 4.5, 8); gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.18}/><SculpturalLighting energy={active ? .65 : energy} reduced={reduced}/><Atmosphere energy={active ? .65 : energy} reduced={reduced}/><Shell energy={active ? .65 : energy} reduced={reduced}/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
+    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl, scene}) => { gl.toneMappingExposure = 1.12; scene.background = new THREE.Color('#060d12'); scene.fog = new THREE.Fog('#060d12', 4.5, 8); gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.18}/><SculpturalLighting energy={active ? .65 : energy} reduced={reduced}/><Atmosphere energy={active ? .65 : energy} reduced={reduced}/><GroundShadow energy={active ? .65 : energy} reduced={reduced}/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
   </div>;
 }
