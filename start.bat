@@ -101,6 +101,17 @@ echo [*] Installing remaining dependencies...
 "%LUMINA_PYTHON%" -m pip install -r requirements.txt -q
 echo [OK] Core dependencies installed.
 
+REM --- Optional VoiceMem voice-memory extension ---
+REM Disabled by default: it is an additional package and must be explicitly
+REM enabled by the user. It never replaces the native memory/STT/TTS stack.
+if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" (
+    echo [*] Installing optional VoiceMem...
+    "%LUMINA_PYTHON%" -m pip install voicemem -q
+    if errorlevel 1 echo [WARN] VoiceMem install failed. Native memory remains available.
+) else (
+    echo [i] VoiceMem is optional. Set LUMINA_INSTALL_VOICEMEM=1 before setup to install it.
+)
+
 REM --- Create data dirs ---
 if not exist data\voices    mkdir data\voices
 if not exist data\faces     mkdir data\faces

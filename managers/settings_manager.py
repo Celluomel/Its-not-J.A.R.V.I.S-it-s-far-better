@@ -51,6 +51,12 @@ class AppSettings(BaseModel):
     MEMORY_COGNEE_PATH:  str  = "data/persona/cognee"  # Cognee knowledge-graph storage root
     MEMORY_COGNEE_EMBED_MODEL: str = ""  # Cognee embedding model
 
+    # Optional VoiceMem secondary voice-memory index.  Native memory and the
+    # configured STT/TTS pipeline remain canonical; this is opt-in and local.
+    VOICEMEM_ENABLED: bool = False
+    VOICEMEM_DATA_PATH: str = "data/persona/voicemem"
+    VOICEMEM_TOP_K: int = 5
+
     # Two-tier embedding stack (see utils/shared_embedder.py).
     # QUALITY tier: high-fidelity embeddings via an OpenAI-compatible
     # /v1/embeddings endpoint (LM Studio). Used for batch / semantic-critical

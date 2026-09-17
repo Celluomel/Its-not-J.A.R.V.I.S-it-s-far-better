@@ -186,6 +186,17 @@ class PersonaBridge:
         self._MAX_SESSION_VISUALS = 20
         self._pending_vision_context: str | None = None  # set per-turn, cleared in _build_prompt_and_cache
         self._recent_goal_means: dict = {}
+        self._voicemem = None
+        try:
+            from managers.settings_manager import config as _voice_cfg
+            from cognition.voicemem_adapter import VoiceMemAdapter
+            self._voicemem = VoiceMemAdapter(
+                enabled=bool(getattr(_voice_cfg, 'VOICEMEM_ENABLED', False)),
+                data_path=getattr(_voice_cfg, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
+                top_k=getattr(_voice_cfg, 'VOICEMEM_TOP_K', 5),
+            )
+        except Exception as _vme:
+            logger.debug("VoiceMem adapter unavailable: %s", _vme)
         self._init_lumina(external_llm_fn)
         # Wire CognitiveOrganism once ai_system is ready
         if self._system is not None:
@@ -1639,6 +1650,21 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                 return f"- [{mtype}]{tag_str} {text}"
 
             top_memories = memories[:8] if _surprised else memories[:5]
+            # VoiceMem is a secondary cache populated after prior turns.  It
+            # never starts another STT/TTS engine and therefore cannot take the
+            # audio lock or add a network/LLM call to the chat hot path.
+            if self._voicemem is not None:
+                try:
+                    # Retrieval is opt-in and runs in this existing prompt
+                    # worker thread. Native memory remains the first source.
+                    _voice_mems = self._voicemem.search(user_input, user_id=rel.user_id)
+                    if not _voice_mems:
+                        _voice_mems = self._voicemem.cached(rel.user_id)
+                    _known = {m.get('text', '') for m in top_memories}
+                    top_memories.extend(m for m in _voice_mems if m.get('text', '') not in _known)
+                    top_memories = top_memories[:8]
+                except Exception:
+                    pass
             mem_ctx = "\n".join(_fmt_memory(m) for m in top_memories) if top_memories else ""
 
             cond_section = ("━━ EXPERIENCE-BASED CAUTION ━━\n" + cond_dict["prompt_note"]) if cond_dict.get("prompt_note") else ""
@@ -2068,6 +2094,15 @@ Memory honesty — two distinct cases:
         """
         s = self._system
         try:
+            # Ingest the transcript only after the user-visible response has
+            # completed. This keeps VoiceMem entirely outside chat latency and
+            # reuses the transcript produced by the existing STT/chat path.
+            if self._voicemem is not None:
+                try:
+                    self._voicemem.ingest_text(user_input, user_id=user_id)
+                except Exception:
+                    logger.debug("VoiceMem post-turn ingestion failed", exc_info=True)
+
             # 9 + 10: repetition tracking
             if not hasattr(s, '_last_responses'):
                 s._last_responses = []

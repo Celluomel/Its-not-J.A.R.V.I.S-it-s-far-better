@@ -171,6 +171,17 @@ echo "[*] Installing project dependencies..."
 pip install -r requirements.txt -q
 echo "[OK] Dependencies installed"
 
+###########################################
+# Optional VoiceMem
+###########################################
+
+if [ "${LUMINA_INSTALL_VOICEMEM:-0}" = "1" ]; then
+    echo "[*] Installing optional VoiceMem voice-memory extension..."
+    pip install voicemem -q || echo "[WARN] VoiceMem install failed — native memory remains available"
+else
+    echo "[i] VoiceMem is optional. Set LUMINA_INSTALL_VOICEMEM=1 before setup to install it."
+fi
+
 if ! python -c "import spacy; spacy.load('en_core_web_sm')" >/dev/null 2>&1; then
     echo "[*] Installing spaCy English POS model for insight validation..."
     python -m spacy download en_core_web_sm -q

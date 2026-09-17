@@ -478,6 +478,7 @@ _SETTING_FIELDS = {
     'BRAVE_SEARCH_KEY', 'SERPAPI_KEY', 'MEMORY_BACKEND', 'MEMORY_DB_PATH',
     'MEMORY_FAISS_PATH', 'MEMORY_WORLD_PATH', 'MEMORY_PERSONA_PATH',
     'MEMORY_COGNEE_PATH', 'MEMORY_COGNEE_EMBED_MODEL', 'TTS_PROVIDER',
+    'VOICEMEM_ENABLED', 'VOICEMEM_DATA_PATH', 'VOICEMEM_TOP_K',
     'STT_PROVIDER', 'WHISPER_MODEL', 'ELEVENLABS_API_KEY', 'ELEVENLABS_VOICE_ID', 'COQUI_VOICE_REFERENCE',
     'VOICE_LANGUAGE', 'RESPONSE_LANGUAGE', 'VAD_AGGRESSIVENESS',
     'VAD_ONSET_CHUNKS', 'VAD_SILENCE_DURATION', 'VAD_MIN_SPEECH_DURATION',
@@ -881,6 +882,22 @@ def _settings_snapshot():
 @router.get('/settings')
 async def settings_snapshot():
     return {'values': _settings_snapshot(), 'secret_fields': sorted(_SECRET_FIELDS)}
+
+
+@router.get('/voicemem/status')
+async def voicemem_status():
+    """Report optional VoiceMem availability without importing it at boot."""
+    try:
+        from cognition.voicemem_adapter import VoiceMemAdapter
+        from managers.settings_manager import config
+        return VoiceMemAdapter(
+            enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
+            data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
+            top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
+        ).status()
+    except Exception as exc:
+        logger.debug('VoiceMem status unavailable: %s', exc)
+        return {'enabled': False, 'available': False, 'ready': False, 'error': str(exc)}
 
 
 @router.post('/settings')

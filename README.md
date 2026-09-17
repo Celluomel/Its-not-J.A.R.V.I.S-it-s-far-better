@@ -60,6 +60,12 @@ The project therefore treats failures, empty outputs and “no evidence” state
 
 The detailed architecture and evaluation protocol are documented in [A Persistent Cognitive Organism: Architecture, Mechanisms and Evaluation Protocol](docs/COGNITIVE_ORGANISM_RESEARCH_PAPER.md).
 
+## Optional VoiceMem integration
+
+[VoiceMem](https://github.com/xzf-thu/VoiceMem) is a promising research project for streaming factual and affective voice memory. It fits this harness as a **secondary, opt-in adapter**, not as a replacement for the existing STT, TTS or canonical episodic/semantic memory paths. The adapter reuses transcripts already produced by the configured Whisper/faster-whisper path, ingests them after a user turn, and keeps its own data directory at `data/persona/voicemem`. When enabled, retrieved VoiceMem context is labelled and added alongside native memories.
+
+The feature is disabled by default. Set `VOICEMEM_ENABLED` in Memory settings (persisted to `config.json`) only after installing the optional package. To install it during setup, set `LUMINA_INSTALL_VOICEMEM=1` before running `start.bat` or `setup.sh`; model downloads and any upstream provider requirements remain a separate, explicit step. If VoiceMem is missing, incompatible, or fails at runtime, the native memory and audio systems continue normally. Voice data is sensitive, so local storage and explicit consent are required.
+
 ## A useful research companion
 
 The research harness is also intended to be useful in ordinary intellectual work. Its companion layer can use the configured web-research tools to:
