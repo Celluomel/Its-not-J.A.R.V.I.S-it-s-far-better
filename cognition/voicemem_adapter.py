@@ -202,6 +202,10 @@ class VoiceMemAdapter:
             for key in ("text", "content", "memory", "summary", "description"):
                 if value.get(key):
                     return str(value[key]).strip()
+        for key in ("text", "content", "memory", "summary", "description"):
+            candidate = getattr(value, key, None)
+            if candidate:
+                return str(candidate).strip()
         return str(value or "").strip()
 
     def ingest_text(self, text: str, user_id: str = "default") -> bool:
@@ -293,6 +297,10 @@ class VoiceMemAdapter:
                 logger.warning("VoiceMem retrieval skipped: %s", exc)
         if isinstance(raw, dict):
             raw = raw.get("memories") or raw.get("results") or raw.get("items") or []
+        elif raw is not None and not isinstance(raw, (list, tuple, set)):
+            # VoiceMem's native API returns SearchResult, a structured object
+            # whose public left-brain facts are exposed through this property.
+            raw = getattr(raw, "result_leftbrain", None) or getattr(raw, "hits", None) or []
         result = []
         for item in list(raw or [])[: self.top_k]:
             text = self._text(item)
