@@ -81,6 +81,54 @@ void main(){
   gl_FragColor=vec4(red*(.72+coreIntensity*.55),.16+facing*.38+coreIntensity*.08);
 }`;
 
+function Atmosphere({ energy, reduced }: { energy: number; reduced: boolean }) {
+  const points = useRef<THREE.Points>(null);
+  const geometry = useMemo(() => {
+    const positions: number[] = [];
+    let seed = 421;
+    const random = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+    for (let i = 0; i < 180; i++) {
+      positions.push((random() - .5) * 7, (random() - .5) * 4.8, -1.8 - random() * 2.4);
+    }
+    const next = new THREE.BufferGeometry();
+    next.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    return next;
+  }, []);
+  useEffect(() => () => geometry.dispose(), [geometry]);
+  useFrame((state, delta) => {
+    if (!points.current || reduced) return;
+    points.current.rotation.z += delta * (.003 + energy * .006);
+    points.current.position.x = Math.sin(state.clock.elapsedTime * .08) * .025;
+  });
+  return <points ref={points} geometry={geometry} renderOrder={-2}>
+    <pointsMaterial color="#9acfc4" size={.018} transparent opacity={.16 + energy * .10} depthWrite={false} sizeAttenuation/>
+  </points>;
+}
+
+function SculpturalLighting({ energy, reduced }: { energy: number; reduced: boolean }) {
+  const key = useRef<THREE.SpotLight>(null);
+  const rim = useRef<THREE.SpotLight>(null);
+  useFrame((state, delta) => {
+    if (reduced) return;
+    const t = state.clock.elapsedTime;
+    if (key.current) {
+      key.current.position.x = -2.5 + Math.sin(t * .18) * .35;
+      key.current.position.y = 2.5 + Math.cos(t * .15) * .18;
+      key.current.intensity = 3.4 + energy * .9;
+    }
+    if (rim.current) {
+      rim.current.position.x = 2.4 + Math.cos(t * .14) * .4;
+      rim.current.position.y = .5 + Math.sin(t * .2) * .25;
+      rim.current.intensity = 2.8 + energy * 1.2;
+    }
+  });
+  return <>
+    <spotLight ref={key} position={[-2.5,2.5,3]} angle={.42} penumbra={.82} decay={1.5} distance={8} intensity={3.8} color="#ffd1bd"/>
+    <spotLight ref={rim} position={[2.4,.5,1.4]} angle={.5} penumbra={.9} decay={1.4} distance={7} intensity={3.2} color="#63e6d0"/>
+    <spotLight position={[0,-2.5,2]} angle={.62} penumbra={1} decay={1.7} distance={7} intensity={1.7} color="#a9a4ff"/>
+  </>;
+}
+
 type OrganismMode = 'idle' | 'listening' | 'processing' | 'responding';
 function Body({ energy, reduced, mode }: { energy: number; reduced: boolean; mode: OrganismMode }) {
   const viewport = useThree(state => state.viewport);
@@ -156,6 +204,6 @@ export default function Organism({ active, energy = 0, reduced, mode = active ? 
   const [lost, setLost] = useState(false);
   useEffect(() => { const change = () => setVisible(!document.hidden); document.addEventListener('visibilitychange', change); return () => document.removeEventListener('visibilitychange', change); }, []);
   return <div className="organism" role="img" aria-label={`Lumina visual organism, ${mode}`}>
-    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl}) => { gl.toneMappingExposure = 1.12; gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.32}/><pointLight position={[2.4,2.8,3.5]} intensity={3.4} color="#d6fff2"/><pointLight position={[-2.6,.4,2.2]} intensity={2.1} color="#f09bb3"/><pointLight position={[.5,-2.4,1.2]} intensity={1.6} color="#a7b7ff"/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
+    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl, scene}) => { gl.toneMappingExposure = 1.12; scene.background = new THREE.Color('#060d12'); scene.fog = new THREE.Fog('#060d12', 4.5, 8); gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.18}/><SculpturalLighting energy={active ? .65 : energy} reduced={reduced}/><Atmosphere energy={active ? .65 : energy} reduced={reduced}/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
   </div>;
 }
