@@ -36,7 +36,7 @@ if errorlevel 1 (
     goto :install_deps
 )
 
-goto :face_recognition_check
+goto facecheck
 
 REM --- First-time setup ---
 :setup
@@ -119,7 +119,7 @@ if not exist data\persona   mkdir data\persona
 if not exist logs           mkdir logs
 
 REM --- Face Recognition (optional - requires Visual C++ Build Tools) ---
-:face_recognition_check
+:facecheck
 "%LUMINA_PYTHON%" -c "import sys; raise SystemExit(0 if sys.version_info[:2] == (3, 11) else 1)" >nul 2>&1
 if errorlevel 1 (
     for /f "delims=" %%V in ('"%LUMINA_PYTHON%" -c "import sys; print(str(sys.version_info.major)+'.'+str(sys.version_info.minor))"') do set "PYTHON_VERSION=%%V"
