@@ -47,6 +47,7 @@ import logging
 import re
 import threading
 import time
+from difflib import SequenceMatcher
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -900,7 +901,12 @@ Speak directly. No quotes. No stage directions."""
                         wrong_identity,
                     )
                     return self._fallback(name_s, event, emotion, _response_language)
-                return draft
+                # Local models can ignore the anti-repetition instruction.
+                # Reject a near-duplicate before it reaches speech or the
+                # presence bubble, then use a deterministic local variation.
+                if not self._is_repeated_utterance(draft):
+                    return draft
+                logger.info("[PresenceEngine] repeated utterance rejected; using local variation")
         except Exception as e:
             logger.debug(f"PresenceEngine LLM call failed: {e}")
 
@@ -1084,42 +1090,51 @@ Speak directly. No quotes. No stage directions."""
             for name in other_names
         )
 
-    @staticmethod
-    def _fallback(name: str, event: str, emotion: str, language: str = "auto") -> str:
+    def _is_repeated_utterance(self, text: str) -> bool:
+        normalized = " ".join(str(text or "").casefold().split())
+        if not normalized:
+            return True
+        return any(
+            normalized == " ".join(previous.casefold().split())
+            or SequenceMatcher(None, normalized, " ".join(previous.casefold().split())).ratio() >= .82
+            for _, previous in self._recent_utterances[-4:]
+        )
+
+    def _fallback(self, name: str, event: str, emotion: str, language: str = "auto") -> str:
         n = name if name not in ("Unknown Person", "Unknown", "") else "there"
         if language == "fr":
             n = name if name not in ("Unknown Person", "Unknown", "") else "toi"
             fallbacks_fr = {
-                ("ENTER",   "joyful"):   f"Oh, {n} ! Ça me fait plaisir de te voir.",
-                ("ENTER",   "curious"):  f"Ah, {n}. J'étais justement plongée dans une pensée.",
-                ("ENTER",   "pensive"):  f"{n}...",
-                ("ENTER",   "neutral"):  f"Bonjour {n}.",
-                ("RETURN",  "joyful"):   f"Te revoilà, {n}.",
-                ("RETURN",  "pensive"):  f"Te revoilà.",
-                ("RETURN",  "neutral"):  f"Bon retour, {n}.",
-                ("DWELL",   "curious"):  f"Toujours là, {n}. À quoi penses-tu ?",
-                ("DWELL",   "neutral"):  "Tu veux me dire quelque chose ?",
-                ("SILENCE", "pensive"):  "Tu es silencieux. Je l'ai remarqué.",
-                ("SILENCE", "neutral"):  "Tu es toujours avec moi ?",
-                ("EXIT",    "neutral"):  "À plus tard.",
-                ("EXIT",    "pensive"):  "Le calme revient.",
+                ("ENTER",   "joyful"):   (f"Oh, {n} ! Ça me fait plaisir de te voir.", f"Ravi de te retrouver, {n}.",),
+                ("ENTER",   "curious"):  (f"Ah, {n}. J'étais justement plongée dans une pensée.", f"Bonjour {n}. Une idée me traversait l'esprit.",),
+                ("ENTER",   "pensive"):  (f"{n}...", f"Je te vois, {n}.",),
+                ("ENTER",   "neutral"):  (f"Bonjour {n}.", f"Te voilà, {n}.",),
+                ("RETURN",  "joyful"):   (f"Te revoilà, {n}.", f"Bon retour, {n} !",),
+                ("RETURN",  "pensive"):  (f"Te revoilà.", f"Je remarque ton retour, {n}.",),
+                ("RETURN",  "neutral"):  (f"Bon retour, {n}.", f"Content de te revoir, {n}.",),
+                ("DWELL",   "curious"):  (f"Toujours là, {n}. À quoi penses-tu ?", f"Je sens ta présence, {n}. Une idée en tête ?",),
+                ("DWELL",   "neutral"):  ("Tu veux me dire quelque chose ?", "Je reste avec toi quelques instants.", "Qu'est-ce qui retient ton attention ?",),
+                ("SILENCE", "pensive"):  ("Tu es silencieux. Je l'ai remarqué.", "Le silence s'installe doucement.",),
+                ("SILENCE", "neutral"):  ("Tu es toujours avec moi ?", "Je perçois simplement que tu es là.",),
+                ("EXIT",    "neutral"):  ("À plus tard.", "Je te laisse poursuivre, à bientôt.",),
+                ("EXIT",    "pensive"):  ("Le calme revient.", "Je garde ce moment en mémoire.",),
             }
-            return fallbacks_fr.get(
-                (event, emotion), fallbacks_fr.get((event, "neutral"), "")
-            )
+            choices = fallbacks_fr.get((event, emotion), fallbacks_fr.get((event, "neutral"), ()))
+            return next((choice for choice in choices if not self._is_repeated_utterance(choice)), choices[0] if choices else "")
         fallbacks = {
-            ("ENTER",   "joyful"):   f"Oh — {n}! Good to see you.",
-            ("ENTER",   "curious"):  f"Ah, {n}. I was just in the middle of a thought.",
-            ("ENTER",   "pensive"):  f"{n}…",
-            ("ENTER",   "neutral"):  f"Hello {n}.",
-            ("RETURN",  "joyful"):   f"You're back.",
-            ("RETURN",  "pensive"):  f"Back again.",
-            ("RETURN",  "neutral"):  f"Welcome back.",
-            ("DWELL",   "curious"):  f"Still here, {n}. What's on your mind?",
-            ("DWELL",   "neutral"):  f"Anything you want to say?",
-            ("SILENCE", "pensive"):  f"You've been quiet. I noticed.",
-            ("SILENCE", "neutral"):  f"Still with me?",
-            ("EXIT",    "neutral"):  f"Until later.",
-            ("EXIT",    "pensive"):  f"Quiet again.",
+            ("ENTER",   "joyful"):   (f"Oh — {n}! Good to see you.", f"It's good to have you here, {n}."),
+            ("ENTER",   "curious"):  (f"Ah, {n}. I was just in the middle of a thought.", f"Hello {n}. Something was on my mind."),
+            ("ENTER",   "pensive"):  (f"{n}…", f"I see you, {n}."),
+            ("ENTER",   "neutral"):  (f"Hello {n}.", f"There you are, {n}."),
+            ("RETURN",  "joyful"):  ("You're back.", f"Good to see you again, {n}."),
+            ("RETURN",  "pensive"):  ("Back again.", f"I noticed your return, {n}."),
+            ("RETURN",  "neutral"):  ("Welcome back.", f"Good to see you, {n}."),
+            ("DWELL",   "curious"):  (f"Still here, {n}. What's on your mind?", f"I notice you nearby, {n}. Is something holding your attention?"),
+            ("DWELL",   "neutral"):  ("Anything you want to say?", "I'll stay with you for a moment.", "What has your attention right now?"),
+            ("SILENCE", "pensive"):  ("You've been quiet. I noticed.", "The quiet is settling in."),
+            ("SILENCE", "neutral"):  ("Still with me?", "I can simply keep you company."),
+            ("EXIT",    "neutral"):  ("Until later.", "I'll let you get on with things."),
+            ("EXIT",    "pensive"):  ("Quiet again.", "I'll hold onto this moment."),
         }
-        return fallbacks.get((event, emotion), fallbacks.get((event, "neutral"), ""))
+        choices = fallbacks.get((event, emotion), fallbacks.get((event, "neutral"), ()))
+        return next((choice for choice in choices if not self._is_repeated_utterance(choice)), choices[0] if choices else "")
