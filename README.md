@@ -66,6 +66,8 @@ The detailed architecture and evaluation protocol are documented in [A Persisten
 
 The feature is disabled by default. Set `VOICEMEM_ENABLED` in Memory settings (persisted to `config.json`) only after installing the optional package. To install it during setup, set `LUMINA_INSTALL_VOICEMEM=1` before running `start.bat` or `setup.sh`; model downloads and any upstream provider requirements remain a separate, explicit step. If VoiceMem is missing, incompatible, or fails at runtime, the native memory and audio systems continue normally. Voice data is sensitive, so local storage and explicit consent are required.
 
+The current adapter now records bounded transcript observations, supports incremental STT segments through `ingest_segment(..., final=True)`, consolidates exact repeats with provenance, and reports retrieval evidence. Observations remain `unclassified` until a later explicit extraction and user-confirmation stage; the adapter does not silently convert conversation text into personal facts. This distinction keeps experimental memory formation auditable and reversible.
+
 ## A useful research companion
 
 The research harness is also intended to be useful in ordinary intellectual work. Its companion layer can use the configured web-research tools to:

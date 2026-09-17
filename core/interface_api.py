@@ -890,11 +890,14 @@ async def voicemem_status():
     try:
         from cognition.voicemem_adapter import VoiceMemAdapter
         from managers.settings_manager import config
-        return VoiceMemAdapter(
+        adapter = VoiceMemAdapter(
             enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
             data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
             top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
-        ).status()
+        )
+        result = adapter.status()
+        result['evaluation'] = adapter.evaluation()
+        return result
     except Exception as exc:
         logger.debug('VoiceMem status unavailable: %s', exc)
         return {'enabled': False, 'available': False, 'ready': False, 'error': str(exc)}
