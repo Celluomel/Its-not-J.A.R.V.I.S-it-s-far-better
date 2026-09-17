@@ -459,7 +459,12 @@ async def discover_home_assistant():
     if organism is None:
         raise HTTPException(503, 'Cognitive organism is not ready.')
     from cognition.universal_connector import get_universal_connector
-    return _json_safe(await asyncio.to_thread(get_universal_connector(organism).discover_home_assistant))
+    result = await asyncio.to_thread(get_universal_connector(organism).discover_home_assistant)
+    if result.get('ok'):
+        from managers.settings_manager import save_settings
+        config.HOME_ASSISTANT_DISCOVERED_ENTITIES = json.dumps(result.get('entities', []), ensure_ascii=False)
+        save_settings(config, silent=True)
+    return _json_safe(result)
 
 
 class NetworkAction(BaseModel):
@@ -502,7 +507,7 @@ _SETTING_FIELDS = {
     'OBSERVATORY_BASELINE_SAMPLES', 'OBSERVATORY_EMERGENCE_THRESHOLD',
     'NICEGUI_HOST', 'UNIVERSAL_CONNECTOR_ENABLED', 'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED',
     'HOME_ASSISTANT_URL', 'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL',
-    'HOME_ASSISTANT_POLL_INTERVAL', 'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES',
+    'HOME_ASSISTANT_POLL_INTERVAL', 'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_DISCOVERED_ENTITIES',
 }
 _SECRET_FIELDS = {
     'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'BRAVE_SEARCH_KEY', 'SERPAPI_KEY',
@@ -990,7 +995,7 @@ async def update_settings(payload: SettingsUpdate):
             await asyncio.to_thread(state.reload_audio)
     if {'UNIVERSAL_CONNECTOR_ENABLED', 'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED', 'HOME_ASSISTANT_URL',
         'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL', 'HOME_ASSISTANT_POLL_INTERVAL',
-        'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES'}.intersection(changed):
+        'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_DISCOVERED_ENTITIES'}.intersection(changed):
         organism = getattr(getattr(state, 'persona', None), '_organism', None)
         if organism is not None:
             from cognition.universal_connector import get_universal_connector

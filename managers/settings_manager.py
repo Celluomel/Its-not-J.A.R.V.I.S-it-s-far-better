@@ -151,8 +151,9 @@ class AppSettings(BaseModel):
     HOME_ASSISTANT_TOKEN: str = ""
     HOME_ASSISTANT_VERIFY_SSL: bool = True
     HOME_ASSISTANT_POLL_INTERVAL: int = 5
-    HOME_ASSISTANT_ALLOWED_DOMAINS: str = "person,device_tracker,sensor,binary_sensor,zone"
+    HOME_ASSISTANT_ALLOWED_DOMAINS: str = ""
     HOME_ASSISTANT_SELECTED_ENTITIES: str = ""
+    HOME_ASSISTANT_DISCOVERED_ENTITIES: str = ""
 
     # Headless brain API (brain.py)
     BRAIN_API_PORT: int = 8765         # REST + webhook listen port
