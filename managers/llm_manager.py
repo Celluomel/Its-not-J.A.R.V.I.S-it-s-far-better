@@ -321,6 +321,10 @@ class LMStudioProvider(BaseLLMProvider):
                         if token:
                             emitted += len(token)
                             yield token
+                        # Preserve provider completion metadata so the chat
+                        # bridge can distinguish a clean stop from max_tokens.
+                        if finish_reason:
+                            yield {"type": "finish", "reason": finish_reason}
                     except (json.JSONDecodeError, KeyError):
                         continue
             if emitted == 0:
@@ -714,6 +718,13 @@ class LLMManager:
             if owns_chat_marker:
                 self._chat_active.clear()
         full_response = "".join(accumulated)
+        # Native reasoning events are excluded above. Remove tagged private
+        # channels from the persisted fallback as well.
+        import re
+        full_response = re.sub(
+            r"<think>[\s\S]*?(?:</think>|$)|<analysis>[\s\S]*?(?:</analysis>|$)",
+            "", full_response, flags=re.IGNORECASE,
+        ).strip()
         self.history.extend([
             {"role": "user",      "content": prompt},
             {"role": "assistant", "content": full_response},

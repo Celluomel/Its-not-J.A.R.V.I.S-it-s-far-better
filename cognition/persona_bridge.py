@@ -835,6 +835,7 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
         # ── Phase B: stream tokens ───────────────────────────────────
         accumulated = []
         _reasoning_seen = []
+        _finish_reason = None
         _think_buf  = []          # buffer tokens while inside a reasoning block
         _in_think   = False       # True while consuming a reasoning block
         # Match any known reasoning/channel open tag
@@ -989,6 +990,8 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                     _reasoning_text = str(token["text"])[:4000]
                     _reasoning_seen.append(_reasoning_text)
                     yield {"type": "reasoning", "text": _reasoning_text}
+                elif token.get("type") == "finish":
+                    _finish_reason = str(token.get("reason") or "")
                 continue
 
             # ── Strip <think>…</think> reasoning blocks ───────────────
@@ -1114,7 +1117,9 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
             accumulated.clear()
             raw_response = ""
 
-        if not raw_response.strip() and (_reasoning_seen or _meta_only):
+        if not raw_response.strip() and (
+            _reasoning_seen or _meta_only or _finish_reason == "length"
+        ):
             _llm_manager = getattr(self._llm_stream_fn, "__self__", None)
             _recover_fn = getattr(_llm_manager, "recover_final_response", None)
             if callable(_recover_fn):
@@ -1156,6 +1161,20 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                 _history[-1]["content"] = raw_response
             accumulated.append(raw_response)
             yield raw_response
+
+        # LLMManager persists the raw stream before this bridge completes its
+        # channel stripping. Keep only the user-visible answer in history.
+        try:
+            _llm_manager = getattr(self._llm_stream_fn, "__self__", None)
+            _history = getattr(_llm_manager, "history", None)
+            if isinstance(_history, list) and _history and _history[-1].get("role") == "assistant":
+                _history[-1]["content"] = raw_response
+        except Exception:
+            logger.debug("Could not sanitize completed chat history", exc_info=True)
+        if _finish_reason == "length":
+            logger.warning(
+                "[Chat stream] provider reached max_tokens; visible response was preserved"
+            )
         if _safety is not None:
             _or = _safety.check_output(raw_response, user_id)
             if _or.triggered:
@@ -2502,12 +2521,25 @@ Memory honesty — two distinct cases:
         if not value:
             return False
         unwrapped = value.strip("*_ ")
-        if not (unwrapped.startswith("(") and unwrapped.endswith(")")):
-            return False
-        return bool(re.search(
+        if (
+            unwrapped.startswith("(")
+            and unwrapped.endswith(")")
+            and re.search(
             r"\b(self[- ]correction|final check|cognitive energy check|"
             r"intent|stance|suppress|style|planning note|private reasoning)\b",
             unwrapped,
+            flags=re.IGNORECASE,
+            )
+        ):
+            return True
+        # Gemma can flatten its hidden instruction channel into ordinary
+        # content. These lead-ins are internal control text, not an answer.
+        return bool(re.match(
+            r"^(?:the\s+)?core\s+directive\s+requires\b|"
+            r"^the\s+directive\s+requires\b|"
+            r"^final\s+check\s+on\s+phrasing\b|"
+            r"^\(?self[- ]correction:\s*",
+            value,
             flags=re.IGNORECASE,
         ))
 
