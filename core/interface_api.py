@@ -478,7 +478,7 @@ _SETTING_FIELDS = {
     'BRAVE_SEARCH_KEY', 'SERPAPI_KEY', 'MEMORY_BACKEND', 'MEMORY_DB_PATH',
     'MEMORY_FAISS_PATH', 'MEMORY_WORLD_PATH', 'MEMORY_PERSONA_PATH',
     'MEMORY_COGNEE_PATH', 'MEMORY_COGNEE_EMBED_MODEL', 'TTS_PROVIDER',
-    'VOICEMEM_ENABLED', 'VOICEMEM_DATA_PATH', 'VOICEMEM_TOP_K',
+    'VOICEMEM_ENABLED', 'VOICEMEM_DATA_PATH', 'VOICEMEM_TOP_K', 'VOICEMEM_LOCAL_MODE',
     'STT_PROVIDER', 'WHISPER_MODEL', 'ELEVENLABS_API_KEY', 'ELEVENLABS_VOICE_ID', 'COQUI_VOICE_REFERENCE',
     'VOICE_LANGUAGE', 'RESPONSE_LANGUAGE', 'VAD_AGGRESSIVENESS',
     'VAD_ONSET_CHUNKS', 'VAD_SILENCE_DURATION', 'VAD_MIN_SPEECH_DURATION',
@@ -894,6 +894,7 @@ async def voicemem_status():
             enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
             data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
             top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
+            local_mode=bool(getattr(config, 'VOICEMEM_LOCAL_MODE', True)),
         )
         result = adapter.status()
         result['evaluation'] = adapter.evaluation()
@@ -913,6 +914,7 @@ async def voicemem_space():
             enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
             data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
             top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
+            local_mode=bool(getattr(config, 'VOICEMEM_LOCAL_MODE', True)),
         )
         return _json_safe(adapter.space_snapshot())
     except Exception as exc:

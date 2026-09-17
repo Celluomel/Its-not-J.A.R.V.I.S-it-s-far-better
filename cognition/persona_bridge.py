@@ -194,6 +194,7 @@ class PersonaBridge:
                 enabled=bool(getattr(_voice_cfg, 'VOICEMEM_ENABLED', False)),
                 data_path=getattr(_voice_cfg, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
                 top_k=getattr(_voice_cfg, 'VOICEMEM_TOP_K', 5),
+                local_mode=bool(getattr(_voice_cfg, 'VOICEMEM_LOCAL_MODE', True)),
             )
         except Exception as _vme:
             logger.debug("VoiceMem adapter unavailable: %s", _vme)

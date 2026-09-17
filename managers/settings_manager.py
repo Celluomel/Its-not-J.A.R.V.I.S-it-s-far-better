@@ -56,6 +56,7 @@ class AppSettings(BaseModel):
     VOICEMEM_ENABLED: bool = False
     VOICEMEM_DATA_PATH: str = "data/persona/voicemem"
     VOICEMEM_TOP_K: int = 5
+    VOICEMEM_LOCAL_MODE: bool = True
 
     # Two-tier embedding stack (see utils/shared_embedder.py).
     # QUALITY tier: high-fidelity embeddings via an OpenAI-compatible

@@ -21,8 +21,9 @@ class VoiceMemAdapter:
     """Lazy, best-effort VoiceMem integration using Lumina's existing transcript."""
 
     def __init__(self, enabled: bool = False, data_path: str = "data/persona/voicemem",
-                 top_k: int = 5) -> None:
+                 top_k: int = 5, local_mode: bool = True) -> None:
         self.enabled = bool(enabled)
+        self.local_mode = bool(local_mode)
         self.data_path = Path(data_path or "data/persona/voicemem")
         self.top_k = max(1, min(int(top_k or 5), 20))
         self._vm: Any = None
@@ -31,6 +32,7 @@ class VoiceMemAdapter:
         self._latest: dict[str, list[dict[str, Any]]] = {}
         self._segments: dict[str, str] = {}
         self._ledger: dict[str, Any] = {"observations": [], "retrievals": [], "consolidations": 0}
+        self._backend_mode = "local_fallback"
         self._state_path = self.data_path / "adapter_state.json"
         self._read_state()
 
@@ -67,6 +69,8 @@ class VoiceMemAdapter:
             "ready": self._vm is not None,
             "data_path": str(self.data_path),
             "top_k": self.top_k,
+            "local_mode": self.local_mode,
+            "backend_mode": self._backend_mode,
             "error": self._error,
             "observations": len(self._ledger.get("observations", [])),
             "retrievals": len(self._ledger.get("retrievals", [])),
@@ -85,6 +89,19 @@ class VoiceMemAdapter:
                 cls = getattr(module, "VoiceMem", None)
                 if cls is None:
                     raise RuntimeError("VoiceMem package exposes no VoiceMem class")
+                if self.local_mode:
+                    # The default VoiceMem constructor selects OpenAI-backed
+                    # components. Inject local embedding and slot routing.
+                    from voicemem.leftbrain.local_e5_embedder import LocalE5Embedder, shared_e5
+                    from voicemem.leftbrain.cognitive_graph.local_query_classifier import LocalQueryClassifier
+                    self._vm = cls(
+                        mode="text_mode", memory_root=str(self.data_path),
+                        user_id="default", embedding=lambda: LocalE5Embedder(),
+                        schema=lambda: LocalQueryClassifier(model=shared_e5()),
+                        enable_emotion=False,
+                    )
+                    self._backend_mode = "local"
+                    return self._vm
                 # Keep construction permissive across upstream API revisions.
                 for kwargs in (
                     {"persist_dir": str(self.data_path)},
