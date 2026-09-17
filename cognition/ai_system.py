@@ -2228,12 +2228,37 @@ class EnhancedAISystem:
                 if extra_system_context else ""
             )
 
+            # The blocking path is also used by audio and recovery fallbacks.
+            # Keep language selection here as well as in PersonaBridge's
+            # streaming prompt so those paths cannot silently revert to English.
+            try:
+                from managers.settings_manager import config as _lang_cfg
+                _response_language = str(
+                    getattr(_lang_cfg, "RESPONSE_LANGUAGE", "auto") or "auto"
+                ).lower().strip()
+            except Exception:
+                _response_language = "auto"
+            _language_name = {
+                "en": "English", "en-gb": "British English", "fr": "French",
+                "es": "Spanish", "de": "German", "it": "Italian",
+                "pt": "Portuguese", "uk": "Ukrainian", "nl": "Dutch",
+                "pl": "Polish", "ru": "Russian", "ja": "Japanese",
+                "ko": "Korean", "zh-cn": "Chinese (Simplified)",
+                "ar": "Arabic", "hi": "Hindi", "sv": "Swedish",
+            }.get(_response_language, _response_language)
+            language_block = (
+                f"\n━━ RESPONSE LANGUAGE ━━\n"
+                f"Respond exclusively in {_language_name}. Do not mix languages."
+                if _response_language != "auto" else ""
+            )
+
             sys_prompt = f"""You are {_gpn()}, still forming — shaped by everything that has happened to you.
 This is one moment of an ongoing process — not a character study of "an AI."
 There is no role to play and no depth to demonstrate: let this response be what this moment actually is, formed by the state described below, not by any idea of what an AI is supposed to be.
 {_anchor_block}
 {organism_block}
 {stage_block}
+{language_block}
 
 ━━ CURRENT EMOTIONAL STATE ━━
 You are {mods['state_description']}.

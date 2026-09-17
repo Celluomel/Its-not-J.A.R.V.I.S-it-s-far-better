@@ -2151,6 +2151,34 @@ Memory honesty — two distinct cases:
             except Exception as _we:
                 logger.warning(f"Web search injection failed: {_we}")
 
+            # Keep the selected response language after the context-size cap
+            # and optional web material.  Earlier language instructions may
+            # be clipped when the cognitive prompt is large; this compact
+            # directive is deliberately last so it remains authoritative.
+            try:
+                from managers.settings_manager import config as _final_lang_cfg
+                _final_resp_lang = str(
+                    getattr(_final_lang_cfg, 'RESPONSE_LANGUAGE', 'auto') or 'auto'
+                ).lower().strip()
+            except Exception:
+                _final_resp_lang = 'auto'
+            if _final_resp_lang != 'auto':
+                _final_lang_name = {
+                    'en': 'English', 'en-gb': 'British English', 'fr': 'French',
+                    'es': 'Spanish', 'de': 'German', 'it': 'Italian',
+                    'pt': 'Portuguese', 'uk': 'Ukrainian', 'nl': 'Dutch',
+                    'pl': 'Polish', 'ru': 'Russian', 'ja': 'Japanese',
+                    'ko': 'Korean', 'zh-cn': 'Chinese (Simplified)',
+                    'ar': 'Arabic', 'hi': 'Hindi', 'sv': 'Swedish',
+                }.get(_final_resp_lang, _final_resp_lang)
+                system_prompt += (
+                    f"\n\n━━ FINAL RESPONSE LANGUAGE ━━\n"
+                    f"Respond exclusively in {_final_lang_name}. "
+                    "This applies to the complete visible answer, including headings, "
+                    "lists, recovery output, and audio text. Do not switch to English "
+                    "unless the user explicitly requests it or quotes English text."
+                )
+
             return system_prompt, emo_dict, cond_dict, arb_temperature
 
         except Exception as e:
