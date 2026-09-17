@@ -903,6 +903,20 @@ async def voicemem_status():
 @router.post('/settings')
 async def update_settings(payload: SettingsUpdate):
     from managers.settings_manager import config, save_settings
+    # Do not persist an enabled VoiceMem state that cannot work.  This keeps
+    # config.json truthful and avoids a confusing silent fallback on restart.
+    if 'VOICEMEM_ENABLED' in payload.values and bool(payload.values.get('VOICEMEM_ENABLED')):
+        try:
+            from importlib.util import find_spec
+            if find_spec('voicemem') is None:
+                raise HTTPException(
+                    400,
+                    'VoiceMem is not installed. Set LUMINA_INSTALL_VOICEMEM=1 and rerun setup, then enable it.'
+                )
+        except HTTPException:
+            raise
+        except Exception as exc:
+            raise HTTPException(400, f'VoiceMem availability check failed: {exc}') from exc
     changed = []
     for name, value in payload.values.items():
         if name not in _SETTING_FIELDS:
