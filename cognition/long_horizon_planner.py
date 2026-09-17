@@ -476,7 +476,13 @@ class LongHorizonPlanner:
             if plan.source != "aspiration" or plan.status != "active":
                 continue
             step = self.current_step(domain)
-            if step is None or step.operation != operation:
+            # GoalActionExecutor reports the coarse action type (for example
+            # ``social``), while aspiration steps retain the concrete
+            # operation (for example ``user_question``). Accept both names
+            # so a valid completed action can advance the persisted plan.
+            if step is None or (
+                step.operation != operation and step.action_type != operation
+            ):
                 continue
             aspiration = next(
                 (a for a in asp.aspirations.values()
