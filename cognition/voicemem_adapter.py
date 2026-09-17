@@ -251,20 +251,24 @@ class VoiceMemAdapter:
             self._write_state()
         return result
 
-    def evaluation(self, user_id: str = "default") -> dict[str, Any]:
+    def evaluation(self, user_id: str | None = None) -> dict[str, Any]:
         """Return observable retrieval/consolidation evidence, not a quality claim."""
-        retrievals = [r for r in self._ledger.get("retrievals", []) if r.get("user_id") == user_id]
+        retrievals = [r for r in self._ledger.get("retrievals", [])
+                      if user_id is None or r.get("user_id") == user_id]
         nonempty = sum(1 for r in retrievals if r.get("result_count", 0) > 0)
         return {
             "retrievals": len(retrievals),
             "nonempty_retrievals": nonempty,
             "retrieval_hit_rate": round(nonempty / len(retrievals), 3) if retrievals else None,
             "observations": sum(1 for o in self._ledger.get("observations", [])
-                                 if o.get("user_id") == user_id and o.get("status") in {"ingested", "fallback"}),
+                                 if (user_id is None or o.get("user_id") == user_id)
+                                 and o.get("status") in {"ingested", "fallback"}),
             "indexed_observations": sum(1 for o in self._ledger.get("observations", [])
-                                         if o.get("user_id") == user_id and o.get("status") == "ingested"),
+                                         if (user_id is None or o.get("user_id") == user_id)
+                                         and o.get("status") == "ingested"),
             "fallback_observations": sum(1 for o in self._ledger.get("observations", [])
-                                          if o.get("user_id") == user_id and o.get("status") == "fallback"),
+                                          if (user_id is None or o.get("user_id") == user_id)
+                                          and o.get("status") == "fallback"),
             "verified_memories": 0,
             "note": "Voice observations are not promoted to verified facts without confirmation.",
         }
@@ -272,16 +276,16 @@ class VoiceMemAdapter:
     def cached(self, user_id: str = "default") -> list[dict[str, Any]]:
         return list(self._latest.get(user_id, []))
 
-    def space_snapshot(self, user_id: str = "default") -> dict[str, Any]:
+    def space_snapshot(self, user_id: str | None = None) -> dict[str, Any]:
         """Return a UI-safe view of the local VoiceMem memory space."""
         with self._lock:
             observations = [
                 dict(item) for item in self._ledger.get("observations", [])
-                if item.get("user_id", "default") == user_id
+                if user_id is None or item.get("user_id", "default") == user_id
             ][-12:]
             retrievals = [
                 dict(item) for item in self._ledger.get("retrievals", [])
-                if item.get("user_id", "default") == user_id
+                if user_id is None or item.get("user_id", "default") == user_id
             ][-8:]
         return {
             "status": self.status(),
