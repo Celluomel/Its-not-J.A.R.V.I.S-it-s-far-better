@@ -892,11 +892,16 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                     from managers.settings_manager import config as _tbcfg
                     _verbosity_tok = getattr(_tbcfg, 'RESPONSE_VERBOSITY', 'concise')
                     if _verbosity_tok == 'concise':
-                        _max_tokens = int(getattr(_tbcfg, 'RESPONSE_TOKENS_CONCISE', 300))
+                        _configured_tokens = int(getattr(_tbcfg, 'RESPONSE_TOKENS_CONCISE', 300))
+                        # The selector is a style instruction, not a hard
+                        # truncation point. Keep enough headroom for Gemma's
+                        # private reasoning channel before its final answer.
+                        _max_tokens = max(2048, _configured_tokens)
                     else:
-                        _max_tokens = int(getattr(_tbcfg, 'RESPONSE_TOKENS_VERBOSE', 1200))
+                        _configured_tokens = int(getattr(_tbcfg, 'RESPONSE_TOKENS_VERBOSE', 1200))
+                        _max_tokens = max(4096, _configured_tokens)
                 except Exception:
-                    _max_tokens = 300
+                    _max_tokens = 2048
                 _validate_before_display = bool(
                     _quantitative_analysis is not None
                     or (
@@ -1135,7 +1140,7 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                         _recover_fn,
                         _generation_input,
                         _final_only_system,
-                        max_tokens=600,
+                        max_tokens=2048,
                         temperature=0.35,
                     )
                     raw_response = self._strip_think(raw_response).strip()

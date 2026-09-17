@@ -151,10 +151,11 @@ class AppSettings(BaseModel):
     # Persona system (Lumina psychological subsystems)
     PERSONA_ENABLED: bool = True
 
-    # Response verbosity: "concise" (up to 140 words) | "verbose" (extended)
+    # Response verbosity is a prompt-level style instruction. These values are
+    # provider safety floors/ceilings, never a word limit for the user answer.
     RESPONSE_VERBOSITY: str = "concise"
-    RESPONSE_TOKENS_CONCISE: int = 300    # max_tokens when concise mode
-    RESPONSE_TOKENS_VERBOSE: int = 1200   # max_tokens when verbose mode
+    RESPONSE_TOKENS_CONCISE: int = 2048  # inference safety budget
+    RESPONSE_TOKENS_VERBOSE: int = 4096  # inference safety budget
 
     # Custom system prompt suffix — appended after the built-in HOW TO RESPOND block.
     # Empty string = use built-in prompt only (recommended default).
