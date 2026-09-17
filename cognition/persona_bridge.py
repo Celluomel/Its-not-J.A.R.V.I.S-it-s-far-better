@@ -370,8 +370,43 @@ class PersonaBridge:
                 return
 
         try:
+            # Some providers do not expose a streaming function and use this
+            # blocking compatibility path. Keep VoiceMem active there too;
+            # otherwise ingestion works but retrieval remains at zero and
+            # the response model never sees the stored voice context.
+            _voicemem_context = ""
+            if self._voicemem is not None:
+                try:
+                    _voice_mems = await asyncio.to_thread(
+                        self._voicemem.search, effective_input, user_id
+                    )
+                    if not _voice_mems:
+                        _voice_mems = self._voicemem.cached(user_id)
+                    if _voice_mems:
+                        _voicemem_context = (
+                            "━━ VOICEMEM RETRIEVED CONTEXT ━━\n"
+                            "These are stored observations from the user's prior speech. "
+                            "Use them as factual context, but do not mention VoiceMem.\n"
+                            + "\n".join(
+                                f"- {item.get('text', '').strip()}"
+                                for item in _voice_mems[:5]
+                                if item.get('text', '').strip()
+                            )
+                        )
+                    logger.info(
+                        "[VoiceMem] blocking retrieval query=%r user=%r results=%d",
+                        effective_input[:80], user_id, len(_voice_mems),
+                    )
+                except Exception as _voice_retrieval_error:
+                    logger.warning(
+                        "[VoiceMem] blocking retrieval failed for user %r: %s",
+                        user_id, _voice_retrieval_error,
+                    )
             response = await asyncio.to_thread(
-                self._system.get_response, effective_input, user_id
+                self._system.get_response,
+                effective_input,
+                user_id,
+                _voicemem_context,
             )
         except Exception as e:
             logger.error(f"Lumina get_response failed: {e}")
