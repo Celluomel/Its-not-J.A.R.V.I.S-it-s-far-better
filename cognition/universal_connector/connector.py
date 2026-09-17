@@ -173,8 +173,31 @@ class UniversalConnector:
                         "last_changed": item.get("last_changed"),
                     })
             entities.sort(key=lambda item: item["entity_id"])
-            self._ha_entities = {item["entity_id"]: item for item in entities}
-            logger.info("[UniversalConnector] Home Assistant discovery: %d permitted entities", len(entities))
+            next_entities = {item["entity_id"]: item for item in entities}
+            previous_entities = self._ha_entities
+            changed_ids = {
+                entity_id for entity_id, item in next_entities.items()
+                if previous_entities.get(entity_id) != item
+            }
+            changed_ids.update(set(previous_entities) - set(next_entities))
+            self._ha_entities = next_entities
+            if not previous_entities or len(previous_entities) != len(next_entities):
+                logger.info(
+                    "[UniversalConnector] Home Assistant discovery: %d permitted entities",
+                    len(entities),
+                )
+            elif changed_ids:
+                logger.info(
+                    "[UniversalConnector] Home Assistant refresh: %d/%d entities changed",
+                    len(changed_ids), len(entities),
+                )
+            else:
+                # A five-second poll is intentional for presence latency, but
+                # an unchanged snapshot should not flood the application log.
+                logger.debug(
+                    "[UniversalConnector] Home Assistant refresh unchanged: %d entities",
+                    len(entities),
+                )
             return {"ok": True, "status": "connected", "entities": entities, "count": len(entities)}
         except HTTPError as exc:
             status = "unauthorized" if exc.code in {401, 403} else "http_error"
