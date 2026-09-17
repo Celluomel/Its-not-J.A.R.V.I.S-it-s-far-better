@@ -2056,7 +2056,8 @@ Memory honesty — two distinct cases:
                         "These are the authoritative current read-only sensor observations. "
                         "When the user asks for a current value, answer from this block exactly; "
                         "never substitute an older memory or invent a value. Use them only when relevant, "
-                        "and do not infer a person's identity from an occupancy sensor."
+                        "and do not infer a person's identity from an occupancy sensor. "
+                        "Do not claim to have read a sensor unless its value appears in this block."
                     )
             except Exception:
                 pass

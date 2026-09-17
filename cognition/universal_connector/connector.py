@@ -169,6 +169,8 @@ class UniversalConnector:
                         "domain": domain,
                         "device_class": device_class,
                         "signal": signal,
+                        "last_updated": item.get("last_updated"),
+                        "last_changed": item.get("last_changed"),
                     })
             entities.sort(key=lambda item: item["entity_id"])
             self._ha_entities = {item["entity_id"]: item for item in entities}
@@ -279,7 +281,12 @@ class UniversalConnector:
             return ""
         selected = self._selected_home_assistant_entities()
         observed_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
-        lines = [f"Observed from Home Assistant at {observed_at} (authoritative live snapshot):"]
+        lines = [
+            f"Observed from Home Assistant at {observed_at} (authoritative live snapshot).",
+            "These selected external sensor data are relevant evidence about the current environment.",
+            "Use a sensor only when relevant to the user's question; preserve its exact value and unit.",
+            "Prefer the sensor timestamp over older conversation or memory data. If a requested value is absent, say it is unavailable.",
+        ]
         for entity_id, item in self._ha_entities.items():
             if selected and entity_id not in selected:
                 continue
@@ -291,7 +298,8 @@ class UniversalConnector:
                 value = "presence detected"
             elif signal == "no_presence":
                 value = "no presence"
-            lines.append(f"- {label} [{item.get('entity_id')}]: {value}{(' ' + unit) if unit else ''}")
+            updated = item.get("last_updated") or item.get("last_changed") or "timestamp unavailable"
+            lines.append(f"- {label} [{item.get('entity_id')}]: {value}{(' ' + unit) if unit else ''} (sensor updated {updated})")
         return "\n".join(lines)
 
     @staticmethod
