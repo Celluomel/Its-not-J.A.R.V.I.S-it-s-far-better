@@ -104,6 +104,11 @@ class VoiceMemAdapter:
                     # components. Inject local embedding and slot routing.
                     from voicemem.leftbrain.local_e5_embedder import LocalE5Embedder, shared_e5
                     from voicemem.leftbrain.cognitive_graph.local_query_classifier import LocalQueryClassifier
+                    # Some VoiceMem subcomponents (notably ConflictResolver)
+                    # read these settings from the environment instead of
+                    # the top-level constructor arguments.
+                    os.environ["OPENAI_API_KEY"] = "lm-studio-local"
+                    os.environ["OPENAI_BASE_URL"] = self.local_base_url
                     os.environ["OPENAI_MODEL"] = self.local_model
                     self._vm = cls(
                         mode="text_mode", memory_root=str(self.data_path),
