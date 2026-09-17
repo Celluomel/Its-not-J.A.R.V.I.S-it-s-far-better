@@ -116,7 +116,7 @@ class UniversalConnector:
         self._store_memory(percept)
         self._record_chapter(percept)
 
-    def discover_home_assistant(self) -> Dict[str, Any]:
+    def discover_home_assistant(self, timeout: float = 5.0) -> Dict[str, Any]:
         """Read permitted Home Assistant states without executing actions."""
         try:
             from managers.settings_manager import config
@@ -145,7 +145,7 @@ class UniversalConnector:
             context = None
             if parsed.scheme == "https" and not verify_ssl:
                 context = ssl._create_unverified_context()
-            with urlopen(request, timeout=5, context=context) as response:
+            with urlopen(request, timeout=max(0.25, float(timeout)), context=context) as response:
                 payload = json.loads(response.read().decode("utf-8"))
             if not isinstance(payload, list):
                 return {"ok": False, "status": "invalid_response", "entities": [], "message": "Home Assistant returned an invalid states response."}
@@ -184,6 +184,21 @@ class UniversalConnector:
         except Exception as exc:
             logger.warning("[UniversalConnector] Home Assistant discovery failed: %s", exc)
             return {"ok": False, "status": "error", "entities": [], "message": str(exc)}
+
+    def refresh_home_assistant_for_prompt(self) -> bool:
+        """Refresh selected sensor values immediately before prompt creation.
+
+        The background poll remains the normal path. This short synchronous
+        read closes the race where a sensor changes while the monitor is
+        paused for an interactive turn, so current-value questions use the
+        latest Home Assistant timestamp instead of the previous poll.
+        """
+        result = self.discover_home_assistant(timeout=1.5)
+        if result.get("ok"):
+            self._ingest_home_assistant_changes(result.get("entities", []))
+            return True
+        logger.debug("[UniversalConnector] prompt refresh unavailable: %s", result.get("message"))
+        return False
 
     async def reconcile_home_assistant_monitor(self) -> None:
         """Start or stop the low-rate HA monitor after config changes."""

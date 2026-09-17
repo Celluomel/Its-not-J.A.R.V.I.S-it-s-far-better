@@ -2049,7 +2049,10 @@ Memory honesty — two distinct cases:
             # not user claims. Keep them read-only and clearly sourced.
             try:
                 from cognition.universal_connector import get_universal_connector
-                _ha_context = get_universal_connector(self._organism).home_assistant_context() if self._organism else ""
+                _ha_connector = get_universal_connector(self._organism) if self._organism else None
+                if _ha_connector is not None:
+                    _ha_connector.refresh_home_assistant_for_prompt()
+                _ha_context = _ha_connector.home_assistant_context() if _ha_connector else ""
                 if _ha_context:
                     system_prompt += (
                         f"\n\n━━ SELECTED HOME ASSISTANT SENSORS ━━\n{_ha_context}\n"
