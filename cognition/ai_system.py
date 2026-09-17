@@ -2935,6 +2935,21 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
         r"\bmy\s+(" + _PERSONAL_REL_WORDS + r")(?:'s name)?\s+is\s+([A-Za-z][\w'-]{1,30})\b",
         re.IGNORECASE,
     )
+    # Keep the relation extraction structural rather than dependent on a
+    # fixed list of names. These French forms are especially important for
+    # the user's existing family context ("Kalina est ma fille").
+    _PERSONAL_FACT_RE_FR = re.compile(
+        r"\b([A-ZÀ-ÖØ-Þ][\wÀ-ÖØ-öø-ÿ'-]{1,30})\s+est\s+ma\s+"
+        r"(fille|fils|femme|épouse|mère|pere|père|sœur|soeur|frère|frere|"
+        r"partenaire|amie|ami|collègue|collegue)\b",
+        re.IGNORECASE,
+    )
+    _PERSONAL_FACT_RE_FR_REV = re.compile(
+        r"\bma\s+(fille|fils|femme|épouse|mère|pere|père|sœur|soeur|frère|"
+        r"frere|partenaire|amie|ami|collègue|collegue)\s+est\s+"
+        r"([A-ZÀ-ÖØ-Þ][\wÀ-ÖØ-öø-ÿ'-]{1,30})\b",
+        re.IGNORECASE,
+    )
     _PERSONAL_FACT_STOPWORDS = {"i", "it", "this", "that", "he", "she", "they", "we", "you"}
 
     def _extract_and_store_personal_facts(self, text: str) -> None:
@@ -2943,6 +2958,10 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
             for m in self._PERSONAL_FACT_RE.finditer(text):
                 facts.append((m.group(1), m.group(2).lower()))
             for m in self._PERSONAL_FACT_RE_REV.finditer(text):
+                facts.append((m.group(2), m.group(1).lower()))
+            for m in self._PERSONAL_FACT_RE_FR.finditer(text):
+                facts.append((m.group(1), m.group(2).lower()))
+            for m in self._PERSONAL_FACT_RE_FR_REV.finditer(text):
                 facts.append((m.group(2), m.group(1).lower()))
             for name, rel in facts:
                 if name.lower() in self._PERSONAL_FACT_STOPWORDS:
