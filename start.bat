@@ -36,7 +36,7 @@ if errorlevel 1 (
     goto :install_deps
 )
 
-goto facecheck
+goto voicemem_check
 
 REM --- First-time setup ---
 :setup
@@ -102,15 +102,21 @@ echo [*] Installing remaining dependencies...
 echo [OK] Core dependencies installed.
 
 REM --- Optional VoiceMem voice-memory extension ---
-REM Disabled by default: it is an additional package and must be explicitly
-REM enabled by the user. It never replaces the native memory/STT/TTS stack.
-if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" (
-    echo [*] Installing optional VoiceMem...
-    "%LUMINA_PYTHON%" -m pip install voicemem -q
-    if errorlevel 1 echo [WARN] VoiceMem install failed. Native memory remains available.
-) else (
-    echo [i] VoiceMem is optional. Set LUMINA_INSTALL_VOICEMEM=1 before setup to install it.
-)
+REM Installation is requested by config.json or the explicit environment flag.
+:voicemem_check
+"%LUMINA_PYTHON%" -c "import json,sys; from pathlib import Path; p=Path('config.json'); d=json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}; raise SystemExit(0 if d.get('VOICEMEM_ENABLED', False) else 1)" >nul 2>&1
+if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" goto voicemem_install
+if errorlevel 1 goto voicemem_done
+
+:voicemem_install
+"%LUMINA_PYTHON%" -c "import voicemem" >nul 2>&1
+if not errorlevel 1 goto voicemem_done
+echo [*] Installing optional VoiceMem requested by config.json...
+"%LUMINA_PYTHON%" -m pip install voicemem -q
+if errorlevel 1 echo [WARN] VoiceMem install failed. Native memory remains available.
+
+:voicemem_done
+if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" echo [i] VoiceMem installation check completed.
 
 REM --- Create data dirs ---
 if not exist data\voices    mkdir data\voices

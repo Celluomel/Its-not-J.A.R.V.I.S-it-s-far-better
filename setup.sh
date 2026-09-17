@@ -175,11 +175,19 @@ echo "[OK] Dependencies installed"
 # Optional VoiceMem
 ###########################################
 
-if [ "${LUMINA_INSTALL_VOICEMEM:-0}" = "1" ]; then
-    echo "[*] Installing optional VoiceMem voice-memory extension..."
-    pip install voicemem -q || echo "[WARN] VoiceMem install failed — native memory remains available"
+VOICEMEM_CONFIG_ENABLED=0
+if python -c "import json,sys; from pathlib import Path; p=Path(sys.argv[1]); d=json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}; raise SystemExit(0 if d.get('VOICEMEM_ENABLED', False) else 1)" "$PROJECT_DIR/config.json" >/dev/null 2>&1; then
+    VOICEMEM_CONFIG_ENABLED=1
+fi
+if [ "${LUMINA_INSTALL_VOICEMEM:-0}" = "1" ] || [ "$VOICEMEM_CONFIG_ENABLED" = "1" ]; then
+    echo "[*] VoiceMem installation requested by config.json or environment..."
+    if ! python -c "import voicemem" >/dev/null 2>&1; then
+        pip install voicemem -q || echo "[WARN] VoiceMem install failed — native memory remains available"
+    else
+        echo "[OK] VoiceMem already installed"
+    fi
 else
-    echo "[i] VoiceMem is optional. Set LUMINA_INSTALL_VOICEMEM=1 before setup to install it."
+    echo "[i] VoiceMem is optional and disabled. Enable VOICEMEM_ENABLED in Memory settings to install it on startup."
 fi
 
 if ! python -c "import spacy; spacy.load('en_core_web_sm')" >/dev/null 2>&1; then
