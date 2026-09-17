@@ -2045,6 +2045,20 @@ Memory honesty — two distinct cases:
                 )
                 self._pending_vision_context = None  # consumed — clear for next turn
 
+            # Selected Home Assistant states are live external perceptions,
+            # not user claims. Keep them read-only and clearly sourced.
+            try:
+                from cognition.universal_connector import get_universal_connector
+                _ha_context = get_universal_connector(self._organism).home_assistant_context() if self._organism else ""
+                if _ha_context:
+                    system_prompt += (
+                        f"\n\n━━ SELECTED HOME ASSISTANT SENSORS ━━\n{_ha_context}\n"
+                        "These are current read-only sensor observations. Use them only when relevant; "
+                        "do not invent values or infer a person's identity from an occupancy sensor."
+                    )
+            except Exception:
+                pass
+
             # ── Inject v2 autonomous architecture context ─────────────────
             try:
                 org = self._organism

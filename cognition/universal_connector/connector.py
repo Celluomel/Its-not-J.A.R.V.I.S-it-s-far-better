@@ -76,6 +76,7 @@ class UniversalConnector:
         self._ha_task = None
         self._ha_stop = None
         self._ha_states: Dict[str, Any] = {}
+        self._ha_entities: Dict[str, Dict[str, Any]] = {}
         logger.info("[UniversalConnector] initialised (Phase 6.0/6.2 slice)")
 
     def perceive(self, percept: Percept) -> None:
@@ -169,6 +170,7 @@ class UniversalConnector:
                         "signal": signal,
                     })
             entities.sort(key=lambda item: item["entity_id"])
+            self._ha_entities = {item["entity_id"]: item for item in entities}
             logger.info("[UniversalConnector] Home Assistant discovery: %d permitted entities", len(entities))
             return {"ok": True, "status": "connected", "entities": entities, "count": len(entities)}
         except HTTPError as exc:
@@ -237,7 +239,11 @@ class UniversalConnector:
                 pass
 
     def _ingest_home_assistant_changes(self, entities: List[Dict[str, Any]]) -> None:
-        current = {str(item.get("entity_id")): item for item in entities if item.get("entity_id")}
+        selected = self._selected_home_assistant_entities()
+        current = {
+            str(item.get("entity_id")): item for item in entities
+            if item.get("entity_id") and (not selected or str(item.get("entity_id")) in selected)
+        }
         if not self._ha_states:
             self._ha_states = {key: self._state_signature(item) for key, item in current.items()}
             for entity_id, item in current.items():
@@ -265,6 +271,37 @@ class UniversalConnector:
                 provenance={"entity_id": entity_id, "device_class": item.get("device_class")},
             ))
             logger.info("[UniversalConnector] Home Assistant change: %s -> %s", entity_id, signal)
+
+    def home_assistant_context(self) -> str:
+        """Return selected live HA states for the user-facing LLM context."""
+        if not self._ha_entities:
+            return ""
+        selected = self._selected_home_assistant_entities()
+        lines = []
+        for entity_id, item in self._ha_entities.items():
+            if selected and entity_id not in selected:
+                continue
+            value = item.get("state")
+            unit = item.get("unit") or ""
+            label = item.get("friendly_name") or item.get("entity_id")
+            signal = item.get("signal")
+            if signal == "presence_detected":
+                value = "presence detected"
+            elif signal == "no_presence":
+                value = "no presence"
+            lines.append(f"- {label} [{item.get('entity_id')}]: {value}{(' ' + unit) if unit else ''}")
+        return "\n".join(lines)
+
+    @staticmethod
+    def _selected_home_assistant_entities() -> set[str]:
+        try:
+            from managers.settings_manager import config
+            return {
+                item.strip() for item in str(getattr(config, "HOME_ASSISTANT_SELECTED_ENTITIES", "") or "").split(",")
+                if item.strip()
+            }
+        except Exception:
+            return set()
 
     @staticmethod
     def _state_signature(item: Dict[str, Any]) -> str:
