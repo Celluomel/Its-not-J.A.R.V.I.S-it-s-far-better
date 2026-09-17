@@ -920,7 +920,8 @@ export default function App() {
       for await (const event of readEvents(response.body)) {
         if (event.type === 'error') throw new Error(event.message);
         if (event.type === 'reasoning') {
-          accumulated = '';
+          // Reasoning is a separate transient stream. Do not clear visible
+          // answer text when a provider emits reasoning after a final delta.
           reasoningAccumulated = appendReasoning(reasoningAccumulated, String(event.text || ''));
           if (reasoningAccumulated) {
             window.dispatchEvent(new CustomEvent('lumina-reasoning', { detail: reasoningAccumulated }));
