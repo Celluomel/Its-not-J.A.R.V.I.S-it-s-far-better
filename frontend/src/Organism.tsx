@@ -8,13 +8,19 @@ varying vec3 vPosition; varying vec3 vView;
 void main() {
   vec3 n = normalize(position);
   float angle = atan(n.z,n.x);
-  float skirt = 1.0-smoothstep(-.8,.75,n.y);
-  float folds = sin(angle*7.0+n.y*3.0+time*.23)*.17
-              + sin(angle*11.0-n.y*4.0-time*.16)*.065;
-  float radius = 1.0+folds*(.25+skirt)+sin(n.y*5.0+time*.4)*.045;
+  // Broad radial creases create the folded membrane silhouette; the smaller
+  // wave keeps the surface alive without turning it into a regular sphere.
+  float foldBand = sin(angle*5.0+n.y*4.0+time*.23)*.22
+                 + sin(angle*9.0-n.y*6.0-time*.16)*.08;
+  float edge = smoothstep(.05,.95,abs(n.y));
+  float radius = 1.0 + foldBand*(.48 + edge*.34)
+               + sin(n.y*8.0+angle*3.0+time*.4)*.035;
   vec3 p = position;
-  p.xz *= radius;
-  p.y += skirt*sin(angle*7.0+time*.23)*.18;
+  p.x *= radius*1.18;
+  p.z *= radius*.64;
+  p.y *= .82;
+  p.y += sin(angle*5.0+n.y*4.0+time*.23)*.12*(.35+edge);
+  p.z += cos(angle*7.0-n.y*3.0-time*.16)*.07;
   p.y += sin(time*.65)*.035*(1.0+energy);
   vPosition = p;
   vec4 view = modelViewMatrix*vec4(p,1.0);
@@ -29,10 +35,10 @@ void main() {
   float facing = abs(dot(n,normalize(-vView)));
   float rim = pow(1.0-facing,2.4);
   float silk = pow(abs(dot(n,normalize(vec3(-.6,.8,1.0)))),12.0);
-  float warmth = smoothstep(-1.2,1.4,vPosition.x-vPosition.y*.3);
-  vec3 pearl = mix(vec3(.39,.76,.69),vec3(.94,.72,.65),warmth);
-  vec3 color = pearl*(.32+rim*.8)+vec3(.8,.88,.84)*silk*.45;
-  gl_FragColor = vec4(color,.035+rim*.42+silk*.075);
+  float warmth = smoothstep(-1.0,1.0,vPosition.x-vPosition.y*.45);
+  vec3 pearl = mix(vec3(.25,.70,.66),vec3(.95,.66,.58),warmth);
+  vec3 color = pearl*(.28+rim*.95)+vec3(.82,.94,.91)*silk*.55;
+  gl_FragColor = vec4(color,.025+rim*.48+silk*.10);
 }`;
 const pointVertex = `
 uniform float time; uniform float energy;
@@ -120,9 +126,9 @@ function Body({ energy, reduced, mode }: { energy: number; reduced: boolean; mod
     }
   });
   return <group scale={frameScale}><group ref={group} rotation={[.15, .3, .1]}>
-    <mesh renderOrder={4}><sphereGeometry args={[1.4, 144, 96]} /><shaderMaterial ref={material} vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
-    <mesh scale={[.88,1.03,.9]} rotation={[.1,.38,.12]} renderOrder={3}><sphereGeometry args={[1.36,112,80]}/><shaderMaterial vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
-    <mesh scale={[.72,.86,.8]} rotation={[.3,-.5,-.2]} renderOrder={2}><sphereGeometry args={[1.3,96,64]}/><shaderMaterial vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
+    <mesh scale={[1.05,.92,1]} renderOrder={4}><sphereGeometry args={[1.4, 144, 96]} /><shaderMaterial ref={material} vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
+    <mesh scale={[.92,.86,.82]} rotation={[.1,.38,.12]} renderOrder={3}><sphereGeometry args={[1.36,112,80]}/><shaderMaterial vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
+    <mesh scale={[.76,.72,.66]} rotation={[.3,-.5,-.2]} renderOrder={2}><sphereGeometry args={[1.3,96,64]}/><shaderMaterial vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
     <points geometry={particles} renderOrder={1}><shaderMaterial vertexShader={pointVertex} fragmentShader={pointFragment} uniforms={uniforms} transparent blending={THREE.AdditiveBlending} depthWrite={false}/></points>
     <lineSegments geometry={filaments}><lineBasicMaterial color="#ef8168" transparent opacity={.16} depthWrite={false}/></lineSegments>
     <mesh scale={[.26,.38,.26]}><sphereGeometry args={[1,64,48]}/><shaderMaterial vertexShader={vertex} fragmentShader={heartFragment} uniforms={uniforms} transparent side={THREE.DoubleSide} depthWrite={false}/></mesh>
