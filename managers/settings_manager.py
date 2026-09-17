@@ -146,6 +146,7 @@ class AppSettings(BaseModel):
     # connection or exposing a network service by default.
     UNIVERSAL_CONNECTOR_ENABLED: bool = False
     HOME_ASSISTANT_ENABLED: bool = False
+    HOME_ASSISTANT_PRESENCE_ENABLED: bool = False
     HOME_ASSISTANT_URL: str = "http://homeassistant.local:8123"
     HOME_ASSISTANT_TOKEN: str = ""
     HOME_ASSISTANT_VERIFY_SSL: bool = True

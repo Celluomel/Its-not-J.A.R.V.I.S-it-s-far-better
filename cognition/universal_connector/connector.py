@@ -273,9 +273,14 @@ class UniversalConnector:
     def _forward_external_presence(self, entity_id: str, present: bool) -> None:
         """Forward occupancy to PresenceEngine without assigning identity."""
         try:
+            from managers.settings_manager import config
+            if not bool(getattr(config, "HOME_ASSISTANT_PRESENCE_ENABLED", False)):
+                return
             from core.state import state
             vision = getattr(state, "vision", None)
-            presence = getattr(vision, "presence_engine", None)
+            presence = getattr(vision, "presence_engine", None) if vision is not None else None
+            if presence is None:
+                presence = getattr(state, "presence_engine", None)
             if presence is not None and hasattr(presence, "on_external_presence"):
                 presence.on_external_presence(entity_id, present, source="home_assistant")
         except Exception as exc:

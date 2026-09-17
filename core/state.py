@@ -48,6 +48,7 @@ class AppState:
         self.audio      = None
         self.conv_audio = None
         self.vision     = None
+        self.presence_engine = None
         self.persona    = None   # PersonaBridge (Lumina cognitive engine) — wired in initialize()
         self.tts_stop_event = threading.Event()
         self.ready      = False
@@ -292,6 +293,20 @@ class AppState:
                 )
             except Exception as _e:
                 logger.error(f"PresenceEngine wire failed: {_e}")
+
+        # Sensor-only mode keeps external occupancy available when the
+        # camera manager/stream is disabled. It has no face identity and does
+        # not generate speech by itself.
+        if self.vision is None and getattr(_cfg(), 'HOME_ASSISTANT_PRESENCE_ENABLED', False):
+            try:
+                from cognition.presence_engine import PresenceEngine
+                self.presence_engine = PresenceEngine(
+                    organism=getattr(self.persona, '_organism', None) if self.persona else None,
+                    llm=self.llm,
+                )
+                logger.info("✅ Sensor-only PresenceEngine attached")
+            except Exception as _e:
+                logger.warning("Sensor-only PresenceEngine unavailable (non-fatal): %s", _e)
 
         # Start the optional Home Assistant monitor only when explicitly
         # enabled in config.json. It is read-only and remains outside chat.
