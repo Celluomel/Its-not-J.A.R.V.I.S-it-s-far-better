@@ -151,11 +151,19 @@ class UniversalConnector:
                 entity_id = str(item.get("entity_id", ""))
                 domain = entity_id.split(".", 1)[0].lower()
                 if entity_id and (not allowed or domain in allowed):
+                    attributes = item.get("attributes") or {}
+                    device_class = attributes.get("device_class")
+                    signal = None
+                    if domain == "binary_sensor" and device_class in {"presence", "occupancy", "motion"}:
+                        signal = "presence_detected" if str(item.get("state", "")).lower() == "on" else "no_presence"
                     entities.append({
                         "entity_id": entity_id,
                         "state": item.get("state"),
-                        "friendly_name": (item.get("attributes") or {}).get("friendly_name", entity_id),
-                        "unit": (item.get("attributes") or {}).get("unit_of_measurement"),
+                        "friendly_name": attributes.get("friendly_name", entity_id),
+                        "unit": attributes.get("unit_of_measurement"),
+                        "domain": domain,
+                        "device_class": device_class,
+                        "signal": signal,
                     })
             entities.sort(key=lambda item: item["entity_id"])
             logger.info("[UniversalConnector] Home Assistant discovery: %d permitted entities", len(entities))
