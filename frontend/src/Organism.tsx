@@ -139,7 +139,7 @@ function SculpturalLighting({ energy, reduced }: { energy: number; reduced: bool
 
 const shadowVertex = `varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
 const shadowFragment = `varying vec2 vUv; uniform float energy;
-void main(){ float d=length((vUv-.5)*2.); float softness=pow(max(0.,1.-d),2.2); float inner=pow(max(0.,1.-d*.72),3.); gl_FragColor=vec4(.05,.16,.16,softness*(.18+energy*.12)+inner*.08); }`;
+void main(){ float d=length((vUv-.5)*2.); float softness=pow(max(0.,1.-d),2.0); float inner=pow(max(0.,1.-d*.72),3.0); float rim=pow(max(0.,1.-abs(d-.62)*4.0),2.0); vec3 color=mix(vec3(.10,.34,.32),vec3(.34,.20,.30),rim); gl_FragColor=vec4(color,softness*(.34+energy*.18)+inner*.14); }`;
 
 function GroundShadow({ energy, reduced }: { energy: number; reduced: boolean }) {
   const material = useRef<THREE.ShaderMaterial>(null);
