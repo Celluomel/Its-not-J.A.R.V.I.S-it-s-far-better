@@ -110,10 +110,18 @@ if errorlevel 1 goto voicemem_done
 
 :voicemem_install
 "%LUMINA_PYTHON%" -c "import voicemem" >nul 2>&1
-if not errorlevel 1 goto voicemem_done
+if not errorlevel 1 goto voicemem_restore
 echo [*] Installing optional VoiceMem requested by config.json...
-"%LUMINA_PYTHON%" -m pip install voicemem -q
-if errorlevel 1 echo [WARN] VoiceMem install failed. Native memory remains available.
+REM VoiceMem currently pins transformers==4.52.3, while Coqui-TTS 0.25.3
+REM requires <=4.46.2. Keep the existing audio stack authoritative.
+"%LUMINA_PYTHON%" -m pip install voicemem --no-deps -q
+if errorlevel 1 (
+    echo [WARN] VoiceMem install failed. Native memory remains available.
+) else goto voicemem_restore
+
+:voicemem_restore
+"%LUMINA_PYTHON%" -m pip install "transformers>=4.43.0,<=4.46.2" -q
+echo [i] VoiceMem kept without dependency replacement; optional audio components may require separate isolation.
 
 :voicemem_done
 if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" echo [i] VoiceMem installation check completed.

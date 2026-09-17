@@ -182,7 +182,14 @@ fi
 if [ "${LUMINA_INSTALL_VOICEMEM:-0}" = "1" ] || [ "$VOICEMEM_CONFIG_ENABLED" = "1" ]; then
     echo "[*] VoiceMem installation requested by config.json or environment..."
     if ! python -c "import voicemem" >/dev/null 2>&1; then
-        pip install voicemem -q || echo "[WARN] VoiceMem install failed — native memory remains available"
+        # VoiceMem currently pins transformers==4.52.3, while Coqui-TTS
+        # 0.25.3 requires <=4.46.2. Preserve Lumina's existing audio stack.
+        if pip install voicemem --no-deps -q; then
+            pip install "transformers>=4.43.0,<=4.46.2" -q || true
+            echo "[i] VoiceMem kept without dependency replacement; optional audio components may require separate isolation."
+        else
+            echo "[WARN] VoiceMem install failed — native memory remains available"
+        fi
     else
         echo "[OK] VoiceMem already installed"
     fi
