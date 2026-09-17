@@ -131,3 +131,15 @@
 .telemetry-goals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }.telemetry-goals > div { min-width: 0; border: 1px solid #2e4941; background: #16231f; padding: 7px 8px; }.telemetry-goals strong, .telemetry-goals small { display: block; overflow-wrap: anywhere; }.telemetry-goals strong { color: #d0e5dc; font-weight: 550; }.telemetry-goals small { color: #75998d; font-size: 9px; margin-top: 3px; }
 .message-telemetry dl { margin: 0; }.message-telemetry dl > div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 9px; padding: 3px 0; }.message-telemetry dt { color: #789087; }.message-telemetry dd { margin: 0; color: #c4d8d0; overflow-wrap: anywhere; }
 @media(max-width:540px){.message-telemetry{margin-left:0;padding:10px}.telemetry-goals{grid-template-columns:1fr}.message-telemetry dl>div{grid-template-columns:76px minmax(0,1fr)}}
+
+/* Keep the live camera as a readable secondary surface below the organism.
+   It must not compete with or sit behind the WebGL canvas. */
+.presence > .presence-heading{order:0}
+.presence > .organism-stage{order:1;flex:1 1 auto;min-height:180px}
+.presence > .camera-orb{order:2;position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;align-self:center;width:min(100%,360px);height:auto;aspect-ratio:16/9;border-radius:8px;z-index:3;background:#101915;border:1px solid #96d6bb88;box-shadow:0 0 0 5px #8fd1b512,0 10px 30px #0005}
+.presence > .camera-orb img{opacity:.9;mix-blend-mode:normal}
+.presence > .camera-orb .camera-orb-label{top:9px;font-size:10px;background:#15231de8}
+.presence > .presence-caption{order:3}
+.presence > .presence-foot{order:4}
+@media(max-width:800px){.presence > .organism-stage{min-height:150px}.presence > .camera-orb{width:min(100%,300px)}}
+@media(max-width:540px){.presence > .camera-orb{width:min(100%,260px);border-radius:6px}.presence > .camera-orb .camera-orb-label{top:6px;font-size:8px}}
