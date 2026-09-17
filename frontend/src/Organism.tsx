@@ -38,6 +38,12 @@ void main() {
   float silk = pow(abs(dot(n,normalize(vec3(-.6,.8,1.0)))),12.0);
   float reflection = pow(max(0.0,dot(n,normalize(vec3(-.4,.7,1.0)))),22.0);
   float warmth = smoothstep(-1.0,1.0,vPosition.x-vPosition.y*.45);
+  // Layered moving caustics make the highlights slide like reflections on
+  // dark water instead of behaving like a fixed metallic sheen.
+  float waveA = sin(vPosition.x*8.0 + vPosition.z*11.0 + time*1.35);
+  float waveB = sin(vPosition.y*13.0 - vPosition.x*5.0 - time*.92);
+  float waterCaustic = pow(max(0.0, waveA*waveB), 3.0);
+  float waterSheen = pow(max(0.0, sin(vPosition.z*18.0 + vPosition.x*4.0 + time*1.1)), 8.0);
   // Thin-film interference shifts through teal, rose, amber and violet as
   // the folded surface turns toward the viewer, like iridescent glass.
   float phase = vPosition.x*1.7 + vPosition.y*2.2 + vPosition.z*3.1 + fresnel*4.5;
@@ -47,7 +53,9 @@ void main() {
   vec3 color = mix(pearl, spectral, .28 + fresnel*.62);
   color += vec3(1.0,.72,.58)*reflection*1.8;
   color += vec3(.72,1.0,.94)*silk*.72;
-  gl_FragColor = vec4(color,.018+rim*.46+fresnel*.24+silk*.12);
+  color += vec3(.24,.85,.82)*waterCaustic*(.45 + energy*.75);
+  color += vec3(1.0,.86,.74)*waterSheen*(.35 + fresnel*.8);
+  gl_FragColor = vec4(color,.018+rim*.46+fresnel*.24+silk*.12+waterCaustic*.07);
 }`;
 const pointVertex = `
 uniform float time; uniform float energy;
