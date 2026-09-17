@@ -1754,6 +1754,28 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                     "If the user asks you to recall something specific, be honest: "
                     "say you don't have that detail in memory rather than inventing or guessing."
                 )
+            # Identity questions need fact-first generation. Without this
+            # narrow instruction, the model treats a retrieved relationship
+            # as an invitation to write an abstract character reflection.
+            _identity_question = bool(re.search(
+                r"\b(qui est|c'est qui|who is|what is)\b", user_input, re.IGNORECASE
+            ))
+            _grounded_facts = [
+                str(m.get("text", "")).strip() for m in top_memories
+                if m.get("memory_tier") == "personal"
+                or re.search(r"\b(est ma|is (the )?user'?s)\b", str(m.get("text", "")), re.IGNORECASE)
+            ]
+            fact_first_section = ""
+            if _identity_question and _grounded_facts:
+                fact_first_section = (
+                    "━━ FACT-FIRST IDENTITY ANSWER ━━\n"
+                    "A grounded personal fact is available. Answer the user's identity question "
+                    "with that fact in the FIRST sentence, plainly and directly. Do not begin "
+                    "with curiosity, metaphor, system state, or an abstract interpretation. "
+                    "Do not turn a known relationship into a philosophical discussion. "
+                    "You may add one short sentence of context afterward.\n"
+                    + "\n".join(f"Grounded fact: {fact}" for fact in _grounded_facts[:3])
+                )
             gap_section  = ("━━ RETURNING AFTER TIME AWAY ━━\n" + gap_note) if gap_note else ""
 
             # ── Temporal awareness block ──────────────────────────────────
@@ -1913,6 +1935,8 @@ Core beliefs you hold about yourself: {beliefs_line}
 {cond_section}
 
 {mem_section}
+
+{fact_first_section}
 
 {gap_section}
 
