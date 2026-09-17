@@ -117,22 +117,37 @@ class VoiceMemAdapter:
     def ingest_text(self, text: str, user_id: str = "default") -> bool:
         if not self.enabled or not str(text or "").strip():
             return False
+        transcript = str(text).strip()[:2000]
         vm = self._load()
         if vm is None:
+            # Keep the local observation even when the optional upstream
+            # package cannot initialise (for example, when its cloud client
+            # expects OPENAI_API_KEY). This is visible as fallback evidence,
+            # never as a falsely indexed VoiceMem memory.
+            self._record({
+                "timestamp": time.time(), "user_id": user_id,
+                "text": transcript, "status": "fallback",
+                "memory_side": "unclassified", "provenance": "existing_transcript",
+            })
             return False
         try:
             # Text is supplied by Lumina's existing STT/chat path.  This avoids
             # a second recognizer and prevents VoiceMem from taking the audio lock.
-            vm.ingest(str(text).strip())
+            vm.ingest(transcript)
             self._record({
                 "timestamp": time.time(), "user_id": user_id,
-                "text": str(text).strip()[:2000], "status": "ingested",
+                "text": transcript, "status": "ingested",
                 "memory_side": "unclassified", "provenance": "existing_transcript",
             })
             self.consolidate(user_id)
             return True
         except Exception as exc:
             self._error = str(exc)
+            self._record({
+                "timestamp": time.time(), "user_id": user_id,
+                "text": transcript, "status": "fallback",
+                "memory_side": "unclassified", "provenance": "existing_transcript",
+            })
             logger.warning("VoiceMem ingestion skipped: %s", exc)
             return False
 
@@ -214,7 +229,11 @@ class VoiceMemAdapter:
             "nonempty_retrievals": nonempty,
             "retrieval_hit_rate": round(nonempty / len(retrievals), 3) if retrievals else None,
             "observations": sum(1 for o in self._ledger.get("observations", [])
-                                 if o.get("user_id") == user_id and o.get("status") == "ingested"),
+                                 if o.get("user_id") == user_id and o.get("status") in {"ingested", "fallback"}),
+            "indexed_observations": sum(1 for o in self._ledger.get("observations", [])
+                                         if o.get("user_id") == user_id and o.get("status") == "ingested"),
+            "fallback_observations": sum(1 for o in self._ledger.get("observations", [])
+                                          if o.get("user_id") == user_id and o.get("status") == "fallback"),
             "verified_memories": 0,
             "note": "Voice observations are not promoted to verified facts without confirmation.",
         }
