@@ -2053,8 +2053,10 @@ Memory honesty — two distinct cases:
                 if _ha_context:
                     system_prompt += (
                         f"\n\n━━ SELECTED HOME ASSISTANT SENSORS ━━\n{_ha_context}\n"
-                        "These are current read-only sensor observations. Use them only when relevant; "
-                        "do not invent values or infer a person's identity from an occupancy sensor."
+                        "These are the authoritative current read-only sensor observations. "
+                        "When the user asks for a current value, answer from this block exactly; "
+                        "never substitute an older memory or invent a value. Use them only when relevant, "
+                        "and do not infer a person's identity from an occupancy sensor."
                     )
             except Exception:
                 pass

@@ -39,6 +39,7 @@ import time
 import json
 import ipaddress
 import ssl
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -277,7 +278,8 @@ class UniversalConnector:
         if not self._ha_entities:
             return ""
         selected = self._selected_home_assistant_entities()
-        lines = []
+        observed_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        lines = [f"Observed from Home Assistant at {observed_at} (authoritative live snapshot):"]
         for entity_id, item in self._ha_entities.items():
             if selected and entity_id not in selected:
                 continue
