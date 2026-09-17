@@ -36,6 +36,12 @@ from __future__ import annotations
 
 import logging
 import time
+import json
+import ipaddress
+import ssl
+from urllib.parse import urlparse
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 from typing import Any, Dict, List, Optional
 
 from cognition.universal_connector.event import Percept
@@ -104,6 +110,64 @@ class UniversalConnector:
 
         self._store_memory(percept)
         self._record_chapter(percept)
+
+    def discover_home_assistant(self) -> Dict[str, Any]:
+        """Read permitted Home Assistant states without executing actions."""
+        try:
+            from managers.settings_manager import config
+            enabled = bool(getattr(config, "HOME_ASSISTANT_ENABLED", False))
+            connector_enabled = bool(getattr(config, "UNIVERSAL_CONNECTOR_ENABLED", False))
+            base_url = str(getattr(config, "HOME_ASSISTANT_URL", "") or "").strip().rstrip("/")
+            token = str(getattr(config, "HOME_ASSISTANT_TOKEN", "") or "").strip()
+            verify_ssl = bool(getattr(config, "HOME_ASSISTANT_VERIFY_SSL", True))
+            allowed = {
+                item.strip().lower()
+                for item in str(getattr(config, "HOME_ASSISTANT_ALLOWED_DOMAINS", "") or "").split(",")
+                if item.strip()
+            }
+            if not connector_enabled or not enabled:
+                return {"ok": False, "status": "disabled", "entities": [], "message": "Universal Connector or Home Assistant is disabled."}
+            if not base_url or not token:
+                return {"ok": False, "status": "not_configured", "entities": [], "message": "Home Assistant URL and access token are required."}
+            parsed = urlparse(base_url)
+            if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+                return {"ok": False, "status": "invalid_url", "entities": [], "message": "Home Assistant URL must be an HTTP(S) address."}
+
+            request = Request(
+                f"{base_url}/api/states",
+                headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
+            )
+            context = None
+            if parsed.scheme == "https" and not verify_ssl:
+                context = ssl._create_unverified_context()
+            with urlopen(request, timeout=5, context=context) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            if not isinstance(payload, list):
+                return {"ok": False, "status": "invalid_response", "entities": [], "message": "Home Assistant returned an invalid states response."}
+            entities = []
+            for item in payload:
+                if not isinstance(item, dict):
+                    continue
+                entity_id = str(item.get("entity_id", ""))
+                domain = entity_id.split(".", 1)[0].lower()
+                if entity_id and (not allowed or domain in allowed):
+                    entities.append({
+                        "entity_id": entity_id,
+                        "state": item.get("state"),
+                        "friendly_name": (item.get("attributes") or {}).get("friendly_name", entity_id),
+                        "unit": (item.get("attributes") or {}).get("unit_of_measurement"),
+                    })
+            entities.sort(key=lambda item: item["entity_id"])
+            logger.info("[UniversalConnector] Home Assistant discovery: %d permitted entities", len(entities))
+            return {"ok": True, "status": "connected", "entities": entities, "count": len(entities)}
+        except HTTPError as exc:
+            status = "unauthorized" if exc.code in {401, 403} else "http_error"
+            return {"ok": False, "status": status, "entities": [], "message": f"Home Assistant returned HTTP {exc.code}."}
+        except (URLError, TimeoutError) as exc:
+            return {"ok": False, "status": "unreachable", "entities": [], "message": f"Home Assistant is unreachable: {exc.reason if isinstance(exc, URLError) else exc}."}
+        except Exception as exc:
+            logger.warning("[UniversalConnector] Home Assistant discovery failed: %s", exc)
+            return {"ok": False, "status": "error", "entities": [], "message": str(exc)}
 
     def _maybe_boost_epistemic_pressure(self, percept: Percept) -> None:
         try:

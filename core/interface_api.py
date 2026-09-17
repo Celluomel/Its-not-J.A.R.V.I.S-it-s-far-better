@@ -451,6 +451,17 @@ async def network_status():
     return {'enabled': bool(getattr(config, 'LUMINA_NETWORK_ENABLED', False)), 'children': children}
 
 
+@router.post('/connector/home-assistant/discover')
+async def discover_home_assistant():
+    """Test the configured Home Assistant bridge and list allowed entities."""
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Cognitive organism is not ready.')
+    from cognition.universal_connector import get_universal_connector
+    return _json_safe(await asyncio.to_thread(get_universal_connector(organism).discover_home_assistant))
+
+
 class NetworkAction(BaseModel):
     child_id: str = Field(default='', max_length=80)
     text: str = Field(default='', max_length=8000)
