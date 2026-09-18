@@ -218,6 +218,54 @@ async def body_plugins():
     return _json_safe({'plugins': body.plugins(), 'config_path': 'data/body/config.json'})
 
 
+@router.get('/body/settings')
+async def body_settings():
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Cognitive organism is not ready.')
+    from cognition.body_runtime import get_body_runtime
+    values = get_body_runtime(organism).config_snapshot()
+    if values.get('HOME_ASSISTANT_TOKEN'):
+        values['HOME_ASSISTANT_TOKEN'] = '••••••••'
+    return _json_safe({'values': values, 'config_path': 'data/body/config.json'})
+
+
+@router.post('/body/settings')
+async def update_body_settings(payload: SettingsUpdate):
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Cognitive organism is not ready.')
+    from cognition.body_runtime import get_body_runtime
+    body = get_body_runtime(organism)
+    values = dict(payload.values)
+    if values.get('HOME_ASSISTANT_TOKEN') == '••••••••':
+        values.pop('HOME_ASSISTANT_TOKEN', None)
+    saved = body.update_config(values)
+    from cognition.universal_connector import get_universal_connector
+    await get_universal_connector(organism).reconcile_home_assistant_monitor()
+    if saved.get('HOME_ASSISTANT_TOKEN'):
+        saved['HOME_ASSISTANT_TOKEN'] = '••••••••'
+    return _json_safe({'values': saved, 'config_path': 'data/body/config.json'})
+
+
+@router.post('/body/discover')
+async def discover_body_home_assistant():
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Cognitive organism is not ready.')
+    from cognition.universal_connector import get_universal_connector
+    result = await asyncio.to_thread(get_universal_connector(organism).discover_home_assistant)
+    if result.get('ok'):
+        from cognition.body_runtime import get_body_runtime
+        get_body_runtime(organism).update_config({
+            'HOME_ASSISTANT_DISCOVERED_ENTITIES': json.dumps(result.get('entities', []), ensure_ascii=False),
+        })
+    return _json_safe(result)
+
+
 @router.get('/telemetry')
 async def cognitive_telemetry():
     """Fetch the current trace when its chat visibility control is enabled."""

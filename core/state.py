@@ -297,7 +297,17 @@ class AppState:
         # Sensor-only mode keeps external occupancy available when the
         # camera manager/stream is disabled. It has no face identity and does
         # not generate speech by itself.
-        if self.vision is None and getattr(_cfg(), 'HOME_ASSISTANT_PRESENCE_ENABLED', False):
+        _body_presence_enabled = bool(getattr(_cfg(), 'HOME_ASSISTANT_PRESENCE_ENABLED', False))
+        try:
+            _organism_for_body = getattr(self.persona, '_organism', None) if self.persona else None
+            if _organism_for_body is not None:
+                from cognition.body_runtime import get_body_runtime
+                _body_presence_enabled = bool(get_body_runtime(_organism_for_body).config_value(
+                    'HOME_ASSISTANT_PRESENCE_ENABLED', _body_presence_enabled
+                ))
+        except Exception:
+            pass
+        if self.vision is None and _body_presence_enabled:
             try:
                 from cognition.presence_engine import PresenceEngine
                 self.presence_engine = PresenceEngine(
