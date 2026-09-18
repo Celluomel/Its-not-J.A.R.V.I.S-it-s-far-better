@@ -94,6 +94,9 @@ class AppSettings(BaseModel):
     VAD_SILENCE_DURATION: float = 1.2
     VAD_MIN_SPEECH_DURATION: float = 0.6   # raised from 0.4s — short bursts hallucinate
     VAD_ENERGY_GATE_FACTOR: float = 3.5
+    # Optional live interim transcription. Disabled by default because it
+    # performs a second Whisper pass and can delay the final utterance.
+    PARTIAL_STT_ENABLED: bool = False
     
     # Vision Settings
     CAMERA_AUTOSTART: bool = False

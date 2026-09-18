@@ -628,7 +628,7 @@ _SETTING_FIELDS = {
     'STT_PROVIDER', 'WHISPER_MODEL', 'ELEVENLABS_API_KEY', 'ELEVENLABS_VOICE_ID', 'COQUI_VOICE_REFERENCE',
     'VOICE_LANGUAGE', 'RESPONSE_LANGUAGE', 'VAD_AGGRESSIVENESS',
     'VAD_ONSET_CHUNKS', 'VAD_SILENCE_DURATION', 'VAD_MIN_SPEECH_DURATION',
-    'VAD_ENERGY_GATE_FACTOR', 'TTS_STREAMING', 'TTS_BARGE_IN',
+    'VAD_ENERGY_GATE_FACTOR', 'PARTIAL_STT_ENABLED', 'TTS_STREAMING', 'TTS_BARGE_IN',
     'BARGE_IN_SENSITIVITY', 'INTER_SENTENCE_PAUSE_MS', 'TTS_POST_ROLL_MS',
     'CAMERA_AUTOSTART', 'CAMERA_ID', 'CAMERA_FPS', 'CAMERA_RESOLUTION',
     'VISION_MODE', 'LAVA_MODEL', 'VISION_LLM_MODE', 'AMBIENT_VISION_INTERVAL',
@@ -1405,6 +1405,9 @@ async def capture_face(payload: FaceCapture):
 
 class Turn(BaseModel):
     text: str = Field(min_length=1, max_length=8000)
+    # Voice turns use a latency-optimized cognitive path. Text chat keeps
+    # the full auxiliary reasoning pipeline unchanged.
+    voice_mode: bool = False
 
 
 @router.post('/voice/coqui-recording')
@@ -1520,7 +1523,12 @@ async def chat(payload: Turn, request: Request):
             vision = None
             if state.vision and state.vision.camera_active:
                 vision = state.vision.get_visual_context_for_prompt()
-            stream = state.persona.get_response_stream(text, user_id=user_id, vision_context=vision)
+            stream = state.persona.get_response_stream(
+                text,
+                user_id=user_id,
+                vision_context=vision,
+                voice_mode=payload.voice_mode,
+            )
             first = True
             iterator = stream.__aiter__()
             try:

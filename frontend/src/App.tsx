@@ -246,7 +246,7 @@ function HeartIcon() { return <span aria-hidden="true">♥</span>; }
 const settingsFields: Record<Exclude<SettingsTab, 'status' | 'lumina' | 'tools' | 'analytics' | 'development' | 'connector'>, { key: string; label: string; type?: 'select' | 'number' | 'textarea' | 'checkbox'; options?: string[] }[]> = {
   llm: [{ key: 'PERSONA_NAME', label: 'Persona name' }, { key: 'LLM_PROVIDER', label: 'Provider', type: 'select', options: ['ollama', 'lmstudio', 'openai'] }, { key: 'LLM_MODEL', label: 'Model' }, { key: 'TEXT_MODEL', label: 'Fast text model' }, { key: 'QUALITY_EMBED_MODEL', label: 'Quality embedding model' }, { key: 'EMBED_API_BASE_URL', label: 'Embedding API base URL' }, { key: 'AFFECT_EMBEDDING_MODEL', label: 'Multilingual affect embedding model' }, { key: 'LLM_BASE_URL', label: 'Base URL' }, { key: 'OPENAI_API_KEY', label: 'OpenAI API key' }, { key: 'ANTHROPIC_API_KEY', label: 'Anthropic API key' }, { key: 'RESEARCH_SEARCH_BACKEND', label: 'Research backend', type: 'select', options: ['auto', 'claude', 'brave', 'rss', 'stealth'] }, { key: 'BRAVE_SEARCH_KEY', label: 'Brave Search key' }, { key: 'SERPAPI_KEY', label: 'SerpAPI key' }, { key: 'RESPONSE_VERBOSITY', label: 'Response detail', type: 'select', options: ['concise', 'verbose'] }, { key: 'RESPONSE_TOKENS_CONCISE', label: 'Concise token budget', type: 'number' }, { key: 'RESPONSE_TOKENS_VERBOSE', label: 'Extended token budget', type: 'number' }, { key: 'CUSTOM_SYSTEM_PROMPT', label: 'Custom system prompt', type: 'textarea' }],
   memory: [{ key: 'MEMORY_BACKEND', label: 'Backend', type: 'select', options: ['faiss', 'dict', 'cognee', 'simple'] }, { key: 'MEMORY_DB_PATH', label: 'SQLite database path' }, { key: 'MEMORY_FAISS_PATH', label: 'FAISS index path' }, { key: 'MEMORY_WORLD_PATH', label: 'World model path' }, { key: 'MEMORY_PERSONA_PATH', label: 'Persona data folder' }, { key: 'MEMORY_COGNEE_PATH', label: 'Cognee data folder' }, { key: 'MEMORY_COGNEE_EMBED_MODEL', label: 'Cognee embedding model' }, { key: 'VOICEMEM_ENABLED', label: 'Enable optional VoiceMem', type: 'checkbox' }, { key: 'VOICEMEM_DATA_PATH', label: 'VoiceMem data folder' }, { key: 'VOICEMEM_TOP_K', label: 'VoiceMem retrieval count', type: 'number' }],
-  voice: [{ key: 'TTS_PROVIDER', label: 'TTS provider', type: 'select', options: ['pyttsx3', 'edge-tts', 'elevenlabs', 'coqui', 'kokoro'] }, { key: 'STT_PROVIDER', label: 'STT provider', type: 'select', options: ['whisper', 'faster_whisper', 'openai'] }, { key: 'WHISPER_MODEL', label: 'Whisper model', type: 'select', options: ['tiny', 'base', 'small', 'medium', 'large'] }, { key: 'VOICE_LANGUAGE', label: 'TTS language' }, { key: 'RESPONSE_LANGUAGE', label: 'Response language' }, { key: 'ELEVENLABS_VOICE_ID', label: 'ElevenLabs voice ID' }, { key: 'COQUI_VOICE_REFERENCE', label: 'Coqui voice sample path' }, { key: 'TTS_STREAMING', label: 'Sentence streaming', type: 'checkbox' }, { key: 'TTS_BARGE_IN', label: 'Barge-in interruption', type: 'checkbox' }, { key: 'BARGE_IN_SENSITIVITY', label: 'Barge-in sensitivity', type: 'number' }, { key: 'VAD_AGGRESSIVENESS', label: 'VAD aggressiveness', type: 'number' }, { key: 'VAD_ONSET_CHUNKS', label: 'Onset confirmation chunks', type: 'number' }, { key: 'VAD_SILENCE_DURATION', label: 'Silence before end (seconds)', type: 'number' }, { key: 'VAD_MIN_SPEECH_DURATION', label: 'Minimum speech (seconds)', type: 'number' }, { key: 'VAD_ENERGY_GATE_FACTOR', label: 'Energy gate factor', type: 'number' }, { key: 'INTER_SENTENCE_PAUSE_MS', label: 'Inter-sentence pause (ms)', type: 'number' }, { key: 'TTS_POST_ROLL_MS', label: 'Echo post-roll (ms)', type: 'number' }],
+  voice: [{ key: 'TTS_PROVIDER', label: 'TTS provider', type: 'select', options: ['pyttsx3', 'edge-tts', 'elevenlabs', 'coqui', 'kokoro'] }, { key: 'STT_PROVIDER', label: 'STT provider', type: 'select', options: ['whisper', 'faster_whisper', 'openai'] }, { key: 'WHISPER_MODEL', label: 'Whisper model', type: 'select', options: ['tiny', 'base', 'small', 'medium', 'large'] }, { key: 'VOICE_LANGUAGE', label: 'TTS language' }, { key: 'RESPONSE_LANGUAGE', label: 'Response language' }, { key: 'ELEVENLABS_VOICE_ID', label: 'ElevenLabs voice ID' }, { key: 'COQUI_VOICE_REFERENCE', label: 'Coqui voice sample path' }, { key: 'TTS_STREAMING', label: 'Sentence streaming', type: 'checkbox' }, { key: 'TTS_BARGE_IN', label: 'Barge-in interruption', type: 'checkbox' }, { key: 'PARTIAL_STT_ENABLED', label: 'Live interim transcription (extra STT pass)', type: 'checkbox' }, { key: 'BARGE_IN_SENSITIVITY', label: 'Barge-in sensitivity', type: 'number' }, { key: 'VAD_AGGRESSIVENESS', label: 'VAD aggressiveness', type: 'number' }, { key: 'VAD_ONSET_CHUNKS', label: 'Onset confirmation chunks', type: 'number' }, { key: 'VAD_SILENCE_DURATION', label: 'Silence before end (seconds)', type: 'number' }, { key: 'VAD_MIN_SPEECH_DURATION', label: 'Minimum speech (seconds)', type: 'number' }, { key: 'VAD_ENERGY_GATE_FACTOR', label: 'Energy gate factor', type: 'number' }, { key: 'INTER_SENTENCE_PAUSE_MS', label: 'Inter-sentence pause (ms)', type: 'number' }, { key: 'TTS_POST_ROLL_MS', label: 'Echo post-roll (ms)', type: 'number' }],
   vision: [{ key: 'CAMERA_AUTOSTART', label: 'Camera on startup', type: 'checkbox' }, { key: 'CAMERA_ID', label: 'Camera ID', type: 'number' }, { key: 'CAMERA_FPS', label: 'Frame rate', type: 'number' }, { key: 'CAMERA_RESOLUTION', label: 'Resolution', type: 'select', options: ['640x480', '1280x720'] }, { key: 'VISION_MODE', label: 'Vision mode', type: 'select', options: ['keyword', 'always', 'context'] }, { key: 'LAVA_MODEL', label: 'Vision model' }, { key: 'VISION_LLM_MODE', label: 'Vision routing', type: 'select', options: ['separate', 'direct'] }, { key: 'AMBIENT_VISION_INTERVAL', label: 'Ambient interval (seconds)', type: 'number' }],
 };
 const voiceLanguages = [['en', 'EN - English'], ['fr', 'FR - Francais'], ['uk', 'UK - Ukrainian'], ['de', 'DE - German'], ['es', 'ES - Spanish'], ['it', 'IT - Italian'], ['pt', 'PT - Portuguese'], ['ru', 'RU - Russian'], ['nl', 'NL - Dutch'], ['pl', 'PL - Polish'], ['ja', 'JA - Japanese'], ['ko', 'KO - Korean'], ['zh-cn', 'ZH - Chinese']];
@@ -631,6 +631,7 @@ export default function App() {
   const [speaking, setSpeaking] = useState(false);
   const [level, setLevel] = useState(0);
   const [interimTranscript, setInterimTranscript] = useState('');
+  const [partialSTTEnabled, setPartialSTTEnabled] = useState(false);
   const [reduced, setReduced] = useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [panelWidth, setPanelWidth] = useState(380);
   const [copied, setCopied] = useState('');
@@ -706,12 +707,14 @@ export default function App() {
       },
       onLevel: value => { if (!closed) setLevel(value); },
       onSpeechStart: () => { if (!closed) setInterimTranscript(''); },
-      onPartial: async blob => {
-        if (closed) return;
-        const response = await checked(await fetch('/api/interface/transcribe', { method: 'POST', headers: { 'Content-Type': 'audio/wav' }, body: blob, signal: transcription.signal }));
-        const { text } = await response.json();
-        if (!closed && text?.trim()) setInterimTranscript(text.trim());
-      },
+      ...(partialSTTEnabled ? {
+        onPartial: async (blob: Blob) => {
+          if (closed) return;
+          const response = await checked(await fetch('/api/interface/transcribe', { method: 'POST', headers: { 'Content-Type': 'audio/wav' }, body: blob, signal: transcription.signal }));
+          const { text } = await response.json();
+          if (!closed && text?.trim()) setInterimTranscript(text.trim());
+        },
+      } : {}),
       onError: () => { if (!closed) { setMicEnabled(false); setError('Microphone interrupted. Enable it again to resume.'); } },
       onUtterance: async blob => {
         if (closed || voiceWorking.current) return;
@@ -794,6 +797,7 @@ export default function App() {
     void fetch('/api/interface/settings').then(checked).then(response => response.json()).then(result => {
       const configured = typeof result.values?.PERSONA_NAME === 'string' ? result.values.PERSONA_NAME.trim() : '';
       if (!stopped && configured) setPersonaName(configured);
+      if (!stopped) setPartialSTTEnabled(Boolean(result.values?.PARTIAL_STT_ENABLED));
     }).catch(() => {});
     return () => { stopped = true; };
   }, []);
@@ -918,6 +922,11 @@ export default function App() {
     if (speechDraining.current) return;
     speechDraining.current = true;
     const generation = speechGeneration.current;
+    let prefetched: { text: string; promise: Promise<Blob> } | null = null;
+    const fetchSpeech = (text: string) => fetch('/api/interface/speak', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: text.slice(0, 8000) }),
+    }).then(checked).then(response => response.blob());
     try {
       while (speechQueue.current.length && generation === speechGeneration.current) {
         const sentence = speechQueue.current.shift();
@@ -926,12 +935,17 @@ export default function App() {
         const controller = new AbortController();
         audioAbort.current = controller;
         try {
-          const response = await checked(await fetch('/api/interface/speak', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: sentence.slice(0, 8000) }), signal: controller.signal,
-          }));
-          const blob = await response.blob();
+          const blob = prefetched?.text === sentence
+            ? await prefetched.promise
+            : await fetchSpeech(sentence);
+          prefetched = null;
           if (generation !== speechGeneration.current) break;
+          // Synthesize the next queued sentence while this one plays. This
+          // removes inter-sentence request gaps without changing providers.
+          const nextSentence = speechQueue.current[0]?.trim();
+          if (nextSentence && generation === speechGeneration.current) {
+            prefetched = { text: nextSentence, promise: fetchSpeech(nextSentence) };
+          }
           const url = URL.createObjectURL(blob);
           const audio = new Audio(url);
           playback.current = audio;
@@ -1013,7 +1027,7 @@ export default function App() {
     const controller = new AbortController(); abort.current = controller;
     let accumulated = ''; let reasoningAccumulated = ''; let complete = false; let spokenCursor = 0; let spokenSentenceCount = 0;
     try {
-      const response = await checked(await fetch('/api/interface/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text }), signal: controller.signal }));
+      const response = await checked(await fetch('/api/interface/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, voice_mode: automatic }), signal: controller.signal }));
       if (!response.body) throw new Error('The response stream is unavailable.');
       for await (const event of readEvents(response.body)) {
         if (event.type === 'error') throw new Error(event.message);
