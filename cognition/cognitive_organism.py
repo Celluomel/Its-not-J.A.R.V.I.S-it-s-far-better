@@ -310,6 +310,12 @@ class CognitiveOrganism:
     def start(self) -> None:
         """Start the background internal loop. Call once at application startup."""
         if not self._loop_started:
+            body = getattr(self, "_body_runtime", None)
+            if body is not None:
+                body.start()
+                logger.info(
+                    "[CognitiveOrganism] Body runtime started (independent sensor loop; plugins remain opt-in)"
+                )
             self._loop.start()
             self._loop_started = True
             logger.info("[CognitiveOrganism] Background loop started")
