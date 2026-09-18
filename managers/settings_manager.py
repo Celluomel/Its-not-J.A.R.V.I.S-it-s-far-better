@@ -6,6 +6,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional, List, Callable
 from pydantic import BaseModel, validator
+from secret_store import SECRET_FIELDS, config_reference, resolve, store
 
 # Configuration file path
 CONFIG_FILE = Path('config.json')
@@ -159,6 +160,12 @@ class AppSettings(BaseModel):
     HOME_ASSISTANT_SELECTED_ENTITIES: str = ""
     HOME_ASSISTANT_DISCOVERED_ENTITIES: str = ""
     HOME_ASSISTANT_ENTITY_TAGS: str = "{}"
+    BODY_BRIDGE_ENABLED: bool = False
+    BODY_BRIDGE_URL: str = ""
+    BODY_BRIDGE_TOKEN: str = ""
+    BODY_BRIDGE_DEVICE_ID: str = "body-local"
+    BODY_BRIDGE_VERIFY_TLS: bool = True
+    BODY_BRIDGE_RECONNECT_SECONDS: int = 3
 
     # Headless brain API (brain.py)
     BRAIN_API_PORT: int = 8765         # REST + webhook listen port
@@ -299,7 +306,7 @@ def load_settings() -> AppSettings:
             # Update defaults with loaded data
             for key, value in data.items():
                 if hasattr(settings, key):
-                    setattr(settings, key, value)
+                    setattr(settings, key, resolve(key, value) if key in SECRET_FIELDS else value)
             print(f"✅ Loaded settings from {CONFIG_FILE}")
         except Exception as e:
             print(f"⚠️ Error loading config.json: {e}, using defaults")
@@ -329,8 +336,14 @@ def save_settings(settings: AppSettings):
     
     # Save new config
     try:
+        payload = settings.dict()
+        for name in SECRET_FIELDS:
+            value = payload.get(name, "")
+            if value:
+                store(name, value)
+            payload[name] = config_reference(name, value)
         with open(CONFIG_FILE, 'w') as f:
-            json.dump(settings.dict(), f, indent=2)
+            json.dump(payload, f, indent=2)
         print(f"💾 Saved settings to {CONFIG_FILE}")
     except Exception as e:
         print(f"❌ Error saving settings: {e}")

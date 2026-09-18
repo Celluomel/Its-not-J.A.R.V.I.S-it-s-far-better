@@ -22,6 +22,7 @@ import platform
 import secrets
 import shutil
 from pathlib import Path
+from secret_store import load_secrets
 
 def _bootstrap_security():
     """
@@ -36,6 +37,12 @@ def _bootstrap_security():
     _EXAMPLE = _HERE / ".env.example"
 
     created_env = False
+
+    # Secrets migrated to .venv/.env take precedence over the legacy root
+    # .env and are exposed only through the process environment.
+    for key, value in load_secrets().items():
+        if value and key not in os.environ:
+            os.environ[key] = value
 
     # ── 1. Create .env from .env.example if missing ───────────────────────────
     if not _ENV.exists():
@@ -143,4 +150,3 @@ def _bootstrap_security():
             pass
 
 _bootstrap_security()
-

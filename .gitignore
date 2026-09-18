@@ -3,6 +3,7 @@
 
 # Python environments and generated caches
 /venv/
+/.venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/

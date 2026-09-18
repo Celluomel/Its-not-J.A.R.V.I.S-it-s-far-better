@@ -14,6 +14,7 @@ from pathlib import Path
 from threading import Event, RLock, Thread
 import time
 from typing import Any, Dict, Optional
+from secret_store import SECRET_FIELDS, config_reference, resolve, store
 
 
 @dataclass
@@ -85,7 +86,12 @@ class BodyRuntime:
         try:
             if self._config_path.exists():
                 payload = json.loads(self._config_path.read_text(encoding="utf-8"))
-                return payload if isinstance(payload, dict) else {}
+                if isinstance(payload, dict):
+                    for key in SECRET_FIELDS:
+                        if key in payload:
+                            payload[key] = resolve(key, payload[key])
+                    return payload
+                return {}
         except Exception:
             pass
         migrated: Dict[str, Any] = {}
@@ -102,7 +108,12 @@ class BodyRuntime:
     def _write_config(self, payload: Dict[str, Any]) -> None:
         try:
             self._config_path.parent.mkdir(parents=True, exist_ok=True)
-            self._config_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+            safe = dict(payload)
+            for key in SECRET_FIELDS:
+                if safe.get(key):
+                    store(key, safe[key])
+                safe[key] = config_reference(key, safe.get(key))
+            self._config_path.write_text(json.dumps(safe, indent=2, ensure_ascii=False), encoding="utf-8")
         except Exception:
             pass
 

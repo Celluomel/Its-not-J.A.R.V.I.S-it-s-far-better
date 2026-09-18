@@ -242,8 +242,9 @@ async def body_plugins():
 async def body_settings():
     body, _ = _body_runtime_for_state()
     values = body.config_snapshot()
-    if values.get('HOME_ASSISTANT_TOKEN'):
-        values['HOME_ASSISTANT_TOKEN'] = '••••••••'
+    for secret_name in ('HOME_ASSISTANT_TOKEN', 'BODY_BRIDGE_TOKEN'):
+        if values.get(secret_name):
+            values[secret_name] = '••••••••'
     return _json_safe({'values': values, 'config_path': 'data/body/config.json'})
 
 
@@ -251,14 +252,16 @@ async def body_settings():
 async def update_body_settings(payload: BodySettingsUpdate):
     body, organism = _body_runtime_for_state()
     values = dict(payload.values)
-    if values.get('HOME_ASSISTANT_TOKEN') == '••••••••':
-        values.pop('HOME_ASSISTANT_TOKEN', None)
+    for secret_name in ('HOME_ASSISTANT_TOKEN', 'BODY_BRIDGE_TOKEN'):
+        if values.get(secret_name) == '••••••••':
+            values.pop(secret_name, None)
     saved = body.update_config(values)
     if organism is not None:
         from cognition.universal_connector import get_universal_connector
         await get_universal_connector(organism).reconcile_home_assistant_monitor()
-    if saved.get('HOME_ASSISTANT_TOKEN'):
-        saved['HOME_ASSISTANT_TOKEN'] = '••••••••'
+    for secret_name in ('HOME_ASSISTANT_TOKEN', 'BODY_BRIDGE_TOKEN'):
+        if saved.get(secret_name):
+            saved[secret_name] = '••••••••'
     return _json_safe({'values': saved, 'config_path': 'data/body/config.json'})
 
 
@@ -636,10 +639,11 @@ _SETTING_FIELDS = {
     'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED',
     'HOME_ASSISTANT_URL', 'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL',
     'HOME_ASSISTANT_POLL_INTERVAL', 'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_DISCOVERED_ENTITIES', 'HOME_ASSISTANT_ENTITY_TAGS',
+    'BODY_BRIDGE_ENABLED', 'BODY_BRIDGE_URL', 'BODY_BRIDGE_TOKEN', 'BODY_BRIDGE_DEVICE_ID', 'BODY_BRIDGE_VERIFY_TLS', 'BODY_BRIDGE_RECONNECT_SECONDS',
 }
 _SECRET_FIELDS = {
     'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'BRAVE_SEARCH_KEY', 'SERPAPI_KEY',
-    'ELEVENLABS_API_KEY', 'HOME_ASSISTANT_TOKEN',
+    'ELEVENLABS_API_KEY', 'HOME_ASSISTANT_TOKEN', 'WHATSAPP_WEBHOOK_SECRET', 'BODY_BRIDGE_TOKEN',
 }
 
 
