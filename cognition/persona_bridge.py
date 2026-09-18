@@ -2422,6 +2422,19 @@ Memory honesty — two distinct cases:
                 except Exception as _oe:
                     logger.debug(f"Organism post-interaction (non-fatal): {_oe}")
 
+            # A real user turn is the observable result for an aspiration's
+            # pending social recovery step. Keep this outside response
+            # generation so it cannot add latency to the chat path.
+            try:
+                _loop = getattr(organism, "_loop", None) if organism is not None else None
+                _planner = getattr(_loop, "_long_horizon_planner", None)
+                if _planner is not None and hasattr(_planner, "record_interaction_outcome"):
+                    _planner.record_interaction_outcome(
+                        result="user interaction completed after response"
+                    )
+            except Exception as _planner_exc:
+                logger.debug("Planner interaction outcome (non-fatal): %s", _planner_exc)
+
             logger.debug(
                 f"Post-turn lifecycle complete — interaction #{s._interaction_count} "
                 f"user={user_id}"

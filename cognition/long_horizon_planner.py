@@ -437,8 +437,25 @@ class LongHorizonPlanner:
         deviation = abs(actual_cost - step.expected_cost) + \
                     abs(actual_gain - step.expected_gain)
         plan.outcome_deviations.append(deviation)
+        step.status = "completed"
         plan.steps_completed += 1
-        if deviation > REVISION_TRIGGER and len(plan.outcome_deviations) >= 2:
+        # A terminal outcome is a completion, not a reason to replan.  The
+        # previous code advanced the counter but left the plan active forever,
+        # which made the UI remain at 14/15 (or show an active 15/15 plan).
+        if plan.steps_completed >= len(plan.steps):
+            plan.status = "completed"
+            plan.current_decision = (
+                f"{step.operation} completed; the planned causal investigation "
+                "reached its final step."
+            )
+            plan.decision_updated_at = time.time()
+            self._broadcast(
+                "long_horizon_planner.completed",
+                f"[PlanCompleted] domain={aspiration_domain}; "
+                f"progress={plan.steps_completed}/{len(plan.steps)}",
+                0.66,
+            )
+        elif deviation > REVISION_TRIGGER and len(plan.outcome_deviations) >= 2:
             logger.info(f"[LongHorizonPlanner] Replanning {aspiration_domain} "
                         f"(deviation={deviation:.2f})")
             threading.Thread(target=self._replan,
@@ -457,6 +474,50 @@ class LongHorizonPlanner:
                 0.52,
             )
         self._save()
+
+    def record_interaction_outcome(self, result: str = "user interaction completed") -> None:
+        """Use a real user turn to complete a pending social plan step.
+
+        Aspiration plans are autonomous, so they are not owned by a GoalActionExecutor.
+        Their ``social``/``user_question`` recovery step nevertheless needs a real-world
+        observation.  A completed chat turn is that observation; this method deliberately
+        advances only the current social step of the highest-tension aspiration.
+        """
+        asp = getattr(self._organism, "aspirational_self", None)
+        if not asp:
+            return
+        candidates: List[Tuple[float, str]] = []
+        for domain, plan in self._plans.items():
+            if plan.source != "aspiration" or plan.status != "active":
+                continue
+            step = self.current_step(domain)
+            if step is None or (step.operation != "user_question" and step.action_type != "social"):
+                continue
+            aspiration = next(
+                (item for item in asp.aspirations.values()
+                 if getattr(item, "domain", None) == domain),
+                None,
+            )
+            candidates.append((float(getattr(aspiration, "tension", 0.0)), domain))
+        if not candidates:
+            return
+        _, domain = max(candidates)
+        self.record_step_outcome(domain, actual_cost=0.02, actual_gain=0.005)
+        plan = self._plans.get(domain)
+        if plan:
+            plan.last_outcome = {
+                "operation": "user_question",
+                "success": True,
+                "result": str(result)[:240],
+                "observed_at": time.time(),
+            }
+            if plan.status != "completed":
+                plan.current_decision = (
+                    "user interaction completed the social step; "
+                    f"proceed to {self.current_step(domain).operation if self.current_step(domain) else 'completion'}."
+                )
+            plan.decision_updated_at = time.time()
+            self._save()
 
     def record_autonomous_action_outcome(
         self, operation: str, success: bool, result: str = ""
