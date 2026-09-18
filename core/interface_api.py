@@ -56,6 +56,31 @@ def _runtime():
     return state
 
 
+def _body_runtime_for_state():
+    """Return the body even while the cognitive organism is booting.
+
+    Body configuration and plugin discovery are intentionally independent from
+    brain readiness.  A brain-attached runtime is reused when available;
+    otherwise a standalone runtime is kept on the shared state until the brain
+    attaches to it.
+    """
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is not None:
+        from cognition.body_runtime import get_body_runtime
+        body = get_body_runtime(organism)
+        state.body_runtime = body
+        return body, organism
+
+    body = getattr(state, 'body_runtime', None)
+    if body is None:
+        from cognition.body_runtime import get_body_runtime
+        body = get_body_runtime()
+        state.body_runtime = body
+        logger.info('[BodyRuntime] Standalone body started while brain is unavailable')
+    return body, None
+
+
 def _event(label, turn_id=None):
     _events.append({'id': str(uuid.uuid4()), 'label': label, 'timestamp': time.time(), 'turn_id': turn_id})
 
@@ -166,7 +191,7 @@ async def status():
         else {}
     )
     system = getattr(persona, '_system', None)
-    body = getattr(org, '_body_runtime', None)
+    body = getattr(org, '_body_runtime', None) if org is not None else getattr(state, 'body_runtime', None)
     return {
         'version': 1,
         'ready': bool(state.ready and persona and persona.is_ready),
@@ -197,12 +222,7 @@ async def status():
 
 @router.get('/body/status')
 async def body_status():
-    state = _runtime()
-    organism = getattr(getattr(state, 'persona', None), '_organism', None)
-    if organism is None:
-        raise HTTPException(503, 'Cognitive organism is not ready.')
-    from cognition.body_runtime import get_body_runtime
-    body = get_body_runtime(organism)
+    body, _ = _body_runtime_for_state()
     return _json_safe({
         'status': body.status(),
         'plugins': body.plugins(),
@@ -213,23 +233,14 @@ async def body_status():
 
 @router.get('/body/plugins')
 async def body_plugins():
-    state = _runtime()
-    organism = getattr(getattr(state, 'persona', None), '_organism', None)
-    if organism is None:
-        raise HTTPException(503, 'Cognitive organism is not ready.')
-    from cognition.body_runtime import get_body_runtime
-    body = get_body_runtime(organism)
+    body, _ = _body_runtime_for_state()
     return _json_safe({'plugins': body.plugins(), 'config_path': 'data/body/config.json'})
 
 
 @router.get('/body/settings')
 async def body_settings():
-    state = _runtime()
-    organism = getattr(getattr(state, 'persona', None), '_organism', None)
-    if organism is None:
-        raise HTTPException(503, 'Cognitive organism is not ready.')
-    from cognition.body_runtime import get_body_runtime
-    values = get_body_runtime(organism).config_snapshot()
+    body, _ = _body_runtime_for_state()
+    values = body.config_snapshot()
     if values.get('HOME_ASSISTANT_TOKEN'):
         values['HOME_ASSISTANT_TOKEN'] = '••••••••'
     return _json_safe({'values': values, 'config_path': 'data/body/config.json'})
@@ -237,18 +248,14 @@ async def body_settings():
 
 @router.post('/body/settings')
 async def update_body_settings(payload: BodySettingsUpdate):
-    state = _runtime()
-    organism = getattr(getattr(state, 'persona', None), '_organism', None)
-    if organism is None:
-        raise HTTPException(503, 'Cognitive organism is not ready.')
-    from cognition.body_runtime import get_body_runtime
-    body = get_body_runtime(organism)
+    body, organism = _body_runtime_for_state()
     values = dict(payload.values)
     if values.get('HOME_ASSISTANT_TOKEN') == '••••••••':
         values.pop('HOME_ASSISTANT_TOKEN', None)
     saved = body.update_config(values)
-    from cognition.universal_connector import get_universal_connector
-    await get_universal_connector(organism).reconcile_home_assistant_monitor()
+    if organism is not None:
+        from cognition.universal_connector import get_universal_connector
+        await get_universal_connector(organism).reconcile_home_assistant_monitor()
     if saved.get('HOME_ASSISTANT_TOKEN'):
         saved['HOME_ASSISTANT_TOKEN'] = '••••••••'
     return _json_safe({'values': saved, 'config_path': 'data/body/config.json'})
@@ -256,10 +263,9 @@ async def update_body_settings(payload: BodySettingsUpdate):
 
 @router.post('/body/discover')
 async def discover_body_home_assistant():
-    state = _runtime()
-    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    _, organism = _body_runtime_for_state()
     if organism is None:
-        raise HTTPException(503, 'Cognitive organism is not ready.')
+        raise HTTPException(503, 'Body is ready; Home Assistant discovery is waiting for the cognitive connector.')
     from cognition.universal_connector import get_universal_connector
     result = await asyncio.to_thread(get_universal_connector(organism).discover_home_assistant)
     if result.get('ok'):
