@@ -3,6 +3,8 @@
 
 # Python environments and generated caches
 /venv/
+/body_venv/
+/.body_venv/
 /.venv/
 __pycache__/
 *.py[cod]

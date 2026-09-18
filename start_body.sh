@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
-if [[ -x "venv/bin/python" ]]; then
-  BODY_PYTHON="venv/bin/python"
-elif [[ -x ".venv/bin/python" ]]; then
-  BODY_PYTHON=".venv/bin/python"
-else
-  echo "[ERROR] No Python environment found. Run setup.sh first."
-  exit 1
+if [[ ! -x "body_venv/bin/python" ]]; then
+  echo "[*] Creating the independent Body virtual environment..."
+  python3 -m venv body_venv
 fi
+BODY_PYTHON="body_venv/bin/python"
+"$BODY_PYTHON" -m pip install --upgrade pip -q
+"$BODY_PYTHON" -m pip install -r body_requirements.txt -q
 echo "Starting standalone Lumina Body Runtime..."
-exec "$BODY_PYTHON" -m cognition.body_runtime
+exec "$BODY_PYTHON" -m body_runtime_host
