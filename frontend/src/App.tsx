@@ -543,6 +543,7 @@ function BodySettingsView() {
       setValues(settings.values || {});
       setPlugins(pluginData.plugins || []);
       setObservations(status.observations || []);
+      setError('');
       const cached = settings.values?.HOME_ASSISTANT_DISCOVERED_ENTITIES;
       if (cached) { try { const entities = JSON.parse(cached); if (Array.isArray(entities)) setDiscovery({ ok: true, status: 'cached', count: entities.length, entities }); } catch { /* ignore stale cache */ } }
     } catch (e) { setError(e instanceof Error ? e.message : 'Body settings unavailable.'); }
