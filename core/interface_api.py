@@ -522,7 +522,8 @@ _SETTING_FIELDS = {
     'RESPONSE_VERBOSITY', 'RESPONSE_TOKENS_CONCISE', 'RESPONSE_TOKENS_VERBOSE',
     'CUSTOM_SYSTEM_PROMPT', 'LOG_FULL_PROMPTS', 'OBSERVATORY_ENABLED',
     'OBSERVATORY_BASELINE_SAMPLES', 'OBSERVATORY_EMERGENCE_THRESHOLD',
-    'NICEGUI_HOST', 'UNIVERSAL_CONNECTOR_ENABLED', 'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED',
+    'NICEGUI_HOST', 'UNIVERSAL_CONNECTOR_ENABLED', 'BODY_RUNTIME_ENABLED', 'BODY_PLUGIN_HOME_ASSISTANT_ENABLED',
+    'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED',
     'HOME_ASSISTANT_URL', 'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL',
     'HOME_ASSISTANT_POLL_INTERVAL', 'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_DISCOVERED_ENTITIES', 'HOME_ASSISTANT_ENTITY_TAGS',
 }
@@ -994,6 +995,20 @@ async def update_settings(payload: SettingsUpdate):
         except Exception as exc:
             raise HTTPException(400, f'Invalid setting {name}: {exc}')
     save_settings(config, silent=True)
+    body_fields = {
+        'BODY_RUNTIME_ENABLED', 'BODY_PLUGIN_HOME_ASSISTANT_ENABLED',
+        'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED',
+        'HOME_ASSISTANT_URL', 'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL',
+        'HOME_ASSISTANT_POLL_INTERVAL', 'HOME_ASSISTANT_ALLOWED_DOMAINS',
+        'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_ENTITY_TAGS',
+    }
+    if body_fields.intersection(changed):
+        organism = getattr(getattr(_runtime(), 'persona', None), '_organism', None)
+        if organism is not None:
+            from cognition.body_runtime import get_body_runtime
+            get_body_runtime(organism).update_config({
+                key: getattr(config, key) for key in body_fields if hasattr(config, key)
+            })
     audio_fields = {
         'TTS_PROVIDER', 'STT_PROVIDER', 'WHISPER_MODEL',
         'COQUI_VOICE_REFERENCE', 'VOICE_LANGUAGE',
@@ -1011,7 +1026,8 @@ async def update_settings(payload: SettingsUpdate):
         if state.audio is not None:
             await asyncio.to_thread(state.reload_audio)
     state = _runtime()
-    if {'UNIVERSAL_CONNECTOR_ENABLED', 'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED', 'HOME_ASSISTANT_URL',
+    if {'UNIVERSAL_CONNECTOR_ENABLED', 'BODY_RUNTIME_ENABLED', 'BODY_PLUGIN_HOME_ASSISTANT_ENABLED',
+        'HOME_ASSISTANT_ENABLED', 'HOME_ASSISTANT_PRESENCE_ENABLED', 'HOME_ASSISTANT_URL',
         'HOME_ASSISTANT_TOKEN', 'HOME_ASSISTANT_VERIFY_SSL', 'HOME_ASSISTANT_POLL_INTERVAL',
         'HOME_ASSISTANT_ALLOWED_DOMAINS', 'HOME_ASSISTANT_SELECTED_ENTITIES', 'HOME_ASSISTANT_DISCOVERED_ENTITIES', 'HOME_ASSISTANT_ENTITY_TAGS'}.intersection(changed):
         organism = getattr(getattr(state, 'persona', None), '_organism', None)

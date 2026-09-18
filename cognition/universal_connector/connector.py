@@ -82,6 +82,18 @@ class UniversalConnector:
         self._ha_entities: Dict[str, Dict[str, Any]] = {}
         logger.info("[UniversalConnector] initialised (Phase 6.0/6.2 slice)")
 
+    @staticmethod
+    def _body_plugin_enabled(config: Any, legacy_name: str) -> bool:
+        """Read the new body-plugin switch while preserving old configs."""
+        if legacy_name == "home_assistant":
+            selected = getattr(config, "BODY_PLUGIN_HOME_ASSISTANT_ENABLED", None)
+            return bool(getattr(config, "HOME_ASSISTANT_ENABLED", False) if selected is None else selected)
+        return False
+
+    def _body_setting(self, config: Any, key: str, fallback: Any = None) -> Any:
+        value = self._body_runtime.config_value(key, getattr(config, key, fallback))
+        return fallback if value is None else value
+
     def perceive(self, percept: Percept) -> None:
         if percept.hop_count > MAX_HOP_COUNT:
             logger.debug(
@@ -122,18 +134,19 @@ class UniversalConnector:
         """Read permitted Home Assistant states without executing actions."""
         try:
             from managers.settings_manager import config
-            enabled = bool(getattr(config, "HOME_ASSISTANT_ENABLED", False))
+            enabled = bool(self._body_setting(config, "BODY_PLUGIN_HOME_ASSISTANT_ENABLED", getattr(config, "HOME_ASSISTANT_ENABLED", False)))
             connector_enabled = bool(getattr(config, "UNIVERSAL_CONNECTOR_ENABLED", False))
-            base_url = str(getattr(config, "HOME_ASSISTANT_URL", "") or "").strip().rstrip("/")
-            token = str(getattr(config, "HOME_ASSISTANT_TOKEN", "") or "").strip()
-            verify_ssl = bool(getattr(config, "HOME_ASSISTANT_VERIFY_SSL", True))
+            body_enabled = bool(self._body_setting(config, "BODY_RUNTIME_ENABLED", True))
+            base_url = str(self._body_setting(config, "HOME_ASSISTANT_URL", "") or "").strip().rstrip("/")
+            token = str(self._body_setting(config, "HOME_ASSISTANT_TOKEN", "") or "").strip()
+            verify_ssl = bool(self._body_setting(config, "HOME_ASSISTANT_VERIFY_SSL", True))
             allowed = {
                 item.strip().lower()
-                for item in str(getattr(config, "HOME_ASSISTANT_ALLOWED_DOMAINS", "") or "").split(",")
+                for item in str(self._body_setting(config, "HOME_ASSISTANT_ALLOWED_DOMAINS", "") or "").split(",")
                 if item.strip()
             }
-            if not connector_enabled or not enabled:
-                return {"ok": False, "status": "disabled", "entities": [], "message": "Universal Connector or Home Assistant is disabled."}
+            if not connector_enabled or not body_enabled or not enabled:
+                return {"ok": False, "status": "disabled", "entities": [], "message": "Universal Connector, Body Runtime, or Home Assistant plugin is disabled."}
             if not base_url or not token:
                 return {"ok": False, "status": "not_configured", "entities": [], "message": "Home Assistant URL and access token are required."}
             parsed = urlparse(base_url)
@@ -241,8 +254,10 @@ class UniversalConnector:
         """Start or stop the low-rate HA monitor after config changes."""
         try:
             from managers.settings_manager import config
-            enabled = bool(getattr(config, "UNIVERSAL_CONNECTOR_ENABLED", False)) and bool(
-                getattr(config, "HOME_ASSISTANT_ENABLED", False)
+            enabled = (
+                bool(getattr(config, "UNIVERSAL_CONNECTOR_ENABLED", False))
+                and bool(getattr(config, "BODY_RUNTIME_ENABLED", True))
+                and bool(self._body_setting(config, "BODY_PLUGIN_HOME_ASSISTANT_ENABLED", getattr(config, "HOME_ASSISTANT_ENABLED", False)))
             )
         except Exception:
             enabled = False
@@ -285,7 +300,7 @@ class UniversalConnector:
                 logger.debug("[UniversalConnector] Home Assistant monitor cycle failed: %s", exc)
             try:
                 from managers.settings_manager import config
-                interval = max(1, min(300, int(getattr(config, "HOME_ASSISTANT_POLL_INTERVAL", 5))))
+                interval = max(1, min(300, int(self._body_setting(config, "HOME_ASSISTANT_POLL_INTERVAL", 5))))
             except Exception:
                 interval = 5
             try:
@@ -354,12 +369,11 @@ class UniversalConnector:
             lines.append(f"- {label}: {value}{(' ' + unit) if unit else ''} (sensor updated {updated})")
         return "\n".join(lines)
 
-    @classmethod
-    def _entity_label(cls, item: Dict[str, Any]) -> str:
+    def _entity_label(self, item: Dict[str, Any]) -> str:
         entity_id = str(item.get("entity_id") or "sensor")
         try:
             from managers.settings_manager import config
-            tags = json.loads(str(getattr(config, "HOME_ASSISTANT_ENTITY_TAGS", "{}") or "{}"))
+            tags = json.loads(str(self._body_setting(config, "HOME_ASSISTANT_ENTITY_TAGS", "{}") or "{}"))
             tag = tags.get(entity_id) if isinstance(tags, dict) else None
             if isinstance(tag, str) and tag.strip():
                 return tag.strip()
@@ -367,12 +381,11 @@ class UniversalConnector:
             pass
         return entity_id.rsplit(".", 1)[-1].replace("_", " ")
 
-    @staticmethod
-    def _selected_home_assistant_entities() -> set[str]:
+    def _selected_home_assistant_entities(self) -> set[str]:
         try:
             from managers.settings_manager import config
             return {
-                item.strip() for item in str(getattr(config, "HOME_ASSISTANT_SELECTED_ENTITIES", "") or "").split(",")
+                item.strip() for item in str(self._body_setting(config, "HOME_ASSISTANT_SELECTED_ENTITIES", "") or "").split(",")
                 if item.strip()
             }
         except Exception:
@@ -403,7 +416,7 @@ class UniversalConnector:
         )
         try:
             from managers.settings_manager import config
-            if not bool(getattr(config, "HOME_ASSISTANT_PRESENCE_ENABLED", False)):
+            if not bool(self._body_setting(config, "HOME_ASSISTANT_PRESENCE_ENABLED", False)):
                 return
             from core.state import state
             vision = getattr(state, "vision", None)

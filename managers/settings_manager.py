@@ -145,6 +145,10 @@ class AppSettings(BaseModel):
     # storing these values prepares the integration without opening a
     # connection or exposing a network service by default.
     UNIVERSAL_CONNECTOR_ENABLED: bool = False
+    BODY_RUNTIME_ENABLED: bool = True
+    # None preserves legacy HOME_ASSISTANT_ENABLED until the user chooses the
+    # new body-plugin toggle in the interface.
+    BODY_PLUGIN_HOME_ASSISTANT_ENABLED: Optional[bool] = None
     HOME_ASSISTANT_ENABLED: bool = False
     HOME_ASSISTANT_PRESENCE_ENABLED: bool = False
     HOME_ASSISTANT_URL: str = "http://homeassistant.local:8123"

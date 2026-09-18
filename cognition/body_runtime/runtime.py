@@ -9,6 +9,8 @@ from __future__ import annotations
 
 from collections import deque
 from dataclasses import asdict, dataclass, field
+import json
+from pathlib import Path
 from threading import Event, RLock, Thread
 import time
 from typing import Any, Dict, Optional
@@ -49,6 +51,8 @@ class BodyRuntime:
 
     def __init__(self, organism: Any = None, max_events: int = 256):
         self.organism = organism
+        self._config_path = Path("data/body/config.json")
+        self._config = self._load_config()
         self._lock = RLock()
         self._stop = Event()
         self._thread: Optional[Thread] = None
@@ -57,6 +61,56 @@ class BodyRuntime:
         self._commands = deque(maxlen=64)
         self._heartbeat = time.time()
         self._loop_count = 0
+
+    _CONFIG_FIELDS = {
+        "BODY_RUNTIME_ENABLED", "BODY_PLUGIN_HOME_ASSISTANT_ENABLED",
+        "HOME_ASSISTANT_ENABLED", "HOME_ASSISTANT_PRESENCE_ENABLED",
+        "HOME_ASSISTANT_URL", "HOME_ASSISTANT_TOKEN",
+        "HOME_ASSISTANT_VERIFY_SSL", "HOME_ASSISTANT_POLL_INTERVAL",
+        "HOME_ASSISTANT_ALLOWED_DOMAINS", "HOME_ASSISTANT_SELECTED_ENTITIES",
+        "HOME_ASSISTANT_ENTITY_TAGS",
+    }
+
+    def _load_config(self) -> Dict[str, Any]:
+        try:
+            if self._config_path.exists():
+                payload = json.loads(self._config_path.read_text(encoding="utf-8"))
+                return payload if isinstance(payload, dict) else {}
+        except Exception:
+            pass
+        migrated: Dict[str, Any] = {}
+        try:
+            from managers.settings_manager import config
+            for key in self._CONFIG_FIELDS:
+                if hasattr(config, key):
+                    migrated[key] = getattr(config, key)
+        except Exception:
+            pass
+        self._write_config(migrated)
+        return migrated
+
+    def _write_config(self, payload: Dict[str, Any]) -> None:
+        try:
+            self._config_path.parent.mkdir(parents=True, exist_ok=True)
+            self._config_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+        except Exception:
+            pass
+
+    def config_value(self, key: str, fallback: Any = None) -> Any:
+        with self._lock:
+            return self._config.get(key, fallback)
+
+    def update_config(self, values: Dict[str, Any]) -> Dict[str, Any]:
+        with self._lock:
+            for key, value in values.items():
+                if key in self._CONFIG_FIELDS:
+                    self._config[key] = value
+            self._write_config(self._config)
+            return dict(self._config)
+
+    def config_snapshot(self) -> Dict[str, Any]:
+        with self._lock:
+            return dict(self._config)
 
     def start(self) -> None:
         with self._lock:
@@ -112,9 +166,17 @@ class BodyRuntime:
                 "event_count": len(self._events),
                 "pending_commands": len(self._commands),
                 "last_observation": max((item.observed_at for item in self._latest.values()), default=None),
+                "plugins": {
+                    "home_assistant": bool(self.config_value(
+                        "BODY_PLUGIN_HOME_ASSISTANT_ENABLED",
+                        self.config_value("HOME_ASSISTANT_ENABLED", False),
+                    )),
+                },
             }
 
     def context_for_brain(self, max_age: float = 120.0) -> str:
+        if not bool(self.config_value("BODY_RUNTIME_ENABLED", True)):
+            return ""
         observations = self.snapshot(max_age=max_age)
         if not observations:
             return ""
