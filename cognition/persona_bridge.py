@@ -2101,16 +2101,24 @@ Memory honesty — two distinct cases:
             except Exception:
                 logger.debug("[HomeAssistant] prompt context unavailable", exc_info=True)
 
-            # The body is a separate local runtime. This generic bridge keeps
-            # future sensors independent from Home Assistant-specific prompt code.
+            # The Body is the canonical sensor surface. The legacy HA block
+            # above is retained only as a fallback for older configurations.
+            # Previously HA observations were explicitly excluded here, so
+            # the model received the connector cache instead of the freshest
+            # Body sample and its read timestamp.
             try:
                 _body = getattr(self._organism, "_body_runtime", None) if self._organism else None
-                # Home Assistant has a dedicated authoritative block below.
-                # Do not expose the same sensor a second time through the
-                # generic body stream, where an older cached copy could win.
-                _body_context = _body.context_for_brain(exclude_sources={"home_assistant"}) if _body else ""
+                _body_context = _body.context_for_brain() if _body else ""
                 if _body_context:
-                    system_prompt += f"\n\n━━ CURRENT BODY OBSERVATIONS ━━\n{_body_context}"
+                    system_prompt += (
+                        "\n\n━━ CURRENT BODY OBSERVATIONS ━━\n"
+                        "This is the freshest snapshot read by the Body for this turn. "
+                        "Prefer it over older connector, memory, or conversation values.\n"
+                        f"{_body_context}"
+                    )
+                    # Avoid presenting two competing copies of the same
+                    # Home Assistant sensor with different timestamp formats.
+                    _ha_context = ""
             except Exception:
                 logger.debug("[BodyRuntime] prompt context unavailable", exc_info=True)
 

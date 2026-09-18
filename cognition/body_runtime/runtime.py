@@ -255,6 +255,20 @@ class BodyRuntime:
         observations = self.snapshot(max_age=max_age)
         if exclude_sources:
             observations = [item for item in observations if item.get("source") not in exclude_sources]
+        # The Body may receive a permitted discovery list from a plugin, while
+        # the user-facing selection is narrower. Keep unselected HA entities
+        # out of the brain prompt even when the connector refreshed them.
+        selected = {
+            item.strip()
+            for item in str(self.config_value("HOME_ASSISTANT_SELECTED_ENTITIES", "") or "").split(",")
+            if item.strip()
+        }
+        if selected:
+            observations = [
+                item for item in observations
+                if item.get("source") != "home_assistant"
+                or str((item.get("provenance") or {}).get("entity_id", "")) in selected
+            ]
         if not observations:
             return ""
         lines = [
