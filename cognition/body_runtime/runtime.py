@@ -167,7 +167,10 @@ class BodyRuntime:
                 "HOME_ASSISTANT_ENABLED", False
             ) if plugin["id"] == "home_assistant" else False
             plugin["enabled"] = bool(self.config_value(field, fallback))
-            plugin["runtime"] = "active" if plugin["enabled"] and self.status()["running"] else "disabled"
+            # Do not call status() here: status() includes plugin snapshots and
+            # would recurse forever as soon as the Body toggle is enabled.
+            running = bool(self._thread and self._thread.is_alive())
+            plugin["runtime"] = "active" if plugin["enabled"] and running else "disabled"
         return plugins
 
     def start(self) -> None:
