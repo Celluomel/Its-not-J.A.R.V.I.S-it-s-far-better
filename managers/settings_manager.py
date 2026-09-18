@@ -80,7 +80,7 @@ class AppSettings(BaseModel):
     
     # Audio Settings
     TTS_PROVIDER: str = "pyttsx3"
-    STT_PROVIDER: str = "whisper"
+    STT_PROVIDER: str = "faster_whisper"
     WHISPER_MODEL: str = "base"
     ELEVENLABS_API_KEY: str = ""
     ELEVENLABS_VOICE_ID: str = "EXAVITQu4vr4xnSDxMaL"
@@ -97,6 +97,9 @@ class AppSettings(BaseModel):
     # Optional live interim transcription. Disabled by default because it
     # performs a second Whisper pass and can delay the final utterance.
     PARTIAL_STT_ENABLED: bool = False
+    # Voice answers are intentionally short so the first spoken sentence is
+    # produced quickly. Text chat keeps its normal concise/verbose budgets.
+    VOICE_MAX_TOKENS: int = 768
     
     # Vision Settings
     CAMERA_AUTOSTART: bool = False

@@ -85,9 +85,14 @@ class FasterWhisperSTT:
             language=language,
             beam_size=1,           # fastest, still accurate
             vad_filter=True,       # built-in VAD removes silence
-            vad_parameters=dict(min_silence_duration_ms=300),
+            vad_parameters=dict(min_silence_duration_ms=350),
+            temperature=0.0,
+            condition_on_previous_text=False,
+            no_speech_threshold=0.65,
         )
         text = " ".join(seg.text.strip() for seg in segments).strip()
+        if text and len(text.strip(' .,!?:;')) < 3:
+            return ""
         logger.info(f"STT done in {(time.time()-t0)*1000:.0f}ms: {text[:60]!r}")
         return text
 
@@ -106,6 +111,9 @@ class FasterWhisperSTT:
             language=language,
             beam_size=1,
             vad_filter=True,
+            temperature=0.0,
+            condition_on_previous_text=False,
+            no_speech_threshold=0.65,
         )
         text = " ".join(seg.text.strip() for seg in segments).strip()
         logger.info(f"STT (numpy) done in {(time.time()-t0)*1000:.0f}ms")
@@ -498,7 +506,9 @@ def patch_audio_manager(audio_manager) -> None:
     def _stt_faster_whisper(self, audio_path: str) -> Optional[str]:
         obj = self.stt_engine.get('_obj')
         if obj:
-            return obj.transcribe(audio_path)
+            from managers.settings_manager import config
+            language = getattr(config, 'VOICE_LANGUAGE', 'en') or 'en'
+            return obj.transcribe(audio_path, language=language.split('-')[0].lower())
         return None
 
     # ── Kokoro TTS ──────────────────────────────────────────────────────────

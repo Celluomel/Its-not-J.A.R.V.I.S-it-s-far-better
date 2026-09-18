@@ -679,7 +679,7 @@ class PersonaBridge:
         # resulting <think> block is parsed back out in Phase B below via
         # capture_reasoning(), so downstream consumers (cognitive_validator,
         # etc.) see no change.
-        if hasattr(self, '_inner_monologue') and self._inner_monologue.enabled:
+        if not voice_mode and hasattr(self, '_inner_monologue') and self._inner_monologue.enabled:
             _im_temp = getattr(self, '_last_arb_temperature', None) or 0.72
             try:
                 _im_prefix, arb_temperature, _im_presence_penalty = (
@@ -835,6 +835,25 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                 "the future objective."
             )
 
+        if voice_mode:
+            # Audio needs a direct, self-contained utterance. Without this
+            # contract reasoning models often spend hundreds of tokens on a
+            # reflective preamble, while the browser only reads two sentences.
+            system_prompt += (
+                "\n\n━━ SPOKEN RESPONSE CONTRACT ━━\n"
+                "Answer the user's latest utterance directly in French when the user speaks French. "
+                "Use one or two natural spoken sentences, preserve names and concrete facts, and do not "
+                "restate the question, narrate hidden reasoning, invent context, or ask a follow-up unless "
+                "essential."
+            )
+            _generation_input += (
+                "\nRespond now with only the short spoken answer."
+            )
+            arb_temperature = min(
+                float(arb_temperature) if arb_temperature is not None else 0.45,
+                0.55,
+            )
+
         # Location is a mutable world-model anchor, not a permanent identity
         # fact. Only inject it when explicitly configured by the user.
         try:
@@ -946,7 +965,12 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                 try:
                     from managers.settings_manager import config as _tbcfg
                     _verbosity_tok = getattr(_tbcfg, 'RESPONSE_VERBOSITY', 'concise')
-                    if _verbosity_tok == 'concise':
+                    if voice_mode:
+                        _max_tokens = max(
+                            256,
+                            min(1024, int(getattr(_tbcfg, 'VOICE_MAX_TOKENS', 768))),
+                        )
+                    elif _verbosity_tok == 'concise':
                         _configured_tokens = int(getattr(_tbcfg, 'RESPONSE_TOKENS_CONCISE', 300))
                         # The selector is a style instruction, not a hard
                         # truncation point. Keep enough headroom for Gemma's
