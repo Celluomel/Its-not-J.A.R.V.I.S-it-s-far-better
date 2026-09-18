@@ -201,9 +201,21 @@ async def body_status():
     body = get_body_runtime(organism)
     return _json_safe({
         'status': body.status(),
+        'plugins': body.plugins(),
         'observations': body.snapshot(),
         'recent_events': body.recent_events(),
     })
+
+
+@router.get('/body/plugins')
+async def body_plugins():
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Cognitive organism is not ready.')
+    from cognition.body_runtime import get_body_runtime
+    body = get_body_runtime(organism)
+    return _json_safe({'plugins': body.plugins(), 'config_path': 'data/body/config.json'})
 
 
 @router.get('/telemetry')

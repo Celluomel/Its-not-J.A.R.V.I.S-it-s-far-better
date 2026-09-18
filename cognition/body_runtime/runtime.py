@@ -53,6 +53,13 @@ class BodyRuntime:
         self.organism = organism
         self._config_path = Path("data/body/config.json")
         self._config = self._load_config()
+        self._plugins: Dict[str, Dict[str, Any]] = {}
+        self.register_plugin(
+            "home_assistant",
+            "Home Assistant",
+            "BODY_PLUGIN_HOME_ASSISTANT_ENABLED",
+            "Read-only environmental sensors and presence",
+        )
         self._lock = RLock()
         self._stop = Event()
         self._thread: Optional[Thread] = None
@@ -112,6 +119,29 @@ class BodyRuntime:
         with self._lock:
             return dict(self._config)
 
+    def register_plugin(self, plugin_id: str, label: str, toggle_field: str, description: str) -> None:
+        """Allow body adapters to announce themselves without changing brain UI."""
+        with self._lock:
+            self._plugins[plugin_id] = {
+                "id": plugin_id,
+                "label": label,
+                "toggle_field": toggle_field,
+                "description": description,
+                "available": True,
+            }
+
+    def plugins(self) -> list[Dict[str, Any]]:
+        with self._lock:
+            plugins = list(self._plugins.values())
+        for plugin in plugins:
+            field = plugin["toggle_field"]
+            fallback = self.config_value(
+                "HOME_ASSISTANT_ENABLED", False
+            ) if plugin["id"] == "home_assistant" else False
+            plugin["enabled"] = bool(self.config_value(field, fallback))
+            plugin["runtime"] = "active" if plugin["enabled"] and self.status()["running"] else "disabled"
+        return plugins
+
     def start(self) -> None:
         with self._lock:
             if self._thread and self._thread.is_alive():
@@ -167,10 +197,7 @@ class BodyRuntime:
                 "pending_commands": len(self._commands),
                 "last_observation": max((item.observed_at for item in self._latest.values()), default=None),
                 "plugins": {
-                    "home_assistant": bool(self.config_value(
-                        "BODY_PLUGIN_HOME_ASSISTANT_ENABLED",
-                        self.config_value("HOME_ASSISTANT_ENABLED", False),
-                    )),
+                    item["id"]: item["enabled"] for item in self.plugins()
                 },
             }
 
