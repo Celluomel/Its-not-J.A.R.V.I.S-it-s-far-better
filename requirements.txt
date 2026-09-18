@@ -108,6 +108,8 @@ tqdm>=4.66.0
 aiofiles>=23.2.0
 fastapi>=0.104.0,<1.0.0
 uvicorn[standard]>=0.24.0
+# Optional Body-to-Brain LAN transport.  Body remains local when disabled.
+websockets>=12.0,<16.0
 
 # -- Research MCP - Web browsing ----------------------------------------------
 # After pip install, run once: playwright install chromium

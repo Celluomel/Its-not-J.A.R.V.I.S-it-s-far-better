@@ -63,6 +63,7 @@ class BodyRuntime:
         )
         self._stop = Event()
         self._thread: Optional[Thread] = None
+        self._bridge = None
         self._latest: Dict[str, BodyObservation] = {}
         self._events = deque(maxlen=max_events)
         self._commands = deque(maxlen=64)
@@ -76,6 +77,8 @@ class BodyRuntime:
         "HOME_ASSISTANT_VERIFY_SSL", "HOME_ASSISTANT_POLL_INTERVAL",
         "HOME_ASSISTANT_ALLOWED_DOMAINS", "HOME_ASSISTANT_SELECTED_ENTITIES",
         "HOME_ASSISTANT_DISCOVERED_ENTITIES", "HOME_ASSISTANT_ENTITY_TAGS",
+        "BODY_BRIDGE_ENABLED", "BODY_BRIDGE_URL", "BODY_BRIDGE_TOKEN",
+        "BODY_BRIDGE_DEVICE_ID", "BODY_BRIDGE_VERIFY_TLS", "BODY_BRIDGE_RECONNECT_SECONDS",
     }
 
     def _load_config(self) -> Dict[str, Any]:
@@ -113,7 +116,20 @@ class BodyRuntime:
                 if key in self._CONFIG_FIELDS:
                     self._config[key] = value
             self._write_config(self._config)
-            return dict(self._config)
+            bridge_enabled = bool(self._config.get("BODY_BRIDGE_ENABLED", False))
+            bridge = self._bridge
+        if bridge_enabled and self._thread and self._thread.is_alive():
+            if bridge is None:
+                try:
+                    from cognition.body_runtime.bridge import BodyBrainBridge
+                    self._bridge = BodyBrainBridge(self)
+                    self._bridge.start()
+                except Exception:
+                    pass
+        elif not bridge_enabled and bridge is not None:
+            bridge.stop()
+            self._bridge = None
+        return dict(self._config)
 
     def config_snapshot(self) -> Dict[str, Any]:
         with self._lock:
@@ -149,6 +165,14 @@ class BodyRuntime:
             self._stop.clear()
             self._thread = Thread(target=self._run, name="lumina-body-runtime", daemon=True)
             self._thread.start()
+            if bool(self.config_value("BODY_BRIDGE_ENABLED", False)):
+                try:
+                    from cognition.body_runtime.bridge import BodyBrainBridge
+                    self._bridge = self._bridge or BodyBrainBridge(self)
+                    self._bridge.start()
+                except Exception:
+                    import logging
+                    logging.getLogger(__name__).warning("[BodyRuntime] Brain bridge unavailable", exc_info=True)
 
     def stop(self, timeout: float = 1.0) -> None:
         self._stop.set()
@@ -156,13 +180,17 @@ class BodyRuntime:
         if thread and thread.is_alive():
             thread.join(timeout=max(0.0, timeout))
         self._thread = None
+        if self._bridge is not None:
+            self._bridge.stop(timeout)
 
-    def publish_observation(self, observation: BodyObservation | None = None, **kwargs: Any) -> BodyObservation:
+    def publish_observation(self, observation: BodyObservation | None = None, forward: bool = True, **kwargs: Any) -> BodyObservation:
         item = observation or BodyObservation(**kwargs)
         key = f"{item.source}:{item.subject}"
         with self._lock:
             self._latest[key] = item
             self._events.append(item)
+        if forward and self._bridge is not None:
+            self._bridge.enqueue_observation(item.as_dict())
         return item
 
     def enqueue_command(self, target: str, action: str, payload: Optional[Dict[str, Any]] = None) -> BodyCommand:
@@ -198,6 +226,11 @@ class BodyRuntime:
                 "last_observation": max((item.observed_at for item in self._latest.values()), default=None),
                 "plugins": {
                     item["id"]: item["enabled"] for item in self.plugins()
+                },
+                "brain_bridge": {
+                    "enabled": bool(self.config_value("BODY_BRIDGE_ENABLED", False)),
+                    "connected": bool(self._bridge and self._bridge.connected),
+                    "url": str(self.config_value("BODY_BRIDGE_URL", "") or ""),
                 },
             }
 

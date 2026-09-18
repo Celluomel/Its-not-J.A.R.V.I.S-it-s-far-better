@@ -12,6 +12,7 @@ import ipaddress
 from urllib.parse import urlparse
 
 from fastapi import APIRouter, Depends, HTTPException, Request, UploadFile, File
+from fastapi import WebSocket, WebSocketDisconnect
 from fastapi.responses import Response, StreamingResponse
 from pydantic import BaseModel, Field
 
@@ -274,6 +275,45 @@ async def discover_body_home_assistant():
             'HOME_ASSISTANT_DISCOVERED_ENTITIES': json.dumps(result.get('entities', []), ensure_ascii=False),
         })
     return _json_safe(result)
+
+
+@router.websocket('/body/bridge')
+async def body_bridge(websocket: WebSocket):
+    """Receive authenticated observations from a remote Body Runtime."""
+    body, _ = _body_runtime_for_state()
+    from managers.settings_manager import config
+    expected = str(body.config_value('BODY_BRIDGE_TOKEN', getattr(config, 'BODY_BRIDGE_TOKEN', '')) or '')
+    supplied = websocket.headers.get('authorization', '')
+    token = supplied[7:].strip() if supplied.lower().startswith('bearer ') else ''
+    if not expected or token != expected:
+        await websocket.close(code=1008, reason='Body bridge authentication failed')
+        return
+    await websocket.accept()
+    try:
+        while True:
+            message = await websocket.receive_json()
+            if message.get('type') == 'hello':
+                await websocket.send_json({'type': 'hello_ack', 'protocol': 1, 'brain': 'ready'})
+                continue
+            if message.get('type') != 'observation' or not isinstance(message.get('observation'), dict):
+                await websocket.send_json({'type': 'error', 'reason': 'unsupported message'})
+                continue
+            item = message['observation']
+            from cognition.body_runtime import BodyObservation
+            observation = BodyObservation(
+                source=f"remote:{message.get('device_id') or 'body'}:{item.get('source') or 'unknown'}",
+                kind=str(item.get('kind') or 'sensor'),
+                subject=str(item.get('subject') or 'observation'),
+                value=item.get('value'),
+                unit=str(item.get('unit') or ''),
+                confidence=float(item.get('confidence', 1.0)),
+                observed_at=float(item.get('observed_at') or time.time()),
+                provenance=dict(item.get('provenance') or {}),
+            )
+            body.publish_observation(observation, forward=False)
+            await websocket.send_json({'type': 'observation_ack', 'subject': observation.subject})
+    except WebSocketDisconnect:
+        logger.info('[BodyBridge] remote Body disconnected')
 
 
 @router.get('/telemetry')
