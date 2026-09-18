@@ -2060,6 +2060,16 @@ Memory honesty — two distinct cases:
             except Exception:
                 logger.debug("[HomeAssistant] prompt context unavailable", exc_info=True)
 
+            # The body is a separate local runtime. This generic bridge keeps
+            # future sensors independent from Home Assistant-specific prompt code.
+            try:
+                _body = getattr(self._organism, "_body_runtime", None) if self._organism else None
+                _body_context = _body.context_for_brain() if _body else ""
+                if _body_context:
+                    system_prompt += f"\n\n━━ CURRENT BODY OBSERVATIONS ━━\n{_body_context}"
+            except Exception:
+                logger.debug("[BodyRuntime] prompt context unavailable", exc_info=True)
+
             # ── Inject v2 autonomous architecture context ─────────────────
             try:
                 org = self._organism

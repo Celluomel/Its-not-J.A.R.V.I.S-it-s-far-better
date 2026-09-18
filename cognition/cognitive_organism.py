@@ -286,6 +286,11 @@ class CognitiveOrganism:
         self.event_bus = CognitiveEventBus()
         wire_cognitive_bus(self, self.event_bus)
 
+        # Body is an independent local runtime. It can receive sensor data
+        # before/without a chat turn; the brain only consumes snapshots.
+        from cognition.body_runtime import get_body_runtime
+        self._body_runtime = get_body_runtime(self)
+
         # ── Cognitive Validator + Architecture Monitor ─────────────────
         self.cognitive_validator = CognitiveValidator(self)
         self.arch_monitor        = CognitiveArchitectureMonitor(self, self.cognitive_validator)
@@ -311,6 +316,12 @@ class CognitiveOrganism:
 
     def shutdown(self) -> None:
         """Gracefully stop the background loop."""
+        try:
+            body = getattr(self, "_body_runtime", None)
+            if body is not None:
+                body.stop()
+        except Exception:
+            logger.debug("[CognitiveOrganism] Body runtime shutdown failed", exc_info=True)
         # Flush ThoughtStream to disk before stopping
         try:
             if hasattr(self, 'thought_stream') and hasattr(self.thought_stream, 'flush'):

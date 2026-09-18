@@ -46,6 +46,7 @@ from urllib.error import HTTPError, URLError
 from typing import Any, Dict, List, Optional
 
 from cognition.universal_connector.event import Percept
+from cognition.body_runtime import get_body_runtime
 
 logger = logging.getLogger(__name__)
 
@@ -73,6 +74,7 @@ _DISAGREEMENT_MARKERS = (
 class UniversalConnector:
     def __init__(self, organism: Any):
         self._organism = organism
+        self._body_runtime = get_body_runtime(organism)
         self._recent: List[Percept] = []
         self._ha_task = None
         self._ha_stop = None
@@ -181,6 +183,18 @@ class UniversalConnector:
             }
             changed_ids.update(set(previous_entities) - set(next_entities))
             self._ha_entities = next_entities
+            for item in entities:
+                self._body_runtime.publish_observation(
+                    source="home_assistant",
+                    kind=str(item.get("domain") or "sensor"),
+                    subject=self._entity_label(item),
+                    value=("presence detected" if item.get("signal") == "presence_detected" else
+                           "no presence" if item.get("signal") == "no_presence" else item.get("state")),
+                    unit=str(item.get("unit") or ""),
+                    confidence=0.98,
+                    observed_at=self._parse_timestamp(item.get("last_updated") or item.get("last_changed")),
+                    provenance={"entity_id": item.get("entity_id"), "device_class": item.get("device_class")},
+                )
             if not previous_entities or len(previous_entities) != len(next_entities):
                 logger.info(
                     "[UniversalConnector] Home Assistant discovery: %d permitted entities",
@@ -368,8 +382,25 @@ class UniversalConnector:
     def _state_signature(item: Dict[str, Any]) -> str:
         return f"{item.get('state')}|{item.get('signal')}|{item.get('unit')}"
 
+    @staticmethod
+    def _parse_timestamp(value: Any) -> float:
+        if not value:
+            return time.time()
+        try:
+            return datetime.fromisoformat(str(value).replace("Z", "+00:00")).timestamp()
+        except Exception:
+            return time.time()
+
     def _forward_external_presence(self, entity_id: str, present: bool) -> None:
         """Forward occupancy to PresenceEngine without assigning identity."""
+        self._body_runtime.publish_observation(
+            source="home_assistant",
+            kind="presence",
+            subject=entity_id,
+            value="present" if present else "absent",
+            confidence=0.98,
+            provenance={"entity_id": entity_id},
+        )
         try:
             from managers.settings_manager import config
             if not bool(getattr(config, "HOME_ASSISTANT_PRESENCE_ENABLED", False)):

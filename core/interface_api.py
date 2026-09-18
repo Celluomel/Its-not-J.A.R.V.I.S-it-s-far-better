@@ -162,6 +162,7 @@ async def status():
         else {}
     )
     system = getattr(persona, '_system', None)
+    body = getattr(org, '_body_runtime', None)
     return {
         'version': 1,
         'ready': bool(state.ready and persona and persona.is_ready),
@@ -186,7 +187,23 @@ async def status():
         'timings': dict(_timings),
         'events': list(_events),
         'presence_messages': list(_presence_messages),
+        'body_runtime': body.status() if body is not None else {'available': False, 'running': False},
     }
+
+
+@router.get('/body/status')
+async def body_status():
+    state = _runtime()
+    organism = getattr(getattr(state, 'persona', None), '_organism', None)
+    if organism is None:
+        raise HTTPException(503, 'Cognitive organism is not ready.')
+    from cognition.body_runtime import get_body_runtime
+    body = get_body_runtime(organism)
+    return _json_safe({
+        'status': body.status(),
+        'observations': body.snapshot(),
+        'recent_events': body.recent_events(),
+    })
 
 
 @router.get('/telemetry')
