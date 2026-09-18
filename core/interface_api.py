@@ -47,6 +47,10 @@ def _local_request(request: Request):
 router = APIRouter(prefix='/api/interface', dependencies=[Depends(_local_request)])
 
 
+class BodySettingsUpdate(BaseModel):
+    values: dict[str, object] = Field(default_factory=dict)
+
+
 def _runtime():
     from core.state import state
     return state
@@ -232,7 +236,7 @@ async def body_settings():
 
 
 @router.post('/body/settings')
-async def update_body_settings(payload: SettingsUpdate):
+async def update_body_settings(payload: BodySettingsUpdate):
     state = _runtime()
     organism = getattr(getattr(state, 'persona', None), '_organism', None)
     if organism is None:

@@ -136,7 +136,7 @@ REM --- Face Recognition (optional - requires Visual C++ Build Tools) ---
 :facecheck
 "%LUMINA_PYTHON%" -c "import sys; raise SystemExit(0 if sys.version_info[:2] == (3, 11) else 1)" >nul 2>&1
 if errorlevel 1 (
-    for /f "delims=" %%V in ('"%LUMINA_PYTHON%" -c "import sys; print(str(sys.version_info.major)+'.'+str(sys.version_info.minor))"') do set "PYTHON_VERSION=%%V"
+    set "PYTHON_VERSION=unsupported"
     echo [WARN] Skipping the Python 3.11 dlib wheel on Python %PYTHON_VERSION%.
     echo        Checking the model package separately before startup.
     goto :face_models_check
@@ -193,7 +193,7 @@ if errorlevel 1 (
 if errorlevel 1 (
     echo [WARN] face_recognition_models is still unavailable. Vision will run without face ID.
 ) else (
-    for /f "delims=" %%P in ('"%LUMINA_PYTHON%" -c "import face_recognition_models; print(face_recognition_models.__file__)"') do echo [OK] face_recognition_models ready: %%P
+    echo [OK] face_recognition_models ready.
 )
 
 REM --- Playwright ---
