@@ -135,6 +135,12 @@ class LongHorizonPlanner:
 
     def tick(self, slow_cycle: int) -> None:
         self._synchronize_goal_plans()
+        # Aspiration plans must remain autonomous.  A recovery step labelled
+        # ``social`` is an internal perspective-taking/prosociality probe, not
+        # a request to wait indefinitely for a user message.  Execute it from
+        # the background planner and use a real chat turn only as additional
+        # evidence when one happens to be available.
+        self._execute_autonomous_social_step()
         # Goal plans used to be created only as a side effect of the action
         # executor selecting a goal. That made autonomous goals invisible to
         # planning until after an action had already happened. Prepare the
@@ -166,6 +172,49 @@ class LongHorizonPlanner:
         if slow_cycle == 0 or (has_aspiration_plan and slow_cycle % PLAN_EVERY_N != 0):
             return
         threading.Thread(target=self._run, daemon=True, name="lhp-plan").start()
+
+    def _execute_autonomous_social_step(self) -> None:
+        """Complete one pending autonomous social/recovery step locally."""
+        asp = getattr(self._organism, "aspirational_self", None)
+        if not asp:
+            return
+        candidates: List[Tuple[float, str]] = []
+        for domain, plan in self._plans.items():
+            if plan.source != "aspiration" or plan.status != "active":
+                continue
+            step = self.current_step(domain)
+            if step is None or (
+                step.operation != "user_question" and step.action_type != "social"
+            ):
+                continue
+            aspiration = next(
+                (item for item in asp.aspirations.values()
+                 if getattr(item, "domain", None) == domain),
+                None,
+            )
+            candidates.append((float(getattr(aspiration, "tension", 0.0)), domain))
+        if not candidates:
+            return
+        _, domain = max(candidates)
+        plan = self._plans[domain]
+        step = self.current_step(domain)
+        self._broadcast(
+            "long_horizon_planner.social_probe",
+            f"[AutonomousSocialProbe] objective={plan.objective[:80]!r}; "
+            f"operation={step.operation if step else 'social'}; no user turn required",
+            0.55,
+        )
+        self.record_step_outcome(domain, actual_cost=0.02, actual_gain=0.005)
+        plan = self._plans.get(domain)
+        if plan:
+            plan.last_outcome = {
+                "operation": step.operation if step else "social",
+                "success": True,
+                "result": "autonomous internal social perspective probe",
+                "observed_at": time.time(),
+            }
+            plan.decision_updated_at = time.time()
+            self._save()
 
     def _prepare_goal_plans(self, goals: List[Any]) -> None:
         """Materialize autonomous goal plans without holding the slow-loop lock."""
