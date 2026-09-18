@@ -13,6 +13,7 @@ import signal
 import ssl
 import threading
 import time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from queue import Empty, Queue
 from urllib.error import HTTPError, URLError
@@ -42,6 +43,7 @@ class BodyHost:
         self.latest: dict[str, dict] = {}
         self.queue: Queue[dict] = Queue(maxsize=256)
         self.bridge_thread: threading.Thread | None = None
+        self.http_server: ThreadingHTTPServer | None = None
 
     def _load_config(self) -> dict:
         try:
@@ -184,6 +186,7 @@ class BodyHost:
 
     def run(self) -> None:
         LOG.info("Standalone Body host started with %s", CONFIG_PATH)
+        self._start_http_endpoint()
         threads = [threading.Thread(target=self.poll_loop, name="body-home-assistant", daemon=True)]
         if bool(self.value("BODY_BRIDGE_ENABLED", False)):
             threads.append(threading.Thread(target=self.bridge_loop, name="body-brain-bridge", daemon=True))
@@ -191,6 +194,42 @@ class BodyHost:
             thread.start()
         while not self.stop_event.wait(1):
             pass
+
+        if self.http_server is not None:
+            self.http_server.shutdown()
+            self.http_server.server_close()
+
+    def _start_http_endpoint(self) -> None:
+        host = str(self.value("BODY_HOST", "127.0.0.1") or "127.0.0.1")
+        port = max(1, min(65535, int(self.value("BODY_PORT", 8765) or 8765)))
+        owner = self
+
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):  # noqa: N802
+                if self.path != "/health":
+                    self.send_error(404)
+                    return
+                data = json.dumps({
+                    "status": "ready",
+                    "runtime": "independent",
+                    "observations": len(owner.latest),
+                    "bridge_enabled": bool(owner.value("BODY_BRIDGE_ENABLED", False)),
+                }).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
+
+            def log_message(self, format, *args):
+                LOG.debug("Body HTTP: " + format, *args)
+
+        try:
+            self.http_server = ThreadingHTTPServer((host, port), Handler)
+            threading.Thread(target=self.http_server.serve_forever, name="body-health", daemon=True).start()
+            LOG.info("Body endpoint listening on http://%s:%d/health", host, port)
+        except OSError as exc:
+            LOG.warning("Body endpoint unavailable on %s:%d: %s", host, port, exc)
 
 
 def main() -> None:
