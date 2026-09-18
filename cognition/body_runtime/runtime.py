@@ -53,6 +53,7 @@ class BodyRuntime:
         self.organism = organism
         self._config_path = Path("data/body/config.json")
         self._config = self._load_config()
+        self._lock = RLock()
         self._plugins: Dict[str, Dict[str, Any]] = {}
         self.register_plugin(
             "home_assistant",
@@ -60,7 +61,6 @@ class BodyRuntime:
             "BODY_PLUGIN_HOME_ASSISTANT_ENABLED",
             "Read-only environmental sensors and presence",
         )
-        self._lock = RLock()
         self._stop = Event()
         self._thread: Optional[Thread] = None
         self._latest: Dict[str, BodyObservation] = {}
