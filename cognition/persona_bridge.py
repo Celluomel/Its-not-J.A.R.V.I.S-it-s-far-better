@@ -2064,7 +2064,10 @@ Memory honesty — two distinct cases:
             # future sensors independent from Home Assistant-specific prompt code.
             try:
                 _body = getattr(self._organism, "_body_runtime", None) if self._organism else None
-                _body_context = _body.context_for_brain() if _body else ""
+                # Home Assistant has a dedicated authoritative block below.
+                # Do not expose the same sensor a second time through the
+                # generic body stream, where an older cached copy could win.
+                _body_context = _body.context_for_brain(exclude_sources={"home_assistant"}) if _body else ""
                 if _body_context:
                     system_prompt += f"\n\n━━ CURRENT BODY OBSERVATIONS ━━\n{_body_context}"
             except Exception:

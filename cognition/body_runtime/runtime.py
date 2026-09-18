@@ -201,10 +201,12 @@ class BodyRuntime:
                 },
             }
 
-    def context_for_brain(self, max_age: float = 120.0) -> str:
+    def context_for_brain(self, max_age: float = 120.0, exclude_sources: Optional[set[str]] = None) -> str:
         if not bool(self.config_value("BODY_RUNTIME_ENABLED", True)):
             return ""
         observations = self.snapshot(max_age=max_age)
+        if exclude_sources:
+            observations = [item for item in observations if item.get("source") not in exclude_sources]
         if not observations:
             return ""
         lines = [

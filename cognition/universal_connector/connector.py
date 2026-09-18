@@ -205,8 +205,16 @@ class UniversalConnector:
                            "no presence" if item.get("signal") == "no_presence" else item.get("state")),
                     unit=str(item.get("unit") or ""),
                     confidence=0.98,
-                    observed_at=self._parse_timestamp(item.get("last_updated") or item.get("last_changed")),
-                    provenance={"entity_id": item.get("entity_id"), "device_class": item.get("device_class")},
+                    # The observation timestamp is when Lumina read the state.
+                    # Home Assistant's last_updated remains provenance: an
+                    # unchanged sensor can have an old last_updated value
+                    # while still being freshly sampled now.
+                    observed_at=time.time(),
+                    provenance={
+                        "entity_id": item.get("entity_id"),
+                        "device_class": item.get("device_class"),
+                        "sensor_last_updated": item.get("last_updated") or item.get("last_changed"),
+                    },
                 )
             if not previous_entities or len(previous_entities) != len(next_entities):
                 logger.info(
