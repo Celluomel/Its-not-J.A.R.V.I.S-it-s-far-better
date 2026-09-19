@@ -1,7 +1,7 @@
 # A Persistent Cognitive Organism: Architecture, Mechanisms and Evaluation Protocol
 
 **Status:** Research architecture paper for the current implementation  
-**Repository:** Cognitive Organism - Beyond J.A.R.V.I.S.  
+**Repository:** PandoraBOX - Cognitive Organism Research Harness  
 **Scope:** Local-first, LLM-assisted cognitive systems with persistent state
 
 ## Abstract

@@ -1,4 +1,4 @@
-# Cognitive Organism - Beyond J.A.R.V.I.S.
+# PandoraBOX - Cognitive Organism Research Harness
 
 ## A research-grade cognitive harness
 
