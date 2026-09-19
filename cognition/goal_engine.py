@@ -281,54 +281,30 @@ class GoalEngine:
 
     @staticmethod
     def _is_valid_goal_topic(topic: str) -> bool:
-        """Strict gate for durable goals; every token must carry content."""
+        """Strict, language-neutral gate for durable goals.
+
+        Semantic quality is the decision. This deliberately avoids deciding
+        that a token is a fragment because it appears in an English or French
+        dictionary. If no embedder is reachable, the safe fallback accepts
+        only a single long token and refuses to persist an unscored phrase.
+        """
         normalized = " ".join(str(topic or "").casefold().split())
         if not normalized:
             return False
         words = normalized.split()
         try:
-            from cognition.topic_quality import get_topic_filter
-            topic_filter = get_topic_filter()
-            words = normalized.split()
-            return (
-                not GoalEngine._looks_like_extracted_fragment(normalized)
-                and
-                topic_filter.is_valid(normalized)
-                and all(topic_filter.is_valid(word) for word in words)
-            )
+            from cognition import goal_semantics
+            semantic_quality = goal_semantics.batch_topic_quality([normalized])
+            if semantic_quality is not None:
+                return bool(semantic_quality[normalized][2])
         except Exception:
-            return (
-                not GoalEngine._looks_like_extracted_fragment(normalized)
-                and not any(char in normalized for char in "'’`")
-            )
-
-    @staticmethod
-    def _looks_like_extracted_fragment(topic: str) -> bool:
-        """Reject short grammar fragments produced by conversational mining.
-
-        A semantic bigram such as ``travaille certains`` can pass a rarity
-        score even though it is not a durable intention. This guard only acts
-        on short phrases containing a determiner/pronoun plus a likely verb;
-        substantive noun phrases such as ``cognitive architecture`` remain
-        eligible.
-        """
-        words = topic.split()
-        if not 2 <= len(words) <= 3:
-            return False
-        function_words = {
-            "a", "an", "the", "this", "that", "these", "those", "some",
-            "any", "each", "every", "certain", "certains", "certaine",
-            "certaines", "quelque", "quelques", "plusieurs", "chaque",
-            "mon", "ma", "mes", "ton", "ta", "tes", "son", "sa", "ses",
-            "notre", "nos", "votre", "vos", "leur", "leurs",
-        }
-        if not function_words.intersection(words):
-            return False
-        likely_verb = re.compile(
-            r"(?:e|es|ent|ons|ez|ais|ait|aient|er|ir|issant|issez|isse|issons)$",
-            re.IGNORECASE,
+            semantic_quality = None
+        # Fail closed for an unscorable multi-word candidate. A goal should
+        # not become durable merely because a local dictionary recognises its
+        # tokens; embeddings are the universal path for phrase meaning.
+        return len(words) == 1 and len(words[0]) >= 7 and not any(
+            char in normalized for char in "'’`"
         )
-        return any(len(word) >= 5 and likely_verb.search(word) for word in words)
 
     def _retire_invalid_active_goals(self) -> int:
         """Migrate legacy goals that predate the strict topic-quality gate."""

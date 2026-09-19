@@ -150,6 +150,15 @@ NOISE_TOPIC_EXEMPLARS = [
     "whatever comes up",
     "a lot of things going on",
     "not sure what to do next",
+    # Conversational fragments and self-report prompts are observations of
+    # dialogue, not durable development subjects.  They are semantic
+    # exemplars, not a language-specific stop-word dictionary.
+    "what is true right now",
+    "which answer is correct",
+    "tell me what this means",
+    "what is my current goal",
+    "a fragment of a sentence",
+    "an incomplete conversational phrase",
 ]
 
 
