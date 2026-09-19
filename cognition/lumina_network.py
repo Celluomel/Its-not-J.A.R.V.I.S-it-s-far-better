@@ -1,10 +1,10 @@
 """
 cognition/lumina_network.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Lumina-to-Lumina network connector.
+PandoraBOX-to-PandoraBOX network connector.
 
-Allows a Master Lumina to:
-  • Register one or more Child Lumina instances (brain.py or NiceGUI)
+Allows a Master PandoraBOX to:
+  • Register one or more Child PandoraBOX instances (brain.py or NiceGUI)
   • Send messages to any child and receive responses
   • Run autonomous dialogues (N-turn exchanges on a topic)
   • Receive unsolicited messages FROM a child (push model)
@@ -21,18 +21,18 @@ Network topology:
 
 Config (config.json):
   "LUMINA_CHILDREN": [
-    {"id": "child_a", "name": "Lumina-A", "url": "http://192.168.1.10:8765",
+    {"id": "child_a", "name": "PandoraBOX-A", "url": "http://192.168.1.10:8765",
      "api_key": "", "role": "child"},
-    {"id": "child_b", "name": "Lumina-B", "url": "http://192.168.1.11:8765",
+    {"id": "child_b", "name": "PandoraBOX-B", "url": "http://192.168.1.11:8765",
      "api_key": "", "role": "child"}
   ]
 
 Protocol:
   Master → Child:  POST {child_url}/lumina-network/chat
-    body: {"text": "...", "sender_id": "master", "sender_name": "Lumina-Master",
+    body: {"text": "...", "sender_id": "master", "sender_name": "PandoraBOX-Master",
            "conversation_id": "uuid", "api_key": "..."}
   Child → Master:  POST {master_url}/lumina-network/receive
-    body: {"text": "...", "sender_id": "child_a", "sender_name": "Lumina-A",
+    body: {"text": "...", "sender_id": "child_a", "sender_name": "PandoraBOX-A",
            "conversation_id": "uuid"}
 
 Public API:
@@ -66,7 +66,7 @@ SNAPSHOT_COOLDOWN_S = 45.0
 
 @dataclass
 class ChildLumina:
-    """Registered child Lumina instance."""
+    """Registered child PandoraBOX instance."""
     id:           str
     name:         str
     url:          str               # base URL, e.g. http://192.168.1.10:8765
@@ -81,7 +81,7 @@ class ChildLumina:
 
 @dataclass
 class NetworkMessage:
-    """A single message in a Lumina-to-Lumina exchange."""
+    """A single message in a PandoraBOX-to-PandoraBOX exchange."""
     text:            str
     sender_id:       str
     sender_name:     str
@@ -92,7 +92,7 @@ class NetworkMessage:
 
 class LuminaNetwork:
     """
-    Lumina-to-Lumina network connector.
+    PandoraBOX-to-PandoraBOX network connector.
     Manages child instances and routes messages bidirectionally.
     """
 
@@ -106,7 +106,7 @@ class LuminaNetwork:
         self._bubble_fn: Optional[Callable] = None  # fn(text, who, child_id, name)
         self._lock = __import__('threading').Lock()
         self._master_url: str = ""   # set when master exposes its own endpoint
-        self._master_name: str = "Lumina-Master"
+        self._master_name: str = "PandoraBOX-Master"
 
         try:
             import aiohttp
@@ -141,7 +141,7 @@ class LuminaNetwork:
         for c in children_config:
             self.add_child(
                 child_id = c.get("id", f"child_{len(self._children)}"),
-                name     = c.get("name", "Lumina-Child"),
+                name     = c.get("name", "PandoraBOX-Child"),
                 url      = c.get("url", ""),
                 api_key  = c.get("api_key", ""),
                 role     = c.get("role", "child"),
@@ -151,7 +151,7 @@ class LuminaNetwork:
         """Register the UI bubble callback — called for every exchanged message."""
         self._bubble_fn = fn
 
-    def set_master_info(self, url: str, name: str = "Lumina-Master") -> None:
+    def set_master_info(self, url: str, name: str = "PandoraBOX-Master") -> None:
         """Set master's own URL so children can push back to it."""
         self._master_url  = url.rstrip("/")
         self._master_name = name
@@ -218,7 +218,7 @@ class LuminaNetwork:
         show_in_ui:      bool = True,
     ) -> str:
         """
-        Send text to a child Lumina and return its response.
+        Send text to a child PandoraBOX and return its response.
         Pushes both messages to the UI bubble callback.
         """
         child = self._children.get(child_id)
@@ -232,10 +232,10 @@ class LuminaNetwork:
         # ── v53/v56: Pre-send cognitive recording ─────────────────────────
         # Network dialogues bypass cognitive_organism._call_ai_system() so
         # PredictiveConsequenceModel and WorldSelfDynamicsModel never see them.
-        # Wire both here so Lumina-Flux exchanges feed the learning models
+        # Wire both here so PandoraBOX-Flux exchanges feed the learning models
         # with the same richness as human interactions.
         _pcm = _wsdm = _child_uid = None
-        _pre_action = "philosophical"   # default — Lumina-Flux exchanges tend to be
+        _pre_action = "philosophical"   # default — PandoraBOX-Flux exchanges tend to be
         try:
             from core.state import state as _st_pre
             _org  = getattr(getattr(_st_pre, 'persona', None), '_organism', None)
@@ -329,7 +329,7 @@ class LuminaNetwork:
                     "child": child.name,
                     "conv_id": conv_id,
                 })
-            # LLM history — so Lumina can reference dialogue in normal chat
+            # LLM history — so PandoraBOX can reference dialogue in normal chat
             if _st.llm and hasattr(_st.llm, "history") and response_text:
                 _st.llm.history.append({"role": "assistant", "content": text})
                 _st.llm.history.append({
@@ -400,7 +400,7 @@ class LuminaNetwork:
                     _wsdm.record_outcome(
                         outcome       = _net_outcome,
                         user_id       = _child_uid or f"lumina_child_{child_id}",
-                        response_text = text,           # what Lumina sent
+                        response_text = text,           # what PandoraBOX sent
                         user_input    = response_text,  # what Flux replied
                     )
         except Exception:
@@ -699,7 +699,7 @@ class LuminaNetwork:
         logger.info(f"🌐 Summary delivered for {child_name}")
 
     async def _generate_opening(self, child_name: str, child_id: str = "") -> str:
-        """Generate opener from Lumina live cognitive state + relational history with child."""
+        """Generate opener from PandoraBOX live cognitive state + relational history with child."""
         emotion   = "neutral"
         open_q    = ""
         workspace = ""
@@ -811,7 +811,7 @@ class LuminaNetwork:
             f"{child_name} just said: {last_child_msg}\n\n"
             f"Respond as {self._master_name} in 1-2 sentences. Be genuinely curious. "
             f"Advance the thinking — don't just agree. "
-            f"Do not refer to yourself as Lumina unless {self._master_name} == Lumina."
+            f"Do not refer to yourself as PandoraBOX unless {self._master_name} == PandoraBOX."
         )
         try:
             draft = self._llm.generate_bare(prompt, max_tokens=120, temperature=0.75).strip()
@@ -820,9 +820,9 @@ class LuminaNetwork:
 
         # Bug fix (v59): this path never touches cognitive_organism.respond()
         # / _call_ai_system(), so IdentityConstraintEngine never saw any of
-        # Lumina's own turns in a network dialogue — the same gap the
+        # PandoraBOX's own turns in a network dialogue — the same gap the
         # v53/v56 fix above already closed for PCM/WSDM, just missed here.
-        # A Lumina persona talking to another Lumina instance should stay
+        # A PandoraBOX persona talking to another PandoraBOX instance should stay
         # just as identity-consistent as one talking to a person.
         try:
             _ice = getattr(_org, '_identity_constraint', None) if _org else None
@@ -867,7 +867,7 @@ class LuminaNetwork:
             pass
 
         # Phase 6.3 — Peer Cognition: Flux's turn becomes a real competing
-        # hypothesis in Lumina's own Global Workspace (thoughts= slot,
+        # hypothesis in PandoraBOX's own Global Workspace (thoughts= slot,
         # same mechanism v94 wired for camera/vision percepts), not just a
         # conversational reply that vanishes after being spoken. Modality
         # is "peer_cognition", not "text" — semantically this is an
@@ -876,7 +876,7 @@ class LuminaNetwork:
         #
         # This entire block only ever runs when the network dialogue loop
         # is active (gated upstream by LUMINA_NETWORK_ENABLED + the
-        # toggle) — Lumina's own cognition is unaffected when Flux is off,
+        # toggle) — PandoraBOX's own cognition is unaffected when Flux is off,
         # by construction: nothing here is called from anywhere else.
         #
         # confidence is a fixed, honestly-documented estimate (0.65) —
@@ -907,7 +907,7 @@ class LuminaNetwork:
         Routes text through master's persona, returns response.
         """
         child_id    = payload.get("sender_id", "unknown")
-        child_name  = payload.get("sender_name", "Child Lumina")
+        child_name  = payload.get("sender_name", "Child PandoraBOX")
         text        = payload.get("text", "")
         conv_id     = payload.get("conversation_id", str(uuid.uuid4())[:8])
 

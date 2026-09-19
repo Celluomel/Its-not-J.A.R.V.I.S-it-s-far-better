@@ -1,5 +1,5 @@
 """
-lumina_brain_bridge.py  —  Lumina ↔ Brain Visualizer (v2 — reactive)
+lumina_brain_bridge.py  —  PandoraBOX ↔ Brain Visualizer (v2 — reactive)
 ======================================================================
 
 Changes v2
@@ -13,7 +13,7 @@ Changes v2
   - Temporal pulse: activations decay toward a resting baseline between
     events so the brain is never fully frozen
 
-Network → Lumina module mapping
+Network → PandoraBOX module mapping
 --------------------------------
   DMN  ← thought_stream + inner_monologue + narrative_identity
   FPN  ← goal_ecology.dominant_drive + cognitive_validator.health
@@ -69,7 +69,7 @@ def _log_scale(value, max_val):
 
 class LuminaBrainBridge:
 
-    def __init__(self, organism, window_title="Lumina — Cognitive Brain"):
+    def __init__(self, organism, window_title="PandoraBOX — Cognitive Brain"):
         self._o             = organism
         self._window_title  = window_title
         self._shared_state  = create_default_brain_state()
@@ -424,7 +424,7 @@ class LuminaBrainBridge:
         """
         VIS — Real camera perception + ambient vision GW recency.
 
-        Camera off  → RESTING (near zero) — Lumina's eyes are closed
+        Camera off  → RESTING (near zero) — PandoraBOX's eyes are closed
         Camera on   → base 0.30
         Recent ambient vision snapshot (<120s) → +0.45 scaled by recency
         Known face in last snapshot → +0.15 bonus

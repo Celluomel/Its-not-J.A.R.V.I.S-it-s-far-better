@@ -20,7 +20,7 @@ const readableWorkspaceFocus = (workspace: Record<string, any>) => {
 const percent = (v: number | null) => v === null ? '--' : `${Math.round(v * 100)}%`;
 const duration = (v: unknown) => { const n = number(v); const seconds = Math.round(Math.max(0, n ?? 0)); return n === null ? '--' : `${Math.floor(seconds / 60)}m ${seconds % 60}s`; };
 
-export default function CognitiveObservatory({ data, mode, connected, reduced, personaName = 'Lumina' }: { data: Record<string, unknown> | null; mode: string; connected: boolean; reduced: boolean; personaName?: string }) {
+export default function CognitiveObservatory({ data, mode, connected, reduced, personaName = 'PandoraBOX' }: { data: Record<string, unknown> | null; mode: string; connected: boolean; reduced: boolean; personaName?: string }) {
   const [selected, setSelected] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reset, setReset] = useState(0);

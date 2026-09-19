@@ -1,13 +1,13 @@
 """
 test_flux_ab_experiment.py — Phase 6.5
 ========================================
-Does Flux genuinely enlarge Lumina's cognitive space, or is the peer
+Does Flux genuinely enlarge PandoraBOX's cognitive space, or is the peer
 connection decorative? Per the architecture proposal's own suggested
 experiment: run the SAME scenario twice through the real
 recursive_deliberation.deliberate() / WorkspaceCompetition pipeline —
 
-    Run A — Lumina alone      (goals only)
-    Run B — Lumina + Flux     (same goals, plus a Flux peer_cognition
+    Run A — PandoraBOX alone      (goals only)
+    Run B — PandoraBOX + Flux     (same goals, plus a Flux peer_cognition
                                 percept via UniversalConnector, exactly
                                 the real path v95/v96/v(this) wire)
 
@@ -60,11 +60,11 @@ def make_organism(goals):
 
 def run_scenario(goals, flux_hypothesis, user_input):
     """One scenario, run with and without a Flux percept present."""
-    # Run A — Lumina alone
+    # Run A — PandoraBOX alone
     org_a = make_organism(goals)
     result_a = deliberate(org_a, user_input)
 
-    # Run B — Lumina + Flux
+    # Run B — PandoraBOX + Flux
     org_b = make_organism(goals)
     if flux_hypothesis:
         conn = get_universal_connector(org_b)
@@ -125,9 +125,9 @@ def main():
         diffs += int(differs)
 
         print(f"\nScenario: {sc['name']}")
-        print(f"  A (Lumina alone):   ran={res_a is not None}  focus={focus_a!r}"
+        print(f"  A (PandoraBOX alone):   ran={res_a is not None}  focus={focus_a!r}"
               f"  candidates={res_a.get('candidates_considered') if res_a else '-'}")
-        print(f"  B (Lumina + Flux):  ran={res_b is not None}  focus={focus_b!r}"
+        print(f"  B (PandoraBOX + Flux):  ran={res_b is not None}  focus={focus_b!r}"
               f"  candidates={res_b.get('candidates_considered') if res_b else '-'}"
               f"  synthesized={res_b.get('synthesized') if res_b else '-'}")
         print(f"  -> decision differs from A: {differs}"

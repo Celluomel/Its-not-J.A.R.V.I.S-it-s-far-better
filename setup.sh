@@ -2,7 +2,7 @@
 set -e
 
 echo "=========================================="
-echo " Lumina Cognitive Organism - Linux Setup"
+echo " PandoraBOX Cognitive Organism - Linux Setup"
 echo "=========================================="
 echo
 
@@ -183,7 +183,7 @@ if [ "${LUMINA_INSTALL_VOICEMEM:-0}" = "1" ] || [ "$VOICEMEM_CONFIG_ENABLED" = "
     echo "[*] VoiceMem installation requested by config.json or environment..."
     if ! python -c "import voicemem" >/dev/null 2>&1; then
         # VoiceMem currently pins transformers==4.52.3, while Coqui-TTS
-        # 0.25.3 requires <=4.46.2. Preserve Lumina's existing audio stack.
+        # 0.25.3 requires <=4.46.2. Preserve PandoraBOX's existing audio stack.
         if pip install voicemem --no-deps -q; then
             pip install "transformers>=4.43.0,<=4.46.2" -q || true
             echo "[i] VoiceMem kept without dependency replacement; optional audio components may require separate isolation."
@@ -207,7 +207,7 @@ echo "[OK] spaCy POS model ready"
 # New React interface
 ###########################################
 
-echo "[*] Preparing the new Lumina interface..."
+echo "[*] Preparing the new PandoraBOX interface..."
 if ! command -v npm >/dev/null 2>&1; then
     echo "[*] npm not found — installing Node.js and npm..."
     if command -v apt-get >/dev/null 2>&1; then
@@ -313,7 +313,7 @@ fi
 
 echo ""
 echo "=========================================="
-echo " Starting Lumina Cognitive Organism"
+echo " Starting PandoraBOX Cognitive Organism"
 echo "=========================================="
 echo ""
 export ROBOT_PORT="$PORT"

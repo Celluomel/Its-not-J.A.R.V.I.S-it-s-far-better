@@ -31,7 +31,7 @@ What it generates — four distinct reflection modes
    "The thought threads currently show [X]. My beliefs include [Y].
     My recent goals include [Z]. What are the real tensions here?
     Not what should be resolved — what is genuinely unresolved?"
-   Output: 1-2 tensions named and described in Lumina's own language.
+   Output: 1-2 tensions named and described in PandoraBOX's own language.
    Stored as: SelfConcept tension update.
    Frequency: every 12 slow cycles (~24 min).
 

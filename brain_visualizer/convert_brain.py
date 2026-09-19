@@ -1,5 +1,5 @@
 """
-convert_brain.py — Convert any external brain.obj to Lumina's format
+convert_brain.py — Convert any external brain.obj to PandoraBOX's format
 =====================================================================
 Usage (from anywhere):
     python brain_visualizer/convert_brain.py 997.obj

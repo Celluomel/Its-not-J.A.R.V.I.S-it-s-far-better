@@ -6,7 +6,7 @@ not rhetorically.
 
 The gap this closes
 ────────────────────
-After v50, almost all of Lumina's cognition works through this chain:
+After v50, almost all of PandoraBOX's cognition works through this chain:
 
     belief / value computed
          ↓
@@ -65,7 +65,7 @@ Three uses
 
 3. AutonomousExperimentationEngine hypothesis selection
    Among candidate hypotheses, policy selects the one most aligned
-   with active values.  This means if Lumina values honesty, it is
+   with active values.  This means if PandoraBOX values honesty, it is
    more likely to test "does directness increase user engagement" than
    "does flattery increase user engagement."
 
@@ -241,7 +241,7 @@ class DecisionPolicy:
         emphasise: Optional[List[str]] = None,
     ) -> float:
         """
-        Score how well a text candidate aligns with Lumina's current values.
+        Score how well a text candidate aligns with PandoraBOX's current values.
 
         Returns float in [0, 1].  Higher = more value-aligned.
 
@@ -421,7 +421,7 @@ class DecisionPolicy:
         """
         On first boot (or when weights file is absent), derive initial
         weights from SelfConceptSystem beliefs.
-        This ensures the policy starts from Lumina's stated identity,
+        This ensures the policy starts from PandoraBOX's stated identity,
         not arbitrary defaults.
         """
         try:

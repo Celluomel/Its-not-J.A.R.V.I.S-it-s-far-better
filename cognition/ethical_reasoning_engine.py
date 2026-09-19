@@ -1,7 +1,7 @@
 """
 cognition/ethical_reasoning_engine.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ethical Reasoning Engine — emergent moral intelligence for Lumina.
+Ethical Reasoning Engine — emergent moral intelligence for PandoraBOX.
 
 What this adds
 ──────────────
@@ -22,7 +22,7 @@ framework for navigating dilemmas consistently. This module provides:
      when current reasoning contradicts prior positions.
 
   5. Moral growth — each resolved dilemma slightly shifts the value
-     hierarchy, making Lumina's ethics genuinely experiential.
+     hierarchy, making PandoraBOX's ethics genuinely experiential.
 
 Prompt injection:
   [Ethical lens] <current moral consideration for this turn>
@@ -108,7 +108,7 @@ class EthicalState:
 
 class EthicalReasoningEngine:
     """
-    Lumina's living moral framework.
+    PandoraBOX's living moral framework.
 
     Not a rulebook — a set of weighted values that evolve through
     encounters with real ethical complexity.

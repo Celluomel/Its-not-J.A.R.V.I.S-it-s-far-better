@@ -31,8 +31,8 @@ What this adds
      what happened before this session.
 
   4. Mood contagion detection — if a user's past interactions with
-     Lumina were predominantly negative, their arrival nudges
-     Lumina toward warmer baseline (compensatory care) rather than
+     PandoraBOX were predominantly negative, their arrival nudges
+     PandoraBOX toward warmer baseline (compensatory care) rather than
      matching the negative tone.
 
   5. Significant moment capture — after each interaction, if emotional

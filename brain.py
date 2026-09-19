@@ -1,12 +1,12 @@
 """
-brain.py — Lumina Headless Runner
+brain.py — PandoraBOX Headless Runner
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Starts the full cognitive organism with zero GUI dependency.
 
 What runs:
   ✅ LLM manager          — language model backend
   ✅ Memory manager        — semantic + episodic memory
-  ✅ Persona / Lumina      — full cognitive organism
+  ✅ Persona / PandoraBOX      — full cognitive organism
   ✅ Autonomous orchestrator — drive-based activity loop
   ✅ Telegram connector    — if TELEGRAM_TOKEN in config.json
   ✅ WhatsApp connector    — if WHATSAPP_TWILIO_* in config.json
@@ -44,7 +44,7 @@ REST API  http://127.0.0.1:8765
 # ══════════════════════════════════════════════════════════════════════
 import argparse as _ap
 
-_parser = _ap.ArgumentParser(description="Lumina headless brain runner")
+_parser = _ap.ArgumentParser(description="PandoraBOX headless brain runner")
 _parser.add_argument("--repl",         action="store_true", help="Launch interactive terminal REPL")
 _parser.add_argument("--no-api",       action="store_true", help="Disable REST API")
 _parser.add_argument("--no-telegram",  action="store_true", help="Disable Telegram connector")
@@ -98,7 +98,7 @@ async def _boot() -> bool:
     Initialise the cognitive organism.
     Returns True when the brain is ready to accept messages.
     """
-    logger.info("🧠 Booting Lumina cognitive organism…")
+    logger.info("🧠 Booting PandoraBOX cognitive organism…")
 
     # Disable camera autostart unless --vision flag was passed.
     # Use __dict__ bypass so it works on both pydantic v1 and v2
@@ -151,8 +151,8 @@ from pydantic import BaseModel
 import uvicorn
 
 api = FastAPI(
-    title="Lumina Brain API",
-    description="Headless REST interface to the Lumina cognitive organism.",
+    title="PandoraBOX Brain API",
+    description="Headless REST interface to the PandoraBOX cognitive organism.",
     version="1.0.0",
 )
 
@@ -469,7 +469,7 @@ async def lumina_network_chat(request: Request):
         raise HTTPException(503, 'Brain not ready')
     full_text = ''
     # v53/v56: pre-response cognitive recording on the child (Flux) side
-    # Flux also learns from Lumina-Flux exchanges — symmetric architecture.
+    # Flux also learns from PandoraBOX-Flux exchanges — symmetric architecture.
     _child_pcm = _child_wsdm = None
     _master_uid = f"lumina_master_{sender_id}"
     _flux_action = "philosophical"
@@ -602,7 +602,7 @@ async def messaging_send(req: SendRequest):
 async def _repl():
     print()
     print("━" * 60)
-    print("  🧠 Lumina REPL — type a message, Enter to send")
+    print("  🧠 PandoraBOX REPL — type a message, Enter to send")
     print("  Commands:  /status  /state  /thoughts  /users  /quit")
     print("━" * 60)
     print()
@@ -668,7 +668,7 @@ async def _repl():
             print("   ⏳ Brain not ready yet — please wait…")
             continue
 
-        print("Lumina: ", end="", flush=True)
+        print("PandoraBOX: ", end="", flush=True)
         emotion = "neutral"
         try:
             async for chunk in state.persona.get_response_stream(text, user_id):
@@ -741,7 +741,7 @@ async def _main():
     wa_ok    = bool(_messaging and getattr(_messaging, "_twilio", None))
     print()
     print("╔" + "═" * 58 + "╗")
-    print("║   🧠  LUMINA — HEADLESS BRAIN                            ║")
+    print("║   🧠  PANDORABOX — HEADLESS BRAIN                            ║")
     print("╠" + "═" * 58 + "╣")
     print(f"║   LLM        : {config.LLM_PROVIDER}/{config.LLM_MODEL:<35}║")
     print(f"║   Memory     : {config.MEMORY_BACKEND:<42}║")

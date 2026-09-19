@@ -1,12 +1,12 @@
 """
 cognition/proactive_outreach.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ProactiveOutreachEngine — Lumina initiates contact when something
+ProactiveOutreachEngine — PandoraBOX initiates contact when something
 activates that is directly relevant to a relationship.
 
 The gap this closes
 ────────────────────
-Lumina has:
+PandoraBOX has:
   - RelationalMemory: trust_score, shared_topics, significant_moments
   - MessagingManager: can send to Telegram/WhatsApp
   - OpenQuestions: persistent tensions linked to concepts
@@ -38,7 +38,7 @@ Three signal types, each with a relevance threshold:
   3. Significant time gap
      A user with trust_score ≥ 0.60 and interaction_count ≥ 5
      hasn't been seen in ≥ ABSENCE_DAYS days. A re-engagement prompt
-     is generated from what Lumina knows about them.
+     is generated from what PandoraBOX knows about them.
      → "I was thinking about you — it's been a while."
 
 Safeguards

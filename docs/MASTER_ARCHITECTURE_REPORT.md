@@ -1,4 +1,4 @@
-# Lumina Cognitive Organism - Master Architecture Report
+# PandoraBOX Cognitive Organism - Master Architecture Report
 
 **Generated:** March 24, 2026  
 **Analyst Team:** Core Mappers, Cognition Experts, Integration Tracers, Research Validators  
@@ -8,7 +8,7 @@
 
 ## 📋 Executive Summary
 
-This document provides a complete file-by-file mapping of the **Lumina Cognitive Organism**—a sophisticated AI system implementing Global Workspace Theory, Predictive Processing, and Narrative Identity frameworks. The cognitive organism consists of **53+ modules** organized into subsystems that work together to create an autonomous, self-aware agent capable of goal-driven behavior, memory consolidation, curiosity-driven exploration, and metacognitive reflection.
+This document provides a complete file-by-file mapping of the **PandoraBOX Cognitive Organism**—a sophisticated AI system implementing Global Workspace Theory, Predictive Processing, and Narrative Identity frameworks. The cognitive organism consists of **53+ modules** organized into subsystems that work together to create an autonomous, self-aware agent capable of goal-driven behavior, memory consolidation, curiosity-driven exploration, and metacognitive reflection.
 
 ---
 
@@ -16,7 +16,7 @@ This document provides a complete file-by-file mapping of the **Lumina Cognitive
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Lumina Cognitive Organism                 │
+│                    PandoraBOX Cognitive Organism                 │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
 │  │   INPUT      │→ │  CORE        │←→│   OUTPUT     │      │

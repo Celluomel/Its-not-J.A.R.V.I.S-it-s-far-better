@@ -102,7 +102,7 @@ Safety constraints
   - All changes are human-readable and auditable
   - LLM priority = 3, skip_if_busy — audit never blocks interaction
 
-What Lumina can truthfully say about v48
+What PandoraBOX can truthfully say about v48
 ─────────────────────────────────────────
   "My cognitive audit identified underperformance in [signal], proposed
    a calibration change to [parameter], tested it for [N] slow cycles,

@@ -1,7 +1,7 @@
 """
 managers/messaging_manager.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Bidirectional connector between Lumina and external messaging platforms.
+Bidirectional connector between PandoraBOX and external messaging platforms.
 
 Supported platforms
 ───────────────────
@@ -16,7 +16,7 @@ Message flow
 
 User identity
 ─────────────
-  Each platform user is mapped to a Lumina internal user_id so that
+  Each platform user is mapped to a PandoraBOX internal user_id so that
   memory, relational history, and persona work across platforms.
 
   Mapping stored in:  data/messaging/user_map.json
@@ -41,7 +41,7 @@ Telegram setup (5 min)
 ──────────────────────
   1. Open Telegram → search @BotFather → /newbot
   2. Copy the token into config.json:  TELEGRAM_TOKEN = "..."
-  3. Run brain.py — Lumina will start polling automatically
+  3. Run brain.py — PandoraBOX will start polling automatically
   4. Find your bot in Telegram and start chatting
 """
 
@@ -151,7 +151,7 @@ class MessagingManager:
 
     def deliver_response(self, lumina_user_id: str, text: str) -> None:
         """
-        Called by the orchestrator execution layer when Lumina has finished
+        Called by the orchestrator execution layer when PandoraBOX has finished
         generating a response for a messaging user.
         """
         q = self._pending.get(lumina_user_id)
@@ -168,8 +168,8 @@ class MessagingManager:
 
         Commands
         ────────
-        !register <your name>   — tell Lumina your name
-        !name                   — ask what name Lumina knows you by
+        !register <your name>   — tell PandoraBOX your name
+        !name                   — ask what name PandoraBOX knows you by
         !forget                 — remove your name mapping
         !status                 — brain health summary
         !help                   — list commands
@@ -189,13 +189,13 @@ class MessagingManager:
             self._save_maps()
             return (
                 f"✅ Got it! I'll call you *{arg}* from now on.\n"
-                f"Your Lumina ID: `{lumina_user}`\n\n"
+                f"Your PandoraBOX ID: `{lumina_user}`\n\n"
                 f"You can now chat normally — just send me a message!"
             )
 
         if cmd == "!name":
             name = self._name_map.get(lumina_user, display_name or "unknown")
-            return f"I know you as: *{name}*\nYour Lumina ID: `{lumina_user}`"
+            return f"I know you as: *{name}*\nYour PandoraBOX ID: `{lumina_user}`"
 
         if cmd == "!forget":
             self._name_map.pop(lumina_user, None)
@@ -207,7 +207,7 @@ class MessagingManager:
             orch = getattr(state, "orchestrator", None)
             cycles = orch.status().get("cycle_count", "—") if orch else "—"
             return (
-                f"🧠 Lumina brain status\n"
+                f"🧠 PandoraBOX brain status\n"
                 f"  Ready: {getattr(state, 'ready', False)}\n"
                 f"  Orch cycles: {cycles}\n"
                 f"  Your ID: {lumina_user}\n"
@@ -216,7 +216,7 @@ class MessagingManager:
 
         if cmd == "!help":
             return (
-                "📋 *Lumina commands*\n\n"
+                "📋 *PandoraBOX commands*\n\n"
                 "  !register <name>  — tell me your name\n"
                 "  !name             — what name I know you by\n"
                 "  !forget           — clear your name\n"
@@ -326,7 +326,7 @@ class MessagingManager:
             async def _on_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
                 name = update.effective_user.first_name if update.effective_user else "there"
                 await update.message.reply_text(
-                    f"Hi {name}! 👋 I'm Lumina.\n\n"
+                    f"Hi {name}! 👋 I'm PandoraBOX.\n\n"
                     f"Use *!register {name}* so I remember your name, "
                     f"or just start chatting!\n\nSend *!help* for all commands.",
                     parse_mode="Markdown",
@@ -403,7 +403,7 @@ class MessagingManager:
 
     def _resolve_user(self, platform: str, external_id: str, display_name: str = "") -> str:
         """
-        Map platform:external_id → Lumina internal user_id.
+        Map platform:external_id → PandoraBOX internal user_id.
         Creates a stable mapping on first contact and persists it.
         """
         safe_plat = re.sub(r"[^a-z0-9]", "", platform.lower())[:16]
@@ -423,7 +423,7 @@ class MessagingManager:
         return self._user_map[key]
 
     def get_user_name(self, lumina_user_id: str) -> str:
-        """Return the display name Lumina uses for this user."""
+        """Return the display name PandoraBOX uses for this user."""
         return self._name_map.get(lumina_user_id, lumina_user_id)
 
     def list_users(self) -> list:

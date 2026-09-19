@@ -1,7 +1,7 @@
 """
 CognitiveStack — Layer 2 Conversation State
 ============================================
-Lumina's architecture has three memory layers:
+PandoraBOX's architecture has three memory layers:
 
     Layer 1  Immediate context    (LLM prompt window)
     Layer 2  Conversation state   ← THIS MODULE
@@ -12,7 +12,7 @@ persistent representation of *what is being discussed right now*.
 
 When a user says "I revert you the question" the LLM collapses context
 because nothing tracks the active topic stack. A human automatically pops
-back to the previous topic frame. This module gives Lumina that capability.
+back to the previous topic frame. This module gives PandoraBOX that capability.
 
 Stack operations (detected from user phrasing)
 -----------------------------------------------
@@ -118,7 +118,7 @@ def _overlap(kw_list: List[str], text: str) -> float:
 
 class CognitiveStack:
     """
-    Conversation topic stack for Lumina.
+    Conversation topic stack for PandoraBOX.
 
     Typical usage in AgentController.process():
 
@@ -216,7 +216,7 @@ class CognitiveStack:
                 return "update", frame
 
     def mark_bot_question(self, bot_response: str) -> None:
-        """Record any question Lumina asked as an open point in the active frame."""
+        """Record any question PandoraBOX asked as an open point in the active frame."""
         with self._lock:
             if not self._stack:
                 return

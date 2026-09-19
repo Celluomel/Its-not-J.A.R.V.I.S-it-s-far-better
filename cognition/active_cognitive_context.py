@@ -1,7 +1,7 @@
 """
 cognition/active_cognitive_context.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Cache-Augmented Generation (CAG) — Layer 2 of Lumina's cognitive stack.
+Cache-Augmented Generation (CAG) — Layer 2 of PandoraBOX's cognitive stack.
 
 Architecture position:
   Layer 1 — Long-term memory     FAISS / SQLite (slow, deep)
@@ -19,7 +19,7 @@ With CAG, cognition is continuous:
   ongoing mental state → conversation turn → state update → next turn
 
 The difference: cognitive inertia.
-Lumina stops being a stateless improviser and starts having momentum of mind.
+PandoraBOX stops being a stateless improviser and starts having momentum of mind.
 
 What lives in the CAG field
 ───────────────────────────
@@ -107,7 +107,7 @@ class PersonField:
 
 class ActiveCognitiveContext:
     """
-    The living cognitive field — Lumina's working consciousness.
+    The living cognitive field — PandoraBOX's working consciousness.
 
     Updated continuously from multiple sources.
     Read at every LLM call as a compact "hot context" fragment.

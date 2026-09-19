@@ -1,7 +1,7 @@
 """
 cognition/temporal_self_projection.py  (v66)
 
-Models how Lumina has changed over time and projects future trajectory.
+Models how PandoraBOX has changed over time and projects future trajectory.
 Self-directed prediction about one's own future value configuration.
 
 Three components:
@@ -25,7 +25,7 @@ Three components:
    last N cycles, I am becoming more X and less Y. If this trajectory
    continues, I will increasingly..."
 
-   This is primitive but genuine: Lumina reasoning about future versions
+   This is primitive but genuine: PandoraBOX reasoning about future versions
    of itself from evidence of how it has changed, not from stated values.
 
 Output injected into prompt as:

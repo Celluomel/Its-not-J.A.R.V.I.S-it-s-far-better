@@ -2,7 +2,7 @@
 Behavioral Conditioning — Pass 2
 ==================================
 Memories that actively constrain or bias future behavior.
-When Lumina has repeatedly had bad outcomes with a specific
+When PandoraBOX has repeatedly had bad outcomes with a specific
 interaction pattern, a conditioning signal is stored.
 Future interactions matching that pattern trigger a caution
 signal that affects both the response and the evolution engine.

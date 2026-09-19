@@ -31,7 +31,7 @@ class AppSettings(BaseModel):
     SERPAPI_KEY:             str = ""
     
     # Persona Identity
-    PERSONA_NAME: str = "Lumina"   # The name of the AI persona — shown in UI and used in prompts
+    PERSONA_NAME: str = "PandoraBOX"   # The name of the AI persona — shown in UI and used in prompts
     LUMINA_BIRTH_DATE: str = ""    # ISO datetime, set once on first boot. See get_birth_date() /
                                     # ai_system.py's age-as-computed-property model (v117): age and
                                     # life_stage are now derived purely from elapsed real time since
@@ -133,12 +133,12 @@ class AppSettings(BaseModel):
     WHATSAPP_FROM:           str = "whatsapp:+14155238886"  # Twilio sandbox number
     WHATSAPP_WEBHOOK_SECRET: str = ""  # optional: validate Twilio X-Twilio-Signature
 
-    # Lumina-to-Lumina network children
-    # List of child Lumina instances this master can connect to
-    # Format: [{"id":"child_a","name":"Lumina-A","url":"http://IP:8765","api_key":"","role":"child"}]
+    # PandoraBOX-to-PandoraBOX network children
+    # List of child PandoraBOX instances this master can connect to
+    # Format: [{"id":"child_a","name":"PandoraBOX-A","url":"http://IP:8765","api_key":"","role":"child"}]
     LUMINA_CHILDREN: list = []
     LUMINA_NETWORK_ENABLED: bool = False   # set True to activate the connector
-    LUMINA_MASTER_NAME: str = "Lumina-Master"
+    LUMINA_MASTER_NAME: str = "PandoraBOX-Master"
     # Phase 6.4 — real cognitive differentiation for a peer instance (Flux).
     # "collaborative" (default): no change to prompt behavior.
     # "epistemic_challenger": this instance's own system prompt is biased
@@ -181,7 +181,7 @@ class AppSettings(BaseModel):
     NICEGUI_PORT: int = 8080
     NICEGUI_HOST: str = "127.0.0.1"
 
-    # Persona system (Lumina psychological subsystems)
+    # Persona system (PandoraBOX psychological subsystems)
     PERSONA_ENABLED: bool = True
 
     # Response verbosity is a prompt-level style instruction. These values are
@@ -196,7 +196,7 @@ class AppSettings(BaseModel):
 
     # Debug: log the FULL assembled system prompt (cognitive state + emotional
     # state + identity + relational context) on every response, so what
-    # Lumina/the LLM actually sees can be inspected directly. Off by default
+    # PandoraBOX/the LLM actually sees can be inspected directly. Off by default
     # since prompts run ~900+ tokens and this fires every turn. When on,
     # logs at INFO (visible by default) and also writes the latest prompt
     # to data/persona/last_prompt_debug.txt (overwritten each turn — easy
@@ -432,8 +432,8 @@ config = load_settings()
 
 # Optional: Auto-save on attribute changes? Too magic, better explicit
 def get_persona_name() -> str:
-    """Return the configured persona name. Always use this instead of hardcoding 'Lumina'."""
-    return (config.PERSONA_NAME or "Lumina").strip()
+    """Return the configured persona name. Always use this instead of hardcoding 'PandoraBOX'."""
+    return (config.PERSONA_NAME or "PandoraBOX").strip()
 
 
 def get_birth_date() -> "Optional[datetime]":

@@ -542,7 +542,7 @@ class LLMManager:
     ) -> str:
         """Call the LLM directly — NO history read, NO history write.
 
-        Used by Lumina's internal cognitive tasks (dream cycles, learning cycles,
+        Used by PandoraBOX's internal cognitive tasks (dream cycles, learning cycles,
         emotional analysis, identity reflection) so they never pollute the user's
         visible chat history.  Temperature and max_tokens are fully forwarded.
         Default max_tokens=1000 (vs the 100-token robot-agent default).

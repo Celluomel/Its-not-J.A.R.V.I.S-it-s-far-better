@@ -1,4 +1,4 @@
-# Turing Test — Lumina Network Evaluation
+# Turing Test — PandoraBOX Network Evaluation
 # ─────────────────────────────────────────────────────────────────────────────
 # FORMAT RULES (read by the Turing Test loader):
 #   - Lines starting with # are comments — ignored by the loader

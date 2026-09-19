@@ -1,7 +1,7 @@
 """
 Genuine Uncertainty & Choice System
 ====================================
-Generates multiple valid response alternatives and forces Lumina to choose
+Generates multiple valid response alternatives and forces PandoraBOX to choose
 without knowing which is "right."
 """
 
@@ -29,7 +29,7 @@ class ResponseAlternative:
 
 @dataclass
 class ChoiceRecord:
-    """Record of a choice Lumina made."""
+    """Record of a choice PandoraBOX made."""
     timestamp: float
     user_input: str
     available_alternatives: List[str]  # All 5 options (text)
@@ -40,7 +40,7 @@ class ChoiceRecord:
 
 class GenuineUncertaintyChoice:
     """
-    Forces Lumina to make genuine choices.
+    Forces PandoraBOX to make genuine choices.
     
     Instead of generating one response, generates 3-5 alternatives.
     Then forces a real choice between them.
@@ -115,7 +115,7 @@ class GenuineUncertaintyChoice:
     def force_choice(self, alternatives: List[ResponseAlternative],
                     user_input: str, emotional_state: Dict) -> Tuple[str, int]:
         """
-        Force Lumina to choose between alternatives.
+        Force PandoraBOX to choose between alternatives.
         
         In practice, this would be:
         1. Present all alternatives to internal reasoning
@@ -157,7 +157,7 @@ class GenuineUncertaintyChoice:
     def record_choice(self, user_input: str, alternatives: List[str],
                      chosen_index: int, chosen_text: str) -> ChoiceRecord:
         """
-        Record that Lumina made a choice.
+        Record that PandoraBOX made a choice.
         This becomes data about her identity.
         """
         record = ChoiceRecord(
@@ -178,7 +178,7 @@ class GenuineUncertaintyChoice:
     
     def analyze_choice_patterns(self, limit: int = 50) -> Dict:
         """
-        Analyze patterns in Lumina's choices.
+        Analyze patterns in PandoraBOX's choices.
         What does she consistently choose?
         """
         recent = self.choice_history[-limit:]
@@ -216,7 +216,7 @@ class GenuineUncertaintyChoice:
         }
     
     def get_choice_narrative(self, limit: int = 10) -> str:
-        """Generate narrative about Lumina's choices."""
+        """Generate narrative about PandoraBOX's choices."""
         recent = self.choice_history[-limit:]
         
         if not recent:

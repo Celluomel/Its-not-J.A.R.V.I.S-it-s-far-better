@@ -1,6 +1,6 @@
 @echo off
 echo ==========================================
-echo  Lumina Cognitive Organism - Windows
+echo  PandoraBOX Cognitive Organism - Windows
 echo ==========================================
 
 REM Force UTF-8 so emoji in log messages do not crash the console
@@ -83,7 +83,7 @@ if not errorlevel 1 (
 
 echo.
 echo [*] Attempting to install face recognition (requires dlib)...
-echo     If this fails, Lumina will run without face recognition.
+echo     If this fails, PandoraBOX will run without face recognition.
 echo     To fix manually: see FACE_RECOGNITION_INSTALL.txt
 
 REM Try prebuilt dlib wheel for Python 3.11 x64 (no compiler needed)
@@ -125,7 +125,7 @@ if not exist config.json (
 )
 
 echo.
-echo [*] Starting Lumina Brain Only
+echo [*] Starting PandoraBOX Brain Only
 echo [*] Press Ctrl+C to stop.
 echo.
 python brain.py --host 0.0.0.0 --port 8765

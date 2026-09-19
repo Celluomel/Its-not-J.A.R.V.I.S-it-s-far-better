@@ -1,7 +1,7 @@
 """
 Autonomous Orchestrator package
 ================================
-Central nervous system for Lumina's autonomous operation.
+Central nervous system for PandoraBOX's autonomous operation.
 
 Quick import:
     from core.orchestrator import AutonomousOrchestrator

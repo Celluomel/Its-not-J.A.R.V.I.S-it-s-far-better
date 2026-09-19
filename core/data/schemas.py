@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 3 : Canonical Data Schemas
+PANDORABOX V32 — Phase 3 : Canonical Data Schemas
 ==============================================
 Defines the canonical format for every key data file.
 Every component reads/writes through DataAccess, never raw JSON.

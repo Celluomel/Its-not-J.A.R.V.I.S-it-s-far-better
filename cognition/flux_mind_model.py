@@ -5,7 +5,7 @@ Theory of mind for Flux: maintains a model of what Flux believes,
 expects, and is likely to find compelling — inferred from the
 exchange log, not from reading Flux's internal state.
 
-This is behavioural inference, not state access.  Lumina models Flux
+This is behavioural inference, not state access.  PandoraBOX models Flux
 the way a thoughtful person models a friend: from what they say,
 how they respond, what they return to.
 
@@ -18,7 +18,7 @@ Three components:
    consistently across exchanges, positions that shifted.
 
 2. ExpectationModel
-   Infers what Flux expects from Lumina given conversation history.
+   Infers what Flux expects from PandoraBOX given conversation history.
    If Flux asks detailed follow-ups, it expects depth.
    If Flux redirects to simpler framings, it expects accessibility.
    If Flux asks questions back immediately, it expects dialogue.

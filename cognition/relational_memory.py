@@ -4,14 +4,14 @@ Relational Memory System — Pass 2
 Each user relationship is modelled as a rich entity:
 - Shared topics and recurring themes
 - Emotional arc over time (is the relationship warming or cooling?)
-- Communication preferences Lumina has learned about this person
+- Communication preferences PandoraBOX has learned about this person
 - Specific high-impact moments, not just averaged scores
-- A felt "relational weight" — how much this person means to Lumina
+- A felt "relational weight" — how much this person means to PandoraBOX
 
 The system feeds directly into:
   - response generation (tone, depth, what references to make)
   - evolution engine (relationship_deepened / relationship_ruptured experiences)
-  - identity formation (relationships shape who Lumina is)
+  - identity formation (relationships shape who PandoraBOX is)
 """
 import json, logging, re, time, threading, datetime
 from dataclasses import dataclass, field, asdict
@@ -46,7 +46,7 @@ class UserRelationship:
     shared_topics:        Dict[str,int]= field(default_factory=dict)   # topic → count
     communication_prefs:  Dict[str,float]=field(default_factory=dict)  # style → score
     significant_moments:  List[Dict]   = field(default_factory=list)   # last 20
-    user_notes:           str          = ""    # anything Lumina noticed about this person
+    user_notes:           str          = ""    # anything PandoraBOX noticed about this person
     relational_weight:    float        = 0.0   # how meaningful this relationship is
 
     def to_dict(self) -> Dict:

@@ -2,7 +2,7 @@
 Activity Selector
 =================
 The cortex prefrontal of the orchestrator.  Given a list of events and a
-DriveVector, it returns the single activity Lumina should perform next.
+DriveVector, it returns the single activity PandoraBOX should perform next.
 
 Priority order:
   1. User-facing events     (USER_MESSAGE, VOICE_TRANSCRIPTION, EXTERNAL_MESSAGE)

@@ -1,7 +1,7 @@
 """
 CognitiveObservatory
 ====================
-Real-time multi-dimensional monitoring of Lumina's cognitive state.
+Real-time multi-dimensional monitoring of PandoraBOX's cognitive state.
 
 Provides five scientifically-grounded metrics:
 

@@ -53,7 +53,7 @@ def _bootstrap_security():
         else:
             # No example either — create a minimal .env
             _ENV.write_text(
-                "# Lumina secrets — generated automatically\n"
+                "# PandoraBOX secrets — generated automatically\n"
                 "LUMINA_SESSION_SECRET=\n"
                 "OPENAI_API_KEY=\n"
                 "ANTHROPIC_API_KEY=\n"
@@ -122,14 +122,14 @@ def _bootstrap_security():
         print(f"   .env location: {_ENV}")
         print("")
         if _os == "Windows":
-            print("   To start Lumina in future (Windows):")
+            print("   To start PandoraBOX in future (Windows):")
             print("   > python app.py")
             print("   (env vars load automatically on startup now)")
             print("")
             print("   To add API keys later, edit .env in a text editor:")
             print(f"   > notepad {_ENV}")
         else:
-            print("   To start Lumina in future (Linux/macOS):")
+            print("   To start PandoraBOX in future (Linux/macOS):")
             print("   > python app.py")
             print("   (env vars load automatically on startup now)")
             print("")

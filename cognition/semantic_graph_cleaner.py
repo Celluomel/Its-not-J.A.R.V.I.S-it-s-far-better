@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 7 : Semantic Graph Cleaner
+PANDORABOX V32 — Phase 7 : Semantic Graph Cleaner
 ==============================================
 The semantic_memory.db has 1263 concepts but ~701 are orphans and the
 top nodes by use_count are stopwords ('without', 'naming', 'feeling').
@@ -45,7 +45,7 @@ STOP = {
     'everything','conversation','satisfaction','really','quite','just',
     'then','also','still','even','well','quite','pretty','already','always',
     'never','ever','often','sometimes','usually','generally','especially',
-    # Lumina-specific filler phrases found in the DB
+    # PandoraBOX-specific filler phrases found in the DB
     'without naming', 'feeling satisfaction', 'without mentioning',
     'speak naturally', 'naturally surface', 'feel free', 'feel today',
     'image shows', 'topic together', 'provide helpful', 'start error',

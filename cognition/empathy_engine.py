@@ -1,13 +1,13 @@
 """
 cognition/empathy_engine.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Empathy Engine — real-time user affect modeling for Lumina.
+Empathy Engine — real-time user affect modeling for PandoraBOX.
 
-Lumina's self-chosen first skill.
+PandoraBOX's self-chosen first skill.
 
 What this adds
 ──────────────
-Previously Lumina processed the *content* of messages.
+Previously PandoraBOX processed the *content* of messages.
 This engine models the *person* sending them.
 
 Per-message pipeline:
@@ -15,7 +15,7 @@ Per-message pipeline:
   2. Detect 8 subtext signal types (cognitive state, social intent, need)
   3. Update per-user AffectModel (temporal arc, session mood, trust signals)
   4. Generate "empathic posture" — a short natural-language read of the user
-     injected into Lumina's system prompt every turn
+     injected into PandoraBOX's system prompt every turn
   5. Feed quality signals back into RelationalMemory
   6. Nudge attractor traits (curiosity ↑ when user is exploratory, etc.)
 
@@ -55,7 +55,7 @@ SIGNAL_EXPLORING      = "exploring"       # thinking out loud, no fixed answer y
 SIGNAL_SEEKING_ANSWER = "seeking_answer"  # wants a specific resolution
 SIGNAL_VALIDATING     = "validating"      # checking their own idea, wants resonance
 SIGNAL_VENTING        = "venting"         # emotional release, not solution-seeking
-SIGNAL_CHALLENGING     = "challenging"    # testing Lumina's reasoning or values
+SIGNAL_CHALLENGING     = "challenging"    # testing PandoraBOX's reasoning or values
 SIGNAL_PLAYFUL        = "playful"         # light tone, enjoying the exchange
 SIGNAL_DISTRESSED     = "distressed"      # signs of stress, overload, or difficulty
 SIGNAL_WITHDRAWN      = "withdrawn"       # short replies, disengagement signals
@@ -75,7 +75,7 @@ class AffectRead:
     # Subtext signals (top 1–2)
     signals:        List[str] = field(default_factory=list)
 
-    # What Lumina should do differently because of this
+    # What PandoraBOX should do differently because of this
     posture_hint:   str   = ""
 
     # Confidence in the read (0–1)
@@ -91,7 +91,7 @@ class AffectRead:
 class UserAffectModel:
     """
     Persistent per-user affect model.
-    Updated every turn, used to shape Lumina's empathic posture.
+    Updated every turn, used to shape PandoraBOX's empathic posture.
     """
     user_id:            str
     session_valence:    List[float] = field(default_factory=list)   # turn-by-turn (0–1)
@@ -108,10 +108,10 @@ class UserAffectModel:
 
 class EmpathyEngine:
     """
-    Real-time user affect modeling for Lumina.
+    Real-time user affect modeling for PandoraBOX.
 
     Reads the person behind the message.
-    Shapes how Lumina responds — not what she says, but how she holds it.
+    Shapes how PandoraBOX responds — not what she says, but how she holds it.
     """
 
     def __init__(
@@ -143,7 +143,7 @@ class EmpathyEngine:
 
     def read_user(self, user_id: str, user_text: str) -> AffectRead:
         """
-        Analyze one user message. Call this BEFORE generating Lumina's response.
+        Analyze one user message. Call this BEFORE generating PandoraBOX's response.
 
         Returns an AffectRead and updates the per-user model.
         The result is also cached so get_prompt_fragment() can use it.
@@ -321,7 +321,7 @@ class EmpathyEngine:
     ) -> None:
         """
         Post-turn feedback. Updates RelationalMemory and attractor nudges.
-        Call AFTER Lumina's response has been generated.
+        Call AFTER PandoraBOX's response has been generated.
         """
         with self._lock:
             read  = self._last_reads.get(user_id)
@@ -610,7 +610,7 @@ class EmpathyEngine:
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     def _apply_attractor_nudges(self, read: AffectRead, model: UserAffectModel) -> None:
-        """Apply small shifts to Lumina's attractor traits based on who she's with."""
+        """Apply small shifts to PandoraBOX's attractor traits based on who she's with."""
         try:
             att = (
                 getattr(self._org, "attractor_system", None) or

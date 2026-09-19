@@ -19,6 +19,6 @@ if not defined BODY_PYTHON (
   echo [ERROR] No Python environment found. Run start.bat once first.
   exit /b 1
 )
-echo Starting standalone Lumina Body Runtime...
+echo Starting standalone PandoraBOX Body Runtime...
 "%BODY_PYTHON%" -m body_runtime_host
 endlocal

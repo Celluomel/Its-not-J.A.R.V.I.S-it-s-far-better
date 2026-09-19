@@ -1,5 +1,5 @@
 """
-app.py — Lumina Entry Point
+app.py — PandoraBOX Entry Point
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 This file is the skeleton of the application.
 It does exactly four things and nothing else:
@@ -262,7 +262,7 @@ if __name__ in {'__main__', '__mp_main__'}:
         page renders immediately — no splash screen wait.
         """
         if not state.ready and not state.initializing:
-            logger.info('🧠 Pre-warming Lumina brain on startup…')
+            logger.info('🧠 Pre-warming PandoraBOX brain on startup…')
             await state.initialize()
 
             try:

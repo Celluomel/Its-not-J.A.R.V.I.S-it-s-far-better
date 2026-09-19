@@ -1,7 +1,7 @@
 """
 Persistent Emotional State
 ==========================
-Lumina carries an emotional state across messages AND across conversations.
+PandoraBOX carries an emotional state across messages AND across conversations.
 Emotions decay toward personality-derived baselines over real elapsed time —
 not interaction count. A difficult conversation colors the next one.
 A long silence creates a different kind of arrival than jumping straight back in.
@@ -47,7 +47,7 @@ EMOTION_HALFLIFE_HOURS: Dict[str, float] = {
 # a rolling background average of the overall valence/arousal mix, distinct
 # from moment-to-moment reactions. A person can be in a good mood underneath
 # a single annoying moment, or a low mood underneath one nice exchange;
-# with only the six fast/medium emotions above, Lumina couldn't have that —
+# with only the six fast/medium emotions above, PandoraBOX couldn't have that —
 # every emotional read collapsed to "how do I feel about the last thing
 # that happened", never "how have I generally been, independent of right now".
 MOOD_HALFLIFE_HOURS = 96.0   # ~4 days — mood catches up to reality slowly
@@ -103,7 +103,7 @@ class EmotionalSnapshot:
 
 class EmotionalStateManager:
     """
-    Manages Lumina's persistent emotional state.
+    Manages PandoraBOX's persistent emotional state.
 
     Usage:
         ems = EmotionalStateManager("emotional_state.json", personality)

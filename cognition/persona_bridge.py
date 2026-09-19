@@ -1,8 +1,8 @@
 """
 Persona Bridge
 ==============
-Lumina IS the chatbot. Robot Agent feeds user input here and renders what
-Lumina returns. Lumina builds her own psychological system prompt internally
+PandoraBOX IS the chatbot. Robot Agent feeds user input here and renders what
+PandoraBOX returns. PandoraBOX builds her own psychological system prompt internally
 and ALL of her lifecycle methods run exactly as in standalone mode.
 
 Public API consumed by app.py
@@ -32,7 +32,7 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-# Research MCP — lazy-imported after Lumina boots so memory_system is ready
+# Research MCP — lazy-imported after PandoraBOX boots so memory_system is ready
 _research_mcp_instance = None
 
 
@@ -150,22 +150,22 @@ def _build_self_model_block(
 
 class PersonaBridge:
     """
-    Adapter between Robot Agent's AppState and Lumina's EnhancedAISystem.
+    Adapter between Robot Agent's AppState and PandoraBOX's EnhancedAISystem.
 
     Two LLM channels
     ----------------
     - _llm_stream_fn  (state.llm.generate_stream) — user-facing streaming responses.
       Uses LLMManager, so the exchange IS recorded in chat history.
 
-    - external_llm_fn (state.llm.generate_bare) — Lumina's internal cognitive tasks:
+    - external_llm_fn (state.llm.generate_bare) — PandoraBOX's internal cognitive tasks:
       dream cycles, learning cycles, emotional analysis, identity reflection, etc.
       Uses LLMManager.generate_bare() which calls the provider directly and NEVER
       touches chat history. Also properly forwards temperature and max_tokens so
-      Lumina's emotional modulation is honoured.
+      PandoraBOX's emotional modulation is honoured.
 
     Streaming strategy
     ------------------
-    Phase A (thread): build Lumina's system prompt from psychological state (no LLM)
+    Phase A (thread): build PandoraBOX's system prompt from psychological state (no LLM)
     Phase B (stream):  stream user-facing response via _llm_stream_fn (with history)
     Phase C (thread):  run full post-turn lifecycle — all background tasks, liberty,
                        interaction counter — identical to standalone get_response()
@@ -248,8 +248,8 @@ class PersonaBridge:
 
     def _init_lumina(self, external_llm_fn=None):
         """
-        Boot Lumina's EnhancedAISystem, reading the model name and provider URL
-        from Robot Agent's live config (config.json) so Lumina uses the SAME
+        Boot PandoraBOX's EnhancedAISystem, reading the model name and provider URL
+        from Robot Agent's live config (config.json) so PandoraBOX uses the SAME
         model the user configured — not its own hardcoded 'llama3' default.
 
         When external_llm_fn is supplied (state.llm.generate_bare):
@@ -264,11 +264,11 @@ class PersonaBridge:
         try:
             from cognition.ai_system import EnhancedAISystem, SystemConfig, LLMConfig
 
-            # ── Read Robot Agent's config so Lumina uses the same model ──
+            # ── Read Robot Agent's config so PandoraBOX uses the same model ──
             try:
                 from managers.settings_manager import config as robot_config
                 model_name = robot_config.LLM_MODEL or "llama3.2:latest"
-                logger.info(f"Lumina will use model: {model_name}")
+                logger.info(f"PandoraBOX will use model: {model_name}")
             except Exception as e:
                 model_name = "llama3.2:latest"
                 logger.warning(f"Could not read Robot config, defaulting to {model_name}: {e}")
@@ -285,14 +285,14 @@ class PersonaBridge:
                 # reflection) never pollute the user's chat history, and
                 # temperature/max_tokens are forwarded correctly.
                 self._system = EnhancedAISystem(lumina_config, external_llm=external_llm_fn)
-                logger.info(f"✅ Lumina booted via Robot's LLM (model={model_name}, generate_bare)")
+                logger.info(f"✅ PandoraBOX booted via Robot's LLM (model={model_name}, generate_bare)")
             else:
-                # Standalone: Lumina opens its own Ollama connection with configured model
+                # Standalone: PandoraBOX opens its own Ollama connection with configured model
                 self._system = EnhancedAISystem(lumina_config)
-                logger.info(f"✅ Lumina booted with own Ollama backend (model={model_name})")
+                logger.info(f"✅ PandoraBOX booted with own Ollama backend (model={model_name})")
 
             self._ready = True
-            # Boot Research MCP — uses the same external LLM fn + Lumina memory
+            # Boot Research MCP — uses the same external LLM fn + PandoraBOX memory
             self._init_research_mcp(external_llm_fn)
             logger.info(
                 f"   BackgroundWorker: {'✅ running' if self._system.background_worker else '⚠️ unavailable'}"
@@ -303,7 +303,7 @@ class PersonaBridge:
                 f"self_mod={'✅' if self._system.liberty_self_mod else '❌'}"
             )
         except Exception as e:
-            logger.error(f"❌ Lumina init failed: {e}")
+            logger.error(f"❌ PandoraBOX init failed: {e}")
 
     # ─────────────────────────────────────────────────────────────────
     #  Primary chat entry point (streaming)
@@ -320,7 +320,7 @@ class PersonaBridge:
         Main entry point for every user turn.
 
         Yields individual string tokens, then a final meta dict.
-        All of Lumina's automatic cycles run correctly regardless of path.
+        All of PandoraBOX's automatic cycles run correctly regardless of path.
         """
         if not self._ready or self._system is None:
             msg = "I'm not fully awake yet — give me a moment."
@@ -412,7 +412,7 @@ class PersonaBridge:
                 _voicemem_context,
             )
         except Exception as e:
-            logger.error(f"Lumina get_response failed: {e}")
+            logger.error(f"PandoraBOX get_response failed: {e}")
             err = "I'm having trouble responding right now."
             yield err
             yield {"__meta__": True, "raw": err, "speech": err,
@@ -702,7 +702,7 @@ class PersonaBridge:
         # AutonomousReflectionEngine's own private/internal reflection
         # prompt, never into the actual conversational system prompt the
         # user talks to. So a self-belief could be flagged speculative
-        # (grounding_index < 0.35) and Lumina would still state it as
+        # (grounding_index < 0.35) and PandoraBOX would still state it as
         # confident fact in chat, because that flag never reached this
         # prompt at all. Same underlying instance (organism._loop's
         # lazily-created _autonomous_reflection), not a duplicate — so
@@ -1342,7 +1342,7 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
     def _infer_emotion_from_response(self, response: str) -> None:
         """
         Lightweight local inference: update emotional state based on what
-        Lumina actually said (no LLM call — pure heuristics on response text).
+        PandoraBOX actually said (no LLM call — pure heuristics on response text).
         Hedging → anxiety nudge.  Questions → curiosity nudge.
         Short terse reply → frustration nudge.  Long engaged reply → enthusiasm nudge.
         """
@@ -1377,7 +1377,7 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
         suppress_external_search: bool = False,
     ) -> tuple[str, dict, dict, float | None]:
         """
-        Run Lumina's pre-LLM context pipeline and return:
+        Run PandoraBOX's pre-LLM context pipeline and return:
           - system_prompt     (str)
           - emo_dict          (real emotion analysis dict)
           - cond_dict         (real conditioning dict)
@@ -1421,7 +1421,7 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
             from cognition.life_stage_prompting import build_stage_system_block
 
             # ── Resolve human identity ────────────────────────────────
-            # Load the UserProfile so Lumina knows who she is talking to.
+            # Load the UserProfile so PandoraBOX knows who she is talking to.
             # Falls back gracefully if the profile store is unavailable.
             _user_identity_line = ""
             try:
@@ -2076,7 +2076,7 @@ Memory honesty — two distinct cases:
                 )
 
             # ── Inject visual perception into system prompt ───────────────
-            # Vision context belongs here — as Lumina's OWN perception — not
+            # Vision context belongs here — as PandoraBOX's OWN perception — not
             # in the user message. This prevents the LLM from treating the VLM
             # description as something the human wrote.
             _vc = getattr(self, '_pending_vision_context', None)
@@ -2475,7 +2475,7 @@ Memory honesty — two distinct cases:
             return {}
 
     def _init_research_mcp(self, llm_fn=None):
-        """Boot ResearchMCP with the same LLM fn and Lumina's memory system."""
+        """Boot ResearchMCP with the same LLM fn and PandoraBOX's memory system."""
         global _research_mcp_instance
         try:
             from cognition.research_mcp import ResearchMCP
@@ -2692,7 +2692,7 @@ Memory honesty — two distinct cases:
 
     def trigger_life_event(self, event_type: str | None = None) -> tuple[str, str]:
         """
-        Simulate a life event for Lumina.
+        Simulate a life event for PandoraBOX.
         Returns (scenario, reflection) strings, both empty on failure.
         event_type: optional hint e.g. 'creative', 'social', 'challenge'
         """

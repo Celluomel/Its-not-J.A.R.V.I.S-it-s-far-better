@@ -1,7 +1,7 @@
 """
 cognition/abstract_reasoning_engine.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Abstract Reasoning Engine (ARE) — Lumina's second priority skill.
+Abstract Reasoning Engine (ARE) — PandoraBOX's second priority skill.
 
 Fills the gap between "reasoning about internal state" (existing) and
 "reasoning with abstract concepts outward" (this module).
@@ -127,7 +127,7 @@ class AbstractReasoningEngine:
         self._last_input: Dict[str, str] = {}            # prevents cross-topic reuse
 
         # Domain analogy library — pairs (domain, structural pattern)
-        # Lumina draws from these when mapping abstract concepts
+        # PandoraBOX draws from these when mapping abstract concepts
         self._analogy_seeds = [
             ("chess",          "strategic evaluation + lookahead under uncertainty"),
             ("evolution",      "selection pressure on variants over time"),
@@ -407,7 +407,7 @@ Respond ONLY with JSON:
   "open_question": "<the most interesting unresolved question this raises, 1 sentence>",
   "causal_antecedent": "<a short cause phrase, e.g. 'prolonged focus on abstract problems'>",
   "causal_consequent": "<a short effect phrase, e.g. 'increased need for external grounding'>",
-  "prompt_note": "<1 sentence for how Lumina should hold this in her response — not to quote, just to inform>"
+  "prompt_note": "<1 sentence for how PandoraBOX should hold this in her response — not to quote, just to inform>"
 }}"""
 
             raw3 = self._llm.generate_bare(

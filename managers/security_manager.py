@@ -1,7 +1,7 @@
 """
 Security Manager
 ================
-Hardens Lumina against the real attack surface for a locally-run AI agent:
+Hardens PandoraBOX against the real attack surface for a locally-run AI agent:
 
 1. Input sanitisation    — strips prompt-injection patterns before LLM
 2. Rate limiting         — prevents DOS / runaway autonomous loops
@@ -147,7 +147,7 @@ class RateLimiter:
 
 class SecurityManager:
     """
-    Central security module for Lumina.
+    Central security module for PandoraBOX.
     Instantiate once; share the singleton `security`.
     """
 

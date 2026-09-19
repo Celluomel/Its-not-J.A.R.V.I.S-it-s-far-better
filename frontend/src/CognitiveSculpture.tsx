@@ -277,7 +277,7 @@ export default function CognitiveSculpture(props: SculptureProps) {
     document.addEventListener('visibilitychange', update);
     return () => { observer.disconnect(); document.removeEventListener('visibilitychange', update); };
   }, []);
-  return <div className="cognitive-sculpture" ref={host} role="img" aria-label="Interactive three-dimensional Lumina cognitive sculpture">
+  return <div className="cognitive-sculpture" ref={host} role="img" aria-label="Interactive three-dimensional PandoraBOX cognitive sculpture">
     {lost ? <div className="sculpture-fallback">Graphics context interrupted. Reload to restore the sculpture.</div> : <SceneBoundary><Canvas camera={{ position: [0, .25, 8.7], fov: 40 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : props.moving ? 'always' : 'demand'} gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }} onCreated={({ gl }) => { gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}>
       <Studio reset={props.reset} moving={props.moving}/><Cortex {...props}/>
     </Canvas></SceneBoundary>}

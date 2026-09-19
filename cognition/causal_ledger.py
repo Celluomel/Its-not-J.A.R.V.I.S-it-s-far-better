@@ -1,5 +1,5 @@
 """
-LUMINA — CAUSAL LEDGER
+PANDORABOX — CAUSAL LEDGER
 ======================
 Append-only, structured record of every *causal* state transition the
 ConsequenceTracker (and any future bound subsystem) produces.
@@ -30,7 +30,7 @@ Each event:
     "refs":            dict            # goal_id, action, module, ...
   }
 
-Query API (the "why did Lumina choose X" capability):
+Query API (the "why did PandoraBOX choose X" capability):
   CausalLedger.chain(event_id)   -> [events from root .. event]
   CausalLedger.why_goal(goal_id) -> reconstructed causal story
   CausalLedger.recent(n)         -> tail
@@ -150,7 +150,7 @@ class CausalLedger:
         """
         Reconstruct the causal story for a goal from the ledger:
         the chain of predictions/actions/outcomes/errors that touched it.
-        This is the concrete 'Why did Lumina choose this goal?' answer.
+        This is the concrete 'Why did PandoraBOX choose this goal?' answer.
         """
         index = dict(self._by_id)
         loaded = self._load_all()

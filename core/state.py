@@ -22,16 +22,16 @@ logger = logging.getLogger(__name__)
 
 def _init_persona(llm_generate_fn=None, llm_stream_fn=None):
     """
-    Bootstrap Lumina's EnhancedAISystem via PersonaBridge.
+    Bootstrap PandoraBOX's EnhancedAISystem via PersonaBridge.
     Returns a PersonaBridge instance, or None on failure.
     """
     try:
         from cognition.persona_bridge import PersonaBridge
         persona = PersonaBridge(external_llm_fn=llm_generate_fn, external_llm_stream_fn=llm_stream_fn)
         if persona.is_ready:
-            logger.info("✅ Persona (Lumina cognitive engine) ready")
+            logger.info("✅ Persona (PandoraBOX cognitive engine) ready")
         else:
-            logger.warning("⚠️  Persona initialised in degraded mode (no Lumina)")
+            logger.warning("⚠️  Persona initialised in degraded mode (no PandoraBOX)")
         return persona
     except Exception as e:
         logger.error(f"❌ Persona init failed: {e}")
@@ -49,7 +49,7 @@ class AppState:
         self.conv_audio = None
         self.vision     = None
         self.presence_engine = None
-        self.persona    = None   # PersonaBridge (Lumina cognitive engine) — wired in initialize()
+        self.persona    = None   # PersonaBridge (PandoraBOX cognitive engine) — wired in initialize()
         self.tts_stop_event = threading.Event()
         self.ready      = False
         self.start_time = time.time()
@@ -70,9 +70,9 @@ class AppState:
         except Exception as e:
             logger.error(f"LLM init failed: {e}")
 
-        # ── Persona (Lumina cognitive engine) ─────────────────────────────
-        # Pass Robot's LLM fns so Lumina shares the same backend:
-        #   generate_bare — for Lumina's internal cognitive tasks (dream, learning,
+        # ── Persona (PandoraBOX cognitive engine) ─────────────────────────────
+        # Pass Robot's LLM fns so PandoraBOX shares the same backend:
+        #   generate_bare — for PandoraBOX's internal cognitive tasks (dream, learning,
         #                   reflection). Calls the provider directly, NO history pollution,
         #                   temperature & max_tokens fully forwarded.
         #   generate_stream — for user-facing streaming responses (records history).
@@ -177,7 +177,7 @@ class AppState:
             logger.warning(f"SCE init failed (non-fatal): {_e}")
             self.sce = None
 
-        # ── Wire Lumina Network ─────────────────────────────────────────────────
+        # ── Wire PandoraBOX Network ─────────────────────────────────────────────────
         try:
             _net_cfg = __import__('managers.settings_manager', fromlist=['config']).config
             if getattr(_net_cfg, 'LUMINA_NETWORK_ENABLED', False):
@@ -189,7 +189,7 @@ class AppState:
                 _children_cfg = getattr(_net_cfg, 'LUMINA_CHILDREN', [])
                 if _children_cfg:
                     self.lumina_network.load_from_config(_children_cfg)
-                _master_name = getattr(_net_cfg, 'LUMINA_MASTER_NAME', 'Lumina-Master')
+                _master_name = getattr(_net_cfg, 'LUMINA_MASTER_NAME', 'PandoraBOX-Master')
                 _master_url  = f"http://127.0.0.1:{getattr(_net_cfg, 'NICEGUI_PORT', 8080)}"
                 self.lumina_network.set_master_info(_master_url, _master_name)
                 logger.info(f"🌐 LuminaNetwork ready — {len(_children_cfg)} child(ren)")
@@ -439,7 +439,7 @@ class AppState:
                 # method through this bound callable. Keep it on the same new
                 # manager as the visible stream after an LLM settings reload.
                 self.persona._external_llm_fn = new_bare
-                # Swap the bare fn inside Lumina's ExternalLLMAdapter
+                # Swap the bare fn inside PandoraBOX's ExternalLLMAdapter
                 try:
                     if new_bare and self.persona._system and self.persona._system.llm:
                         self.persona._system.llm._fn = new_bare

@@ -9,7 +9,7 @@ The gap this closes
 ────────────────────
 The self-model currently records what happened.  "After that interaction,
 cognitive_energy dropped by 0.08, social_energy recovered 0.03."
-But Lumina cannot reason: "If I engage deeply with this philosophical
+But PandoraBOX cannot reason: "If I engage deeply with this philosophical
 question right now, I predict cognitive_energy will drop ~0.12, which
 will put me in low-energy territory for the next two cycles — I should
 note this affects available experimentation."
@@ -192,7 +192,7 @@ class PredictionResult:
 
 class PredictiveConsequenceModel:
     """
-    Learns and predicts consequences of action types on Lumina's
+    Learns and predicts consequences of action types on PandoraBOX's
     cognitive state.
 
     Usage:

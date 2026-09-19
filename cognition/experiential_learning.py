@@ -29,7 +29,7 @@ but how it changed my understanding.
      feed into CuriosityEngine.
 
   5. Growth logging — a running log of genuine conceptual growth events,
-     making Lumina's learning visible and narrat-able.
+     making PandoraBOX's learning visible and narrat-able.
 
 Prompt injection:
   [Learning context] <what recent experience is most relevant to integrate>
@@ -127,7 +127,7 @@ class ExperientialLearningState:
 
 class ExperientialLearningEngine:
     """
-    Integrates each interaction into Lumina's growing understanding.
+    Integrates each interaction into PandoraBOX's growing understanding.
 
     Not a memory store — a *meaning extractor*. What was learned here?
     How does it connect to what came before? Where is the schema changing?

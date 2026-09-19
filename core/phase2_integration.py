@@ -1,5 +1,5 @@
 """
-LUMINA V33 - PHASE 2 INTEGRATION
+PANDORABOX V33 - PHASE 2 INTEGRATION
 
 Phase 2 cognitive enhancements integrated:
 - Advanced thought evaluation (semantic similarity)
@@ -201,7 +201,7 @@ def get_enhanced_phase2_result(cycle_data: Dict) -> Dict:
     """
     Convenience function to get Phase 2 enhancements.
     
-    Can be called from anywhere in existing Lumina code.
+    Can be called from anywhere in existing PandoraBOX code.
     """
     orchestrator = Phase2Orchestrator()
     return orchestrator.enhanced_cycle(cycle_data)

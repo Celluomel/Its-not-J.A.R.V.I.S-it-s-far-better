@@ -1,7 +1,7 @@
 """
 Psychological Homeostasis
 =========================
-Lumina continuously monitors psychological equilibrium and generates
+PandoraBOX continuously monitors psychological equilibrium and generates
 corrective pressure when imbalance is detected.
 
 Just as biological organisms maintain physiological homeostasis (temperature,

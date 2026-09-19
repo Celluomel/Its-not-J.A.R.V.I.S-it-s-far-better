@@ -1,8 +1,8 @@
 """
-LUMINA V32 - PHASE 1 INTEGRATION
+PANDORABOX V32 - PHASE 1 INTEGRATION
 
 This module integrates the Phase 1 cognitive enhancements into the existing
-Lumina system without breaking existing functionality.
+PandoraBOX system without breaking existing functionality.
 
 New in V32:
 - Unified decision pressure from all cognitive factors
@@ -29,7 +29,7 @@ class Phase1Orchestrator:
     Integration orchestrator for Phase 1 enhancements.
     
     This provides a clean interface to use Phase 1 components
-    alongside existing Lumina functionality.
+    alongside existing PandoraBOX functionality.
     """
     
     def __init__(self, persona_dir: str = "data/persona", global_workspace=None):
@@ -188,7 +188,7 @@ class Phase1Orchestrator:
         OLD: decision = f(all_inputs_merged)
         NEW: decision = select(winner_from_competition)
         
-        This transforms Lumina from "blended mind" to "competing mind"
+        This transforms PandoraBOX from "blended mind" to "competing mind"
         
         Returns:
             Dict with 'pressure', 'plan', 'perception', 'recommendation', 'competition'
@@ -470,7 +470,7 @@ def get_enhanced_decision(external_input: Optional[Dict] = None) -> Dict:
     """
     Convenience function to get enhanced decision with Phase 1 components.
     
-    Can be called from anywhere in existing Lumina code:
+    Can be called from anywhere in existing PandoraBOX code:
     
         from core.phase1_integration import get_enhanced_decision
         

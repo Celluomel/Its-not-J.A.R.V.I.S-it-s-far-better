@@ -103,7 +103,7 @@ class UnifiedRevisionGateway:
         """
         WDS-scaled MAX_STEP, in [0.5, 1.5] x MAX_STEP.
 
-        WDS (Weight Drift Stability, emergence_metrics.py) is Lumina's own
+        WDS (Weight Drift Stability, emergence_metrics.py) is PandoraBOX's own
         measurement of whether recent trait/weight movement has been
         stable or chaotic — same audited gap as attractor_system.py's
         nudge()/tick_return_force() (computed every cycle, never read by

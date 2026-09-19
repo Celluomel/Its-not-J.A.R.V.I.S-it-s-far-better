@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 9 : Fluid Voice System
+PANDORABOX V32 — Phase 9 : Fluid Voice System
 ==========================================
 Improvements over current system:
 
@@ -210,7 +210,7 @@ class EdgeTTS:
 
     VOICES = {
         # Recommended for conversational AI
-        'ava':      'en-US-AvaNeural',        # warm, conversational ← best for Lumina
+        'ava':      'en-US-AvaNeural',        # warm, conversational ← best for PandoraBOX
         'jenny':    'en-US-JennyNeural',       # professional, clear
         'aria':     'en-US-AriaNeural',        # expressive
         'guy':      'en-US-GuyNeural',         # male, natural
@@ -399,7 +399,7 @@ class BargeInHandler:
     user starts speaking.
 
     The core problem this solves: currently the TTS mute gate stops VAD
-    entirely during playback — the user CANNOT interrupt Lumina while she
+    entirely during playback — the user CANNOT interrupt PandoraBOX while she
     is speaking. This handler listens at LOW sensitivity during playback
     and calls on_barge_in() when sustained speech is detected.
 

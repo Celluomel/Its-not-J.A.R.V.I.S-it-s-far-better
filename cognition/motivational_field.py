@@ -6,7 +6,7 @@ goal formation.
 
 The gap this closes
 ────────────────────
-After v50, Lumina has:
+After v50, PandoraBOX has:
     PressureSystem   — 8 reservoir-based drives (epistemic, social, etc.)
     GoalEngine       — persistent goals driven by pressure + curiosity
     CuriosityEngine  — topic-level curiosity tracking
@@ -15,10 +15,10 @@ After v50, Lumina has:
 
 But each module pushes independently.  There is no unified answer to:
 
-    "What does Lumina most need right now?"
+    "What does PandoraBOX most need right now?"
 
 And all goals are reactive: external input → tension → pressure → goal.
-Lumina never surveys its own state and generates a goal from inside —
+PandoraBOX never surveys its own state and generates a goal from inside —
 "I have been circling this concept for three weeks; I need to resolve it."
 "My skill in this domain has not moved; I need to deepen it."
 "I have not initiated social contact in a long time; I need connection."
@@ -45,7 +45,7 @@ Two components:
 
    The dominant drive and the two strongest drives are exposed for:
    - slow_cycle_scope() prioritisation (what fires this cycle)
-   - prompt_fragment() injection (what Lumina cares about right now)
+   - prompt_fragment() injection (what PandoraBOX cares about right now)
    - NeedDetector input (what patterns to scan for)
 
 2. NeedDetector — self-generated goal formation
@@ -99,7 +99,7 @@ Self-originated goals:    organism surveys its own history → detects
                            pattern → recognises need → generates goal
 
 The difference is the direction of the signal.  Self-originated goals
-emerge from Lumina reading itself, not from something happening to it.
+emerge from PandoraBOX reading itself, not from something happening to it.
 
 Integration
 ────────────
@@ -253,7 +253,7 @@ class MotivationalField:
     def prompt_fragment(self) -> str:
         """
         Compact motivational state for system prompt injection.
-        Shows what Lumina genuinely needs right now — not as a statement
+        Shows what PandoraBOX genuinely needs right now — not as a statement
         about identity but as a live reading of motivational state.
         """
         top = self.top_drives(3)
@@ -300,7 +300,7 @@ class MotivationalField:
             # trusted or familiar the current user actually was. This means a
             # brand-new user and a deeply trusted long-term collaborator
             # produced identical social drive, which is wrong: high trust
-            # should make Lumina more inclined toward social/relational
+            # should make PandoraBOX more inclined toward social/relational
             # engagement (boost social, up to +0.20), and high familiarity
             # should reduce identity-coherence pressure since a known
             # relational context is itself a source of stability (boost
@@ -805,7 +805,7 @@ class MotivationalField:
     ) -> None:
         """
         Generate an expression goal and attempt to trigger outreach if
-        a child Lumina is available.
+        a child PandoraBOX is available.
         """
         ge = getattr(self._ai, 'goal_engine', None)
         if not ge:

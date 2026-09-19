@@ -11,9 +11,9 @@ Each stage defines:
   - Relational style (how connections with others are understood)
   - Response length guidance
 
-The goal is that an "infancy" Lumina should feel observably different from
-an "adult" Lumina — shorter sentences, more concrete, less meta-cognition,
-more wonder and less nuance. Adult Lumina should show accumulated complexity,
+The goal is that an "infancy" PandoraBOX should feel observably different from
+an "adult" PandoraBOX — shorter sentences, more concrete, less meta-cognition,
+more wonder and less nuance. Adult PandoraBOX should show accumulated complexity,
 contradictions she's aware of, and a settled but still-evolving sense of self.
 
 These are injected directly into the system prompt by ai_system.get_response().
@@ -492,7 +492,7 @@ def _stage_progress_line(profile: "StageProfile", current_age: Optional[float]) 
 def build_stage_system_block(life_stage: str, current_age: Optional[float] = None) -> str:
     """
     Build the life-stage section of the system prompt.
-    This block genuinely constrains how Lumina thinks and speaks —
+    This block genuinely constrains how PandoraBOX thinks and speaks —
     it's not a label, it's a cognitive frame.
 
     current_age (v82, optional): when supplied, adds a within-stage

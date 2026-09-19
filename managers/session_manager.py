@@ -1,9 +1,9 @@
 """
-SessionManager — Conversation persistence for Lumina.
+SessionManager — Conversation persistence for PandoraBOX.
 
 Solves three real problems in the current architecture:
 
-  Problem 1: _HISTORY_MAX=20 silently drops oldest turns (Lumina just forgets)
+  Problem 1: _HISTORY_MAX=20 silently drops oldest turns (PandoraBOX just forgets)
   Problem 2: reload_llm() wipes history (saving LLM settings kills conversation)
   Problem 3: No shutdown hook — process kill = no save, no recovery
 
@@ -12,7 +12,7 @@ What this does:
   ✅ Compresses old turns into a summary block instead of silently dropping them
   ✅ Survives reload_llm() — history is saved before reload, restored after
   ✅ Registers app.on_shutdown for graceful final save
-  ✅ On boot: reloads the last session's summary so Lumina remembers context
+  ✅ On boot: reloads the last session's summary so PandoraBOX remembers context
 
 Architecture:
   - Persists to: data/persona/session.json   (raw history, last N turns)
@@ -40,7 +40,7 @@ COMPRESS_TRIGGER = 16   # 80% of default _HISTORY_MAX=20
 COMPRESS_WINDOW  = 10   # number of oldest turns to compress into summary
 MAX_RAW_TURNS    = 20   # hard cap after compression
 
-_COMPRESS_SYSTEM = """You are a conversation summarizer for an AI assistant named Lumina.
+_COMPRESS_SYSTEM = """You are a conversation summarizer for an AI assistant named PandoraBOX.
 Given a list of conversation turns, write a dense factual summary that preserves:
 - What the user was working on or asking about
 - Key decisions, facts, or conclusions reached

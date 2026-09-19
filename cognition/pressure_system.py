@@ -110,7 +110,7 @@ RESERVOIR_DEFS = {
         "satiation_amount":   0.45,    # one good explanation resolves a lot
     },
     "aspirational": {
-        # Superego pressure — gap between what Lumina is and wants to become.
+        # Superego pressure — gap between what PandoraBOX is and wants to become.
         # Fed by AspirationalSelf.aspirational_pressure().
         # Satiates when an aspiration tension is meaningfully reduced.
         "fill_rate_per_tick": 0.01,    # very slow autonomous fill — driven externally

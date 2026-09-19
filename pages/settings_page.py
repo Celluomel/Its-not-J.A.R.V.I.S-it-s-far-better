@@ -120,7 +120,7 @@ async def settings_page(tab: str = 'llm'):
                 tab_voice  = ui.tab('voice',  label='🎙️ Voice')
                 tab_vision = ui.tab('vision', label='👁️ Vision')
                 tab_status = ui.tab('status', label='📊 Status')
-                tab_lumina = ui.tab('lumina', label='✨ Lumina')
+                tab_lumina = ui.tab('lumina', label='✨ PandoraBOX')
                 tab_tools    = ui.tab('tools',    label='🔧 Tools')
                 tab_analytics = ui.tab('analytics', label='📈 Analytics')
 
@@ -133,8 +133,8 @@ async def settings_page(tab: str = 'llm'):
                     with ui.grid(columns=2).classes('w-full gap-4 mb-4'):
                         persona_name_input = ui.input(
                             'Persona Name',
-                            value=getattr(config, 'PERSONA_NAME', 'Lumina'),
-                            placeholder='Lumina'
+                            value=getattr(config, 'PERSONA_NAME', 'PandoraBOX'),
+                            placeholder='PandoraBOX'
                         ).props('outlined dense').classes('dark-input')
                         with ui.element('div').classes('flex items-center'):
                             ui.html('<div style="color:#64748b;font-size:11px;line-height:1.5">'
@@ -201,7 +201,7 @@ async def settings_page(tab: str = 'llm'):
                     with ui.element('div').classes('info-card mt-4'):
                         ui.label('STORAGE PATHS').classes('section-label')
                         ui.html('<div style="color:#64748b;font-size:11px;margin-bottom:10px">'
-                                'Paths are relative to the Lumina working directory. '
+                                'Paths are relative to the PandoraBOX working directory. '
                                 'Change and restart to take effect. '
                                 'Defaults: <code>data/persona/</code></div>')
 
@@ -235,7 +235,7 @@ async def settings_page(tab: str = 'llm'):
                             placeholder='data/persona/cognee'
                         ).props('outlined dense').classes('w-full dark-input mb-2') \
                          .tooltip('Root folder for Cognee\'s graph, vector and metadata databases. '
-                                  'Relative to the Lumina working directory. Restart to apply.')
+                                  'Relative to the PandoraBOX working directory. Restart to apply.')
 
                         mem_cognee_embed = ui.input(
                             'Cognee embedding model',
@@ -269,7 +269,7 @@ async def settings_page(tab: str = 'llm'):
                             config.MEMORY_COGNEE_PATH       = mem_cognee_path.value.strip() or 'data/persona/cognee'
                             config.MEMORY_COGNEE_EMBED_MODEL = mem_cognee_embed.value.strip()
                             config.save()
-                            ui.notify('Memory paths saved — restart Lumina to apply', type='positive')
+                            ui.notify('Memory paths saved — restart PandoraBOX to apply', type='positive')
 
                         ui.button('Save paths', on_click=_save_memory_paths,
                                   icon='save').props('flat dense color=indigo')
@@ -392,7 +392,7 @@ async def settings_page(tab: str = 'llm'):
                         ui.label('SYNC ALL SOURCES → COGNEE').classes('section-label')
                         ui.html(
                             '<div style="color:#64748b;font-size:11px;margin-bottom:8px">'
-                            'Injects all Lumina data sources into the Cognee knowledge graph in one pass. '
+                            'Injects all PandoraBOX data sources into the Cognee knowledge graph in one pass. '
                             'Safe to run multiple times — Cognee deduplicates.'
                             '</div>'
                         )
@@ -1595,13 +1595,13 @@ async def settings_page(tab: str = 'llm'):
                         '🔄 Refresh Status', on_click=lambda: ui.navigate.to('/settings')
                     ).props('flat color=indigo').classes('mt-4')
 
-                # ── Lumina tab ──────────────────────────────────────────
+                # ── PandoraBOX tab ──────────────────────────────────────────
                 with ui.tab_panel('lumina'):
-                    ui.label('LUMINA COGNITIVE ENGINE').classes('section-label')
+                    ui.label('PANDORABOX COGNITIVE ENGINE').classes('section-label')
                     ui.markdown(
-                        "Lumina is the psychological core of this agent — she builds her own "
+                        "PandoraBOX is the psychological core of this agent — she builds her own "
                         "system prompt using emotional state, relational memory, personality "
-                        "evolution, and life-stage cognition. Use **✨ Lumina Mind** in the "
+                        "evolution, and life-stage cognition. Use **✨ PandoraBOX Mind** in the "
                         "petal menu for the full live dashboard."
                     ).classes('text-sm opacity-70 mb-4')
 
@@ -1658,10 +1658,10 @@ async def settings_page(tab: str = 'llm'):
                                         )
                                         
                         except Exception as _e:
-                            ui.label(f'Could not load Lumina status: {_e}').classes('text-red-400 text-sm')
+                            ui.label(f'Could not load PandoraBOX status: {_e}').classes('text-red-400 text-sm')
                     else:
                         with ui.element('div').classes('info-card'):
-                            ui.html('<span class="text-yellow-400">⚠️ Lumina not yet initialised. '
+                            ui.html('<span class="text-yellow-400">⚠️ PandoraBOX not yet initialised. '
                                     'Start a conversation to activate the cognitive engine.</span>')
 
                     ui.separator().classes('my-4')
@@ -1756,12 +1756,12 @@ async def settings_page(tab: str = 'llm'):
                                                 ui.label('🌱 Life Event').classes('font-semibold text-lg text-green-400 mb-3')
                                                 ui.label('What happened:').classes('text-slate-400 text-xs uppercase tracking-wide mb-1')
                                                 ui.label(scenario).classes('text-sm text-slate-200 mb-4')
-                                                ui.label("Lumina's Reflection:").classes('text-slate-400 text-xs uppercase tracking-wide mb-1')
+                                                ui.label("PandoraBOX's Reflection:").classes('text-slate-400 text-xs uppercase tracking-wide mb-1')
                                                 ui.label(reaction).classes('text-sm text-slate-200')
                                                 ui.button('Close', on_click=_d2.close).classes('mt-5').props('color=green')
                                             _d2.open()
                                         else:
-                                            ui.notify('Life event could not be generated — Lumina may need more context first.', type='warning', timeout=6000)
+                                            ui.notify('Life event could not be generated — PandoraBOX may need more context first.', type='warning', timeout=6000)
                                     ui.button('Simulate', on_click=_go_settings).props('color=purple')
                             _d.open()
 
@@ -1792,7 +1792,7 @@ async def settings_page(tab: str = 'llm'):
                             )
 
                     ui.button(
-                        '✨ Open Lumina Dashboard', on_click=lambda: ui.navigate.to('/lumina')
+                        '✨ Open PandoraBOX Dashboard', on_click=lambda: ui.navigate.to('/lumina')
                     ).props('color=deep-purple').classes('mt-4')
 
 
@@ -1846,7 +1846,7 @@ async def settings_page(tab: str = 'llm'):
                         ui.label('HOLOGRAPHIC BRAIN').classes('section-label')
                         ui.html('''
                             <div style="font-size:12px;color:#64748b;margin-bottom:10px">
-                            3D holographic render of Lumina's live cognitive state mapped onto
+                            3D holographic render of PandoraBOX's live cognitive state mapped onto
                             7 functional brain networks.  Requires <code>PyOpenGL</code> and
                             <code>glfw</code> — install with the command below if not yet present.
                             </div>
@@ -1878,7 +1878,7 @@ async def settings_page(tab: str = 'llm'):
                                 if not _org:
                                     _brain_status.set_content(
                                         '<div style="color:#ef4444;font-size:12px">'
-                                        '❌ Organism not found — start Lumina first.</div>'
+                                        '❌ Organism not found — start PandoraBOX first.</div>'
                                     )
                                     return
                                 bridge = LuminaBrainBridge(_org)
@@ -2015,7 +2015,7 @@ async def settings_page(tab: str = 'llm'):
                             try:
                                 org = state.persona._organism if state.persona and hasattr(state.persona, '_organism') else None
                                 if not org:
-                                    health_html.set_content('<div style="color:#ef4444">Organism not available — Lumina must be running</div>')
+                                    health_html.set_content('<div style="color:#ef4444">Organism not available — PandoraBOX must be running</div>')
                                     return
                                 lines = []
 
@@ -2111,7 +2111,7 @@ async def settings_page(tab: str = 'llm'):
                                         lines.append(f'<div style="font-size:11px;color:#ef4444">Goal Engine error: {str(e)[:50]}</div>')
 
                                 if not lines:
-                                    lines.append('<div style="color:#64748b">No data available — start Lumina and send a message first</div>')
+                                    lines.append('<div style="color:#64748b">No data available — start PandoraBOX and send a message first</div>')
 
                                 health_html.set_content('<div style="font-size:12px;color:#cbd5e1">' + "".join(lines) + '</div>')
                             except Exception as _e:
@@ -2126,7 +2126,7 @@ async def settings_page(tab: str = 'llm'):
                 with ui.tab_panel('analytics'):
                     ui.label('📈 LOG ANALYTICS & SELF-ANALYSIS').classes('section-label')
                     ui.html('<div style="color:#64748b;font-size:12px;margin-bottom:16px">'
-                            'Lumina analyzes her own cognitive trends and log patterns. '
+                            'PandoraBOX analyzes her own cognitive trends and log patterns. '
                             'Trend data comes from the Observatory history (last 200 ticks). '
                             'Self-analysis uses the LLM to interpret what the numbers mean.</div>')
 
@@ -2289,12 +2289,12 @@ async def settings_page(tab: str = 'llm'):
                         ui.button('Scan Logs', on_click=_scan_logs,
                                   icon='search').props('flat dense color=cyan').classes('mt-2')
 
-                    # ── Lumina Self-Analysis ─────────────────────────────
-                    with ui.expansion('🧠 Lumina Self-Analysis', icon='psychology',
+                    # ── PandoraBOX Self-Analysis ─────────────────────────────
+                    with ui.expansion('🧠 PandoraBOX Self-Analysis', icon='psychology',
                                       value=True).classes('w-full mb-3'):
                         ui.label('AI-POWERED COGNITIVE SELF-ANALYSIS').classes('section-label')
                         ui.html('<div style="color:#64748b;font-size:11px;margin-bottom:8px">'
-                                'Lumina reads her own metrics and writes a free-form analysis '
+                                'PandoraBOX reads her own metrics and writes a free-form analysis '
                                 'of trends, anomalies, and cognitive health. Requires LLM.</div>')
                         self_analysis_html = ui.html(
                             '<div style="color:#64748b;font-size:12px">Click Analyze to generate.</div>'
@@ -2384,7 +2384,7 @@ Write a thoughtful self-analysis (150-250 words) covering:
 3. Any anomalies or patterns you notice
 4. One concrete thing you would want to improve
 
-Write in first person, as Lumina reflecting on herself. Be specific, not generic."""
+Write in first person, as PandoraBOX reflecting on herself. Be specific, not generic."""
 
                                 try:
                                     # Use generate_bare — no history read/write,
@@ -2597,7 +2597,7 @@ Write in first person, as Lumina reflecting on herself. Be specific, not generic
                 # Save button
                 async def save_all():
                     # ── 1. Push UI values into config ────────────────────────
-                    config.PERSONA_NAME   = (persona_name_input.value or "Lumina").strip()
+                    config.PERSONA_NAME   = (persona_name_input.value or "PandoraBOX").strip()
                     config.LLM_PROVIDER = llm_prov.value
                     config.LLM_MODEL = llm_model.value
                     config.LLM_BASE_URL = llm_url.value
@@ -2685,7 +2685,7 @@ Write in first person, as Lumina reflecting on herself. Be specific, not generic
                 ).classes('save-btn').props('color=indigo')
 
 # ─────────────────────────────────────────────
-#  /lumina — Lumina Cognitive Dashboard
+#  /lumina — PandoraBOX Cognitive Dashboard
 # ─────────────────────────────────────────────
 
 EMO_COLORS = {

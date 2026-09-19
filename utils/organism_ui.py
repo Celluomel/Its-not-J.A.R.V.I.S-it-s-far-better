@@ -115,7 +115,7 @@ def build_organism(show_header=True):
                         ('⚙️', '/settings', 'Settings'),
                         ('💾', '/settings?tab=memory', 'Memory'),
                         ('🎙️', '/settings?tab=voice', 'Voice Lab'),
-                        ('✨', '/lumina', 'Lumina Mind'),
+                        ('✨', '/lumina', 'PandoraBOX Mind'),
                         ('🔬', '/research', 'Research')
                     ]
                     for i, (icon, link, label) in enumerate(petals, 1):

@@ -95,7 +95,7 @@ export async function listenContinuously(options: {
   // Keep the detector alive for the whole voice session.  Pausing MicVAD and
   // trying to restart it after TTS can leave some browser/ONNX combinations
   // listening visually but no longer delivering speech-end callbacks.  The
-  // blocked gate still drops all echo while Lumina is speaking.
+  // blocked gate still drops all echo while PandoraBOX is speaking.
   const sync = async () => {
     if (closed || updating) return;
     updating = true;

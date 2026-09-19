@@ -335,12 +335,12 @@ async def lumina_status():
     state = _runtime()
     persona = state.persona
     if not persona:
-        raise HTTPException(503, 'Lumina is not ready.')
+        raise HTTPException(503, 'PandoraBOX is not ready.')
     try:
         return _json_safe(await asyncio.to_thread(persona.get_system_status))
     except Exception as exc:
-        logger.warning('Lumina status read failed: %s', exc)
-        raise HTTPException(503, 'Lumina status is unavailable.')
+        logger.warning('PandoraBOX status read failed: %s', exc)
+        raise HTTPException(503, 'PandoraBOX status is unavailable.')
 
 
 class LuminaAction(BaseModel):
@@ -353,7 +353,7 @@ async def lumina_action(payload: LuminaAction):
     state = _runtime()
     persona = state.persona
     if not persona:
-        raise HTTPException(503, 'Lumina is not ready.')
+        raise HTTPException(503, 'PandoraBOX is not ready.')
     try:
         if payload.action == 'dream':
             result = await asyncio.to_thread(persona.trigger_dream)
@@ -363,11 +363,11 @@ async def lumina_action(payload: LuminaAction):
             result = await asyncio.to_thread(persona.trigger_life_event, payload.event_type)
         else:
             result = await asyncio.to_thread(persona.receive_feedback, payload.action == 'feedback_positive', 'default', '')
-        _event(f'Lumina action: {payload.action}')
+        _event(f'PandoraBOX action: {payload.action}')
         return {'ok': True, 'action': payload.action, 'result': _json_safe(result)}
     except Exception as exc:
-        logger.warning('Lumina action failed: %s', exc)
-        raise HTTPException(500, 'Lumina action failed.')
+        logger.warning('PandoraBOX action failed: %s', exc)
+        raise HTTPException(500, 'PandoraBOX action failed.')
 
 
 class ResponseFeedback(BaseModel):
@@ -382,7 +382,7 @@ async def response_feedback(payload: ResponseFeedback):
     state = _runtime()
     persona = state.persona
     if not persona:
-        raise HTTPException(503, 'Lumina is not ready.')
+        raise HTTPException(503, 'PandoraBOX is not ready.')
     try:
         from managers.user_manager import user_manager
         result = await asyncio.to_thread(
@@ -438,7 +438,7 @@ async def analytics_self_analysis():
     if not getattr(state, 'llm', None) or not hasattr(state.llm, 'generate_bare'):
         raise HTTPException(503, 'LLM self-analysis is unavailable.')
     snapshot = await settings_analytics()
-    prompt = 'Analyze these Lumina cognitive telemetry metrics in 3 concise paragraphs. Mention trends, anomalies, and one practical observation. Do not invent missing data. Telemetry:\n' + json.dumps(snapshot, default=str)[:7000]
+    prompt = 'Analyze these PandoraBOX cognitive telemetry metrics in 3 concise paragraphs. Mention trends, anomalies, and one practical observation. Do not invent missing data. Telemetry:\n' + json.dumps(snapshot, default=str)[:7000]
     try:
         result = await asyncio.to_thread(state.llm.generate_bare, prompt, max_tokens=300, temperature=0.35)
         return {'analysis': str(result).strip()}
@@ -754,12 +754,12 @@ async def create_capability_proposal(payload: CapabilityProposalCreate):
 
 @router.post('/capability-proposals/generate')
 async def generate_capability_proposal():
-    """Let Lumina suggest one bounded capability for the research backlog."""
+    """Let PandoraBOX suggest one bounded capability for the research backlog."""
     state = _runtime()
     organism = getattr(getattr(state, 'persona', None), '_organism', None)
     llm = getattr(state, 'llm', None)
     if organism is None or llm is None:
-        raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+        raise HTTPException(503, 'PandoraBOX cognitive engine is not ready.')
     workspace = getattr(organism, 'workspace', None)
     workspace_state = workspace.summary() if workspace and hasattr(workspace, 'summary') else {}
     prompt = (
@@ -773,7 +773,7 @@ async def generate_capability_proposal():
         f'Current workspace snapshot: {json.dumps(_json_safe(workspace_state), ensure_ascii=False)[:2500]}'
     )
     system_prompt = (
-        'You are Lumina proposing research directions for your own development. Be '
+        'You are PandoraBOX proposing research directions for your own development. Be '
         'concrete, falsifiable and modest. Do not claim that anything is implemented. '
         'Prefer a small prototype with observable evidence and a safe fallback.'
     )
@@ -803,7 +803,7 @@ async def generate_capability_proposal():
             )
     except Exception as exc:
         logger.warning('Autonomous capability proposal failed: %s', exc)
-        raise HTTPException(502, 'Lumina could not generate a proposal.') from exc
+        raise HTTPException(502, 'PandoraBOX could not generate a proposal.') from exc
     raw = result.get('text', '').strip() if isinstance(result, dict) else ''
     generated = {}
     try:
@@ -840,7 +840,7 @@ async def generate_capability_proposal():
     proposals = _load_capability_proposals()
     proposals.append(item)
     _save_capability_proposals(proposals)
-    _event(f"Lumina generated capability proposal: {item['title'][:80]}")
+    _event(f"PandoraBOX generated capability proposal: {item['title'][:80]}")
     return _json_safe(item)
 
 
@@ -856,7 +856,7 @@ async def update_capability_proposal(proposal_id: str, payload: CapabilityPropos
         state = _runtime()
         organism = getattr(getattr(state, 'persona', None), '_organism', None)
         if organism is None:
-            raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+            raise HTTPException(503, 'PandoraBOX cognitive engine is not ready.')
         try:
             from cognition.capability_development import CapabilityDevelopmentEngine
             loop = getattr(organism, '_loop', None)
@@ -891,7 +891,7 @@ async def start_capability_experiment(proposal_id: str):
     state = _runtime()
     organism = getattr(getattr(state, 'persona', None), '_organism', None)
     if organism is None:
-        raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+        raise HTTPException(503, 'PandoraBOX cognitive engine is not ready.')
     try:
         from cognition.capability_development import CapabilityDevelopmentEngine
         loop = getattr(organism, '_loop', None)
@@ -950,7 +950,7 @@ async def capability_experiment_status(proposal_id: str):
 
 @router.post('/capability-proposals/{proposal_id}/analyze')
 async def analyze_capability_proposal(proposal_id: str):
-    """Submit a proposal to Lumina's cognitive layer without adding chat history."""
+    """Submit a proposal to PandoraBOX's cognitive layer without adding chat history."""
     proposals = _load_capability_proposals()
     item = next((entry for entry in proposals if entry.get('id') == proposal_id), None)
     if item is None:
@@ -959,7 +959,7 @@ async def analyze_capability_proposal(proposal_id: str):
     organism = getattr(getattr(state, 'persona', None), '_organism', None)
     llm = getattr(state, 'llm', None)
     if organism is None or llm is None:
-        raise HTTPException(503, 'Lumina cognitive engine is not ready.')
+        raise HTTPException(503, 'PandoraBOX cognitive engine is not ready.')
 
     submission = (
         f"Development proposal: {item['title']}\n"
@@ -1013,9 +1013,9 @@ async def analyze_capability_proposal(proposal_id: str):
         )
     except Exception as exc:
         logger.warning('Capability proposal analysis failed: %s', exc)
-        raise HTTPException(502, 'Lumina could not analyze the proposal.') from exc
+        raise HTTPException(502, 'PandoraBOX could not analyze the proposal.') from exc
     if result.get('status') != 'ok' or not result.get('text', '').strip():
-        raise HTTPException(503, f"Lumina returned no analysis ({result.get('reason', 'unknown reason')}).")
+        raise HTTPException(503, f"PandoraBOX returned no analysis ({result.get('reason', 'unknown reason')}).")
     item['organism_analysis'] = result['text'].strip()
     item['analysis_at'] = time.time()
     item['updated_at'] = time.time()
@@ -1208,7 +1208,7 @@ async def network_toggle():
         from cognition.lumina_network import LuminaNetwork
         state.lumina_network = LuminaNetwork(state.persona, state.llm)
         state.lumina_network.load_from_config(getattr(config, 'LUMINA_CHILDREN', []) or [])
-        state.lumina_network.set_master_info(f"http://127.0.0.1:{getattr(config, 'NICEGUI_PORT', 8080)}", getattr(config, 'LUMINA_MASTER_NAME', 'Lumina-Master'))
+        state.lumina_network.set_master_info(f"http://127.0.0.1:{getattr(config, 'NICEGUI_PORT', 8080)}", getattr(config, 'LUMINA_MASTER_NAME', 'PandoraBOX-Master'))
     elif not enabled and getattr(state, 'lumina_network', None):
         await state.lumina_network.stop()
         state.lumina_network = None
@@ -1250,7 +1250,7 @@ async def network_dialogue(dialogue_id: str):
     state = _runtime()
     session = _dialogues.get(dialogue_id)
     if not session:
-        raise HTTPException(410, 'This Flux dialogue is no longer available, possibly because Lumina restarted. Start a new dialogue from the main window.')
+        raise HTTPException(410, 'This Flux dialogue is no longer available, possibly because PandoraBOX restarted. Start a new dialogue from the main window.')
     network = getattr(state, 'lumina_network', None)
     history = network.get_history(dialogue_id) if network else []
     return {
@@ -1461,9 +1461,9 @@ async def coqui_recording(file: UploadFile = File(...)):
 async def chat(payload: Turn, request: Request):
     state = _runtime()
     if not state.ready or not state.persona or not state.persona.is_ready:
-        raise HTTPException(503, 'Lumina is still starting. Try again shortly.')
+        raise HTTPException(503, 'PandoraBOX is still starting. Try again shortly.')
     if _turn_lock.locked():
-        raise HTTPException(409, 'Lumina is finishing another turn. Please wait.')
+        raise HTTPException(409, 'PandoraBOX is finishing another turn. Please wait.')
     from managers.user_manager import user_manager
     from managers.security_manager import security, SecurityViolation
     try:
@@ -1562,7 +1562,7 @@ async def chat(payload: Turn, request: Request):
                         break
                     except asyncio.TimeoutError:
                         stage = getattr(state.persona, '_chat_stage', 'unknown')
-                        await emit('error', message=f'Lumina stalled during {stage}. Diagnostic saved to logs/chat-stall.log.')
+                        await emit('error', message=f'PandoraBOX stalled during {stage}. Diagnostic saved to logs/chat-stall.log.')
                         stopped.set()
                         break
                     except asyncio.CancelledError:

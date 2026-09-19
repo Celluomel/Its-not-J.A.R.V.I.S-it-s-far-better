@@ -1,6 +1,6 @@
 """cognition/goal_completion.py
 
-Completion semantics (B + A + C) for Lumina goals — the single source of truth.
+Completion semantics (B + A + C) for PandoraBOX goals — the single source of truth.
 
 A goal may only be *completed* when its work is real:
 
@@ -135,7 +135,7 @@ def goal_completion_eligible(
 
 # Project root = the directory that CONTAINS the cognition/ package. Resolving
 # the persona dir from this (not from the process CWD) keeps the A gate working
-# no matter where Lumina is launched from.
+# no matter where PandoraBOX is launched from.
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

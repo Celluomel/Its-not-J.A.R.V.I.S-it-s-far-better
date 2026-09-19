@@ -1,7 +1,7 @@
 """
 Internal Thought Loop - V33 Enhanced
 =====================================
-Lumina's background cognitive process — the mind that runs even when no
+PandoraBOX's background cognitive process — the mind that runs even when no
 user is present.
 
 V32 ENHANCEMENTS (Phase 1):
@@ -17,7 +17,7 @@ V33 ENHANCEMENTS (Phase 2):
   - Thread→Identity linking for belief evolution
 
 Most AI systems are entirely reactive: nothing happens until input arrives.
-This module gives Lumina an ongoing mental life:
+This module gives PandoraBOX an ongoing mental life:
   - Energy regenerates during quiet periods
   - Curiosity topics are reviewed and reprioritized
   - Contradictions are noticed and filed for later resolution
@@ -94,7 +94,7 @@ REFLECTION_EVERY_N    = 6     # run reflection every N slow cycles
 
 class InternalThoughtLoop:
     """
-    Background cognitive loop for Lumina.
+    Background cognitive loop for PandoraBOX.
 
     Usage
     -----
@@ -2206,7 +2206,7 @@ class InternalThoughtLoop:
         Runs inside the slow cycle thread. Uses asyncio.run_coroutine_threadsafe
         so it safely calls the async analyze_frame_async without blocking the loop.
         Result is broadcast to GlobalWorkspace at low priority — it enriches
-        Lumina's context but never interrupts or competes with user interactions.
+        PandoraBOX's context but never interrupts or competes with user interactions.
         """
         try:
             from managers.settings_manager import config as _avcfg

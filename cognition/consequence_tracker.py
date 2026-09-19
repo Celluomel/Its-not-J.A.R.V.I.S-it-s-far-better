@@ -1,5 +1,5 @@
 """
-LUMINA — CONSEQUENCE TRACKER  (the closed outcome loop)
+PANDORABOX — CONSEQUENCE TRACKER  (the closed outcome loop)
 =======================================================
 THIS is the highest-priority repair: turning
     GOAL -> ACTION -> OUTCOME   (X)   PREDICTION ERROR

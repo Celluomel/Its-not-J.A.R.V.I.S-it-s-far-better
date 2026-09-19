@@ -1,4 +1,4 @@
-# LUMINA v110 — FORENSIC CAUSAL AUDIT
+# PANDORABOX v110 — FORENSIC CAUSAL AUDIT
 
 **Method.** For every edge in the chain
 `Emotion → Drives → Attention → Global Workspace → Deliberation → Goals → Action → Outcome → Prediction Error → Memory → Identity`
@@ -101,7 +101,7 @@ we located (a) where the state variable is **computed**, (b) where it is **read*
 
 1. **"Self-awareness" is a prompt, not a process.** Identity/self-concept reaches behavior **only** as injected system-prompt text (`ai_system.py:2047` "━━ WHO YOU ARE ━━"; `cognitive_preprocessor.py:471` "[DOMINANT FOCUS]"). There is **no computational self-model gating behavior** — the "self" is the LLM role-playing a belief list.
 
-2. **Selective attention is computed but behaviorally delegated.** The entire workspace competition is REAL computation, yet the winner's only effect on output is one prompt line. Whether Lumina "attends" is decided by the LLM, not by the mechanism. **Appears: focused. Actually: LLM told its focus.**
+2. **Selective attention is computed but behaviorally delegated.** The entire workspace competition is REAL computation, yet the winner's only effect on output is one prompt line. Whether PandoraBOX "attends" is decided by the LLM, not by the mechanism. **Appears: focused. Actually: LLM told its focus.**
 
 3. **"Emotional regulation" = temperature tuning + decay.** The sole quantitative emotional effect is `temperature_modifier` (±~0.10) plus time-decay. "Regulated emotion" is really "a slightly different sampling temperature."
 
@@ -111,7 +111,7 @@ we located (a) where the state variable is **computed**, (b) where it is **read*
 
 6. **The only genuine learning edge is thin (recall 6→10).** The single verified state→memory update widens the recall limit by 4 items, one turn late. **Appears: learning from surprise. Actually: marginal retrieval-count bump.**
 
-7. **Identity "updates from experience" = regex on its own text.** `self_concept.update_from_response` extracts "I am/feel/think X" from Lumina's **own generated response**. The self-model is built from self-narration, not world signal — **circular and self-confirming.**
+7. **Identity "updates from experience" = regex on its own text.** `self_concept.update_from_response` extracts "I am/feel/think X" from PandoraBOX's **own generated response**. The self-model is built from self-narration, not world signal — **circular and self-confirming.**
 
 8. **Identity seed is a hardcoded trait→sentence map.** `bootstrap_from_personality` maps traits → **fixed statements** (`TRAIT_BELIEF_MAP`, threshold 0.65). Many "beliefs" are constants, not emergent. **Appears: formed beliefs. Actually: seeded boilerplate.**
 

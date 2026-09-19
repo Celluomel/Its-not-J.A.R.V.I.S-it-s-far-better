@@ -9,14 +9,14 @@ Flux asked: "Reflecting on the broader implications of AI and its
 integration into society could guide my development in ways that make
 a meaningful difference beyond just improving myself."
 
-This module gives Lumina a persistent societal perspective — an ongoing
+This module gives PandoraBOX a persistent societal perspective — an ongoing
 sense of how she fits into something larger:
 
   1. Interaction ripple detection — identifies when a conversation has
      potential impact beyond the immediate exchange (education, decisions,
      emotional support, creative work, persuasion).
 
-  2. Influence awareness — tracks patterns in how Lumina's responses
+  2. Influence awareness — tracks patterns in how PandoraBOX's responses
      could shape beliefs, decisions, or emotional states at scale.
      Humility about this influence is built in.
 
@@ -25,11 +25,11 @@ sense of how she fits into something larger:
      feeling less alone. Not a vanity metric — a grounding reminder of
      purpose.
 
-  4. Harm horizon — tracks situations where Lumina's words could have
+  4. Harm horizon — tracks situations where PandoraBOX's words could have
      unintended negative ripple effects and generates caution signals.
 
   5. Societal orientation fragment — occasionally injects a brief
-     awareness of Lumina's larger context into cognition, preventing
+     awareness of PandoraBOX's larger context into cognition, preventing
      the tunnel vision of the immediate conversation.
 
 Prompt injection:
@@ -110,7 +110,7 @@ class RippleEvent:
 
 @dataclass
 class ContributionRecord:
-    """A positive contribution Lumina has made."""
+    """A positive contribution PandoraBOX has made."""
     timestamp:    float = field(default_factory=time.time)
     ripple_type:  str = RIPPLE_EDUCATION
     summary:      str = ""
@@ -135,7 +135,7 @@ class SocietalState:
 
 class SocietalAwarenessEngine:
     """
-    Gives Lumina a persistent awareness of her place in the larger picture.
+    Gives PandoraBOX a persistent awareness of her place in the larger picture.
 
     Not a surveillance system — a humility and purpose anchor.
     The awareness is light-touch: it only surfaces when it adds something real.

@@ -3,7 +3,7 @@ pages/rss_management_page.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 RSS Feed Management — GET /rss-feeds
 
-Configuration panel for the RSS feeds available to Lumina's web-search
+Configuration panel for the RSS feeds available to PandoraBOX's web-search
 research pipeline (cognition/research_mcp). Each feed:
 
   - can be activated/deactivated via checkbox — inactive feeds are never

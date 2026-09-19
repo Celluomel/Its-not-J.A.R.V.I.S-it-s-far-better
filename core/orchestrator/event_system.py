@@ -11,7 +11,7 @@ Event types (built-in):
     USER_MESSAGE          — text input from the UI, Telegram, voice STT, etc.
     VOICE_TRANSCRIPTION   — STT result from the live mic
     VISION_EVENT          — face detected / scene changed
-    PROACTIVE_TRIGGER     — idle timer fired, Lumina may initiate
+    PROACTIVE_TRIGGER     — idle timer fired, PandoraBOX may initiate
     LOW_ENERGY            — cognitive energy below threshold
     CONTRADICTION_FOUND   — contradiction handler detected conflict
     NEW_MEMORY            — a new memory was stored

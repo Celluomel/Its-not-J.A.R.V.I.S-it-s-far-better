@@ -3,10 +3,10 @@ Vision Manager — Two-Tier Visual Memory
 ========================================
 Tier 1 — Working Memory (JSON):
     visual_working_memory.json holds exactly three entries at all times:
-      current  : what Lumina sees right now
+      current  : what PandoraBOX sees right now
       previous : what she saw before the last notable change
       delta    : one-sentence narrative of what changed between them
-    This JSON is injected directly into every LLM prompt so Lumina always
+    This JSON is injected directly into every LLM prompt so PandoraBOX always
     knows what is in front of her without polluting long-term memory.
 
 Tier 2 — Long-Term Visual Memory (FAISS):
@@ -127,7 +127,7 @@ class VisualWorkingMemory:
 
     This is what gets injected into every LLM prompt via
     get_visual_context_for_prompt(). The LLM always knows:
-      - what Lumina sees now
+      - what PandoraBOX sees now
       - what she saw before the last change
       - what changed
 

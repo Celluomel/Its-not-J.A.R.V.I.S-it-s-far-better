@@ -3,7 +3,7 @@ Global Workspace
 ================
 Shared cognitive broadcast bus inspired by Bernard Baars' Global Workspace Theory.
 
-Every module in Lumina can *broadcast* an item here.  The workspace acts as a
+Every module in PandoraBOX can *broadcast* an item here.  The workspace acts as a
 short-term attention buffer: the most recently / highly-prioritised signals are
 visible to all other modules, enabling coordination without tight coupling.
 
@@ -11,7 +11,7 @@ SEMANTIC COMPETITION (2026-03-09 rewrite)
 -----------------------------------------
 Problem: pure priority-based eviction allowed semantically identical items
 (same topic, same source) to accumulate → workspace became a fixation echo
-chamber.  Lumina's CCS score was artificially high and her cognitive horizon
+chamber.  PandoraBOX's CCS score was artificially high and her cognitive horizon
 narrowed to the same recurring thoughts.
 
 Fix: broadcast() now runs a two-stage competition before admitting a new item:
@@ -72,7 +72,7 @@ from typing import Any, Callable, Dict, List, Optional, Set
 # Additive to the broadcast blackboard above, NOT a replacement. The
 # blackboard (WorkspaceItem/broadcast/recent/top) keeps doing its existing
 # job (diagnostic log + dedup gate + self-anchor). WorkspaceState is the
-# "what is Lumina globally reasoning about right now" object: a live,
+# "what is PandoraBOX globally reasoning about right now" object: a live,
 # structured record that multiple subsystems read AND write during a single
 # cognitive cycle, instead of each subsystem only ever reading its own
 # persisted state and writing a private text fragment.
@@ -88,7 +88,7 @@ HYPOTHESIS_TTL = 180.0  # seconds a hypothesis stays "active" without being re-a
 @dataclass
 class WorkspaceState:
     """
-    Live, structured snapshot of Lumina's current global cognitive context.
+    Live, structured snapshot of PandoraBOX's current global cognitive context.
     One instance lives on GlobalWorkspace and is mutated in place via
     update_state(); read via get_state() (returns a shallow copy).
     """

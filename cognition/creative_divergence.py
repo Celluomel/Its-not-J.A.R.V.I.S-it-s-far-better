@@ -23,7 +23,7 @@ a third layer: *how do I think differently* about this?
      like?" to prevent settling into predictable stances.
 
   4. Novelty tracking — over time, tracks which topics have been explored
-     from which angles, so Lumina genuinely varies her approach rather
+     from which angles, so PandoraBOX genuinely varies her approach rather
      than repeating the same creative moves.
 
   5. Serendipity injection — occasionally surfaces an unrelated idea that
@@ -107,7 +107,7 @@ class CreativeDivergenceState:
 
 class CreativeDivergenceEngine:
     """
-    Seeds non-obvious creative angles before Lumina responds.
+    Seeds non-obvious creative angles before PandoraBOX responds.
 
     Not a creativity simulator — a divergence scaffold that nudges the
     LLM toward genuinely original thinking rather than the path of least

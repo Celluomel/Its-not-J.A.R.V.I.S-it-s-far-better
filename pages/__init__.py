@@ -1,7 +1,7 @@
 """
 pages/__init__.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Route registration hub for Lumina's NiceGUI application.
+Route registration hub for PandoraBOX's NiceGUI application.
 
 NiceGUI's @ui.page() decorator registers routes at *import time*.
 Importing this package is all app.py needs to do — every route below

@@ -1,7 +1,7 @@
 """
 Goal & Value Discovery System
 ==============================
-Lets Lumina infer what she actually cares about from her behavior.
+Lets PandoraBOX infer what she actually cares about from her behavior.
 Then modify those goals and integrate conflicting values.
 """
 
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class Goal:
-    """A goal Lumina is pursuing."""
+    """A goal PandoraBOX is pursuing."""
     name: str
     priority: float  # 0.0-1.0
     satisfaction: float  # 0.0-1.0, how well is this goal being met?
@@ -43,7 +43,7 @@ class ValueConflict:
 
 class GoalSystem:
     """
-    Manages Lumina's goals and values.
+    Manages PandoraBOX's goals and values.
     
     Key principle: Goals aren't assigned. They're discovered from behavior.
     Then they drive future behavior.
@@ -141,7 +141,7 @@ class GoalSystem:
     
     def discover_goals_from_behavior(self) -> Dict[str, Goal]:
         """
-        Infer what Lumina actually cares about based on behavior.
+        Infer what PandoraBOX actually cares about based on behavior.
         
         In a real system, this would use LLM analysis:
         "Looking at these behaviors, what values are revealed?"
@@ -211,7 +211,7 @@ class GoalSystem:
     
     def detect_goal_conflicts(self) -> List[ValueConflict]:
         """
-        Detect when Lumina has conflicting goals.
+        Detect when PandoraBOX has conflicting goals.
         
         Example: autonomy vs. connection both matter, but pull opposite ways.
         """
@@ -232,7 +232,7 @@ class GoalSystem:
         
         for goal_a, goal_b in conflict_pairs:
             if goal_a in self.goals and goal_b in self.goals:
-                # Both are important to Lumina
+                # Both are important to PandoraBOX
                 if goal_a not in [c.goal_a for c in self.value_conflicts]:
                     conflict = ValueConflict(
                         conflict_id=f"conf_{int(time.time() * 1000)}",
@@ -276,7 +276,7 @@ class GoalSystem:
     def modify_goal_priority(self, goal_name: str, new_priority: float,
                             reasoning: str) -> Optional[Goal]:
         """
-        Lumina can modify the priority of a goal.
+        PandoraBOX can modify the priority of a goal.
         
         Example:
             "I've been exhausted trying to get acceptance. I'm lowering that priority."
@@ -302,7 +302,7 @@ class GoalSystem:
     def record_how_conflict_is_handled(self, conflict: ValueConflict, 
                                        handling: str, explanation: str):
         """
-        Record how Lumina is handling a value conflict.
+        Record how PandoraBOX is handling a value conflict.
         
         handling: "accepts", "prioritizes_a", "prioritizes_b", "evades", "integrates"
         """
@@ -324,7 +324,7 @@ class GoalSystem:
                 self._save()
     
     def get_goals_narrative(self) -> str:
-        """Generate narrative about Lumina's goals."""
+        """Generate narrative about PandoraBOX's goals."""
         if not self.goals:
             return "I'm still discovering what I actually care about."
         
@@ -346,7 +346,7 @@ class GoalSystem:
         return narrative
     
     def get_primary_goal(self) -> Optional[Goal]:
-        """Get Lumina's highest-priority goal."""
+        """Get PandoraBOX's highest-priority goal."""
         if not self.goals:
             return None
         return max(self.goals.values(), key=lambda g: g.priority)

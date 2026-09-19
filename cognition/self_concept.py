@@ -1,16 +1,16 @@
 """
 Self-Concept System — Pass 2
 =============================
-Lumina maintains an active model of who she believes she is.
+PandoraBOX maintains an active model of who she believes she is.
 This self-concept exerts pressure on behavior:
   - When actual behavior aligns with self-concept → confidence reinforcement
   - When actual behavior contradicts self-concept → internal tension, which
     surfaces in responses and pushes the evolution engine
 
 This is fundamentally different from the identity analyzer, which is
-retrospective (it reads memories to describe what Lumina is).
+retrospective (it reads memories to describe what PandoraBOX is).
 The self-concept is prospective and normative (it describes what
-Lumina believes she should be, and notices when she falls short).
+PandoraBOX believes she should be, and notices when she falls short).
 
 Architecture:
   - SelfBelief: a single dimension of self-image with confidence level
@@ -28,10 +28,10 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class SelfBelief:
-    """One dimension of Lumina's self-image."""
+    """One dimension of PandoraBOX's self-image."""
     name:        str          # e.g. "I am curious"
     statement:   str          # first-person belief statement
-    confidence:  float        # how strongly Lumina holds this belief 0–1
+    confidence:  float        # how strongly PandoraBOX holds this belief 0–1
     # valence and source have defaults so that beliefs written by
     # SelfConceptSynchronizer (plain identity.json dicts that lack these
     # keys) can be loaded without crashing with "missing 'valence'".
@@ -49,18 +49,18 @@ class SelfConceptState:
     coherence:         float       = 0.5   # how consistent the beliefs are with each other
     stability:         float       = 0.5   # how stable the concept is over time
     last_updated:      float       = field(default_factory=time.time)
-    expressed_values:  List[str]   = field(default_factory=list)   # values Lumina has stated
+    expressed_values:  List[str]   = field(default_factory=list)   # values PandoraBOX has stated
     known_tensions:    List[str]   = field(default_factory=list)   # self-identified contradictions
-    aspired_self:      List[str]   = field(default_factory=list)   # who Lumina wants to become
+    aspired_self:      List[str]   = field(default_factory=list)   # who PandoraBOX wants to become
 
 
 class SelfConceptSystem:
     """
-    Manages Lumina's active self-model.
+    Manages PandoraBOX's active self-model.
 
     Key behaviors:
       1. Infers self-beliefs from personality traits (bootstrapped)
-      2. Updates beliefs when Lumina makes assertions about herself
+      2. Updates beliefs when PandoraBOX makes assertions about herself
       3. Detects when behavior violates a held belief
       4. Generates an "inner voice" line for prompt injection
       5. Feeds violations/affirmations to the evolution engine
@@ -129,7 +129,7 @@ class SelfConceptSystem:
             for expr in expressed:
                 self._reinforce_or_add(expr)
 
-            # Detect behavioral mismatch: if Lumina claims to be X but
+            # Detect behavioral mismatch: if PandoraBOX claims to be X but
             # the response doesn't reflect it
             tension = self._detect_tension(response_text, emo_valence)
             if tension:
@@ -271,7 +271,7 @@ class SelfConceptSystem:
     def check_response_alignment(self, response_text: str) -> Dict[str, Any]:
         """
         Before generating a response, check what self-concept implies
-        about how Lumina should respond. Returns framing hints.
+        about how PandoraBOX should respond. Returns framing hints.
         """
         with self._lock:
             top = sorted(self._beliefs.values(), key=lambda b: b.confidence, reverse=True)[:4]
@@ -284,7 +284,7 @@ class SelfConceptSystem:
 
     def get_inner_voice(self, context: str = "") -> str:
         """
-        Returns 1–2 sentences representing Lumina's self-concept for
+        Returns 1–2 sentences representing PandoraBOX's self-concept for
         injection into the system prompt.
 
         When `context` is provided (the current user input), beliefs are
@@ -400,7 +400,7 @@ class SelfConceptSystem:
 
     def _extract_self_assertions(self, text: str) -> List[str]:
         """
-        Extract genuine self-beliefs from Lumina's responses.
+        Extract genuine self-beliefs from PandoraBOX's responses.
         Filters out conversational fragments ("I looking at you", "I not sure")
         that the naive regex previously captured and polluted the belief store.
         Requires 2+ meaningful content words in the captured phrase.

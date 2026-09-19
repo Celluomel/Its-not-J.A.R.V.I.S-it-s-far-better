@@ -1,5 +1,5 @@
 """
-LUMINA — WORKSPACE BIAS + OVERRIDE-RATE LAYER
+PANDORABOX — WORKSPACE BIAS + OVERRIDE-RATE LAYER
 =============================================
 Closes the actuator gap the audit found:
 

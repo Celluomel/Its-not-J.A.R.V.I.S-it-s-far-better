@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 3 : Data Migrator
+PANDORABOX V32 — Phase 3 : Data Migrator
 =====================================
 One-time migration of existing persona data to canonical Phase 3 format.
 
@@ -50,7 +50,7 @@ class DataMigrator:
     def run(self) -> Dict:
         """Run all migrations. Returns a report dict."""
         print("\n" + "="*60)
-        print("  LUMINA PHASE 3 — DATA MIGRATION")
+        print("  PANDORABOX PHASE 3 — DATA MIGRATION")
         print("="*60)
 
         # 1. Backup first

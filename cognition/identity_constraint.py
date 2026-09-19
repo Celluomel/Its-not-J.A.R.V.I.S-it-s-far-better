@@ -88,7 +88,7 @@ logger = logging.getLogger(__name__)
 # happen at all was structurally unreachable. Dashboard's "Total checks: 0"
 # was reporting this correctly; it just meant "never ran," not "never
 # violated." Lowered to 0.65 — high enough to keep the original intent
-# (veto power belongs to Lumina's top-tier values only), while actually
+# (veto power belongs to PandoraBOX's top-tier values only), while actually
 # being clearable: at default weights this admits curiosity(0.75),
 # honesty(0.80), intellectual_depth(0.70), and autonomy(0.65), and
 # excludes social_connection(0.55), stability(0.40), creativity(0.60),

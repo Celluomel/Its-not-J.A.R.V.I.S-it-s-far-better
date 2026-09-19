@@ -1,8 +1,8 @@
 """
 Autonomous Orchestrator
 =======================
-The central nervous system of Lumina — the loop that runs even when no user
-is present and decides what Lumina does at every moment.
+The central nervous system of PandoraBOX — the loop that runs even when no user
+is present and decides what PandoraBOX does at every moment.
 
 Architecture
 ------------

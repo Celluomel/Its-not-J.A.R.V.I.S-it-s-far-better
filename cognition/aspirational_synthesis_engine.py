@@ -6,7 +6,7 @@ by combining existing capabilities in ways not yet pursued.
 
 The gap this closes
 ────────────────────
-After v51 (MotivationalField), Lumina can detect:
+After v51 (MotivationalField), PandoraBOX can detect:
     "I have unresolved concept clusters → generate understanding goal"
     "This skill is stagnant → generate deepening goal"
 
@@ -64,7 +64,7 @@ Every SYNTHESIS_EVERY_N slow cycles, the engine:
    The top CANDIDATES_TO_SYNTHESISE candidates are passed to the LLM
    with a structured prompt that asks:
    "Given these capabilities and their combination, what new thing
-   becomes possible that doesn't yet exist in Lumina's cognitive ecology?"
+   becomes possible that doesn't yet exist in PandoraBOX's cognitive ecology?"
 
    The LLM generates a natural-language aspiration description and a
    state_desired value. Temperature 0.85 — exploratory.

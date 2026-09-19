@@ -4,7 +4,7 @@ Goal Ecology
 Replaces static task goals with a living ecosystem of competing drives.
 
 Organisms don't have a single goal — they have a constellation of drives that
-compete, inhibit, and amplify each other. This module models Lumina's
+compete, inhibit, and amplify each other. This module models PandoraBOX's
 motivational landscape in that spirit.
 
 Drive taxonomy:
@@ -112,7 +112,7 @@ class Drive:
 
 class GoalEcology:
     """
-    Maintains and updates Lumina's drive ecosystem.
+    Maintains and updates PandoraBOX's drive ecosystem.
 
     Usage
     -----

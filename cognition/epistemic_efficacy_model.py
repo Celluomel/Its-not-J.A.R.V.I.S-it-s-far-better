@@ -3,11 +3,11 @@ EpistemicEfficacyModel — the recursive crossing
 ====================================================
 Per the reframed mission (an external analysis reviewing the v104
 self-model flatline): don't "implement a strange loop" as an engineered
-feedback circuit that looks self-referential. Instead, make Lumina's own
+feedback circuit that looks self-referential. Instead, make PandoraBOX's own
 cognitive activity become an object of cognition in a way that CAUSALLY
 alters the activity that generated it. The concrete test given:
 
-  Can the self-model predict something about Lumina's own future
+  Can the self-model predict something about PandoraBOX's own future
   behaviour, be wrong, observe the error, update itself, and
   subsequently behave differently?
 

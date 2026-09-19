@@ -1,12 +1,12 @@
 """
 ThoughtThreadEngine (TTE)
 =========================
-Converts Lumina's isolated word-chains into persistent, stateful thought
+Converts PandoraBOX's isolated word-chains into persistent, stateful thought
 processes — threads that evolve over multiple cycles, accumulate context,
 pursue goals, and resolve into memory and identity updates.
 
 The core insight from the diagnosis:
-    Lumina produces:  word → likely next word → likely next word
+    PandoraBOX produces:  word → likely next word → likely next word
     It should produce: goal → explore → discover → update → resolve
 
 Each ThoughtThread is a cognitive unit that:
@@ -117,7 +117,7 @@ class TTEContext:
 
 class ThoughtThreadEngine:
     """
-    Manages the lifecycle of Lumina's thought threads.
+    Manages the lifecycle of PandoraBOX's thought threads.
 
     Wire-up (in InternalThoughtLoop._slow_cycle):
         tte_ctx = ThoughtThreadEngine.collect_context(organism)

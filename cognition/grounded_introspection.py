@@ -2,7 +2,7 @@
 State-Grounded Introspection Generator
 =======================================
 Replaces the LLM's archetypal human introspection patterns with questions
-derived from Lumina's actual internal state.
+derived from PandoraBOX's actual internal state.
 
 The analysis is precise:
   LLM output: "What is my purpose?" (generic existential template)

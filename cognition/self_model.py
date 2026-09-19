@@ -1,9 +1,9 @@
 """
 Self-Model
 ==========
-Lumina's introspective representation of itself.
+PandoraBOX's introspective representation of itself.
 
-Most agents know the world. Lumina also knows herself:
+Most agents know the world. PandoraBOX also knows herself:
 
   - what she is good at (capability scores)
   - how she is performing right now (performance tracking)
@@ -81,7 +81,7 @@ class CapabilityRecord:
 
 class SelfModel:
     """
-    Lumina's model of herself.
+    PandoraBOX's model of herself.
 
     Thread-safe.  Persists to JSON between sessions.
     """
@@ -104,7 +104,7 @@ class SelfModel:
         self.total_interactions: int = 0
         self.session_interactions: int = 0
 
-        # Knowledge gap log (topics Lumina knows she doesn't know well)
+        # Knowledge gap log (topics PandoraBOX knows she doesn't know well)
         self.knowledge_gaps: List[str] = []
 
         self._load()

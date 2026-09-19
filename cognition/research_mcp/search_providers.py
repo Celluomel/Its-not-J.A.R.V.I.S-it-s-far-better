@@ -1,5 +1,5 @@
 """
-search_providers.py  —  Three-tier resilient search for Lumina Research MCP
+search_providers.py  —  Three-tier resilient search for PandoraBOX Research MCP
 =============================================================================
 
 WHY THIS EXISTS

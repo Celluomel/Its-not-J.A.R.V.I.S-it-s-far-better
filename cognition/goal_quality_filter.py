@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 4.1 : Goal Quality Filter
+PANDORABOX V32 — Phase 4.1 : Goal Quality Filter
 =============================================
 Scores goals on semantic richness and tension alignment.
 Marks noise goals (single keywords, low-signal) and promotes

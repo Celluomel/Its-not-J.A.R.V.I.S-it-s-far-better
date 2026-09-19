@@ -2,7 +2,7 @@
 test_flux_snowball_replay.py — Phase 6.8
 ===========================================
 The external analysis's proposed experiment: a long replay (100-1000
-cycles) comparing two trajectories — Lumina alone vs Lumina+Flux — under
+cycles) comparing two trajectories — PandoraBOX alone vs PandoraBOX+Flux — under
 the SAME sensory event stream, tracking whether their divergence
 amplifies, stays as bounded local perturbations, or explodes.
 

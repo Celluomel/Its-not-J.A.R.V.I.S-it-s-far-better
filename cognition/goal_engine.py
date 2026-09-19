@@ -3,7 +3,7 @@ Goal Engine — Autonomous Goal Formation System
 ==============================================
 Transforms Identity + Memory + Pressures into persistent internal goals.
 
-This module addresses the fundamental gap: Lumina has curiosity and identity,
+This module addresses the fundamental gap: PandoraBOX has curiosity and identity,
 but no goal persistence. The organism explores but doesn't pursue.
 
 Architecture:
@@ -14,7 +14,7 @@ Key concepts:
     - Goal: Specific topic + priority + persistence (e.g., "understand quantum computing")
     - Persistence: Goals survive multiple cycles (not just one-shot impulses)
 
-Integration with Lumina:
+Integration with PandoraBOX:
     - Reads: Identity (traits, values), Pressures (epistemic, identity), Semantic Memory (topics)
     - Writes: Goals (persistent state), Observatory metrics (GEI)
     - Interacts: Global Workspace (injects goal-driven thoughts)
@@ -1230,7 +1230,7 @@ class GoalEngine:
         Goals emerge from three real sources:
           1. Identity traits (curiosity, empathy, logic) → motivation types
           2. Pressure levels (epistemic, identity, expression) → urgency
-          3. Semantic memory topics (what Lumina has actually been thinking about)
+          3. Semantic memory topics (what PandoraBOX has actually been thinking about)
 
         This is real goal emergence — not injection. Goals form because the
         organism has traits, is under pressure, and has been processing topics.
@@ -1333,7 +1333,7 @@ class GoalEngine:
                 except Exception:
                     pass
 
-            # Lumina must be able to form self-directed goals between human
+            # PandoraBOX must be able to form self-directed goals between human
             # turns. These are broad cognitive domains, not copies of user
             # tasks, and are only used when no durable topic was recovered.
             # Build fallback subjects from the organism's motivations. This

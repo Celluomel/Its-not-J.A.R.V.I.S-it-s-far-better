@@ -5,7 +5,7 @@ Cognitive Health Dashboard — GET /cognitive-dashboard
 
 A diagnostic instrument for a learning system.
 
-Not: "what is Lumina thinking right now" (that was the old dashboard)
+Not: "what is PandoraBOX thinking right now" (that was the old dashboard)
 But: "are the learning models reliable, are the feedback channels firing,
      where is the architecture healthy and where is it calibrating"
 
@@ -40,7 +40,7 @@ Seven panels:
    Recovery multiplier from temporal projection.
    Last N interactions cost profile.
 
-7. Lumina-Flux Network
+7. PandoraBOX-Flux Network
    Exchange count, PCM records contributed by network dialogues.
    Action type distribution from network vs human interactions.
    Trust trajectory with Flux (lumina_child_*).
@@ -1165,9 +1165,9 @@ async def cognitive_dashboard_page():
                             _kv('Recovery multiplier', f'{d.get("ec_multiplier", 1.0):.2f}×', mono=True)
                             _kv('Dream mode', str(res.get('in_dream_mode', False)))
 
-                        # ── Panel 7: Lumina-Flux Network ──────────────────────
+                        # ── Panel 7: PandoraBOX-Flux Network ──────────────────────
                         with ui.element('div').classes('dash-card'):
-                            _section('Lumina-Flux Network', '🌐')
+                            _section('PandoraBOX-Flux Network', '🌐')
                             flux_rels = d.get('flux_relations', [])
 
                             if not flux_rels:
@@ -1532,7 +1532,7 @@ async def cognitive_dashboard_page():
                                         _badge(f'{streak} consecutive', streak_colour)
                                     if streak >= 3:
                                         ui.label(
-                                            '⚠ Lumina has repeatedly chosen the '
+                                            '⚠ PandoraBOX has repeatedly chosen the '
                                             'lowest-predicted action — worth reviewing.'
                                         ).classes('text-yellow-400 text-xs mb-2')
                                 else:

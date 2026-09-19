@@ -13,7 +13,7 @@ Missing:
 
   curiosity → investigation → evidence → conclusion → archive
 
-Without closure, Lumina risks becoming an engine for generating
+Without closure, PandoraBOX risks becoming an engine for generating
 unresolved internal activity — questions multiply faster than they
 are answered, and the open_questions list grows without bound.
 

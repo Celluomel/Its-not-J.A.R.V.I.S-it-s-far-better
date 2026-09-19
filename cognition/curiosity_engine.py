@@ -1,7 +1,7 @@
 """
 Curiosity Engine
 ================
-Tracks Lumina's evolving intellectual curiosity across topics and concepts.
+Tracks PandoraBOX's evolving intellectual curiosity across topics and concepts.
 
 Curiosity is not just a mood — it is a directed cognitive drive. This engine
 maintains a weighted topic map where curiosity accumulates through:
@@ -60,7 +60,7 @@ class CuriosityNode:
 
 class CuriosityEngine:
     """
-    Manages Lumina's intellectual curiosity landscape.
+    Manages PandoraBOX's intellectual curiosity landscape.
 
     Usage
     -----
@@ -229,7 +229,7 @@ class CuriosityEngine:
         Phase 2.5: floor=0.05, cap=60 topics, prune stale >7d.
         Phase 2.9 GAP 4: floor is now attention-weighted — curiosity_engine
         attention share scales the floor between 0.02 (low focus) and 0.15
-        (high focus), so Lumina's curiosity concentration reflects overall
+        (high focus), so PandoraBOX's curiosity concentration reflects overall
         cognitive priority rather than a fixed constant.
         """
         now = time.time()
@@ -342,7 +342,7 @@ class CuriosityEngine:
             return self._global
 
     def top_interests(self, n: int = 5) -> List[Tuple[str, float]]:
-        """Return top-N (topic, curiosity) pairs — Lumina's current interests."""
+        """Return top-N (topic, curiosity) pairs — PandoraBOX's current interests."""
         with self._lock:
             ranked = sorted(
                 self._topics.items(),
@@ -351,7 +351,7 @@ class CuriosityEngine:
             return [(t, round(node.curiosity, 3)) for t, node in ranked[:n]]
 
     def prompt_fragment(self) -> str:
-        """Inject Lumina's current intellectual interests into the system prompt."""
+        """Inject PandoraBOX's current intellectual interests into the system prompt."""
         interests = self.top_interests(4)
         if not interests:
             return ""

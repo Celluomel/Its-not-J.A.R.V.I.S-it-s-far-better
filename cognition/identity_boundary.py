@@ -1,4 +1,4 @@
-"""Deterministic boundary between Lumina's identity and the interlocutor."""
+"""Deterministic boundary between PandoraBOX's identity and the interlocutor."""
 from __future__ import annotations
 
 import re
@@ -32,7 +32,7 @@ def prompt_block(
     interlocutor_name: Optional[str] = None,
 ) -> str:
     """Build an authoritative, prompt-safe identity boundary."""
-    persona = str(persona_name or "Lumina").strip() or "Lumina"
+    persona = str(persona_name or "PandoraBOX").strip() or "PandoraBOX"
     interlocutor = str(interlocutor_name or "the human interlocutor").strip()
     lines = [
         "━━ IDENTITY BOUNDARY — AUTHORITATIVE ━━",

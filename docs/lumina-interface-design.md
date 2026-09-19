@@ -1,4 +1,4 @@
-# Lumina interface design v1
+# PandoraBOX interface design v1
 
 Status: proposed design specification; not an implemented interface or Figma file.
 
@@ -22,7 +22,7 @@ Remaining workspace: organism occupies approximately 34%, chat 66%. Constrain
 message width to 680px. Anchor the composer below the transcript. Keep the
 organism unframed and vertically centered without obscuring text or controls.
 
-Header: Lumina, connection state, cognitive-inspector icon, settings icon.
+Header: PandoraBOX, connection state, cognitive-inspector icon, settings icon.
 Rail: new conversation, history, memory, voice. Tooltips name every icon.
 Composer: attachment, multiline input, microphone, send; stop replaces send
 while a turn is active. Preserve the draft when changing inspection views.

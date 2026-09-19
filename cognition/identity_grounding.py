@@ -1,7 +1,7 @@
 """
-LUMINA — IDENTITY GROUNDING LAYER
+PANDORABOX — IDENTITY GROUNDING LAYER
 =================================
-Grounds Lumina's self-concept in *demonstrated* capability evidence — i.e.
+Grounds PandoraBOX's self-concept in *demonstrated* capability evidence — i.e.
 what the causal outcome loop actually proved it can do — rather than only in
 aspirations or self-reported success counts.
 

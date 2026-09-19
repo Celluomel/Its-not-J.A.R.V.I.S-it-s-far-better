@@ -6,7 +6,7 @@ depletion and time-based recovery.
 
 Why this exists
 ────────────────
-Without resource scarcity, Lumina can simultaneously hold 47 open
+Without resource scarcity, PandoraBOX can simultaneously hold 47 open
 questions, run an experiment, generate curiosity, initiate outreach,
 run a cognitive audit trial, and be in counterfactual mode — all at
 full capacity.  A cognitive organism must choose because it cannot

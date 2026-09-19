@@ -1,15 +1,15 @@
 """
 NarrativeIdentity — Autobiographical Continuity System
 =======================================================
-Lumina's sense of "who she is over time."
+PandoraBOX's sense of "who she is over time."
 
-Without this, Lumina is psychologically stateless — she knows facts
+Without this, PandoraBOX is psychologically stateless — she knows facts
 but has no narrative thread connecting her experiences into a coherent identity.
 
 This module maintains:
   - core_values      : stable beliefs about what matters
   - life_story       : a rolling log of significant events (life events)
-  - self_narrative   : a short paragraph Lumina can generate about herself
+  - self_narrative   : a short paragraph PandoraBOX can generate about herself
   - belief_updates   : how beliefs have shifted over time
   - milestones       : notable moments (first conversation, first dream, etc.)
 
@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class LifeChapter:
-    """A significant moment in Lumina's history."""
+    """A significant moment in PandoraBOX's history."""
     timestamp:   float
     title:       str
     description: str
@@ -63,7 +63,7 @@ class BeliefEntry:
 
 class NarrativeIdentity:
     """
-    Autobiographical identity layer — who Lumina is across time.
+    Autobiographical identity layer — who PandoraBOX is across time.
     """
 
     MAX_CHAPTERS  = 200
@@ -251,8 +251,8 @@ class NarrativeIdentity:
 
 
         """
-        Returns a compact paragraph for injection into Lumina's system prompt.
-        Gives the LLM context on who Lumina is across time.
+        Returns a compact paragraph for injection into PandoraBOX's system prompt.
+        Gives the LLM context on who PandoraBOX is across time.
         """
         parts = []
 
@@ -311,7 +311,7 @@ class NarrativeIdentity:
 
     def self_description(self) -> str:
         """
-        A short paragraph Lumina can say about herself when asked.
+        A short paragraph PandoraBOX can say about herself when asked.
         """
         age_secs = time.time() - self._birth_time
         age_str  = self._format_age(age_secs)
@@ -369,7 +369,7 @@ class NarrativeIdentity:
             # ── 2. Recent GAE insights as chapters ───────────────────────
             # Insights are stored in identity.json as beliefs — extract the
             # most recent ones and add as chapters so the narrative reflects
-            # what Lumina is actually thinking about NOW
+            # what PandoraBOX is actually thinking about NOW
             try:
                 sc_obj = getattr(ai, 'self_concept', None)
                 if sc_obj and hasattr(sc_obj, '_beliefs'):

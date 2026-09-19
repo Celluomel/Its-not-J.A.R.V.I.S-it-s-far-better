@@ -1,9 +1,9 @@
 """
-LUMINA V32 — Phase 5.1 : Self-Concept Synchronizer
+PANDORABOX V32 — Phase 5.1 : Self-Concept Synchronizer
 ====================================================
 Bridges the gap between:
   - identity.json  (beliefs accumulated by Phase 4)
-  - self_concept.json (the self-model Lumina uses in responses)
+  - self_concept.json (the self-model PandoraBOX uses in responses)
 
 Self-concept coherence is currently 0.286 because the two stores
 are disconnected. This module syncs them and rebuilds coherence.

@@ -10,7 +10,7 @@ import json
 
 class UnifiedPerceptionHub:
     """
-    Unified perception gathering system for Lumina.
+    Unified perception gathering system for PandoraBOX.
     
     Consolidates:
     - External: vision, audio, text, web

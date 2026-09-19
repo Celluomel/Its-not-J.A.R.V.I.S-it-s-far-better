@@ -72,7 +72,7 @@ PERSONALITY_THRESHOLD  = 0.5   # % change threshold for personality observations
 
 @dataclass
 class MetaObservation:
-    """One computed longitudinal observation about Lumina's cognitive dynamics."""
+    """One computed longitudinal observation about PandoraBOX's cognitive dynamics."""
     category:    str        # "attention" | "personality" | "calibration" |
                             # "counterfactual" | "emotion" | "emergence"
     observation: str        # human-readable finding
@@ -545,7 +545,7 @@ class IntrospectiveObserver:
                 obs.append(MetaObservation(
                     category     = "counterfactual",
                     observation  = (
-                        f"Lumina has chosen the lowest-predicted action in "
+                        f"PandoraBOX has chosen the lowest-predicted action in "
                         f"{streak} consecutive interactions — "
                         f"consistently suboptimal action selection detected"
                     ),

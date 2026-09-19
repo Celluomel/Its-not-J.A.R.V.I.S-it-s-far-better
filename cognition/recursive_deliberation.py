@@ -15,7 +15,7 @@ selection becomes creation, not just choice among existing options.
 
 Design principle (unchanged from v83, still the reason this is feasible
 on a local 7B model): the recursion and the synthesis both happen across
-Lumina's own cognitive modules — WorkspaceCompetition, ExecutiveArbitration's
+PandoraBOX's own cognitive modules — WorkspaceCompetition, ExecutiveArbitration's
 multi-factor scoring — never across extra LLM generations. Synthesis here
 is STRUCTURAL (a new candidate object: merged topic, merged label,
 combined priority) not linguistic — the actual prose fusion ("help Fred

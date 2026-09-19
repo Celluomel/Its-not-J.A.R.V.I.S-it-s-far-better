@@ -1,5 +1,5 @@
 """
-One-time cleanup script for Lumina persona data.
+One-time cleanup script for PandoraBOX persona data.
 Run from the lumina_v32/ directory:
     python cleanup_persona_data.py
 
@@ -72,4 +72,4 @@ if curiosity_path.exists():
 else:
     print("curiosity.json not found, skipping")
 
-print("\nCleanup complete. Restart Lumina to apply changes.")
+print("\nCleanup complete. Restart PandoraBOX to apply changes.")

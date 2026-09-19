@@ -2,7 +2,7 @@
 
 ## app.py — Main Application Entry Point
 
-**Purpose:** Streamlit web interface + main orchestration logic for Lumina Cognitive Organism
+**Purpose:** Streamlit web interface + main orchestration logic for PandoraBOX Cognitive Organism
 
 ### Key Components:
 

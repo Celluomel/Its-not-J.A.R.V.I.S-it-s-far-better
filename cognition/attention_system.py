@@ -3,7 +3,7 @@ Attention System
 ================
 Controls the allocation of cognitive focus across competing channels.
 
-Without attention, all signals are weighted equally and Lumina becomes a
+Without attention, all signals are weighted equally and PandoraBOX becomes a
 passive echo chamber. With attention, she has a dynamic foreground / background
 that shifts based on internal state, goals, and interaction context.
 

@@ -54,7 +54,7 @@ def write_secrets(values: Mapping[str, str]) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
     existing = _read(target)
     existing.update({key: str(value) for key, value in values.items() if key in SECRET_FIELDS and value})
-    lines = ["# Lumina local secrets - never commit this file"]
+    lines = ["# PandoraBOX local secrets - never commit this file"]
     lines.extend(f"{key}={value}" for key, value in sorted(existing.items()) if key in SECRET_FIELDS)
     target.write_text("\n".join(lines) + "\n", encoding="utf-8")
     try:

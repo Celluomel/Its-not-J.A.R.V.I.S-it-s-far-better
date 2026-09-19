@@ -1,11 +1,11 @@
 """
 cognition/strategic_cognitive_engine.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Strategic Cognitive Engine (SCE) — chess-style lookahead for Lumina.
+Strategic Cognitive Engine (SCE) — chess-style lookahead for PandoraBOX.
 
 Architecture insight (from the chess conversation)
 ───────────────────────────────────────────────────
-Lumina already has pressure, attractors, workspace competition, and
+PandoraBOX already has pressure, attractors, workspace competition, and
 commitments. What was missing was *trajectory evaluation* — not just
 "what is the best response NOW?" but "what trajectory of states keeps
 the system most alive and coherent 2–4 steps ahead?"
@@ -66,7 +66,7 @@ MOVE_WITHDRAW     = "withdraw"       # disengage / reduce cognitive load
 @dataclass
 class CognitivePosition:
     """
-    Snapshot of Lumina's current cognitive state — the "board position".
+    Snapshot of PandoraBOX's current cognitive state — the "board position".
     Constructed fresh before each SCE evaluation.
     """
     # Pressure reservoir levels (0–1) — from PressureSystem
@@ -159,7 +159,7 @@ class _SimulatedPosition:
 
 class StrategicCognitiveEngine:
     """
-    Chess-style lookahead strategic evaluator for Lumina.
+    Chess-style lookahead strategic evaluator for PandoraBOX.
 
     Does NOT replace the workspace competition.
     Acts as a thin strategic filter: confirms, reweights, or
@@ -411,7 +411,7 @@ class StrategicCognitiveEngine:
         return min(1.0, score)
 
     def _score_identity_coherence(self, move: str, pos: CognitivePosition) -> float:
-        """Does this move align with who Lumina currently is?"""
+        """Does this move align with who PandoraBOX currently is?"""
         # High-curiosity organism prefers explore; empathetic prefers engage
         trait_alignment = {
             MOVE_EXPLORE:   pos.curiosity,

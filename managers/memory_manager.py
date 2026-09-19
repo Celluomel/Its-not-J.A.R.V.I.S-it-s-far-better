@@ -321,7 +321,7 @@ class FAISSMemoryBackend(BaseMemoryBackend):
 #     then FAISS.get_context() — Cognee search was never called)
 #
 # What replaces it:
-#   Lumina already has two memory backends that work:
+#   PandoraBOX already has two memory backends that work:
 #   1. FAISS   (1140+ episodic vectors, sentence-transformers, semantic search)
 #   2. SemanticMemory SQLite (1793 concepts, graph relations, get_related_concepts())
 #
@@ -332,7 +332,7 @@ class FAISSMemoryBackend(BaseMemoryBackend):
 #   - Category tagging (emotion, user_id, timestamp in metadata)
 #
 # MemPalace evaluation:
-#   MemPalace uses ChromaDB + SQLite — equivalent to what Lumina already has.
+#   MemPalace uses ChromaDB + SQLite — equivalent to what PandoraBOX already has.
 #   Its 96.6% LongMemEval score comes from raw verbatim ChromaDB storage with
 #   all-MiniLM-L6-v2 embeddings — the same model FAISS already uses here.
 #   The palace structure (wings/rooms) is for conversation retrieval across
@@ -349,7 +349,7 @@ class EnhancedFAISSMemoryBackend(BaseMemoryBackend):
     enrichment and keyword-weighted hybrid retrieval.
 
     No LLM required. No external service. No startup crashes.
-    Works entirely within Lumina's existing memory stack.
+    Works entirely within PandoraBOX's existing memory stack.
 
     Hybrid search formula (from MemPalace BENCHMARKS.md):
         fused_score = embedding_score × (1 + keyword_weight × overlap)

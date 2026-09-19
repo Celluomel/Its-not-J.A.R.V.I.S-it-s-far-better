@@ -1,4 +1,4 @@
-# LUMINA PHASE 2.9 — ATTENTION-BASED COGNITIVE ALLOCATION
+# PANDORABOX PHASE 2.9 — ATTENTION-BASED COGNITIVE ALLOCATION
 ## Implementation Plan
 
 **Date:** 2026-06-16  
@@ -73,7 +73,7 @@ FAISS works. FAISS `IndexFlatL2` has no variable search radius. The proposal
 conflates attention weights with FAISS query parameters, which are separate
 systems.
 
-**"Lumina ceases to be a chat script trying to look human"** — this overstates
+**"PandoraBOX ceases to be a chat script trying to look human"** — this overstates
 what an attention allocation layer achieves. The LLM is still the generator;
 the attention layer governs what context reaches it, not how it generates.
 
@@ -219,7 +219,7 @@ is currently receiving — no hard binary gate.
 **What:** Replace fixed decay floor (0.05) with attention-weighted floor.
 When curiosity_engine has high attention weight, topics decay more slowly
 (floor rises to 0.12). When it has low weight, topics decay faster (floor
-stays at 0.02). This means Lumina's curiosity is genuinely concentrated
+stays at 0.02). This means PandoraBOX's curiosity is genuinely concentrated
 when the cognitive system is focused on curiosity, and allowed to settle
 when focus is elsewhere.
 

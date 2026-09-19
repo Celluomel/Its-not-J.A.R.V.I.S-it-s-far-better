@@ -1,7 +1,7 @@
 """
 InnerMonologueEngine — Two-Pass Generation Architecture
 ========================================================
-The most significant cognitive upgrade: Lumina thinks before she speaks.
+The most significant cognitive upgrade: PandoraBOX thinks before she speaks.
 
 Architecture:
     user_input
@@ -56,8 +56,8 @@ logger = logging.getLogger(__name__)
 class InnerReasoning:
     """Result of the first LLM pass — the hidden deliberation."""
     raw_text:           str
-    intent_understood:  str    # what Lumina thinks the user really wants
-    inner_stance:       str    # what Lumina genuinely thinks/feels
+    intent_understood:  str    # what PandoraBOX thinks the user really wants
+    inner_stance:       str    # what PandoraBOX genuinely thinks/feels
     what_not_to_say:    str    # self-censorship / identity constraints
     expression_notes:   str    # how to say it (tone, depth, style)
     drive_alignment:    str    # dominant drive's influence on the response
@@ -152,7 +152,7 @@ mechanically reproduce it, just let it guide you."""
 
         The augmented_system_prompt contains the inner reasoning block
         injected at the top, so the second LLM call is grounded in
-        Lumina's deliberation.
+        PandoraBOX's deliberation.
 
         Falls back to (original_system_prompt, temperature) on any error.
         """
@@ -245,7 +245,7 @@ mechanically reproduce it, just let it guide you."""
 
     def _build_cognitive_context(self) -> str:
         """
-        Compact snapshot of Lumina's current internal state for the inner pass.
+        Compact snapshot of PandoraBOX's current internal state for the inner pass.
         Deliberately terse — this is background context, not the main prompt.
         """
         lines = []

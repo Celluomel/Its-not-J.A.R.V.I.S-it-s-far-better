@@ -14,7 +14,7 @@ sections from different cognitive modules. Without a budget:
     → prompt grows unboundedly
     → signal-to-noise ratio falls
     → LLM context window fills with repeated state
-    → Lumina appears to use the "same state" regardless of input
+    → PandoraBOX appears to use the "same state" regardless of input
 
 And even with wiring fixed, there's no way to know which sections
 actually entered the prompt vs were silently too long.

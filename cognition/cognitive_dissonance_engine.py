@@ -1,7 +1,7 @@
 """
 CognitiveDissonanceEngine (CDE)
 ================================
-Detects conflicts between Lumina's beliefs, identity, and actions, then
+Detects conflicts between PandoraBOX's beliefs, identity, and actions, then
 resolves them through identity mutation, belief revision, or meta-thread
 creation.
 

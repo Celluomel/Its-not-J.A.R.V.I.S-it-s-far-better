@@ -1,5 +1,5 @@
 """
-LUMINA ARCHITECT SOVEREIGN v15.4.6 - THE MONOLITH RESTORATION
+PANDORABOX ARCHITECT SOVEREIGN v15.4.6 - THE MONOLITH RESTORATION
 ====================================================================================================
 BUILD IDENTITY: SOVEREIGN-CLASS ARCHITECTURAL AUDITOR
 VERSION: 15.4.6 (STABLE RESILIENCE + FULL RAG + UI FIX)
@@ -457,7 +457,7 @@ def main_page():
         with ui.row().classes('items-center gap-5'):
             ui.icon('settings_suggest', size='2.5rem').classes('text-blue-500')
             with ui.column().classes('gap-0'):
-                ui.label('LUMINA ARCHITECT').classes('text-2xl font-black text-blue-400 tracking-tighter')
+                ui.label('PANDORABOX ARCHITECT').classes('text-2xl font-black text-blue-400 tracking-tighter')
                 ui.label('SOVEREIGN COMMAND v15.4.6').classes('text-[10px] text-blue-700 font-bold tracking-widest uppercase')
         ui.badge(f"MODEL: {MODEL}").props('color=blue-10 text-white')
 
@@ -528,7 +528,7 @@ def main_page():
 # ==================================================================================================
 if __name__ in {"__main__", "builtins"}:
     ui.run(
-        title="Lumina v15.4.6 Sovereign", 
+        title="PandoraBOX v15.4.6 Sovereign", 
         dark=True, 
         port=PORT, 
         reload=False,

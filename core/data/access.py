@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 3 : Data Access Layer (DAL)
+PANDORABOX V32 — Phase 3 : Data Access Layer (DAL)
 ===============================================
 Single point of truth for all JSON reads and writes.
 
@@ -46,7 +46,7 @@ _LOCK = threading.RLock()          # global lock shared by all instances
 
 class DataAccess:
     """
-    Unified, schema-aware access layer for Lumina persona data files.
+    Unified, schema-aware access layer for PandoraBOX persona data files.
 
     One instance per component is fine — all share the same RLock.
     """

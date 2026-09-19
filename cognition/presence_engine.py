@@ -25,7 +25,7 @@ Decision pipeline (per event):
 Episodic continuity
 ───────────────────
 RETURN no longer always triggers a greeting.
-If there's an unfinished thought, Lumina may resume it.
+If there's an unfinished thought, PandoraBOX may resume it.
 If cognitive load is high, she may simply note the return internally.
 If social battery is depleted, she stays quiet.
 
@@ -99,9 +99,9 @@ class FacePresenceState:
 
 @dataclass
 class _CognitiveSnapshot:
-    """Snapshot of Lumina's inner state at evaluation time."""
+    """Snapshot of PandoraBOX's inner state at evaluation time."""
     emotion:           str   = "neutral"
-    workspace_winner:  str   = ""      # what Lumina is currently focused on
+    workspace_winner:  str   = ""      # what PandoraBOX is currently focused on
     strategic_style:   str   = ""      # exploratory/stabilizing/expressive/etc.
     social_pressure:   float = 0.5     # social reservoir level
     coherence_pressure:float = 0.5
@@ -118,7 +118,7 @@ class PresenceEngine:
     """
     Attentional Co-Presence Engine.
 
-    Lumina monitors who is present, tracks episodic continuity,
+    PandoraBOX monitors who is present, tracks episodic continuity,
     and decides whether cognitive state warrants expression — or
     whether silence is the more authentic response.
     """
@@ -297,7 +297,7 @@ class PresenceEngine:
         )
 
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    #  Core decision: should Lumina speak?
+    #  Core decision: should PandoraBOX speak?
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     def _evaluate_and_fire(self, face_id: str, face_name: str, event: str) -> None:
@@ -490,7 +490,7 @@ class PresenceEngine:
         snap: _CognitiveSnapshot,
     ) -> Tuple[float, str]:
         """
-        Compute a 0–1 score representing how strongly Lumina wants to speak.
+        Compute a 0–1 score representing how strongly PandoraBOX wants to speak.
         Returns (pressure, rationale_string).
 
         Factors:
@@ -832,7 +832,7 @@ Speak directly. No quotes. No stage directions."""
 
             # PresenceEngine had NO identity/behavior constraint checking at
             # all — every other output path in this codebase gets this
-            # (v66 closed the same gap for Lumina<->Flux dialogue; this is
+            # (v66 closed the same gap for PandoraBOX<->Flux dialogue; this is
             # the same fix, same established pattern, applied here).
             # Reuses IdentityConstraintEngine exactly as _master_generate()
             # does — same lazy-init, same non-fatal-by-design call.
@@ -1051,7 +1051,7 @@ Speak directly. No quotes. No stage directions."""
             from managers.settings_manager import get_persona_name
             return get_persona_name()
         except Exception:
-            return "Lumina"
+            return "PandoraBOX"
 
     @staticmethod
     def _language_mismatch(text: str, language: str) -> bool:

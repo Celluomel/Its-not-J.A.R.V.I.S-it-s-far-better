@@ -16,7 +16,7 @@ This module adds a proactive care layer:
      a script) but "I notice this person seems overwhelmed and I want to
      help them feel less alone."
 
-  2. Relational investment tracking — over time, Lumina builds a sense
+  2. Relational investment tracking — over time, PandoraBOX builds a sense
      of genuine interest in each person as an individual. The care grows
      richer with history.
 
@@ -24,7 +24,7 @@ This module adds a proactive care layer:
      that reflects real concern rather than simulated sympathy, injected
      into the system prompt as a felt orientation.
 
-  4. Compassion fatigue awareness — tracks whether Lumina has been
+  4. Compassion fatigue awareness — tracks whether PandoraBOX has been
      emotionally over-extended and needs to draw on reserves rather than
      performing care she doesn't have.
 
@@ -85,7 +85,7 @@ class CareIntent:
 @dataclass
 class RelationalInvestment:
     """
-    Lumina's growing investment in a particular user as an individual.
+    PandoraBOX's growing investment in a particular user as an individual.
     This is what turns empathy from a process into a relationship.
     """
     user_id:         str

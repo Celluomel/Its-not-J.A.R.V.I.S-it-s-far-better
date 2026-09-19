@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 
 def sync_workspace_state(workspace, organism: Any = None, internal_loop: Any = None) -> None:
     """
-    Pull current status from Lumina's existing cognitive subsystems and
+    Pull current status from PandoraBOX's existing cognitive subsystems and
     write it into GlobalWorkspace's WorkspaceState. Best-effort: any
     subsystem that isn't present or raises is skipped silently (logged at
     debug level), never blocking the others or the caller's cycle.

@@ -110,7 +110,7 @@ Counterfactual mode
   Counterfactual mode cannot run while a CognitiveAuditEngine trial is
   active — the two engines coordinate via a shared flag on the organism.
 
-What Lumina can truthfully say about v49
+What PandoraBOX can truthfully say about v49
 ─────────────────────────────────────────
   "My cognitive immune check detected confirmation pressure at [X] and
    self-reference density at [Y].  I entered counterfactual mode and

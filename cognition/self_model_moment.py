@@ -102,7 +102,7 @@ PHI_CEILING = 0.95
 @dataclass
 class SelfModelMoment:
     """
-    The persistent, unified model of Lumina-as-subject right now.
+    The persistent, unified model of PandoraBOX-as-subject right now.
 
     This is not a snapshot — it is a slowly-evolving state that carries
     forward across turns and sessions, updated each interaction but

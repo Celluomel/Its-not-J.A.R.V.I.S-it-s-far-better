@@ -1,7 +1,7 @@
 """
 Drive System
 ============
-Computes Lumina's internal motivation vector from live module states.
+Computes PandoraBOX's internal motivation vector from live module states.
 
 Instead of fabricating drives from scratch, this reads the real values
 already maintained by the existing cognitive modules:
@@ -15,7 +15,7 @@ already maintained by the existing cognitive modules:
 
 Each drive value is 0.0–1.0.  Higher = more pressure to act.
 
-The activity selector uses this vector to choose what Lumina does next.
+The activity selector uses this vector to choose what PandoraBOX does next.
 """
 
 import logging

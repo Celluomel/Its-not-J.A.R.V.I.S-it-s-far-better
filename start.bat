@@ -1,6 +1,6 @@
 @echo off
 echo ==========================================
-echo  Lumina Cognitive Organism - Windows
+echo  PandoraBOX Cognitive Organism - Windows
 echo ==========================================
 
 REM Force UTF-8 so emoji in log messages do not crash the console
@@ -149,7 +149,7 @@ if not errorlevel 1 (
 
 echo.
 echo [*] Attempting to install face recognition (requires dlib)...
-echo     If this fails, Lumina will run without face recognition.
+echo     If this fails, PandoraBOX will run without face recognition.
 echo     To fix manually: see FACE_RECOGNITION_INSTALL.txt
 
 REM Try prebuilt dlib wheel for Python 3.11 x64 (no compiler needed)
@@ -234,7 +234,7 @@ if /I not "%LUMINA_SKIP_FRONTEND_BUILD%"=="1" (
             )
             popd
         )
-        echo [*] Building new Lumina interface...
+        echo [*] Building new PandoraBOX interface...
         pushd frontend
         call npm run build
         if errorlevel 1 echo [WARN] Frontend build failed. Continuing with the existing UI.
@@ -244,7 +244,7 @@ if /I not "%LUMINA_SKIP_FRONTEND_BUILD%"=="1" (
 :frontend_done
 
 echo.
-echo [*] Starting Lumina on http://localhost:8080
+echo [*] Starting PandoraBOX on http://localhost:8080
 echo [*] New interface: http://localhost:8080/next/
 echo [*] Existing interface: http://localhost:8080/
 echo [*] Press Ctrl+C to stop.

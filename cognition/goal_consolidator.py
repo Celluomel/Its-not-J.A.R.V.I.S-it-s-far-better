@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 6 : Goal Consolidator
+PANDORABOX V32 — Phase 6 : Goal Consolidator
 =========================================
 The goal pool currently has 9 'opportunity_*_unknown' variants that are
 semantically identical. This module:

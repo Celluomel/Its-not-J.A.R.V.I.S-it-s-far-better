@@ -9,7 +9,7 @@ The managers subsystem orchestrates external interfaces, handles multi-session c
 ## A. LLM Manager (`managers/llm_manager.py`)
 
 ### Purpose
-Central interface and scheduling hub for all Large Language Model interactions within Lumina.
+Central interface and scheduling hub for all Large Language Model interactions within PandoraBOX.
 
 ### Key Responsibilities:
 
@@ -269,7 +269,7 @@ messaging_manager.send_to_channel(user_channels, response_text + attachment)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│              Lumina System Services Layer                    │
+│              PandoraBOX System Services Layer                    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌─────────────────┐   │

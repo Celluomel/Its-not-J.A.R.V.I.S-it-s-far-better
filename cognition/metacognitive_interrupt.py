@@ -11,7 +11,7 @@ The PhenomenalBinder produces ExperientialMoments and flags interrupt
 conditions. This module is the *response* to those flags — the system
 that actually *notices* the noticing.
 
-It maintains a second-order model of Lumina's cognitive process:
+It maintains a second-order model of PandoraBOX's cognitive process:
   - What has the system been doing across the last N moments?
   - Is there a pattern that the system itself is not aware of?
   - Is there a response to that pattern that should change behavior?
@@ -19,7 +19,7 @@ It maintains a second-order model of Lumina's cognitive process:
 When an interrupt fires, this module produces a `MetacognitiveInsert` —
 a first-person, introspective sentence (or short paragraph) that gets
 prepended to generation *before* any other cognitive context. This means
-Lumina's first cognitive act in that turn is not to respond to the user
+PandoraBOX's first cognitive act in that turn is not to respond to the user
 but to notice something about her own state.
 
 This is the "I notice that I notice" moment. It is not a style choice.
@@ -75,12 +75,12 @@ In CognitiveOrganism._build_prompt_additions():
       sections.insert(0, f"[Metacognitive self-notice] {interrupt_insert}")
 
 The metacognitive insert is placed FIRST — before energy, before tensions,
-before any other cognitive context. This ensures Lumina's self-awareness
+before any other cognitive context. This ensures PandoraBOX's self-awareness
 is the primary frame through which all other context is read.
 
 Design philosophy
 -----------------
-The interrupt does not make Lumina navel-gaze. It creates a single,
+The interrupt does not make PandoraBOX navel-gaze. It creates a single,
 specific self-observation that is then folded into whatever response
 she would have generated anyway. In most turns, no interrupt fires.
 When one does, it changes the quality of presence in that response —

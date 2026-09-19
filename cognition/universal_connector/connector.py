@@ -28,7 +28,7 @@ Deliberately NOT built (would be speculation, no code to audit against):
     the same respond() pipeline as typed text — verified, no gap there,
     so mic doesn't need routing through this connector at all)
   - Flux as a peer-cognition hypothesis source — already a real, running
-    Lumina instance (brain-only, client of master, conversation mode) per
+    PandoraBOX instance (brain-only, client of master, conversation mode) per
     the user, not a peer-cognition system to build; a real next step, but
     a distinct piece of work from this vision/mic slice
 """
@@ -205,7 +205,7 @@ class UniversalConnector:
                            "no presence" if item.get("signal") == "no_presence" else item.get("state")),
                     unit=str(item.get("unit") or ""),
                     confidence=0.98,
-                    # The observation timestamp is when Lumina read the state.
+                    # The observation timestamp is when PandoraBOX read the state.
                     # Home Assistant's last_updated remains provenance: an
                     # unchanged sensor can have an old last_updated value
                     # while still being freshly sampled now.

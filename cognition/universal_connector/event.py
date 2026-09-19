@@ -12,7 +12,7 @@ diagnosed as broken today — cognition/presence_engine.py calls
 self._llm.generate_bare() directly, bypassing respond() entirely, so every
 camera-triggered utterance is cognitively invisible (never predicted
 against, never remembered, never touches self-model). That's the same
-bypass bug class already found and fixed for Lumina/Flux dialogue (v66)
+bypass bug class already found and fixed for PandoraBOX/Flux dialogue (v66)
 and outreach (v77) — this closes it for the presence/camera channel using
 the shape the proposal recommends, so the abstraction is ready for a real
 second sensor later without having to guess what that sensor needs.
@@ -45,7 +45,7 @@ class Percept:
                                          # re-broadcasts a percept onward, so no path
                                          # can increment this past 0 today. Present
                                          # now so a future bidirectional exchange
-                                         # (Lumina workspace -> Flux -> back) has the
+                                         # (PandoraBOX workspace -> Flux -> back) has the
                                          # field ready rather than needing every
                                          # caller updated later.
 

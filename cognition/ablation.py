@@ -1,5 +1,5 @@
 """
-LUMINA — CONTROLLED ABLATION OF THE CAUSAL-CLOSURE STACK
+PANDORABOX — CONTROLLED ABLATION OF THE CAUSAL-CLOSURE STACK
 =========================================================
 The "controlled ablations" step of the agreed build order:
 

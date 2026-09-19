@@ -1,5 +1,5 @@
 """
-semantic_memory.py — Lumina Semantic Memory
+semantic_memory.py — PandoraBOX Semantic Memory
 ============================================
 
 Two-level knowledge structure:

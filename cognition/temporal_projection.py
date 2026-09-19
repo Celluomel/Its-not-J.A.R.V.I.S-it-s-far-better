@@ -6,7 +6,7 @@ and chooses between them based on predicted resource consequences.
 
 The gap this closes
 ────────────────────
-After v54 (AspirationalSynthesisEngine), Lumina can generate aspirations:
+After v54 (AspirationalSynthesisEngine), PandoraBOX can generate aspirations:
     "Develop affective audio synthesis from music theory + emotion modeling"
 
 But it has no way to ask:
@@ -68,7 +68,7 @@ rather than computing optimal action sequences.
 Importantly — it uses real data. The cost estimates come from
 PredictiveConsequenceModel's learned records (v53), not hardcoded
 assumptions. After 50+ interactions, these estimates become
-increasingly accurate as the model learns Lumina's actual costs.
+increasingly accurate as the model learns PandoraBOX's actual costs.
 
 Integration
 ────────────

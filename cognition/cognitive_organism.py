@@ -1045,7 +1045,7 @@ class CognitiveOrganism:
         # v50: CognitiveBehaviorGate — enforce hard token cap based on
         # current cognitive_energy and cognitive_load.  This is a constraint,
         # not a prompt suggestion.  The LLM receives fewer tokens to generate,
-        # producing shorter responses when Lumina is genuinely depleted.
+        # producing shorter responses when PandoraBOX is genuinely depleted.
         _gate     = getattr(self, 'behavior_gate', None)
         _max_tok  = _gate.max_response_tokens() if _gate else 800
         if _max_tok < 800:

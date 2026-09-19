@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 4.2 : Belief Bootstrapper
+PANDORABOX V32 — Phase 4.2 : Belief Bootstrapper
 =============================================
 Extracts meaningful beliefs from existing rich data sources and
 populates identity.json.
@@ -33,7 +33,7 @@ def _now() -> str:
 class BeliefBootstrapper:
     """
     Mines existing persona data to populate identity.json with
-    meaningful beliefs that reflect Lumina's actual cognitive state.
+    meaningful beliefs that reflect PandoraBOX's actual cognitive state.
     """
 
     def __init__(self, persona_dir: str = "data/persona"):

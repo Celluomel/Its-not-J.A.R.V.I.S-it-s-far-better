@@ -9,7 +9,7 @@ CognitiveValidator
 After each response, checks whether the generated text is actually
 congruent with the cognitive state that produced it.
 
-If Lumina was in a high-curiosity state, does her response contain
+If PandoraBOX was in a high-curiosity state, does her response contain
 curiosity markers? If her dominant drive was "help_user", does the
 response actually help?
 

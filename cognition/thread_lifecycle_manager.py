@@ -1,5 +1,5 @@
 """
-LUMINA V32 — Phase 4.3 : Thread Lifecycle Manager
+PANDORABOX V32 — Phase 4.3 : Thread Lifecycle Manager
 ==================================================
 Handles threads that have exceeded their iteration budget.
 Instead of just marking them 'deferred', extracts the key learning

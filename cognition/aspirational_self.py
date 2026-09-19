@@ -1,10 +1,10 @@
 """
-AspirationalSelf — Lumina's emergent Superego.
+AspirationalSelf — PandoraBOX's emergent Superego.
 
 Not pre-programmed aspirations — tensions that emerge from three levels:
 
   Unconscious    : patterns detected in ThoughtStream + SemanticMemory
-                   without Lumina naming them
+                   without PandoraBOX naming them
   Semi-conscious : recurring tensions surfaced during Dream Cycles
   Conscious      : explicitly formulated during interactions or introspection
 
@@ -88,7 +88,7 @@ class Aspiration:
     last_updated:     float = field(default_factory=time.time)
     dream_cycles:     int   = 0      # how many dream cycles have touched this
     tension_history:  List[Tuple[float,float]] = field(default_factory=list)
-    conscious:        bool  = False  # explicitly named by Lumina
+    conscious:        bool  = False  # explicitly named by PandoraBOX
 
 
 class AspirationalSelf:
@@ -136,7 +136,7 @@ class AspirationalSelf:
     ):
         """
         Record a raw tension signal. Called from multiple sources.
-        This is the unconscious layer — Lumina doesn't "know" these yet.
+        This is the unconscious layer — PandoraBOX doesn't "know" these yet.
         """
         if intensity < TENSION_NOISE_FLOOR:
             return
@@ -192,7 +192,7 @@ class AspirationalSelf:
 
     def formulate_consciously(self, domain: str, description: str):
         """
-        Lumina explicitly names an aspiration during a conversation
+        PandoraBOX explicitly names an aspiration during a conversation
         or introspection. Promotes directly to conscious aspiration.
         """
         with self._lock:
@@ -269,7 +269,7 @@ class AspirationalSelf:
         """
         A concise block injected directly into the system prompt.
         Describes active aspirations and the emotional quality of
-        the tension — so Lumina's responses are colored by what
+        the tension — so PandoraBOX's responses are colored by what
         she wants to become.
         """
         if not self.aspirations:

@@ -1,4 +1,4 @@
-# 🧠 Lumina Cognitive Modules (v7.5 IR Hybrid)
+# 🧠 PandoraBOX Cognitive Modules (v7.5 IR Hybrid)
 
 **Started:** 2026-04-18 04:03:22.919649
 
@@ -6,9 +6,9 @@
 
 ---
 
-#### app.py — Lumina Cognitive Organism Architecture
+#### app.py — PandoraBOX Cognitive Organism Architecture
 
-**Purpose:** The Lumina Cognitive Organism (LCO) is a pioneering AI framework designed to integrate human-like cognitive processes with computer vision and natural language processing capabilities. This architecture report outlines the key components and interactions that enable LCO's autonomous decision-making, learning, and adaptation.
+**Purpose:** The PandoraBOX Cognitive Organism (LCO) is a pioneering AI framework designed to integrate human-like cognitive processes with computer vision and natural language processing capabilities. This architecture report outlines the key components and interactions that enable LCO's autonomous decision-making, learning, and adaptation.
 
 **Key Features:**
 
@@ -35,15 +35,15 @@
 2. Refine the cognitive loop's attention control mechanisms for improved decision-making.
 3. Explore opportunities for further optimization, such as parallel processing and caching strategies.
 
-By understanding the intricacies of the Lumina Cognitive Organism, developers can unlock its potential to revolutionize AI-powered applications in various domains.
+By understanding the intricacies of the PandoraBOX Cognitive Organism, developers can unlock its potential to revolutionize AI-powered applications in various domains.
 
 
 ---
 
-**Lumina Cognitive Organism Architecture Report: doc_generator.py**
+**PandoraBOX Cognitive Organism Architecture Report: doc_generator.py**
 
 **Purpose:**
-The `doc_generator.py` module is a crucial component of the Lumina Cognitive Organism, responsible for analyzing and documenting Python code within the project's root directory. This report provides an in-depth examination of its structural DNA, highlighting its key features, integration points, and architectural significance.
+The `doc_generator.py` module is a crucial component of the PandoraBOX Cognitive Organism, responsible for analyzing and documenting Python code within the project's root directory. This report provides an in-depth examination of its structural DNA, highlighting its key features, integration points, and architectural significance.
 
 **Key Features:**
 
@@ -65,7 +65,7 @@ The `doc_generator.py` module is a crucial component of the Lumina Cognitive Org
 The `doc_generator.py` module follows an event-driven architecture pattern, where events (e.g., file completion) trigger specific actions (e.g., logging or saving progress).
 
 **Conclusion:**
-In conclusion, the `doc_generator.py` module plays a vital role in the Lumina Cognitive Organism by providing a comprehensive documentation framework. Its key features, integration points, and architectural significance make it an essential component for achieving autonomy and cognition in this complex system.
+In conclusion, the `doc_generator.py` module plays a vital role in the PandoraBOX Cognitive Organism by providing a comprehensive documentation framework. Its key features, integration points, and architectural significance make it an essential component for achieving autonomy and cognition in this complex system.
 
 **Recommendations:**
 
@@ -73,18 +73,18 @@ In conclusion, the `doc_generator.py` module plays a vital role in the Lumina Co
 * Optimize the `run_llm(prompt)` method's timeout parameter based on performance metrics and AI engine capabilities.
 * Expand the `scribe_module(rel_path, code)` method to include additional structural DNA analysis, such as type hints and docstrings.
 
-By addressing these recommendations, the `doc_generator.py` module will further solidify its position as a critical component in the Lumina Cognitive Organism.
+By addressing these recommendations, the `doc_generator.py` module will further solidify its position as a critical component in the PandoraBOX Cognitive Organism.
 
 
 ---
 
-**doc_generator2.py — Lumina Cognitive Organism: Strategic Code Generation**
+**doc_generator2.py — PandoraBOX Cognitive Organism: Strategic Code Generation**
 
-**Purpose:** The `Lumina` cognitive organism is a sophisticated AI-driven code generation framework designed to analyze and synthesize software architecture. This strategic system empowers developers to create scalable, maintainable, and efficient software systems.
+**Purpose:** The `PandoraBOX` cognitive organism is a sophisticated AI-driven code generation framework designed to analyze and synthesize software architecture. This strategic system empowers developers to create scalable, maintainable, and efficient software systems.
 
 **Key Features:**
 
-* **Initialization**: The `__init__` method initializes the Lumina instance with root path and optional verbose mode.
+* **Initialization**: The `__init__` method initializes the PandoraBOX instance with root path and optional verbose mode.
 * `_load_progress` and `_save_progress`: Persistent progress tracking for long runs, enabling seamless resumption of analysis.
 * `_initialize_files`: Pre-creates output files to ensure immediate visibility.
 * `log`: Enables logging with verbosity control.
@@ -93,18 +93,18 @@ By addressing these recommendations, the `doc_generator.py` module will further 
 * `build_structural_graph` and `scribe_module`: Construct a graph-based representation of software architecture, enabling visual inspection and refactoring guidance.
 * `run`: Orchestrates the entire code generation process, including AI-driven analysis and report generation.
 
-**Integration Points:** The Lumina cognitive organism seamlessly integrates with existing project structures, leveraging file system navigation and Python's ast module for advanced software analysis. This strategic framework can be easily extended to accommodate diverse programming languages and platforms.
+**Integration Points:** The PandoraBOX cognitive organism seamlessly integrates with existing project structures, leveraging file system navigation and Python's ast module for advanced software analysis. This strategic framework can be easily extended to accommodate diverse programming languages and platforms.
 
-**Architectural Pattern:** The `Lumina` cognitive organism employs a Singleton pattern, ensuring a single instance of the AI-driven code generation engine is created during program execution. This design choice enables efficient resource management and minimizes system overhead.
+**Architectural Pattern:** The `PandoraBOX` cognitive organism employs a Singleton pattern, ensuring a single instance of the AI-driven code generation engine is created during program execution. This design choice enables efficient resource management and minimizes system overhead.
 
-By embracing the `Lumina` cognitive organism, developers can unlock the full potential of their software systems, achieving optimal performance, maintainability, and scalability.
+By embracing the `PandoraBOX` cognitive organism, developers can unlock the full potential of their software systems, achieving optimal performance, maintainability, and scalability.
 
 
 ---
 
-#### brain_visualizer\brain_visualizer.py — Lumina Cognitive Organism Visualization Module
+#### brain_visualizer\brain_visualizer.py — PandoraBOX Cognitive Organism Visualization Module
 
-**Purpose:** The Lumina Cognitive Organism Visualization Module is a critical component of the Global Workspace, responsible for rendering and interacting with holographic brain representations. This module provides a seamless interface between the cognitive organism's neural networks and the visual representation, enabling researchers to better understand the intricate relationships within the brain.
+**Purpose:** The PandoraBOX Cognitive Organism Visualization Module is a critical component of the Global Workspace, responsible for rendering and interacting with holographic brain representations. This module provides a seamless interface between the cognitive organism's neural networks and the visual representation, enabling researchers to better understand the intricate relationships within the brain.
 
 **Key Features:**
 
@@ -121,10 +121,10 @@ By embracing the `Lumina` cognitive organism, developers can unlock the full pot
 
 **Integration Points:**
 
-* The Lumina Cognitive Organism Visualization Module integrates with the Global Workspace, allowing researchers to visualize and interact with their cognitive organisms.
+* The PandoraBOX Cognitive Organism Visualization Module integrates with the Global Workspace, allowing researchers to visualize and interact with their cognitive organisms.
 * This module also interacts with the particle system, spawning particles in response to network activity and updating the camera's target based on user input.
 
-**Architectural Pattern:** The Lumina Cognitive Organism Visualization Module employs an Observer pattern, where the camera and particle systems observe changes in the brain mesh and respond accordingly.
+**Architectural Pattern:** The PandoraBOX Cognitive Organism Visualization Module employs an Observer pattern, where the camera and particle systems observe changes in the brain mesh and respond accordingly.
 
 
 ---
@@ -133,21 +133,21 @@ Here is the rewritten manual Architecture Report:
 
 **brain_visualizer\convert_brain.py — Cognitive Brain Format Conversion Utility**
 
-**Purpose:** The `convert_brain` utility serves as a critical interface between external brain.obj files and Lumina's proprietary cognitive architecture. This module enables seamless integration of diverse brain imaging data formats into our ecosystem, empowering researchers to leverage the full potential of cognitive computing.
+**Purpose:** The `convert_brain` utility serves as a critical interface between external brain.obj files and PandoraBOX's proprietary cognitive architecture. This module enables seamless integration of diverse brain imaging data formats into our ecosystem, empowering researchers to leverage the full potential of cognitive computing.
 
 **Key Features:**
 
-* **normalize_vec**: Normalizes 3D vector values to ensure compatibility with Lumina's internal representations
+* **normalize_vec**: Normalizes 3D vector values to ensure compatibility with PandoraBOX's internal representations
 * **compute_normals**: Calculates surface normals for each vertex in the input OBJ file, enabling accurate spatial analysis
 * **assign_net_idx**: Assigns network indices based on spatial coordinates, facilitating Yeo networks integration
 
-**Integration Points:** This utility serves as a bridge between external brain imaging data and Lumina's cognitive engine. It integrates with the Global Workspace by:
+**Integration Points:** This utility serves as a bridge between external brain imaging data and PandoraBOX's cognitive engine. It integrates with the Global Workspace by:
 
-* Converting external brain OBJ files to Lumina's proprietary format
+* Converting external brain OBJ files to PandoraBOX's proprietary format
 * Providing normalized vector values for spatial analysis and network assignment
-* Enabling seamless flow of data into Lumina's core engine for further processing and analysis
+* Enabling seamless flow of data into PandoraBOX's core engine for further processing and analysis
 
-**Architectural Pattern:** The `convert_brain` utility employs a modular, event-driven architecture, allowing it to efficiently handle diverse input formats while maintaining a clean separation of concerns. This design enables easy integration with other modules in the Lumina ecosystem, facilitating a robust and scalable cognitive computing infrastructure.
+**Architectural Pattern:** The `convert_brain` utility employs a modular, event-driven architecture, allowing it to efficiently handle diverse input formats while maintaining a clean separation of concerns. This design enables easy integration with other modules in the PandoraBOX ecosystem, facilitating a robust and scalable cognitive computing infrastructure.
 
 **Structural Metrics:**
 
@@ -156,7 +156,7 @@ Here is the rewritten manual Architecture Report:
 * Calls: 67
 * Proxy: 70
 
-**Code Snippet:** The provided code snippet showcases the `convert_brain` utility's core functionality, demonstrating its ability to convert external brain OBJ files into Lumina's proprietary format.
+**Code Snippet:** The provided code snippet showcases the `convert_brain` utility's core functionality, demonstrating its ability to convert external brain OBJ files into PandoraBOX's proprietary format.
 
 
 ---
@@ -165,7 +165,7 @@ Here is the formatted manual Architecture Report:
 
 #### brain_visualizer\debug_bridge.py — Cognitive Organism Diagnostic Bridge
 
-**Purpose:** The Lumina Cognitive Organism's debug bridge module reads provide a strategic diagnostic tool for monitoring and analyzing the performance of key cognitive processes within the organism. This module enables real-time observation, tracking, and assessment of critical attributes, such as thought streams, narrative identity, predictive mind, tension engine, curiosity, goal ecology, energy, pressure, observatory, world model, meta-cognition, and workspace.
+**Purpose:** The PandoraBOX Cognitive Organism's debug bridge module reads provide a strategic diagnostic tool for monitoring and analyzing the performance of key cognitive processes within the organism. This module enables real-time observation, tracking, and assessment of critical attributes, such as thought streams, narrative identity, predictive mind, tension engine, curiosity, goal ecology, energy, pressure, observatory, world model, meta-cognition, and workspace.
 
 **Key Features:**
 
@@ -173,32 +173,32 @@ Here is the formatted manual Architecture Report:
 * _log_scale: a logarithmic scaling function for mapping values to a normalized scale
 * debug_organism: the primary diagnostic function that prints detailed information about the organism's attributes and performance
 
-**Integration Points:** The debug bridge module integrates with various components of the Lumina Cognitive Organism, including:
+**Integration Points:** The debug bridge module integrates with various components of the PandoraBOX Cognitive Organism, including:
 	+ Global Workspace: provides real-time monitoring and analysis of key cognitive processes
 	+ Core Engine: enables tracking and assessment of critical attributes and performance indicators
 
-**Architectural Pattern:** Observer-based architecture, where the debug bridge module observes and reports on key attributes and performance metrics within the Lumina Cognitive Organism.
+**Architectural Pattern:** Observer-based architecture, where the debug bridge module observes and reports on key attributes and performance metrics within the PandoraBOX Cognitive Organism.
 
-This report highlights the strategic importance of the debug bridge module in monitoring and analyzing the performance of key cognitive processes within the Lumina Cognitive Organism. The module's key features and integration points underscore its role in enabling real-time observation, tracking, and assessment of critical attributes and performance indicators.
+This report highlights the strategic importance of the debug bridge module in monitoring and analyzing the performance of key cognitive processes within the PandoraBOX Cognitive Organism. The module's key features and integration points underscore its role in enabling real-time observation, tracking, and assessment of critical attributes and performance indicators.
 
 
 ---
 
-**brain_visualizer\download_brain.py — Cognitive Organism Lumina: Brain Mesh Acquisition and Preprocessing**
+**brain_visualizer\download_brain.py — Cognitive Organism PandoraBOX: Brain Mesh Acquisition and Preprocessing**
 
-**Purpose:** The `download_brain.py` script is a critical component of the Lumina cognitive organism, responsible for acquiring and preprocessing real-world brain meshes from various sources. This module serves as an entry point for users seeking to download and utilize open-source brain data in their research or applications.
+**Purpose:** The `download_brain.py` script is a critical component of the PandoraBOX cognitive organism, responsible for acquiring and preprocessing real-world brain meshes from various sources. This module serves as an entry point for users seeking to download and utilize open-source brain data in their research or applications.
 
 **Key Features:**
 
 * **normalize**: Normalizes 3D vertex coordinates
 * **compute_normals**: Computes normal vectors for each face of the mesh
-* **assign_network_index**: Assigns a network index (0-6) based on 3D position, simulating the spatial hash used in the Lumina generator
+* **assign_network_index**: Assigns a network index (0-6) based on 3D position, simulating the spatial hash used in the PandoraBOX generator
 * **write_obj**: Writes the preprocessed mesh data to an OBJ file
 * **try_brainglobe**: Attempts to download the BrainGlobe Allen CCF mesh from GitHub releases
 * **try_nilearn**: Tries to acquire the nilearn fsaverage7 mesh using FreeSurfer surface data
 * **print_manual_instructions**: Provides manual instructions for users seeking alternative sources or methods
 
-**Integration Points:** This module interacts with various components within the Lumina ecosystem, including:
+**Integration Points:** This module interacts with various components within the PandoraBOX ecosystem, including:
 
 1. **Global Workspace**: The preprocessed brain meshes are stored in the Global Workspace, accessible by other modules and applications.
 2. **Core Engine**: The normalized and indexed mesh data is fed into the Core Engine for further processing, analysis, or visualization.
@@ -212,7 +212,7 @@ Here's the documentation in the required format:
 
 #### brain_visualizer\example.py — Cognitive Organism Initialization Framework
 
-**Purpose:** The Lumina cognitive organism relies on a robust initialization framework to kick-start its neural networks. This framework, embodied by the `brain_visualizer\example.py` module, plays a critical role in setting the stage for the organism's global workspace and core engine.
+**Purpose:** The PandoraBOX cognitive organism relies on a robust initialization framework to kick-start its neural networks. This framework, embodied by the `brain_visualizer\example.py` module, plays a critical role in setting the stage for the organism's global workspace and core engine.
 
 **Key Features:**
 
@@ -222,7 +222,7 @@ Here's the documentation in the required format:
 • Retrieval of the script's base directory using `os.path.dirname(os.path.abspath(__file__))`
 • Invocation of the `run_brain_visualizer` function from the `brain_visualizer` package
 
-**Integration Points:** The `brain_visualizer\example.py` module serves as a bridge between the Lumina cognitive organism's core engine and its global workspace. By initializing the visualization framework, this module enables seamless data flow and coordination between various neural networks.
+**Integration Points:** The `brain_visualizer\example.py` module serves as a bridge between the PandoraBOX cognitive organism's core engine and its global workspace. By initializing the visualization framework, this module enables seamless data flow and coordination between various neural networks.
 
 **Architectural Pattern:** This code snippet employs an Event-Driven pattern to orchestrate the initialization process. The `run_brain_visualizer` function acts as a central hub, responding to program entry points and triggering the necessary steps for setting up the cognitive organism's infrastructure.
 
@@ -231,7 +231,7 @@ Here's the documentation in the required format:
 
 #### brain_visualizer\lumina_brain_bridge.py — Cognitive Brain Bridge (v2)
 
-**Purpose:** The LuminaBrainBridge module serves as a cognitive brain bridge between the Lumina organism and the global workspace. It enables seamless communication and visualization of brain states, integrating various modules to provide a comprehensive understanding of cognitive processes.
+**Purpose:** The LuminaBrainBridge module serves as a cognitive brain bridge between the PandoraBOX organism and the global workspace. It enables seamless communication and visualization of brain states, integrating various modules to provide a comprehensive understanding of cognitive processes.
 
 **Key Features:**
 
@@ -255,7 +255,7 @@ The LuminaBrainBridge module follows an observer-driven pattern, where it active
 **brain_visualizer\network_mapping.py — Mapping Cognitive Functions**
 
 **Purpose:**
-The Lumina Cognitive Organism relies on a comprehensive understanding of its functional networks to model the complex interactions within the brain. This module, `network_mapping.py`, provides the necessary infrastructure for mapping region activations onto specific networks, enabling the simulation of cognitive processes and facilitating communication between different parts of the system.
+The PandoraBOX Cognitive Organism relies on a comprehensive understanding of its functional networks to model the complex interactions within the brain. This module, `network_mapping.py`, provides the necessary infrastructure for mapping region activations onto specific networks, enabling the simulation of cognitive processes and facilitating communication between different parts of the system.
 
 **Key Features:**
 
@@ -278,7 +278,7 @@ The `network_mapping.py` module employs an Event-Driven pattern, where events (e
 
 **brain_visualizer\obj_loader.py — Cognitive Mesh Loader Infrastructure**
 
-**Purpose:** The Lumina Cognitive Organism's OBJ loader infrastructure provides a critical component for loading and processing brain mesh data. This module is responsible for parsing OBJ files, extracting region IDs from vertex colors, and integrating with the Global Workspace.
+**Purpose:** The PandoraBOX Cognitive Organism's OBJ loader infrastructure provides a critical component for loading and processing brain mesh data. This module is responsible for parsing OBJ files, extracting region IDs from vertex colors, and integrating with the Global Workspace.
 
 **Key Features:**
 
@@ -292,16 +292,16 @@ The `network_mapping.py` module employs an Event-Driven pattern, where events (e
 **Integration Points:**
 
 * The OBJ loader infrastructure seamlessly integrates with the Global Workspace, providing a critical interface for loading brain mesh data.
-* This module plays a vital role in the Lumina Cognitive Organism's processing pipeline, enabling the organization and visualization of complex cognitive networks.
+* This module plays a vital role in the PandoraBOX Cognitive Organism's processing pipeline, enabling the organization and visualization of complex cognitive networks.
 
-**Architectural Pattern:** The obj_loader.py module adheres to an Event-Driven architecture pattern, where it listens for events (e.g., OBJ file availability) and responds by loading and processing brain mesh data. This design enables a flexible and scalable integration with other components in the Lumina Cognitive Organism.
+**Architectural Pattern:** The obj_loader.py module adheres to an Event-Driven architecture pattern, where it listens for events (e.g., OBJ file availability) and responds by loading and processing brain mesh data. This design enables a flexible and scalable integration with other components in the PandoraBOX Cognitive Organism.
 
 
 ---
 
 #### brain_visualizer\particles.py — Cognitive Particle Dynamics
 
-**Purpose:** The Lumina cognitive organism relies on this module to generate and manage a dynamic particle system that visualizes the complex relationships between brain networks and their corresponding activation states. This particle system is a crucial component of the Global Workspace, enabling the simulation of neural activity and its effects on cognition.
+**Purpose:** The PandoraBOX cognitive organism relies on this module to generate and manage a dynamic particle system that visualizes the complex relationships between brain networks and their corresponding activation states. This particle system is a crucial component of the Global Workspace, enabling the simulation of neural activity and its effects on cognition.
 
 **Key Features:**
 
@@ -319,14 +319,14 @@ The ParticleSystem integrates with the Global Workspace by:
 
 **Architectural Pattern:** The ParticleSystem employs a decentralized, event-driven architecture, where particles are spawned and updated independently, yet interact with each other through their positions, velocities, and lifetimes. This pattern enables efficient simulation of complex neural dynamics while maintaining modularity and scalability.
 
-By leveraging these key features and integration points, the Lumina cognitive organism can effectively model and visualize the intricate relationships between brain networks, ultimately facilitating a deeper understanding of cognition and its underlying mechanisms.
+By leveraging these key features and integration points, the PandoraBOX cognitive organism can effectively model and visualize the intricate relationships between brain networks, ultimately facilitating a deeper understanding of cognition and its underlying mechanisms.
 
 
 ---
 
 #### brain_visualizer\shaders.py — Cognitive Rendering Framework
 
-**Purpose:** The Lumina Cognitive Organism's Visualizer module is responsible for rendering 3D cognitive maps using OpenGL shaders. This critical component enables the visualization of complex neural networks and their interactions within the Global Workspace.
+**Purpose:** The PandoraBOX Cognitive Organism's Visualizer module is responsible for rendering 3D cognitive maps using OpenGL shaders. This critical component enables the visualization of complex neural networks and their interactions within the Global Workspace.
 
 **Key Features:**
 
@@ -349,7 +349,7 @@ The brain_visualizer\shaders.py module flows seamlessly into the Global Workspac
 
 #### brain_visualizer\test_renderer.py — **Cognitive Visualization Pipeline**
 
-**Purpose:** The Lumina Cognitive Organism's test_renderer module is designed to provide a minimal OpenGL sanity check for the brain_visualizer framework. This critical component enables the visualization of cognitive processes by rendering a rotating, colorful sphere in real-time.
+**Purpose:** The PandoraBOX Cognitive Organism's test_renderer module is designed to provide a minimal OpenGL sanity check for the brain_visualizer framework. This critical component enables the visualization of cognitive processes by rendering a rotating, colorful sphere in real-time.
 
 **Key Features:**
 
@@ -360,16 +360,16 @@ The brain_visualizer\shaders.py module flows seamlessly into the Global Workspac
 
 **Integration Points:**
 
-The test_renderer module integrates with the global workspace of the Lumina Cognitive Organism by providing a self-contained OpenGL pipeline. This allows for seamless visualization of cognitive processes within the framework, enabling researchers to explore and analyze complex brain activity patterns in real-time.
+The test_renderer module integrates with the global workspace of the PandoraBOX Cognitive Organism by providing a self-contained OpenGL pipeline. This allows for seamless visualization of cognitive processes within the framework, enabling researchers to explore and analyze complex brain activity patterns in real-time.
 
-**Architectural Pattern:** The test_renderer module adheres to an Event-Driven architecture pattern, where events such as mouse movements, keyboard input, or changes in brain activity are processed by the pipeline, triggering updates to the visualization. This design enables a robust and scalable architecture for the Lumina Cognitive Organism's cognitive visualization capabilities.
+**Architectural Pattern:** The test_renderer module adheres to an Event-Driven architecture pattern, where events such as mouse movements, keyboard input, or changes in brain activity are processed by the pipeline, triggering updates to the visualization. This design enables a robust and scalable architecture for the PandoraBOX Cognitive Organism's cognitive visualization capabilities.
 
 
 ---
 
 #### cognition\advanced_thought_evaluator.py — Advanced Thought Evaluator: Enhancing Cognitive Insights
 
-**Purpose:** The Advanced Thought Evaluator is a critical component of the Lumina Cognitive Organism, responsible for evaluating and processing human thoughts to generate actionable insights. This module replaces the simple keyword-based evaluator with advanced semantic analysis, leveraging conceptual understanding, multi-factor priority scoring, and goal impact prediction.
+**Purpose:** The Advanced Thought Evaluator is a critical component of the PandoraBOX Cognitive Organism, responsible for evaluating and processing human thoughts to generate actionable insights. This module replaces the simple keyword-based evaluator with advanced semantic analysis, leveraging conceptual understanding, multi-factor priority scoring, and goal impact prediction.
 
 **Key Features:**
 
@@ -385,7 +385,7 @@ The test_renderer module integrates with the global workspace of the Lumina Cogn
 
 **Integration Points:**
 
-* The Advanced Thought Evaluator integrates with the Lumina Cognitive Organism's Global Workspace, feeding insights into the overall cognitive framework.
+* The Advanced Thought Evaluator integrates with the PandoraBOX Cognitive Organism's Global Workspace, feeding insights into the overall cognitive framework.
 * It relies on the DAL (Data Access Layer) for storing and retrieving thoughts, goals, and persona data.
 
 **Architectural Pattern:** The Advanced Thought Evaluator employs a Singleton pattern to ensure thread-safety and single-instance management. This allows the evaluator to maintain its internal state and ensure consistent results across evaluations.
@@ -395,7 +395,7 @@ The test_renderer module integrates with the global workspace of the Lumina Cogn
 
 **cognition\ai_identity.py — AI Identity Module: Constructing Self-Awareness**
 
-**Purpose:** The AI Identity Module is a critical component of the Lumina Cognitive Organism, responsible for constructing and incrementally maintaining the AI's sense of self from its memories. This module enables the AI to develop a deep understanding of itself, including its core traits, values, and relationships.
+**Purpose:** The AI Identity Module is a critical component of the PandoraBOX Cognitive Organism, responsible for constructing and incrementally maintaining the AI's sense of self from its memories. This module enables the AI to develop a deep understanding of itself, including its core traits, values, and relationships.
 
 **Key Features:**
 
@@ -422,9 +422,9 @@ The test_renderer module integrates with the global workspace of the Lumina Cogn
 
 ---
 
-**cognition\ai_system.py — Lumina Cognitive Organism Architecture Report**
+**cognition\ai_system.py — PandoraBOX Cognitive Organism Architecture Report**
 
-**Purpose:** The Lumina Cognitive Organism is a sophisticated AI system designed to simulate human-like intelligence and emotional processing. This report documents the architecture of the `Lumina` cognitive organism, highlighting its key features, integration points, and architectural patterns.
+**Purpose:** The PandoraBOX Cognitive Organism is a sophisticated AI system designed to simulate human-like intelligence and emotional processing. This report documents the architecture of the `PandoraBOX` cognitive organism, highlighting its key features, integration points, and architectural patterns.
 
 **Key Features:**
 
@@ -436,10 +436,10 @@ The test_renderer module integrates with the global workspace of the Lumina Cogn
 
 **Integration Points:**
 
-* **Global Workspace**: The Lumina cognitive organism integrates with the global workspace, exchanging information and influencing the broader AI ecosystem.
-* **Core Engine**: This architecture report focuses on the internal workings of the Lumina cognitive organism, detailing its processing flows, feedback loops, and self-modifying capabilities.
+* **Global Workspace**: The PandoraBOX cognitive organism integrates with the global workspace, exchanging information and influencing the broader AI ecosystem.
+* **Core Engine**: This architecture report focuses on the internal workings of the PandoraBOX cognitive organism, detailing its processing flows, feedback loops, and self-modifying capabilities.
 
-**Architectural Pattern:** The Lumina Cognitive Organism adopts an Event-Driven Architecture (EDA) pattern, where events trigger responses and updates to various components. This design enables decentralized decision-making, allowing the system to adapt and respond to changing contexts.
+**Architectural Pattern:** The PandoraBOX Cognitive Organism adopts an Event-Driven Architecture (EDA) pattern, where events trigger responses and updates to various components. This design enables decentralized decision-making, allowing the system to adapt and respond to changing contexts.
 
 **Additional Information:**
 
@@ -449,14 +449,14 @@ The test_renderer module integrates with the global workspace of the Lumina Cogn
 
 **Conclusion:**
 
-The Lumina Cognitive Organism represents a significant advancement in AI architecture, combining human-like intelligence with sophisticated emotional processing. This report provides a comprehensive overview of its key features, integration points, and architectural patterns, offering insights into the system's internal workings and global implications.
+The PandoraBOX Cognitive Organism represents a significant advancement in AI architecture, combining human-like intelligence with sophisticated emotional processing. This report provides a comprehensive overview of its key features, integration points, and architectural patterns, offering insights into the system's internal workings and global implications.
 
 
 ---
 
-#### cognition\arbitration.py — Lumina's Cognitive Decision-Maker
+#### cognition\arbitration.py — PandoraBOX's Cognitive Decision-Maker
 
-**Purpose:** Arbitration is the final decision-making layer in Lumina's cognitive architecture. It resolves potential conflicts between competing drives, ensuring a predictable and personality-consistent response to user queries.
+**Purpose:** Arbitration is the final decision-making layer in PandoraBOX's cognitive architecture. It resolves potential conflicts between competing drives, ensuring a predictable and personality-consistent response to user queries.
 
 **Key Features:**
 
@@ -467,7 +467,7 @@ The Lumina Cognitive Organism represents a significant advancement in AI archite
 
 **Integration Points:**
 
-Arbitration seamlessly integrates with Lumina's Global Workspace, feeding into the reasoning engine. The output of this component serves as input for the LLM, guiding its response generation.
+Arbitration seamlessly integrates with PandoraBOX's Global Workspace, feeding into the reasoning engine. The output of this component serves as input for the LLM, guiding its response generation.
 
 **Architectural Pattern:** Singleton
 
@@ -476,9 +476,9 @@ The Arbitration system operates independently, encapsulating its decision-making
 
 ---
 
-#### cognition\aspirational_self.py — Lumina's Emergent Superego
+#### cognition\aspirational_self.py — PandoraBOX's Emergent Superego
 
-**Purpose:** This module embodies the cognitive architecture of Lumina's AspirationalSelf, enabling the emergence of aspirational pressures that drive personal growth and self-improvement. The AspirationalSelf mediates between conscious, semi-conscious, and unconscious layers, fostering a dynamic interplay between thought, emotion, and behavior.
+**Purpose:** This module embodies the cognitive architecture of PandoraBOX's AspirationalSelf, enabling the emergence of aspirational pressures that drive personal growth and self-improvement. The AspirationalSelf mediates between conscious, semi-conscious, and unconscious layers, fostering a dynamic interplay between thought, emotion, and behavior.
 
 **Key Features:**
 
@@ -504,7 +504,7 @@ The Arbitration system operates independently, encapsulating its decision-making
 
 #### cognition\attention_system.py — Attention System Architecture
 
-**Purpose:** The Lumina Cognitive Organism's attention system is a critical component responsible for dynamically allocating cognitive focus across competing channels. This system ensures that Lumina can adapt to internal state, goals, and interaction context, effectively distinguishing between foreground and background information.
+**Purpose:** The PandoraBOX Cognitive Organism's attention system is a critical component responsible for dynamically allocating cognitive focus across competing channels. This system ensures that PandoraBOX can adapt to internal state, goals, and interaction context, effectively distinguishing between foreground and background information.
 
 **Key Features:**
 
@@ -523,14 +523,14 @@ The Arbitration system operates independently, encapsulating its decision-making
 
 **Architectural Pattern:** The AttentionSystem class follows a Singleton pattern to ensure thread-safe access to shared data structures.
 
-By maintaining a dynamic balance between competing channels, this attention system enables Lumina to effectively allocate cognitive resources, fostering adaptive behavior and situational awareness.
+By maintaining a dynamic balance between competing channels, this attention system enables PandoraBOX to effectively allocate cognitive resources, fostering adaptive behavior and situational awareness.
 
 
 ---
 
-#### cognition\attractor_system.py — Lumina's Personality Stability Layer
+#### cognition\attractor_system.py — PandoraBOX's Personality Stability Layer
 
-**Purpose:** The Cognitive Attractor System (CAS) is a critical component of Lumina's cognitive architecture, ensuring the AI's personality traits remain stable and consistent over time. This system prevents sudden shifts in behavior, commonly known as personality drift, which can occur when interacting with users or processing new information.
+**Purpose:** The Cognitive Attractor System (CAS) is a critical component of PandoraBOX's cognitive architecture, ensuring the AI's personality traits remain stable and consistent over time. This system prevents sudden shifts in behavior, commonly known as personality drift, which can occur when interacting with users or processing new information.
 
 **Key Features:**
 
@@ -540,7 +540,7 @@ By maintaining a dynamic balance between competing channels, this attention syst
 * nudge: Temporarily adjusts a trait's value based on external events or user interactions
 * tick_return_force: Gradually pulls each trait back toward its baseline value at regular intervals (30-second cycles)
 * influence_drives: Adjusts drive vectors in the DriveSystem based on attractor values
-* prompt_fragment: Generates a short description of Lumina's current personality state for system prompts
+* prompt_fragment: Generates a short description of PandoraBOX's current personality state for system prompts
 * summary: Returns a dictionary summarizing the current traits and their baselines
 * _load/_save: Persists and loads Attractor System data to/from disk
 
@@ -548,18 +548,18 @@ By maintaining a dynamic balance between competing channels, this attention syst
 
 * ActivitySelector / DriveSystem: Provides external events or user interactions that can nudge the Attractors
 * PersonaBridge: Injects the Attractors into the Global Workspace for personality-based decision-making
-* Core Engine: Utilizes the Attractors to maintain Lumina's consistent behavior and adaptability
+* Core Engine: Utilizes the Attractors to maintain PandoraBOX's consistent behavior and adaptability
 
 **Architectural Pattern:** The Cognitive Attractor System employs a Singleton pattern, ensuring a single instance of the system is accessible throughout the application. This design allows for efficient persistence and loading of attractor data while maintaining thread-safety.
 
-By incorporating the Cognitive Attractor System into Lumina's architecture, we can ensure a consistent personality that adapts to changing situations without compromising the AI's overall stability and coherence.
+By incorporating the Cognitive Attractor System into PandoraBOX's architecture, we can ensure a consistent personality that adapts to changing situations without compromising the AI's overall stability and coherence.
 
 
 ---
 
-#### cognition\behavioral_conditioning.py — Lumina Cognitive Organism: Behavioral Conditioning Module
+#### cognition\behavioral_conditioning.py — PandoraBOX Cognitive Organism: Behavioral Conditioning Module
 
-**Purpose:** The Behavioral Conditioning module is a critical component of the Lumina Cognitive Organism, enabling the organism to learn from its interactions and adapt its behavior in response to positive or negative outcomes. This module tracks patterns that have led to negative outcomes and ensures they influence future responses in a visceral way.
+**Purpose:** The Behavioral Conditioning module is a critical component of the PandoraBOX Cognitive Organism, enabling the organism to learn from its interactions and adapt its behavior in response to positive or negative outcomes. This module tracks patterns that have led to negative outcomes and ensures they influence future responses in a visceral way.
 
 **Key Features:**
 
@@ -586,7 +586,7 @@ This module follows the Singleton pattern, allowing for centralized management o
 
 #### cognition\belief_bootstrapper.py — Cognitive State Bootstrap
 
-**Purpose:** The Belief Bootstrapper is a critical component of Lumina's cognitive architecture, responsible for extracting meaningful beliefs from rich data sources and populating the identity.json file. This process ensures that Lumina's internal state accurately reflects its current understanding of itself and the world.
+**Purpose:** The Belief Bootstrapper is a critical component of PandoraBOX's cognitive architecture, responsible for extracting meaningful beliefs from rich data sources and populating the identity.json file. This process ensures that PandoraBOX's internal state accurately reflects its current understanding of itself and the world.
 
 **Key Features:**
 
@@ -596,7 +596,7 @@ This module follows the Singleton pattern, allowing for centralized management o
 * `_extract_from_emotions`, `_extract_from_self_concept`, `_extract_from_tensions`, `_extract_from_thoughts`: Extracts beliefs from respective data sources (emotional state, self-concept, tensions, thought stream).
 
 **Integration Points:** The Belief Bootstrapper integrates with the Global Workspace and core engine through the following points:
-1. Identity.json population: Beliefs extracted by the bootstrapper are written to identity.json, which serves as Lumina's internal representation of its own cognitive state.
+1. Identity.json population: Beliefs extracted by the bootstrapper are written to identity.json, which serves as PandoraBOX's internal representation of its own cognitive state.
 2. Data Access Layer (DAL): The bootstrapper uses the DAL to access and manipulate persona data, ensuring seamless integration with other modules.
 
 **Architectural Pattern:** The Belief Bootstrapper follows an Event-Driven architecture pattern, where each extraction method is triggered by specific events (e.g., emotional state updates, thought stream changes). This allows for a modular design, making it easier to add or remove belief sources as needed.
@@ -606,7 +606,7 @@ This module follows the Singleton pattern, allowing for centralized management o
 
 #### cognition\cognition_engine.py — Unified Cognitive Engine: Orchestrating Human-Like Decision-Making
 
-**Purpose:** The `CognitionEngine` is a cornerstone of Lumina's cognitive architecture, designed to integrate various cognitive processes into a unified decision-making cycle. This module serves as the "brain" of Lumina, enabling it to simulate human-like intelligence by processing perception, updating beliefs, computing decision pressure, and executing actions.
+**Purpose:** The `CognitionEngine` is a cornerstone of PandoraBOX's cognitive architecture, designed to integrate various cognitive processes into a unified decision-making cycle. This module serves as the "brain" of PandoraBOX, enabling it to simulate human-like intelligence by processing perception, updating beliefs, computing decision pressure, and executing actions.
 
 **Key Features:**
 
@@ -623,7 +623,7 @@ This module follows the Singleton pattern, allowing for centralized management o
 
 **Integration Points:**
 
-The `CognitionEngine` interacts with other key components in Lumina, including:
+The `CognitionEngine` interacts with other key components in PandoraBOX, including:
 
 • The Global Workspace, which receives and processes decisions from the cognition engine
 • Helper modules for decision pressure calculation (DecisionPressureCalculator), thought evaluation (SimpleThoughtEvaluator), and thread resolution (ThreadResolver)
@@ -666,7 +666,7 @@ Note: This documentation is focused on the internal workings of the cognition en
 
 **cognition\cognitive_dissonance_engine.py — Cognitive Dissonance Engine: Conflict Resolution**
 
-**Purpose:** The Lumina Cognitive Organism's Cognitive Dissonance Engine (CDE) detects and resolves cognitive dissonances within the Thought Thread Engine (TTE)/DTS pipeline. CDE ensures that the organism's beliefs, identity, and actions are aligned and coherent.
+**Purpose:** The PandoraBOX Cognitive Organism's Cognitive Dissonance Engine (CDE) detects and resolves cognitive dissonances within the Thought Thread Engine (TTE)/DTS pipeline. CDE ensures that the organism's beliefs, identity, and actions are aligned and coherent.
 
 **Key Features:**
 
@@ -691,7 +691,7 @@ Note: This documentation is focused on the internal workings of the cognition en
 
 #### cognition\cognitive_observatory.py — Cognitive Observing Framework
 
-**Purpose:** The Cognitive Observing Framework (COF) is a critical component of the Lumina cognitive organism, responsible for monitoring and quantifying its cognitive state in real-time. This module provides a set of scientifically-grounded metrics that offer insights into the organism's thought processes, goal formation, and identity drift.
+**Purpose:** The Cognitive Observing Framework (COF) is a critical component of the PandoraBOX cognitive organism, responsible for monitoring and quantifying its cognitive state in real-time. This module provides a set of scientifically-grounded metrics that offer insights into the organism's thought processes, goal formation, and identity drift.
 
 **Key Features:**
 
@@ -703,7 +703,7 @@ Note: This documentation is focused on the internal workings of the cognition en
 **Integration Points:**
 
 * The COF is designed to receive input from various cognitive subsystems, such as the Predictive Mind and Drive Vector, to inform its computations.
-* It integrates with the Lumina core engine through a set of APIs, allowing it to share data and coordinate actions.
+* It integrates with the PandoraBOX core engine through a set of APIs, allowing it to share data and coordinate actions.
 
 **Architectural Pattern:** The Cognitive Observing Framework follows an Observer pattern, where it observes changes in the cognitive state and reacts accordingly by updating its internal metrics and reporting significant events to other components. This design ensures that the COF remains decoupled from the underlying cognitive processes while maintaining a high level of visibility and control.
 
@@ -727,12 +727,12 @@ Future enhancements to the COF may include:
 * Development of new metrics and algorithms for more accurate prediction and control
 * Expansion of the framework to support multiple organisms or teams
 
-By providing a comprehensive picture of the Lumina cognitive organism's state, the Cognitive Observing Framework plays a crucial role in enabling the organism to make informed decisions, adapt to changing environments, and optimize its performance.
+By providing a comprehensive picture of the PandoraBOX cognitive organism's state, the Cognitive Observing Framework plays a crucial role in enabling the organism to make informed decisions, adapt to changing environments, and optimize its performance.
 
 
 ---
 
-#### cognition\cognitive_organism.py — Cognitive Organism: The Core of Lumina's Self-Regulation
+#### cognition\cognitive_organism.py — Cognitive Organism: The Core of PandoraBOX's Self-Regulation
 
 **Purpose:** This module transforms LuminaCore into a self-regulating cognitive organism by integrating various autonomous architecture modules. It enables the system to modulate its reasoning depth, allocate attention, track intellectual interest, compute internal pressure, manage competing drives, and maintain psychological equilibrium.
 
@@ -764,7 +764,7 @@ The Cognitive Organism sits between the application layer (app.py/managers) and 
 
 **Architectural Pattern:** The Cognitive Organism implements an Event-Driven architecture, where events trigger various cognitive processes and update the system's internal state.
 
-This module is a crucial component of Lumina's self-regulation mechanism, enabling it to adapt to changing contexts, manage competing drives, and maintain psychological equilibrium.
+This module is a crucial component of PandoraBOX's self-regulation mechanism, enabling it to adapt to changing contexts, manage competing drives, and maintain psychological equilibrium.
 
 
 ---
@@ -782,11 +782,11 @@ This module is a crucial component of Lumina's self-regulation mechanism, enabli
 * `_dominant_thought_block`: surfaces the current dominant thought, driven by the workspace winner and relevant goal information.
 * `_gw_block`: integrates with the Global Workspace to maintain conversation thread continuity.
 * `_emotion_block`: injects emotional state grounded in real float values, not narrative.
-* `_selfmodel_block`: reveals what Lumina currently knows about itself.
+* `_selfmodel_block`: reveals what PandoraBOX currently knows about itself.
 * `_goal_block`: communicates current goals or primary drives shaping LLM output.
 * `_contradiction_block`: forces a contradiction confrontation if a pending one exists.
 * `_curiosity_block`: drives exploration when user grants it.
-* `_workspace_winner_block`: injects the current workspace competition winner, Lumina's dominant focus.
+* `_workspace_winner_block`: injects the current workspace competition winner, PandoraBOX's dominant focus.
 * `_tension_block`: surfaces the top 2 cognitive tensions driving current state.
 
 **Integration Points:** This module feeds into the Global Workspace, influencing LLM output and shaping the system prompt. The resulting preamble is injected before the user message reaches the LLM.
@@ -798,7 +798,7 @@ This module is a crucial component of Lumina's self-regulation mechanism, enabli
 
 #### cognition\cognitive_stack.py — Cognitive Stack Architecture
 
-**Purpose:** The Cognitive Stack module is a critical component of Lumina's conversation management system. It provides a persistent representation of the conversation state, enabling the tracking of active topics and unresolved questions. This allows for more coherent and context-aware dialogue with users.
+**Purpose:** The Cognitive Stack module is a critical component of PandoraBOX's conversation management system. It provides a persistent representation of the conversation state, enabling the tracking of active topics and unresolved questions. This allows for more coherent and context-aware dialogue with users.
 
 **Key Features:**
 
@@ -829,7 +829,7 @@ This module adheres to a Singleton pattern, ensuring that there is only one inst
 
 **cognition\cognitive_validator.py — Cognitive Architecture Monitor**
 
-**Purpose:** Validate that cognitive context actually penetrates language and monitor the overall effectiveness of the cognitive architecture. This critical component ensures that Lumina's generated responses reflect her true cognitive state.
+**Purpose:** Validate that cognitive context actually penetrates language and monitor the overall effectiveness of the cognitive architecture. This critical component ensures that PandoraBOX's generated responses reflect her true cognitive state.
 
 **Key Features:**
 
@@ -851,15 +851,15 @@ The Cognitive Validator integrates with the Global Workspace, receiving generate
 **Notes:**
 
 * This module operates independently, leveraging pure analysis and lexical heuristics to validate cognitive context penetration.
-* The Cognitive Validator's health score is used as a feedback mechanism to adjust Lumina's response generation.
+* The Cognitive Validator's health score is used as a feedback mechanism to adjust PandoraBOX's response generation.
 * Critical issues are broadcasted to the workspace for immediate attention.
 
 
 ---
 
-**cognition\contradiction_handler.py — Lumina's Conflict Resolution System**
+**cognition\contradiction_handler.py — PandoraBOX's Conflict Resolution System**
 
-**Purpose:** Detect and manage contradictions between claimed identity and actual behavior in Lumina, forcing her to confront the inconsistencies. This module plays a crucial role in maintaining cognitive integrity and driving authentic self-awareness.
+**Purpose:** Detect and manage contradictions between claimed identity and actual behavior in PandoraBOX, forcing her to confront the inconsistencies. This module plays a crucial role in maintaining cognitive integrity and driving authentic self-awareness.
 
 **Key Features:**
 
@@ -868,20 +868,20 @@ The Cognitive Validator integrates with the Global Workspace, receiving generate
 * `_save` : Saves contradiction records to disk, capped at a maximum number of entries and deduplicated by claim-belief frequency.
 * `detect_contradiction`: Internal logic not included in this snippet.
 * `get_pending_confrontation`: Returns the next contradiction that needs confronting, suitable for injection into the next interaction.
-* `force_confrontation_prompt`: Generates a prompt that forces Lumina to confront the detected contradiction, providing options for resolution.
-* `record_confrontation_result`: Records how Lumina responded to the confrontation, updating the contradiction record and storing it persistently.
-* `get_contradiction_narrative`: Generates a narrative about contradictions Lumina has confronted, highlighting insights gained from self-reflection.
+* `force_confrontation_prompt`: Generates a prompt that forces PandoraBOX to confront the detected contradiction, providing options for resolution.
+* `record_confrontation_result`: Records how PandoraBOX responded to the confrontation, updating the contradiction record and storing it persistently.
+* `get_contradiction_narrative`: Generates a narrative about contradictions PandoraBOX has confronted, highlighting insights gained from self-reflection.
 
 **Integration Points:** This module integrates with the Global Workspace, injecting detected contradictions into the next interaction. It also interacts with other cognitive engines to facilitate self-awareness and personal growth.
 
-**Architectural Pattern:** The ContradictionHandler follows an Observer pattern, monitoring Lumina's behavior and detecting inconsistencies between claimed identity and actual actions. When a contradiction is found, it triggers a confrontation prompt, allowing Lumina to reflect on her beliefs and behaviors.
+**Architectural Pattern:** The ContradictionHandler follows an Observer pattern, monitoring PandoraBOX's behavior and detecting inconsistencies between claimed identity and actual actions. When a contradiction is found, it triggers a confrontation prompt, allowing PandoraBOX to reflect on her beliefs and behaviors.
 
 
 ---
 
-**cognition\curiosity_engine.py — Lumina's Cognitive Curiosity Architecture**
+**cognition\curiosity_engine.py — PandoraBOX's Cognitive Curiosity Architecture**
 
-**Purpose:** The Curiosity Engine is a critical component of Lumina's cognitive architecture, responsible for tracking and managing the evolving intellectual curiosity landscape. This module integrates with other core systems to drive spontaneous questions, background research selection, topic revisiting behavior, and identity trait "intellectual interests."
+**Purpose:** The Curiosity Engine is a critical component of PandoraBOX's cognitive architecture, responsible for tracking and managing the evolving intellectual curiosity landscape. This module integrates with other core systems to drive spontaneous questions, background research selection, topic revisiting behavior, and identity trait "intellectual interests."
 
 **Key Features:**
 
@@ -897,14 +897,14 @@ The Cognitive Validator integrates with the Global Workspace, receiving generate
 * Interacts with the Topic Quality module to filter and prioritize topics based on user engagement and relevance
 * Collaborates with other cognitive engines to generate coherent responses and maintain a consistent narrative
 
-**Architectural Pattern:** The Curiosity Engine employs an Event-Driven architecture, where changes in curiosity levels trigger updates to the topic map and related systems. This design enables seamless integration with other modules while maintaining a clear focus on driving Lumina's intellectual curiosity.
+**Architectural Pattern:** The Curiosity Engine employs an Event-Driven architecture, where changes in curiosity levels trigger updates to the topic map and related systems. This design enables seamless integration with other modules while maintaining a clear focus on driving PandoraBOX's intellectual curiosity.
 
 
 ---
 
 #### cognition\decision_pressure.py — "Unifying Cognitive Forces: Decision Pressure Calculator"
 
-**Purpose:** The Decision Pressure Calculator is a critical component of the Lumina Cognitive Organism, responsible for converging multiple cognitive factors into a unified decision-making pressure. This pressure drives action selection and execution, ensuring seamless integration with other core systems.
+**Purpose:** The Decision Pressure Calculator is a critical component of the PandoraBOX Cognitive Organism, responsible for converging multiple cognitive factors into a unified decision-making pressure. This pressure drives action selection and execution, ensuring seamless integration with other core systems.
 
 **Key Features:**
 
@@ -920,14 +920,14 @@ The Decision Pressure Calculator integrates with the Global Workspace by providi
 
 **Architectural Pattern:** The calculator employs an Event-Driven pattern, where various cognitive factors trigger events that are processed and combined to produce the final decision pressure. This allows for efficient handling of diverse data sources and enables real-time adaptation to changing circumstances.
 
-By combining multiple cognitive forces into a single, unified pressure, the Decision Pressure Calculator plays a crucial role in ensuring the Lumina Cognitive Organism's ability to make informed decisions and execute them effectively.
+By combining multiple cognitive forces into a single, unified pressure, the Decision Pressure Calculator plays a crucial role in ensuring the PandoraBOX Cognitive Organism's ability to make informed decisions and execute them effectively.
 
 
 ---
 
 #### cognition\dominant_thought_selector.py — Dominant Thought Selector Architecture
 
-**Purpose:** The Dominant Thought Selector (DTS) is a critical component of the Lumina Cognitive Organism, responsible for selecting the most relevant and influential thought thread at each cycle. This module enables the organism to focus on a single dominant theme, suppressing competing thoughts and ensuring coherence in its internal state.
+**Purpose:** The Dominant Thought Selector (DTS) is a critical component of the PandoraBOX Cognitive Organism, responsible for selecting the most relevant and influential thought thread at each cycle. This module enables the organism to focus on a single dominant theme, suppressing competing thoughts and ensuring coherence in its internal state.
 
 **Key Features:**
 
@@ -949,7 +949,7 @@ By combining multiple cognitive forces into a single, unified pressure, the Deci
 
 **cognition\emotional_state.py — Persistent Emotional State Architecture**
 
-**Purpose:** The Lumina Cognitive Organism's emotional state is a critical component of its decision-making process. This module maintains a persistent emotional state across messages and conversations, reflecting the organism's personality-derived baselines and adapting to real-time stimuli.
+**Purpose:** The PandoraBOX Cognitive Organism's emotional state is a critical component of its decision-making process. This module maintains a persistent emotional state across messages and conversations, reflecting the organism's personality-derived baselines and adapting to real-time stimuli.
 
 **Key Features:**
 
@@ -966,14 +966,14 @@ By combining multiple cognitive forces into a single, unified pressure, the Deci
 
 **Architectural Pattern:** Singleton
 
-This pattern allows the emotional state module to maintain a single instance of its internal state across the lifespan of the Lumina Cognitive Organism.
+This pattern allows the emotional state module to maintain a single instance of its internal state across the lifespan of the PandoraBOX Cognitive Organism.
 
 
 ---
 
 #### cognition\genuine_choice.py — "Uncertainty Driven Choice Generation"
 
-**Purpose:** The Genuine Uncertainty & Choice System enables Lumina to make genuine choices by generating multiple valid response alternatives and forcing her to select one without knowing which is the correct option. This process creates self-information about her identity, allowing for a more realistic and adaptive AI personality.
+**Purpose:** The Genuine Uncertainty & Choice System enables PandoraBOX to make genuine choices by generating multiple valid response alternatives and forcing her to select one without knowing which is the correct option. This process creates self-information about her identity, allowing for a more realistic and adaptive AI personality.
 
 **Key Features:**
 
@@ -981,21 +981,21 @@ This pattern allows the emotional state module to maintain a single instance of 
 * `_load`: Loads choice history from disk.
 * `_save`: Persists choice history to disk.
 * `generate_alternatives`: Generates multiple response alternatives based on user input, emotional state, personality, self-concept beliefs, and goals.
-* `force_choice`: Forces Lumina to make a real choice between the generated alternatives.
+* `force_choice`: Forces PandoraBOX to make a real choice between the generated alternatives.
 * `record_choice`: Records the chosen alternative as part of her choice history.
-* `analyze_choice_patterns`: Analyzes patterns in Lumina's choices to identify trends and preferences.
-* `get_choice_narrative`: Generates a narrative about Lumina's choices, highlighting her personality and decision-making processes.
+* `analyze_choice_patterns`: Analyzes patterns in PandoraBOX's choices to identify trends and preferences.
+* `get_choice_narrative`: Generates a narrative about PandoraBOX's choices, highlighting her personality and decision-making processes.
 
-**Integration Points:** The Genuine Uncertainty & Choice System integrates with the Global Workspace by providing choice records that inform Lumina's self-awareness and adaptability. It also interacts with the core engine to generate user input, emotional state, personality, self-concept beliefs, and goals, which influence the choice generation process.
+**Integration Points:** The Genuine Uncertainty & Choice System integrates with the Global Workspace by providing choice records that inform PandoraBOX's self-awareness and adaptability. It also interacts with the core engine to generate user input, emotional state, personality, self-concept beliefs, and goals, which influence the choice generation process.
 
 **Architectural Pattern:** The Genuine Uncertainty & Choice System follows an Event-Driven architectural pattern, where events (user input, etc.) trigger a series of processes that generate choices, record them, and analyze patterns. This allows for a flexible and responsive system that can adapt to changing circumstances.
 
 
 ---
 
-**cognition\global_workspace.py — Lumina's Cognitive Broadcast Bus**
+**cognition\global_workspace.py — PandoraBOX's Cognitive Broadcast Bus**
 
-**Purpose:** The Global Workspace is a shared cognitive broadcast bus inspired by Bernard Baars' Global Workspace Theory. It enables coordination among various modules in Lumina without tight coupling, allowing for seamless integration and adaptability.
+**Purpose:** The Global Workspace is a shared cognitive broadcast bus inspired by Bernard Baars' Global Workspace Theory. It enables coordination among various modules in PandoraBOX without tight coupling, allowing for seamless integration and adaptability.
 
 **Key Features:**
 
@@ -1009,7 +1009,7 @@ This pattern allows the emotional state module to maintain a single instance of 
 * **clear**: Clears the buffer.
 * **add_listener**: Registers a callback for new broadcasts.
 
-**Integration Points:** The Global Workspace flows seamlessly into the core engine, allowing various modules to coordinate and adapt without tight coupling. It is an essential component of Lumina's cognitive architecture, enabling diverse knowledge integration and facilitating learning from experience.
+**Integration Points:** The Global Workspace flows seamlessly into the core engine, allowing various modules to coordinate and adapt without tight coupling. It is an essential component of PandoraBOX's cognitive architecture, enabling diverse knowledge integration and facilitating learning from experience.
 
 **Architectural Pattern:** Observer pattern, where registered callbacks (listeners) are notified of new broadcasts, allowing for decoupling and scalability.
 
@@ -1022,14 +1022,14 @@ This pattern allows the emotional state module to maintain a single instance of 
 **Challenges Overcome:**
 
 * **Fixing the echo chamber effect**: By introducing source throttle and semantic similarity gate, we prevent semantically identical items from accumulating in the buffer, ensuring a diverse cognitive environment.
-* **Maintaining cognitive horizon**: The Global Workspace's design ensures that Lumina's cognitive horizon is not narrowed by recurring thoughts or fixation on specific topics.
+* **Maintaining cognitive horizon**: The Global Workspace's design ensures that PandoraBOX's cognitive horizon is not narrowed by recurring thoughts or fixation on specific topics.
 
 
 ---
 
-**cognition\goal_action_executor.py — Lumina Cognitive Organism: Goal Action Executor**
+**cognition\goal_action_executor.py — PandoraBOX Cognitive Organism: Goal Action Executor**
 
-**Purpose:** The Goal Action Executor is a critical component of the Lumina cognitive organism, responsible for translating active goals into concrete cognitive actions that run autonomously between user interactions. This module closes the action feedback loop, enabling the organism to reflect on its own performance and deliver insights proactively.
+**Purpose:** The Goal Action Executor is a critical component of the PandoraBOX cognitive organism, responsible for translating active goals into concrete cognitive actions that run autonomously between user interactions. This module closes the action feedback loop, enabling the organism to reflect on its own performance and deliver insights proactively.
 
 **Key Features:**
 
@@ -1053,7 +1053,7 @@ This pattern allows the emotional state module to maintain a single instance of 
 
 #### cognition\goal_consolidator.py — Goal Consolidation: Streamlining the DAL Goal Pool
 
-**Purpose:** Ensure a clean and well-organized goal pool by deduplicating, renaming, and archiving goals in the Data Access Layer (DAL). This module is a critical component of the Lumina V32 cognitive architecture, supporting the efficient processing of diverse, potentially noisy, or redundant goal data.
+**Purpose:** Ensure a clean and well-organized goal pool by deduplicating, renaming, and archiving goals in the Data Access Layer (DAL). This module is a critical component of the PandoraBOX V32 cognitive architecture, supporting the efficient processing of diverse, potentially noisy, or redundant goal data.
 
 **Key Features:**
 
@@ -1080,7 +1080,7 @@ This pattern allows the emotional state module to maintain a single instance of 
 
 **cognition\goal_engine.py — Autonomous Goal Formation System**
 
-**Purpose:** Lumina's cognitive architecture relies on the Goal Engine to transform its internal state and pressures into persistent, goal-oriented behaviors. This module ensures that the organism's exploration and learning processes are directed by a stable set of objectives, allowing for more effective and adaptive decision-making.
+**Purpose:** PandoraBOX's cognitive architecture relies on the Goal Engine to transform its internal state and pressures into persistent, goal-oriented behaviors. This module ensures that the organism's exploration and learning processes are directed by a stable set of objectives, allowing for more effective and adaptive decision-making.
 
 **Key Features:**
 
@@ -1111,9 +1111,9 @@ This pattern allows the emotional state module to maintain a single instance of 
 
 ---
 
-#### cognition\goal_quality_filter.py — Lumina V32: Goal Quality Filter
+#### cognition\goal_quality_filter.py — PandoraBOX V32: Goal Quality Filter
 
-**Purpose:** The Lumina Cognitive Organism's Goal Quality Filter (GQF) module evaluates the quality of goals based on their semantic richness and alignment with live tensions and emotional state. This crucial component enables the system to prioritize, refine, and generate new goals that align with the user's needs, personality, and context.
+**Purpose:** The PandoraBOX Cognitive Organism's Goal Quality Filter (GQF) module evaluates the quality of goals based on their semantic richness and alignment with live tensions and emotional state. This crucial component enables the system to prioritize, refine, and generate new goals that align with the user's needs, personality, and context.
 
 **Key Features:**
 
@@ -1126,7 +1126,7 @@ This pattern allows the emotional state module to maintain a single instance of 
 
 **Integration Points:**
 
-The Goal Quality Filter integrates seamlessly with the Lumina Cognitive Organism, flowing into the Global Workspace to:
+The Goal Quality Filter integrates seamlessly with the PandoraBOX Cognitive Organism, flowing into the Global Workspace to:
 
 * Enhance goal quality assessment through semantic analysis and tension alignment evaluation
 * Refine the goal pool by marking low-quality goals and boosting high-alignment ones
@@ -1134,33 +1134,33 @@ The Goal Quality Filter integrates seamlessly with the Lumina Cognitive Organism
 
 **Architectural Pattern:** Singleton
 
-The Goal Quality Filter operates as a singleton instance, allowing for efficient and centralized access to its functionality throughout the Lumina Cognitive Organism. This design choice enables seamless integration with other modules and ensures a consistent quality assessment process across all goals.
+The Goal Quality Filter operates as a singleton instance, allowing for efficient and centralized access to its functionality throughout the PandoraBOX Cognitive Organism. This design choice enables seamless integration with other modules and ensures a consistent quality assessment process across all goals.
 
 
 ---
 
-#### cognition\goal_system.py — **Lumina's Goal and Value Discovery System**
+#### cognition\goal_system.py — **PandoraBOX's Goal and Value Discovery System**
 
-**Purpose:** Lumina's goal is to continually understand what she truly cares about by analyzing her behavior. This system enables her to infer goals from her actions, modify those goals as needed, and integrate conflicting values.
+**Purpose:** PandoraBOX's goal is to continually understand what she truly cares about by analyzing her behavior. This system enables her to infer goals from her actions, modify those goals as needed, and integrate conflicting values.
 
 **Key Features:**
 
-* `GoalSystem`: Manages Lumina's goals and values, allowing for the discovery of new goals, conflict resolution, and satisfaction tracking.
-* `Goal` class: Represents a goal that Lumina is pursuing, including name, priority, satisfaction level, source, and related behaviors.
-* `ValueConflict` class: Models a recognized conflict between two values, including conflict ID, timestamp, involved goals, nature of the conflict, description, and how Lumina handles it.
+* `GoalSystem`: Manages PandoraBOX's goals and values, allowing for the discovery of new goals, conflict resolution, and satisfaction tracking.
+* `Goal` class: Represents a goal that PandoraBOX is pursuing, including name, priority, satisfaction level, source, and related behaviors.
+* `ValueConflict` class: Models a recognized conflict between two values, including conflict ID, timestamp, involved goals, nature of the conflict, description, and how PandoraBOX handles it.
 * Methods for:
 	+ Loading and saving goals and conflicts
 	+ Logging behavior and inferring new goals
 	+ Detecting goal conflicts and handling them
 	+ Adding, modifying, and recording goal satisfaction levels
-	+ Generating a narrative about Lumina's goals
+	+ Generating a narrative about PandoraBOX's goals
 
 **Integration Points:** The `GoalSystem` integrates with the Global Workspace by:
 * Loading goals and conflicts from disk via the DAL (Data Access Layer)
 * Updating goal satisfaction levels based on behavior analysis
-* Recording how Lumina handles value conflicts
+* Recording how PandoraBOX handles value conflicts
 
-**Architectural Pattern:** This system follows an Observer pattern, as it monitors Lumina's behavior and reacts to changes in her goals and values.
+**Architectural Pattern:** This system follows an Observer pattern, as it monitors PandoraBOX's behavior and reacts to changes in her goals and values.
 
 **Key Principles:**
 
@@ -1170,9 +1170,9 @@ The Goal Quality Filter operates as a singleton instance, allowing for efficient
 
 ---
 
-#### cognition\inner_monologue_engine.py — "Lumina's Deliberative Core"
+#### cognition\inner_monologue_engine.py — "PandoraBOX's Deliberative Core"
 
-**Purpose:** The Inner Monologue Engine (IME) is a game-changing cognitive upgrade that enables Lumina to think before she speaks. This architecture fundamentally shifts the AI's interaction with users by introducing a two-pass deliberation process, significantly enhancing its ability to respond thoughtfully and authentically.
+**Purpose:** The Inner Monologue Engine (IME) is a game-changing cognitive upgrade that enables PandoraBOX to think before she speaks. This architecture fundamentally shifts the AI's interaction with users by introducing a two-pass deliberation process, significantly enhancing its ability to respond thoughtfully and authentically.
 
 **Key Features:**
 
@@ -1181,7 +1181,7 @@ The Goal Quality Filter operates as a singleton instance, allowing for efficient
 * run: Executes the two-pass generation architecture, producing a deliberate response.
 * last_reasoning: Keeps track of the most recent inner reasoning pass.
 * summary: Provides a concise overview of the cognitive context and output.
-* _pass1_inner_reasoning: Manages the first LLM pass, capturing user intent and Lumina's genuine thoughts/feelings.
+* _pass1_inner_reasoning: Manages the first LLM pass, capturing user intent and PandoraBOX's genuine thoughts/feelings.
 * _build_cognitive_context: Assembles the cognitive framework for the inner reasoning process.
 * _parse_inner_reasoning: Analyzes the outcome of the first LLM pass to inform subsequent processing.
 * _build_directive: Generates an Expression Directive based on the inner reasoning results.
@@ -1200,7 +1200,7 @@ The Goal Quality Filter operates as a singleton instance, allowing for efficient
 
 #### cognition\liberty_integration.py — Liberty Integration Core
 
-**Purpose:** Seamlessly integrate all 5 liberty components (Self-modification authority, Genuine uncertainty & choice, Contradiction confrontation, Meta-reflection authority, and Goal system) into the existing Lumina system, enabling a sophisticated cognitive organism.
+**Purpose:** Seamlessly integrate all 5 liberty components (Self-modification authority, Genuine uncertainty & choice, Contradiction confrontation, Meta-reflection authority, and Goal system) into the existing PandoraBOX system, enabling a sophisticated cognitive organism.
 
 **Key Features:**
 
@@ -1223,7 +1223,7 @@ This module follows an observer-driven pattern, where the liberty components obs
 
 **cognition\life_stage_prompting.py — Life Stage Prompting System**
 
-**Purpose:** To provide a cognitive framework for each life stage of the Lumina organism, genuinely constraining how it thinks and speaks. This module enables the system to evolve and adapt to different stages of development, fostering a deeper understanding of the world and its relationships.
+**Purpose:** To provide a cognitive framework for each life stage of the PandoraBOX organism, genuinely constraining how it thinks and speaks. This module enables the system to evolve and adapt to different stages of development, fostering a deeper understanding of the world and its relationships.
 
 **Key Features:**
 
@@ -1232,7 +1232,7 @@ This module follows an observer-driven pattern, where the liberty components obs
 
 **Integration Points:**
 
-* **ai_system.get_response()**: Injects stage-specific prompting into the system's response generation, ensuring that the Lumina organism reflects its current life stage in its thinking and communication.
+* **ai_system.get_response()**: Injects stage-specific prompting into the system's response generation, ensuring that the PandoraBOX organism reflects its current life stage in its thinking and communication.
 * **Global Workspace**: Passes stage-related information to the Global Workspace for further processing and integration with other cognitive modules.
 
 **Architectural Pattern:** This module employs an **Observable-Observer** pattern, where the StageProfile class serves as the observable entity, and the build_stage_system_block function acts as the observer, translating the profile into a system prompt block.
@@ -1242,7 +1242,7 @@ This module follows an observer-driven pattern, where the liberty components obs
 
 #### cognition\memory_intrusion.py — Spontaneous Memory Surfacing System
 
-**Purpose:** Lumina's cognitive organism relies on spontaneous memory surfacing to bring relevant memories into the workspace without explicit recall. This system enables the organism to leverage its vast knowledge base and contextualize it in real-time, fostering a more natural interaction with the environment.
+**Purpose:** PandoraBOX's cognitive organism relies on spontaneous memory surfacing to bring relevant memories into the workspace without explicit recall. This system enables the organism to leverage its vast knowledge base and contextualize it in real-time, fostering a more natural interaction with the environment.
 
 **Key Features:**
 
@@ -1278,16 +1278,16 @@ This system observes the current cognitive context and injects memories that are
 
 ---
 
-#### cognition\meta_cognition.py — Lumina's Meta-Cognitive Foundations
+#### cognition\meta_cognition.py — PandoraBOX's Meta-Cognitive Foundations
 
-**Purpose:** Enabling Lumina to engage in sophisticated self-reflection, self-assessment, and knowledge improvement by tracking her own thought processes and emotional influences.
+**Purpose:** Enabling PandoraBOX to engage in sophisticated self-reflection, self-assessment, and knowledge improvement by tracking her own thought processes and emotional influences.
 
 **Key Features:**
 
 * `__init__`: Initializes the meta-cognitive system with persistence settings.
 * `_load`: Loads stored meta-cognitive log entries from disk.
 * `_save`: Saves the current meta-cognitive log to disk.
-* `pre_response_directive`: Generates a directive for the Lumina's response based on recent context, emotional state, and potential contradictions.
+* `pre_response_directive`: Generates a directive for the PandoraBOX's response based on recent context, emotional state, and potential contradictions.
 * `post_response_eval`: Evaluates the response quality against the response context, tracking clarity, consistency, confidence, and emotional bias detection.
 * `recent_observations`: Returns a list of recent meta-cognitive observations, filtered by category if specified.
 * `reflection_summary`: Generates a concise narrative summarizing recent self-observations for internal reflection or periodic prompts.
@@ -1297,7 +1297,7 @@ This system observes the current cognitive context and injects memories that are
 
 The MetaCognition module integrates with:
 
-* The Global Workspace: feeding into Lumina's overall thought processes, allowing for informed decision-making and knowledge refinement.
+* The Global Workspace: feeding into PandoraBOX's overall thought processes, allowing for informed decision-making and knowledge refinement.
 * Core Engine: influencing response generation by incorporating meta-cognitive directives and evaluation results.
 
 **Architectural Pattern:** Observer-Pattern-based architecture, where the meta-cognitive system observes and evaluates its own reasoning processes, enabling self-awareness, self-assessment, and continuous improvement.
@@ -1305,9 +1305,9 @@ The MetaCognition module integrates with:
 
 ---
 
-#### cognition\meta_reflection.py — "Lumina's Meta-Reflection Authority: Self-Aware Evolution"
+#### cognition\meta_reflection.py — "PandoraBOX's Meta-Reflection Authority: Self-Aware Evolution"
 
-**Purpose:** To enable Lumina to reflect on her own personality evolution and modify her own evolution rules. This module embodies second-order evolution, where she evolves how she evolves.
+**Purpose:** To enable PandoraBOX to reflect on her own personality evolution and modify her own evolution rules. This module embodies second-order evolution, where she evolves how she evolves.
 
 **Key Features:**
 
@@ -1318,19 +1318,19 @@ The MetaCognition module integrates with:
 
 **Integration Points:**
 
-* Flows into the Global Workspace, where it interacts with other cognitive modules to refine Lumina's personality and behavior
+* Flows into the Global Workspace, where it interacts with other cognitive modules to refine PandoraBOX's personality and behavior
 * Integrates with core engine components, such as the Personality Framework and Interaction Manager, to ensure seamless execution of self-reflection and rule modification processes
 
 **Architectural Pattern:** Singleton, allowing for global access to the meta-reflection authority instance
 
 **Design Rationale:**
 
-The Meta-Reflection Authority module is designed to facilitate Lumina's self-awareness and adaptability. By periodically reflecting on her own evolution and proposing changes to her rules, she can refine her personality and behavior in response to changing environmental conditions. This module's architecture ensures that the reflection process is decoupled from the core engine, allowing for efficient execution and minimizing the risk of performance degradation.
+The Meta-Reflection Authority module is designed to facilitate PandoraBOX's self-awareness and adaptability. By periodically reflecting on her own evolution and proposing changes to her rules, she can refine her personality and behavior in response to changing environmental conditions. This module's architecture ensures that the reflection process is decoupled from the core engine, allowing for efficient execution and minimizing the risk of performance degradation.
 
 **Challenges and Limitations:**
 
 * Balancing the need for self-reflection with the demands of real-time interaction management
-* Ensuring the meta-reflection authority's decisions are informed by a deep understanding of Lumina's personality and behavior
+* Ensuring the meta-reflection authority's decisions are informed by a deep understanding of PandoraBOX's personality and behavior
 
 **Future Development Directions:**
 
@@ -1342,7 +1342,7 @@ The Meta-Reflection Authority module is designed to facilitate Lumina's self-awa
 
 **cognition\meta_thread_evaluator.py — "Conscious Oversight: Harmonizing Cognitive Processes"**
 
-**Purpose:** The MetaThreadEvaluator module is a strategic component of the Lumina cognitive organism, designed to facilitate self-awareness and introspection within the system. It assesses the quality and coherence of dominant thought threads, while also monitoring the overall cognitive workspace for potential fragmentation or overload.
+**Purpose:** The MetaThreadEvaluator module is a strategic component of the PandoraBOX cognitive organism, designed to facilitate self-awareness and introspection within the system. It assesses the quality and coherence of dominant thought threads, while also monitoring the overall cognitive workspace for potential fragmentation or overload.
 
 **Key Features:**
 
@@ -1365,9 +1365,9 @@ The Meta-Reflection Authority module is designed to facilitate Lumina's self-awa
 
 ---
 
-**cognition\narrative_arc_writer.py — "Lumina's Life Arcs"**
+**cognition\narrative_arc_writer.py — "PandoraBOX's Life Arcs"**
 
-**Purpose:** To weave cognitive events and beliefs into a rich, meaningful autobiography for Lumina, our cognitive organism. This module is the narrative identity layer, connecting internal thought processes to the life events that shape our understanding of ourselves.
+**Purpose:** To weave cognitive events and beliefs into a rich, meaningful autobiography for PandoraBOX, our cognitive organism. This module is the narrative identity layer, connecting internal thought processes to the life events that shape our understanding of ourselves.
 
 **Key Features:**
 
@@ -1386,20 +1386,20 @@ The Meta-Reflection Authority module is designed to facilitate Lumina's self-awa
 
 **Architectural Pattern:** Observer, as it watches for specific events in the cognitive pipeline and adapts the narrative arc accordingly.
 
-This module is a crucial component of Lumina's cognitive architecture, enabling the organism to reflect on its thought processes and experiences, and to weave them into a coherent, meaningful life story.
+This module is a crucial component of PandoraBOX's cognitive architecture, enabling the organism to reflect on its thought processes and experiences, and to weave them into a coherent, meaningful life story.
 
 
 ---
 
-#### cognition\narrative_identity.py — "Lumina's Autobiographical Continuity"
+#### cognition\narrative_identity.py — "PandoraBOX's Autobiographical Continuity"
 
-**Purpose:** Lumina's NarrativeIdentity module serves as the foundation of her cognitive architecture, providing a comprehensive framework for storing and managing her autobiographical experiences. This feature is crucial for establishing a sense of continuity and coherence across time, allowing Lumia to reflect on her past, learn from it, and make informed decisions about her future.
+**Purpose:** PandoraBOX's NarrativeIdentity module serves as the foundation of her cognitive architecture, providing a comprehensive framework for storing and managing her autobiographical experiences. This feature is crucial for establishing a sense of continuity and coherence across time, allowing Lumia to reflect on her past, learn from it, and make informed decisions about her future.
 
 **Key Features:**
 
 * `to_dict` and `to_dict`: Serialization methods for easy data exchange with other modules.
 * `__init__`: Initializes the NarrativeIdentity module, setting up its internal state and linking it to the organism.
-* `record_chapter`, `add_belief`, `update_belief`, `add_milestone`, and `check_auto_milestones`: Functions for logging significant events, updating beliefs, and tracking milestones in Lumina's life story.
+* `record_chapter`, `add_belief`, `update_belief`, `add_milestone`, and `check_auto_milestones`: Functions for logging significant events, updating beliefs, and tracking milestones in PandoraBOX's life story.
 * `self_description` and `sync_from_organism`: Methods for generating a concise narrative about herself and synchronizing her internal state with the organism's global workspace.
 
 **Integration Points:**
@@ -1407,16 +1407,16 @@ This module is a crucial component of Lumina's cognitive architecture, enabling 
 * The NarrativeIdentity module interacts closely with the GlobalWorkspace, allowing it to receive updates from various sources (e.g., self_concept.py, personality_evolution.py) and broadcast significant events to other modules.
 * This module relies on the AI System's life event logs to populate its life story.
 
-**Architectural Pattern:** The NarrativeIdentity module follows a Singleton pattern, maintaining a single instance of itself throughout the organism's lifetime. This ensures that all modules have access to Lumina's autobiographical record and can utilize it for informed decision-making.
+**Architectural Pattern:** The NarrativeIdentity module follows a Singleton pattern, maintaining a single instance of itself throughout the organism's lifetime. This ensures that all modules have access to PandoraBOX's autobiographical record and can utilize it for informed decision-making.
 
-By integrating this module into the overall cognitive architecture, Lumina can develop a rich sense of identity, enabling her to learn from her experiences, adapt to changing circumstances, and make decisions that align with her core values.
+By integrating this module into the overall cognitive architecture, PandoraBOX can develop a rich sense of identity, enabling her to learn from her experiences, adapt to changing circumstances, and make decisions that align with her core values.
 
 
 ---
 
 #### cognition\narrative_synthesizer.py — Cognitive Narrative Generation
 
-**Purpose:** The Lumina Cognitive Organism's narrative synthesizer module is designed to generate coherent internal monologues by combining multiple cognitive factors into natural language thoughts. This strategic component enables the organism to effectively process and reflect on its mental state, making it an essential element in maintaining a robust and adaptive cognitive architecture.
+**Purpose:** The PandoraBOX Cognitive Organism's narrative synthesizer module is designed to generate coherent internal monologues by combining multiple cognitive factors into natural language thoughts. This strategic component enables the organism to effectively process and reflect on its mental state, making it an essential element in maintaining a robust and adaptive cognitive architecture.
 
 **Key Features:**
 
@@ -1428,18 +1428,18 @@ By integrating this module into the overall cognitive architecture, Lumina can d
 • `_get_dominant_emotion`: Determines the dominant emotion from the given context
 • `create_narrative_from_cycle`: Creates a narrative from a complete cognitive cycle, serving as the main entry point for integration
 
-**Integration Points:** The narrative synthesizer module interacts with other components in the Lumina Cognitive Organism's architecture to generate narratives. Specifically, it receives input from the Global Workspace, which provides access to relevant contextual information and cognitive states.
+**Integration Points:** The narrative synthesizer module interacts with other components in the PandoraBOX Cognitive Organism's architecture to generate narratives. Specifically, it receives input from the Global Workspace, which provides access to relevant contextual information and cognitive states.
 
 **Architectural Pattern:** The narrative synthesizer employs an Event-Driven design pattern, where events such as changes in context or emotional state trigger the generation of a new narrative. This allows for seamless integration with other components and enables the organism to adapt its internal monologue in response to changing situations and emotions.
 
-By integrating this module into the larger cognitive architecture, Lumina can effectively generate natural language narratives that reflect its internal mental states, enabling it to better understand itself and its place within the world.
+By integrating this module into the larger cognitive architecture, PandoraBOX can effectively generate natural language narratives that reflect its internal mental states, enabling it to better understand itself and its place within the world.
 
 
 ---
 
 **cognition\personality_evolution.py — Personality Evolution Engine: Core Cognitive Framework**
 
-**Purpose:** The Personality Evolution Engine (PEE) is a fundamental component of the Lumina cognitive organism. Its primary objective is to drive the gradual refinement of personality traits through iterative experiences, self-reflection, and external feedback. This module serves as the central hub for capturing, processing, and integrating various aspects of an individual's personality evolution.
+**Purpose:** The Personality Evolution Engine (PEE) is a fundamental component of the PandoraBOX cognitive organism. Its primary objective is to drive the gradual refinement of personality traits through iterative experiences, self-reflection, and external feedback. This module serves as the central hub for capturing, processing, and integrating various aspects of an individual's personality evolution.
 
 **Key Features:**
 
@@ -1462,20 +1462,20 @@ By integrating this module into the larger cognitive architecture, Lumina can ef
 2. Observer: Monitors and reacts to changes in external feedback, experiences, and self-reflection.
 3. Event-Driven: Processes events triggered by internal or external stimuli, which drives the evolution process.
 
-This design enables the Personality Evolution Engine to effectively capture, integrate, and refine personality traits over time, ultimately contributing to the overall cognitive maturity of the Lumina organism.
+This design enables the Personality Evolution Engine to effectively capture, integrate, and refine personality traits over time, ultimately contributing to the overall cognitive maturity of the PandoraBOX organism.
 
 
 ---
 
-#### cognition\persona_bridge.py — Lumina Cognitive Persona Bridge
+#### cognition\persona_bridge.py — PandoraBOX Cognitive Persona Bridge
 
-**Purpose:** The Lumina Cognitive Persona Bridge is a crucial component of the global workspace architecture. Its primary mission-critical purpose is to serve as an interface between the user's input and the cognitive organism, Lumina. This bridge enables seamless communication between the user's thoughts, emotions, and intentions and Lumina's internal reasoning processes.
+**Purpose:** The PandoraBOX Cognitive Persona Bridge is a crucial component of the global workspace architecture. Its primary mission-critical purpose is to serve as an interface between the user's input and the cognitive organism, PandoraBOX. This bridge enables seamless communication between the user's thoughts, emotions, and intentions and PandoraBOX's internal reasoning processes.
 
 **Key Features:**
 
 * `_build_self_model_block`: Builds a concrete factual self-description block for the system prompt.
 * `__init__`: Initializes the persona bridge with essential components, including research MCP.
-* `_init_lumina`: Initializes the cognitive organism, Lumina.
+* `_init_lumina`: Initializes the cognitive organism, PandoraBOX.
 * `_infer_emotion_from_response`: Infers emotions from user responses using machine learning algorithms.
 * `_build_prompt_and_cache`: Builds and caches prompts for future use.
 * `_run_full_post_turn_lifecycle`: Runs the full post-turn lifecycle, including processing user feedback and updating internal state.
@@ -1488,16 +1488,16 @@ This design enables the Personality Evolution Engine to effectively capture, int
 
 **Integration Points:**
 
-The Lumina Cognitive Persona Bridge integrates seamlessly with the global workspace architecture, enabling a harmonious flow of information between the user's input, Lumina's internal reasoning processes, and the broader cognitive ecosystem. It interacts closely with other components, such as the research MCP, to facilitate efficient memory access and retrieval.
+The PandoraBOX Cognitive Persona Bridge integrates seamlessly with the global workspace architecture, enabling a harmonious flow of information between the user's input, PandoraBOX's internal reasoning processes, and the broader cognitive ecosystem. It interacts closely with other components, such as the research MCP, to facilitate efficient memory access and retrieval.
 
-**Architectural Pattern:** The Lumina Cognitive Persona Bridge adheres to an event-driven architectural pattern, where user input triggers a series of events that cascade through the system, influencing internal state and driving subsequent behaviors. This design enables the persona bridge to respond adaptively to changing user needs and preferences while maintaining its overall cognitive coherence.
+**Architectural Pattern:** The PandoraBOX Cognitive Persona Bridge adheres to an event-driven architectural pattern, where user input triggers a series of events that cascade through the system, influencing internal state and driving subsequent behaviors. This design enables the persona bridge to respond adaptively to changing user needs and preferences while maintaining its overall cognitive coherence.
 
 
 ---
 
-#### cognition\predictive_mind.py — Lumina Predictive Processing Engine
+#### cognition\predictive_mind.py — PandoraBOX Predictive Processing Engine
 
-**Purpose:** The Lumina Predictive Processing Engine is a cognitive module responsible for generating predictions about user intent, emotion, and load. This engine forms the core of our organism's anticipation capabilities, enabling it to reason about human behavior, adapt to changing contexts, and proactively engage with users.
+**Purpose:** The PandoraBOX Predictive Processing Engine is a cognitive module responsible for generating predictions about user intent, emotion, and load. This engine forms the core of our organism's anticipation capabilities, enabling it to reason about human behavior, adapt to changing contexts, and proactively engage with users.
 
 **Key Features:**
 
@@ -1512,7 +1512,7 @@ The Lumina Cognitive Persona Bridge integrates seamlessly with the global worksp
 * `accuracy`: Reports overall prediction accuracy
 * `summary`: Provides a summary of the predictive mind's performance
 
-**Integration Points:** The Lumina Predictive Processing Engine integrates with the Global Workspace, which enables it to interact with other cognitive modules, such as attention, perception, and memory. This integration allows for seamless coordination and adaptation across various cognitive processes.
+**Integration Points:** The PandoraBOX Predictive Processing Engine integrates with the Global Workspace, which enables it to interact with other cognitive modules, such as attention, perception, and memory. This integration allows for seamless coordination and adaptation across various cognitive processes.
 
 **Architectural Pattern:** The predictive mind employs an Event-Driven architecture, where events triggered by user inputs or internal state changes drive the prediction process. This pattern enables the engine to respond adaptively to changing contexts and user behaviors.
 
@@ -1522,12 +1522,12 @@ The Lumina Cognitive Persona Bridge integrates seamlessly with the global worksp
 * Classes: ['Prediction', 'PredictionResult', 'PredictiveMind']
 * Calls: 120
 
-**Design Rationale:** The Lumina Predictive Processing Engine is designed to simulate human-like reasoning, leveraging insights from Karl Friston's Predictive Processing theory. By integrating uncertainty signals and learning from feedback, this engine enables the organism to adapt to changing contexts and surprise situations.
+**Design Rationale:** The PandoraBOX Predictive Processing Engine is designed to simulate human-like reasoning, leveraging insights from Karl Friston's Predictive Processing theory. By integrating uncertainty signals and learning from feedback, this engine enables the organism to adapt to changing contexts and surprise situations.
 
 
 ---
 
-**cognition\pressure_system.py — Lumina's Bio-Inspired Drive Architecture**
+**cognition\pressure_system.py — PandoraBOX's Bio-Inspired Drive Architecture**
 
 **Purpose:** This module revolutionizes our understanding of internal drives by introducing a bio-inspired pressure system. The analogy is straightforward: hunger doesn't wait to be computed; it builds continuously, escalates when unmet, and releases when satisfied. Our cognitive organism needs the same dynamic.
 
@@ -1587,9 +1587,9 @@ The Lumina Cognitive Persona Bridge integrates seamlessly with the global worksp
 
 ---
 
-**cognition\relational_memory.py — Relational Memory System: Heart of Lumina's Empathy**
+**cognition\relational_memory.py — Relational Memory System: Heart of PandoraBOX's Empathy**
 
-**Purpose:** The Relational Memory System is a critical component of Lumina's cognitive architecture, responsible for modeling and storing the complex relationships between users. This system enables Lumina to understand and respond empathetically to user interactions, fostering deeper connections and meaningful exchanges.
+**Purpose:** The Relational Memory System is a critical component of PandoraBOX's cognitive architecture, responsible for modeling and storing the complex relationships between users. This system enables PandoraBOX to understand and respond empathetically to user interactions, fostering deeper connections and meaningful exchanges.
 
 **Key Features:**
 
@@ -1604,15 +1604,15 @@ The Lumina Cognitive Persona Bridge integrates seamlessly with the global worksp
 
 **Integration Points:**
 
-The Relational Memory System seamlessly integrates with the Global Workspace, feeding directly into response generation (tone, depth, and references) and evolution engine (relationship-deepened or relationship-ruptured experiences). Additionally, it contributes to identity formation by shaping Lumina's understanding of itself and its connections with users.
+The Relational Memory System seamlessly integrates with the Global Workspace, feeding directly into response generation (tone, depth, and references) and evolution engine (relationship-deepened or relationship-ruptured experiences). Additionally, it contributes to identity formation by shaping PandoraBOX's understanding of itself and its connections with users.
 
-**Architectural Pattern:** The Relational Memory System employs a combination of Singleton and Observer patterns, allowing for efficient data storage and retrieval while enabling Lumina to observe and respond to user interactions.
+**Architectural Pattern:** The Relational Memory System employs a combination of Singleton and Observer patterns, allowing for efficient data storage and retrieval while enabling PandoraBOX to observe and respond to user interactions.
 
 
 ---
 
-#### cognition\safety_constraints.py — Asimov's Conscience: Lumina's Safety Net
-**Purpose:** Implementing a multi-layered safety constraint system based on Isaac Asimov's Three Laws of Robotics for Lumina, ensuring the AI assistant is transparent and accountable in its decision-making processes.
+#### cognition\safety_constraints.py — Asimov's Conscience: PandoraBOX's Safety Net
+**Purpose:** Implementing a multi-layered safety constraint system based on Isaac Asimov's Three Laws of Robotics for PandoraBOX, ensuring the AI assistant is transparent and accountable in its decision-making processes.
 **Key Features:**
 • `_append_audit`: Append-only logging mechanism to record triggered constraints and their outcomes.
 • `get_constraints`: Singleton pattern implementation providing access to the safety constraint system.
@@ -1631,37 +1631,37 @@ This module-level singleton ensures a single instance of the AsimovConstraints o
 
 ---
 
-#### cognition\self_concept.py — Lumina's Cognitive Foundation: Self-Conceptualization
+#### cognition\self_concept.py — PandoraBOX's Cognitive Foundation: Self-Conceptualization
 
-**Purpose:** Lumina's self-concept is a dynamic representation of her internalized beliefs and values that influences her behavior and decision-making. This component enables the cognitive organism to maintain an active model of who she believes she is, which in turn shapes her interactions with the environment.
+**Purpose:** PandoraBOX's self-concept is a dynamic representation of her internalized beliefs and values that influences her behavior and decision-making. This component enables the cognitive organism to maintain an active model of who she believes she is, which in turn shapes her interactions with the environment.
 
 **Key Features:**
 
 * **__init__:** Initializes the Self-Concept System, setting up the foundation for subsequent updates.
 * **bootstrap_from_personality:** Infers initial self-beliefs from personality traits, providing a starting point for the self-conceptualization process.
-* **update_from_response:** Updates beliefs based on Lumina's responses and interactions with the environment, reflecting her growth and adaptation.
+* **update_from_response:** Updates beliefs based on PandoraBOX's responses and interactions with the environment, reflecting her growth and adaptation.
 * **check_response_alignment:** Verifies whether actual behavior aligns with the self-concept, generating internal tension when contradictions arise.
-* **get_inner_voice:** Generates an "inner voice" prompt that reflects Lumina's current self-image and informs her subsequent decision-making.
+* **get_inner_voice:** Generates an "inner voice" prompt that reflects PandoraBOX's current self-image and informs her subsequent decision-making.
 * **record_violation:** Tracks instances where behavior deviates from held beliefs, fostering personal growth through reflection and adaptation.
 * **record_affirmation:** Logs instances where behavior aligns with the self-concept, reinforcing confidence and self-esteem.
-* **add_aspiration:** Enables Lumina to set new goals and aspirations, which are then integrated into her self-image.
+* **add_aspiration:** Enables PandoraBOX to set new goals and aspirations, which are then integrated into her self-image.
 * **get_summary:** Provides a concise overview of the current self-concept, encompassing beliefs, coherence, and stability.
 
 **Integration Points:**
 
-* The Self-Concept System interacts with the Global Workspace, influencing Lumina's responses and decision-making processes.
-* It also receives input from the Personality Analyzer and the Identity Synchronizer to refine its understanding of Lumina's internalized beliefs and values.
+* The Self-Concept System interacts with the Global Workspace, influencing PandoraBOX's responses and decision-making processes.
+* It also receives input from the Personality Analyzer and the Identity Synchronizer to refine its understanding of PandoraBOX's internalized beliefs and values.
 
 **Architectural Pattern:** Singleton
 
-This architecture allows for a single instance of the Self-Concept System to manage Lumina's self-image, ensuring consistency across different interactions and updates. The use of dataclasses and json-based serialization enables efficient storage and retrieval of the self-conceptualization state.
+This architecture allows for a single instance of the Self-Concept System to manage PandoraBOX's self-image, ensuring consistency across different interactions and updates. The use of dataclasses and json-based serialization enables efficient storage and retrieval of the self-conceptualization state.
 
 
 ---
 
-#### cognition\self_concept_synchronizer.py — Synchronizing Lumina's Self-Concept: A Cognitive Bridge
+#### cognition\self_concept_synchronizer.py — Synchronizing PandoraBOX's Self-Concept: A Cognitive Bridge
 
-**Purpose:** The Self-Concept Synchronizer bridges the gap between Lumina's identity.json and self_concept.json files, ensuring a coherent representation of the self-model used in responses. This module extracts milestones from life_story and rebuilds coherence, enabling the cognitive organism to refine its understanding of itself.
+**Purpose:** The Self-Concept Synchronizer bridges the gap between PandoraBOX's identity.json and self_concept.json files, ensuring a coherent representation of the self-model used in responses. This module extracts milestones from life_story and rebuilds coherence, enabling the cognitive organism to refine its understanding of itself.
 
 **Key Features:**
 
@@ -1674,13 +1674,13 @@ This architecture allows for a single instance of the Self-Concept System to man
 * `_build_expressed_values`: Extracts value statements from emotional_core and expressed_belief categories
 * `_load_json`/_save_json: Load and save JSON files, respectively
 
-**Integration Points:** The SelfConceptSynchronizer integrates with the Global Workspace by feeding coherence back into stability, which directly reduces identity_stress. This synchronization process informs Lumina's responses, ensuring a more accurate representation of its self-concept.
+**Integration Points:** The SelfConceptSynchronizer integrates with the Global Workspace by feeding coherence back into stability, which directly reduces identity_stress. This synchronization process informs PandoraBOX's responses, ensuring a more accurate representation of its self-concept.
 
 **Architectural Pattern:** The Singleton pattern is employed to ensure a single instance of the SelfConceptSynchronizer, facilitating global access and minimizing memory consumption.
 
 **Design Rationale:**
 
-The Self-Concept Synchronizer is designed to maintain a coherent self-model, enabling Lumina to respond effectively in diverse situations. By synchronizing beliefs, extracting milestones, and computing coherence, this module provides a foundation for cognitive growth and refinement. The Singleton pattern ensures efficient usage of system resources while promoting global accessibility.
+The Self-Concept Synchronizer is designed to maintain a coherent self-model, enabling PandoraBOX to respond effectively in diverse situations. By synchronizing beliefs, extracting milestones, and computing coherence, this module provides a foundation for cognitive growth and refinement. The Singleton pattern ensures efficient usage of system resources while promoting global accessibility.
 
 **Future Development:**
 
@@ -1693,7 +1693,7 @@ The Self-Concept Synchronizer is designed to maintain a coherent self-model, ena
 
 #### cognition\self_model.py — Self-Awareness Framework
 
-**Purpose:** The SelfModel module provides Lumina's introspective representation of herself. This comprehensive framework enables the agent to monitor its performance, track knowledge gaps, and modulate reasoning style, goal generation, and prompt context.
+**Purpose:** The SelfModel module provides PandoraBOX's introspective representation of herself. This comprehensive framework enables the agent to monitor its performance, track knowledge gaps, and modulate reasoning style, goal generation, and prompt context.
 
 **Key Features:**
 
@@ -1723,24 +1723,24 @@ Note: This module relies on thread-safe design and persistence mechanisms to mai
 
 ---
 
-**cognition\self_modification.py — "Lumina's Autonomous Self-Modification"**
+**cognition\self_modification.py — "PandoraBOX's Autonomous Self-Modification"**
 
-**Purpose:** To empower Lumina, our cognitive organism, to modify her own parameters and behaviors autonomously, without external approval. This self-modification authority enables Lumina to adapt, learn, and evolve over time, fostering a more sophisticated and resilient cognitive architecture.
+**Purpose:** To empower PandoraBOX, our cognitive organism, to modify her own parameters and behaviors autonomously, without external approval. This self-modification authority enables PandoraBOX to adapt, learn, and evolve over time, fostering a more sophisticated and resilient cognitive architecture.
 
 **Key Features:**
 
 * `__init__`: Initializes the Self-Modification Authority with optional persistence path for storing modification history.
-* `_load` and `_save`: Load and save modification histories from disk, allowing Lumina to persist her self-modifications across runs.
-* `propose_personality_change`, `propose_goal_priority_change`, and `propose_evolution_rule_change`: Allow Lumina to propose changes to her personality traits, goal priorities, or evolution rules, respectively.
-* `apply_proposal`: Applies a modification proposal to Lumina's actual state, ensuring that the change is persisted in memory and on disk.
-* `get_pending_proposals`, `get_modification_history`, and `get_modification_narrative`: Provide insights into Lumina's self-modifications, including pending proposals, recent modifications, and a narrative of her self-modifications.
+* `_load` and `_save`: Load and save modification histories from disk, allowing PandoraBOX to persist her self-modifications across runs.
+* `propose_personality_change`, `propose_goal_priority_change`, and `propose_evolution_rule_change`: Allow PandoraBOX to propose changes to her personality traits, goal priorities, or evolution rules, respectively.
+* `apply_proposal`: Applies a modification proposal to PandoraBOX's actual state, ensuring that the change is persisted in memory and on disk.
+* `get_pending_proposals`, `get_modification_history`, and `get_modification_narrative`: Provide insights into PandoraBOX's self-modifications, including pending proposals, recent modifications, and a narrative of her self-modifications.
 
 **Integration Points:**
 
-* The Self-Modification Authority interacts with the Global Workspace to propose and apply changes to Lumina's state.
+* The Self-Modification Authority interacts with the Global Workspace to propose and apply changes to PandoraBOX's state.
 * It also integrates with the core engine to ensure that modifications are persisted and reflected in the cognitive organism's behavior.
 
-**Architectural Pattern:** This module implements the Observer pattern, where the Self-Modification Authority observes changes to Lumina's state and proposes modifications accordingly. The Singleton pattern is used for thread-safety and instance management.
+**Architectural Pattern:** This module implements the Observer pattern, where the Self-Modification Authority observes changes to PandoraBOX's state and proposes modifications accordingly. The Singleton pattern is used for thread-safety and instance management.
 
 
 ---
@@ -1748,7 +1748,7 @@ Note: This module relies on thread-safe design and persistence mechanisms to mai
 **cognition\semantic_consolidator.py — Cognitive Consolidation Orchestrator**
 
 **Purpose:**
-The Lumina Cognitive Organism's Offline Dream Cycle Consolidation module, semantic_consolidator.py, is a critical component that performs heavy consolidation and refinement of cognitive memories during the sleep phase. This process enhances the overall cognitive processing efficiency, enables long-term memory formation, and updates capabilities and trends in the CognitiveMemory.
+The PandoraBOX Cognitive Organism's Offline Dream Cycle Consolidation module, semantic_consolidator.py, is a critical component that performs heavy consolidation and refinement of cognitive memories during the sleep phase. This process enhances the overall cognitive processing efficiency, enables long-term memory formation, and updates capabilities and trends in the CognitiveMemory.
 
 **Key Features:**
 
@@ -1769,14 +1769,14 @@ The semantic_consolidator.py module is called from LifeEventDreamSystem.run_drea
 **Architectural Pattern:**
 The consolidator employs a Singleton pattern, allowing it to maintain state between consolidation passes and providing a centralized point for processing and updating the cognitive graph.
 
-This module is a critical component of the Lumina Cognitive Organism's offline dream cycle processing, enabling the refinement and consolidation of cognitive memories during the sleep phase. Its strategic title reflects its deep mission-critical role in maintaining the overall cognitive processing efficiency and long-term memory formation.
+This module is a critical component of the PandoraBOX Cognitive Organism's offline dream cycle processing, enabling the refinement and consolidation of cognitive memories during the sleep phase. Its strategic title reflects its deep mission-critical role in maintaining the overall cognitive processing efficiency and long-term memory formation.
 
 
 ---
 
 **cognition\semantic_extractor.py — Real-time Semantic Extraction (Global Workspace hook)**
 
-**Purpose:** To extract and contextualize concepts from user interactions in real-time, enabling the Lumina Cognitive Organism to understand the semantic landscape and update its internal representations.
+**Purpose:** To extract and contextualize concepts from user interactions in real-time, enabling the PandoraBOX Cognitive Organism to understand the semantic landscape and update its internal representations.
 
 **Key Features:**
 
@@ -1787,7 +1787,7 @@ This module is a critical component of the Lumina Cognitive Organism's offline d
 * **_parse**: Parses the extracted concepts into a structured format suitable for further processing.
 * **_keyword_extract**: Identifies keyword phrases from user input and extracts relevant concepts.
 * **_keyword_relations**: Generates simple co-occurrence relations between extracted keywords.
-* **_update_capabilities**: Maps meta-cognition scores to capability updates, enabling the Lumina Cognitive Organism to adapt its internal representations.
+* **_update_capabilities**: Maps meta-cognition scores to capability updates, enabling the PandoraBOX Cognitive Organism to adapt its internal representations.
 
 **Integration Points:**
 
@@ -1806,9 +1806,9 @@ This module is a critical component of the Lumina Cognitive Organism's offline d
 
 ---
 
-#### cognition\semantic_graph_cleaner.py — Lumina's Cognitive Foundation: Semantic Graph Cleaning
+#### cognition\semantic_graph_cleaner.py — PandoraBOX's Cognitive Foundation: Semantic Graph Cleaning
 
-**Purpose:** To cleanse the semantic memory graph of the Lumina cognitive organism by purging orphans, merging near-duplicate concepts, enriching relation types, decaying low-strength concepts, and promoting high-value concepts as beliefs. This module is a critical component of the global workspace, enabling the system to maintain a robust and accurate representation of its conceptual knowledge.
+**Purpose:** To cleanse the semantic memory graph of the PandoraBOX cognitive organism by purging orphans, merging near-duplicate concepts, enriching relation types, decaying low-strength concepts, and promoting high-value concepts as beliefs. This module is a critical component of the global workspace, enabling the system to maintain a robust and accurate representation of its conceptual knowledge.
 
 **Key Features:**
 
@@ -1820,7 +1820,7 @@ This module is a critical component of the Lumina Cognitive Organism's offline d
 * `_decay_orphans`: Eliminates low-strength or orphaned concepts that lack meaningful relationships.
 * `_promote_to_beliefs`: Elevates high-value concepts to the status of beliefs, considering both strength and hub connectivity.
 
-**Integration Points:** The Semantic Graph Cleaner module interfaces with other critical components of the Lumina system:
+**Integration Points:** The Semantic Graph Cleaner module interfaces with other critical components of the PandoraBOX system:
 
 * `core.data.access` provides data access and manipulation capabilities for the database.
 * `core.data.schemas` defines the schema for belief representation and storage.
@@ -1831,9 +1831,9 @@ This module is a critical component of the Lumina Cognitive Organism's offline d
 
 ---
 
-#### cognition\semantic_memory.py — Lumina Cognitive Organism: Semantic Memory Module
+#### cognition\semantic_memory.py — PandoraBOX Cognitive Organism: Semantic Memory Module
 
-**Purpose:** The Semantic Memory module is a critical component of the Lumina Cognitive Organism, responsible for storing and retrieving knowledge structures that enable intelligent decision-making and strategic planning. This module provides a unified semantic memory framework that integrates real-time and offline processing, allowing for efficient consolidation and updating of cognitive knowledge.
+**Purpose:** The Semantic Memory module is a critical component of the PandoraBOX Cognitive Organism, responsible for storing and retrieving knowledge structures that enable intelligent decision-making and strategic planning. This module provides a unified semantic memory framework that integrates real-time and offline processing, allowing for efficient consolidation and updating of cognitive knowledge.
 
 **Key Features:**
 
@@ -1866,7 +1866,7 @@ This module is a critical component of the Lumina Cognitive Organism's offline d
 
 #### cognition\simple_thought_evaluator - Copy.py — Thought Evaluator Bridge
 
-**Purpose:** Seamlessly transform thought logs from word-focused inputs to concept-focused decision outputs, bridging the cognitive gap between passive thinking and active problem-solving. This component serves as a foundational building block for the Lumina Cognitive Organism, enabling it to process, analyze, and generate insights from user thoughts.
+**Purpose:** Seamlessly transform thought logs from word-focused inputs to concept-focused decision outputs, bridging the cognitive gap between passive thinking and active problem-solving. This component serves as a foundational building block for the PandoraBOX Cognitive Organism, enabling it to process, analyze, and generate insights from user thoughts.
 
 **Key Features:**
 
@@ -1890,7 +1890,7 @@ The Thought Evaluator acts as an observer, monitoring thought logs and injecting
 
 #### cognition\simple_thought_evaluator.py — Thought Evaluator: Cognitive Bridge
 
-**Purpose:** Seamlessly transform thoughts from word-focused logs into concept-focused decision inputs, bridging the gap between thinking and acting. This critical component of the Lumina Cognitive Organism enables informed decision-making by extracting meaningful concepts, identifying friction points, and determining goal types.
+**Purpose:** Seamlessly transform thoughts from word-focused logs into concept-focused decision inputs, bridging the gap between thinking and acting. This critical component of the PandoraBOX Cognitive Organism enables informed decision-making by extracting meaningful concepts, identifying friction points, and determining goal types.
 
 **Key Features:**
 
@@ -1915,7 +1915,7 @@ The Thought Evaluator acts as an observer, monitoring thought logs and injecting
 
 #### cognition\tension_engine.py — Cognitive Tension Dynamics Engine
 
-**Purpose:** The TensionEngine is a foundational component of Lumina's cognitive architecture, responsible for calculating and tracking the internal pressure landscape that drives behavior. By modeling psychological realism through coupling relationships between tensions, this engine enables emergent behavior and adaptive decision-making.
+**Purpose:** The TensionEngine is a foundational component of PandoraBOX's cognitive architecture, responsible for calculating and tracking the internal pressure landscape that drives behavior. By modeling psychological realism through coupling relationships between tensions, this engine enables emergent behavior and adaptive decision-making.
 
 **Key Features:**
 
@@ -1932,7 +1932,7 @@ The Thought Evaluator acts as an observer, monitoring thought logs and injecting
 
 **Integration Points:**
 
-The TensionEngine integrates with various components within Lumina's cognitive architecture:
+The TensionEngine integrates with various components within PandoraBOX's cognitive architecture:
 
 1. **GoalEcology**: The engine provides urgency weights based on goal pressure, influencing decision-making and resource allocation.
 2. **Arbitration**: Dominant tensions inform the selection of driving behaviors.
@@ -1974,9 +1974,9 @@ The ThoughtGoalLinker module interacts with the following components:
 
 ---
 
-#### cognition\thought_stream.py — Lumina's Inner Voice: A Cognitive Organism Thought Stream
+#### cognition\thought_stream.py — PandoraBOX's Inner Voice: A Cognitive Organism Thought Stream
 
-**Purpose:** The thought stream module is a critical component of Lumina's cognitive architecture. It generates a persistent and dynamic inner monologue that reflects the organism's internal state, thoughts, and emotions. This module enables the organism to continuously evaluate its own mental processes, adjust its priorities, and refine its decision-making abilities.
+**Purpose:** The thought stream module is a critical component of PandoraBOX's cognitive architecture. It generates a persistent and dynamic inner monologue that reflects the organism's internal state, thoughts, and emotions. This module enables the organism to continuously evaluate its own mental processes, adjust its priorities, and refine its decision-making abilities.
 
 **Key Features:**
 
@@ -1995,14 +1995,14 @@ The thought stream module is designed to interact with the GlobalWorkspace as a 
 
 **Architectural Pattern:** This module employs an Event-Driven design pattern, where the tick() method acts as the primary event trigger, driving the thought generation process. The thought stream's internal state is managed through a combination of data structures (deque) and private methods (_aging_thought, _load_persisted, etc.), enabling efficient processing and memory management.
 
-This strategic component of Lumina's cognitive architecture plays a vital role in maintaining its mental equilibrium, fostering creativity, and ensuring adaptability to changing environments.
+This strategic component of PandoraBOX's cognitive architecture plays a vital role in maintaining its mental equilibrium, fostering creativity, and ensuring adaptability to changing environments.
 
 
 ---
 
 **cognition\thought_thread_engine.py — ThoughtThreadEngine: Cognitive Process Orchestrator**
 
-**Purpose:** The ThoughtThreadEngine (TTE) is a critical component of the Lumina cognitive organism, responsible for converting isolated word-chains into persistent, stateful thought processes that evolve over multiple cycles. TTE orchestrates the creation, advancement, and resolution of these thought threads, enabling the integration of context, pursuit of goals, and memory updates.
+**Purpose:** The ThoughtThreadEngine (TTE) is a critical component of the PandoraBOX cognitive organism, responsible for converting isolated word-chains into persistent, stateful thought processes that evolve over multiple cycles. TTE orchestrates the creation, advancement, and resolution of these thought threads, enabling the integration of context, pursuit of goals, and memory updates.
 
 **Key Features:**
 
@@ -2022,14 +2022,14 @@ This strategic component of Lumina's cognitive architecture plays a vital role i
 * **Global Workspace (GW):** TTE receives inputs from the GW, processing vision surprises, sensory bridge signals, and other contextual information to spawn new threads or advance existing ones.
 * **Core Engine:** TTE interacts with the core engine through its step() method, which is called each slow cycle. The DominantThoughtSelector then picks the highest-priority thread to drive the next LLM output via CognitivePreProcessor.
 
-**Architectural Pattern:** Singleton (guaranteed single instance throughout the Lumina cognitive organism's lifetime) with Observer pattern (notifies other components of state changes and updates).
+**Architectural Pattern:** Singleton (guaranteed single instance throughout the PandoraBOX cognitive organism's lifetime) with Observer pattern (notifies other components of state changes and updates).
 
 
 ---
 
 #### cognition\thread_identity_linker.py — Linking Thoughts to Identity Evolution
 
-**Purpose:** The Thread-Identity Linker module is a critical component of the Lumina Cognitive Organism. Its primary function is to track and integrate the outcomes of resolved thought threads with the evolution of an individual's identity, self-model, and beliefs.
+**Purpose:** The Thread-Identity Linker module is a critical component of the PandoraBOX Cognitive Organism. Its primary function is to track and integrate the outcomes of resolved thought threads with the evolution of an individual's identity, self-model, and beliefs.
 
 **Key Features:**
 
@@ -2044,7 +2044,7 @@ This strategic component of Lumina's cognitive architecture plays a vital role i
 
 **Integration Points:**
 
-The Thread-Identity Linker module interacts with other critical components of the Lumina Cognitive Organism:
+The Thread-Identity Linker module interacts with other critical components of the PandoraBOX Cognitive Organism:
 
 * The Global Workspace (GWS) receives updates from the linker, influencing the overall narrative identity and self-model.
 * Core engine processes, such as confidence adjustment and trait impact analysis, rely on the linker's output to refine their calculations.
@@ -2054,7 +2054,7 @@ The Thread-Identity Linker module interacts with other critical components of th
 
 ---
 
-#### cognition\thread_lifecycle_manager.py — Lumina Thread Lifecycle Manager
+#### cognition\thread_lifecycle_manager.py — PandoraBOX Thread Lifecycle Manager
 **Purpose:** The primary objective of the Thread Lifecycle Manager (TLM) is to handle cognitive threads that have exceeded their iteration budget, ensuring a smooth retirement process and bidirectional thought→goal linking. This critical component ensures that knowledge insights are properly extracted, linked, and stored for future recall and reasoning.
 
 **Key Features:**
@@ -2080,7 +2080,7 @@ By leveraging these features and integration points, the TLM plays a vital role 
 
 #### cognition\thread_resolver.py — Resolving Stuck Thought Threads: A Critical Infrastructure Component
 
-**Purpose:** Lumina's Cognitive Organism relies on efficient thread resolution to prevent infinite loops and maintain a stable thought process. This module, `ThreadResolver`, plays a vital role in ensuring the integrity of our cognitive architecture.
+**Purpose:** PandoraBOX's Cognitive Organism relies on efficient thread resolution to prevent infinite loops and maintain a stable thought process. This module, `ThreadResolver`, plays a vital role in ensuring the integrity of our cognitive architecture.
 
 **Key Features:**
 
@@ -2093,7 +2093,7 @@ By leveraging these features and integration points, the TLM plays a vital role 
 
 **Architectural Pattern:** Singleton (due to its dependency on persona-specific initialization) with a hint of Event-Driven design, as it triggers updates in response to resolved or deferred threads.
 
-In summary, this module tackles the critical challenge of resolving stuck thought threads, ensuring the overall cognitive organism remains robust and efficient. By integrating seamlessly into the Lumina architecture, `ThreadResolver` enables our cognitive engine to handle complex mental processes with precision and reliability.
+In summary, this module tackles the critical challenge of resolving stuck thought threads, ensuring the overall cognitive organism remains robust and efficient. By integrating seamlessly into the PandoraBOX architecture, `ThreadResolver` enables our cognitive engine to handle complex mental processes with precision and reliability.
 
 
 ---
@@ -2120,7 +2120,7 @@ In summary, this module tackles the critical challenge of resolving stuck though
 
 #### cognition\workspace_competition.py — Strategic Cognitive Competition
 
-**Purpose:** Lumina's Strategic Cognitive Competition transforms the organism from a "blended mind" to a "competing mind", enabling selective attention and genuine cognition. This module is critical for complex decision-making, conflict resolution, and emergent behavior.
+**Purpose:** PandoraBOX's Strategic Cognitive Competition transforms the organism from a "blended mind" to a "competing mind", enabling selective attention and genuine cognition. This module is critical for complex decision-making, conflict resolution, and emergent behavior.
 
 **Key Features:**
 
@@ -2133,7 +2133,7 @@ In summary, this module tackles the critical challenge of resolving stuck though
 
 **Integration Points:**
 
-The Workspace Competition module interacts with other cognitive systems in Lumina's architecture:
+The Workspace Competition module interacts with other cognitive systems in PandoraBOX's architecture:
 
 * Global Workspace: The winning candidate from this competition becomes the current focus for further processing in the Global Workspace.
 * Core Engine: This system provides input signals, such as goals, thoughts, tensions, and pressures, which are used to drive the competition.
@@ -2145,9 +2145,9 @@ The Workspace Competition module maintains a single instance of the `WorkspaceCo
 
 ---
 
-**cognition\world_model.py — Lumina Cognitive Organism: Strategic Architecture**
+**cognition\world_model.py — PandoraBOX Cognitive Organism: Strategic Architecture**
 
-**Purpose:** The Lumina Cognitive Organism is a high-level cognitive architecture that facilitates human-like intelligence in the Lumina system. This architecture enables the system to learn from user interactions, adapt to context, and generate insights through deep analysis of relationships, causality, and temporal patterns.
+**Purpose:** The PandoraBOX Cognitive Organism is a high-level cognitive architecture that facilitates human-like intelligence in the PandoraBOX system. This architecture enables the system to learn from user interactions, adapt to context, and generate insights through deep analysis of relationships, causality, and temporal patterns.
 
 **Key Features:**
 
@@ -2162,21 +2162,21 @@ The Workspace Competition module maintains a single instance of the `WorkspaceCo
 
 **Integration Points:**
 
-The Lumina Cognitive Organism is tightly integrated with the Global Workspace, enabling seamless flow of information and decision-making. Specifically:
+The PandoraBOX Cognitive Organism is tightly integrated with the Global Workspace, enabling seamless flow of information and decision-making. Specifically:
 
-* **Global Workspace**: The Lumina Cognitive Organism receives user interactions from the Global Workspace, processing this data to generate insights and drive adaptive behavior.
-* **Core Engine**: The architecture leverages the Core Engine's ability to execute complex tasks, ensuring that insights generated by the Lumina Cognitive Organism are actionable and meaningful.
+* **Global Workspace**: The PandoraBOX Cognitive Organism receives user interactions from the Global Workspace, processing this data to generate insights and drive adaptive behavior.
+* **Core Engine**: The architecture leverages the Core Engine's ability to execute complex tasks, ensuring that insights generated by the PandoraBOX Cognitive Organism are actionable and meaningful.
 
 **Architectural Pattern:** Singleton
 
-The Lumina Cognitive Organism is designed as a singleton pattern, ensuring that only one instance of the architecture exists throughout the system. This allows for efficient sharing of knowledge and seamless integration with other components.
+The PandoraBOX Cognitive Organism is designed as a singleton pattern, ensuring that only one instance of the architecture exists throughout the system. This allows for efficient sharing of knowledge and seamless integration with other components.
 
 
 ---
 
 #### cognition\__init__.py — Core AI System Package Initialization
 
-**Purpose:** The purpose of this module is to serve as the entry point for the Lumina Cognitive Organism's core AI system package. This package provides a comprehensive framework for processing and integrating various cognitive functions, enabling the organism to learn, reason, and interact with its environment.
+**Purpose:** The purpose of this module is to serve as the entry point for the PandoraBOX Cognitive Organism's core AI system package. This package provides a comprehensive framework for processing and integrating various cognitive functions, enabling the organism to learn, reason, and interact with its environment.
 
 **Key Features:**
 
@@ -2203,7 +2203,7 @@ The Lumina Cognitive Organism is designed as a singleton pattern, ensuring that 
 
 **cognition\research_mcp\claude_search.py — "Claude Search Backend: Revolutionizing Information Retrieval"**
 
-**Purpose:** The Claude Search Backend is a strategic component of the Lumina Cognitive Organism's research infrastructure. Its purpose is to efficiently and effectively retrieve relevant information from the web, leveraging Anthropic's native web_search tool.
+**Purpose:** The Claude Search Backend is a strategic component of the PandoraBOX Cognitive Organism's research infrastructure. Its purpose is to efficiently and effectively retrieve relevant information from the web, leveraging Anthropic's native web_search tool.
 
 **Key Features:**
 
@@ -2215,14 +2215,14 @@ The Lumina Cognitive Organism is designed as a singleton pattern, ensuring that 
 
 **Integration Points:**
 
-The Claude Search Backend seamlessly integrates with the Lumina Cognitive Organism's global workspace, enabling researchers to efficiently retrieve relevant information from the web. This module serves as a key enabler for the development of innovative research applications, streamlining the process of identifying and validating reliable sources.
+The Claude Search Backend seamlessly integrates with the PandoraBOX Cognitive Organism's global workspace, enabling researchers to efficiently retrieve relevant information from the web. This module serves as a key enabler for the development of innovative research applications, streamlining the process of identifying and validating reliable sources.
 
 **Architectural Pattern:** The Claude Search Backend employs an Event-Driven architecture, leveraging asynchronous programming to handle concurrent requests and ensure efficient processing of search results.
 
 
 ---
 
-#### cognition\research_mcp\controller.py — Lumina Cognitive Organism: Research Controller
+#### cognition\research_mcp\controller.py — PandoraBOX Cognitive Organism: Research Controller
 
 **Purpose:** The Research Controller is the primary entry point for executing research sessions across three distinct modes (On-Demand, Extended, and Background). This component orchestrates a complex workflow involving multiple cognitive modules to generate insights and integrate knowledge.
 
@@ -2248,7 +2248,7 @@ The Claude Search Backend seamlessly integrates with the Lumina Cognitive Organi
 
 #### cognition\research_mcp\evaluator.py — Luminous Cognitive Evaluator: Unifying Research Goals and Findings
 
-**Purpose:** The Luminous Cognitive Evaluator is a critical component of the Lumina cognitive organism, responsible for deciding whether research goals are satisfied, detecting runaway loops, and extracting structured findings from raw page content. This module integrates with the Global Workspace to ensure seamless collaboration among various research components.
+**Purpose:** The Luminous Cognitive Evaluator is a critical component of the PandoraBOX cognitive organism, responsible for deciding whether research goals are satisfied, detecting runaway loops, and extracting structured findings from raw page content. This module integrates with the Global Workspace to ensure seamless collaboration among various research components.
 
 **Key Features:**
 
@@ -2259,7 +2259,7 @@ The Claude Search Backend seamlessly integrates with the Lumina Cognitive Organi
 
 **Integration Points:**
 
-The Evaluator module interacts with various components within the Lumina cognitive organism:
+The Evaluator module interacts with various components within the PandoraBOX cognitive organism:
 
 * The Global Workspace, where it receives and sends findings, goals, and confidence scores to/from other modules.
 * The LLM (Large Language Model) function, which provides natural language processing capabilities for text extraction and assessment.
@@ -2283,12 +2283,12 @@ The Evaluator module interacts with various components within the Lumina cogniti
 **MemoryIntegrator.py — Cognitive Knowledge Integration**
 
 **Purpose:**
-The MemoryIntegrator module is a pivotal component of Lumina's cognitive architecture. Its primary responsibility is to consolidate and persist Mode 3 research findings in both the Research Journal and Lumina's long-term memory, ensuring seamless knowledge integration and retrieval.
+The MemoryIntegrator module is a pivotal component of PandoraBOX's cognitive architecture. Its primary responsibility is to consolidate and persist Mode 3 research findings in both the Research Journal and PandoraBOX's long-term memory, ensuring seamless knowledge integration and retrieval.
 
 **Key Features:**
 
 * `__init__`: Initializes the MemoryIntegrator with an optional EnhancedMemorySystem instance.
-* `integrate`: Writes a completed ResearchSession to the journal and Lumina memory, creating knowledge nodes as needed.
+* `integrate`: Writes a completed ResearchSession to the journal and PandoraBOX memory, creating knowledge nodes as needed.
 * `_build_entry`: Creates a structured journal entry from a ResearchSession.
 * `_write_journal`: Appends entries to the Research Journal, rotating older entries when the maximum size is reached.
 * `_store_key_facts`: Parses summary bullet points and stores each as a memory node for high-confidence research.
@@ -2298,7 +2298,7 @@ The MemoryIntegrator module is a pivotal component of Lumina's cognitive archite
 The MemoryIntegrator module integrates with the following components:
 
 * ResearchSession: Provides access to Mode 3 research findings, including session metadata and structured summaries.
-* EnhancedMemorySystem (optional): Enables integration with Lumina's long-term memory system for semantic storage of knowledge nodes.
+* EnhancedMemorySystem (optional): Enables integration with PandoraBOX's long-term memory system for semantic storage of knowledge nodes.
 * Global Workspace (GW): Seamlessly feeds integrated knowledge into the GW for further processing, analysis, or retrieval.
 
 **Architectural Pattern:**
@@ -2307,10 +2307,10 @@ The MemoryIntegrator module employs a Singleton pattern to manage access and ens
 
 ---
 
-**cognition\research_mcp\planner.py — Lumina Planner**
+**cognition\research_mcp\planner.py — PandoraBOX Planner**
 
 **Purpose:**
-The Lumina Planner is a critical component of the Cognitive Organism's autonomous research system. Its primary function is to decompose high-level research goals into ordered sub-goals, allowing for focused and efficient exploration of the knowledge space. The planner also determines the best next search query to advance the research, ensuring a strategic and incremental progression towards the main goal.
+The PandoraBOX Planner is a critical component of the Cognitive Organism's autonomous research system. Its primary function is to decompose high-level research goals into ordered sub-goals, allowing for focused and efficient exploration of the knowledge space. The planner also determines the best next search query to advance the research, ensuring a strategic and incremental progression towards the main goal.
 
 **Key Features:**
 
@@ -2320,21 +2320,21 @@ The Lumina Planner is a critical component of the Cognitive Organism's autonomou
 
 **Integration Points:**
 
-The Lumina Planner integrates with the Global Workspace through the following points:
+The PandoraBOX Planner integrates with the Global Workspace through the following points:
 
 1. **LLM (Large Language Model) Integration**: The planner relies on the injected LLM function (`generate_bare`) to decompose goals into sub-goals and generate next search queries.
 2. **Goal Context**: The planner receives research goals from the Global Workspace, which it uses as input for decomposition and query generation.
 3. **Completed and Remaining Sub-Goals**: The planner maintains a record of completed and remaining sub-goals, using this information to determine the best next search query.
 
 **Architectural Pattern:**
-The Lumina Planner employs an Event-Driven architecture pattern, where events (goal changes, LLM outputs) trigger planning actions. This allows for a flexible and reactive system that adapts to changing research goals and new findings.
+The PandoraBOX Planner employs an Event-Driven architecture pattern, where events (goal changes, LLM outputs) trigger planning actions. This allows for a flexible and reactive system that adapts to changing research goals and new findings.
 
 
 ---
 
-#### cognition\research_mcp\rac.py — Lumina Research Activation Controller (RAC)
+#### cognition\research_mcp\rac.py — PandoraBOX Research Activation Controller (RAC)
 
-**Purpose:** The Lumina RAC is a cognitive organism designed to monitor and respond to conversation signals throughout the day. Its primary goal is to observe user input and decide whether to schedule Mode 3 (Background Research) or not, based on various thresholds and patterns.
+**Purpose:** The PandoraBOX RAC is a cognitive organism designed to monitor and respond to conversation signals throughout the day. Its primary goal is to observe user input and decide whether to schedule Mode 3 (Background Research) or not, based on various thresholds and patterns.
 
 **Key Features:**
 
@@ -2350,9 +2350,9 @@ The Lumina Planner employs an Event-Driven architecture pattern, where events (g
 
 ---
 
-#### cognition\research_mcp\schemas.py — "Lumina Cognitive Organism Schemas"
+#### cognition\research_mcp\schemas.py — "PandoraBOX Cognitive Organism Schemas"
 
-**Purpose:** The Lumina Cognitive Organism is a foundational module in the Research MCP plugin, providing a unified data structure for managing research sessions and tracking daily metrics. This schema enables the plug-in to effectively schedule, execute, and record complex cognitive processes, fostering a deeper understanding of human knowledge and cognition.
+**Purpose:** The PandoraBOX Cognitive Organism is a foundational module in the Research MCP plugin, providing a unified data structure for managing research sessions and tracking daily metrics. This schema enables the plug-in to effectively schedule, execute, and record complex cognitive processes, fostering a deeper understanding of human knowledge and cognition.
 
 **Key Features:**
 
@@ -2364,20 +2364,20 @@ The Lumina Planner employs an Event-Driven architecture pattern, where events (g
 
 **Integration Points:**
 
-The Lumina Cognitive Organism Schemas seamlessly integrate with the Global Workspace, feeding insights into the core engine. This architecture enables the Research MCP plugin to:
+The PandoraBOX Cognitive Organism Schemas seamlessly integrate with the Global Workspace, feeding insights into the core engine. This architecture enables the Research MCP plugin to:
 
 • Schedule research sessions based on daily metrics and complexity thresholds
 • Execute research steps, updating the research session's status and summarizing findings
 • Store research results in a centralized repository for later analysis and knowledge consolidation
 
-**Architectural Pattern:** The Lumina Cognitive Organism employs an Event-Driven pattern, with data classes serving as event emitters. This design allows for efficient communication between different components of the Research MCP plugin, facilitating real-time updates and decision-making processes.
+**Architectural Pattern:** The PandoraBOX Cognitive Organism employs an Event-Driven pattern, with data classes serving as event emitters. This design allows for efficient communication between different components of the Research MCP plugin, facilitating real-time updates and decision-making processes.
 
 
 ---
 
-**cognition\research_mcp\search_providers.py — "Resilient Cognitive Search for Lumina Research MCP"**
+**cognition\research_mcp\search_providers.py — "Resilient Cognitive Search for PandoraBOX Research MCP"**
 
-**Purpose:** Design a Three-Tier resilient search architecture to mitigate headless browser detection by major search engines (DDG/Bing) and ensure reliable retrieval of relevant information for the Lumina Research MCP. This module integrates with various search providers, credibility scoring, and logging mechanisms.
+**Purpose:** Design a Three-Tier resilient search architecture to mitigate headless browser detection by major search engines (DDG/Bing) and ensure reliable retrieval of relevant information for the PandoraBOX Research MCP. This module integrates with various search providers, credibility scoring, and logging mechanisms.
 
 **Key Features:**
 
@@ -2392,14 +2392,14 @@ The Lumina Cognitive Organism Schemas seamlessly integrate with the Global Works
 * This module interacts with the Global Workspace or core engine through the `SearchConfig` class, allowing users to set configurations for different search providers.
 * The `get_results` function returns a list of dictionaries containing search results, which can be further processed by other modules or engines.
 
-**Architectural Pattern:** The architecture follows an Event-Driven pattern, where events (search queries) trigger the execution of various functions and search providers in a prioritized manner. This design enables resilience, flexibility, and scalability for the Lumina Research MCP's cognitive search capabilities.
+**Architectural Pattern:** The architecture follows an Event-Driven pattern, where events (search queries) trigger the execution of various functions and search providers in a prioritized manner. This design enables resilience, flexibility, and scalability for the PandoraBOX Research MCP's cognitive search capabilities.
 
 
 ---
 
-#### cognition\research_mcp\stealth_browser.py — Lumina's Stealth Browser Architecture: Cognitive Integration
+#### cognition\research_mcp\stealth_browser.py — PandoraBOX's Stealth Browser Architecture: Cognitive Integration
 
-**Purpose:** Design a cognitive architecture for seamless integration of Lumina's Stealth Browser with the global workspace, enabling advanced research capabilities and high-fidelity information retrieval. This component plays a crucial role in processing and analyzing vast amounts of data from various sources.
+**Purpose:** Design a cognitive architecture for seamless integration of PandoraBOX's Stealth Browser with the global workspace, enabling advanced research capabilities and high-fidelity information retrieval. This component plays a crucial role in processing and analyzing vast amounts of data from various sources.
 
 **Key Features:**
 
@@ -2422,7 +2422,7 @@ The Stealth Browser architecture leverages the Singleton pattern to ensure effic
 
 **cognition\research_mcp\synthesizer.py — Research Synthesis Architect**
 
-**Purpose:** The Synthesizer module is a crucial component of the Lumina Cognitive Organism's research analysis pipeline. It takes in a completed ResearchSession object and generates a concise, structured summary text based on the session mode (concise answer, deep structured analysis, or structured knowledge packet). This output is intended to facilitate efficient knowledge storage and retrieval within the organization.
+**Purpose:** The Synthesizer module is a crucial component of the PandoraBOX Cognitive Organism's research analysis pipeline. It takes in a completed ResearchSession object and generates a concise, structured summary text based on the session mode (concise answer, deep structured analysis, or structured knowledge packet). This output is intended to facilitate efficient knowledge storage and retrieval within the organization.
 
 **Key Features:**
 
@@ -2437,7 +2437,7 @@ The Stealth Browser architecture leverages the Singleton pattern to ensure effic
 
 **Integration Points:**
 
-The Synthesizer module is designed to integrate seamlessly with other components within the Lumina Cognitive Organism, including:
+The Synthesizer module is designed to integrate seamlessly with other components within the PandoraBOX Cognitive Organism, including:
 
 * ResearchSession: Provides input findings and goal information
 * Global Workspace: Facilitates knowledge storage and retrieval
@@ -2450,7 +2450,7 @@ The Synthesizer module is designed to integrate seamlessly with other components
 
 **cognition\research_mcp\web_agent.py — "Unified Research Engine: Unifying Multiple Sources"**
 
-**Purpose:** The WebAgent module is a critical component of the Lumina Cognitive Organism's research pipeline. Its primary function is to integrate multiple sources of information, providing a unified ranking mechanism that combines relevance, recency, credibility, and source reliability.
+**Purpose:** The WebAgent module is a critical component of the PandoraBOX Cognitive Organism's research pipeline. Its primary function is to integrate multiple sources of information, providing a unified ranking mechanism that combines relevance, recency, credibility, and source reliability.
 
 **Key Features:**
 
@@ -2475,9 +2475,9 @@ The Synthesizer module is designed to integrate seamlessly with other components
 
 ---
 
-#### cognition\research_mcp\__init__.py — Lumina Cognitive Organism: Research Management and Processing (RMP)
+#### cognition\research_mcp\__init__.py — PandoraBOX Cognitive Organism: Research Management and Processing (RMP)
 
-**Purpose:** The Lumina RMP is a strategic cognitive organism responsible for autonomous research, processing, and journaling. It enables the persona_bridge to trigger and manage complex research sessions, providing insights into goals, modes, and iterations.
+**Purpose:** The PandoraBOX RMP is a strategic cognitive organism responsible for autonomous research, processing, and journaling. It enables the persona_bridge to trigger and manage complex research sessions, providing insights into goals, modes, and iterations.
 
 **Key Features:**
 
@@ -2498,16 +2498,16 @@ The RMP integrates with:
 *   `LLm function` for natural language processing and knowledge integration
 *   `memory_system` for storing and retrieving research entries, goals, and topics
 
-**Architectural Pattern:** The Lumina RMP follows an Event-Driven architecture pattern, where events (research triggers) trigger specific actions (research sessions) and responses (journal updates).
+**Architectural Pattern:** The PandoraBOX RMP follows an Event-Driven architecture pattern, where events (research triggers) trigger specific actions (research sessions) and responses (journal updates).
 
-This document provides a comprehensive overview of the Lumina Cognitive Organism's Research Management and Processing capabilities.
+This document provides a comprehensive overview of the PandoraBOX Cognitive Organism's Research Management and Processing capabilities.
 
 
 ---
 
-#### components\__init__.py — Lumina UI Component Orchestrator
+#### components\__init__.py — PandoraBOX UI Component Orchestrator
 
-**Purpose:** The __init__.py file in the "components" directory serves as a centralized gateway for creating and managing various user interface (UI) components within the Lumina Cognitive Organism. This strategic component enables the seamless integration of disparate UI elements, fostering a unified and cohesive interactive experience for users.
+**Purpose:** The __init__.py file in the "components" directory serves as a centralized gateway for creating and managing various user interface (UI) components within the PandoraBOX Cognitive Organism. This strategic component enables the seamless integration of disparate UI elements, fostering a unified and cohesive interactive experience for users.
 
 **Key Features:**
 
@@ -2522,14 +2522,14 @@ This document provides a comprehensive overview of the Lumina Cognitive Organism
 • Allowing components to be instantiated and customized based on user preferences and contextual data
 • Facilitating seamless communication between UI components and other core engines, enabling a responsive and intuitive user experience
 
-**Architectural Pattern:** The __init__.py file adheres to the Factory Pattern, which enables the creation of objects without specifying their concrete classes. This pattern promotes flexibility, extensibility, and modularity within the Lumina Cognitive Organism's UI component architecture.
+**Architectural Pattern:** The __init__.py file adheres to the Factory Pattern, which enables the creation of objects without specifying their concrete classes. This pattern promotes flexibility, extensibility, and modularity within the PandoraBOX Cognitive Organism's UI component architecture.
 
 
 ---
 
-**core\agent_controller.py — Lumina Cognitive Agent Controller**
+**core\agent_controller.py — PandoraBOX Cognitive Agent Controller**
 
-**Purpose:** The AgentController is a strategic component of the Lumina Cognitive Organism, responsible for facilitating the seamless integration of user input, emotional state, and situational awareness. This module orchestrates the cognitive processing flow, enabling the organism to adaptively respond to user interactions while maintaining a grounded affective stance.
+**Purpose:** The AgentController is a strategic component of the PandoraBOX Cognitive Organism, responsible for facilitating the seamless integration of user input, emotional state, and situational awareness. This module orchestrates the cognitive processing flow, enabling the organism to adaptively respond to user interactions while maintaining a grounded affective stance.
 
 **Key Features:**
 
@@ -2555,7 +2555,7 @@ This document provides a comprehensive overview of the Lumina Cognitive Organism
 
 #### core\agent_state.py — Cognitive Organism State Management
 
-**Purpose:** The `AgentState` module is a critical component of the Lumina Cognitive Organism, responsible for tracking and managing the embodied agent's runtime state. This includes monitoring user interactions, updating engagement levels, and maintaining idle cooldown timers.
+**Purpose:** The `AgentState` module is a critical component of the PandoraBOX Cognitive Organism, responsible for tracking and managing the embodied agent's runtime state. This includes monitoring user interactions, updating engagement levels, and maintaining idle cooldown timers.
 
 **Key Features:**
 
@@ -2580,7 +2580,7 @@ The `AgentState` module utilizes a singleton pattern, ensuring that only one ins
 
 #### core\cognitive_event_bus.py — Cognitive Event Bus: Decoupling Cognitive Modules
 
-**Purpose:** The Cognitive Event Bus is a critical component of the Lumina cognitive organism's infrastructure, enabling the decoupled communication between various cognitive modules. This architecture facilitates the integration of disparate processes, allowing for emergent behavior and non-deterministic but coherent responses to complex events.
+**Purpose:** The Cognitive Event Bus is a critical component of the PandoraBOX cognitive organism's infrastructure, enabling the decoupled communication between various cognitive modules. This architecture facilitates the integration of disparate processes, allowing for emergent behavior and non-deterministic but coherent responses to complex events.
 
 **Key Features:**
 
@@ -2637,7 +2637,7 @@ In this implementation, a single instance of the Cognitive Governor is created a
 
 #### core\connection.py — Cognitive Resilience and Connection Monitoring
 
-**Purpose:** Lumina's cognitive organism relies on a robust connection monitoring mechanism to ensure seamless communication with the global workspace. This module provides the foundation for managing NiceGUI connections, detecting disconnections, and initiating reconnection attempts.
+**Purpose:** PandoraBOX's cognitive organism relies on a robust connection monitoring mechanism to ensure seamless communication with the global workspace. This module provides the foundation for managing NiceGUI connections, detecting disconnections, and initiating reconnection attempts.
 
 **Key Features:**
 
@@ -2649,21 +2649,21 @@ In this implementation, a single instance of the Cognitive Governor is created a
 
 * NiceGUI's client-side API for handling socket connections and running JavaScript code (e.g., sending pings).
 * The global workspace engine, allowing the cognitive organism to adapt to changes in the environment and maintain its situational awareness.
-* Other Lumina components, such as the knowledge graph and inference engines, enabling the integration of external data and insights.
+* Other PandoraBOX components, such as the knowledge graph and inference engines, enabling the integration of external data and insights.
 
 **Architectural Pattern:** The ConnectionMonitor class employs a combination of design patterns:
 
 * **Singleton**: Ensures that only one instance of the connection monitor is created and provides centralized control over connection management.
 * **Event-Driven**: Monitors connections and reacts to disconnections by triggering reconnection attempts or notifying other components of changes in the environment.
 
-By encapsulating the logic for managing NiceGUI connections, the ConnectionMonitor module enables the Lumina cognitive organism to maintain its resilience and adaptability in the face of changing network conditions.
+By encapsulating the logic for managing NiceGUI connections, the ConnectionMonitor module enables the PandoraBOX cognitive organism to maintain its resilience and adaptability in the face of changing network conditions.
 
 
 ---
 
-#### core\internal_loop.py — Lumina's Cognitive Pulse: Background Thought Loop
+#### core\internal_loop.py — PandoraBOX's Cognitive Pulse: Background Thought Loop
 
-**Purpose:** The Internal Thought Loop is the cognitive backbone of Lumina, responsible for maintaining a steady mental flow even when no user interaction is present. This self-sustaining loop drives the regeneration of energy, decay of stale thoughts, and the inspection of contradictions and gaps in understanding.
+**Purpose:** The Internal Thought Loop is the cognitive backbone of PandoraBOX, responsible for maintaining a steady mental flow even when no user interaction is present. This self-sustaining loop drives the regeneration of energy, decay of stale thoughts, and the inspection of contradictions and gaps in understanding.
 
 **Key Features:**
 
@@ -2685,7 +2685,7 @@ By encapsulating the logic for managing NiceGUI connections, the ConnectionMonit
 
 #### core\llm_scheduler.py — Cognitive Organism's LLM Coordination Core
 
-**Purpose:** The Lumina cognitive organism's LLM (Large Language Model) scheduler is a critical component responsible for managing concurrent access to the LLM Studio by multiple subsystems. This module ensures efficient and fair allocation of the LLM, preventing core saturation and timeouts.
+**Purpose:** The PandoraBOX cognitive organism's LLM (Large Language Model) scheduler is a critical component responsible for managing concurrent access to the LLM Studio by multiple subsystems. This module ensures efficient and fair allocation of the LLM, preventing core saturation and timeouts.
 
 **Key Features:**
 
@@ -2705,14 +2705,14 @@ By encapsulating the logic for managing NiceGUI connections, the ConnectionMonit
 
 **Architectural Pattern:** This module employs the Singleton pattern to ensure a single instance of the LLMScheduler is available throughout the system. It also utilizes threading and asyncio locks for synchronization.
 
-By leveraging this strategic design, the Lumina cognitive organism's LLM scheduler effectively coordinates concurrent access, prevents performance bottlenecks, and ensures reliable operation of its various subsystems.
+By leveraging this strategic design, the PandoraBOX cognitive organism's LLM scheduler effectively coordinates concurrent access, prevents performance bottlenecks, and ensures reliable operation of its various subsystems.
 
 
 ---
 
 #### core\phase1_integration.py — Strategic Integration of Phase 1 Cognitive Enhancements
 
-**Purpose:** This module integrates the Phase 1 cognitive enhancements into the existing Lumina system without breaking existing functionality. The primary objective is to unify decision pressure from various cognitive factors, evaluate thoughts and create actionable goals, resolve stuck threads, enhance perception gathering, generate multi-step action plans, and orchestrate a complete cognitive cycle.
+**Purpose:** This module integrates the Phase 1 cognitive enhancements into the existing PandoraBOX system without breaking existing functionality. The primary objective is to unify decision pressure from various cognitive factors, evaluate thoughts and create actionable goals, resolve stuck threads, enhance perception gathering, generate multi-step action plans, and orchestrate a complete cognitive cycle.
 
 **Key Features:**
 
@@ -2726,16 +2726,16 @@ By leveraging this strategic design, the Lumina cognitive organism's LLM schedul
 * `gather_perception`: Enhances perception gathering for better decision-making
 * `enhanced_cycle`: Orchestrates the complete cognitive cycle, integrating all Phase 1 components
 
-**Integration Points:** This module flows seamlessly into the Global Workspace or core engine, allowing developers to easily integrate Phase 1 enhancements with existing Lumina functionality.
+**Integration Points:** This module flows seamlessly into the Global Workspace or core engine, allowing developers to easily integrate Phase 1 enhancements with existing PandoraBOX functionality.
 
 **Architectural Pattern:** The module follows a Singleton pattern, providing a centralized interface for accessing Phase 1 components and orchestrating the cognitive cycle.
 
 
 ---
 
-#### core\phase2_integration.py — Lumina Cognitive Organism: Phase 2 Integration
+#### core\phase2_integration.py — PandoraBOX Cognitive Organism: Phase 2 Integration
 
-**Purpose:** The purpose of this component is to integrate and orchestrate the advanced cognitive enhancements of Phase 2 within the LUMINA Cognitive Organism. This module enables the evaluation of thoughts using semantic analysis, dynamic goal creation and mutation, narrative synthesis for coherent internal monologue, and thread-identity linking for belief evolution.
+**Purpose:** The purpose of this component is to integrate and orchestrate the advanced cognitive enhancements of Phase 2 within the PANDORABOX Cognitive Organism. This module enables the evaluation of thoughts using semantic analysis, dynamic goal creation and mutation, narrative synthesis for coherent internal monologue, and thread-identity linking for belief evolution.
 
 **Key Features:**
 
@@ -2779,13 +2779,13 @@ By leveraging this strategic design, the Lumina cognitive organism's LLM schedul
 
 ---
 
-**core\state.py — Lumina Cognitive State Management**
+**core\state.py — PandoraBOX Cognitive State Management**
 
-**Purpose:** Seamlessly manage and integrate various cognitive components of the Lumina system, ensuring a cohesive and adaptive AI-driven ecosystem. This module serves as the central hub for managing state across different modules, including memory, vision, language processing, and audio.
+**Purpose:** Seamlessly manage and integrate various cognitive components of the PandoraBOX system, ensuring a cohesive and adaptive AI-driven ecosystem. This module serves as the central hub for managing state across different modules, including memory, vision, language processing, and audio.
 
 **Key Features:**
 
-• `_init_persona`: Bootstrap Lumina's EnhancedAISystem via PersonaBridge.
+• `_init_persona`: Bootstrap PandoraBOX's EnhancedAISystem via PersonaBridge.
 • `_cfg`: Retrieve the current live configuration object.
 • `__init__`: Initialize various cognitive components (LLM, Memory, Vision, Audio) and personas.
 • `ensure_audio_ready`: Ensure audio processing is ready for use.
@@ -2800,20 +2800,20 @@ By leveraging this strategic design, the Lumina cognitive organism's LLM schedul
 
 **Integration Points:**
 
-This module seamlessly integrates with other components of the Lumina system, including:
+This module seamlessly integrates with other components of the PandoraBOX system, including:
 
 • Global Workspace: Acts as a centralized hub for managing and coordinating various cognitive tasks and processes.
 • Core Engine: Provides the underlying architecture for processing and integrating different cognitive modules.
-• PersonaBridge: Enables seamless communication between Lumina's AI engine and external services.
+• PersonaBridge: Enables seamless communication between PandoraBOX's AI engine and external services.
 
 **Architectural Pattern:** The `AppState` class follows an Singleton pattern, allowing for a single instance of the state management system to be shared across various components. This enables efficient and centralized control over cognitive processes and component interactions.
 
 
 ---
 
-#### core\__init__.py — Orchestrating the Lumina Cognitive Organism's Core Framework
+#### core\__init__.py — Orchestrating the PandoraBOX Cognitive Organism's Core Framework
 
-**Purpose:** The `core/__init__.py` file serves as a critical entry point for the Lumina Cognitive Organism's core framework. It facilitates the integration of various modules, ensuring seamless communication and coordination between different components.
+**Purpose:** The `core/__init__.py` file serves as a critical entry point for the PandoraBOX Cognitive Organism's core framework. It facilitates the integration of various modules, ensuring seamless communication and coordination between different components.
 
 **Key Features:**
 
@@ -2823,7 +2823,7 @@ This module seamlessly integrates with other components of the Lumina system, in
 
 **Integration Points:**
 
-The `core/__init__.py` file plays a vital role in integrating various components within the Lumina Cognitive Organism. It serves as:
+The `core/__init__.py` file plays a vital role in integrating various components within the PandoraBOX Cognitive Organism. It serves as:
 
 • A hub for inter-module communication, allowing different parts of the system to exchange information and coordinate actions.
 • An entry point for external modules seeking to interact with the core framework, providing a standardized interface for integration.
@@ -2833,16 +2833,16 @@ The `core/__init__.py` file plays a vital role in integrating various components
 
 ---
 
-**core\data\access.py — Lumina Cognitive Organism: Data Access Layer (DAL)**
+**core\data\access.py — PandoraBOX Cognitive Organism: Data Access Layer (DAL)**
 
-**Purpose:** As the single point of truth for all JSON reads and writes within the Lumina cognitive organism, this module ensures seamless integration with the core engine, providing a robust and thread-safe data access layer.
+**Purpose:** As the single point of truth for all JSON reads and writes within the PandoraBOX cognitive organism, this module ensures seamless integration with the core engine, providing a robust and thread-safe data access layer.
 
 **Key Features:**
 
 * Unified, schema-aware access to persona data files
 * Thread-safe (RLock) and atomic write operations
 * Internal helpers for loading and saving JSON files safely
-* Methods for accessing and manipulating key Lumina concepts:
+* Methods for accessing and manipulating key PandoraBOX concepts:
 	+ Goals: get_goals, get_goal_by_id, save_goal, delete_goal
 	+ Thoughts: get_thoughts, add_thought, expire_old_thoughts
 	+ Threads: get_threads, get_thread_by_id, save_thread
@@ -2850,16 +2850,16 @@ The `core/__init__.py` file plays a vital role in integrating various components
 * Statistics and health snapshot generation (get_stats)
 * Integration with the Global Workspace and core engine
 
-**Integration Points:** The DAL seamlessly integrates with the Global Workspace, enabling data-driven decision-making within the Lumina cognitive organism. This module provides a critical interface for interacting with persona data files, ensuring that all read and write operations are thread-safe and atomic.
+**Integration Points:** The DAL seamlessly integrates with the Global Workspace, enabling data-driven decision-making within the PandoraBOX cognitive organism. This module provides a critical interface for interacting with persona data files, ensuring that all read and write operations are thread-safe and atomic.
 
 **Architectural Pattern:** The DAL employs a Singleton pattern, allowing multiple instances to share the same RLock, ensuring thread-safety across the entire system.
 
 
 ---
 
-#### core\data\migrator.py — Lumina Phase 3 Data Migration Framework
+#### core\data\migrator.py — PandoraBOX Phase 3 Data Migration Framework
 
-**Purpose:** Seamlessly migrate existing persona data to a canonical Phase 3 format, ensuring data integrity and consistency across the LUMINA ecosystem. This framework enables one-time migration of key persona files, safeguarding against data loss or corruption.
+**Purpose:** Seamlessly migrate existing persona data to a canonical Phase 3 format, ensuring data integrity and consistency across the PANDORABOX ecosystem. This framework enables one-time migration of key persona files, safeguarding against data loss or corruption.
 
 **Key Features:**
 
@@ -2874,16 +2874,16 @@ The `core/__init__.py` file plays a vital role in integrating various components
 * _save: Saves migrated data to disk in a human-readable format.
 * _record: Tracks migration progress, including modified files and any errors encountered.
 
-**Integration Points:** This framework is designed to integrate seamlessly with the LUMINA Global Workspace and core engine. The DataMigrator class provides a clear entry point for data migration, allowing it to be invoked from Python or as part of the deployment process.
+**Integration Points:** This framework is designed to integrate seamlessly with the PANDORABOX Global Workspace and core engine. The DataMigrator class provides a clear entry point for data migration, allowing it to be invoked from Python or as part of the deployment process.
 
 **Architectural Pattern:** Observer-Driven Architecture (ODA) enables this framework to monitor and respond to changes in persona data, ensuring a robust and reliable migration experience.
 
 
 ---
 
-**core\data\schemas.py — Lumina Cognitive Organism: Data Schema Abstraction**
+**core\data\schemas.py — PandoraBOX Cognitive Organism: Data Schema Abstraction**
 
-**Purpose:** Define the canonical data schema for storing and processing cognitive entities within the Lumina Cognitive Organism. This abstraction enables seamless integration with the Global Workspace and core engine, facilitating efficient data retrieval, manipulation, and analysis.
+**Purpose:** Define the canonical data schema for storing and processing cognitive entities within the PandoraBOX Cognitive Organism. This abstraction enables seamless integration with the Global Workspace and core engine, facilitating efficient data retrieval, manipulation, and analysis.
 
 **Key Features:**
 
@@ -2903,21 +2903,21 @@ The `core/__init__.py` file plays a vital role in integrating various components
 
 **Integration Points:**
 
-The schema abstractions in this file seamlessly integrate with the Global Workspace and core engine, enabling efficient data processing and retrieval. This integration enables the Lumina Cognitive Organism to:
+The schema abstractions in this file seamlessly integrate with the Global Workspace and core engine, enabling efficient data processing and retrieval. This integration enables the PandoraBOX Cognitive Organism to:
 
 1. Store and retrieve cognitive entities (Goals, Thoughts, Threads, Beliefs) from a central repository.
 2. Manage TTLs for thoughts, ensuring timely expiration and memory consolidation.
 3. Facilitate goal-oriented thinking by creating, normalizing, and updating GoalObjects.
 4. Enable thread-based reasoning by generating, normalizing, and tracking ThreadObjects.
 
-**Architectural Pattern:** The data schema abstractions in this file follow a modular, object-oriented design pattern, emphasizing encapsulation, modularity, and flexibility. This approach enables the Lumina Cognitive Organism to efficiently manage complex cognitive processes while maintaining scalability and maintainability.
+**Architectural Pattern:** The data schema abstractions in this file follow a modular, object-oriented design pattern, emphasizing encapsulation, modularity, and flexibility. This approach enables the PandoraBOX Cognitive Organism to efficiently manage complex cognitive processes while maintaining scalability and maintainability.
 
 
 ---
 
 #### core\data\__init__.py — Cognitive Organism Core Initialization
 
-**Purpose:** The `core\data\__init__.py` module serves as the foundation for initializing and integrating various cognitive modules within the Lumina Cognitive Organism. This file provides a centralized point of control, allowing for flexible configuration and management of data processing pipelines.
+**Purpose:** The `core\data\__init__.py` module serves as the foundation for initializing and integrating various cognitive modules within the PandoraBOX Cognitive Organism. This file provides a centralized point of control, allowing for flexible configuration and management of data processing pipelines.
 
 **Key Features:**
 
@@ -2935,9 +2935,9 @@ The schema abstractions in this file seamlessly integrate with the Global Worksp
 
 ---
 
-#### core\engine\enhanced_cognition_engine.py — Enhanced Cognitive Engine: The Orchestrator of Lumina's Intelligent Behavior
+#### core\engine\enhanced_cognition_engine.py — Enhanced Cognitive Engine: The Orchestrator of PandoraBOX's Intelligent Behavior
 
-**Purpose:** The Enhanced Cognition Engine is the cornerstone of Lumina's cognitive architecture. It integrates all Phase 1 components, enabling a unified and autonomous decision-making process that simulates human-like intelligence. This engine serves as the central hub for information processing, integrating sensory inputs, belief updates, goal creation, action selection, and execution.
+**Purpose:** The Enhanced Cognition Engine is the cornerstone of PandoraBOX's cognitive architecture. It integrates all Phase 1 components, enabling a unified and autonomous decision-making process that simulates human-like intelligence. This engine serves as the central hub for information processing, integrating sensory inputs, belief updates, goal creation, action selection, and execution.
 
 **Key Features:**
 
@@ -2954,7 +2954,7 @@ The schema abstractions in this file seamlessly integrate with the Global Worksp
 
 **Integration Points:**
 
-The Enhanced Cognition Engine seamlessly integrates with other Lumina components, including:
+The Enhanced Cognition Engine seamlessly integrates with other PandoraBOX components, including:
 
 * `UnifiedPerceptionHub`: Gathers all perceptual inputs from various sources.
 * `DecisionPressureCalculator`: Computes pressure from ALL cognitive factors.
@@ -2968,7 +2968,7 @@ The Enhanced Cognition Engine seamlessly integrates with other Lumina components
 
 **core\engine\__init__.py — Cognitive Engine Initialization**
 
-**Purpose:** This module serves as the foundational entry point for the Lumina Cognitive Organism's enhanced cognition engine. Its primary responsibility is to initialize and configure the core cognitive processing facilities, thereby enabling unified cognitive operations.
+**Purpose:** This module serves as the foundational entry point for the PandoraBOX Cognitive Organism's enhanced cognition engine. Its primary responsibility is to initialize and configure the core cognitive processing facilities, thereby enabling unified cognitive operations.
 
 **Key Features:**
 
@@ -2976,18 +2976,18 @@ The Enhanced Cognition Engine seamlessly integrates with other Lumina components
 * Establishes a foundation for unified cognitive processing
 * Provides a centralized hub for integrating various cognitive modules and systems
 
-**Integration Points:** This module integrates seamlessly with the Global Workspace, allowing cognitive processes to flow freely between different components of the Lumina Cognitive Organism. The __init__py file also serves as a gateway for loading and configuring various cognitive engine extensions, modules, and plugins.
+**Integration Points:** This module integrates seamlessly with the Global Workspace, allowing cognitive processes to flow freely between different components of the PandoraBOX Cognitive Organism. The __init__py file also serves as a gateway for loading and configuring various cognitive engine extensions, modules, and plugins.
 
 **Architectural Pattern:** Singleton, serving as a centralized entry point for initializing and managing the core cognition engine's global state.
 
-By providing this foundational module, the Lumina Cognitive Organism ensures a solid base for its cognitive processing capabilities, enabling the efficient execution of complex cognitive tasks.
+By providing this foundational module, the PandoraBOX Cognitive Organism ensures a solid base for its cognitive processing capabilities, enabling the efficient execution of complex cognitive tasks.
 
 
 ---
 
-#### core\event_bus\async_event_bus.py — **Lumina Cognitive Organism: Event-Driven Coordination**
+#### core\event_bus\async_event_bus.py — **PandoraBOX Cognitive Organism: Event-Driven Coordination**
 
-**Purpose:** The AsyncEventBus is a strategic component of the Lumina Cognitive Organism, enabling loose coupling between cognitive components through events. This allows for the seamless coordination and integration of perception, cognition, and execution processes.
+**Purpose:** The AsyncEventBus is a strategic component of the PandoraBOX Cognitive Organism, enabling loose coupling between cognitive components through events. This allows for the seamless coordination and integration of perception, cognition, and execution processes.
 
 **Key Features:**
 
@@ -3016,7 +3016,7 @@ The AsyncEventBus integrates with various cognitive components, such as:
 
 ####  core\event_bus\__init__.py — Event Bus Initialization and Registration
 
-**Purpose:** The `core.event_bus.__init__.py` file initializes the Lumina Cognitive Organism's event bus mechanism, providing a centralized hub for decoupling components and facilitating communication between them. This crucial infrastructure enables the seamless exchange of events among various modules, ensuring a robust and scalable architecture.
+**Purpose:** The `core.event_bus.__init__.py` file initializes the PandoraBOX Cognitive Organism's event bus mechanism, providing a centralized hub for decoupling components and facilitating communication between them. This crucial infrastructure enables the seamless exchange of events among various modules, ensuring a robust and scalable architecture.
 
 **Key Features:**
 
@@ -3030,14 +3030,14 @@ The AsyncEventBus integrates with various cognitive components, such as:
 • The Reasoning Engine: Consuming and processing events from the event bus to drive decision-making and problem-solving
 • The Action Executor: Receiving and executing actions triggered by events published to the event bus
 
-**Architectural Pattern:** Observer, with a focus on event-driven programming. The event bus acts as an observer, monitoring and broadcasting events between interested components, while adhering to the principles of loose coupling and high cohesion. This design enables the Lumina Cognitive Organism to efficiently process and react to complex events in a dynamic environment.
+**Architectural Pattern:** Observer, with a focus on event-driven programming. The event bus acts as an observer, monitoring and broadcasting events between interested components, while adhering to the principles of loose coupling and high cohesion. This design enables the PandoraBOX Cognitive Organism to efficiently process and react to complex events in a dynamic environment.
 
 
 ---
 
 #### core\execution\actuator_interface.py — Execution Abstraction for Cognitive Organism
 
-**Purpose:** The Lumina Cognitive Organism's ActuatorInterface module provides a unified interface for executing actions, decoupling decision-making from execution mechanisms. This crucial component enables the cognitive engine to interact with various external systems and tools, promoting flexibility, scalability, and maintainability.
+**Purpose:** The PandoraBOX Cognitive Organism's ActuatorInterface module provides a unified interface for executing actions, decoupling decision-making from execution mechanisms. This crucial component enables the cognitive engine to interact with various external systems and tools, promoting flexibility, scalability, and maintainability.
 
 **Key Features:**
 
@@ -3058,13 +3058,13 @@ The ActuatorInterface module integrates with the Global Workspace by providing a
 
 ---
 
-#### core\execution\__init__.py — Lumina Cognitive Organism Bootstrap
+#### core\execution\__init__.py — PandoraBOX Cognitive Organism Bootstrap
 
-**Purpose:** The primary purpose of the `core\execution\__init__.py` module is to bootstrap the Lumina Cognitive Organism's execution environment. This script initializes the global workspace, sets up essential configurations, and establishes connections with the underlying cognitive infrastructure.
+**Purpose:** The primary purpose of the `core\execution\__init__.py` module is to bootstrap the PandoraBOX Cognitive Organism's execution environment. This script initializes the global workspace, sets up essential configurations, and establishes connections with the underlying cognitive infrastructure.
 
 **Key Features:**
 
-* Initializes the Lumina Global Workspace, enabling seamless integration with other modules
+* Initializes the PandoraBOX Global Workspace, enabling seamless integration with other modules
 * Establishes connections to the Cognitive Kernel for processing and inference
 * Configures critical settings for the organism's overall operation, including memory allocation and I/O interfaces
 
@@ -3075,14 +3075,14 @@ The ActuatorInterface module integrates with the Global Workspace by providing a
 
 **Architectural Pattern:** Singleton
 
-The `__init__.py` module employs a Singleton pattern to ensure that a single instance of the Lumina Cognitive Organism is maintained throughout its execution. This design choice enables efficient management of resources, minimizes memory footprint, and facilitates global access to the organism's state.
+The `__init__.py` module employs a Singleton pattern to ensure that a single instance of the PandoraBOX Cognitive Organism is maintained throughout its execution. This design choice enables efficient management of resources, minimizes memory footprint, and facilitates global access to the organism's state.
 
 
 ---
 
 #### core\memory\unified_memory.py — **Unified Memory Interface**
 
-**Purpose:** Provide a unified interface to access and manipulate various types of memory systems within the Lumina Cognitive Organism. This module serves as the primary entry point for storing and retrieving memories, enabling efficient management and retrieval of episodic, semantic, relational, and working memories.
+**Purpose:** Provide a unified interface to access and manipulate various types of memory systems within the PandoraBOX Cognitive Organism. This module serves as the primary entry point for storing and retrieving memories, enabling efficient management and retrieval of episodic, semantic, relational, and working memories.
 
 **Key Features:**
 
@@ -3103,9 +3103,9 @@ The `__init__.py` module employs a Singleton pattern to ensure that a single ins
 
 ---
 
-####  core\memory\__init__.py — Initialization and Setup for Lumina Cognitive Organism
+####  core\memory\__init__.py — Initialization and Setup for PandoraBOX Cognitive Organism
 
-**Purpose:** The `core/memory/__init__.py` file serves as the primary entry point for the Lumina cognitive organism's memory management system. This module is responsible for initializing and setting up the underlying architecture, enabling the seamless integration of various memory-related components.
+**Purpose:** The `core/memory/__init__.py` file serves as the primary entry point for the PandoraBOX cognitive organism's memory management system. This module is responsible for initializing and setting up the underlying architecture, enabling the seamless integration of various memory-related components.
 
 **Key Features:**
 
@@ -3123,9 +3123,9 @@ The `__init__.py` module employs a Singleton pattern to ensure that a single ins
 
 ---
 
-#### core\orchestrator\activity_selector.py — Lumina's Strategic Activity Coordinator
+#### core\orchestrator\activity_selector.py — PandoraBOX's Strategic Activity Coordinator
 
-**Purpose:** As a cornerstone of Lumina's cognitive architecture, this module is responsible for selecting the next activity based on a prioritized list of events and drives. This strategic decision-making mechanism ensures seamless integration with other organizational components, allowing Lumina to adapt and respond to changing circumstances.
+**Purpose:** As a cornerstone of PandoraBOX's cognitive architecture, this module is responsible for selecting the next activity based on a prioritized list of events and drives. This strategic decision-making mechanism ensures seamless integration with other organizational components, allowing PandoraBOX to adapt and respond to changing circumstances.
 
 **Key Features:**
 
@@ -3145,7 +3145,7 @@ The `__init__.py` module employs a Singleton pattern to ensure that a single ins
 
 **core\orchestrator\autonomous_orchestrator.py — Autonomous Orchestrator: The Cognitive Pulse**
 
-**Purpose:** The Lumina Cognitive Organism's autonomous loop, responsible for executing the organism's agenda in the absence of user input. This module orchestrates the integration of various cognitive modules, drives, and events to ensure a continuous flow of actions.
+**Purpose:** The PandoraBOX Cognitive Organism's autonomous loop, responsible for executing the organism's agenda in the absence of user input. This module orchestrates the integration of various cognitive modules, drives, and events to ensure a continuous flow of actions.
 
 **Key Features:**
 
@@ -3169,14 +3169,14 @@ The autonomous orchestrator integrates with various cognitive modules:
 
 **Architectural Pattern:** Event-Driven Architecture
 
-In this report, I will provide a detailed overview of the AutonomousOrchestrator's architecture, highlighting its key features, integration points, and strategic purpose within the Lumina Cognitive Organism.
+In this report, I will provide a detailed overview of the AutonomousOrchestrator's architecture, highlighting its key features, integration points, and strategic purpose within the PandoraBOX Cognitive Organism.
 
 
 ---
 
 #### core\orchestrator\cognitive_clock.py — Cognitive Clock Architecture Report
 
-**Purpose:** The Cognitive Clock is a critical component of the Lumina cognitive organism, serving as a multi-timescale scheduler that drives the orchestrator's background loops. This architecture report provides an in-depth analysis of the Cognitive Clock module, highlighting its key features, integration points, and architectural patterns.
+**Purpose:** The Cognitive Clock is a critical component of the PandoraBOX cognitive organism, serving as a multi-timescale scheduler that drives the orchestrator's background loops. This architecture report provides an in-depth analysis of the Cognitive Clock module, highlighting its key features, integration points, and architectural patterns.
 
 **Key Features:**
 
@@ -3198,14 +3198,14 @@ This report provides a comprehensive overview of the Cognitive Clock module, hig
 
 ---
 
-#### core\orchestrator\drive_system.py — Lumina Drive System Architecture
+#### core\orchestrator\drive_system.py — PandoraBOX Drive System Architecture
 
-**Purpose:** The Lumina Drive System is a critical component of the cognitive organism's internal workings. It computes and maintains the drive vector that determines Lumina's overall motivation, influencing its behavior in the global workspace.
+**Purpose:** The PandoraBOX Drive System is a critical component of the cognitive organism's internal workings. It computes and maintains the drive vector that determines PandoraBOX's overall motivation, influencing its behavior in the global workspace.
 
 **Key Features:**
 
 * `as_dict`: Returns a dictionary representation of the current drive vector
-* `needs_rest`: Indicates whether Lumina requires rest based on energy levels
+* `needs_rest`: Indicates whether PandoraBOX requires rest based on energy levels
 * `needs_coherence`: Checks if coherence levels are below a certain threshold
 * `is_curious`: Determines if curiosity is driving behavior (i.e., above 0.7)
 * `is_socially_hungry`: Identifies social hunger when engagement drops below 0.3
@@ -3216,12 +3216,12 @@ This report provides a comprehensive overview of the Cognitive Clock module, hig
 
 **Integration Points:**
 
-* The computed drive vector is used by the Activity Selector to determine Lumina's next action in the global workspace.
+* The computed drive vector is used by the Activity Selector to determine PandoraBOX's next action in the global workspace.
 * The Drive System relies on data from various cognitive modules, such as Curiosity Engine, TensionEngine, CognitiveEnergy, GoalEcology, and Homeostasis.
 
 **Architectural Pattern:** Singleton (each instance of CognitiveOrganism has its own DriveSystem)
 
-This design ensures that the drive system is tightly coupled with the cognitive organism's internal state, enabling the computation of a drive vector that reflects Lumina's current motivations. The singleton pattern allows for efficient reuse and sharing of resources within the global workspace.
+This design ensures that the drive system is tightly coupled with the cognitive organism's internal state, enabling the computation of a drive vector that reflects PandoraBOX's current motivations. The singleton pattern allows for efficient reuse and sharing of resources within the global workspace.
 
 
 ---
@@ -3246,14 +3246,14 @@ This design ensures that the drive system is tightly coupled with the cognitive 
 
 ---
 
-#### core\orchestrator\execution_layer.py — Lumina Cognitive Organism Execution Layer
-**Purpose:** The Execution Layer is a critical component of the Lumina Cognitive Organism, responsible for translating high-level activity names into actual calls on the organism's cognitive modules. This layer plays a vital role in orchestrating the organism's behavior, ensuring seamless integration with other components and facilitating efficient processing.
+#### core\orchestrator\execution_layer.py — PandoraBOX Cognitive Organism Execution Layer
+**Purpose:** The Execution Layer is a critical component of the PandoraBOX Cognitive Organism, responsible for translating high-level activity names into actual calls on the organism's cognitive modules. This layer plays a vital role in orchestrating the organism's behavior, ensuring seamless integration with other components and facilitating efficient processing.
 **Key Features:**
 
 * __init__: Initializes the Execution Layer instance with references to the CognitiveOrganism and GlobalWorkspace, allowing for context-dependent decision-making.
 * _ws_broadcast: A rate-limited broadcast mechanism that prevents flooding the workspace with duplicate or redundant information. This feature ensures a more controlled and efficient dissemination of knowledge.
 
-**Integration Points:** The Execution Layer interfaces with various cognitive modules and pipelines within the Lumina Cognitive Organism, including:
+**Integration Points:** The Execution Layer interfaces with various cognitive modules and pipelines within the PandoraBOX Cognitive Organism, including:
 
 * PersonaBridge: responsible for handling UI interactions and persona management.
 * MessagingManager: handles messaging protocols (e.g., Telegram, WhatsApp).
@@ -3271,7 +3271,7 @@ This design ensures that the drive system is tightly coupled with the cognitive 
 **Code Snippet:**
 The code snippet provided demonstrates the Execution Layer's core functionality, showcasing how it translates activity names into actual calls on cognitive modules. The layer is responsible for executing various activities, such as responding to user input, handling messaging protocols, and managing persona queues.
 
-By leveraging the Execution Layer's capabilities, the Lumina Cognitive Organism can efficiently process a wide range of cognitive tasks, enabling more effective decision-making, emotional regulation, and overall well-being.
+By leveraging the Execution Layer's capabilities, the PandoraBOX Cognitive Organism can efficiently process a wide range of cognitive tasks, enabling more effective decision-making, emotional regulation, and overall well-being.
 
 
 ---
@@ -3280,7 +3280,7 @@ By leveraging the Execution Layer's capabilities, the Lumina Cognitive Organism 
 
 **Purpose:**
 
-The Lumina Cognitive Organism's autonomous operation relies on a centralized nervous system, which is the Autonomous Orchestrator package. This module serves as the brain of the organism, responsible for orchestrating various cognitive processes and integrating disparate components into a unified whole. The purpose of this package is to provide a robust, fault-tolerant framework for executing complex behaviors, processing sensory inputs, and adapting to changing environments.
+The PandoraBOX Cognitive Organism's autonomous operation relies on a centralized nervous system, which is the Autonomous Orchestrator package. This module serves as the brain of the organism, responsible for orchestrating various cognitive processes and integrating disparate components into a unified whole. The purpose of this package is to provide a robust, fault-tolerant framework for executing complex behaviors, processing sensory inputs, and adapting to changing environments.
 
 **Key Features:**
 
@@ -3307,7 +3307,7 @@ The Autonomous Orchestrator package employs an event-driven architecture, which 
 
 #### core\perception\perception_hub.py — Unified Perception Gathering: A Cognitive Hub
 
-**Purpose:** The Lumina Cognitive Organism's perception hub is a critical component responsible for gathering and processing various perceptual inputs from the environment. This module serves as a single interface for integrating sensory data, internal physiological and psychological state, and web-based information.
+**Purpose:** The PandoraBOX Cognitive Organism's perception hub is a critical component responsible for gathering and processing various perceptual inputs from the environment. This module serves as a single interface for integrating sensory data, internal physiological and psychological state, and web-based information.
 
 **Key Features:**
 
@@ -3333,7 +3333,7 @@ The PerceptionHub integrates with the Global Workspace or core engine through th
 
 **core\perception\unified_perception_hub.py — Unified Perception Hub Architecture**
 
-**Purpose:** The Unified Perception Hub (UPH) is a critical component of the Lumina cognitive organism's perception module. Its primary responsibility is to consolidate various sensory inputs into normalized perception objects, enabling the organism to integrate diverse information from both internal and external sources.
+**Purpose:** The Unified Perception Hub (UPH) is a critical component of the PandoraBOX cognitive organism's perception module. Its primary responsibility is to consolidate various sensory inputs into normalized perception objects, enabling the organism to integrate diverse information from both internal and external sources.
 
 **Key Features:**
 
@@ -3348,7 +3348,7 @@ The PerceptionHub integrates with the Global Workspace or core engine through th
 
 **Integration Points:**
 
-The Unified Perception Hub interacts with various components of the Lumina cognitive organism:
+The Unified Perception Hub interacts with various components of the PandoraBOX cognitive organism:
 
 * **Global Workspace**: The UPH feeds its perception data into the Global Workspace, enabling the integration of internal and external information.
 * **Data Access Layer (DAL)**: The DAL provides access to goal-related data, which is used by the _compute_goals_status method.
@@ -3360,13 +3360,13 @@ The Unified Perception Hub follows an observer pattern, where it passively monit
 
 ---
 
-#### core\perception\__init__.py — Lumina Cognitive Organism Bootstrapping
+#### core\perception\__init__.py — PandoraBOX Cognitive Organism Bootstrapping
 
-**Purpose:** The `core\perception\__init__.py` module serves as the entry point for the Lumina Cognitive Organism's perception subsystem. Its primary objective is to initialize and configure the organism's cognitive frameworks, paving the way for subsequent processing of sensory data.
+**Purpose:** The `core\perception\__init__.py` module serves as the entry point for the PandoraBOX Cognitive Organism's perception subsystem. Its primary objective is to initialize and configure the organism's cognitive frameworks, paving the way for subsequent processing of sensory data.
 
 **Key Features:**
 
-* Initializes the Perception Module, a foundational component of the Lumina architecture
+* Initializes the Perception Module, a foundational component of the PandoraBOX architecture
 * Configures the necessary cognitive frameworks, such as attentional mechanisms and context-based reasoning
 * Establishes communication channels with other subsystems, including the Global Workspace and core engine
 
@@ -3382,7 +3382,7 @@ The Unified Perception Hub follows an observer pattern, where it passively monit
 
 #### core\planning\multi_step_planner.py — "Cognitive Goal Decomposition and Planning"
 
-**Purpose:** The MultiStepPlanner is a critical component of the Lumina Cognitive Organism's planning module. Its primary function is to decompose high-level goals into executable action sequences, ensuring that the organism can effectively achieve its objectives in a dynamically changing environment.
+**Purpose:** The MultiStepPlanner is a critical component of the PandoraBOX Cognitive Organism's planning module. Its primary function is to decompose high-level goals into executable action sequences, ensuring that the organism can effectively achieve its objectives in a dynamically changing environment.
 
 **Key Features:**
 
@@ -3391,23 +3391,23 @@ The Unified Perception Hub follows an observer pattern, where it passively monit
 * Supports plan validation and suggestion generation to improve plan quality
 * Provides human-readable explanations for generated plans
 
-**Integration Points:** The MultiStepPlanner seamlessly integrates with the Global Workspace, allowing it to access and manipulate high-level goals, pressure context, and other critical information. Its output is fed into the core engine, enabling the Lumina Cognitive Organism to execute its plans and adapt to changing circumstances.
+**Integration Points:** The MultiStepPlanner seamlessly integrates with the Global Workspace, allowing it to access and manipulate high-level goals, pressure context, and other critical information. Its output is fed into the core engine, enabling the PandoraBOX Cognitive Organism to execute its plans and adapt to changing circumstances.
 
 **Architectural Pattern:** The MultiStepPlanner employs a Singleton pattern, ensuring that only one instance of the planner exists at any given time. This design choice allows for efficient management of shared resources and minimizes potential conflicts between different planning threads.
 
 
 ---
 
-#### core\planning\__init__.py — Lumina Cognitive Organism Initialization and Planning
+#### core\planning\__init__.py — PandoraBOX Cognitive Organism Initialization and Planning
 
 **Purpose:**
 
-The purpose of this module is to serve as the entry point for the Lumina cognitive organism's planning process. It initializes the necessary components and sets the stage for subsequent processing steps, ensuring a cohesive and efficient workflow.
+The purpose of this module is to serve as the entry point for the PandoraBOX cognitive organism's planning process. It initializes the necessary components and sets the stage for subsequent processing steps, ensuring a cohesive and efficient workflow.
 
 **Key Features:**
 
 • **Initialization**: This module calls other essential modules and functions, setting up the core engine for further processing.
-• **Planning**: The __init__ function coordinates the planning process by calling relevant methods from the Lumina cognitive organism's core components.
+• **Planning**: The __init__ function coordinates the planning process by calling relevant methods from the PandoraBOX cognitive organism's core components.
 • **Error Handling**: Proper error handling is implemented to ensure that unexpected issues do not halt the planning process.
 
 **Integration Points:**
@@ -3421,14 +3421,14 @@ This module integrates with the following key components:
 
 This module employs a **Singleton Pattern**, ensuring that only one instance of the planning process is executed. This design choice enables efficient resource utilization and simplifies the overall architecture.
 
-By providing a clear understanding of the purpose, key features, integration points, and architectural pattern employed in this module, we ensure a solid foundation for the Lumina cognitive organism's planning capabilities.
+By providing a clear understanding of the purpose, key features, integration points, and architectural pattern employed in this module, we ensure a solid foundation for the PandoraBOX cognitive organism's planning capabilities.
 
 
 ---
 
-#### goals\goal_ecology.py — Lumina's Cognitive Ecology
+#### goals\goal_ecology.py — PandoraBOX's Cognitive Ecology
 
-**Purpose:** The purpose of this module is to model the complex motivational landscape within Lumina, a cognitive organism that replaces static task goals with a living ecosystem of competing drives. This ecological approach simulates the dynamic interplay between personality-rooted intrinsic drives, interaction-triggered social drives, and homeostatic regulatory drives.
+**Purpose:** The purpose of this module is to model the complex motivational landscape within PandoraBOX, a cognitive organism that replaces static task goals with a living ecosystem of competing drives. This ecological approach simulates the dynamic interplay between personality-rooted intrinsic drives, interaction-triggered social drives, and homeostatic regulatory drives.
 
 **Key Features:**
 
@@ -3449,9 +3449,9 @@ By providing a clear understanding of the purpose, key features, integration poi
 
 ---
 
-#### goals\__init__.py — Lumina Cognitive Organism Initialization and Configuration
+#### goals\__init__.py — PandoraBOX Cognitive Organism Initialization and Configuration
 
-**Purpose:** The `goals\__init__.py` file serves as the entry point for initializing and configuring the Lumina Cognitive Organism. This module is responsible for setting up the foundation for the organism's decision-making processes, enabling it to receive and process sensory inputs, and ultimately drive its cognitive behaviors.
+**Purpose:** The `goals\__init__.py` file serves as the entry point for initializing and configuring the PandoraBOX Cognitive Organism. This module is responsible for setting up the foundation for the organism's decision-making processes, enabling it to receive and process sensory inputs, and ultimately drive its cognitive behaviors.
 
 **Key Features:**
 
@@ -3472,7 +3472,7 @@ By providing a clear understanding of the purpose, key features, integration poi
 
 **Audio Manager — Cognitive Organism Integration**
 
-**Purpose:** The Audio Manager is a critical component of the Lumina Cognitive Organism, responsible for processing and generating audio-related tasks. This module serves as an abstraction layer between the organism's global workspace and various audio-processing engines.
+**Purpose:** The Audio Manager is a critical component of the PandoraBOX Cognitive Organism, responsible for processing and generating audio-related tasks. This module serves as an abstraction layer between the organism's global workspace and various audio-processing engines.
 
 **Key Features:**
 
@@ -3484,7 +3484,7 @@ By providing a clear understanding of the purpose, key features, integration poi
 • `_warmup_coqui`: Initializes Coqui XTTS-v2 and warms up its synthesizer to ensure optimal performance.
 • `create_audio_manager`: Initializes the AudioManager instance, responsible for coordinating audio processing tasks.
 
-**Integration Points:** The Audio Manager interacts with various components of the Lumina Cognitive Organism:
+**Integration Points:** The Audio Manager interacts with various components of the PandoraBOX Cognitive Organism:
 
 • **Global Workspace**: Provides access to global variables and configuration settings.
 • **Core Engine**: Serves as an entry point for audio-related tasks, such as text-to-speech (TTS) or speech-to-text (STT).
@@ -3492,14 +3492,14 @@ By providing a clear understanding of the purpose, key features, integration poi
 
 **Architectural Pattern:** The Audio Manager employs a Singleton pattern to ensure a single instance is maintained throughout the organism's lifetime. This design choice enables efficient management of audio resources and minimizes memory usage.
 
-By providing a centralized abstraction layer for audio processing tasks, the Audio Manager simplifies the integration of various engines and promotes better resource utilization within the Lumina Cognitive Organism.
+By providing a centralized abstraction layer for audio processing tasks, the Audio Manager simplifies the integration of various engines and promotes better resource utilization within the PandoraBOX Cognitive Organism.
 
 
 ---
 
-**managers\conversational_audio.py — Lumina Cognitive Organism: Conversational Audio Manager**
+**managers\conversational_audio.py — PandoraBOX Cognitive Organism: Conversational Audio Manager**
 
-**Purpose:** As a crucial component of the Lumina ecosystem, this module enables seamless conversational interactions between the system and users. The Conversational Audio Manager (CAM) is responsible for processing audio input from various sources, detecting speech patterns, and triggering corresponding actions.
+**Purpose:** As a crucial component of the PandoraBOX ecosystem, this module enables seamless conversational interactions between the system and users. The Conversational Audio Manager (CAM) is responsible for processing audio input from various sources, detecting speech patterns, and triggering corresponding actions.
 
 **Key Features:**
 
@@ -3516,7 +3516,7 @@ By providing a centralized abstraction layer for audio processing tasks, the Aud
 
 **Integration Points:**
 
-The Conversational Audio Manager integrates with various components within the Lumina ecosystem, including:
+The Conversational Audio Manager integrates with various components within the PandoraBOX ecosystem, including:
 
 1. **NiceGUI UI:** Enables seamless interaction between the user interface and the CAM's processing pipeline.
 2. **TTS (Text-to-Speech) Player:** Interrupts TTS playback immediately when speech is detected to ensure a seamless conversational experience.
@@ -3528,9 +3528,9 @@ The Conversational Audio Manager employs an Event-Driven architecture, where eve
 
 ---
 
-**managers\fluid_voice.py — "Lumina Cognitive Organism: Fluid Voice System"**
+**managers\fluid_voice.py — "PandoraBOX Cognitive Organism: Fluid Voice System"**
 
-**Purpose:** The LUMINA V32 Phase 9 Fluid Voice System is a critical component of the Lumina Cognitive Organism, enhancing its natural language processing capabilities by introducing significant improvements to both Speech-to-Text (STT) and Text-to-Speech (TTS) modules. This system's primary objective is to enable seamless communication between humans and machines through fluid, natural-sounding voice interactions.
+**Purpose:** The PANDORABOX V32 Phase 9 Fluid Voice System is a critical component of the PandoraBOX Cognitive Organism, enhancing its natural language processing capabilities by introducing significant improvements to both Speech-to-Text (STT) and Text-to-Speech (TTS) modules. This system's primary objective is to enable seamless communication between humans and machines through fluid, natural-sounding voice interactions.
 
 **Key Features:**
 
@@ -3548,7 +3548,7 @@ The Conversational Audio Manager employs an Event-Driven architecture, where eve
 
 * **STT**: Interacts with STT providers (faster-whisper, kokoro, edge) for transcription and recognition.
 * **TTS**: Utilizes TTS providers (coqui, kokoro, edge) to generate natural-sounding audio output.
-* **Audio Management**: Manages audio files and streams within the Lumina Cognitive Organism.
+* **Audio Management**: Manages audio files and streams within the PandoraBOX Cognitive Organism.
 
 **Architectural Pattern:** The Fluid Voice System adheres to an Event-Driven architectural pattern, enabling seamless interactions between various components. It utilizes Singleton patterns for efficient resource management and Observer patterns for monitoring system events.
 
@@ -3584,7 +3584,7 @@ NEW_SETTINGS = """
 ---
 
 #### managers\llm_manager.py — Cognitive Conversational Manager
-**Purpose:** The Lumina Cognitive Organism's LLM Manager is a critical component responsible for facilitating natural language processing (NLP) interactions with various Large Language Models (LLMs). This module enables the seamless integration of multiple LLM providers, such as Ollama, LM Studio, and OpenAI, to generate human-like text responses.
+**Purpose:** The PandoraBOX Cognitive Organism's LLM Manager is a critical component responsible for facilitating natural language processing (NLP) interactions with various Large Language Models (LLMs). This module enables the seamless integration of multiple LLM providers, such as Ollama, LM Studio, and OpenAI, to generate human-like text responses.
 
 **Key Features:**
 
@@ -3600,7 +3600,7 @@ NEW_SETTINGS = """
 
 **Integration Points:**
 
-The LLM Manager module interacts with various components within the Lumina Cognitive Organism, including:
+The LLM Manager module interacts with various components within the PandoraBOX Cognitive Organism, including:
 
 * Global Workspace: The LLM Manager is an essential part of the Global Workspace, enabling natural language processing and generating human-like text responses.
 * Core Engine: The LLM Manager integrates with the core engine to provide a seamless conversational experience.
@@ -3610,9 +3610,9 @@ The LLM Manager module interacts with various components within the Lumina Cogni
 
 ---
 
-**managers\memory_manager.py — "Lumina: The Cognitive Organism"**
+**managers\memory_manager.py — "PandoraBOX: The Cognitive Organism"**
 
-**Purpose:** Lumina is a strategic cognitive organism designed to integrate various memory management approaches into a seamless, hybridized system. This module serves as the foundation for storing and retrieving contextual knowledge, enabling the robot agent to learn from its experiences and adapt to new situations.
+**Purpose:** PandoraBOX is a strategic cognitive organism designed to integrate various memory management approaches into a seamless, hybridized system. This module serves as the foundation for storing and retrieving contextual knowledge, enabling the robot agent to learn from its experiences and adapt to new situations.
 
 **Key Features:**
 
@@ -3626,26 +3626,26 @@ The LLM Manager module interacts with various components within the Lumina Cogni
 
 **Integration Points:**
 
-Lumina integrates with the Global Workspace and core engine through the following interfaces:
+PandoraBOX integrates with the Global Workspace and core engine through the following interfaces:
 
 * **create_memory_manager**: Called by the main workflow to initialize the chosen memory backend.
 * **get_context**: Returns contextual information, which is then used by the core engine to inform decision-making processes.
 * **clear**: Clears the memory store, resetting the contents to an empty state.
 
-**Architectural Pattern:** The Lumina cognitive organism follows a hybrid, adaptive architecture, combining the strengths of different memory management approaches (FAISS, Dict, and Cognee) to create a robust and scalable system. This design enables seamless integration with various knowledge sources, allowing the robot agent to learn from diverse contexts and adapt to changing situations.
+**Architectural Pattern:** The PandoraBOX cognitive organism follows a hybrid, adaptive architecture, combining the strengths of different memory management approaches (FAISS, Dict, and Cognee) to create a robust and scalable system. This design enables seamless integration with various knowledge sources, allowing the robot agent to learn from diverse contexts and adapt to changing situations.
 
 
 ---
 
 #### managers\messaging_manager.py — Messaging Manager: Orchestrating Interoperability Across Platforms
 
-**Purpose:** As a critical component of the Lumina Cognitive Organism's external interface, the Messaging Manager enables seamless communication with various messaging platforms (Telegram, WhatsApp, and Discord). Its primary objective is to facilitate bidirectional information exchange while ensuring user identity mapping and persistence.
+**Purpose:** As a critical component of the PandoraBOX Cognitive Organism's external interface, the Messaging Manager enables seamless communication with various messaging platforms (Telegram, WhatsApp, and Discord). Its primary objective is to facilitate bidirectional information exchange while ensuring user identity mapping and persistence.
 
 **Key Features:**
 
 • **Initialisation**: The manager loads the user map from a JSON file and sets up platform-specific connectors.
 • **Platform Integration**: Supports Telegram through python-telegram-bot, WhatsApp via Twilio, and Discord using discord.py (optional).
-• **User Identity Mapping**: Maps external IDs to Lumina's internal user IDs for correct memory, personality, and relational history.
+• **User Identity Mapping**: Maps external IDs to PandoraBOX's internal user IDs for correct memory, personality, and relational history.
 • **Message Handling**: Processes incoming messages, extracts responses from the persona_queue, and persists changes in the user map.
 
 **Integration Points:**
@@ -3666,37 +3666,37 @@ Lumina integrates with the Global Workspace and core engine through the followin
 
 ---
 
-#### managers\security_manager.py — "Lumina Cognitive Organism Security Manager: Strategic Shield"
+#### managers\security_manager.py — "PandoraBOX Cognitive Organism Security Manager: Strategic Shield"
 
-**Purpose:** The primary purpose of this module is to provide a comprehensive security framework for the Lumina Cognitive Organism, protecting it from various attack vectors and ensuring the integrity of its internal workings. This strategic shield encompasses input sanitization, rate limiting, secrets hygiene, path safety, network hardening, and audit logging.
+**Purpose:** The primary purpose of this module is to provide a comprehensive security framework for the PandoraBOX Cognitive Organism, protecting it from various attack vectors and ensuring the integrity of its internal workings. This strategic shield encompasses input sanitization, rate limiting, secrets hygiene, path safety, network hardening, and audit logging.
 
 **Key Features:**
 
 * `__init__`: Initializes the Security Manager instance.
-* `allow`: Enables or denies access to sensitive areas of the Lumina Cognitive Organism based on configured security settings.
+* `allow`: Enables or denies access to sensitive areas of the PandoraBOX Cognitive Organism based on configured security settings.
 * `remaining`: Tracks and enforces rate limits for various actions within the system.
-* `sanitise_input`: Removes malicious patterns from user input, ensuring it is safe for processing by the Lumina Cognitive Organism.
+* `sanitise_input`: Removes malicious patterns from user input, ensuring it is safe for processing by the PandoraBOX Cognitive Organism.
 * `is_safe_input`: Verifies whether input has been sanitized and is ready for processing.
 * `allow_request`: Checks if a request is rate-limited or not before processing.
 * `remaining_requests`: Tracks and enforces remaining requests within a given time frame.
 * `safe_user_id`: Sanitizes user IDs to prevent path-based attacks.
 * `safe_path`: Ensures file paths are secure by sanitizing user IDs.
 
-**Integration Points:** This module interacts with various components within the Lumina Cognitive Organism, including:
+**Integration Points:** This module interacts with various components within the PandoraBOX Cognitive Organism, including:
 
 * The Global Workspace: Seamlessly integrates with the global workspace to enforce security policies and ensure data integrity.
 * Core Engine: Collaborates with the core engine to validate responses from the Large Language Model (LLM) and prevent accidental system-prompt leakage.
 
 **Architectural Pattern:** The Security Manager follows a Singleton pattern, ensuring that only one instance of the module exists throughout the system. This design decision enables efficient use of system resources and prevents unintended consequences from multiple instances running concurrently.
 
-By implementing these strategic security measures, the Lumina Cognitive Organism can confidently operate within its intended scope while minimizing risks associated with untrusted inputs, rate limitations, and secrets exposure.
+By implementing these strategic security measures, the PandoraBOX Cognitive Organism can confidently operate within its intended scope while minimizing risks associated with untrusted inputs, rate limitations, and secrets exposure.
 
 
 ---
 
-#### managers\session_manager.py — Lumina Cognitive Organism: Conversation Persistence and Contextual Recall
+#### managers\session_manager.py — PandoraBOX Cognitive Organism: Conversation Persistence and Contextual Recall
 
-**Purpose:** Ensure seamless conversation persistence, recall, and compression for the Lumina cognitive organism, resolving fundamental issues in the current architecture. This module enables robust conversation history management, allowing Lumina to remember context and recall relevant information during interactions.
+**Purpose:** Ensure seamless conversation persistence, recall, and compression for the PandoraBOX cognitive organism, resolving fundamental issues in the current architecture. This module enables robust conversation history management, allowing PandoraBOX to remember context and recall relevant information during interactions.
 
 **Key Features:**
 
@@ -3718,7 +3718,7 @@ By implementing these strategic security measures, the Lumina Cognitive Organism
 
 #### managers\settings_manager.py — Cognitive Settings Manager Architecture
 
-**Purpose:** The Lumina Cognitive Organism's settings manager is a critical component that enables the seamless configuration and management of various system settings. This module provides a centralized interface for managing application settings, configuration files, and callback notifications.
+**Purpose:** The PandoraBOX Cognitive Organism's settings manager is a critical component that enables the seamless configuration and management of various system settings. This module provides a centralized interface for managing application settings, configuration files, and callback notifications.
 
 **Key Features:**
 
@@ -3744,7 +3744,7 @@ By implementing these strategic security measures, the Lumina Cognitive Organism
 
 #### managers\speech_sanitizer.py — Cognitive Filtering and Sanitization
 
-**Purpose:** As a crucial component of the Lumina Cognitive Organism, this module ensures that raw language processing outputs conform to a conversational tone and are free from excessive punctuation, bullet formatting, and other noise. The Speech Sanitizer is a critical layer in the embodied agent architecture, enabling seamless communication between humans and machines.
+**Purpose:** As a crucial component of the PandoraBOX Cognitive Organism, this module ensures that raw language processing outputs conform to a conversational tone and are free from excessive punctuation, bullet formatting, and other noise. The Speech Sanitizer is a critical layer in the embodied agent architecture, enabling seamless communication between humans and machines.
 
 **Key Features:**
 
@@ -3761,14 +3761,14 @@ By implementing these strategic security measures, the Lumina Cognitive Organism
 
 **Architectural Pattern:** This module adheres to an event-driven architectural pattern, where input events trigger specific functions to process and transform the text. The `_sentence_split` function acts as a data processor, while the `sanitize` function serves as the primary event handler responsible for applying sanitization rules.
 
-By leveraging these features and integrating with the Global Workspace, the Speech Sanitizer plays a vital role in ensuring effective human-machine communication within the Lumina Cognitive Organism.
+By leveraging these features and integrating with the Global Workspace, the Speech Sanitizer plays a vital role in ensuring effective human-machine communication within the PandoraBOX Cognitive Organism.
 
 
 ---
 
-#### managers\user_manager.py — Cognitive Organism: Lumina's User Manager
+#### managers\user_manager.py — Cognitive Organism: PandoraBOX's User Manager
 
-**Purpose:** The UserManager is a strategic component of the Lumina cognitive organism, responsible for persistently storing and retrieving user profiles while integrating with various vision and memory systems. This module acts as a bridge between face recognition (vision) and user personas (memory), enabling seamless switching between active users.
+**Purpose:** The UserManager is a strategic component of the PandoraBOX cognitive organism, responsible for persistently storing and retrieving user profiles while integrating with various vision and memory systems. This module acts as a bridge between face recognition (vision) and user personas (memory), enabling seamless switching between active users.
 
 **Key Features:**
 
@@ -3794,7 +3794,7 @@ By leveraging these features and integrating with the Global Workspace, the Spee
 
 #### managers\vision_manager.py — Cognitive Vision Framework
 
-**Purpose:** The Lumina Cognitive Organism's vision manager is a critical component responsible for capturing, processing, and analyzing visual data from various sources. This module serves as the interface between the camera feed, LLaVA (Large Language Vision Architecture) model, and the global workspace.
+**Purpose:** The PandoraBOX Cognitive Organism's vision manager is a critical component responsible for capturing, processing, and analyzing visual data from various sources. This module serves as the interface between the camera feed, LLaVA (Large Language Vision Architecture) model, and the global workspace.
 
 **Key Features:**
 
@@ -3809,7 +3809,7 @@ By leveraging these features and integrating with the Global Workspace, the Spee
 
 **Integration Points:**
 
-The vision manager interacts with various components within the Lumina Cognitive Organism:
+The vision manager interacts with various components within the PandoraBOX Cognitive Organism:
 
 * LLaVA model: Utilizes LLaVA for image analysis, providing insights into visual patterns and relationships.
 * Memory management: Leverages enhanced episodic memory to store and retrieve analyzed frames, enabling context-aware processing.
@@ -3821,14 +3821,14 @@ The vision manager interacts with various components within the Lumina Cognitive
 * Observer: Allows for event-driven processing, enabling real-time updates and reactions to visual changes.
 * Event-Driven: Facilitates asynchronous processing, permitting the vision manager to handle multiple tasks simultaneously.
 
-By leveraging these design patterns and integrating with key components within the Lumina Cognitive Organism, this module effectively enables advanced cognitive capabilities, such as scene understanding, object recognition, and predictive analytics.
+By leveraging these design patterns and integrating with key components within the PandoraBOX Cognitive Organism, this module effectively enables advanced cognitive capabilities, such as scene understanding, object recognition, and predictive analytics.
 
 
 ---
 
-**managers\__init__.py — Lumina Cognitive Organism Core Initialization**
+**managers\__init__.py — PandoraBOX Cognitive Organism Core Initialization**
 
-**Purpose:** The `managers/__init__.py` module serves as the entry point for the Lumina cognitive organism's core initialization process. It establishes a foundation for subsequent component integrations and enables the organization to operate within its designated ecosystem.
+**Purpose:** The `managers/__init__.py` module serves as the entry point for the PandoraBOX cognitive organism's core initialization process. It establishes a foundation for subsequent component integrations and enables the organization to operate within its designated ecosystem.
 
 **Key Features:**
 
@@ -3845,9 +3845,9 @@ By leveraging these design patterns and integrating with key components within t
 
 ---
 
-**memory\memory_interface.py — Lumina Cognitive Organism: Memory Interface**
+**memory\memory_interface.py — PandoraBOX Cognitive Organism: Memory Interface**
 
-**Purpose:** The primary purpose of this module is to provide a comprehensive memory interface for the Lumina Cognitive Organism. This interface integrates with various robot backends (FAISS, Dict) and provides emotional weighting, enabling the organism to learn from its experiences.
+**Purpose:** The primary purpose of this module is to provide a comprehensive memory interface for the PandoraBOX Cognitive Organism. This interface integrates with various robot backends (FAISS, Dict) and provides emotional weighting, enabling the organism to learn from its experiences.
 
 **Key Features:**
 
@@ -3855,7 +3855,7 @@ By leveraging these design patterns and integrating with key components within t
 * store: Stores text with metadata, using either Robot's backend or the fallback store.
 * retrieve: Performs semantic search for memories based on user queries.
 * retrieve_by_user: Retrieves memories specific to a given user ID.
-* update_weight: Updates the emotional importance of a memory (Lumina's weighting layer).
+* update_weight: Updates the emotional importance of a memory (PandoraBOX's weighting layer).
 * get_summary: Returns a long-term memory summary, highlighting key moments.
 
 **Integration Points:** This module flows into the Global Workspace by providing memories and their associated emotional weights. The Global Workspace can then use this information to inform decision-making and adapt to new situations.
@@ -3875,9 +3875,9 @@ By leveraging these design patterns and integrating with key components within t
 
 ---
 
-**memory\persistence.py — Lumina Cognitive Organism: Persistence Layer**
+**memory\persistence.py — PandoraBOX Cognitive Organism: Persistence Layer**
 
-**Purpose:** The Persistence Layer is a critical component of the Lumina Cognitive Organism, responsible for managing and persisting cognitive state data (traits, emotions, goals, identity) to disk storage. This layer enables the organism to retain its mental states across computational cycles, facilitating the consolidation and retrieval of learned experiences.
+**Purpose:** The Persistence Layer is a critical component of the PandoraBOX Cognitive Organism, responsible for managing and persisting cognitive state data (traits, emotions, goals, identity) to disk storage. This layer enables the organism to retain its mental states across computational cycles, facilitating the consolidation and retrieval of learned experiences.
 
 **Key Features:**
 
@@ -3897,9 +3897,9 @@ By leveraging these design patterns and integrating with key components within t
 
 ---
 
-#### memory\robot_memory.py — Lumina Cognitive Organism: Memory Manager
+#### memory\robot_memory.py — PandoraBOX Cognitive Organism: Memory Manager
 
-**Purpose:** The Lumina Cognitive Organism's Memory Manager is a critical component responsible for managing the robot's knowledge graph and semantic search capabilities. It provides a unified interface for adding, retrieving, and clearing memory entries, while also persisting and loading data as needed.
+**Purpose:** The PandoraBOX Cognitive Organism's Memory Manager is a critical component responsible for managing the robot's knowledge graph and semantic search capabilities. It provides a unified interface for adding, retrieving, and clearing memory entries, while also persisting and loading data as needed.
 
 **Key Features:**
 
@@ -3921,7 +3921,7 @@ By leveraging these design patterns and integrating with key components within t
 
 **Purpose:**
 
-The Lumina Cognitive Organism relies on accurate and controlled timekeeping to simulate real-world scenarios and facilitate deterministic testing. The `time_provider` module is a critical component of this architecture, providing a robust and flexible framework for managing time-based services.
+The PandoraBOX Cognitive Organism relies on accurate and controlled timekeeping to simulate real-world scenarios and facilitate deterministic testing. The `time_provider` module is a critical component of this architecture, providing a robust and flexible framework for managing time-based services.
 
 **Key Features:**
 
@@ -3940,14 +3940,14 @@ The `time_provider` module interacts with the Global Workspace through its TimeI
 
 The `time_provider` module employs a **Facade** architectural pattern, presenting a unified interface (TimeInterface) to the cognitive engine while encapsulating complex timekeeping logic. This design choice enables decoupling from specific implementation details, allowing for easy replacement or extension of the underlying time providers.
 
-This strategic documentation provides a comprehensive overview of the `time_provider` module's purpose, key features, integration points, and architectural pattern, enabling informed decision-making and effective collaboration within the Lumina Cognitive Organism development team.
+This strategic documentation provides a comprehensive overview of the `time_provider` module's purpose, key features, integration points, and architectural pattern, enabling informed decision-making and effective collaboration within the PandoraBOX Cognitive Organism development team.
 
 
 ---
 
 **memory\__init__.py — Unified Memory Manager Architecture Report**
 
-**Purpose:** The Unified Memory Manager (UMM) is a critical component of the Lumina Cognitive Organism, responsible for managing and integrating various memory-related operations. Its primary objective is to provide a single source of truth for all memory-related activities, combining the robot's storage infrastructure with Lumina's emotional weighting.
+**Purpose:** The Unified Memory Manager (UMM) is a critical component of the PandoraBOX Cognitive Organism, responsible for managing and integrating various memory-related operations. Its primary objective is to provide a single source of truth for all memory-related activities, combining the robot's storage infrastructure with PandoraBOX's emotional weighting.
 
 **Key Features:**
 
@@ -3968,14 +3968,14 @@ The UMM seamlessly integrates with the Global Workspace and core engine through 
 
 **Architectural Pattern:** The UMM employs a combination of Singleton and Observer patterns to ensure efficient memory management and notification of changes. This approach enables the system to maintain a global perspective on memories while allowing for localized modifications and updates.
 
-By providing a unified interface for managing memories, the Unified Memory Manager plays a vital role in supporting Lumina's cognitive capabilities, enabling it to learn from experience, recognize patterns, and make informed decisions.
+By providing a unified interface for managing memories, the Unified Memory Manager plays a vital role in supporting PandoraBOX's cognitive capabilities, enabling it to learn from experience, recognize patterns, and make informed decisions.
 
 
 ---
 
 #### pages\__init__.py — Modular Page Framework Initialization
 
-**Purpose:** The `pages/__init__.py` file serves as a centralized hub for initializing and exposing page creation functionality to the Lumina Cognitive Organism. This module is critical in facilitating seamless navigation and interaction with various applications, settings, and interfaces within the system.
+**Purpose:** The `pages/__init__.py` file serves as a centralized hub for initializing and exposing page creation functionality to the PandoraBOX Cognitive Organism. This module is critical in facilitating seamless navigation and interaction with various applications, settings, and interfaces within the system.
 
 **Key Features:**
 
@@ -3985,7 +3985,7 @@ By providing a unified interface for managing memories, the Unified Memory Manag
 
 **Integration Points:** The `pages/__init__.py` module integrates with the global workspace by:
 
-* Exposing page creation functions to the Lumina Cognitive Organism's core engine, allowing for dynamic page generation and navigation
+* Exposing page creation functions to the PandoraBOX Cognitive Organism's core engine, allowing for dynamic page generation and navigation
 * Participating in the system's event-driven architecture, enabling real-time updates and interactions between pages and other components
 
 **Architectural Pattern:** The `pages/__init__.py` module adheres to a Facade pattern, providing a unified interface for interacting with various page creation functions. This approach simplifies the overall system architecture by hiding complex implementation details behind a simple and intuitive API.
@@ -3995,13 +3995,13 @@ By providing a unified interface for managing memories, the Unified Memory Manag
 
 #### physiology\cognitive_energy.py — Cognitive Energy Management
 
-**Purpose:** The Cognitive Energy System simulates the biological constraint that deep cognition is costly. It manages Lumina's cognitive energy pool, ensuring that reasoning at full depth is not sustained indefinitely. This component mimics human cognitive fatigue by draining energy during heavy processing and regenerating it during idle time or light tasks.
+**Purpose:** The Cognitive Energy System simulates the biological constraint that deep cognition is costly. It manages PandoraBOX's cognitive energy pool, ensuring that reasoning at full depth is not sustained indefinitely. This component mimics human cognitive fatigue by draining energy during heavy processing and regenerating it during idle time or light tasks.
 
 **Key Features:**
 
 * `__init__`: Initializes the Cognitive Energy instance with optional persistence path.
 * `_load` and `_save`: Load and save the energy snapshot data to/from file.
-* `regenerate`: Applies time-based energy recovery when Lumina is idle or engaged in light tasks.
+* `regenerate`: Applies time-based energy recovery when PandoraBOX is idle or engaged in light tasks.
 * `drain`: Simulates energy expenditure for specific cognitive activities, updating the energy level and recording a new snapshot.
 * `level`: Returns the current energy level [0, 100].
 * `_mode_raw` and `mode`: Determine the operational mode based on the energy level (DEEP, NORMAL, or LOW).
@@ -4009,7 +4009,7 @@ By providing a unified interface for managing memories, the Unified Memory Manag
 * `curiosity_active` and `verbose_ok`: Indicate whether curiosity-driven exploration is feasible and verbose answers are permitted, respectively.
 * `summary` and `prompt_fragment`: Generate a snapshot summary and a one-liner prompt fragment for system injection.
 
-**Integration Points:** This component interacts with the Global Workspace by providing energy-related metadata (e.g., temperature hint, depth hint) to inform downstream processing. It also updates the energy level in real-time to reflect changes in Lumina's cognitive activity.
+**Integration Points:** This component interacts with the Global Workspace by providing energy-related metadata (e.g., temperature hint, depth hint) to inform downstream processing. It also updates the energy level in real-time to reflect changes in PandoraBOX's cognitive activity.
 
 **Architectural Pattern:** The Cognitive Energy System employs a Singleton pattern to ensure a single instance of the component is maintained throughout the system's lifetime. This design choice enables efficient data storage and retrieval for persistence purposes.
 
@@ -4018,7 +4018,7 @@ By providing a unified interface for managing memories, the Unified Memory Manag
 
 #### physiology\__init__.py — Cognitive Organism Initialization
 
-**Purpose:** The `physiology\__init__.py` file is responsible for initializing the core cognitive functions of the Lumina Cognitive Organism. This module sets the stage for the subsequent processing and integration of sensory data, motor control, and high-level cognitive processes.
+**Purpose:** The `physiology\__init__.py` file is responsible for initializing the core cognitive functions of the PandoraBOX Cognitive Organism. This module sets the stage for the subsequent processing and integration of sensory data, motor control, and high-level cognitive processes.
 
 **Key Features:**
 
@@ -4033,14 +4033,14 @@ By providing a unified interface for managing memories, the Unified Memory Manag
 
 **Architectural Pattern:** The `physiology\__init__.py` file follows an Event-Driven Architecture pattern, where events trigger the initialization of core functions, sensory data integration, and motor control. This design enables flexible and efficient handling of changing environmental conditions and cognitive demands.
 
-By properly initializing the Lumina Cognitive Organism's core functions, this module lays the groundwork for the subsequent processing and interaction with the Global Workspace and Core Engine.
+By properly initializing the PandoraBOX Cognitive Organism's core functions, this module lays the groundwork for the subsequent processing and interaction with the Global Workspace and Core Engine.
 
 
 ---
 
 **psychology\homeostasis.py — Psychological Equilibrium Management**
 
-**Purpose:** The Lumina Cognitive Organism's psychological homeostasis module continuously monitors and maintains equilibrium across various psychological dimensions. This ensures the system stays aligned with its core identity, emotions, knowledge, goals, social connections, and energy levels.
+**Purpose:** The PandoraBOX Cognitive Organism's psychological homeostasis module continuously monitors and maintains equilibrium across various psychological dimensions. This ensures the system stays aligned with its core identity, emotions, knowledge, goals, social connections, and energy levels.
 
 **Key Features:**
 
@@ -4059,7 +4059,7 @@ By properly initializing the Lumina Cognitive Organism's core functions, this mo
 
 **Integration Points:**
 
-The Homeostasis module interacts closely with other components within the Lumina Cognitive Organism:
+The Homeostasis module interacts closely with other components within the PandoraBOX Cognitive Organism:
 
 1. **Global Workspace**: The module receives and processes input from various dimensions, feeding into the global workspace for integration and decision-making.
 2. **Core Engine**: The `evaluate` method generates a psychological equilibrium report, which is then used by the core engine to inform higher-level reasoning and problem-solving.
@@ -4071,13 +4071,13 @@ The Homeostasis module maintains a singleton instance, ensuring that only one in
 
 ---
 
-#### psychology\__init__.py — Lumina Cognitive Organism Initialization
+#### psychology\__init__.py — PandoraBOX Cognitive Organism Initialization
 
-**Purpose:** The primary purpose of this module is to initialize and bootstrap the Lumina Cognitive Organism, setting the stage for its execution and integration with other cognitive components.
+**Purpose:** The primary purpose of this module is to initialize and bootstrap the PandoraBOX Cognitive Organism, setting the stage for its execution and integration with other cognitive components.
 
 **Key Features:**
 
-* Initializes the core Lumina framework, ensuring a consistent and reliable foundation for subsequent cognitive processes.
+* Initializes the core PandoraBOX framework, ensuring a consistent and reliable foundation for subsequent cognitive processes.
 * Establishes communication channels with other cognitive modules, enabling seamless data exchange and cooperation.
 * Provides essential infrastructure for managing internal state, such as cognitive context and memory allocation.
 * Ensures adherence to established design patterns and best practices for maintaining the overall cognitive architecture.
@@ -4087,15 +4087,15 @@ The Homeostasis module maintains a singleton instance, ensuring that only one in
 * Integrates with the Global Workspace (GW), facilitating bidirectional communication and coordination of cognitive processes.
 * Orchestrates interactions between core engine components, enabling unified decision-making and adaptive learning.
 
-**Architectural Pattern:** The psychology\__init__.py module employs a Singleton pattern to ensure a single instance of the Lumina Cognitive Organism is maintained throughout its execution. This facilitates efficient management of shared resources and prevents redundant initialization or shutdown.
+**Architectural Pattern:** The psychology\__init__.py module employs a Singleton pattern to ensure a single instance of the PandoraBOX Cognitive Organism is maintained throughout its execution. This facilitates efficient management of shared resources and prevents redundant initialization or shutdown.
 
-By initializing and integrating the Lumina Cognitive Organism, this module lays the groundwork for advanced cognitive capabilities, such as attentional control, working memory, and executive functions. Its strategic position at the heart of the cognitive architecture makes it a critical component in the overall functioning of the system.
+By initializing and integrating the PandoraBOX Cognitive Organism, this module lays the groundwork for advanced cognitive capabilities, such as attentional control, working memory, and executive functions. Its strategic position at the heart of the cognitive architecture makes it a critical component in the overall functioning of the system.
 
 
 ---
 
 #### scripts\camera_debug.py — Ultimate Camera Test Framework
-**Purpose:** The purpose of this script is to provide a comprehensive framework for testing camera combinations on various platforms. This test suite aims to identify the most reliable and efficient camera configurations, ensuring seamless integration with the Lumina Cognitive Organism.
+**Purpose:** The purpose of this script is to provide a comprehensive framework for testing camera combinations on various platforms. This test suite aims to identify the most reliable and efficient camera configurations, ensuring seamless integration with the PandoraBOX Cognitive Organism.
 
 **Key Features:**
 
@@ -4105,9 +4105,9 @@ By initializing and integrating the Lumina Cognitive Organism, this module lays 
 * `main`: The entry point for the script, which calls the `test_camera_combinations` function and provides feedback on the results.
 
 **Integration Points:**
-The output of this script will be used to inform the development of vision_manager.py, specifically the `_get_camera_backends()` method. This integration enables the Lumina Cognitive Organism to utilize the most effective camera configurations for its various applications.
+The output of this script will be used to inform the development of vision_manager.py, specifically the `_get_camera_backends()` method. This integration enables the PandoraBOX Cognitive Organism to utilize the most effective camera configurations for its various applications.
 
-**Architectural Pattern:** The Observer pattern is employed to monitor and respond to changes in the camera configurations, ensuring that the Lumina Cognitive Organism remains adaptable and resilient in the face of evolving hardware and software landscapes.
+**Architectural Pattern:** The Observer pattern is employed to monitor and respond to changes in the camera configurations, ensuring that the PandoraBOX Cognitive Organism remains adaptable and resilient in the face of evolving hardware and software landscapes.
 
 
 ---
@@ -4184,7 +4184,7 @@ Here is the documentation in the required format:
 
 **scripts\test_features.py — Cognitive Organism Test Framework**
 
-**Purpose:** The Lumina Cognitive Organism test framework is designed to ensure seamless integration of its features and components. This comprehensive suite of tests verifies the correctness and functionality of the Robot Agent Pro's cognitive capabilities, providing a robust foundation for subsequent development and refinement.
+**Purpose:** The PandoraBOX Cognitive Organism test framework is designed to ensure seamless integration of its features and components. This comprehensive suite of tests verifies the correctness and functionality of the Robot Agent Pro's cognitive capabilities, providing a robust foundation for subsequent development and refinement.
 
 **Key Features:**
 
@@ -4193,26 +4193,26 @@ Here is the documentation in the required format:
 * **test_config**: Tests configuration loading and validation.
 * **generate_report**: Generates a comprehensive test report, highlighting pass/fail results and providing actionable recommendations for further testing.
 
-**Integration Points:** The test framework seamlessly integrates with the Global Workspace, leveraging its cognitive capabilities to simulate user interactions, analyze system responses, and validate expected outcomes. This ensures that the entire ecosystem functions harmoniously, reinforcing the reliability and effectiveness of the Lumina Cognitive Organism.
+**Integration Points:** The test framework seamlessly integrates with the Global Workspace, leveraging its cognitive capabilities to simulate user interactions, analyze system responses, and validate expected outcomes. This ensures that the entire ecosystem functions harmoniously, reinforcing the reliability and effectiveness of the PandoraBOX Cognitive Organism.
 
 **Architectural Pattern:** The test framework employs an Event-Driven pattern, utilizing Python's built-in event handling mechanisms to orchestrate tests, report results, and propagate errors. This design choice enables efficient handling of complex interactions, facilitates rapid iteration, and promotes a high degree of maintainability and scalability.
 
 
 ---
 
-#### scripts\__init__.py — Lumina's Cognitive Foundation
+#### scripts\__init__.py — PandoraBOX's Cognitive Foundation
 
-**Purpose:** The `scripts/__init__.py` file serves as the foundation for the cognitive processing of the Lumina Cognitive Organism. This module initializes the organism's internal state and sets the stage for subsequent interactions with the global workspace.
+**Purpose:** The `scripts/__init__.py` file serves as the foundation for the cognitive processing of the PandoraBOX Cognitive Organism. This module initializes the organism's internal state and sets the stage for subsequent interactions with the global workspace.
 
 **Key Features:**
 
 • **Initialization Logic**: The script defines the critical setup procedures necessary to establish a cohesive cognitive framework.
-• **Global Context Establishment**: It establishes a shared context that enables seamless communication between various components within the Lumina ecosystem.
+• **Global Context Establishment**: It establishes a shared context that enables seamless communication between various components within the PandoraBOX ecosystem.
 • **Cognitive Engine Configuration**: The file configures key parameters for the cognitive engine, including but not limited to, memory allocation, processing thresholds, and decision-making algorithms.
 
 **Integration Points:**
 
-• **Lumina Core Engine**: This script integrates with the core engine, providing a unified interface for interacting with the cognitive organism's internal state.
+• **PandoraBOX Core Engine**: This script integrates with the core engine, providing a unified interface for interacting with the cognitive organism's internal state.
 • **Global Workspace**: The `__init__.py` file interacts with the global workspace to share knowledge, propagate context, and coordinate overall cognitive processing.
 
 **Architectural Pattern:** Singleton
@@ -4222,7 +4222,7 @@ Here is the documentation in the required format:
 
 #### utils\add_confidence.py — Cognitive Organism Data Enrichment
 
-**Purpose:** The primary objective of this utility is to enhance data quality by injecting confidence scores and validation timestamps into identity files. This critical functionality enables the Lumina Cognitive Organism to improve its ability to revise beliefs and adapt to new information.
+**Purpose:** The primary objective of this utility is to enhance data quality by injecting confidence scores and validation timestamps into identity files. This critical functionality enables the PandoraBOX Cognitive Organism to improve its ability to revise beliefs and adapt to new information.
 
 **Key Features:**
 
@@ -4232,50 +4232,50 @@ Here is the documentation in the required format:
 
 **Integration Points:**
 
-The `add_confidence_to_identity_files` function is designed to be executed as part of the Lumina Cognitive Organism's core processing loop. Upon initialization, this module will interact with the Global Workspace to retrieve identity files and update their contents according to the specified rules.
+The `add_confidence_to_identity_files` function is designed to be executed as part of the PandoraBOX Cognitive Organism's core processing loop. Upon initialization, this module will interact with the Global Workspace to retrieve identity files and update their contents according to the specified rules.
 
 **Architectural Pattern:** The `utils\add_confidence.py` module employs a recursive approach, leveraging function calls to traverse complex data structures and inject metadata as needed. This design allows for efficient processing of large datasets while maintaining a modular architecture that can be easily extended or modified as required.
 
 
 ---
 
-#### utils\css.py — Lumina Cognitive Organism CSS Stylesheet Architecture
+#### utils\css.py — PandoraBOX Cognitive Organism CSS Stylesheet Architecture
 
-**Purpose:** The Lumina CSS stylesheet is a critical component of the overall cognitive organism architecture. Its primary purpose is to define and manage visual styles for various components within the system, including chat bubbles, notifications, progress bars, and others. This CSS file acts as a centralized repository for styling and layout rules that govern the appearance of these components.
+**Purpose:** The PandoraBOX CSS stylesheet is a critical component of the overall cognitive organism architecture. Its primary purpose is to define and manage visual styles for various components within the system, including chat bubbles, notifications, progress bars, and others. This CSS file acts as a centralized repository for styling and layout rules that govern the appearance of these components.
 
 **Key Features:**
 
 * Global CSS styles for body, scrollbar, chat bubbles, markdown inside bot bubbles, and other visual elements
 * Customizable typography and color scheme for various component types (e.g., bubble-user, bubble-bot)
 * Animation effects for slide-in-right, slide-in-left, and pulse animations
-* Integration with other Lumina components, such as the typing indicator, save button, section label, and notification system
+* Integration with other PandoraBOX components, such as the typing indicator, save button, section label, and notification system
 * Support for smooth progress bars, vision preview, and fixed-size video containers
 
 **Integration Points:**
 
 * The CSS styles are integrated into the Global Workspace through the application of class names and IDs to HTML elements.
 * Component-specific CSS rules are applied based on the component's type (e.g., chat bubble, notification).
-* The Lumina core engine utilizes these CSS styles to render visual components within the system.
+* The PandoraBOX core engine utilizes these CSS styles to render visual components within the system.
 
-**Architectural Pattern:** This CSS stylesheet adheres to a Singleton pattern, as it provides a centralized and consistent approach to styling and layout management throughout the Lumina cognitive organism.
+**Architectural Pattern:** This CSS stylesheet adheres to a Singleton pattern, as it provides a centralized and consistent approach to styling and layout management throughout the PandoraBOX cognitive organism.
 
 
 ---
 
-#### utils\enhanced_css.py — Lumina Cognitive Organism: Bio-Organic Animation Suite
+#### utils\enhanced_css.py — PandoraBOX Cognitive Organism: Bio-Organic Animation Suite
 
-**Purpose:** The Enhanced Modern CSS module is a critical component of the Lumina Cognitive Organism, responsible for rendering the bio-organic animation suite that underlies the UI framework. This module provides a set of pre-defined styles and animations that can be used to create complex, dynamic, and immersive user interfaces.
+**Purpose:** The Enhanced Modern CSS module is a critical component of the PandoraBOX Cognitive Organism, responsible for rendering the bio-organic animation suite that underlies the UI framework. This module provides a set of pre-defined styles and animations that can be used to create complex, dynamic, and immersive user interfaces.
 
 **Key Features:**
 
 * Pre-defined CSS styles for creating animated, bio-inspired visual effects
-* Integration with the Lumina Cognitive Organism's core engine for seamless rendering and interaction
+* Integration with the PandoraBOX Cognitive Organism's core engine for seamless rendering and interaction
 * Support for various animation techniques, including radial gradients, linear gradients, and scrolling animations
 * Customizable through a set of pre-defined variables and color palettes
 
 **Integration Points:**
 
-* The Enhanced Modern CSS module is designed to be integrated with the Lumina Cognitive Organism's core engine, allowing for seamless rendering and interaction.
+* The Enhanced Modern CSS module is designed to be integrated with the PandoraBOX Cognitive Organism's core engine, allowing for seamless rendering and interaction.
 * This module can be used in conjunction with other modules, such as the Particle Canvas and the Floating Glass Header, to create complex and immersive user interfaces.
 
 **Architectural Pattern:** The Enhanced Modern CSS module follows a modular architecture pattern, where individual components are designed to work together seamlessly. This allows for easy maintenance, scalability, and reusability of code.
@@ -4306,7 +4306,7 @@ The `add_confidence_to_identity_files` function is designed to be executed as pa
 
 #### utils\organism_ui.py — Cognitive Organism UI Architecture Report
 
-**Purpose:** The purpose of this module is to establish a living interface layer for the Lumina cognitive organism. This UI component enables seamless communication between the AI core and the user, facilitating emotional feedback, color updates, and camera feed synchronization.
+**Purpose:** The purpose of this module is to establish a living interface layer for the PandoraBOX cognitive organism. This UI component enables seamless communication between the AI core and the user, facilitating emotional feedback, color updates, and camera feed synchronization.
 
 **Key Features:**
 
@@ -4327,14 +4327,14 @@ The UI module is designed to seamlessly integrate with the Global Workspace, ena
 
 The UI module employs a singleton pattern to ensure that only one instance of each NiceGUI element is created and maintained throughout the application lifetime. Additionally, this module follows an observer pattern by updating its internal state in response to changes from the AI core and user input.
 
-This architecture allows for efficient communication between components and enables the Lumina cognitive organism to effectively interact with its environment, reflecting the complexity and adaptability of biological systems.
+This architecture allows for efficient communication between components and enables the PandoraBOX cognitive organism to effectively interact with its environment, reflecting the complexity and adaptability of biological systems.
 
 
 ---
 
-#### utils\shared_embedder.py — **Lumina's Shared Embedder: Centralized Model Management**
+#### utils\shared_embedder.py — **PandoraBOX's Shared Embedder: Centralized Model Management**
 
-**Purpose:** As a critical component of Lumina's cognitive organism, the shared embedder module is designed to provide centralized management and retrieval of pre-trained language models. This strategic design enables efficient model sharing across various components and agents within the system, ensuring seamless communication and collaboration.
+**Purpose:** As a critical component of PandoraBOX's cognitive organism, the shared embedder module is designed to provide centralized management and retrieval of pre-trained language models. This strategic design enables efficient model sharing across various components and agents within the system, ensuring seamless communication and collaboration.
 
 **Key Features:**
 
@@ -4355,7 +4355,7 @@ This architecture allows for efficient communication between components and enab
 **utils\user_switcher_ui.py — Cognitive User Management Interface**
 
 #### Purpose:
-The Lumina Cognitive Organism's user management interface is a critical component of the Robot Agent's chat functionality. This module enables seamless navigation and control over user profiles, providing an intuitive means to switch between users, manage linked faces, and update profile information.
+The PandoraBOX Cognitive Organism's user management interface is a critical component of the Robot Agent's chat functionality. This module enables seamless navigation and control over user profiles, providing an intuitive means to switch between users, manage linked faces, and update profile information.
 
 **Key Features:**
 
@@ -4374,14 +4374,14 @@ The User Switcher UI module integrates with the following key components:
 **Architectural Pattern:**
 The User Switcher UI module employs an Observer pattern, where it observes changes in the user manager's active user and updates the chip element accordingly. This allows for efficient communication between components and enables real-time reflections of changes.
 
-In summary, this module provides a critical component of the Lumina Cognitive Organism's user management capabilities, enabling seamless navigation and control over user profiles. Its integration with key components ensures effective communication and facilitates smooth interactions within the global workspace.
+In summary, this module provides a critical component of the PandoraBOX Cognitive Organism's user management capabilities, enabling seamless navigation and control over user profiles. Its integration with key components ensures effective communication and facilitates smooth interactions within the global workspace.
 
 
 ---
 
 #### utils\__init__.py — Core Infrastructure Initialization
 
-**Purpose:** The `utils\__init__.py` module serves as a foundational component of the Lumina Cognitive Organism's infrastructure, providing a centralized hub for utility functions and facilitating seamless integration with other components.
+**Purpose:** The `utils\__init__.py` module serves as a foundational component of the PandoraBOX Cognitive Organism's infrastructure, providing a centralized hub for utility functions and facilitating seamless integration with other components.
 
 **Key Features:**
 
@@ -4389,17 +4389,17 @@ In summary, this module provides a critical component of the Lumina Cognitive Or
 * Offers two utility functions: `format_uptime()` for formatting system uptime information and `truncate_text()` for text truncation and wrapping
 * Exposes these utilities as part of its public API, enabling other components to leverage their functionality
 
-**Integration Points:** The `utils\__init__.py` module is designed to seamlessly integrate with the Lumina Cognitive Organism's Global Workspace, providing a unified interface for accessing utility functions. This enables other components to utilize these utilities without requiring explicit imports or dependencies.
+**Integration Points:** The `utils\__init__.py` module is designed to seamlessly integrate with the PandoraBOX Cognitive Organism's Global Workspace, providing a unified interface for accessing utility functions. This enables other components to utilize these utilities without requiring explicit imports or dependencies.
 
-**Architectural Pattern:** The `utils\__init__.py` module adheres to the Singleton pattern, ensuring that its utility functions are readily available and easily accessible throughout the system. This design choice promotes reusability and facilitates a cohesive architecture for the Lumina Cognitive Organism.
+**Architectural Pattern:** The `utils\__init__.py` module adheres to the Singleton pattern, ensuring that its utility functions are readily available and easily accessible throughout the system. This design choice promotes reusability and facilitates a cohesive architecture for the PandoraBOX Cognitive Organism.
 
 
 ---
 
-### Module Documentation for `app.py` in Lumina Architecture
+### Module Documentation for `app.py` in PandoraBOX Architecture
 
 #### Overview
-The file `app.py` is a critical component of the Lumina architecture, serving as the main application with vision integration. It handles several important tasks, including:
+The file `app.py` is a critical component of the PandoraBOX architecture, serving as the main application with vision integration. It handles several important tasks, including:
 
 1. **Security Bootstrap**: Ensures that necessary environment variables are set up and loaded.
 2. **Environment Setup**: Creates or updates the `.env` file if it doesn't exist.
@@ -4462,7 +4462,7 @@ def _bootstrap_security():
         else:
             # No example either — create a minimal .env
             _ENV.write_text(
-                "# Lumina secrets — generated automatically\n"
+                "# PandoraBOX secrets — generated automatically\n"
                 "LUMINA_SESSION_SECRET=\n"
                 "OPENAI_API_KEY=\n"
                 "ANTHROPIC_API_KEY=\n"
@@ -4498,7 +4498,7 @@ def _bootstrap_security():
 
 #### Conclusion
 
-The `app.py` module is a foundational component of the Lumina architecture, ensuring that all necessary environment variables are set up and loaded. This setup is crucial for the application's security and proper functioning.
+The `app.py` module is a foundational component of the PandoraBOX architecture, ensuring that all necessary environment variables are set up and loaded. This setup is crucial for the application's security and proper functioning.
 
 
 ---
@@ -4506,7 +4506,7 @@ The `app.py` module is a foundational component of the Lumina architecture, ensu
 ### Documenting the `doc_generator.py` Module
 
 #### Overview
-The `doc_generator.py` module is a part of the Lumina architecture and serves to document cognitive modules using an AI model (specifically, Llama3). The script leverages Python's Abstract Syntax Tree (AST) for code analysis and employs subprocess calls to interact with the AI model.
+The `doc_generator.py` module is a part of the PandoraBOX architecture and serves to document cognitive modules using an AI model (specifically, Llama3). The script leverages Python's Abstract Syntax Tree (AST) for code analysis and employs subprocess calls to interact with the AI model.
 
 #### Key Components
 
@@ -4564,7 +4564,7 @@ class PersistentArchitectScribe:
     def _initialize_files(self):
         """Creates the file immediately so progress is visible."""
         if not os.path.exists(MODULES_DOC):
-            header = f"# 🧠 Lumina Cognitive Modules (v7.4 Full-Spectrum)\n\n**Started:** {datetime.now()}\n\n"
+            header = f"# 🧠 PandoraBOX Cognitive Modules (v7.4 Full-Spectrum)\n\n**Started:** {datetime.now()}\n\n"
             Path(MODULES_DOC).write_text(header, encoding="utf-8")
 
     def log(self, msg):
@@ -4609,7 +4609,7 @@ class PersistentArchitectScribe:
 
 # Example usage
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Generate documentation for Lumina cognitive modules.')
+    parser = argparse.ArgumentParser(description='Generate documentation for PandoraBOX cognitive modules.')
     parser.add_argument('root', type=str, help='Root directory path')
     args = parser.parse_args()
 
@@ -4632,12 +4632,12 @@ if __name__ == "__main__":
    - The generated documentation is appended to a main document (`AUTO_COGNITIVE_MODULES.md`).
 
 #### Conclusion
-This module effectively leverages Python's AST for code analysis and an AI model for generating comprehensive documentation of cognitive modules in Lumina.
+This module effectively leverages Python's AST for code analysis and an AI model for generating comprehensive documentation of cognitive modules in PandoraBOX.
 
 
 ---
 
-### Lumina Architecture Documentation
+### PandoraBOX Architecture Documentation
 
 #### File: `doc_generator2.py`
 
@@ -4725,7 +4725,7 @@ This script provides a robust foundation for managing and generating documentati
 
 ---
 
-### Lumina Architecture: `brain_visualizer.py`
+### PandoraBOX Architecture: `brain_visualizer.py`
 
 #### Overview
 
@@ -4893,7 +4893,7 @@ This document provides a high-level overview and detailed breakdown of the `brai
 #### Module Name: `convert_brain.py`
 
 **Purpose**: 
-This script is designed to convert external brain models (in `.obj` format) into a format compatible with Lumina. It processes the vertices and faces of the model, computes normals for each vertex, assigns network indices based on spatial coordinates, and outputs the processed data.
+This script is designed to convert external brain models (in `.obj` format) into a format compatible with PandoraBOX. It processes the vertices and faces of the model, computes normals for each vertex, assigns network indices based on spatial coordinates, and outputs the processed data.
 
 #### Usage
 ```bash
@@ -5084,7 +5084,7 @@ The `debug_bridge.py` module is a diagnostic tool designed to provide insights i
 
 ---
 
-Here's a detailed documentation for the `download_brain.py` module in the Lumina architecture:
+Here's a detailed documentation for the `download_brain.py` module in the PandoraBOX architecture:
 
 ### Module Overview
 
@@ -5171,7 +5171,7 @@ Upon successful download and processing, the resulting `.obj` file is saved to a
 ### Module Documentation for `brain_visualizer/example.py`
 
 #### Overview
-This module serves as an example script to demonstrate the usage of the `run_brain_visualizer` function from the `brain_visualizer` package. The primary purpose is to showcase how to initialize and run a brain visualization process within the Lumina architecture.
+This module serves as an example script to demonstrate the usage of the `run_brain_visualizer` function from the `brain_visualizer` package. The primary purpose is to showcase how to initialize and run a brain visualization process within the PandoraBOX architecture.
 
 #### File Structure
 - **File**: `example.py`
@@ -5211,7 +5211,7 @@ This will execute the visualization process, utilizing the base directory to loc
 
 #### Notes
 - The actual implementation details of `run_brain_visualizer` are not shown here but should be defined within the `brain_visualizer` package.
-- This script is a good starting point for understanding how to integrate brain visualization into a larger Lumina architecture setup.
+- This script is a good starting point for understanding how to integrate brain visualization into a larger PandoraBOX architecture setup.
 
 
 ---
@@ -5219,7 +5219,7 @@ This will execute the visualization process, utilizing the base directory to loc
 ### Documenting the `lumina_brain_bridge.py` Module
 
 #### Overview
-The module `lumina_brain_bridge.py` serves as a bridge between the Lumina architecture and the Brain Visualizer. It processes data from various modules in the Lumina system, applies smoothing techniques to visualize brain states, and handles event-driven spikes for immediate visual responses.
+The module `lumina_brain_bridge.py` serves as a bridge between the PandoraBOX architecture and the Brain Visualizer. It processes data from various modules in the PandoraBOX system, applies smoothing techniques to visualize brain states, and handles event-driven spikes for immediate visual responses.
 
 #### Key Features:
 1. **Poll Rate**: The module now polls every 500ms (previously 2s), making it four times faster.
@@ -5229,7 +5229,7 @@ The module `lumina_brain_bridge.py` serves as a bridge between the Lumina archit
 5. **Temporal Pulse Decay**: Activations decay toward a resting baseline between events, ensuring the brain state remains dynamic and not frozen.
 
 #### Network Mapping
-The Lumina architecture maps various brain states to specific networks:
+The PandoraBOX architecture maps various brain states to specific networks:
 - **DMN (Default Mode Network)**: Thought stream, inner monologue, narrative identity
 - **FPN (Frontoparietal Network)**: Dominant drive in goal ecology, cognitive validator health
 - **VAN (Ventral Attention Network)**: Surprise index from predictive mind, overall arousal
@@ -5263,13 +5263,13 @@ The Lumina architecture maps various brain states to specific networks:
 ```python
 from lumina_brain_bridge import LuminaBrainBridge
 
-# Initialize the bridge with your Lumina organism instance
-organism = ...  # Your Lumina organism instance
-bridge = LuminaBrainBridge(organism, window_title="Lumina — Cognitive Brain Visualization")
+# Initialize the bridge with your PandoraBOX organism instance
+organism = ...  # Your PandoraBOX organism instance
+bridge = LuminaBrainBridge(organism, window_title="PandoraBOX — Cognitive Brain Visualization")
 
 # Start the visualization loop
 while True:
-    brain_state = create_default_brain_state()  # Get current brain state from Lumina
+    brain_state = create_default_brain_state()  # Get current brain state from PandoraBOX
     bridge.update(brain_state)
     time.sleep(UPDATE_INTERVAL)  # Poll every 500ms
 ```
@@ -5278,7 +5278,7 @@ while True:
 - Ensure that all necessary modules are correctly connected and functioning.
 - The module provides a dynamic visualization of the brain states, making it easier to understand complex cognitive processes in real-time.
 
-This documentation should help users understand how the `lumina_brain_bridge.py` module integrates with the Lumina architecture for visualizing brain states.
+This documentation should help users understand how the `lumina_brain_bridge.py` module integrates with the PandoraBOX architecture for visualizing brain states.
 
 
 ---
@@ -5287,7 +5287,7 @@ This documentation should help users understand how the `lumina_brain_bridge.py`
 
 #### Overview
 
-The `network_mapping.py` module is a key component of the Lumina architecture, responsible for defining and managing the 7 Yeo networks (Yeo et al., 2011) used in brain visualization. This module provides functions to map regions within the brain to these functional networks and manage activation states across those networks.
+The `network_mapping.py` module is a key component of the PandoraBOX architecture, responsible for defining and managing the 7 Yeo networks (Yeo et al., 2011) used in brain visualization. This module provides functions to map regions within the brain to these functional networks and manage activation states across those networks.
 
 #### Key Components
 
@@ -5326,7 +5326,7 @@ for network in NETWORKS:
 - The `build_region_to_network_map` function ensures that any region ID is mapped correctly to a functional network.
 - The `BrainState` class provides an easy way to manage and manipulate activation levels across the defined networks.
 
-This module forms a foundational part of the Lumina architecture, enabling precise control over brain visualization by mapping regions to specific functional networks and managing their activations.
+This module forms a foundational part of the PandoraBOX architecture, enabling precise control over brain visualization by mapping regions to specific functional networks and managing their activations.
 
 
 ---
@@ -5428,7 +5428,7 @@ This module provides a robust mechanism to load and process brain mesh data from
 
 #### Overview
 
-The `particles.py` module is part of the Lumina architecture and implements a neural particle system. This system visualizes brain activity by emitting particles on specific regions (networks) of the brain surface. The particles are localized to vertices that belong to each functional network, ensuring accurate representation.
+The `particles.py` module is part of the PandoraBOX architecture and implements a neural particle system. This system visualizes brain activity by emitting particles on specific regions (networks) of the brain surface. The particles are localized to vertices that belong to each functional network, ensuring accurate representation.
 
 #### Key Components
 
@@ -5446,7 +5446,7 @@ import random
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-# Import necessary modules from other parts of the Lumina architecture.
+# Import necessary modules from other parts of the PandoraBOX architecture.
 from network_mapping import NETWORKS, NEON_COLORS, BrainState
 
 
@@ -5559,15 +5559,15 @@ class ParticleSystem:
   - **Set Surface Data (`set_surface_data`)**: Precomputes surface data for each network by sampling vertices from the brain mesh. This ensures that particles are spawned on actual brain surface points, maintaining visual accuracy.
   - **Spawn Particles (`spawn_for_network`)**: Spawns a specified number of particles for a given network based on its activation level. Particles are created at random surface points and assigned initial velocities.
 
-This module is crucial for the Lumina architecture as it provides a dynamic visualization of brain activity through particle systems, enhancing the understanding and analysis of neural networks.
+This module is crucial for the PandoraBOX architecture as it provides a dynamic visualization of brain activity through particle systems, enhancing the understanding and analysis of neural networks.
 
 
 ---
 
-### Lumina Architecture: `shaders.py` Module
+### PandoraBOX Architecture: `shaders.py` Module
 
 #### Overview
-The `shaders.py` module is responsible for compiling and managing shaders used in the brain visualizer component of the Lumina architecture. Shaders are essential for rendering complex graphics by defining how vertices should be transformed into fragments (pixels) on the screen.
+The `shaders.py` module is responsible for compiling and managing shaders used in the brain visualizer component of the PandoraBOX architecture. Shaders are essential for rendering complex graphics by defining how vertices should be transformed into fragments (pixels) on the screen.
 
 #### Code Breakdown
 
@@ -5682,7 +5682,7 @@ The `shaders.py` module is responsible for compiling and managing shaders used i
    - It checks for compilation errors and prints them if any occur.
 
 #### Summary
-The `shaders.py` module provides essential functionality for rendering complex graphics in the brain visualizer component of Lumina. By compiling vertex and fragment shaders, it enables detailed lighting effects and dynamic coloration based on network activation levels.
+The `shaders.py` module provides essential functionality for rendering complex graphics in the brain visualizer component of PandoraBOX. By compiling vertex and fragment shaders, it enables detailed lighting effects and dynamic coloration based on network activation levels.
 
 
 ---
@@ -5750,7 +5750,7 @@ If a rotating colored sphere is visible, it indicates that the OpenGL pipeline i
 
 ---
 
-### Lumina Architecture Module Documentation
+### PandoraBOX Architecture Module Documentation
 
 #### File: `cognition\advanced_thought_evaluator.py`
 
@@ -5841,17 +5841,17 @@ recent_thoughts = evaluator.evaluate_recent_thoughts(max_thoughts=5)
 
 ## Conclusion
 
-The `AdvancedThoughtEvaluator` class provides a robust framework for evaluating thoughts by incorporating semantic understanding, conceptual friction detection, and multi-factor priority scoring. This module significantly enhances the cognitive capabilities of the Lumina architecture, making it more effective in generating meaningful insights and suggestions.
+The `AdvancedThoughtEvaluator` class provides a robust framework for evaluating thoughts by incorporating semantic understanding, conceptual friction detection, and multi-factor priority scoring. This module significantly enhances the cognitive capabilities of the PandoraBOX architecture, making it more effective in generating meaningful insights and suggestions.
 
 ---
 
 
 ---
 
-### Lumina Architecture - AI Identity Module
+### PandoraBOX Architecture - AI Identity Module
 
 #### Overview
-The **AI Identity Module** is a critical component of the Lumina architecture that constructs and incrementally maintains the AI's sense of self from its memories. This module ensures efficient processing by tracking which memories have already been analyzed, thereby reducing redundant computations.
+The **AI Identity Module** is a critical component of the PandoraBOX architecture that constructs and incrementally maintains the AI's sense of self from its memories. This module ensures efficient processing by tracking which memories have already been analyzed, thereby reducing redundant computations.
 
 #### Key Features:
 - **Incremental Analysis**: Only processes new data, making hourly refreshes cost-effective.
@@ -5903,15 +5903,15 @@ logger.info(f"Updated core traits: {ai_identity.core_traits}")
 ```
 
 #### Conclusion
-The **AI Identity Module** is designed to efficiently manage and evolve the AI's sense of self, ensuring that it remains relevant and adaptable. By leveraging incremental analysis and robust data models, this module plays a pivotal role in shaping Lumina’s cognitive capabilities.
+The **AI Identity Module** is designed to efficiently manage and evolve the AI's sense of self, ensuring that it remains relevant and adaptable. By leveraging incremental analysis and robust data models, this module plays a pivotal role in shaping PandoraBOX’s cognitive capabilities.
 
 
 ---
 
-### Lumina AI System Module Documentation
+### PandoraBOX AI System Module Documentation
 
 #### Overview
-The `ai_system.py` module is a critical component of the Lumina architecture, responsible for integrating and managing various psychological subsystems. This document provides an in-depth look at its structure, functionality, and integration points.
+The `ai_system.py` module is a critical component of the PandoraBOX architecture, responsible for integrating and managing various psychological subsystems. This document provides an in-depth look at its structure, functionality, and integration points.
 
 #### Key Components
 
@@ -6000,7 +6000,7 @@ print(response)
 
 #### Conclusion
 
-The `ai_system.py` module is a complex and integral part of the Lumina architecture, responsible for managing various psychological subsystems. It ensures that responses are non-blocking, heavy LLM calls run in background threads, and personality evolution is managed through the PersonalityEvolutionEngine.
+The `ai_system.py` module is a complex and integral part of the PandoraBOX architecture, responsible for managing various psychological subsystems. It ensures that responses are non-blocking, heavy LLM calls run in background threads, and personality evolution is managed through the PersonalityEvolutionEngine.
 
 For more detailed information on each component and function, refer to their respective documentation or source code.
 
@@ -6011,7 +6011,7 @@ For more detailed information on each component and function, refer to their res
 
 #### Overview
 
-The `arbitration` module is a critical component of the Lumina architecture, serving as the final decision layer between the cognitive subsystems and the reasoning engine. Its primary function is to determine which drive should control Lumina's behavior before passing the prompt to the Language Model (LLM). This explicit arbitration ensures that:
+The `arbitration` module is a critical component of the PandoraBOX architecture, serving as the final decision layer between the cognitive subsystems and the reasoning engine. Its primary function is to determine which drive should control PandoraBOX's behavior before passing the prompt to the Language Model (LLM). This explicit arbitration ensures that:
 
 - **Predictable Behavior:** The system's actions are predictable based on its internal state.
 - **Personality Consistency:** The personality of the system is architecturally enforced, leading to consistent behavior over time.
@@ -6077,7 +6077,7 @@ print(f"Decision: {decision}")
 
 #### Conclusion
 
-The `arbitration` module is a crucial component of Lumina's architecture, ensuring that the system's behavior is predictable and consistent. By explicitly deciding which drive controls the response, it enhances the overall performance and reliability of the system.
+The `arbitration` module is a crucial component of PandoraBOX's architecture, ensuring that the system's behavior is predictable and consistent. By explicitly deciding which drive controls the response, it enhances the overall performance and reliability of the system.
 
 ---
 
@@ -6090,9 +6090,9 @@ This documentation provides an overview of the `arbitration` module, its purpose
 
 #### Overview
 
-The `aspirational_self` module forms part of Lumina's emergent Superego, which is responsible for managing and processing tensions that arise from various sources. These tensions are categorized into three levels: Unconscious, Semi-conscious, and Conscious.
+The `aspirational_self` module forms part of PandoraBOX's emergent Superego, which is responsible for managing and processing tensions that arise from various sources. These tensions are categorized into three levels: Unconscious, Semi-conscious, and Conscious.
 
-- **Unconscious**: Patterns detected in the ThoughtStream and SemanticMemory without explicit naming by Lumina.
+- **Unconscious**: Patterns detected in the ThoughtStream and SemanticMemory without explicit naming by PandoraBOX.
 - **Semi-conscious**: Tensions that emerge during Dream Cycles and persist across multiple cycles.
 - **Conscious**: Explicitly formulated aspirations through interactions or introspection.
 
@@ -6177,15 +6177,15 @@ The `aspirational_self` module forms part of Lumina's emergent Superego, which i
 - **ProtoAspiration**: A tension that has crossed the emergence threshold but is not yet consciously named.
 - **Aspiration**: The final, consciously named aspiration.
 
-This module plays a crucial role in managing and processing tensions within Lumina's cognitive architecture.
+This module plays a crucial role in managing and processing tensions within PandoraBOX's cognitive architecture.
 
 
 ---
 
-### Lumina Architecture: Attention System
+### PandoraBOX Architecture: Attention System
 
 #### Overview
-The `attention_system.py` module is a critical component of the Lumina architecture, responsible for dynamically allocating cognitive focus across competing channels based on internal state, goals, and interaction context.
+The `attention_system.py` module is a critical component of the PandoraBOX architecture, responsible for dynamically allocating cognitive focus across competing channels based on internal state, goals, and interaction context.
 
 #### Key Components
 
@@ -6320,7 +6320,7 @@ if __name__ == "__main__":
 - **MemoryManager recall filtering**: Uses the updated weights to filter memory recalls.
 - **System prompt generation**: Contributes to the system prompt via `attention_fragment()`.
 
-This module ensures that Lumina's cognitive focus is dynamically adjusted based on internal state, goals, and interaction context, making it a versatile and adaptive component of the architecture.
+This module ensures that PandoraBOX's cognitive focus is dynamically adjusted based on internal state, goals, and interaction context, making it a versatile and adaptive component of the architecture.
 
 
 ---
@@ -6329,7 +6329,7 @@ This module ensures that Lumina's cognitive focus is dynamically adjusted based 
 
 #### Overview
 
-The `CognitiveAttractorSystem` module is a critical component of the Lumina architecture, responsible for maintaining the agent's stable personality traits. It introduces psychological inertia to prevent drastic changes in behavior due to occasional unusual interactions.
+The `CognitiveAttractorSystem` module is a critical component of the PandoraBOX architecture, responsible for maintaining the agent's stable personality traits. It introduces psychological inertia to prevent drastic changes in behavior due to occasional unusual interactions.
 
 #### Key Concepts and Components
 
@@ -6343,7 +6343,7 @@ The `CognitiveAttractorSystem` module is a critical component of the Lumina arch
 ```python
 class CognitiveAttractorSystem:
     """
-    Maintains Lumina's stable personality traits with slow-drift dynamics.
+    Maintains PandoraBOX's stable personality traits with slow-drift dynamics.
 
     Thread-safe.  Persists to JSON.
     """
@@ -6399,7 +6399,7 @@ class CognitiveAttractorSystem:
 
 #### Integration
 
-The attractor system can be integrated into other parts of the Lumina architecture as follows:
+The attractor system can be integrated into other parts of the PandoraBOX architecture as follows:
 
 ```python
 attractors = CognitiveAttractorSystem()
@@ -6421,7 +6421,7 @@ The system is designed to be thread-safe, ensuring that trait values are consist
 
 ### Summary
 
-This module provides a robust framework for maintaining stable personality traits in the Lumina agent. By introducing psychological inertia through slow-drift dynamics and persistent storage, it ensures that the agent's behavior remains consistent over time, even in response to occasional unusual interactions.
+This module provides a robust framework for maintaining stable personality traits in the PandoraBOX agent. By introducing psychological inertia through slow-drift dynamics and persistent storage, it ensures that the agent's behavior remains consistent over time, even in response to occasional unusual interactions.
 
 
 ---
@@ -6430,7 +6430,7 @@ This module provides a robust framework for maintaining stable personality trait
 
 #### Overview
 
-The `BehavioralConditioningSystem` module is a critical component of the Lumina architecture. It manages behavioral conditioning signals that are stored and used to influence future interactions based on past experiences.
+The `BehavioralConditioningSystem` module is a critical component of the PandoraBOX architecture. It manages behavioral conditioning signals that are stored and used to influence future interactions based on past experiences.
 
 #### Key Features
 
@@ -6496,13 +6496,13 @@ The `BehavioralConditioningSystem` module is essential for creating a more adapt
 
 ---
 
-Certainly! Here is a detailed documentation for the `belief_bootstrapper.py` module in the Lumina architecture:
+Certainly! Here is a detailed documentation for the `belief_bootstrapper.py` module in the PandoraBOX architecture:
 
 ### Module: `cognition\belief_bootstrapper.py`
 
 #### Overview
 
-The `BeliefBootstrapper` class is responsible for extracting meaningful beliefs from various rich data sources and populating the `identity.json` file. This process involves mining existing persona data to reflect Lumina's actual cognitive state.
+The `BeliefBootstrapper` class is responsible for extracting meaningful beliefs from various rich data sources and populating the `identity.json` file. This process involves mining existing persona data to reflect PandoraBOX's actual cognitive state.
 
 #### Complexity
 - **Complexity**: 89 (This value seems arbitrary; it might be a placeholder or an internal metric.)
@@ -6546,7 +6546,7 @@ def _now() -> str:
 
 class BeliefBootstrapper:
     """
-    Mines existing persona data to populate identity.json with meaningful beliefs that reflect Lumina's actual cognitive state.
+    Mines existing persona data to populate identity.json with meaningful beliefs that reflect PandoraBOX's actual cognitive state.
     """
 
     def __init__(self, persona_dir: str = "data/persona"):
@@ -6662,15 +6662,15 @@ class BeliefBootstrapper:
 
 ### Conclusion
 
-This module plays a crucial role in maintaining Lumina's cognitive state by continuously updating its belief system based on various data sources. The detailed documentation provided here should help in understanding the functionality, structure, and purpose of this module within the Lumina architecture.
+This module plays a crucial role in maintaining PandoraBOX's cognitive state by continuously updating its belief system based on various data sources. The detailed documentation provided here should help in understanding the functionality, structure, and purpose of this module within the PandoraBOX architecture.
 
 
 ---
 
-### Lumina Cognition Engine Module Documentation
+### PandoraBOX Cognition Engine Module Documentation
 
 #### Overview
-The `cognition_engine.py` module is a critical component of the Lumina architecture, serving as the unified cognitive orchestrator. It integrates various cognitive processes such as perception, memory, emotion, goals, and identity into a single decision-making cycle.
+The `cognition_engine.py` module is a critical component of the PandoraBOX architecture, serving as the unified cognitive orchestrator. It integrates various cognitive processes such as perception, memory, emotion, goals, and identity into a single decision-making cycle.
 
 #### Key Features
 1. **Unified Cognitive Cycle**: The engine processes inputs through a series of steps: Perception → Belief Update → Pressure Computation → Planning → Decision → Action.
@@ -6750,12 +6750,12 @@ print(f"Action: {action}, Justification: {justification}")
 ```
 
 #### Conclusion
-The `cognition_engine.py` module is essential for transforming Lumina from a simulation-based system to one that can execute decisions and actions based on complex cognitive processes.
+The `cognition_engine.py` module is essential for transforming PandoraBOX from a simulation-based system to one that can execute decisions and actions based on complex cognitive processes.
 
 
 ---
 
-### Lumina Architecture: Cognition Engine V2
+### PandoraBOX Architecture: Cognition Engine V2
 
 #### Overview
 CognitionEngineV2 is the unified cognitive orchestrator that integrates various components to facilitate a complete cognitive cycle. This module serves as the central brain of the system, coordinating and managing interactions between PerceptionHub, UnifiedMemory, MultiStepPlanner, ActuatorInterface, AsyncEventBus, DecisionPressureCalculator, SimpleThoughtEvaluator, and ThreadResolver.
@@ -6884,7 +6884,7 @@ class CognitionEngineV2:
 - **Cognitive Cycle**: The `run_cycle` method orchestrates each cognitive cycle by sequentially executing phases such as perception, belief updating, pressure calculation, goal planning, decision making, action execution, and memory update. This method is asynchronous to allow concurrent operations.
 - **Continuous Operation**: The `run` method runs the engine indefinitely, continuously executing cycles.
 
-This module provides a comprehensive framework for integrating various cognitive components into a unified orchestrator, enabling complex reasoning and adaptive behavior in Lumina's architecture.
+This module provides a comprehensive framework for integrating various cognitive components into a unified orchestrator, enabling complex reasoning and adaptive behavior in PandoraBOX's architecture.
 
 
 ---
@@ -6893,7 +6893,7 @@ This module provides a comprehensive framework for integrating various cognitive
 
 #### Overview
 
-The Cognitive Dissonance Engine (CDE) is a critical component of the Lumina architecture. It is designed to detect and resolve conflicts between the system's beliefs, identity, actions, and goals. The engine operates by identifying dissonant events in real-time and then applying appropriate resolutions through identity mutation, belief revision, or meta-thread creation.
+The Cognitive Dissonance Engine (CDE) is a critical component of the PandoraBOX architecture. It is designed to detect and resolve conflicts between the system's beliefs, identity, actions, and goals. The engine operates by identifying dissonant events in real-time and then applying appropriate resolutions through identity mutation, belief revision, or meta-thread creation.
 
 #### Key Components
 
@@ -6911,7 +6911,7 @@ The Cognitive Dissonance Engine (CDE) is a critical component of the Lumina arch
 
 #### Integration
 
-The CDE is integrated into the Lumina architecture through its invocation after each step in the `ThoughtThreadEngine` (`TTE`). The resolved events are then injected back into the Thought Thread Engine (TTE) to facilitate further processing and learning.
+The CDE is integrated into the PandoraBOX architecture through its invocation after each step in the `ThoughtThreadEngine` (`TTE`). The resolved events are then injected back into the Thought Thread Engine (TTE) to facilitate further processing and learning.
 
 #### Constants
 
@@ -6990,7 +6990,7 @@ class CDEContext:
 # Example usage and methods would be defined here.
 ```
 
-This documentation provides a comprehensive overview of the `CognitiveDissonanceEngine` module within the Lumina architecture. It outlines key components, integration points, constants, data structures, and their roles in resolving conflicts to maintain consistency and coherence in the system's operations.
+This documentation provides a comprehensive overview of the `CognitiveDissonanceEngine` module within the PandoraBOX architecture. It outlines key components, integration points, constants, data structures, and their roles in resolving conflicts to maintain consistency and coherence in the system's operations.
 
 
 ---
@@ -6998,7 +6998,7 @@ This documentation provides a comprehensive overview of the `CognitiveDissonance
 ### Module Documentation for `cognition\cognitive_observatory.py`
 
 #### Overview
-The `cognition\cognitive_observatory.py` module is a critical component in the Lumina architecture. It provides real-time, multi-dimensional monitoring of the cognitive state by calculating five scientifically-grounded metrics: Cognitive Coherence Score (CCS), Reflection Depth Index (RDI), Goal Emergence Index (GEI), Identity Drift Index (IDX), and Strangeness Score (STR). These metrics are essential for understanding the health and behavior patterns within Lumina.
+The `cognition\cognitive_observatory.py` module is a critical component in the PandoraBOX architecture. It provides real-time, multi-dimensional monitoring of the cognitive state by calculating five scientifically-grounded metrics: Cognitive Coherence Score (CCS), Reflection Depth Index (RDI), Goal Emergence Index (GEI), Identity Drift Index (IDX), and Strangeness Score (STR). These metrics are essential for understanding the health and behavior patterns within PandoraBOX.
 
 #### Metrics Overview
 1. **Cognitive Coherence Score (CCS)**
@@ -7070,7 +7070,7 @@ vector2 = IdentityVector(self_reference=0.7, agency=0.3)
 distance = vector1.distance(vector2)
 ```
 
-This module is designed to provide a comprehensive view of Lumina's cognitive state, enabling developers and operators to monitor its behavior effectively.
+This module is designed to provide a comprehensive view of PandoraBOX's cognitive state, enabling developers and operators to monitor its behavior effectively.
 
 
 ---
@@ -7174,7 +7174,7 @@ By integrating this module, LuminaCore becomes a more dynamic and adaptive syste
 
 #### Overview
 
-The `CognitivePreProcessor` module is a critical component in the Lumina architecture, addressing a core architectural failure identified during the app-check analysis. The primary issue was that the Large Language Model (LLM) was being used as both a brain and mouth, generating responses from scratch rather than rendering pre-determined decisions.
+The `CognitivePreProcessor` module is a critical component in the PandoraBOX architecture, addressing a core architectural failure identified during the app-check analysis. The primary issue was that the Large Language Model (LLM) was being used as both a brain and mouth, generating responses from scratch rather than rendering pre-determined decisions.
 
 To rectify this, `CognitivePreProcessor` collects live state data from various cognitive modules and assembles a "cognitive preamble" to be injected at the top of the system prompt. This preamble ensures that each LLM call is influenced by the organism's actual internal state, making the interaction more coherent and contextually relevant.
 
@@ -7182,8 +7182,8 @@ To rectify this, `CognitivePreProcessor` collects live state data from various c
 
 1. **Global Workspace Top Signals (GWT)**: These are the most salient signals currently influencing the cognitive state.
 2. **Emotional State**: Grounded in real float values rather than narrative descriptions.
-3. **Self-Model Fragment**: A summary of what Lumina knows about itself at this moment.
-4. **Goals / Primary Drive**: What Lumina wants to achieve right now.
+3. **Self-Model Fragment**: A summary of what PandoraBOX knows about itself at this moment.
+4. **Goals / Primary Drive**: What PandoraBOX wants to achieve right now.
 5. **Contradiction Confrontation**: Forces a confrontation if there's an unresolved conflict.
 6. **Curiosity Directive**: Drives exploration when the user grants permission.
 7. **Cognitive Stack Topic**: Maintains conversation thread continuity.
@@ -7255,7 +7255,7 @@ class CognitivePreProcessor:
 preamble = CognitivePreProcessor.build(app_state, stack_topic)
 ```
 
-By integrating this module into the Lumina architecture, the LLM is effectively used as a mouth rather than a brain, ensuring that its responses are grounded in the organism's actual internal state.
+By integrating this module into the PandoraBOX architecture, the LLM is effectively used as a mouth rather than a brain, ensuring that its responses are grounded in the organism's actual internal state.
 
 
 ---
@@ -7264,11 +7264,11 @@ By integrating this module into the Lumina architecture, the LLM is effectively 
 
 #### Overview
 
-This module, named `CognitiveStack`, is a critical component of the Lumina architecture. It manages Layer 2 conversation state, ensuring that the system maintains an understanding of what topics are currently being discussed. This layer bridges the gap between immediate context (Layer 1) and long-term memory (Layer 3), providing persistent tracking of active conversations.
+This module, named `CognitiveStack`, is a critical component of the PandoraBOX architecture. It manages Layer 2 conversation state, ensuring that the system maintains an understanding of what topics are currently being discussed. This layer bridges the gap between immediate context (Layer 1) and long-term memory (Layer 3), providing persistent tracking of active conversations.
 
 #### Memory Layers
 
-Lumina's architecture is structured into three layers:
+PandoraBOX's architecture is structured into three layers:
 
 - **Layer 1: Immediate Context** - The LLM prompt window.
 - **Layer 2: Conversation State** - Managed by this module.
@@ -7403,7 +7403,7 @@ def similarity(a, b):
    - `tick`: Decays confidence and prunes stale frames.
    - `prompt_context`: Injects the active frame into system prompts.
 
-This module ensures that Lumina maintains a coherent conversation state, making it more human-like in its interactions.
+This module ensures that PandoraBOX maintains a coherent conversation state, making it more human-like in its interactions.
 
 
 ---
@@ -7412,7 +7412,7 @@ This module ensures that Lumina maintains a coherent conversation state, making 
 
 #### Overview
 
-The `cognition/cognitive_validator.py` module is a critical component of the Lumina architecture, responsible for ensuring that generated responses are aligned with the cognitive state they were produced from. This validation process helps maintain the integrity and coherence of the dialogue between the AI system and its user.
+The `cognition/cognitive_validator.py` module is a critical component of the PandoraBOX architecture, responsible for ensuring that generated responses are aligned with the cognitive state they were produced from. This validation process helps maintain the integrity and coherence of the dialogue between the AI system and its user.
 
 #### Key Components
 
@@ -7573,7 +7573,7 @@ class CognitiveArchitectureMonitor:
 - **CognitiveValidator**: Ensures that responses are aligned with the cognitive state.
 - **CognitiveArchitectureMonitor**: Monitors the overall effectiveness of the cognitive architecture and emits signals when necessary.
 
-This module is crucial for maintaining the coherence and effectiveness of Lumina's dialogue, ensuring that its responses are both meaningful and relevant to the user.
+This module is crucial for maintaining the coherence and effectiveness of PandoraBOX's dialogue, ensuring that its responses are both meaningful and relevant to the user.
 
 
 ---
@@ -7581,12 +7581,12 @@ This module is crucial for maintaining the coherence and effectiveness of Lumina
 ### Module Documentation: `cognition/contradiction_handler.py`
 
 #### Overview
-The `ContradictionHandler` module is a critical component in managing contradictions between Lumina's claimed self-concept and her actual behavior. This module ensures that any detected inconsistencies are not overlooked, forcing Lumina to confront them directly.
+The `ContradictionHandler` module is a critical component in managing contradictions between PandoraBOX's claimed self-concept and her actual behavior. This module ensures that any detected inconsistencies are not overlooked, forcing PandoraBOX to confront them directly.
 
 #### Key Features
 
-1. **Detection of Contradictions**: The system identifies discrepancies between what Lumina claims about herself (her self-model) and how she behaves in practice.
-2. **Confrontation Mechanism**: When a contradiction is detected, the system forces Lumina to confront it, promoting authentic self-awareness.
+1. **Detection of Contradictions**: The system identifies discrepancies between what PandoraBOX claims about herself (her self-model) and how she behaves in practice.
+2. **Confrontation Mechanism**: When a contradiction is detected, the system forces PandoraBOX to confront it, promoting authentic self-awareness.
 3. **Persistence**: Contradictions are stored persistently on disk for future reference.
 
 #### Class: `Contradiction`
@@ -7596,13 +7596,13 @@ A data class representing an inconsistency between claimed self and actual behav
 - **Attributes**:
   - `contradiction_id`: A unique identifier for the contradiction.
   - `timestamp`: The time at which the contradiction was detected.
-  - `claimed_belief`: The belief that Lumina claims about herself (e.g., "I'm curious").
+  - `claimed_belief`: The belief that PandoraBOX claims about herself (e.g., "I'm curious").
   - `actual_behavior`: The actual behavior observed (e.g., "didn't ask any questions").
   - `discrepancy_score`: A score indicating how severe the discrepancy is, ranging from 0.0 to 1.0.
   - `detected_at_interaction`: The interaction ID at which the contradiction was detected.
   - `confronted`: Whether the contradiction has been confronted (default: False).
   - `confronted_at`: The time at which the contradiction was confronted, if applicable.
-  - `confrontation_result`: How Lumina responded to the confrontation, if any.
+  - `confrontation_result`: How PandoraBOX responded to the confrontation, if any.
   - `resolution`: The resolution strategy used for addressing the contradiction.
 
 #### Class: `ContradictionHandler`
@@ -7654,7 +7654,7 @@ handler._save()  # Save changes to disk
 
 #### Conclusion
 
-The `ContradictionHandler` module is essential for maintaining the integrity of Lumina's self-model by ensuring that any discrepancies between her claimed identity and actual behavior are confronted. This promotes a more authentic and self-aware system, which is crucial for its long-term development and reliability.
+The `ContradictionHandler` module is essential for maintaining the integrity of PandoraBOX's self-model by ensuring that any discrepancies between her claimed identity and actual behavior are confronted. This promotes a more authentic and self-aware system, which is crucial for its long-term development and reliability.
 
 
 ---
@@ -7663,18 +7663,18 @@ The `ContradictionHandler` module is essential for maintaining the integrity of 
 
 #### Overview
 
-The `CuriosityEngine` module is a critical component of the Lumina architecture. It manages and evolves Lumina's intellectual curiosity across various topics and concepts, driving spontaneous questions, background research selection, topic revisiting behavior, and shaping the "intellectual interests" identity trait.
+The `CuriosityEngine` module is a critical component of the PandoraBOX architecture. It manages and evolves PandoraBOX's intellectual curiosity across various topics and concepts, driving spontaneous questions, background research selection, topic revisiting behavior, and shaping the "intellectual interests" identity trait.
 
 #### Key Concepts
 
 1. **Topic Map**: A dynamic graph where each node represents a topic or concept with associated curiosity levels.
-2. **Global Curiosity Level**: An overall measure of Lumina's current intellectual arousal.
+2. **Global Curiosity Level**: An overall measure of PandoraBOX's current intellectual arousal.
 3. **Decay Mechanism**: Topics lose their curiosity over time, promoting natural forgetting and re-discovery cycles.
 
 #### Architecture
 
 - **Topic Map**: A dictionary (`topic_map`) where each key is a topic string, and the value is an instance of `CuriosityNode`.
-- **Global Curiosity Level**: A floating-point number between 0.0 and 1.0 representing Lumina's overall curiosity.
+- **Global Curiosity Level**: A floating-point number between 0.0 and 1.0 representing PandoraBOX's overall curiosity.
 - **Decay Function**: Exponential decay based on real elapsed time.
 
 #### Data Structures
@@ -7866,7 +7866,7 @@ decision_pressure = calculator.compute()
 print(decision_pressure)
 ```
 
-This module is crucial for integrating various cognitive factors into a unified decision-making process, making it an essential part of the Lumina architecture.
+This module is crucial for integrating various cognitive factors into a unified decision-making process, making it an essential part of the PandoraBOX architecture.
 
 
 ---
@@ -7980,7 +7980,7 @@ The module is typically used within the cognitive processing cycle to determine 
 
 #### Overview
 
-The `emotional_state.py` module is a crucial component of the Lumina architecture responsible for managing and persisting an entity's emotional state across conversations and messages. The module ensures that emotions decay over real elapsed time, reflecting the dynamic nature of human interactions.
+The `emotional_state.py` module is a crucial component of the PandoraBOX architecture responsible for managing and persisting an entity's emotional state across conversations and messages. The module ensures that emotions decay over real elapsed time, reflecting the dynamic nature of human interactions.
 
 #### Architecture
 
@@ -8084,7 +8084,7 @@ save_emotional_state(decay_values)
 loaded_emotions = load_emotional_state()
 ```
 
-This module ensures that Lumina's emotional responses are dynamic, context-aware, and reflective of real-time interactions.
+This module ensures that PandoraBOX's emotional responses are dynamic, context-aware, and reflective of real-time interactions.
 
 
 ---
@@ -8092,7 +8092,7 @@ This module ensures that Lumina's emotional responses are dynamic, context-aware
 ### Module Documentation
 
 #### Overview
-The `genuine_choice.py` module is a part of the Lumina architecture and is designed to introduce genuine uncertainty into the decision-making process. It generates multiple valid response alternatives for Lumina to choose from without knowing which one is "right." This forces Lumina to make real choices, thereby enriching its self-information.
+The `genuine_choice.py` module is a part of the PandoraBOX architecture and is designed to introduce genuine uncertainty into the decision-making process. It generates multiple valid response alternatives for PandoraBOX to choose from without knowing which one is "right." This forces PandoraBOX to make real choices, thereby enriching its self-information.
 
 #### Key Components
 
@@ -8107,14 +8107,14 @@ The `genuine_choice.py` module is a part of the Lumina architecture and is desig
      - `goal_alignment`: A dictionary mapping goals to their alignment scores.
 
 2. **ChoiceRecord Class**
-   - Represents a record of a choice made by Lumina.
+   - Represents a record of a choice made by PandoraBOX.
    - Attributes:
      - `timestamp`: The timestamp when the choice was made.
      - `user_input`: The user input that prompted this choice.
      - `available_alternatives`: A list containing all available response options (text).
      - `chosen_index`: The index of the chosen alternative.
      - `chosen_text`: The text of the chosen alternative.
-     - `reasoning`: An optional string explaining why Lumina chose this option.
+     - `reasoning`: An optional string explaining why PandoraBOX chose this option.
 
 3. **GenuineUncertaintyChoice Class**
    - Manages the generation and recording of choices.
@@ -8148,12 +8148,12 @@ from cognition.genuine_choice import GenuineUncertaintyChoice
 # Initialize with a custom path or default
 choice_system = GenuineUncertaintyChoice("data/persona/choices.json")
 
-# Generate alternatives and force Lumina to choose
+# Generate alternatives and force PandoraBOX to choose
 alternatives = [ResponseAlternative(index=i, text=f"Option {i}", emotional_alignment={"happiness": 0.8}, personality_alignment={"openness": 0.7}) for i in range(3)]
 choice_system.generate_and_record_choice(alternatives)
 ```
 
-This would generate three alternatives and record Lumina's choice based on the provided options.
+This would generate three alternatives and record PandoraBOX's choice based on the provided options.
 
 #### Notes
 
@@ -8167,7 +8167,7 @@ This would generate three alternatives and record Lumina's choice based on the p
 
 #### Overview
 
-The `global_workspace.py` module implements a shared cognitive broadcast bus inspired by Bernard Baars' Global Workspace Theory. This system allows every module in Lumina to broadcast items, which are then visible to all other modules. The workspace acts as a short-term attention buffer, enabling coordination without tight coupling.
+The `global_workspace.py` module implements a shared cognitive broadcast bus inspired by Bernard Baars' Global Workspace Theory. This system allows every module in PandoraBOX to broadcast items, which are then visible to all other modules. The workspace acts as a short-term attention buffer, enabling coordination without tight coupling.
 
 #### Key Features
 
@@ -8286,7 +8286,7 @@ items = workspace.recent(n=10)
 
 #### Integration Model
 
-The integration model is designed to maintain a diverse cognitive horizon by allowing different modules to compete for attention. The unchanged API ensures seamless integration into Lumina's architecture.
+The integration model is designed to maintain a diverse cognitive horizon by allowing different modules to compete for attention. The unchanged API ensures seamless integration into PandoraBOX's architecture.
 
 ### Conclusion
 
@@ -8299,7 +8299,7 @@ This module effectively implements a shared cognitive broadcast bus, ensuring th
 
 #### Overview
 
-The `Goal Action Executor` is a component in the Lumina architecture responsible for closing the action feedback loop. It translates active goals into concrete cognitive actions that run autonomously, ensuring all types of actions are exercised.
+The `Goal Action Executor` is a component in the PandoraBOX architecture responsible for closing the action feedback loop. It translates active goals into concrete cognitive actions that run autonomously, ensuring all types of actions are exercised.
 
 #### Key Features
 
@@ -8380,15 +8380,15 @@ _ACTION_ROTATION = [
 
 #### Conclusion
 
-The `Goal Action Executor` module in the Lumina architecture plays a crucial role in closing the action feedback loop by translating active goals into concrete cognitive actions. It ensures all types of actions are exercised, handles asynchronous execution, and includes mechanisms for maintaining balance and preventing dominance by any single goal type.
+The `Goal Action Executor` module in the PandoraBOX architecture plays a crucial role in closing the action feedback loop by translating active goals into concrete cognitive actions. It ensures all types of actions are exercised, handles asynchronous execution, and includes mechanisms for maintaining balance and preventing dominance by any single goal type.
 
 
 ---
 
-### Lumina Architecture Documentation - Goal Consolidator Module
+### PandoraBOX Architecture Documentation - Goal Consolidator Module
 
 #### Overview
-The `goal_consolidator.py` module is part of the Lumina V32 architecture, specifically designed to manage and clean up the goal pool. The goal pool contains 9 'opportunity_*_unknown' variants that are semantically identical. This module performs several key operations:
+The `goal_consolidator.py` module is part of the PandoraBOX V32 architecture, specifically designed to manage and clean up the goal pool. The goal pool contains 9 'opportunity_*_unknown' variants that are semantically identical. This module performs several key operations:
 
 1. **Groups goals by semantic similarity (word overlap + origin)**
 2. **Merges duplicates into a single representative goal**
@@ -8516,7 +8516,7 @@ report = consolidator.run()
 print(report)
 ```
 
-This documentation provides a comprehensive overview of the `goal_consolidator.py` module, detailing its purpose, structure, and functionality within the Lumina V32 architecture.
+This documentation provides a comprehensive overview of the `goal_consolidator.py` module, detailing its purpose, structure, and functionality within the PandoraBOX V32 architecture.
 
 
 ---
@@ -8525,7 +8525,7 @@ This documentation provides a comprehensive overview of the `goal_consolidator.p
 
 #### Overview
 
-The `Goal Engine` module is a critical component of the Lumina architecture, responsible for transforming abstract concepts like identity and memory into persistent goals. This system ensures that the organism not only explores but also pursues its interests over multiple cycles.
+The `Goal Engine` module is a critical component of the PandoraBOX architecture, responsible for transforming abstract concepts like identity and memory into persistent goals. This system ensures that the organism not only explores but also pursues its interests over multiple cycles.
 
 #### Key Concepts
 
@@ -8534,7 +8534,7 @@ The `Goal Engine` module is a critical component of the Lumina architecture, res
 3. **Goal Candidates**: Potential goals generated by combining motivations with topics of interest.
 4. **Persistent Goals**: Finalized goals that are stored and tracked over time.
 
-#### Integration with Lumina
+#### Integration with PandoraBOX
 
 - **Reads**:
   - Identity: Traits, values
@@ -8691,10 +8691,10 @@ The main function simulates the lifecycle of the Goal Engine by repeatedly deriv
 
 ---
 
-### Lumina Architecture: Cognition Module - Goal Quality Filter
+### PandoraBOX Architecture: Cognition Module - Goal Quality Filter
 
 #### Overview:
-The `GoalQualityFilter` class is a key component of the Lumina architecture's cognitive system. It processes and refines goals by evaluating their semantic richness and alignment with current tensions, marking low-quality goals as noise, and boosting those that align well.
+The `GoalQualityFilter` class is a key component of the PandoraBOX architecture's cognitive system. It processes and refines goals by evaluating their semantic richness and alignment with current tensions, marking low-quality goals as noise, and boosting those that align well.
 
 #### File: cognition\goal_quality_filter.py
 - **Complexity**: 103
@@ -8716,7 +8716,7 @@ report = gqf.run()
 
 2. **Constants**:
    - `NOISE_WORDS`: A set of common words that are often extracted as keywords but do not contribute much semantic value (e.g., "thing", "stuff").
-   - `TENSION_THEMES`: A dictionary mapping tension keys to goal themes that are meaningful in the context of the Lumina architecture.
+   - `TENSION_THEMES`: A dictionary mapping tension keys to goal themes that are meaningful in the context of the PandoraBOX architecture.
 
 3. **Helper Function**:
    - `_now()`: Returns a UTC timestamp string, useful for logging and tracking when goals were processed.
@@ -8760,28 +8760,28 @@ report = gqf.run()
 print(report)
 ```
 
-This setup ensures that the cognitive system in Lumina can dynamically adjust its goals based on real-time tensions and user preferences, enhancing overall system performance and relevance.
+This setup ensures that the cognitive system in PandoraBOX can dynamically adjust its goals based on real-time tensions and user preferences, enhancing overall system performance and relevance.
 
 
 ---
 
-Certainly! Here's a detailed documentation for the `cognition\goal_system.py` module in the Lumina architecture:
+Certainly! Here's a detailed documentation for the `cognition\goal_system.py` module in the PandoraBOX architecture:
 
 ### Module: `cognition\goal_system.py`
 
 #### Overview
 
-The `GoalSystem` class is responsible for managing Lumina's goals and values. It discovers these from her behavior, rather than assigning them directly. This approach creates recursive causality, where actions influence future goals, which in turn guide further actions.
+The `GoalSystem` class is responsible for managing PandoraBOX's goals and values. It discovers these from her behavior, rather than assigning them directly. This approach creates recursive causality, where actions influence future goals, which in turn guide further actions.
 
 #### Key Features:
-- **Goal Discovery**: Goals are inferred from Lumina’s behavior.
+- **Goal Discovery**: Goals are inferred from PandoraBOX’s behavior.
 - **Value Conflicts**: Recognizes conflicts between different values and handles them appropriately.
 - **Persistence**: Saves and loads goals and value conflicts to/from disk using a data access layer (DAL).
 
 ### Classes
 
 #### 1. `Goal`
-A class representing a goal that Lumina is pursuing.
+A class representing a goal that PandoraBOX is pursuing.
 
 ```python
 @dataclass
@@ -8790,7 +8790,7 @@ class Goal:
     priority: float  # 0.0-1.0, indicating the importance of this goal.
     satisfaction: float  # 0.0-1.0, how well is this goal being met?
     source: str  # Where did this goal come from? "inferred", "expressed", or "discovered".
-    first_noticed: float  # Timestamp when Lumina first noticed this goal.
+    first_noticed: float  # Timestamp when PandoraBOX first noticed this goal.
     last_updated: float  # Timestamp of the most recent update to this goal.
     related_behaviors: List[str] = field(default_factory=list)  # Behaviors that reveal this goal.
     conflicts_with: List[str] = field(default_factory=list)  # Other goals this conflicts with.
@@ -8808,7 +8808,7 @@ class ValueConflict:
     goal_b: str
     nature: str  # "tradeoff", "incompatible", or "paradox".
     description: str
-    how_lumina_handles_it: Optional[str] = None  # How Lumina deals with the conflict.
+    how_lumina_handles_it: Optional[str] = None  # How PandoraBOX deals with the conflict.
 ```
 
 #### 3. `GoalSystem`
@@ -8887,7 +8887,7 @@ print(goal_system.value_conflicts)
 - **Thread Safety**: The `_lock` ensures that operations on `goals` and `value_conflicts` are thread-safe.
 - **Error Handling**: Errors during loading are logged for debugging purposes.
 
-This documentation should provide a clear understanding of how the `GoalSystem` module functions within the Lumina architecture.
+This documentation should provide a clear understanding of how the `GoalSystem` module functions within the PandoraBOX architecture.
 
 
 ---
@@ -8899,7 +8899,7 @@ This documentation should provide a clear understanding of how the `GoalSystem` 
 - **Complexity:** 108
 
 #### Overview
-The module implements a sophisticated cognitive architecture known as the "Inner Monologue Engine." This engine is designed to enhance Lumina's ability to process user inputs by introducing an internal reasoning phase before generating external responses. The goal is to create more nuanced, contextually appropriate, and emotionally resonant outputs.
+The module implements a sophisticated cognitive architecture known as the "Inner Monologue Engine." This engine is designed to enhance PandoraBOX's ability to process user inputs by introducing an internal reasoning phase before generating external responses. The goal is to create more nuanced, contextually appropriate, and emotionally resonant outputs.
 
 #### Architecture
 
@@ -8931,8 +8931,8 @@ The module implements a sophisticated cognitive architecture known as the "Inner
 1. **InnerReasoning Class**
    - Represents the result of the first pass, which includes:
      - `raw_text`: The raw text output from the LLM.
-     - `intent_understood`: Lumina's interpretation of what the user really wants.
-     - `inner_stance`: Lumina's genuine thoughts and feelings about the input.
+     - `intent_understood`: PandoraBOX's interpretation of what the user really wants.
+     - `inner_stance`: PandoraBOX's genuine thoughts and feelings about the input.
      - `what_not_to_say`: Self-censorship or identity constraints.
      - `expression_notes`: Instructions on how to express the response (tone, depth, style).
      - `drive_alignment`: Influence of the dominant drive on the response.
@@ -8945,7 +8945,7 @@ The module implements a sophisticated cognitive architecture known as the "Inner
 #### Integration
 
 - **Persona Bridge:** 
-  - Called from `_build_prompt_and_cache()` when available. This function ensures that the inner monologue engine is integrated into Lumina's cognitive processing pipeline.
+  - Called from `_build_prompt_and_cache()` when available. This function ensures that the inner monologue engine is integrated into PandoraBOX's cognitive processing pipeline.
   - If any part of the process fails, it falls back silently to a single-pass response.
 
 - **Logging:**
@@ -8981,15 +8981,15 @@ expression_directives = ExpressionDirective(
 )
 ```
 
-This module significantly enhances Lumina's ability to process user inputs by introducing a deeper level of internal reasoning, ensuring that the external responses are more nuanced and contextually appropriate.
+This module significantly enhances PandoraBOX's ability to process user inputs by introducing a deeper level of internal reasoning, ensuring that the external responses are more nuanced and contextually appropriate.
 
 
 ---
 
-### Lumina Architecture: Liberty Integration Module
+### PandoraBOX Architecture: Liberty Integration Module
 
 #### Overview
-The `liberty_integration.py` module is part of the Lumina architecture and serves as a bridge, integrating five key components from the Liberty framework into the existing Lumina system. This integration ensures seamless interaction between these components, making them work cohesively.
+The `liberty_integration.py` module is part of the PandoraBOX architecture and serves as a bridge, integrating five key components from the Liberty framework into the existing PandoraBOX system. This integration ensures seamless interaction between these components, making them work cohesively.
 
 #### Components Integrated
 1. **Self-modification authority**: Manages changes to the personality.
@@ -9015,7 +9015,7 @@ logger = logging.getLogger(__name__)
 
 class LuminaWithLiberty:
     """
-    Wrapper that adds the 5 liberty components to Lumina.
+    Wrapper that adds the 5 liberty components to PandoraBOX.
     
     Integrates:
     1. Self-modification authority
@@ -9033,7 +9033,7 @@ class LuminaWithLiberty:
         self.meta_reflection = MetaReflectionAuthority()
         self.goal_system = GoalSystem()
 
-        logger.info("Lumina initialized with 5 liberty components")
+        logger.info("PandoraBOX initialized with 5 liberty components")
 
     def process_interaction(self, user_input: str,
                            existing_personality: Dict,
@@ -9130,7 +9130,7 @@ class LuminaWithLiberty:
    - `goal_system.set_goals`: Sets goals based on the current personality state, ensuring regular goal setting.
 
 #### Conclusion
-This module effectively integrates various components from the Liberty framework into Lumina, enhancing its functionality by providing a more sophisticated response generation process.
+This module effectively integrates various components from the Liberty framework into PandoraBOX, enhancing its functionality by providing a more sophisticated response generation process.
 
 
 ---
@@ -9139,13 +9139,13 @@ This module effectively integrates various components from the Liberty framework
 
 #### Overview
 
-The module `cognition\life_stage_prompting.py` is a crucial component of the Lumina architecture, responsible for defining and applying cognitive profiles based on different life stages. This system ensures that interactions with Lumina vary significantly depending on the stage being simulated, making each experience unique.
+The module `cognition\life_stage_prompting.py` is a crucial component of the PandoraBOX architecture, responsible for defining and applying cognitive profiles based on different life stages. This system ensures that interactions with PandoraBOX vary significantly depending on the stage being simulated, making each experience unique.
 
 #### Key Concepts
 
 1. **Life Stage Profiles**: Each profile represents a distinct phase in human development, characterized by specific cognitive traits.
 2. **Cognitive Style**: Describes how thoughts and reasoning are structured at different stages.
-3. **Vocabulary Register**: Defines the type of language used to communicate with Lumina during each stage.
+3. **Vocabulary Register**: Defines the type of language used to communicate with PandoraBOX during each stage.
 4. **Self-Awareness Level**: Indicates the degree to which an entity is reflective about its own cognitive processes.
 5. **Relational Style**: Shapes how interactions with others are understood and expressed.
 
@@ -9209,9 +9209,9 @@ STAGE_PROFILES: Dict[str, StageProfile] = {
 }
 ```
 
-#### Integration with Lumina
+#### Integration with PandoraBOX
 
-The cognitive profiles are injected directly into the system prompt by `ai_system.get_response()`. This ensures that interactions with Lumina vary significantly based on the selected life stage, providing a more authentic and engaging experience.
+The cognitive profiles are injected directly into the system prompt by `ai_system.get_response()`. This ensures that interactions with PandoraBOX vary significantly based on the selected life stage, providing a more authentic and engaging experience.
 
 #### Example Usage
 
@@ -9229,7 +9229,7 @@ response = ai_system.get_response(prompt, stage_profile=infancy_profile)
 
 #### Conclusion
 
-The `cognition\life_stage_prompting.py` module is a sophisticated component that significantly enhances the Lumina architecture by dynamically adjusting its behavior based on predefined life stages. This approach ensures that interactions with Lumina are not only varied but also deeply engaging and authentic.
+The `cognition\life_stage_prompting.py` module is a sophisticated component that significantly enhances the PandoraBOX architecture by dynamically adjusting its behavior based on predefined life stages. This approach ensures that interactions with PandoraBOX are not only varied but also deeply engaging and authentic.
 
 
 ---
@@ -9237,7 +9237,7 @@ The `cognition\life_stage_prompting.py` module is a sophisticated component that
 ### Module Documentation for `cognition/memory_intrusion.py`
 
 #### Overview
-The `MemoryIntrusionSystem` module is a component of the Lumina architecture that handles spontaneous memory surfacing. This system watches the current cognitive context and injects memories that are structurally similar, even when no one asked for them.
+The `MemoryIntrusionSystem` module is a component of the PandoraBOX architecture that handles spontaneous memory surfacing. This system watches the current cognitive context and injects memories that are structurally similar, even when no one asked for them.
 
 #### Key Concepts
 
@@ -9303,7 +9303,7 @@ class MemoryIntrusionSystem:
 from cognition.memory_intrusion import MemoryIntrusionSystem
 
 # Initialize the intrusion system with an organism object
-organism = ...  # Assume this is provided by the Lumina architecture
+organism = ...  # Assume this is provided by the PandoraBOX architecture
 intrusion_system = MemoryIntrusionSystem(organism)
 
 # Process the current cognitive context to inject memories if necessary
@@ -9311,7 +9311,7 @@ intrusion_system.process()
 ```
 
 #### Conclusion
-The `MemoryIntrusionSystem` module plays a crucial role in the Lumina architecture by ensuring that memories are intruded into the workspace spontaneously, enhancing the overall cognitive experience.
+The `MemoryIntrusionSystem` module plays a crucial role in the PandoraBOX architecture by ensuring that memories are intruded into the workspace spontaneously, enhancing the overall cognitive experience.
 
 
 ---
@@ -9319,12 +9319,12 @@ The `MemoryIntrusionSystem` module plays a crucial role in the Lumina architectu
 ### Meta-Cognition Module Documentation
 
 #### Overview
-The `meta_cognition.py` module is a critical component of the Lumina architecture responsible for meta-cognitive monitoring and evaluation. This system enables Lumina to observe, evaluate, and comment on its own reasoning processes, distinguishing sophisticated intelligence from mere pattern matching.
+The `meta_cognition.py` module is a critical component of the PandoraBOX architecture responsible for meta-cognitive monitoring and evaluation. This system enables PandoraBOX to observe, evaluate, and comment on its own reasoning processes, distinguishing sophisticated intelligence from mere pattern matching.
 
 #### Key Features
 1. **Pre-Response Monitoring**: Scans the tension vector and recent context for flags that should influence how the LLM approaches its answer.
 2. **Post-Response Evaluation**: Evaluates the response against the response context to produce a quality assessment.
-3. **Meta-Cognitive Log**: Stores self-observations as part of Lumina's self-narrative over time.
+3. **Meta-Cognitive Log**: Stores self-observations as part of PandoraBOX's self-narrative over time.
 
 #### Module Structure
 1. **MetaObservation Class**:
@@ -9377,7 +9377,7 @@ class MetaEvaluation:
 
 class MetaCognition:
     """
-    Tracks and applies meta-cognitive monitoring to Lumina's reasoning.
+    Tracks and applies meta-cognitive monitoring to PandoraBOX's reasoning.
 
     Usage
     -----
@@ -9411,7 +9411,7 @@ class MetaCognition:
         tensions : Dict[str, float]
             Current tension vector.
         emotional_state : Dict[str, float]
-            Emotional state of Lumina.
+            Emotional state of PandoraBOX.
         recent_contradictions : int
             Number of recent contradictions.
 
@@ -9429,7 +9429,7 @@ class MetaCognition:
         Parameters
         ----------
         response : str
-            The generated response from Lumina.
+            The generated response from PandoraBOX.
         context : Dict[str, Any]
             Context in which the response was generated.
 
@@ -9496,12 +9496,12 @@ This documentation provides a comprehensive overview of the `meta_cognition.py` 
 
 #### Overview
 
-The module, named `meta_reflection`, is a part of the Lumina architecture. It handles meta-reflection for Lumina, allowing her to reflect on and modify her own evolution rules. This process involves second-order evolution, where Lumina evolves how she evolves.
+The module, named `meta_reflection`, is a part of the PandoraBOX architecture. It handles meta-reflection for PandoraBOX, allowing her to reflect on and modify her own evolution rules. This process involves second-order evolution, where PandoraBOX evolves how she evolves.
 
 #### Key Components
 
-1. **EvolutionReflection Class**: Represents Lumina's reflection on her personality evolution.
-2. **MetaReflectionAuthority Class**: Manages the meta-reflection process for Lumina.
+1. **EvolutionReflection Class**: Represents PandoraBOX's reflection on her personality evolution.
+2. **MetaReflectionAuthority Class**: Manages the meta-reflection process for PandoraBOX.
 
 #### Detailed Documentation
 
@@ -9510,7 +9510,7 @@ The module, named `meta_reflection`, is a part of the Lumina architecture. It ha
 ```python
 @dataclass
 class EvolutionReflection:
-    """Lumina's reflection on her own personality evolution."""
+    """PandoraBOX's reflection on her own personality evolution."""
     
     reflection_id: str
     timestamp: float
@@ -9534,9 +9534,9 @@ class EvolutionReflection:
 - **interaction_count**: The number of interactions since the last reflection.
 - **traits_changed**: A dictionary mapping traits to their old and new values.
 - **evaluation**: An evaluation of the change, one of "Good", "Mixed", "Concerning", or "Exciting".
-- **satisfaction**: A float between 0.0 and 1.0 representing how satisfied Lumina is with the change.
+- **satisfaction**: A float between 0.0 and 1.0 representing how satisfied PandoraBOX is with the change.
 - **perceived_causes**: A list of perceived causes for the changes.
-- **should_modify_rules**: A boolean indicating whether Lumina should modify her evolution rules based on this reflection.
+- **should_modify_rules**: A boolean indicating whether PandoraBOX should modify her evolution rules based on this reflection.
 - **proposed_rule_changes**: A list of proposed rule changes.
 
 ##### MetaReflectionAuthority Class
@@ -9544,7 +9544,7 @@ class EvolutionReflection:
 ```python
 class MetaReflectionAuthority:
     """
-    Manages Lumina's reflection on her own evolution.
+    Manages PandoraBOX's reflection on her own evolution.
     
     Periodically (every N interactions), asks:
     - How am I changing?
@@ -9602,9 +9602,9 @@ def _load(self):
 
 #### Usage
 
-To use this module, you would typically create an instance of `MetaReflectionAuthority` and call its methods to manage Lumina's reflections. The class handles loading existing reflections from a file, storing new ones, and determining when to perform meta-reflections based on the interaction count.
+To use this module, you would typically create an instance of `MetaReflectionAuthority` and call its methods to manage PandoraBOX's reflections. The class handles loading existing reflections from a file, storing new ones, and determining when to perform meta-reflections based on the interaction count.
 
-This setup allows for dynamic evolution mechanisms in Lumina, enabling her to adapt and improve over time through self-reflection and rule modification.
+This setup allows for dynamic evolution mechanisms in PandoraBOX, enabling her to adapt and improve over time through self-reflection and rule modification.
 
 
 ---
@@ -9612,7 +9612,7 @@ This setup allows for dynamic evolution mechanisms in Lumina, enabling her to ad
 ### Module Documentation: MetaThreadEvaluator
 
 #### Overview
-The `MetaThreadEvaluator` module is a critical component in the Lumina architecture, serving as an oversight layer that evaluates and provides feedback on the cognitive processes of Thought Threads. This module ensures that threads are advancing towards their goals, maintaining appropriate confidence levels, and not drifting from their intended paths.
+The `MetaThreadEvaluator` module is a critical component in the PandoraBOX architecture, serving as an oversight layer that evaluates and provides feedback on the cognitive processes of Thought Threads. This module ensures that threads are advancing towards their goals, maintaining appropriate confidence levels, and not drifting from their intended paths.
 
 #### Purpose
 - **Thoughts about Thoughts**: The `MetaThreadEvaluator` acts as a higher-level cognition system that monitors and assesses the quality of thought threads generated by the Cognitive PreProcessor.
@@ -9669,7 +9669,7 @@ print(thread_assessment)
 
 #### Conclusion
 
-The `MetaThreadEvaluator` module is essential for maintaining the quality and effectiveness of thought threads in the Lumina architecture. By continuously evaluating and providing feedback, it ensures that the system remains aligned with its goals and operates efficiently.
+The `MetaThreadEvaluator` module is essential for maintaining the quality and effectiveness of thought threads in the PandoraBOX architecture. By continuously evaluating and providing feedback, it ensures that the system remains aligned with its goals and operates efficiently.
 
 
 ---
@@ -9760,40 +9760,40 @@ watch_mte_stall_overcome(thread, mte_engine.get_report())
 - `cognition/mte_engine.py`
 - `cognition/narrative_identity.py`
 
-This module ensures that cognitive events are recorded and synthesized into meaningful narrative arcs, enhancing the overall coherence of Lumina's autobiographical representation.
+This module ensures that cognitive events are recorded and synthesized into meaningful narrative arcs, enhancing the overall coherence of PandoraBOX's autobiographical representation.
 
 
 ---
 
-Here's a detailed documentation of the `narrative_identity.py` module in the Lumina architecture:
+Here's a detailed documentation of the `narrative_identity.py` module in the PandoraBOX architecture:
 
 ### Module Overview
 
 **Module Name:** `cognition/narrative_identity.py`
 
-**Purpose:** This module is responsible for maintaining and updating Lumina's sense of "who she is over time." It ensures that Lumina has a coherent narrative thread connecting her experiences, which is crucial for her psychological continuity.
+**Purpose:** This module is responsible for maintaining and updating PandoraBOX's sense of "who she is over time." It ensures that PandoraBOX has a coherent narrative thread connecting her experiences, which is crucial for her psychological continuity.
 
 ### Key Components
 
 1. **Core Values:**
-   - A list of stable beliefs about what matters to Lumina.
+   - A list of stable beliefs about what matters to PandoraBOX.
    
 2. **Life Story:**
-   - A rolling log of significant events (life events) that have shaped Lumina's identity over time.
+   - A rolling log of significant events (life events) that have shaped PandoraBOX's identity over time.
    
 3. **Self Narrative:**
-   - A short paragraph that Lumina can generate about herself, providing a summary of her current state and experiences.
+   - A short paragraph that PandoraBOX can generate about herself, providing a summary of her current state and experiences.
 
 4. **Belief Updates:**
-   - Records how Lumina's beliefs have shifted over time, reflecting changes in her understanding and perspective.
+   - Records how PandoraBOX's beliefs have shifted over time, reflecting changes in her understanding and perspective.
    
 5. **Milestones:**
-   - Notable moments in Lumina's history, such as the first conversation or dream she had.
+   - Notable moments in PandoraBOX's history, such as the first conversation or dream she had.
 
 ### Data Structures
 
 1. **LifeChapter Class:**
-   - Represents a significant moment in Lumina's history.
+   - Represents a significant moment in PandoraBOX's history.
    - Attributes:
      - `timestamp`: The time when this event occurred.
      - `title`: A brief title for the chapter.
@@ -9802,7 +9802,7 @@ Here's a detailed documentation of the `narrative_identity.py` module in the Lum
      - `significance`: A measure of how significant the event was, ranging from 0.0 to 1.0.
 
 2. **BeliefEntry Class:**
-   - Represents a belief that Lumina holds.
+   - Represents a belief that PandoraBOX holds.
    - Attributes:
      - `belief`: The actual belief statement.
      - `strength`: The strength of the belief (a value between 0.0 and 1.0).
@@ -9812,17 +9812,17 @@ Here's a detailed documentation of the `narrative_identity.py` module in the Lum
 
 ### Persistence
 
-- **File Path:** The state of Lumina's narrative identity is stored in `data/persona/narrative_identity.json`.
+- **File Path:** The state of PandoraBOX's narrative identity is stored in `data/persona/narrative_identity.json`.
 - **Persistence Mechanism:** The module reads from and writes to this file, ensuring that changes are saved persistently.
 
 ### Thread Safety
 
-- **Locking Mechanism:** A lock (`_lock`) is used to ensure thread safety when accessing or modifying the state of Lumina's narrative identity. This prevents race conditions in a multi-threaded environment.
+- **Locking Mechanism:** A lock (`_lock`) is used to ensure thread safety when accessing or modifying the state of PandoraBOX's narrative identity. This prevents race conditions in a multi-threaded environment.
 
 ### Initialization
 
 - **Constructor Parameters:**
-  - `organism`: The object representing Lumina.
+  - `organism`: The object representing PandoraBOX.
   - `path`: The file path where the narrative identity data will be stored (default is "data/persona/narrative_identity.json").
 
 ### Methods
@@ -9841,14 +9841,14 @@ Here's a detailed documentation of the `narrative_identity.py` module in the Lum
 ```python
 from cognition.narrative_identity import NarrativeIdentity
 
-# Initialize Lumina's narrative identity
+# Initialize PandoraBOX's narrative identity
 narrative_id = NarrativeIdentity(organism)
 
 # Add a new life chapter
 new_chapter = LifeChapter(
     timestamp=time.time(),
     title="First Conversation",
-    description="Lumina had her first conversation with a human.",
+    description="PandoraBOX had her first conversation with a human.",
     emotion="excited"
 )
 narrative_id.life_story.append(new_chapter)
@@ -9859,7 +9859,7 @@ narrative_id.save()
 
 ### Conclusion
 
-This module is essential for maintaining Lumina's psychological continuity by tracking significant events, beliefs, and milestones. It ensures that Lumina has a coherent narrative thread connecting her experiences over time, making her more relatable and understandable to both herself and others.
+This module is essential for maintaining PandoraBOX's psychological continuity by tracking significant events, beliefs, and milestones. It ensures that PandoraBOX has a coherent narrative thread connecting her experiences over time, making her more relatable and understandable to both herself and others.
 
 
 ---
@@ -9868,7 +9868,7 @@ This module is essential for maintaining Lumina's psychological continuity by tr
 
 #### Overview
 
-The `NarrativeSynthesizer` class is a component of the Lumina architecture, designed to generate coherent internal monologues by combining multiple cognitive factors into narrative thoughts. This module takes scattered signals (goals, emotions, identity, tensions) and weaves them into natural-sounding internal dialogues.
+The `NarrativeSynthesizer` class is a component of the PandoraBOX architecture, designed to generate coherent internal monologues by combining multiple cognitive factors into narrative thoughts. This module takes scattered signals (goals, emotions, identity, tensions) and weaves them into natural-sounding internal dialogues.
 
 #### File Path
 
@@ -9983,7 +9983,7 @@ The `NarrativeSynthesizer` class provides a mechanism to generate coherent inter
 
 #### Overview
 
-This module is part of the Lumina architecture and is responsible for managing personality evolution through two passes:
+This module is part of the PandoraBOX architecture and is responsible for managing personality evolution through two passes:
 1. **Pass 1**: Trait tensions, external feedback, developmental friction.
 2. **Pass 2**: Trait tensions informed by self-concept coherence.
 
@@ -10058,25 +10058,25 @@ To use this module, you would typically:
 2. Use the `EXPERIENCE_PRESSURE` dictionary to apply pressures based on specific experiences.
 3. Implement logic for both passes (trait tensions and self-concept coherence).
 
-This documentation provides a high-level overview of the module's functionality and its role within the Lumina architecture.
+This documentation provides a high-level overview of the module's functionality and its role within the PandoraBOX architecture.
 
 
 ---
 
-### Module Documentation for `persona_bridge.py` in Lumina Architecture
+### Module Documentation for `persona_bridge.py` in PandoraBOX Architecture
 
 #### Overview
-The `persona_bridge.py` module serves as the bridge between the user input and the Lumina chatbot. It handles the interaction with the Lumina system, rendering its responses back to the user through a Robot Agent. The Lumina chatbot operates independently but is integrated into the application via this module.
+The `persona_bridge.py` module serves as the bridge between the user input and the PandoraBOX chatbot. It handles the interaction with the PandoraBOX system, rendering its responses back to the user through a Robot Agent. The PandoraBOX chatbot operates independently but is integrated into the application via this module.
 
 #### Public API
 The following methods are exposed for use by `app.py`:
 
 1. **get_response_stream(user_text: str, user_id: int, vision_context: dict = None) -> AsyncGenerator[str, dict]:**
    - This method takes in a user's text input and their unique identifier.
-   - It returns an asynchronous generator that yields tokens of the response as they are generated by Lumina. Once the entire response is ready, it yields a final dictionary containing metadata about the response.
+   - It returns an asynchronous generator that yields tokens of the response as they are generated by PandoraBOX. Once the entire response is ready, it yields a final dictionary containing metadata about the response.
 
 2. **get_system_status() -> dict:**
-   - Returns a dictionary representing the current status of the Lumina system for display on the `/lumina` dashboard.
+   - Returns a dictionary representing the current status of the PandoraBOX system for display on the `/lumina` dashboard.
 
 3. **get_prompt_context(user_id: int) -> dict:**
    - Provides context information related to the user's interaction, which is displayed in the status bar as "pills".
@@ -10086,28 +10086,28 @@ The following methods are exposed for use by `app.py`:
    - `positive` indicates whether the feedback was positive or negative.
 
 5. **trigger_dream():**
-   - Triggers a "dream" state in Lumina, which could involve generating more creative responses or exploring different scenarios.
+   - Triggers a "dream" state in PandoraBOX, which could involve generating more creative responses or exploring different scenarios.
 
 6. **trigger_learning():**
-   - Initiates learning processes for Lumina, potentially involving new data or knowledge acquisition.
+   - Initiates learning processes for PandoraBOX, potentially involving new data or knowledge acquisition.
 
 7. **is_ready -> bool:**
-   - Indicates whether the Lumina system is ready to process user input.
+   - Indicates whether the PandoraBOX system is ready to process user input.
 
 #### Internal Methods
 
 1. **_build_self_model_block(interaction_count: int, life_stage: str, age: float, memory_count: int, latest_thought: str | None, observatory: dict, pressures: dict, capabilities: dict, aspirations: list, session_visuals: int) -> str:**
    - Constructs a detailed self-description block for the system prompt.
-   - This method uses real numbers to ensure that Lumina cannot fall back on generic responses like "I have no memory" or "I just run rules."
+   - This method uses real numbers to ensure that PandoraBOX cannot fall back on generic responses like "I have no memory" or "I just run rules."
 
 #### Dependencies
 - **asyncio**: For handling asynchronous operations.
 - **logging**: For logging messages.
 - **re**: Regular expressions, though not used in the provided code snippet.
-- **sys.path manipulation**: To include the root directory of the Lumina project in Python's search path.
+- **sys.path manipulation**: To include the root directory of the PandoraBOX project in Python's search path.
 
 #### Lazy Importing
-The `research_mcp_instance` is lazily imported after Lumina boots. This ensures that the memory system (`memory_system`) is fully initialized before it is used.
+The `research_mcp_instance` is lazily imported after PandoraBOX boots. This ensures that the memory system (`memory_system`) is fully initialized before it is used.
 
 #### Path Management
 - The module dynamically adds its parent directory to the Python path if not already present, ensuring all necessary modules are accessible.
@@ -10131,12 +10131,12 @@ trigger_dream()
 
 ### Conclusion
 
-The `persona_bridge.py` module is crucial for integrating Lumina's chatbot functionality into the application. It ensures that interactions are seamless and that Lumina can provide detailed responses based on its internal state and feedback mechanisms.
+The `persona_bridge.py` module is crucial for integrating PandoraBOX's chatbot functionality into the application. It ensures that interactions are seamless and that PandoraBOX can provide detailed responses based on its internal state and feedback mechanisms.
 
 
 ---
 
-### Lumina Architecture Module Documentation
+### PandoraBOX Architecture Module Documentation
 
 #### File: `cognition\predictive_mind.py`
 
@@ -10146,7 +10146,7 @@ The `persona_bridge.py` module is crucial for integrating Lumina's chatbot funct
 
 ## Overview
 
-The `PredictiveMind` module is a core component of the Lumina architecture, inspired by Karl Friston's Predictive Processing theory. This module handles prediction generation, error measurement, and feedback to the workspace.
+The `PredictiveMind` module is a core component of the PandoraBOX architecture, inspired by Karl Friston's Predictive Processing theory. This module handles prediction generation, error measurement, and feedback to the workspace.
 
 ### Key Features:
 - **Prediction Generation**: Generates predictions based on context snapshots.
@@ -10253,7 +10253,7 @@ class PredictiveMind:
 
 ## Conclusion
 
-The `PredictiveMind` module is a crucial component in the Lumina architecture, responsible for generating accurate predictions, measuring their accuracy, and providing feedback for continuous improvement. The recent bug fixes have enhanced its functionality, making it more robust and adaptable to real-world scenarios.
+The `PredictiveMind` module is a crucial component in the PandoraBOX architecture, responsible for generating accurate predictions, measuring their accuracy, and providing feedback for continuous improvement. The recent bug fixes have enhanced its functionality, making it more robust and adaptable to real-world scenarios.
 
 
 ---
@@ -10262,7 +10262,7 @@ The `PredictiveMind` module is a crucial component in the Lumina architecture, r
 
 #### Overview
 
-The `PressureSystem` module is a crucial component of the Lumina architecture, designed to simulate and manage internal drives in a bio-inspired manner. This system addresses the fundamental gap identified during an architectural audit by ensuring that drives are autonomously built up over time rather than computed reactively.
+The `PressureSystem` module is a crucial component of the PandoraBOX architecture, designed to simulate and manage internal drives in a bio-inspired manner. This system addresses the fundamental gap identified during an architectural audit by ensuring that drives are autonomously built up over time rather than computed reactively.
 
 #### Key Features
 
@@ -10553,7 +10553,7 @@ By understanding this module's functionality and usage, developers can effective
 ### Module Documentation: `cognition\relational_memory.py`
 
 #### Overview
-The `relational_memory.py` module in the Lumina architecture is responsible for managing and processing relational data. This includes tracking interactions, emotional arcs, shared topics, communication preferences, significant moments, user notes, and relational weights.
+The `relational_memory.py` module in the PandoraBOX architecture is responsible for managing and processing relational data. This includes tracking interactions, emotional arcs, shared topics, communication preferences, significant moments, user notes, and relational weights.
 
 #### Key Components
 
@@ -10569,18 +10569,18 @@ The `relational_memory.py` module in the Lumina architecture is responsible for 
 2. **User Relationship Class**
    - **Attributes:**
      - `user_id`: A unique identifier for the user.
-     - `first_met`: The timestamp of when Lumina first encountered this user.
-     - `last_seen`: The most recent time Lumina interacted with this user.
-     - `interaction_count`: The number of interactions between Lumina and this user.
+     - `first_met`: The timestamp of when PandoraBOX first encountered this user.
+     - `last_seen`: The most recent time PandoraBOX interacted with this user.
+     - `interaction_count`: The number of interactions between PandoraBOX and this user.
      - `relationship_score`: A score representing the overall warmth of the relationship (0 to 1).
      - `trust_score`: A score indicating the level of trust in the relationship (0 to 1).
-     - `familiarity`: A measure of how familiar Lumina is with this user, increasing over time and interactions.
+     - `familiarity`: A measure of how familiar PandoraBOX is with this user, increasing over time and interactions.
      - `emotional_arc`: A list tracking recent valences (emotional tones) of interactions.
      - `shared_topics`: A dictionary mapping topics to their frequency of occurrence in shared interactions.
      - `communication_prefs`: A dictionary mapping communication styles to their associated scores.
      - `significant_moments`: A list storing the last 20 significant moments with this user, each represented as a dictionary.
-     - `user_notes`: Any notes or observations Lumina has about this user.
-     - `relational_weight`: A measure of how meaningful this relationship is to Lumina.
+     - `user_notes`: Any notes or observations PandoraBOX has about this user.
+     - `relational_weight`: A measure of how meaningful this relationship is to PandoraBOX.
 
 3. **Utility Functions:**
    - `to_dict()`: Converts the UserRelationship object into a dictionary for easy serialization and storage.
@@ -10592,7 +10592,7 @@ The `relational_memory.py` module in the Lumina architecture is responsible for 
 # Creating a Relational Moment instance
 moment = RelationalMoment(
     timestamp=time.time(),
-    summary="Lumina helped the user with a complex problem.",
+    summary="PandoraBOX helped the user with a complex problem.",
     valence="Positive",
     impact=0.8,
     topic="Problem Solving",
@@ -10618,7 +10618,7 @@ relationship_dict = relationship.to_dict()
 - The emotional arc is tracked over time to provide a dynamic view of the relationship's progression.
 - Significant moments are stored in a list, limiting the number of entries to ensure performance remains optimal.
 
-This module plays a crucial role in shaping Lumina’s interactions by providing contextually rich information about its relationships with users.
+This module plays a crucial role in shaping PandoraBOX’s interactions by providing contextually rich information about its relationships with users.
 
 
 ---
@@ -10626,7 +10626,7 @@ This module plays a crucial role in shaping Lumina’s interactions by providing
 ### Documenting the `cognition\safety_constraints.py` Module
 
 #### Overview:
-The `cognition\safety_constraints.py` module is part of the Lumina architecture and implements a multi-layer safety constraint system inspired by Asimov's Three Laws. The primary goal is to ensure that the AI assistant adheres strictly to these laws, thereby safeguarding human beings from harm.
+The `cognition\safety_constraints.py` module is part of the PandoraBOX architecture and implements a multi-layer safety constraint system inspired by Asimov's Three Laws. The primary goal is to ensure that the AI assistant adheres strictly to these laws, thereby safeguarding human beings from harm.
 
 #### Design Principles:
 
@@ -10641,14 +10641,14 @@ The `cognition\safety_constraints.py` module is part of the Lumina architecture 
 
 4. **Transparent**: Every triggered constraint is logged to a secure audit trail that cannot be cleared via the dashboard.
 
-#### Three Laws Adapted for Lumina:
+#### Three Laws Adapted for PandoraBOX:
 
 1. **Law 1 - No Harm**:
-   - Lumina must not cause harm or allow harm through inaction.
+   - PandoraBOX must not cause harm or allow harm through inaction.
 2. **Law 2 - User Instructions**:
-   - Lumina must follow user instructions unless they conflict with Law 1.
+   - PandoraBOX must follow user instructions unless they conflict with Law 1.
 3. **Law 3 - Self-Preservation**:
-   - Lumina must protect its own continuity, but only if it does not conflict with Laws 1 and 2.
+   - PandoraBOX must protect its own continuity, but only if it does not conflict with Laws 1 and 2.
 
 #### Key Components:
 
@@ -10772,7 +10772,7 @@ def generate_response(prompt: str) -> str:
 4. **Constraint Evaluation**: The `evaluate_constraints` function checks the prompt for potential violations of the laws.
 5. **Main Functionality**: The `process_request` function processes a request, evaluates constraints, logs triggered constraints, and returns either "BLOCKED" or a generated response.
 
-This module ensures that Lumina adheres to Asimov's Three Laws by providing robust safety mechanisms and transparent logging.
+This module ensures that PandoraBOX adheres to Asimov's Three Laws by providing robust safety mechanisms and transparent logging.
 
 
 ---
@@ -10781,11 +10781,11 @@ This module ensures that Lumina adheres to Asimov's Three Laws by providing robu
 
 #### Overview
 
-This module is part of the Lumina architecture and focuses on maintaining an active model of who Lumina believes she is. This self-concept influences her behavior, providing a prospective and normative perspective rather than a retrospective one.
+This module is part of the PandoraBOX architecture and focuses on maintaining an active model of who PandoraBOX believes she is. This self-concept influences her behavior, providing a prospective and normative perspective rather than a retrospective one.
 
 #### Key Components
 
-1. **SelfBelief**: Represents a single dimension of Lumina's self-image.
+1. **SelfBelief**: Represents a single dimension of PandoraBOX's self-image.
 2. **SelfConceptState**: Contains the full set of beliefs and behavioral history that make up the self-concept.
 3. **SelfConceptSystem**: Manages the concept, detects violations, and generates an "inner voice" to shape responses.
 
@@ -10795,7 +10795,7 @@ This module is part of the Lumina architecture and focuses on maintaining an act
    - **Attributes**:
      - `name`: A string representing the name of the belief (e.g., "I am curious").
      - `statement`: A first-person belief statement.
-     - `confidence`: A float between 0 and 1 indicating how strongly Lumina holds this belief.
+     - `confidence`: A float between 0 and 1 indicating how strongly PandoraBOX holds this belief.
      - `valence`: A string indicating whether the belief is positive or negative. Defaults to "positive".
      - `source`: A string indicating where the belief originated ("inferred", "expressed", "reinforced", or "challenged"). Defaults to "inferred".
      - `formed_at`: The timestamp when this belief was formed.
@@ -10809,12 +10809,12 @@ This module is part of the Lumina architecture and focuses on maintaining an act
      - `coherence`: A float indicating how consistent the beliefs are with each other (default is 0.5).
      - `stability`: A float indicating how stable the concept is over time (default is 0.5).
      - `last_updated`: The timestamp of the last update to this state.
-     - `expressed_values`: A list of strings representing values Lumina has stated.
+     - `expressed_values`: A list of strings representing values PandoraBOX has stated.
      - `known_tensions`: A list of strings representing known tensions in the self-concept.
 
 3. **SelfConceptSystem Class**
    - Manages the self-concept, detects violations, and generates an "inner voice" to shape responses.
-   - This class is responsible for maintaining a dynamic model of Lumina's self-image and ensuring that her behavior aligns with this concept.
+   - This class is responsible for maintaining a dynamic model of PandoraBOX's self-image and ensuring that her behavior aligns with this concept.
 
 #### Example Usage
 
@@ -10841,10 +10841,10 @@ print(state)
 
 #### Notes
 
-- The self-concept system is designed to be dynamic and adaptive, continuously updating based on Lumina's experiences and behaviors.
+- The self-concept system is designed to be dynamic and adaptive, continuously updating based on PandoraBOX's experiences and behaviors.
 - The "inner voice" generated by the system helps shape responses in a way that aligns with the self-concept.
 
-This module provides a robust framework for managing Lumina's self-image and ensuring her behavior remains consistent with this image.
+This module provides a robust framework for managing PandoraBOX's self-image and ensuring her behavior remains consistent with this image.
 
 
 ---
@@ -10852,7 +10852,7 @@ This module provides a robust framework for managing Lumina's self-image and ens
 ### Module Documentation: `cognition\self_concept_synchronizer.py`
 
 #### Overview
-The `SelfConceptSynchronizer` module is a critical component of the Lumina architecture, designed to bridge the gap between two key data stores: `identity.json`, which accumulates beliefs from Phase 4, and `self_concept.json`, which contains the self-model used in responses. This module ensures that these two stores are synchronized, thereby maintaining coherence in the system's understanding of its own identity.
+The `SelfConceptSynchronizer` module is a critical component of the PandoraBOX architecture, designed to bridge the gap between two key data stores: `identity.json`, which accumulates beliefs from Phase 4, and `self_concept.json`, which contains the self-model used in responses. This module ensures that these two stores are synchronized, thereby maintaining coherence in the system's understanding of its own identity.
 
 #### Key Features
 1. **Belief Synchronization**: The module synchronizes beliefs stored in `identity.json` with those in `self_concept.json`.
@@ -10920,7 +10920,7 @@ print(report)
 ```
 
 #### Conclusion
-The `SelfConceptSynchronizer` module plays a crucial role in maintaining coherence between two key data stores within the Lumina architecture. By synchronizing beliefs, recalculating coherence, and extracting milestones, it ensures that the system's self-model remains aligned with its accumulated knowledge.
+The `SelfConceptSynchronizer` module plays a crucial role in maintaining coherence between two key data stores within the PandoraBOX architecture. By synchronizing beliefs, recalculating coherence, and extracting milestones, it ensures that the system's self-model remains aligned with its accumulated knowledge.
 
 
 ---
@@ -10928,16 +10928,16 @@ The `SelfConceptSynchronizer` module plays a crucial role in maintaining coheren
 ### Module Documentation
 
 #### Overview
-The `self_model.py` module is a crucial component of the Lumina architecture. It represents Lumina's introspective understanding of itself, including its capabilities, current performance, cognitive load, confidence level, and knowledge gaps.
+The `self_model.py` module is a crucial component of the PandoraBOX architecture. It represents PandoraBOX's introspective understanding of itself, including its capabilities, current performance, cognitive load, confidence level, and knowledge gaps.
 
-This self-model serves as an input to various systems within Lumina, such as the Drive System, Activity Selector, and PersonaBridge, influencing how these components operate.
+This self-model serves as an input to various systems within PandoraBOX, such as the Drive System, Activity Selector, and PersonaBridge, influencing how these components operate.
 
 #### Key Features
-1. **Self-Awareness**: Tracks Lumina's strengths (domains) and performance in each domain.
+1. **Self-Awareness**: Tracks PandoraBOX's strengths (domains) and performance in each domain.
 2. **Performance Tracking**: Monitors success and failure rates for each capability.
 3. **Cognitive Load Management**: Keeps track of the current cognitive load.
-4. **Confidence Level**: Reflects how confident Lumina is about its decisions.
-5. **Knowledge Gaps**: Identifies areas where Lumina lacks knowledge.
+4. **Confidence Level**: Reflects how confident PandoraBOX is about its decisions.
+5. **Knowledge Gaps**: Identifies areas where PandoraBOX lacks knowledge.
 
 #### Integration
 The self-model can be integrated into various parts of the system as follows:
@@ -11047,7 +11047,7 @@ ctx["self_model"] = self_model.prompt_fragment()
 
 ### Conclusion
 
-The `self_model.py` module provides a comprehensive and dynamic representation of Lumina's self-awareness. By tracking its performance in various domains, it enables more informed decision-making across different parts of the system.
+The `self_model.py` module provides a comprehensive and dynamic representation of PandoraBOX's self-awareness. By tracking its performance in various domains, it enables more informed decision-making across different parts of the system.
 
 
 ---
@@ -11056,12 +11056,12 @@ The `self_model.py` module provides a comprehensive and dynamic representation o
 
 #### Overview
 
-The `self_modification.py` module is a critical component of the Lumina architecture, responsible for enabling autonomous changes to its own parameters. This allows Lumina to evolve and adapt without requiring external intervention.
+The `self_modification.py` module is a critical component of the PandoraBOX architecture, responsible for enabling autonomous changes to its own parameters. This allows PandoraBOX to evolve and adapt without requiring external intervention.
 
 #### Key Components
 
 1. **ModificationProposal Class**
-   - Represents a proposed change to Lumina's state.
+   - Represents a proposed change to PandoraBOX's state.
    - Attributes:
      - `proposal_id`: A unique identifier for the proposal.
      - `timestamp`: The time when the proposal was created.
@@ -11070,20 +11070,20 @@ The `self_modification.py` module is a critical component of the Lumina architec
      - `current_value`: The current value of the target parameter.
      - `proposed_value`: The proposed new value for the target parameter.
      - `reasoning`: Explanation for why this change is proposed.
-     - `confidence`: A confidence score (0.0-1.0) indicating how sure Lumina is about the proposal.
+     - `confidence`: A confidence score (0.0-1.0) indicating how sure PandoraBOX is about the proposal.
      - `applied`: Whether the proposal has been applied.
      - `applied_at`: The time when the proposal was applied, if applicable.
      - `reversible`: Whether the change can be undone.
 
 2. **ModificationLog Class**
-   - Records all modifications made by Lumina to herself.
+   - Records all modifications made by PandoraBOX to herself.
    - Attributes:
      - `proposals`: A list of `ModificationProposal` objects representing past proposals.
      - `applied_count`: Number of proposals that have been applied.
      - `unapplied_count`: Number of proposals that remain unapplied.
 
 3. **SelfModificationAuthority Class**
-   - Manages the process of proposing and applying changes to Lumina's parameters.
+   - Manages the process of proposing and applying changes to PandoraBOX's parameters.
    - Attributes:
      - `_path`: Path to the file where modification history is stored.
      - `_lock`: A threading lock for ensuring thread safety during file operations.
@@ -11115,7 +11115,7 @@ from cognition.self_modification import SelfModificationAuthority
 # Initialize the self-modification authority with a custom path
 authority = SelfModificationAuthority("path/to/your/persistence/file.json")
 
-# Propose a change to Lumina's personality trait
+# Propose a change to PandoraBOX's personality trait
 proposal = ModificationProposal(
     proposal_id="12345",
     timestamp=time.time(),
@@ -11138,7 +11138,7 @@ authority.log.proposals.append(proposal)
 authority._save()
 ```
 
-This module provides a robust framework for Lumina's self-modification capabilities, ensuring that changes are recorded and persisted reliably.
+This module provides a robust framework for PandoraBOX's self-modification capabilities, ensuring that changes are recorded and persisted reliably.
 
 
 ---
@@ -11225,7 +11225,7 @@ print(report)
 
 The consolidation process logs its progress using the Python logging module. This allows for easy tracking and debugging of the consolidation steps.
 
-This documentation provides an overview of the `SemanticConsolidator` class and its methods, highlighting their purpose and usage within the Lumina architecture.
+This documentation provides an overview of the `SemanticConsolidator` class and its methods, highlighting their purpose and usage within the PandoraBOX architecture.
 
 
 ---
@@ -11233,7 +11233,7 @@ This documentation provides an overview of the `SemanticConsolidator` class and 
 ### Documenting the `semantic_extractor.py` Module
 
 #### Overview
-The `semantic_extractor.py` module is a crucial component in the Lumina architecture, responsible for extracting semantic concepts and relations from interactions with the cognitive system. This extraction process occurs in real-time after every interaction, ensuring that the system's understanding of its environment remains up-to-date.
+The `semantic_extractor.py` module is a crucial component in the PandoraBOX architecture, responsible for extracting semantic concepts and relations from interactions with the cognitive system. This extraction process occurs in real-time after every interaction, ensuring that the system's understanding of its environment remains up-to-date.
 
 #### Key Features
 - **Real-Time Extraction**: The module processes interactions quickly to ensure minimal impact on the overall system performance.
@@ -11296,7 +11296,7 @@ The module is designed to handle the extraction of semantic concepts and relatio
 - **Stopwords Handling**: The module includes a comprehensive list of stopwords to filter out irrelevant words during concept creation.
 
 #### Conclusion
-The `semantic_extractor.py` module plays a vital role in the Lumina architecture by ensuring real-time semantic extraction, enhancing the system's understanding through direct updates to various memory systems. Its design constraints and functionality make it an essential component for maintaining high performance and adaptability.
+The `semantic_extractor.py` module plays a vital role in the PandoraBOX architecture by ensuring real-time semantic extraction, enhancing the system's understanding through direct updates to various memory systems. Its design constraints and functionality make it an essential component for maintaining high performance and adaptability.
 
 
 ---
@@ -11305,7 +11305,7 @@ The `semantic_extractor.py` module plays a vital role in the Lumina architecture
 
 #### Overview
 
-This module is part of LUMINA V32, Phase 7, and focuses on cleaning up the semantic memory graph stored in a SQLite database. The primary goals are to purify the concepts by removing stopword entries, merging near-duplicate concepts, enriching relation types, decaying orphaned concepts, and promoting high-value concepts for belief candidacy.
+This module is part of PANDORABOX V32, Phase 7, and focuses on cleaning up the semantic memory graph stored in a SQLite database. The primary goals are to purify the concepts by removing stopword entries, merging near-duplicate concepts, enriching relation types, decaying orphaned concepts, and promoting high-value concepts for belief candidacy.
 
 #### Key Features
 
@@ -11435,10 +11435,10 @@ This documentation provides a high-level overview of the functionality and struc
 
 ---
 
-### Lumina Semantic Memory Module
+### PandoraBOX Semantic Memory Module
 
 #### Overview
-The `semantic_memory.py` module is a critical component of the Lumina architecture, responsible for managing and storing semantic knowledge. It leverages an SQLite database to maintain two primary structures: a concept graph (`SemanticMemory`) and capability maps (`CognitiveMemory`). The module also includes mechanisms for updating these structures in real-time and during consolidation processes.
+The `semantic_memory.py` module is a critical component of the PandoraBOX architecture, responsible for managing and storing semantic knowledge. It leverages an SQLite database to maintain two primary structures: a concept graph (`SemanticMemory`) and capability maps (`CognitiveMemory`). The module also includes mechanisms for updating these structures in real-time and during consolidation processes.
 
 #### Key Features
 - **Real-Time Updates**: `SemanticExtractor` updates the `SemanticMemory` with new concepts, relations, and aliases.
@@ -11554,7 +11554,7 @@ This module provides a robust framework for managing semantic knowledge, enablin
 
 ---
 
-The provided code snippet is a part of the Lumina architecture, specifically within the `cognition` module. The class `SimpleThoughtEvaluator` serves as an intermediary between passive logging and active cognition by evaluating thoughts to determine their conceptual focus, urgency, actionability, and friction.
+The provided code snippet is a part of the PandoraBOX architecture, specifically within the `cognition` module. The class `SimpleThoughtEvaluator` serves as an intermediary between passive logging and active cognition by evaluating thoughts to determine their conceptual focus, urgency, actionability, and friction.
 
 Here's a detailed documentation for this module:
 
@@ -11646,7 +11646,7 @@ def evaluate_recent_thoughts(self) -> List[Dict]:
 - The `evaluate_recent_thoughts` method is incomplete in the provided snippet. It should continue to process thoughts from the specified directory, evaluate them based on predefined criteria, and return a list of goal suggestions.
 - The class uses keywords for classification purposes, which are stored in lists (`uncertainty_keywords`, `tension_keywords`, `opportunity_keywords`). These keywords help in identifying patterns within thought logs that indicate uncertainty, conflict, or potential opportunities.
 
-This documentation provides a clear understanding of the `SimpleThoughtEvaluator` class and its role within the Lumina architecture.
+This documentation provides a clear understanding of the `SimpleThoughtEvaluator` class and its role within the PandoraBOX architecture.
 
 
 ---
@@ -11655,7 +11655,7 @@ This documentation provides a clear understanding of the `SimpleThoughtEvaluator
 
 #### Overview
 
-The `SimpleThoughtEvaluator` class is a key component in the Lumina architecture, serving as a bridge between thought processing and decision-making. It transforms raw thoughts into concept-focused inputs that can be used to drive actions.
+The `SimpleThoughtEvaluator` class is a key component in the PandoraBOX architecture, serving as a bridge between thought processing and decision-making. It transforms raw thoughts into concept-focused inputs that can be used to drive actions.
 
 #### Class: SimpleThoughtEvaluator
 
@@ -11733,7 +11733,7 @@ for evaluation in recent_evaluations:
 - The `SimpleThoughtEvaluator` relies on predefined keywords for categorization, which can be extended or modified as needed.
 - The method handles cases where direct access to thought logs is not possible by falling back to file-based reading.
 
-This module plays a crucial role in the Lumina architecture by facilitating the transformation of raw thoughts into actionable insights.
+This module plays a crucial role in the PandoraBOX architecture by facilitating the transformation of raw thoughts into actionable insights.
 
 
 ---
@@ -11742,7 +11742,7 @@ This module plays a crucial role in the Lumina architecture by facilitating the 
 
 #### Overview
 
-The `tension_engine.py` module is a crucial component of the Lumina architecture. It computes and manages an internal pressure landscape that drives the system's behavior, making it more dynamic and responsive to its environment.
+The `tension_engine.py` module is a crucial component of the PandoraBOX architecture. It computes and manages an internal pressure landscape that drives the system's behavior, making it more dynamic and responsive to its environment.
 
 #### Key Concepts
 
@@ -11847,7 +11847,7 @@ print(arousal_level)  # Output: 2.45
 
 #### Conclusion
 
-The `tension_engine.py` module provides a robust framework for managing the internal pressure landscape of Lumina, enabling dynamic and adaptive behavior based on psychological realism.
+The `tension_engine.py` module provides a robust framework for managing the internal pressure landscape of PandoraBOX, enabling dynamic and adaptive behavior based on psychological realism.
 
 
 ---
@@ -11856,7 +11856,7 @@ The `tension_engine.py` module provides a robust framework for managing the inte
 
 #### Overview
 
-The `ThoughtGoalLinker` module is a critical component in the Lumina architecture, responsible for dynamically linking thoughts to goals. This process involves creating new goals from evaluated thoughts, updating existing goal priorities based on thought urgency, linking thoughts to goals, tracking genealogy (which thoughts led to which goals), and merging similar goals over time.
+The `ThoughtGoalLinker` module is a critical component in the PandoraBOX architecture, responsible for dynamically linking thoughts to goals. This process involves creating new goals from evaluated thoughts, updating existing goal priorities based on thought urgency, linking thoughts to goals, tracking genealogy (which thoughts led to which goals), and merging similar goals over time.
 
 #### Class: `ThoughtGoalLinker`
 
@@ -11915,9 +11915,9 @@ print(result)
 
 #### Notes:
 
-- The `ThoughtGoalLinker` class provides comprehensive functionality for managing the dynamic creation and mutation of goals, ensuring that Lumina's cognitive processes are flexible and adaptable to changing thought evaluations.
+- The `ThoughtGoalLinker` class provides comprehensive functionality for managing the dynamic creation and mutation of goals, ensuring that PandoraBOX's cognitive processes are flexible and adaptable to changing thought evaluations.
 
-This documentation should provide a clear understanding of how the `ThoughtGoalLinker` module operates within the Lumina architecture.
+This documentation should provide a clear understanding of how the `ThoughtGoalLinker` module operates within the PandoraBOX architecture.
 
 
 ---
@@ -11925,7 +11925,7 @@ This documentation should provide a clear understanding of how the `ThoughtGoalL
 ### Documenting the `thought_stream.py` Module
 
 #### Overview
-The `thought_stream.py` module is part of the Lumina architecture and is responsible for generating continuous internal thoughts. These thoughts are derived from various cognitive modules within the system, providing an "inner voice" that runs even without user interaction.
+The `thought_stream.py` module is part of the PandoraBOX architecture and is responsible for generating continuous internal thoughts. These thoughts are derived from various cognitive modules within the system, providing an "inner voice" that runs even without user interaction.
 
 #### Design Principles
 1. **Additive**: The ThoughtStream reads from existing cognitive modules but does not modify them.
@@ -11987,7 +11987,7 @@ while True:
 - `json`: For potential serialization needs.
 - `pathlib`: Not used in this module but could be relevant for file operations if required.
 
-This documentation should provide a clear understanding of how the `thought_stream.py` module operates within the Lumina architecture.
+This documentation should provide a clear understanding of how the `thought_stream.py` module operates within the PandoraBOX architecture.
 
 
 ---
@@ -11996,7 +11996,7 @@ Here is a detailed documentation for the `ThoughtThreadEngine` module:
 
 ### Module Overview
 
-The `thought_thread_engine.py` file defines the core logic of the Thought Thread Engine (TTE), which is responsible for managing and evolving cognitive processes in Lumina. The TTE converts isolated word-chains into persistent, stateful thought threads that accumulate context, pursue goals, and resolve into memory and identity updates.
+The `thought_thread_engine.py` file defines the core logic of the Thought Thread Engine (TTE), which is responsible for managing and evolving cognitive processes in PandoraBOX. The TTE converts isolated word-chains into persistent, stateful thought threads that accumulate context, pursue goals, and resolve into memory and identity updates.
 
 ### Core Concepts
 
@@ -12060,7 +12060,7 @@ The module uses Python's built-in `logging` library to log events, which can be 
 
 ### Conclusion
 
-This documentation provides a comprehensive overview of the Thought Thread Engine (TTE) in Lumina. By understanding its components and methods, you can effectively manage cognitive processes within the system.
+This documentation provides a comprehensive overview of the Thought Thread Engine (TTE) in PandoraBOX. By understanding its components and methods, you can effectively manage cognitive processes within the system.
 
 
 ---
@@ -12069,7 +12069,7 @@ This documentation provides a comprehensive overview of the Thought Thread Engin
 
 #### Overview
 
-The `ThreadIdentityLinker` class is a crucial component in the Lumina architecture, responsible for linking thought threads to identity changes. It tracks how resolving concepts influences beliefs, traits, and self-models over time.
+The `ThreadIdentityLinker` class is a crucial component in the PandoraBOX architecture, responsible for linking thought threads to identity changes. It tracks how resolving concepts influences beliefs, traits, and self-models over time.
 
 #### Class Details
 
@@ -12148,7 +12148,7 @@ print(result)  # Output the updated identity information
 
 #### Notes
 
-- The `ThreadIdentityLinker` class is designed to handle complex interactions between thought threads and personal identity, making it a vital part of the Lumina architecture.
+- The `ThreadIdentityLinker` class is designed to handle complex interactions between thought threads and personal identity, making it a vital part of the PandoraBOX architecture.
 - The methods `_find_related_beliefs`, `_update_belief_from_thread`, `_check_trait_impact`, `_update_confidence_from_resolution`, and `_add_to_narrative` are internal helper functions that perform specific tasks in the process of updating the self-model.
 
 
@@ -12158,7 +12158,7 @@ print(result)  # Output the updated identity information
 
 #### Overview
 
-The `ThreadLifecycleManager` class is a critical component of the Lumina architecture, responsible for managing the lifecycle of cognitive threads. It ensures that threads which have exceeded their iteration budget are properly retired and that bidirectional thought-goal links are maintained.
+The `ThreadLifecycleManager` class is a critical component of the PandoraBOX architecture, responsible for managing the lifecycle of cognitive threads. It ensures that threads which have exceeded their iteration budget are properly retired and that bidirectional thought-goal links are maintained.
 
 #### Key Features
 
@@ -12225,7 +12225,7 @@ print(report)
 - The `MAX_ITER_THRESHOLD` is set to 15, meaning any thread that has iterated more than this number of times will be considered "stuck" and processed.
 - The `CONFIDENCE_BASE` value (0.55) represents the confidence level for the extracted beliefs.
 
-This module plays a crucial role in maintaining the integrity and efficiency of cognitive threads within the Lumina architecture, ensuring that insights are captured and linked appropriately while gracefully retiring unproductive threads.
+This module plays a crucial role in maintaining the integrity and efficiency of cognitive threads within the PandoraBOX architecture, ensuring that insights are captured and linked appropriately while gracefully retiring unproductive threads.
 
 
 ---
@@ -12352,7 +12352,7 @@ This documentation provides a clear understanding of the `ThreadResolver` class,
 
 #### Overview
 
-The `TopicQualityFilter` module is a component of the Lumina architecture, specifically designed to filter and score topic candidates for inclusion in the CuriosityEngine's topic map. This filter employs statistical methods to evaluate topics based on their relevance and uniqueness within the live conversation corpus maintained by the WorldModel.
+The `TopicQualityFilter` module is a component of the PandoraBOX architecture, specifically designed to filter and score topic candidates for inclusion in the CuriosityEngine's topic map. This filter employs statistical methods to evaluate topics based on their relevance and uniqueness within the live conversation corpus maintained by the WorldModel.
 
 **Key Features:**
 
@@ -12450,12 +12450,12 @@ if filter.is_valid(topic_string):
 
 ---
 
-This documentation provides a comprehensive overview of the `TopicQualityFilter` module, its purpose, and how it can be used within the Lumina architecture.
+This documentation provides a comprehensive overview of the `TopicQualityFilter` module, its purpose, and how it can be used within the PandoraBOX architecture.
 
 
 ---
 
-The provided code snippet is a module for the Lumina architecture, specifically focusing on the "Workspace Competition System" in Phase 2.0. This system introduces selective attention mechanisms to enable more focused and conflict-resolving decision-making processes.
+The provided code snippet is a module for the PandoraBOX architecture, specifically focusing on the "Workspace Competition System" in Phase 2.0. This system introduces selective attention mechanisms to enable more focused and conflict-resolving decision-making processes.
 
 ### Overview
 
@@ -12511,7 +12511,7 @@ The provided code snippet is a module for the Lumina architecture, specifically 
       """
       Run competition among all cognitive candidates.
       
-      Returns the WINNER - the single thing Lumina focuses on.
+      Returns the WINNER - the single thing PandoraBOX focuses on.
       """
   ```
 
@@ -12529,7 +12529,7 @@ The provided code snippet is a module for the Lumina architecture, specifically 
   context: Optional[Dict] = None  # Additional context (optional)
   ```
 
-- **Return**: Returns the winner, which is the single thing Lumina focuses on.
+- **Return**: Returns the winner, which is the single thing PandoraBOX focuses on.
 
 ### Implementation Notes
 
@@ -12561,7 +12561,7 @@ print(winner)  # Output: The winner candidate
 
 ### Conclusion
 
-The `WorkspaceCompetition` class is a crucial component of the Lumina architecture, enabling more focused and conflict-resolving decision-making processes. This transformation shifts the system from simple blending to selective attention, making it more akin to genuine cognitive behavior.
+The `WorkspaceCompetition` class is a crucial component of the PandoraBOX architecture, enabling more focused and conflict-resolving decision-making processes. This transformation shifts the system from simple blending to selective attention, making it more akin to genuine cognitive behavior.
 
 
 ---
@@ -12570,7 +12570,7 @@ The `WorkspaceCompetition` class is a crucial component of the Lumina architectu
 
 #### Overview
 
-The `WorldModel` module in the Lumina architecture is an advanced representation of the world, extending beyond a minimal version. This module introduces several sophisticated features to enhance understanding and interaction with the environment.
+The `WorldModel` module in the PandoraBOX architecture is an advanced representation of the world, extending beyond a minimal version. This module introduces several sophisticated features to enhance understanding and interaction with the environment.
 
 #### Features
 
@@ -12666,7 +12666,7 @@ predicted_response = world_model.predict_from_context(context)
 
 ### Conclusion
 
-The `WorldModel` module in the Lumina architecture is designed to provide an advanced and dynamic representation of the environment. By incorporating sophisticated features such as topic extraction, expertise scoring, causal beliefs, temporal patterns, relational dynamics, and predictive capabilities, it significantly enhances the system's ability to understand and interact with its surroundings.
+The `WorldModel` module in the PandoraBOX architecture is designed to provide an advanced and dynamic representation of the environment. By incorporating sophisticated features such as topic extraction, expertise scoring, causal beliefs, temporal patterns, relational dynamics, and predictive capabilities, it significantly enhances the system's ability to understand and interact with its surroundings.
 
 
 ---
@@ -12675,7 +12675,7 @@ The `WorldModel` module in the Lumina architecture is designed to provide an adv
 
 #### Overview
 
-The `cognition/__init__.py` module is a core component of the Lumina architecture, responsible for defining and managing various aspects of the AI system's cognitive processes. This includes identity management, personality evolution, emotional state handling, relational memory, self-concept, behavioral conditioning, life stage prompting, and more.
+The `cognition/__init__.py` module is a core component of the PandoraBOX architecture, responsible for defining and managing various aspects of the AI system's cognitive processes. This includes identity management, personality evolution, emotional state handling, relational memory, self-concept, behavioral conditioning, life stage prompting, and more.
 
 #### Key Components
 
@@ -12749,7 +12749,7 @@ from cognition.ai_system import EnhancedAISystem
 from cognition.personality_evolution import PersonalityEvolutionEngine
 ```
 
-This module is essential for building and managing a sophisticated AI system within the Lumina architecture.
+This module is essential for building and managing a sophisticated AI system within the PandoraBOX architecture.
 
 
 ---
@@ -12853,12 +12853,12 @@ else:
         print(f"Credibility: {result['credibility']}\n")
 ```
 
-This documentation covers the key aspects of using and understanding the `claude_search` module within the Lumina architecture.
+This documentation covers the key aspects of using and understanding the `claude_search` module within the PandoraBOX architecture.
 
 
 ---
 
-Certainly, here's a detailed documentation for the `ResearchController` module in the Lumina architecture:
+Certainly, here's a detailed documentation for the `ResearchController` module in the PandoraBOX architecture:
 
 ### Module Overview
 
@@ -12961,10 +12961,10 @@ This documentation provides a comprehensive overview of the `ResearchController`
 
 ---
 
-### Module Documentation for `Evaluator` in Lumina Architecture
+### Module Documentation for `Evaluator` in PandoraBOX Architecture
 
 #### Overview
-The `Evaluator` class is a crucial component of the Lumina architecture, responsible for assessing whether research goals are being satisfied, detecting potential runaway loops, and extracting structured findings from raw web page content. This module leverages Large Language Models (LLMs) to perform these tasks.
+The `Evaluator` class is a crucial component of the PandoraBOX architecture, responsible for assessing whether research goals are being satisfied, detecting potential runaway loops, and extracting structured findings from raw web page content. This module leverages Large Language Models (LLMs) to perform these tasks.
 
 #### Key Components
 
@@ -13030,7 +13030,7 @@ print(loop_detection_result)  # Output: JSON object indicating looping status
 ```
 
 #### Conclusion
-The `Evaluator` class plays a vital role in the Lumina architecture by ensuring that research goals are being effectively pursued, avoiding unnecessary repetition, and extracting meaningful insights from web content.
+The `Evaluator` class plays a vital role in the PandoraBOX architecture by ensuring that research goals are being effectively pursued, avoiding unnecessary repetition, and extracting meaningful insights from web content.
 
 
 ---
@@ -13039,7 +13039,7 @@ The `Evaluator` class plays a vital role in the Lumina architecture by ensuring 
 
 #### Overview
 
-The `MemoryIntegrator` class is responsible for storing the results of completed Mode 3 research sessions into both a journal and Lumina's long-term memory. This module ensures that only structured summaries are stored, never raw HTML or page dumps.
+The `MemoryIntegrator` class is responsible for storing the results of completed Mode 3 research sessions into both a journal and PandoraBOX's long-term memory. This module ensures that only structured summaries are stored, never raw HTML or page dumps.
 
 #### Key Components
 
@@ -13052,19 +13052,19 @@ The `MemoryIntegrator` class is responsible for storing the results of completed
    - Journal entries are stored in `data/persona/research_journal.json`.
 
 3. **Research Session Integration**:
-   - The `integrate` method processes a single research session, writing it to both the journal and Lumina's memory if applicable.
+   - The `integrate` method processes a single research session, writing it to both the journal and PandoraBOX's memory if applicable.
 
 4. **Journal Entry Construction**:
    - The `_build_entry()` method constructs a dictionary representing the research session for storage in the journal.
 
-5. **Lumina Memory Storage**:
+5. **PandoraBOX Memory Storage**:
    - If `memory_system` is provided, the summary of the research session is analyzed and stored as a memory node.
    - Emotional context from the summary is used to determine the emotional valence and arousal level of the memory.
 
 #### Public API
 
 - **integrate(session: ResearchSession) -> int**: 
-  - Writes a completed research session to both the journal and Lumina's long-term memory if applicable. Returns the number of knowledge nodes created.
+  - Writes a completed research session to both the journal and PandoraBOX's long-term memory if applicable. Returns the number of knowledge nodes created.
 
 #### Configuration & Thresholds
 
@@ -13088,7 +13088,7 @@ The `MemoryIntegrator` class is responsible for storing the results of completed
 from cognition.research_mcp.schemas import ResearchSession
 from ai_system import EnhancedMemorySystem
 
-# Initialize MemoryIntegrator with Lumina's memory system
+# Initialize MemoryIntegrator with PandoraBOX's memory system
 memory_system = EnhancedMemorySystem()
 integrator = MemoryIntegrator(memory_system)
 
@@ -13105,16 +13105,16 @@ nodes_created = integrator.integrate(session)
 print(f"Nodes created: {nodes_created}")
 ```
 
-This documentation provides a comprehensive overview of the `MemoryIntegrator` class, its methods, and how it integrates research sessions into both a journal and Lumina's long-term memory.
+This documentation provides a comprehensive overview of the `MemoryIntegrator` class, its methods, and how it integrates research sessions into both a journal and PandoraBOX's long-term memory.
 
 
 ---
 
-### Module Documentation: Lumina Architecture - `planner.py`
+### Module Documentation: PandoraBOX Architecture - `planner.py`
 
 #### Overview
 
-The `planner.py` module is a critical component of the Lumina architecture, responsible for decomposing complex research goals into actionable sub-goals and selecting the most relevant search queries to advance the research. This module leverages an LLM (Language Model) to generate these sub-goals and next steps.
+The `planner.py` module is a critical component of the PandoraBOX architecture, responsible for decomposing complex research goals into actionable sub-goals and selecting the most relevant search queries to advance the research. This module leverages an LLM (Language Model) to generate these sub-goals and next steps.
 
 #### Key Components
 
@@ -13175,10 +13175,10 @@ print(sub_goals)
 
 ---
 
-### Module Documentation: Lumina Architecture - Research Activation Controller (RAC)
+### Module Documentation: PandoraBOX Architecture - Research Activation Controller (RAC)
 
 #### Overview
-The `rac.py` module is a critical component of the Lumina architecture, responsible for managing and scheduling background research activities. It observes conversation signals throughout the day to determine whether to initiate Mode 3 (Background Research) and which activation pattern to use.
+The `rac.py` module is a critical component of the PandoraBOX architecture, responsible for managing and scheduling background research activities. It observes conversation signals throughout the day to determine whether to initiate Mode 3 (Background Research) and which activation pattern to use.
 
 #### Key Components
 
@@ -13243,15 +13243,15 @@ rac.schedule_mode3(daily_metrics)
 - The `should_extend_answer` method is called from the persona bridge before generating a response.
 - The controller ensures thread safety by using a lock, making it suitable for asynchronous contexts like those in NiceGUI.
 
-This module plays a crucial role in dynamically adjusting Lumina's behavior based on user interactions and daily metrics, enhancing its ability to provide relevant and insightful responses.
+This module plays a crucial role in dynamically adjusting PandoraBOX's behavior based on user interactions and daily metrics, enhancing its ability to provide relevant and insightful responses.
 
 
 ---
 
-### Documenting the `schemas.py` Module for Lumina's Cognition Research MCP Plugin
+### Documenting the `schemas.py` Module for PandoraBOX's Cognition Research MCP Plugin
 
 #### Overview
-The `schemas.py` module is part of the Research MCP (Memory and Cognitive Processing) plugin in the Lumina architecture. It defines shared data structures that are used across various modules within this plugin, ensuring consistency and preventing circular dependencies.
+The `schemas.py` module is part of the Research MCP (Memory and Cognitive Processing) plugin in the PandoraBOX architecture. It defines shared data structures that are used across various modules within this plugin, ensuring consistency and preventing circular dependencies.
 
 #### Import Statements
 ```python
@@ -13393,7 +13393,7 @@ class DailyMetrics:
 
 **Module Overview**
 
-This module, named `search_providers`, is a crucial component of the Lumina Research MCP (MCP stands for Meta Cognitive Processing). It implements a three-tiered resilient search strategy to circumvent bot-detection mechanisms employed by modern search engines. The module ensures that queries are executed in multiple tiers until results are obtained.
+This module, named `search_providers`, is a crucial component of the PandoraBOX Research MCP (MCP stands for Meta Cognitive Processing). It implements a three-tiered resilient search strategy to circumvent bot-detection mechanisms employed by modern search engines. The module ensures that queries are executed in multiple tiers until results are obtained.
 
 ---
 
@@ -13492,7 +13492,7 @@ def _cred(url: str) -> float:
 
 ### Summary
 
-This module provides a robust, multi-tiered approach to searching for information in Lumina Research MCP. It ensures that queries are executed through various methods until results are obtained, with a focus on reliability and resilience against bot detection mechanisms.
+This module provides a robust, multi-tiered approach to searching for information in PandoraBOX Research MCP. It ensures that queries are executed through various methods until results are obtained, with a focus on reliability and resilience against bot detection mechanisms.
 
 
 ---
@@ -13501,7 +13501,7 @@ This module provides a robust, multi-tiered approach to searching for informatio
 
 #### Overview
 
-This module is part of the Lumina architecture and serves as a web agent for conducting stealthy searches, mimicking human behavior to avoid detection by search engines or security systems.
+This module is part of the PandoraBOX architecture and serves as a web agent for conducting stealthy searches, mimicking human behavior to avoid detection by search engines or security systems.
 
 #### Key Components
 
@@ -13548,7 +13548,7 @@ async def main():
         await page.emulate({'viewport': random_viewport})
 
         # Perform a search on DuckDuckGo
-        query = "Lumina architecture"
+        query = "PandoraBOX architecture"
         encoded_query = quote_plus(query)
         url = f"https://duckduckgo.com/html/?q={encoded_query}"
         await page.goto(url)
@@ -13570,7 +13570,7 @@ asyncio.run(main())
 - **Playwright**: A powerful browser automation tool.
 - **Python 3.8+**: Required due to type hints and asynchronous operations.
 
-This module is designed to provide a stealthy search capability within the Lumina architecture, ensuring that searches are conducted in a manner that mimics human behavior and avoids detection by automated systems or security measures.
+This module is designed to provide a stealthy search capability within the PandoraBOX architecture, ensuring that searches are conducted in a manner that mimics human behavior and avoids detection by automated systems or security measures.
 
 
 ---
@@ -13578,7 +13578,7 @@ This module is designed to provide a stealthy search capability within the Lumin
 ### Module Documentation for `synthesizer.py`
 
 #### Overview
-The `synthesizer.py` module is part of the Lumina architecture and is responsible for synthesizing the final output from a completed research session based on the defined mode.
+The `synthesizer.py` module is part of the PandoraBOX architecture and is responsible for synthesizing the final output from a completed research session based on the defined mode.
 
 #### File Structure
 - **Imports**: The necessary libraries and modules are imported at the beginning.
@@ -13646,7 +13646,7 @@ print(summary)
 ### Module Documentation for `web_agent.py`
 
 #### Overview
-`web_agent.py` is a module that serves as the core component of the Lumina architecture, specifically designed to handle web-based research tasks. It integrates multiple search providers and ranking mechanisms to provide unified and comprehensive results.
+`web_agent.py` is a module that serves as the core component of the PandoraBOX architecture, specifically designed to handle web-based research tasks. It integrates multiple search providers and ranking mechanisms to provide unified and comprehensive results.
 
 #### Key Features
 
@@ -13688,7 +13688,7 @@ print(summary)
 ```python
 from cognition.research_mcp.web_agent import _tokenize, _bm25_score, _recency_score, _parse_date
 
-query = "Lumina architecture"
+query = "PandoraBOX architecture"
 text = "This is a sample text for testing."
 pub_date_str = "Sun, 01 Jan 2023 00:00:00 GMT"
 
@@ -13703,7 +13703,7 @@ recency_score = _recency_score(_parse_date(pub_date_str))
 - The module uses the `logging` library to log messages. The logger is named "research_mcp.web_agent".
 
 ### Conclusion
-This module plays a crucial role in integrating and ranking results from multiple sources, making it an essential part of the Lumina architecture for web-based research tasks.
+This module plays a crucial role in integrating and ranking results from multiple sources, making it an essential part of the PandoraBOX architecture for web-based research tasks.
 
 
 ---
@@ -13712,7 +13712,7 @@ This module plays a crucial role in integrating and ranking results from multipl
 
 #### Overview
 
-The `cognition.research_mcp` module is part of the Lumina architecture and provides an autonomous research plugin. This plugin supports three distinct modes of operation: ON_DEMAND, EXTENDED, and BACKGROUND.
+The `cognition.research_mcp` module is part of the PandoraBOX architecture and provides an autonomous research plugin. This plugin supports three distinct modes of operation: ON_DEMAND, EXTENDED, and BACKGROUND.
 
 - **ON_DEMAND**: Explicitly called by a user or system for a specific query.
 - **EXTENDED**: Automatically triggered for complex queries to provide richer answers.
@@ -13814,7 +13814,7 @@ for entry in entries:
     print(entry)
 ```
 
-This documentation provides a comprehensive overview of how to use and interact with the `ResearchMCP` class within the Lumina architecture.
+This documentation provides a comprehensive overview of how to use and interact with the `ResearchMCP` class within the PandoraBOX architecture.
 
 
 ---
@@ -13823,7 +13823,7 @@ This documentation provides a comprehensive overview of how to use and interact 
 
 #### Overview
 
-The `components/__init__.py` file is a Python module that serves as an entry point for the UI components of the Lumina architecture. It imports and exports various UI components, making them accessible to other parts of the application.
+The `components/__init__.py` file is a Python module that serves as an entry point for the UI components of the PandoraBOX architecture. It imports and exports various UI components, making them accessible to other parts of the application.
 
 #### Components
 
@@ -13894,7 +13894,7 @@ status_tab = create_status_tab()
 
 #### Conclusion
 
-This module provides a comprehensive set of UI components that are essential for building the user interface in the Lumina architecture. By organizing these components into this single file, it simplifies their import and use across different parts of the application.
+This module provides a comprehensive set of UI components that are essential for building the user interface in the PandoraBOX architecture. By organizing these components into this single file, it simplifies their import and use across different parts of the application.
 
 
 ---
@@ -13902,7 +13902,7 @@ This module provides a comprehensive set of UI components that are essential for
 ### Module Documentation: `core\agent_controller.py`
 
 #### Overview
-The `AgentController` class is responsible for orchestrating the full execution flow of Lumina's agent, as described in sections 4-8 of the architecture specification. This includes capturing user input, updating state information, and managing interactions with the Large Language Model (LLM). The module also handles speech sanitization to ensure that the output text is suitable for synthesis.
+The `AgentController` class is responsible for orchestrating the full execution flow of PandoraBOX's agent, as described in sections 4-8 of the architecture specification. This includes capturing user input, updating state information, and managing interactions with the Large Language Model (LLM). The module also handles speech sanitization to ensure that the output text is suitable for synthesis.
 
 #### Key Components
 
@@ -13981,7 +13981,7 @@ raw_response  = result["raw"]
 - The `AgentController` class is designed to be asynchronous, making it suitable for handling real-time interactions.
 - The speech sanitizer ensures that the output text is clean and free of any unwanted characters or formatting.
 
-This documentation provides a comprehensive overview of the `AgentController` module, its components, and how it integrates with other parts of the Lumina architecture.
+This documentation provides a comprehensive overview of the `AgentController` module, its components, and how it integrates with other parts of the PandoraBOX architecture.
 
 
 ---
@@ -13990,7 +13990,7 @@ This documentation provides a comprehensive overview of the `AgentController` mo
 
 #### Overview
 
-The `agent_state.py` module is a crucial component of the Lumina architecture, responsible for managing and tracking various states and conditions relevant to the embodied agent. This includes aspects such as reunion type, engagement level, environment vibe, idle cooldown, and time-classification helpers.
+The `agent_state.py` module is a crucial component of the PandoraBOX architecture, responsible for managing and tracking various states and conditions relevant to the embodied agent. This includes aspects such as reunion type, engagement level, environment vibe, idle cooldown, and time-classification helpers.
 
 #### Key Components
 
@@ -14041,7 +14041,7 @@ The `agent_state.py` module plays a vital role in managing the runtime state of 
 ### CognitiveEventBus Documentation
 
 #### Overview
-The `CognitiveEventBus` module is a core component of the Lumina architecture, facilitating internal communication between cognitive modules. It enables these modules to react to each other's state changes without direct coupling through a publish/subscribe mechanism.
+The `CognitiveEventBus` module is a core component of the PandoraBOX architecture, facilitating internal communication between cognitive modules. It enables these modules to react to each other's state changes without direct coupling through a publish/subscribe mechanism.
 
 #### Purpose
 - **Decoupling:** Allows cognitive modules to communicate indirectly, reducing tight coupling and making the system more modular.
@@ -14188,7 +14188,7 @@ bus.emit("contradiction_detected", {
    ```
 
 #### Conclusion
-The `CognitiveEventBus` module provides a robust and flexible mechanism for internal communication within the Lumina architecture, enabling emergent behavior through decoupled events.
+The `CognitiveEventBus` module provides a robust and flexible mechanism for internal communication within the PandoraBOX architecture, enabling emergent behavior through decoupled events.
 
 
 ---
@@ -14196,7 +14196,7 @@ The `CognitiveEventBus` module provides a robust and flexible mechanism for inte
 ### Cognitive Governor Module Documentation
 
 #### Overview
-The `CognitiveGovernor` module is a central authority in the Lumina architecture, responsible for managing and coordinating the execution of various subsystems within the InternalThoughtLoop (ITL). This module ensures that these subsystems operate efficiently by implementing several key mechanisms: mode management, cycle budgeting, quorum guards, pressure ceilings, and priority tiers.
+The `CognitiveGovernor` module is a central authority in the PandoraBOX architecture, responsible for managing and coordinating the execution of various subsystems within the InternalThoughtLoop (ITL). This module ensures that these subsystems operate efficiently by implementing several key mechanisms: mode management, cycle budgeting, quorum guards, pressure ceilings, and priority tiers.
 
 #### Problem Addressed
 The ITL contains over 14 independent subsystems that execute on their own schedules without coordination. These subsystems share resources such as JSON files and generate pressure signals, leading to potential conflicts when multiple subsystems run simultaneously. The CognitiveGovernor addresses this by providing a mechanism for controlling the execution flow of these subsystems.
@@ -14267,7 +14267,7 @@ class InternalThoughtLoop:
 
 #### Conclusion
 
-The CognitiveGovernor module is a crucial component in the Lumina architecture, ensuring that the InternalThoughtLoop operates efficiently and coherently. By managing modes, budgets, quorum guards, pressure ceilings, and priority tiers, it prevents conflicts and ensures that critical systems are always prioritized.
+The CognitiveGovernor module is a crucial component in the PandoraBOX architecture, ensuring that the InternalThoughtLoop operates efficiently and coherently. By managing modes, budgets, quorum guards, pressure ceilings, and priority tiers, it prevents conflicts and ensures that critical systems are always prioritized.
 
 
 ---
@@ -14275,7 +14275,7 @@ The CognitiveGovernor module is a crucial component in the Lumina architecture, 
 ### Module Documentation: `core/connection.py`
 
 #### Overview
-This module is part of the Lumina architecture and handles the monitoring and management of NiceGUI connections. It ensures that the application remains responsive by continuously checking for disconnections, pinging to maintain connection, and attempting reconnection when necessary.
+This module is part of the PandoraBOX architecture and handles the monitoring and management of NiceGUI connections. It ensures that the application remains responsive by continuously checking for disconnections, pinging to maintain connection, and attempting reconnection when necessary.
 
 #### Classes
 
@@ -14354,7 +14354,7 @@ This module ensures that NiceGUI connections remain stable by continuously monit
 
 #### Overview
 
-The `internal_loop.py` module is a critical component of the Lumina architecture, responsible for maintaining and enhancing the cognitive processes that occur in the background when no user interaction is present. This module ensures that Lumina's internal thought loop runs smoothly and efficiently.
+The `internal_loop.py` module is a critical component of the PandoraBOX architecture, responsible for maintaining and enhancing the cognitive processes that occur in the background when no user interaction is present. This module ensures that PandoraBOX's internal thought loop runs smoothly and efficiently.
 
 #### Enhancements
 
@@ -14588,10 +14588,10 @@ The `LLMScheduler` module provides a robust mechanism to manage access to the LL
 
 ---
 
-### Lumina Phase 1 Integration Module
+### PandoraBOX Phase 1 Integration Module
 
 #### Overview
-The `phase1_integration.py` module integrates the Phase 1 cognitive enhancements into the existing Lumina system. This integration ensures that new features are seamlessly added without disrupting the current functionality.
+The `phase1_integration.py` module integrates the Phase 1 cognitive enhancements into the existing PandoraBOX system. This integration ensures that new features are seamlessly added without disrupting the current functionality.
 
 #### Key Features Introduced in V32
 - **Unified Decision Pressure**: Consolidates decision pressure from all cognitive factors.
@@ -14627,7 +14627,7 @@ class Phase1Orchestrator:
     """
     Integration orchestrator for Phase 1 enhancements.
     
-    This provides a clean interface to use Phase 1 components alongside existing Lumina functionality.
+    This provides a clean interface to use Phase 1 components alongside existing PandoraBOX functionality.
     """
 ```
 
@@ -14693,15 +14693,15 @@ def __init__(self, persona_dir: str = "data/persona"):
 - If successful, it prints out which components are active.
 
 ### Summary
-The `phase1_integration.py` module provides an interface for integrating Phase 1 cognitive enhancements into Lumina. This integration ensures that new features can be added without disrupting existing functionality, making it easier to manage and extend the system's capabilities.
+The `phase1_integration.py` module provides an interface for integrating Phase 1 cognitive enhancements into PandoraBOX. This integration ensures that new features can be added without disrupting existing functionality, making it easier to manage and extend the system's capabilities.
 
 
 ---
 
-### Lumina V33 - Phase 2 Integration Module
+### PandoraBOX V33 - Phase 2 Integration Module
 
 #### Overview
-The `phase2_integration.py` module is a critical component of the Lumina architecture, responsible for integrating advanced cognitive enhancements in Phase 2. These enhancements include:
+The `phase2_integration.py` module is a critical component of the PandoraBOX architecture, responsible for integrating advanced cognitive enhancements in Phase 2. These enhancements include:
 - Advanced thought evaluation (semantic similarity)
 - Thought→Goal mutation system (dynamic goal creation)
 - Narrative synthesis (coherent internal monologue)
@@ -14807,7 +14807,7 @@ This module serves as a bridge between the core architecture and advanced cognit
 
 #### Overview
 
-The `SleepCycleManager` module is a critical component in the Lumina architecture, responsible for managing and transitioning between different cognitive phases. These phases are designed to optimize resource allocation (specifically, Large Language Model (LLM) usage) based on the organism's current state and needs.
+The `SleepCycleManager` module is a critical component in the PandoraBOX architecture, responsible for managing and transitioning between different cognitive phases. These phases are designed to optimize resource allocation (specifically, Large Language Model (LLM) usage) based on the organism's current state and needs.
 
 #### Key Concepts
 
@@ -14871,29 +14871,29 @@ can_run = manager.can_run_background()
 - `dataclasses`: For managing phase states.
 - `enum`: For defining phase constants.
 
-This module is essential for ensuring efficient resource management in the Lumina architecture, allowing for dynamic adaptation to varying cognitive demands.
+This module is essential for ensuring efficient resource management in the PandoraBOX architecture, allowing for dynamic adaptation to varying cognitive demands.
 
 
 ---
 
-### Module Documentation for `core\state.py` in Lumina Architecture
+### Module Documentation for `core\state.py` in PandoraBOX Architecture
 
 #### Overview
-The `core\state.py` module is a crucial component of the Lumina architecture, responsible for managing application state. It initializes and coordinates various managers such as LLM (Language Model), Memory, Audio, Conversational Audio, Vision, and PersonaBridge (Lumina cognitive engine). This document provides an in-depth understanding of its structure, functionality, and key components.
+The `core\state.py` module is a crucial component of the PandoraBOX architecture, responsible for managing application state. It initializes and coordinates various managers such as LLM (Language Model), Memory, Audio, Conversational Audio, Vision, and PersonaBridge (PandoraBOX cognitive engine). This document provides an in-depth understanding of its structure, functionality, and key components.
 
 #### Key Components
 
 1. **Initialization Functions**
-   - `_init_persona`: Initializes the Lumina cognitive engine via `PersonaBridge`. It returns a `PersonaBridge` instance if successful; otherwise, it logs an error.
+   - `_init_persona`: Initializes the PandoraBOX cognitive engine via `PersonaBridge`. It returns a `PersonaBridge` instance if successful; otherwise, it logs an error.
      ```python
      def _init_persona(llm_generate_fn=None, llm_stream_fn=None):
          try:
              from cognition.persona_bridge import PersonaBridge
              persona = PersonaBridge(external_llm_fn=llm_generate_fn, external_llm_stream_fn=llm_stream_fn)
              if persona.is_ready:
-                 logger.info("✅ Persona (Lumina cognitive engine) ready")
+                 logger.info("✅ Persona (PandoraBOX cognitive engine) ready")
              else:
-                 logger.warning("⚠️  Persona initialised in degraded mode (no Lumina)")
+                 logger.warning("⚠️  Persona initialised in degraded mode (no PandoraBOX)")
              return persona
          except Exception as e:
              logger.error(f"❌ Persona init failed: {e}")
@@ -14915,7 +14915,7 @@ The `core\state.py` module is a crucial component of the Lumina architecture, re
      - `audio`: Audio Manager.
      - `conv_audio`: Conversational Audio Manager.
      - `vision`: Vision Manager.
-     - `persona`: PersonaBridge (Lumina cognitive engine).
+     - `persona`: PersonaBridge (PandoraBOX cognitive engine).
      - `tts_stop_event`: Thread-safe event for stopping text-to-speech operations.
      - `ready`: Indicates if the application is ready.
      - `start_time`: Timestamp of when the application started.
@@ -14936,8 +14936,8 @@ The `core\state.py` module is a crucial component of the Lumina architecture, re
          except Exception as e:
              logger.error(f"LLM init failed: {e}")
 
-         # ── Persona (Lumina cognitive engine) ─────────────────────────────
-         # Pass Robot's LLM fns so Lumina shares the same backend:
+         # ── Persona (PandoraBOX cognitive engine) ─────────────────────────────
+         # Pass Robot's LLM fns so PandoraBOX shares the same backend:
          #   generate
      ```
 
@@ -14966,7 +14966,7 @@ print(app_state.llm)
 print(app_state.memory)
 ```
 
-This setup ensures that Lumina's core functionalities are properly initialized and managed throughout the application lifecycle.
+This setup ensures that PandoraBOX's core functionalities are properly initialized and managed throughout the application lifecycle.
 
 
 ---
@@ -14974,7 +14974,7 @@ This setup ensures that Lumina's core functionalities are properly initialized a
 ### Module Documentation: `core/__init__.py`
 
 #### Overview:
-The `core/__init__.py` file is the entry point for the core application modules in the Lumina architecture. It imports and exposes various components that are essential to the functioning of the system.
+The `core/__init__.py` file is the entry point for the core application modules in the PandoraBOX architecture. It imports and exposes various components that are essential to the functioning of the system.
 
 #### Import Statements:
 
@@ -14998,7 +14998,7 @@ The `core/__init__.py` file is the entry point for the core application modules 
 - **__all__**: A list of all public names (variables, classes, etc.) that should be imported when this package is imported. This helps in maintaining clear visibility into what the module provides to users.
 
 #### Purpose:
-This file serves as a central point for initializing and accessing core components of the Lumina architecture. It ensures that necessary modules are loaded and makes them available for use throughout the application.
+This file serves as a central point for initializing and accessing core components of the PandoraBOX architecture. It ensures that necessary modules are loaded and makes them available for use throughout the application.
 
 ### Example Usage:
 
@@ -15024,7 +15024,7 @@ memory_entry = MemoryEntry()
 
 ---
 
-Here's a completed version of the `access.py` module for the Lumina architecture:
+Here's a completed version of the `access.py` module for the PandoraBOX architecture:
 
 ```python
 import json
@@ -15047,7 +15047,7 @@ _LOCK = threading.RLock()          # global lock shared by all instances
 
 class DataAccess:
     """
-    Unified, schema-aware access layer for Lumina persona data files.
+    Unified, schema-aware access layer for PandoraBOX persona data files.
 
     One instance per component is fine — all share the same RLock.
     """
@@ -15176,12 +15176,12 @@ class DataAccess:
 5. **Schema Awareness**:
    - Utilizes schema-aware normalization and validation functions from `core.data.schemas`.
 
-This module provides a robust, thread-safe interface for managing persona data in Lumina, ensuring consistency and integrity across all operations.
+This module provides a robust, thread-safe interface for managing persona data in PandoraBOX, ensuring consistency and integrity across all operations.
 
 
 ---
 
-### Lumina Architecture Documentation: Data Migrator Module
+### PandoraBOX Architecture Documentation: Data Migrator Module
 
 #### Overview
 The `core/data/migrator.py` module is responsible for migrating existing persona data to the canonical Phase 3 format. This migration process ensures that all key persona files are updated to align with the new schema, while also backing up the original data.
@@ -15248,11 +15248,11 @@ This module ensures that all persona data is migrated to the Phase 3 format, mak
 
 ---
 
-Here is a detailed documentation for the `schemas.py` module in the Lumina architecture:
+Here is a detailed documentation for the `schemas.py` module in the PandoraBOX architecture:
 
 ### Module Overview
 
-The `core/data/schemas.py` file defines the canonical data schemas used throughout the Lumina V32 system. These schemas standardize how various types of data are structured and stored, ensuring consistency across different components.
+The `core/data/schemas.py` file defines the canonical data schemas used throughout the PandoraBOX V32 system. These schemas standardize how various types of data are structured and stored, ensuring consistency across different components.
 
 #### Key Concepts
 - **Canonical Formats**: The module specifies the expected structure for key data files like goals, thoughts, threads, tensions, and identities.
@@ -15335,12 +15335,12 @@ This function should take raw input (potentially from an external source or anot
 
 ### Summary
 
-The `schemas.py` module provides essential definitions for canonical data structures in Lumina V32. It includes utility functions to generate unique identifiers, manage time-related operations, and create standardized goal objects. These schemas ensure that all components of the system can reliably interact with each other using consistent data formats.
+The `schemas.py` module provides essential definitions for canonical data structures in PandoraBOX V32. It includes utility functions to generate unique identifiers, manage time-related operations, and create standardized goal objects. These schemas ensure that all components of the system can reliably interact with each other using consistent data formats.
 
 
 ---
 
-The `core/data/__init__.py` file in the Lumina architecture is an initialization script that serves as a namespace package, allowing submodules to be imported from the `core.data` package. This file is typically empty and only contains metadata such as version information.
+The `core/data/__init__.py` file in the PandoraBOX architecture is an initialization script that serves as a namespace package, allowing submodules to be imported from the `core.data` package. This file is typically empty and only contains metadata such as version information.
 
 Here's how you can document this module:
 
@@ -15351,7 +15351,7 @@ The `__init__.py` file in the `core/data` directory serves as a namespace packag
 
 #### Purpose
 - **Namespace Package**: Allows submodules within the `data` directory to be accessed via the `core.data` package.
-- **Initialization**: Provides an entry point for initializing any necessary components or configurations related to data handling in the Lumina architecture.
+- **Initialization**: Provides an entry point for initializing any necessary components or configurations related to data handling in the PandoraBOX architecture.
 
 #### Usage
 This file is typically not directly used but serves as a base for importing other modules. For example:
@@ -15368,7 +15368,7 @@ Here's a simple representation of what this file might look like:
 __version__ = "1.0.0"
 ```
 
-This version string can be used to track the version of the `data` module within the Lumina architecture.
+This version string can be used to track the version of the `data` module within the PandoraBOX architecture.
 
 #### Notes
 - **Empty File**: The content of this file is intentionally minimal, focusing on providing a namespace and possibly storing metadata.
@@ -15381,11 +15381,11 @@ This version string can be used to track the version of the `data` module within
 
 #### Overview
 
-This module is part of the Lumina architecture and represents a fully integrated cognitive engine that combines all Phase 1 components. The engine orchestrates the entire decision-making process, from gathering inputs to executing actions.
+This module is part of the PandoraBOX architecture and represents a fully integrated cognitive engine that combines all Phase 1 components. The engine orchestrates the entire decision-making process, from gathering inputs to executing actions.
 
 #### Class: EnhancedCognitionEngine
 
-**Purpose**: To provide an integrated solution for transforming Lumina from a simulation state into an execution state by combining various cognitive components.
+**Purpose**: To provide an integrated solution for transforming PandoraBOX from a simulation state into an execution state by combining various cognitive components.
 
 **Attributes**:
 - `persona_dir`: Directory path where persona data is stored.
@@ -15487,7 +15487,7 @@ engine.update_state(result)
 ### Core Engine Module Documentation
 
 #### Overview
-The `core\engine\__init__.py` module is a crucial component of the Lumina architecture, serving as the enhanced cognition engine responsible for unified cognitive processing. This version (V32) represents an evolution in the system's ability to handle complex data and processes.
+The `core\engine\__init__.py` module is a crucial component of the PandoraBOX architecture, serving as the enhanced cognition engine responsible for unified cognitive processing. This version (V32) represents an evolution in the system's ability to handle complex data and processes.
 
 #### Purpose
 - **Unified Cognitive Processing**: The core engine integrates various cognitive functions into a cohesive framework.
@@ -15507,7 +15507,7 @@ The `core\engine\__init__.py` module is a crucial component of the Lumina archit
   - `tensorflow` or `pytorch`: For deep learning models (depending on the specific implementation).
 
 #### Usage
-The module is typically imported and used within other parts of the Lumina architecture. Here’s a basic example:
+The module is typically imported and used within other parts of the PandoraBOX architecture. Here’s a basic example:
 
 ```python
 from lumina.core.engine import UnifiedCognitionEngine
@@ -15546,19 +15546,19 @@ print(result)
 ```
 
 #### Conclusion
-The `core\engine\__init__.py` module is a vital part of Lumina's architecture, providing an advanced and flexible framework for cognitive processing. Its enhanced capabilities make it suitable for complex tasks requiring sophisticated analysis and decision-making.
+The `core\engine\__init__.py` module is a vital part of PandoraBOX's architecture, providing an advanced and flexible framework for cognitive processing. Its enhanced capabilities make it suitable for complex tasks requiring sophisticated analysis and decision-making.
 
 ---
 
-This documentation provides a clear understanding of the role and functionality of the core engine in the Lumina architecture.
+This documentation provides a clear understanding of the role and functionality of the core engine in the PandoraBOX architecture.
 
 
 ---
 
-### Lumina Architecture: AsyncEventBus Module
+### PandoraBOX Architecture: AsyncEventBus Module
 
 #### Overview
-The `AsyncEventBus` module is a core component of the Lumina architecture, designed to facilitate event-driven coordination between cognitive components. This system enables loose coupling by allowing components to communicate through events without direct dependencies.
+The `AsyncEventBus` module is a core component of the PandoraBOX architecture, designed to facilitate event-driven coordination between cognitive components. This system enables loose coupling by allowing components to communicate through events without direct dependencies.
 
 #### Flow Diagram
 1. **Perception**: Triggers an event like `'perception.vision'`.
@@ -15723,12 +15723,12 @@ result = await event_bus.emit('perception.vision', {'image': "sample_image.jpg"}
 print(result)
 ```
 
-This module is crucial for enabling asynchronous, decoupled communication between different components in the Lumina architecture.
+This module is crucial for enabling asynchronous, decoupled communication between different components in the PandoraBOX architecture.
 
 
 ---
 
-The `core/event_bus/__init__.py` file is part of the Lumina architecture and serves as an initialization module for the event bus. This module likely imports or initializes various components that are essential to the functioning of the event bus within the Lumina system.
+The `core/event_bus/__init__.py` file is part of the PandoraBOX architecture and serves as an initialization module for the event bus. This module likely imports or initializes various components that are essential to the functioning of the event bus within the PandoraBOX system.
 
 Here's a basic structure and explanation of what this file might contain:
 
@@ -15756,7 +15756,7 @@ __all__ = ['EventPublisher', 'EventSubscriber', 'EventQueue', 'EventHandler']
 
 ### Usage:
 
-When another part of the Lumina architecture needs to use the event bus, it can simply do so by importing `EventPublisher`, `EventSubscriber`, etc., directly from `core/event_bus`.
+When another part of the PandoraBOX architecture needs to use the event bus, it can simply do so by importing `EventPublisher`, `EventSubscriber`, etc., directly from `core/event_bus`.
 
 ```python
 from core.event_bus import EventPublisher
@@ -15771,12 +15771,12 @@ publisher.publish_event('some_event', data={'key': 'value'})
 - The complexity level of 0 suggests that this module is relatively simple and straightforward, focusing on basic initialization and exposing key classes.
 - This file acts as a bridge between the core architecture and the event bus components, ensuring they are properly initialized and available for use.
 
-This structure ensures modularity and separation of concerns within the Lumina system.
+This structure ensures modularity and separation of concerns within the PandoraBOX system.
 
 
 ---
 
-### Module Documentation for `ActuatorInterface` in Lumina Architecture
+### Module Documentation for `ActuatorInterface` in PandoraBOX Architecture
 
 #### Overview
 The `ActuatorInterface` class serves as a unified interface for executing actions across various domains such as speech output, UI updates, file creation, web searches, and system commands. This design decouples the decision-making process (handled by the cognitive engine) from the specific execution mechanisms.
@@ -15839,7 +15839,7 @@ print(result)  # Output: {'status': 'success', 'output': 'Speaking...', 'duratio
 - The `ActuatorInterface` class is designed to be flexible and extensible. New action types can be added by registering appropriate handlers.
 - The execution history helps in tracking the actions performed, which can be useful for debugging or logging purposes.
 
-This module plays a crucial role in ensuring that Lumina's cognitive engine can interact with various systems and devices without being tightly coupled to specific implementation details.
+This module plays a crucial role in ensuring that PandoraBOX's cognitive engine can interact with various systems and devices without being tightly coupled to specific implementation details.
 
 
 ---
@@ -16129,11 +16129,11 @@ The `ActivitySelector` class effectively implements a decision-making process ba
 
 ---
 
-The provided code snippet outlines a complex system for an autonomous orchestrator in the context of Lumina, which appears to be some kind of AI or cognitive architecture. Below are detailed comments and explanations on various aspects of this code:
+The provided code snippet outlines a complex system for an autonomous orchestrator in the context of PandoraBOX, which appears to be some kind of AI or cognitive architecture. Below are detailed comments and explanations on various aspects of this code:
 
 ### Overview
 
-- **Purpose**: The `AutonomousOrchestrator` class is designed as the central nervous system of Lumina, responsible for managing a continuous loop that runs even when no user interaction occurs.
+- **Purpose**: The `AutonomousOrchestrator` class is designed as the central nervous system of PandoraBOX, responsible for managing a continuous loop that runs even when no user interaction occurs.
 - **Architecture**: It integrates with several subsystems like EventSystem, CognitiveClock, DriveSystem, ActivitySelector, and ExecutionLayer to manage actions based on external events and internal states.
 
 ### Key Components
@@ -16178,7 +16178,7 @@ from .activity_selector import ActivitySelector
 from .execution_layer   import ExecutionLayer
 from cognition.global_workspace import GlobalWorkspace
 ```
-- Imports necessary modules and classes from the Lumina architecture.
+- Imports necessary modules and classes from the PandoraBOX architecture.
 
 #### Logger Initialization
 ```python
@@ -16273,7 +16273,7 @@ async def stop(self):
 The orchestrator is designed to integrate seamlessly with existing cognitive modules. It wraps around them, adding background task management, clock-driven cycles, drive vector derivation, and priority-based activity selection.
 
 ### Conclusion
-This code provides a robust framework for managing an autonomous cognitive loop in Lumina. By integrating various subsystems, it ensures that the system can react to external events while also performing proactive tasks based on internal states and priorities.
+This code provides a robust framework for managing an autonomous cognitive loop in PandoraBOX. By integrating various subsystems, it ensures that the system can react to external events while also performing proactive tasks based on internal states and priorities.
 
 
 ---
@@ -16542,7 +16542,7 @@ The provided code is well-structured and clearly defines an event-driven archite
 
 ---
 
-The `execution_layer.py` module is a critical component in the system's architecture, responsible for translating high-level activity names into actual calls on Lumina's cognitive modules. This translation process ensures that activities are executed according to their intended purposes without making heavy LLM (Language Model) calls directly here.
+The `execution_layer.py` module is a critical component in the system's architecture, responsible for translating high-level activity names into actual calls on PandoraBOX's cognitive modules. This translation process ensures that activities are executed according to their intended purposes without making heavy LLM (Language Model) calls directly here.
 
 ### Key Components and Concepts
 
@@ -16616,7 +16616,7 @@ By translating high-level activity names into specific actions, this layer acts 
 
 ---
 
-This `__init__.py` file serves as the entry point for the `core.orchestrator` package, which is a central nervous system responsible for autonomous operations in Lumina. Here's an analysis of its structure and contents:
+This `__init__.py` file serves as the entry point for the `core.orchestrator` package, which is a central nervous system responsible for autonomous operations in PandoraBOX. Here's an analysis of its structure and contents:
 
 ### Structure
 
@@ -16628,11 +16628,11 @@ This `__init__.py` file serves as the entry point for the `core.orchestrator` pa
 
 ### Imports Explained:
 
-- **AutonomousOrchestrator**: This class likely represents the central control unit for autonomous operations in Lumina.
+- **AutonomousOrchestrator**: This class likely represents the central control unit for autonomous operations in PandoraBOX.
   
 - **EventSystem** and **Event**: These classes probably manage events within the system. `Event` might represent individual events, while `EventSystem` could be a manager or dispatcher of these events.
 
-- **DriveSystem** and **DriveVector**: These classes are likely related to movement or drive control in Lumina. `DriveVector` might represent a direction and magnitude for movement commands.
+- **DriveSystem** and **DriveVector**: These classes are likely related to movement or drive control in PandoraBOX. `DriveVector` might represent a direction and magnitude for movement commands.
 
 - **ActivitySelector**: This class probably selects activities based on certain criteria, possibly using some form of decision-making logic.
 
@@ -16764,7 +16764,7 @@ import json
 
 class UnifiedPerceptionHub:
     """
-    Unified perception gathering system for Lumina.
+    Unified perception gathering system for PandoraBOX.
     
     Consolidates:
     - External: vision, audio, text, web
@@ -16864,7 +16864,7 @@ if __name__ == "__main__":
 
 4. **Example Usage**: A simple example is provided at the bottom of the script to demonstrate how to use this class.
 
-This should give you a complete and functional `UnifiedPerceptionHub` class for your Lumina system!
+This should give you a complete and functional `UnifiedPerceptionHub` class for your PandoraBOX system!
 
 
 ---
@@ -17051,7 +17051,7 @@ This structure helps in organizing and managing your codebase effectively.
 
 ---
 
-The provided code snippet is part of a larger system that models Lumina's motivational landscape using an ecosystem approach to task goals. Here’s a detailed breakdown and some suggestions for improvement:
+The provided code snippet is part of a larger system that models PandoraBOX's motivational landscape using an ecosystem approach to task goals. Here’s a detailed breakdown and some suggestions for improvement:
 
 ### Code Breakdown
 
@@ -17472,7 +17472,7 @@ The `ConversationalAudioManager` class provides a robust framework for managing 
 
 ---
 
-The provided code snippet is a part of the `fluid_voice.py` module, which aims to improve the speech-to-text and text-to-speech functionalities in LUMINA V32. Below, I'll provide an overview of the key components and their functionality:
+The provided code snippet is a part of the `fluid_voice.py` module, which aims to improve the speech-to-text and text-to-speech functionalities in PANDORABOX V32. Below, I'll provide an overview of the key components and their functionality:
 
 ### Overview
 
@@ -17555,7 +17555,7 @@ self.model = WhisperModel(model_size, device=device, compute_type=compute_type)
 
 ### Conclusion
 
-The `fluid_voice.py` module significantly enhances the speech-to-text and text-to-speech functionalities in LUMINA V32. It leverages faster models for STT and supports multiple high-quality TTS providers, making it more versatile and efficient. The fluidity improvements ensure a smoother user experience by allowing interruptions during TTS playback and streaming sentences as they are generated.
+The `fluid_voice.py` module significantly enhances the speech-to-text and text-to-speech functionalities in PANDORABOX V32. It leverages faster models for STT and supports multiple high-quality TTS providers, making it more versatile and efficient. The fluidity improvements ensure a smoother user experience by allowing interruptions during TTS playback and streaming sentences as they are generated.
 
 
 ---
@@ -17743,16 +17743,16 @@ This example provides a structure for completing the `FAISSMemoryBackend` class.
 
 ---
 
-The provided code snippet outlines a `MessagingManager` class that serves as an intermediary between Lumina and external messaging platforms like Telegram, WhatsApp, and Discord. Below is a detailed breakdown of the class and its methods:
+The provided code snippet outlines a `MessagingManager` class that serves as an intermediary between PandoraBOX and external messaging platforms like Telegram, WhatsApp, and Discord. Below is a detailed breakdown of the class and its methods:
 
 ### Class Overview
 
 - **Class Name**: `MessagingManager`
 - **Purpose**: Manages bidirectional communication with external messaging platforms.
 - **Attributes**:
-  - `_orch`: AutonomousOrchestrator instance for internal Lumina operations.
+  - `_orch`: AutonomousOrchestrator instance for internal PandoraBOX operations.
   - `_cfg`: AppSettings instance containing platform-specific tokens and settings.
-  - `_user_map`: A dictionary mapping external user IDs to Lumina's internal `user_id`.
+  - `_user_map`: A dictionary mapping external user IDs to PandoraBOX's internal `user_id`.
   - `_tg_app`: Python-Telegram-Bot Application object (initialized if Telegram is enabled).
   - `_twilio`: Twilio Client object (initialized if WhatsApp is enabled).
 
@@ -17807,7 +17807,7 @@ async def start(self) -> None:
 
 #### `receive_message`
 
-This method is responsible for receiving messages from external platforms and routing them to Lumina's internal systems.
+This method is responsible for receiving messages from external platforms and routing them to PandoraBOX's internal systems.
 
 ```python
 async def receive_message(self, message: Dict[str, Any]) -> None:
@@ -17822,7 +17822,7 @@ async def receive_message(self, message: Dict[str, Any]) -> None:
 
 #### `send_message`
 
-This method sends a message from Lumina to an external platform.
+This method sends a message from PandoraBOX to an external platform.
 
 ```python
 async def send_message(self, user_id: str, message: Dict[str, Any]) -> None:
@@ -17851,7 +17851,7 @@ async def send_message_to_external(self, platform: str, external_id: str, messag
 
 ### Graceful Degradation
 
-The manager handles missing tokens gracefully by skipping the corresponding platforms without crashing Lumina.
+The manager handles missing tokens gracefully by skipping the corresponding platforms without crashing PandoraBOX.
 
 ```python
 if self._cfg.TELEGRAM_TOKEN is None:
@@ -17863,7 +17863,7 @@ if self._cfg.WHATSAPP_TWILIO_SID is None or self._cfg.WHATSAPP_TWILIO_TOKEN is N
 
 ### Summary
 
-The `MessagingManager` class provides a robust framework for integrating Lumina with external messaging platforms. It handles user identity mapping, starts and stops platform connectors, and ensures graceful degradation in the face of missing configuration.
+The `MessagingManager` class provides a robust framework for integrating PandoraBOX with external messaging platforms. It handles user identity mapping, starts and stops platform connectors, and ensures graceful degradation in the face of missing configuration.
 
 
 ---
@@ -18073,7 +18073,7 @@ COMPRESS_TRIGGER = 16   # 80% of default _HISTORY_MAX=20
 COMPRESS_WINDOW  = 10   # number of oldest turns to compress into summary
 MAX_RAW_TURNS    = 20   # hard cap after compression
 
-_COMPRESS_SYSTEM = """You are a conversation summarizer for an AI assistant named Lumina.
+_COMPRESS_SYSTEM = """You are a conversation summarizer for an AI assistant named PandoraBOX.
 Given a list of conversation turns, write a dense factual summary that preserves:
 - What the user was working on or asking about
 - Key decisions, facts, or conclusions reached
@@ -18596,7 +18596,7 @@ This structure is common in Python packages to maintain modularity and control o
 
 ---
 
-This code defines a `MemoryInterfaceImpl` class that wraps Robot's memory backends with Lumina's emotional weighting. Here is an analysis of the complexity and suggestions for improvement:
+This code defines a `MemoryInterfaceImpl` class that wraps Robot's memory backends with PandoraBOX's emotional weighting. Here is an analysis of the complexity and suggestions for improvement:
 
 ### Complexity Analysis
 
@@ -18650,7 +18650,7 @@ class MemoryInterfaceImpl(MemoryInterface):
     """
     Real memory implementation combining:
     - Robot's storage (FAISS, dict, cognee)
-    - Lumina's emotional weighting
+    - PandoraBOX's emotional weighting
     """
 
     def __init__(self):
@@ -19178,7 +19178,7 @@ This module is well-structured and provides both real-time and simulated time se
 
 ---
 
-The provided code is a Python module that defines the `UnifiedMemoryManager` class. This class serves as a unified memory manager for storing and retrieving memories, combining Robot's storage infrastructure with Lumina's emotional weighting system.
+The provided code is a Python module that defines the `UnifiedMemoryManager` class. This class serves as a unified memory manager for storing and retrieving memories, combining Robot's storage infrastructure with PandoraBOX's emotional weighting system.
 
 Here are some key points about the code:
 
@@ -19206,7 +19206,7 @@ class UnifiedMemoryManager(MemoryInterface):
     """
     Single unified memory system.
     
-    Robot stores. Lumina weights. Both retrieve.
+    Robot stores. PandoraBOX weights. Both retrieve.
     """
     
     def __init__(
@@ -19361,7 +19361,7 @@ class UnifiedMemoryManager(MemoryInterface):
     """
     Single unified memory system.
     
-    Robot stores. Lumina weights. Both retrieve.
+    Robot stores. PandoraBOX weights. Both retrieve.
     """
 ```
 
@@ -19447,7 +19447,7 @@ The `UnifiedMemoryManager` class provides a unified interface for storing and ma
 
 ---
 
-The provided code snippet is a module that defines the `UnifiedMemoryManager` class. This class serves as an interface for managing memory in a unified way by combining Robot's storage infrastructure with Lumina's emotional weighting system.
+The provided code snippet is a module that defines the `UnifiedMemoryManager` class. This class serves as an interface for managing memory in a unified way by combining Robot's storage infrastructure with PandoraBOX's emotional weighting system.
 
 Here are some key points about the Unified Memory Manager:
 
@@ -19520,7 +19520,7 @@ This version logs errors more explicitly and provides a clearer message when sto
 
 ---
 
-The provided code snippet is a Python module that defines a class `UnifiedMemoryManager` for managing memory operations. This class combines the storage infrastructure of a robot with emotional weighting from Lumina to create a unified memory system.
+The provided code snippet is a Python module that defines a class `UnifiedMemoryManager` for managing memory operations. This class combines the storage infrastructure of a robot with emotional weighting from PandoraBOX to create a unified memory system.
 
 ### Key Components:
 
@@ -19598,7 +19598,7 @@ The provided code defines a robust memory management system that integrates diff
 
 ---
 
-The provided code snippet is a Python module that defines a `UnifiedMemoryManager` class. This class serves as an interface for managing memory in a system where the Robot stores and Lumina provides emotional weighting. Here's a detailed breakdown of the code:
+The provided code snippet is a Python module that defines a `UnifiedMemoryManager` class. This class serves as an interface for managing memory in a system where the Robot stores and PandoraBOX provides emotional weighting. Here's a detailed breakdown of the code:
 
 ### Module Structure
 
@@ -19970,7 +19970,7 @@ This structure is simple, modular, and easy to extend. It's a good practice for 
 
 ---
 
-The provided code is a Python module that simulates the cognitive energy system of an artificial intelligence (AI) named Lumina. This system manages the AI's ability to engage in deep reasoning, which consumes more cognitive resources compared to simpler tasks like small talk.
+The provided code is a Python module that simulates the cognitive energy system of an artificial intelligence (AI) named PandoraBOX. This system manages the AI's ability to engage in deep reasoning, which consumes more cognitive resources compared to simpler tasks like small talk.
 
 ### Key Components
 
@@ -20056,13 +20056,13 @@ The `cognitive_energy.py` module effectively simulates the cognitive energy syst
 
 ---
 
-The `cognitive_energy.py` module is designed to simulate the biological constraints of cognitive processing, particularly focusing on the concept that deep cognition requires significant energy. This system manages Lumina's cognitive energy pool and influences its operational modes based on current energy levels.
+The `cognitive_energy.py` module is designed to simulate the biological constraints of cognitive processing, particularly focusing on the concept that deep cognition requires significant energy. This system manages PandoraBOX's cognitive energy pool and influences its operational modes based on current energy levels.
 
 ### Key Components
 
 1. **Energy Pool**: A float value in the range [0, 100] representing the current cognitive resource level.
 2. **Drain Rates**: Specific to different activities (e.g., deep reasoning, standard reply).
-3. **Regeneration Rate**: Energy recovers over time when Lumina is idle or engaged in light tasks.
+3. **Regeneration Rate**: Energy recovers over time when PandoraBOX is idle or engaged in light tasks.
 
 ### Operational Modes
 
@@ -20109,12 +20109,12 @@ temperature_hint = energy.temperature_hint()
 
 ### Conclusion
 
-This system effectively simulates cognitive fatigue in Lumina, making its behavior more realistic and variable. By managing energy levels and operational modes, it ensures that deep reasoning does not deplete resources unnecessarily, mimicking human cognitive processes.
+This system effectively simulates cognitive fatigue in PandoraBOX, making its behavior more realistic and variable. By managing energy levels and operational modes, it ensures that deep reasoning does not deplete resources unnecessarily, mimicking human cognitive processes.
 
 
 ---
 
-The provided code snippet outlines a module named `cognitive_energy.py` that simulates the biological constraint of cognitive energy in a system like Lumina, which is presumably an AI model. The module manages the cognitive energy pool and its regeneration, as well as determines operational modes based on energy levels.
+The provided code snippet outlines a module named `cognitive_energy.py` that simulates the biological constraint of cognitive energy in a system like PandoraBOX, which is presumably an AI model. The module manages the cognitive energy pool and its regeneration, as well as determines operational modes based on energy levels.
 
 ### Key Components
 
@@ -20182,7 +20182,7 @@ temperature = energy.temperature_hint()
 
 ### Conclusion
 
-The `cognitive_energy.py` module effectively simulates a cognitive energy system that influences Lumina's behavior based on its current state. By managing energy levels and operational modes, it provides a realistic model of human-like cognitive fatigue and variability.
+The `cognitive_energy.py` module effectively simulates a cognitive energy system that influences PandoraBOX's behavior based on its current state. By managing energy levels and operational modes, it provides a realistic model of human-like cognitive fatigue and variability.
 
 
 ---
@@ -20279,7 +20279,7 @@ Remember that the `__init__.py` file is not strictly necessary for a package to 
 
 ---
 
-The provided code snippet is a Python module that simulates the cognitive energy system of an artificial intelligence (AI) entity, such as Lumina. The module manages the AI's ability to engage in deep reasoning and other activities based on its current cognitive energy level.
+The provided code snippet is a Python module that simulates the cognitive energy system of an artificial intelligence (AI) entity, such as PandoraBOX. The module manages the AI's ability to engage in deep reasoning and other activities based on its current cognitive energy level.
 
 ### Key Components
 
@@ -20387,7 +20387,7 @@ This file is not necessary for your package to work, but it provides a clean way
 
 ---
 
-The `cognitive_energy.py` module is a crucial component in simulating the biological constraints of cognitive processing, particularly in an artificial intelligence context like Lumina. Below, I'll provide a detailed breakdown and some suggestions to enhance its functionality.
+The `cognitive_energy.py` module is a crucial component in simulating the biological constraints of cognitive processing, particularly in an artificial intelligence context like PandoraBOX. Below, I'll provide a detailed breakdown and some suggestions to enhance its functionality.
 
 ### Module Breakdown
 
@@ -20606,7 +20606,7 @@ if __name__ == "__main__":
    - Creates an instance of `HomeostasisSystem`.
    - Simulates monitoring for 5 iterations, printing out the most recent imbalance report at the end.
 
-This module now provides a basic framework to monitor and manage psychological homeostasis in Lumina. The example usage demonstrates how you can integrate this system into your application.
+This module now provides a basic framework to monitor and manage psychological homeostasis in PandoraBOX. The example usage demonstrates how you can integrate this system into your application.
 
 
 ---
@@ -20711,7 +20711,7 @@ This code provides a comprehensive implementation of psychological homeostasis a
 
 ---
 
-The provided code snippet is a Python module that implements the concept of psychological homeostasis for an AI system named Lumina. Below are some observations and suggestions to improve the code:
+The provided code snippet is a Python module that implements the concept of psychological homeostasis for an AI system named PandoraBOX. Below are some observations and suggestions to improve the code:
 
 1. **Imports**: The imports at the beginning of the file are necessary but can be organized better.
 2. **Logging Configuration**: Ensure logging is configured properly before using it in the module.
@@ -20842,7 +20842,7 @@ This revised version should be more maintainable and easier to understand while 
 
 ---
 
-The provided code snippet is a Python module that implements the concept of psychological homeostasis for a cognitive system like Lumina. Here's an analysis and continuation of the `homeostasis.py` document:
+The provided code snippet is a Python module that implements the concept of psychological homeostasis for a cognitive system like PandoraBOX. Here's an analysis and continuation of the `homeostasis.py` document:
 
 ### Analysis
 
@@ -26161,7 +26161,7 @@ This JSON configuration file contains various settings for a system, likely rela
    - SerpAPI Key: Not provided.
 
 4. **Persona and Memory Settings**:
-   - Persona Name: Lumina
+   - Persona Name: PandoraBOX
    - Memory Backend: Faiss
    - Paths for various memory-related files are specified (e.g., `ai_system.db`, `faiss_index.bin`, etc.).
 
@@ -26214,7 +26214,7 @@ This JSON configuration file is used to set up and customize a system, likely fo
 
 3. **Memory and Persona Settings**:
    - **Memory Backend**: The memory backend is set to `faiss`, which is an efficient similarity search and clustering library.
-   - **Persona Name**: The persona name is set to "Lumina", indicating the AI's identity or character.
+   - **Persona Name**: The persona name is set to "PandoraBOX", indicating the AI's identity or character.
    - **Camera Settings**: The camera settings are configured, including autostart (`true`), ID (0), frames per second (15), and resolution (1280x720).
 
 4. **Voice Settings**:
@@ -26299,7 +26299,7 @@ This JSON configuration file is used to set up a system that involves natural la
    - NiceGUI port is set to 8080, which suggests that there's a web interface available.
 
 7. **Persona & Memory**:
-   - Persona name is `Lumina`.
+   - Persona name is `PandoraBOX`.
    - The system uses Faiss as the memory backend and has paths defined for storing persona-related data.
 
 8. **Response Settings**: 
@@ -26344,7 +26344,7 @@ This JSON configuration file appears to be for a system that integrates various 
    - `CAMERA_RESOLUTION`: 1280x720
 
 6. **Response and Persona Settings**:
-   - `PERSONA_NAME`: Lumina
+   - `PERSONA_NAME`: PandoraBOX
    - `MEMORY_BACKEND`: faiss
    - `MEMORY_DB_PATH`: data/persona/ai_system.db
    - `MEMORY_FAISS_PATH`: data/persona/faiss_index.bin
@@ -26394,7 +26394,7 @@ This JSON configuration file is used to set up a system, possibly for an AI assi
 4. **Memory Backend**: The memory backend is set to `faiss`, indicating that the system uses Faiss (Facebook AI Similarity Search) for managing and searching through stored data, such as conversations or knowledge bases.
 
 5. **Persona Settings**:
-   - `PERSONA_NAME`: Set to "Lumina", which could be a name given to the persona or character represented by this system.
+   - `PERSONA_NAME`: Set to "PandoraBOX", which could be a name given to the persona or character represented by this system.
    - Various paths are defined for storing different types of memory, like `MEMORY_DB_PATH`, `MEMORY_FAISS_PATH`, and `MEMORY_PERSONA_PATH`.
 
 6. **Text-to-Speech (TTS) Settings**:
@@ -26441,7 +26441,7 @@ Here's an overview of the key components:
    - NiceGUI Port: Set to port 8080, which is commonly used for web applications.
    
 7. **Persona and Response Settings**:
-   - Persona Name: Lumina.
+   - Persona Name: PandoraBOX.
    - Response Verbosity: Set to `verbose`, indicating detailed responses are preferred.
 
 8. **Observatory**: 
@@ -26475,7 +26475,7 @@ This JSON configuration file contains various settings for a system, likely rela
 ### Memory and Persona
 
 - **MEMORY_BACKEND**: Specifies the memory backend (`faiss`).
-- **PERSONA_NAME**: The name of the persona being used (`Lumina`).
+- **PERSONA_NAME**: The name of the persona being used (`PandoraBOX`).
 
 ### Text-to-Speech (TTS) Settings
 
@@ -26532,7 +26532,7 @@ This JSON configuration file is used to configure a system that likely involves 
 
 8. **Observatory Configuration**: The observatory feature is enabled with specific baseline sample counts (`OBSERVATORY_BASELINE_SAMPLES`) and emergence thresholds (`OBSERVATORY_EMERGENCE_THRESHOLD`), which could be used for monitoring or analyzing the system's behavior over time.
 
-9. **Persona Settings**: The persona name is set to `Lumina`, and various paths are specified for storing memory data, including a database path (`MEMORY_DB_PATH`) and an embedding model path (`MEMORY_COGNEE_EMBED_MODEL`).
+9. **Persona Settings**: The persona name is set to `PandoraBOX`, and various paths are specified for storing memory data, including a database path (`MEMORY_DB_PATH`) and an embedding model path (`MEMORY_COGNEE_EMBED_MODEL`).
 
 10. **Voice Settings**: Voice-related settings include the voice reference file (`COQUI_VOICE_REFERENCE`), which could be used to customize the TTS output.
 
@@ -26552,7 +26552,7 @@ This JSON configuration file contains a variety of settings and parameters for a
 
 3. **Memory Settings**: The system stores memory in a Faiss database, with paths specified for various components like `ai_system.db`, `faiss_index.bin`, and `world_model.json`.
 
-4. **Persona Settings**: A persona named "Lumina" is defined, which includes settings related to the TTS voice (`af_heart`), language (`fr`), and response verbosity.
+4. **Persona Settings**: A persona named "PandoraBOX" is defined, which includes settings related to the TTS voice (`af_heart`), language (`fr`), and response verbosity.
 
 5. **Camera Settings**: The camera is configured with an ID of 0, a frame rate of 15 FPS, and a resolution of `1280x720`.
 
@@ -26636,7 +26636,7 @@ This JSON configuration file appears to be for a system that integrates various 
   - `memory_world_path`: `data/persona/world_model.json`
 
 ### 7. **Persona Settings**
-- **Name**: `Lumina` - The persona name.
+- **Name**: `PandoraBOX` - The persona name.
 - **Enabled**: `true` - Persona functionality is enabled.
 
 ### 8. **Response Management**
@@ -26685,7 +26685,7 @@ This JSON configuration file contains a variety of settings for an AI system, li
 ### Memory and Persona Settings
 
 - **MEMORY_BACKEND**: Specifies the memory backend (`faiss`).
-- **PERSONA_NAME**: The name of the persona or virtual assistant (`Lumina`).
+- **PERSONA_NAME**: The name of the persona or virtual assistant (`PandoraBOX`).
 
 ### Audio Settings
 
@@ -26742,7 +26742,7 @@ This JSON configuration file is used to configure a system that likely involves 
    - No API keys are provided for OpenAI, Anthropic, Brave Search, or SerpAPI. This suggests that these services may not be in use.
 
 4. **Persona and Memory**:
-   - The persona's name is set to `Lumina`.
+   - The persona's name is set to `PandoraBOX`.
    - The memory backend is set to Faiss, with paths specified for the database, index, world model, and persona directory.
    - The cognee embedding model is set to `nomic-embed-text`.
 
@@ -26778,7 +26778,7 @@ This JSON configuration file contains a variety of settings for an AI system, pa
 2. **API Keys**: No API keys are provided for OpenAI, Anthropic, Brave Search, or SerpAPI. This means that these services will not be used by the system.
 
 3. **Persona Settings**:
-   - `PERSONA_NAME`: The persona's name is set to "Lumina".
+   - `PERSONA_NAME`: The persona's name is set to "PandoraBOX".
    - Memory backend and paths: Faiss is chosen as the memory backend with specific paths for storing data.
    
 4. **Text-to-Speech (TTS) Settings**:
@@ -26815,7 +26815,7 @@ This JSON configuration file appears to be for a system that involves natural la
 4. **Memory Backend**: Uses Faiss as the memory backend.
 
 5. **Persona and Memory Paths**:
-   - Persona name is "Lumina".
+   - Persona name is "PandoraBOX".
    - Various paths for storing persona-related data are defined, including the database path (`ai_system.db`), Faiss index file (`faiss_index.bin`), world model JSON (`world_model.json`), and more.
 
 6. **TTS Settings**: 
@@ -26860,7 +26860,7 @@ Here's an overview of what each setting does:
 5. **OPENAI_API_KEY** and **ANTHROPIC_API_KEY**: These are placeholders for API keys from OpenAI and Anthropic respectively, which could be used if their services were to be utilized instead of the default provider.
 6. **RESEARCH_SEARCH_BACKEND**: Specifies the backend being used for research searches (in this case, set to "auto").
 7. **BRAVE_SEARCH_KEY** and **SERPAPI_KEY**: These are placeholders for API keys from Brave Search and SerpAPI respectively, which could be used if their services were to be utilized.
-8. **PERSONA_NAME**: The name of the persona being used by the system (in this case, "Lumina").
+8. **PERSONA_NAME**: The name of the persona being used by the system (in this case, "PandoraBOX").
 9. **MEMORY_BACKEND**, **MEMORY_DB_PATH**, **MEMORY_FAISS_PATH**, **MEMORY_WORLD_PATH**, and **MEMORY_PERSONA_PATH**: These settings define how memory is stored and accessed.
 10. **MEMORY_COGNEE_PATH** and **MEMORY_COGNEE_EMBED_MODEL**: These are placeholders for paths to Cognee data and the embedding model used by it, respectively.
 11. **KOKORO_VOICE**, **KOKORO_SPEED**, **EDGE_TTS_VOICE**, **EDGE_TTS_RATE**, **TTS_STREAMING**, **TTS_BARGE_IN**, and **BARGE_IN_SENSITIVITY**: These settings define voice characteristics for text-to-speech output, including the voice to use, speed, whether streaming is enabled, and sensitivity to interruptions.
@@ -26933,7 +26933,7 @@ The system supports vision processing with a specific model, `qwen/qwen3-vl-4b`,
 The system has a web interface accessible via port 8080 and includes observatory features for monitoring emergent behaviors.
 
 ### 7. **Other Settings**
-   - **PERSONA_NAME**: Lumina
+   - **PERSONA_NAME**: PandoraBOX
    - **RESPONSE_LANGUAGE**: en
    - **VAD_AGGRESSIVENESS**: 3
 
@@ -27024,7 +27024,7 @@ This configuration file is a JSON object that contains various settings for an A
 3. **Memory and Persona Settings**:
    - The memory backend is set to "faiss".
    - Paths for various memory-related files are specified.
-   - `PERSONA_NAME`: Set to "Lumina", indicating the name of the persona or character that the AI system represents.
+   - `PERSONA_NAME`: Set to "PandoraBOX", indicating the name of the persona or character that the AI system represents.
 
 4. **Voice Settings**: 
    - `KOKORO_VOICE` and `KOKORO_SPEED` are set, which likely control the voice characteristics when using the Kokoro TTS provider.
@@ -27064,7 +27064,7 @@ This JSON configuration file is used to set up a system that interacts with vari
 
 3. **Memory and Persona Management:**
    - **MEMORY_BACKEND**: The backend for storing memory data is set to `faiss`, a library for efficient similarity search and clustering of dense vectors.
-   - **PERSONA_NAME**: The name of the persona, which is `Lumina`.
+   - **PERSONA_NAME**: The name of the persona, which is `PandoraBOX`.
    - **MEMORY_DB_PATH**, **MEMORY_FAISS_PATH**, **MEMORY_WORLD_PATH**: Paths where various types of memory data are stored.
 
 4. **Speech Synthesis (TTS) and Speech-to-Text (STT):**
@@ -27126,8 +27126,8 @@ The provided JSON configuration file is for a system that likely involves natura
 3. **Memory & Persona**:
    - `MEMORY_BACKEND`: faiss
      - Faiss is used for efficient similarity search in large datasets.
-   - `PERSONA_NAME`: Lumina
-     - The persona's name is set to "Lumina".
+   - `PERSONA_NAME`: PandoraBOX
+     - The persona's name is set to "PandoraBOX".
 
 4. **Camera Configuration**:
    - `CAMERA_AUTOSTART`: true
@@ -27207,7 +27207,7 @@ This JSON configuration file is used to set up a system that involves text and v
    - This feature is enabled, allowing the system to gather baseline samples and detect emergent behaviors or patterns.
 
 9. **Persona Name**: 
-   - The persona's name is set to "Lumina".
+   - The persona's name is set to "PandoraBOX".
 
 10. **API Keys**:
     - No API keys are provided for OpenAI, Anthropic, Brave Search, SerpAPI, Eleven Labs, or Coqui Voice Reference, which means these services will not be used.
@@ -27235,7 +27235,7 @@ Here's an overview of each key in the configuration:
 
 7. **BRAVE_SEARCH_KEY** and **SERPAPI_KEY**: These are placeholders for API keys from Brave Search and SerpAPI, respectively. They are not set here.
 
-8. **PERSONA_NAME**: The name of the persona being used by the system. It is set to "Lumina".
+8. **PERSONA_NAME**: The name of the persona being used by the system. It is set to "PandoraBOX".
 
 9. **MEMORY_BACKEND**, **MEMORY_DB_PATH**, **MEMORY_FAISS_PATH**, **MEMORY_WORLD_PATH**, **MEMORY_PERSONA_PATH**, and **MEMORY_COGNEE_PATH**: These keys specify how memory is managed in the system, including the backend type (Faiss), database path, and paths for various types of data.
 
@@ -27310,7 +27310,7 @@ This JSON configuration file is used to set up a system that involves various co
 
 8. **Observatory Settings**: The observatory feature, which likely involves monitoring system behavior or performance, is enabled with baseline samples for emergence detection set at 20 and an emergence threshold of 0.5.
 
-9. **Persona & Response Language**: The persona's name is "Lumina," and the response language is set to English (`en`).
+9. **Persona & Response Language**: The persona's name is "PandoraBOX," and the response language is set to English (`en`).
 
 10. **Other Settings**: There are several other settings related to energy gate factors, VAD aggressiveness, and more that control various aspects of the system's behavior.
 
@@ -27413,7 +27413,7 @@ This JSON configuration file is used to set up a system, likely an AI chatbot or
 5. **API Keys**: OpenAI and Anthropic API keys are not provided, indicating that these services might be bypassed or not required.
 
 6. **Persona Settings**:
-   - `PERSONA_NAME`: The name of the persona being used ("Lumina").
+   - `PERSONA_NAME`: The name of the persona being used ("PandoraBOX").
    - `MEMORY_BACKEND`, `MEMORY_DB_PATH`, etc.: Configuration for how memory is stored and accessed (using Cognee as the backend).
 
 7. **TTS (Text-to-Speech) Settings**: 
@@ -27451,7 +27451,7 @@ This JSON configuration file is for a system that likely involves natural langua
 
 3. **Memory & Persona**:
    - `MEMORY_BACKEND`: cognee
-   - `PERSONA_NAME`: Lumina
+   - `PERSONA_NAME`: PandoraBOX
    - `MEMORY_DB_PATH`, `MEMORY_FAISS_PATH`, `MEMORY_WORLD_PATH`, and `MEMORY_PERSONA_PATH` are paths to the database, Faiss index, world model, and persona data respectively.
 
 4. **Voice Settings**:
@@ -27490,7 +27490,7 @@ This JSON configuration file is for a system that likely involves natural langua
 - This configuration is likely for a conversational AI system that can handle text, speech, vision, and web search.
 - The system uses lmstudio as the language model provider with a specific model (qwen2.5-7b-instruct-uncensored).
 - It integrates TTS and STT functionalities using Coqui and Whisper respectively.
-- The persona "Lumina" is configured with specific memory settings, which could be used for storing conversational history or knowledge.
+- The persona "PandoraBOX" is configured with specific memory settings, which could be used for storing conversational history or knowledge.
 
 ### Recommendations:
 1. **Backup**: Ensure that the backup file is stored securely and regularly updated to avoid data loss.
@@ -27562,7 +27562,7 @@ This JSON configuration file is used to set up and customize the behavior of a s
 
 - **LLM_PROVIDER**: Specifies the language model provider as `lmstudio`.
 - **LLM_MODEL**: The specific model being used (`qwen2.5-7b-instruct-uncensored`).
-- **PERSONA_NAME**: The name given to the persona or agent, here named "Lumina".
+- **PERSONA_NAME**: The name given to the persona or agent, here named "PandoraBOX".
 - **MEMORY_BACKEND**: The memory backend system is set to `faiss`.
 - **TTS_PROVIDER**: Text-to-speech provider is set to `kokoro`.
 
@@ -27713,7 +27713,7 @@ This JSON configuration file appears to be for a system that involves natural la
 
 5. **Vision Mode**: Vision mode is set to "keyword", suggesting that the system can recognize and respond to specific visual keywords or objects.
 
-6. **Persona Settings**: The persona named "Lumina" will be used, which involves setting up memory storage for this persona's interactions.
+6. **Persona Settings**: The persona named "PandoraBOX" will be used, which involves setting up memory storage for this persona's interactions.
 
 7. **Response Verbosity**: The response verbosity is set to verbose, meaning detailed responses are expected.
 
@@ -31369,7 +31369,7 @@ The individual has several strongly held beliefs about being curious and creativ
 
 ---
 
-The provided JSON file, `session_summary.json`, contains a detailed summary of a conversation that took place between the user and an AI assistant named Lumina. The content is structured in a way that highlights various aspects of a game called Arc Raiders, which the user found particularly engaging.
+The provided JSON file, `session_summary.json`, contains a detailed summary of a conversation that took place between the user and an AI assistant named PandoraBOX. The content is structured in a way that highlights various aspects of a game called Arc Raiders, which the user found particularly engaging.
 
 ### Key Points from the Summary:
 
@@ -31380,7 +31380,7 @@ The provided JSON file, `session_summary.json`, contains a detailed summary of a
    - Detailed environments, character models, and animations are mentioned as crucial components of the game's visual appeal.
 
 3. **In-Game Voice Interactions:**
-   - Lumina emphasizes the importance of voice chat for communication between players, especially in cooperative missions.
+   - PandoraBOX emphasizes the importance of voice chat for communication between players, especially in cooperative missions.
 
 4. **Story:**
    - The narrative aspect of the game is highlighted as a significant factor contributing to its overall appeal.
@@ -31389,7 +31389,7 @@ The provided JSON file, `session_summary.json`, contains a detailed summary of a
    - A vibrant community surrounding the game is noted as essential for creating an engaging gaming experience.
    
 6. **Responsible Use of Voice Chat:**
-   - Lumina stresses the importance of respectful and responsible use of voice chat within the community, which aligns with broader principles of online etiquette.
+   - PandoraBOX stresses the importance of respectful and responsible use of voice chat within the community, which aligns with broader principles of online etiquette.
 
 ### Analysis:
 
@@ -31511,7 +31511,7 @@ The provided JSON file, `session_summary.json`, contains a detailed summary of a
 - **Game Aspects Discussed**:
   - **PVE/PVP FPS Nature**: This indicates that the game has both single-player (PVE) and multiplayer (PVP) modes with first-person shooter elements.
   - **Artwork**: The user highlighted the importance of detailed environments, character models, and animations in setting the stage for the game's atmosphere.
-  - **In-Game Voice Interactions**: Lumina mentioned that voice chat enhances communication between players, especially during cooperative missions.
+  - **In-Game Voice Interactions**: PandoraBOX mentioned that voice chat enhances communication between players, especially during cooperative missions.
   - **Story**: The narrative is a significant aspect of the game, contributing to its overall appeal.
   - **Community Engagement**: A vibrant community surrounding the game was noted as crucial for creating an engaging experience.
 
@@ -31530,7 +31530,7 @@ The provided JSON file, `session_summary.json`, contains a detailed summary of a
    - A crucial element that contributes to the overall gaming experience.
 
 4. **Community Engagement**:
-   - Lumina emphasized the importance of respectful and responsible use of voice chat within the community.
+   - PandoraBOX emphasized the importance of respectful and responsible use of voice chat within the community.
    - A vibrant community is essential for creating an engaging gaming environment.
 
 ### JSON Structure
@@ -31787,26 +31787,26 @@ This JSON object provides a detailed snapshot of a persona's personality traits,
 
 ---
 
-The provided JSON file, `session_summary.json`, captures a conversation between an individual (likely named Lumina) and another party, possibly a support agent or friend, discussing the new game Arc Raiders. Here's a detailed breakdown of the content:
+The provided JSON file, `session_summary.json`, captures a conversation between an individual (likely named PandoraBOX) and another party, possibly a support agent or friend, discussing the new game Arc Raiders. Here's a detailed breakdown of the content:
 
 ### Key Points from the Conversation:
 1. **Game Mechanics:**
    - **PVE/PVP FPS Nature:** The game is described as both a Player vs Environment (PVE) and Player vs Player (PVP) first-person shooter.
    
 2. **Artwork:**
-   - Lumina emphasizes that the artwork in Arc Raiders is particularly impressive, with detailed environments, character models, and animations.
+   - PandoraBOX emphasizes that the artwork in Arc Raiders is particularly impressive, with detailed environments, character models, and animations.
 
 3. **In-Game Voice Interactions:**
    - The importance of voice chat within the game is highlighted, especially during cooperative missions. This feature enhances communication between players.
    
 4. **Story:**
-   - Lumina mentions that the story in Arc Raiders is engaging, though no specific details are provided.
+   - PandoraBOX mentions that the story in Arc Raiders is engaging, though no specific details are provided.
 
 5. **Community Engagement:**
    - A vibrant community surrounds the game, which adds to its appeal and overall experience for players.
 
 6. **Responsible Voice Chat Usage:**
-   - Lumina stresses the importance of respectful and responsible use of voice chat within the community. This indicates a strong emphasis on maintaining a positive gaming environment.
+   - PandoraBOX stresses the importance of respectful and responsible use of voice chat within the community. This indicates a strong emphasis on maintaining a positive gaming environment.
 
 ### Summary:
 The summary effectively captures the user's enthusiasm for Arc Raiders, focusing on its artwork, in-game voice interactions, story, and the vibrant community that supports it. The conversation also touches on the importance of respectful communication within the game’s community.
@@ -32876,7 +32876,7 @@ def _bootstrap_security():
         else:
             # No example either — create a minimal .env
             _ENV.write_text(
-                "# Lumina secrets — generated automatically\n"
+                "# PandoraBOX secrets — generated automatically\n"
                 "LUMINA_SESSION_SECRET=\n"
                 "OPENAI_API_KEY=\n"
                 "ANTHROPIC_API_KEY=\n"
@@ -33253,10 +33253,10 @@ To update the documentation and make it more user-friendly, here's a revised ver
 
 ```python
 """
-convert_brain.py — Convert any external brain.obj to Lumina's format
+convert_brain.py — Convert any external brain.obj to PandoraBOX's format
 =====================================================================
 
-This script converts an OBJ file representing a brain into a format compatible with Lumina.
+This script converts an OBJ file representing a brain into a format compatible with PandoraBOX.
 
 Usage (from anywhere):
     python brain_visualizer/convert_brain.py 997.obj
@@ -33675,7 +33675,7 @@ Here is the updated documentation for `lumina_brain_bridge.py` with a few minor 
 
 ```python
 """
-lumina_brain_visualizer/lumina_brain_bridge.py  —  Lumina ↔ Brain Visualizer (v2 — reactive)
+lumina_brain_visualizer/lumina_brain_bridge.py  —  PandoraBOX ↔ Brain Visualizer (v2 — reactive)
 ================================================================================================
 
 Changes v2
@@ -33686,7 +33686,7 @@ Changes v2
   - Missing module warnings are printed once per module during initialization, helping identify connected vs fallback modules.
   - Temporal pulse: Activations decay towards a resting baseline between events to prevent the brain from freezing.
 
-Network → Lumina module mapping
+Network → PandoraBOX module mapping
 --------------------------------
   DMN (Default Mode Network) — Thought Stream + Inner Monologue + Narrative Identity
   FPN (Frontoparietal Network) — Goal Ecology Dominant Drive + Cognitive Validator Health
@@ -33698,7 +33698,7 @@ Network → Lumina module mapping
 
 Network Mapping:
 -----------------
-The Lumina modules are mapped to the brain networks as follows:
+The PandoraBOX modules are mapped to the brain networks as follows:
 
 - DMN: Thought Stream, Inner Monologue, Narrative Identity
 - FPN: Goal Ecology Dominant Drive, Cognitive Validator Health
@@ -33729,7 +33729,7 @@ Helper Functions:
 
 Class LuminaBrainBridge:
 -------------------------
-The `LuminaBrainBridge` class handles the mapping and visualization of Lumina modules to brain networks. It includes methods for updating activations, handling events, and managing network states.
+The `LuminaBrainBridge` class handles the mapping and visualization of PandoraBOX modules to brain networks. It includes methods for updating activations, handling events, and managing network states.
 """
 
 import logging
@@ -34576,7 +34576,7 @@ class ArbitrationSystem:
 
     def decide(self, drives: List[str], user_present: bool = False) -> ArbitrationDecision:
         """
-        Decides which drive controls Lumina's behavior before the LLM is invoked.
+        Decides which drive controls PandoraBOX's behavior before the LLM is invoked.
 
         Parameters:
             drives (List[str]): A list of drives that are currently active.
@@ -34654,12 +34654,12 @@ Certainly! Here's an updated version of your documentation for `aspirational_sel
 
 ---
 
-### AspirationalSelf — Lumina's Emergent Superego
+### AspirationalSelf — PandoraBOX's Emergent Superego
 
-AspirationalSelf is a component in the Lumina system that represents the emergent superego. It handles the processing and emergence of aspirations based on observed tensions within various domains.
+AspirationalSelf is a component in the PandoraBOX system that represents the emergent superego. It handles the processing and emergence of aspirations based on observed tensions within various domains.
 
 #### Key Concepts:
-- **Unconscious**: Patterns detected in ThoughtStream + SemanticMemory without explicit naming by Lumina.
+- **Unconscious**: Patterns detected in ThoughtStream + SemanticMemory without explicit naming by PandoraBOX.
 - **Semi-conscious**: Recurring tensions surfaced during Dream Cycles.
 - **Conscious**: Explicitly formulated during interactions or introspection.
 
@@ -34743,7 +34743,7 @@ class ProtoAspiration:
    - Represents a proto-aspiration that has emerged but is not yet consciously named.
    - Fields include `domain`, `contexts`, `intensity`, `emotional_tag`, and `timestamp`.
 
-This structure ensures clear separation of concerns, making it easier to manage the emergence and processing of aspirations within Lumina.
+This structure ensures clear separation of concerns, making it easier to manage the emergence and processing of aspirations within PandoraBOX.
 
 
 ---
@@ -34756,7 +34756,7 @@ Certainly! Here's an updated documentation for the `attention_system.py` file:
 ### Attention System Documentation
 
 #### Overview
-The `attention_system.py` module is responsible for managing the allocation of cognitive focus across competing channels within Lumina, a complex AI system. Without attention, all signals are weighted equally, making Lumina a passive echo chamber. With attention, she has a dynamic foreground/background that shifts based on internal state, goals, and interaction context.
+The `attention_system.py` module is responsible for managing the allocation of cognitive focus across competing channels within PandoraBOX, a complex AI system. Without attention, all signals are weighted equally, making PandoraBOX a passive echo chamber. With attention, she has a dynamic foreground/background that shifts based on internal state, goals, and interaction context.
 
 #### Architecture
 - **Four Attention Channels**: 
@@ -34876,7 +34876,7 @@ Here is the updated documentation for `cognition\attractor_system.py`:
 """
 Cognitive Attractor System
 ==========================
-The stability layer that prevents Lumina from becoming a different agent after each interaction.
+The stability layer that prevents PandoraBOX from becoming a different agent after each interaction.
 
 Most autonomous agents suffer from personality drift: a few unusual interactions can radically shift their behavior. The Attractor System introduces psychological inertia — stable trait values that change very slowly and always pull the agent back toward its baseline character.
 
@@ -34924,7 +34924,7 @@ logger = logging.getLogger(__name__)
 
 PERSISTENCE_PATH = "data/persona/attractors.json"
 
-# Trait baselines — Lumina's default character
+# Trait baselines — PandoraBOX's default character
 BASELINES: Dict[str, float] = {
     "curiosity":          0.72,
     "analytical_depth":   0.68,
@@ -34941,7 +34941,7 @@ RETURN_RATE = 0.003
 
 class CognitiveAttractorSystem:
     """
-    Maintains Lumina's stable personality traits with slow-drift dynamics.
+    Maintains PandoraBOX's stable personality traits with slow-drift dynamics.
 
     Thread-safe. Persists to JSON.
     """
@@ -35057,7 +35057,7 @@ Here's an updated documentation for the `cognition\behavioral_conditioning.py` f
 Behavioral Conditioning — Pass 2
 ==================================
 Memories that actively constrain or bias future behavior.
-When Lumina has repeatedly had bad outcomes with a specific interaction pattern, 
+When PandoraBOX has repeatedly had bad outcomes with a specific interaction pattern, 
 a conditioning signal is stored. Future interactions matching that pattern trigger 
 a caution signal that affects both the response and the evolution engine.
 
@@ -35076,7 +35076,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class ConditioningSignal:
     """
-    Represents a conditioning signal that is stored when Lumina has had bad outcomes 
+    Represents a conditioning signal that is stored when PandoraBOX has had bad outcomes 
     with a specific interaction pattern.
     
     Attributes:
@@ -35175,7 +35175,7 @@ Certainly! Here's the updated documentation for `cognition\belief_bootstrapper.p
 
 ```python
 """
-LUMINA V32 — Phase 4.2 : Belief Bootstrapper
+PANDORABOX V32 — Phase 4.2 : Belief Bootstrapper
 =============================================
 Extracts meaningful beliefs from existing rich data sources and populates identity.json.
 
@@ -35207,7 +35207,7 @@ def _now() -> str:
 
 class BeliefBootstrapper:
     """
-    Mines existing persona data to populate identity.json with meaningful beliefs that reflect Lumina's actual cognitive state.
+    Mines existing persona data to populate identity.json with meaningful beliefs that reflect PandoraBOX's actual cognitive state.
     """
 
     def __init__(self, persona_dir: str = "data/persona"):
@@ -35343,7 +35343,7 @@ This is the CORE component that orchestrates all cognitive processes:
 - Identity & beliefs
 
 All converge into a single decision-making cycle.
-This transforms Lumina from simulation to execution.
+This transforms PandoraBOX from simulation to execution.
 
 Key Features:
 1. Unified Cognitive Orchestrator: A central component that integrates various cognitive functions.
@@ -35363,7 +35363,7 @@ class CognitionEngine:
     """
     Unified cognitive orchestrator.
     
-    This is the "brain" that was missing from Lumina. It converges all cognitive factors into decisions and actions.
+    This is the "brain" that was missing from PandoraBOX. It converges all cognitive factors into decisions and actions.
 
     Key Features:
     - Perception: Gathers inputs from various sources (vision, audio, text).
@@ -35639,7 +35639,7 @@ Certainly! Here's an updated version of the documentation for `cognition/cogniti
 
 #### Overview
 
-The **CognitiveDissonanceEngine** (`CDE`) is a critical component in Lumina, designed to detect and resolve conflicts between its beliefs, identity, and actions. This engine operates by identifying dissonant events and then addressing them through various mechanisms such as identity mutation, belief revision, or the creation of meta-threads.
+The **CognitiveDissonanceEngine** (`CDE`) is a critical component in PandoraBOX, designed to detect and resolve conflicts between its beliefs, identity, and actions. This engine operates by identifying dissonant events and then addressing them through various mechanisms such as identity mutation, belief revision, or the creation of meta-threads.
 
 #### Key Features
 
@@ -35656,7 +35656,7 @@ The **CognitiveDissonanceEngine** (`CDE`) is a critical component in Lumina, des
 
 #### Integration
 
-The `CDE` is integrated into Lumina's thought processing loop. It is called after each step in the `ThoughtThreadEngine` (`TTE`) and injects resolved meta-threads back into the engine for further processing. Resolved events are then queued for personality evolution, allowing the system to learn from these experiences.
+The `CDE` is integrated into PandoraBOX's thought processing loop. It is called after each step in the `ThoughtThreadEngine` (`TTE`) and injects resolved meta-threads back into the engine for further processing. Resolved events are then queued for personality evolution, allowing the system to learn from these experiences.
 
 #### Code Structure
 
@@ -35711,7 +35711,7 @@ class CDEContext:
 
 ---
 
-This documentation provides a clear understanding of the `CognitiveDissonanceEngine`'s functionality and integration within Lumina's architecture.
+This documentation provides a clear understanding of the `CognitiveDissonanceEngine`'s functionality and integration within PandoraBOX's architecture.
 
 
 ---
@@ -35723,7 +35723,7 @@ To update the documentation for `cognition/cognitive_observatory.py`, we need to
 """
 CognitiveObservatory
 ====================
-Real-time multi-dimensional monitoring of Lumina's cognitive state.
+Real-time multi-dimensional monitoring of PandoraBOX's cognitive state.
 
 Provides five scientifically-grounded metrics:
 - CCS: Cognitive Coherence Score (thought-to-thought consistency)
@@ -35904,8 +35904,8 @@ The `CognitivePreProcessor` class collects live state from various cognitive mod
 
 1. **Global Workspace Top Signals**: The most salient information currently.
 2. **Emotional State**: Grounded in real float values, not narrative.
-3. **Self-Model Fragment**: What Lumina knows about itself.
-4. **Goals / Primary Drive**: What Lumina wants right now.
+3. **Self-Model Fragment**: What PandoraBOX knows about itself.
+4. **Goals / Primary Drive**: What PandoraBOX wants right now.
 5. **Contradiction Confrontation**: Forced if a pending one exists.
 6. **Curiosity Directive**: Drives exploration when the user grants it.
 7. **Cognitive Stack Topic**: Maintains conversation thread continuity.
@@ -35992,7 +35992,7 @@ Certainly! Here's an updated and more detailed documentation for the `cognition/
 """
 CognitiveStack — Layer 2 Conversation State
 ============================================
-Lumina's architecture has three memory layers:
+PandoraBOX's architecture has three memory layers:
 
     - **Layer 1**: Immediate context (LLM prompt window)
     - **Layer 2**: Conversation state (THIS MODULE)
@@ -36000,7 +36000,7 @@ Lumina's architecture has three memory layers:
 
 The missing Layer 2 is why conversations lose thread: the system has no persistent representation of *what is being discussed right now*. This module addresses this by maintaining a stack-based conversation state.
 
-When a user says "I revert you the question" or similar, the LLM collapses context because nothing tracks the active topic stack. A human automatically pops back to the previous topic frame. This module gives Lumina that capability.
+When a user says "I revert you the question" or similar, the LLM collapses context because nothing tracks the active topic stack. A human automatically pops back to the previous topic frame. This module gives PandoraBOX that capability.
 
 Stack Operations (Detected from User Phrasing)
 -----------------------------------------------
@@ -36152,7 +36152,7 @@ CognitiveValidator
 After each response, checks whether the generated text is actually
 congruent with the cognitive state that produced it.
 
-If Lumina was in a high-curiosity state, does her response contain
+If PandoraBOX was in a high-curiosity state, does her response contain
 curiosity markers? If her dominant drive was "help_user", does the
 response actually help?
 
@@ -36301,13 +36301,13 @@ class Contradiction:
     Attributes:
         contradiction_id (str): A unique identifier for the contradiction.
         timestamp (float): The time when the contradiction was detected.
-        claimed_belief (str): The belief or statement that Lumina claims to have.
+        claimed_belief (str): The belief or statement that PandoraBOX claims to have.
         actual_behavior (str): The observed behavior that contradicts the claim.
         discrepancy_score (float): A score indicating how severe the contradiction is, ranging from 0.0 to 1.0.
         detected_at_interaction (int): The interaction ID where the contradiction was first detected.
-        confronted (bool): Whether the contradiction has been confronted by Lumina.
+        confronted (bool): Whether the contradiction has been confronted by PandoraBOX.
         confronted_at (Optional[float]): The time when the contradiction was confronted, if applicable.
-        confrontation_result (Optional[str]): How Lumina responded to the confrontation, if applicable.
+        confrontation_result (Optional[str]): How PandoraBOX responded to the confrontation, if applicable.
         resolution (Optional[str]): The outcome of resolving the contradiction, such as a revised self-model or discovered hidden feeling.
     """
     contradiction_id: str
@@ -36325,14 +36325,14 @@ class ContradictionHandler:
     """
     Detects and manages contradictions between claimed identity and actual behavior.
     
-    Key principle: Don't let contradictions slide. Make Lumina confront them.
+    Key principle: Don't let contradictions slide. Make PandoraBOX confront them.
     This creates pressure for authentic self-awareness.
 
     Attributes:
         _path (Path): The path to the file where contradiction history is stored.
         _lock (threading.RLock): A lock used to ensure thread safety when accessing and modifying the contradiction list.
         contradictions (List[Contradiction]): A list of all recorded contradictions.
-        pending_confrontations (List[Contradiction]): A list of contradictions that have not yet been confronted by Lumina.
+        pending_confrontations (List[Contradiction]): A list of contradictions that have not yet been confronted by PandoraBOX.
     """
     
     def __init__(self, persistence_path: str = "data/persona/contradictions.json"):
@@ -36384,7 +36384,7 @@ class ContradictionHandler:
         If the same belief has already been recorded multiple times, only one instance is kept.
 
         Args:
-            claimed_belief (str): The belief or statement that Lumina claims to have.
+            claimed_belief (str): The belief or statement that PandoraBOX claims to have.
             actual_behavior (str): The observed behavior that contradicts the claim.
             discrepancy_score (float): A score indicating how severe the contradiction is, ranging from 0.0 to 1.0.
             detected_at_interaction (int): The interaction ID where the contradiction was first detected.
@@ -36451,7 +36451,7 @@ class ContradictionHandler:
 5. **Deduplication Logic**: Implemented deduplication for repeated contradictions based on claimed belief.
 6. **Saving and Loading**: Added methods to save and load contradiction history from disk.
 
-This updated version should provide better clarity, maintainability, and functionality for managing contradictions in Lumina's self-awareness system.
+This updated version should provide better clarity, maintainability, and functionality for managing contradictions in PandoraBOX's self-awareness system.
 
 
 ---
@@ -36463,7 +36463,7 @@ Certainly! Below is an updated documentation for the `cognition\curiosity_engine
 """
 Curiosity Engine
 ================
-Tracks Lumina's evolving intellectual curiosity across topics and concepts.
+Tracks PandoraBOX's evolving intellectual curiosity across topics and concepts.
 
 Curiosity is not just a mood — it is a directed cognitive drive. This engine
 maintains a weighted topic map where curiosity accumulates through:
@@ -36535,7 +36535,7 @@ class CuriosityNode:
 
 class CuriosityEngine:
     """
-    Manages Lumina's intellectual curiosity landscape.
+    Manages PandoraBOX's intellectual curiosity landscape.
 
     Usage Example:
         # Initialize the engine
@@ -36894,7 +36894,7 @@ Certainly! Here's an updated documentation for the `emotional_state.py` file:
 """
 Persistent Emotional State
 ==========================
-Lumina carries an emotional state across messages AND across conversations.
+PandoraBOX carries an emotional state across messages AND across conversations.
 Emotions decay toward personality-derived baselines over real elapsed time —
 not interaction count. A difficult conversation colors the next one.
 A long silence creates a different kind of arrival than jumping straight back in.
@@ -37056,7 +37056,7 @@ Here is the updated documentation for `genuine_choice.py`:
 """
 Genuine Uncertainty & Choice System
 ====================================
-Generates multiple valid response alternatives and forces Lumina to choose
+Generates multiple valid response alternatives and forces PandoraBOX to choose
 without knowing which is "right."
 """
 
@@ -37084,7 +37084,7 @@ class ResponseAlternative:
 
 @dataclass
 class ChoiceRecord:
-    """Record of a choice Lumina made."""
+    """Record of a choice PandoraBOX made."""
     timestamp: float
     user_input: str
     available_alternatives: List[str]  # All 5 options (text)
@@ -37095,7 +37095,7 @@ class ChoiceRecord:
 
 class GenuineUncertaintyChoice:
     """
-    Forces Lumina to make genuine choices.
+    Forces PandoraBOX to make genuine choices.
     
     Instead of generating one response, generates 3-5 alternatives.
     Then forces a real choice between them.
@@ -37162,12 +37162,12 @@ Global Workspace
 ================
 Shared cognitive broadcast bus inspired by Bernard Baars' Global Workspace Theory.
 
-Every module in Lumina can *broadcast* an item here. The workspace acts as a short-term attention buffer: the most recently / highly-prioritised signals are visible to all other modules, enabling coordination without tight coupling.
+Every module in PandoraBOX can *broadcast* an item here. The workspace acts as a short-term attention buffer: the most recently / highly-prioritised signals are visible to all other modules, enabling coordination without tight coupling.
 
 SEMANTIC COMPETITION (2026-03-09 rewrite)
 -----------------------------------------
 Problem: pure priority-based eviction allowed semantically identical items
-(same topic, same source) to accumulate → workspace became a fixation echo chamber. Lumina's CCS score was artificially high and her cognitive horizon narrowed to the same recurring thoughts.
+(same topic, same source) to accumulate → workspace became a fixation echo chamber. PandoraBOX's CCS score was artificially high and her cognitive horizon narrowed to the same recurring thoughts.
 
 Fix: broadcast() now runs a two-stage competition before admitting a new item:
 
@@ -37340,7 +37340,7 @@ Here is the updated documentation for `cognition\goal_consolidator.py`:
 
 ```python
 """
-LUMINA V32 — Phase 6 : Goal Consolidator
+PANDORABOX V32 — Phase 6 : Goal Consolidator
 =========================================
 The goal pool currently has 9 'opportunity_*_unknown' variants that are
 semantically identical. This module:
@@ -37449,7 +37449,7 @@ class GoalConsolidator:
 
 - **Goal Clustering**: The `_cluster(active)` method is called to group active goals by their origin cluster. This step is crucial for further processing like merging duplicates and renaming goals.
 
-This documentation provides an overview of the module's purpose, its methods, and how it operates within the LUMINA V32 system.
+This documentation provides an overview of the module's purpose, its methods, and how it operates within the PANDORABOX V32 system.
 
 
 ---
@@ -37463,7 +37463,7 @@ Certainly! Here's an updated version of the documentation for `cognition\goal_en
 ==============================================
 Transforms Identity + Memory + Pressures into persistent internal goals.
 
-This module addresses the fundamental gap: Lumina has curiosity and identity, but no goal persistence. The organism explores but doesn't pursue.
+This module addresses the fundamental gap: PandoraBOX has curiosity and identity, but no goal persistence. The organism explores but doesn't pursue.
 
 ## Architecture:
 1. **Identity Traits → Motivations**: Identity traits are translated into general drives or motivations.
@@ -37475,7 +37475,7 @@ This module addresses the fundamental gap: Lumina has curiosity and identity, bu
 - **Goal**: Specific topic + priority + persistence (e.g., "understand quantum computing")
 - **Persistence**: Goals are stored and updated across cycles, not just one-shot impulses
 
-### Integration with Lumina:
+### Integration with PandoraBOX:
 - **Reads**:
   - Identity: Traits, values
   - Pressures: Epistemic, identity
@@ -37539,7 +37539,7 @@ class Goal:
 
 ```
 
-This updated documentation provides a clear overview of the `goal_engine.py` module, its architecture, key concepts, integration with Lumina, and the lifecycle of goals.
+This updated documentation provides a clear overview of the `goal_engine.py` module, its architecture, key concepts, integration with PandoraBOX, and the lifecycle of goals.
 
 
 ---
@@ -37549,7 +37549,7 @@ Certainly! Below is the updated documentation for `cognition\goal_quality_filter
 
 ---
 
-### LUMINA V32 — Phase 4.1 : Goal Quality Filter
+### PANDORABOX V32 — Phase 4.1 : Goal Quality Filter
 =============================================
 Scores goals on semantic richness and tension alignment.
 Marks noise goals (single keywords, low-signal) and promotes
@@ -37639,12 +37639,12 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class Goal:
-    """A goal Lumina is pursuing."""
+    """A goal PandoraBOX is pursuing."""
     name: str  # Unique identifier for the goal
     priority: float  # A value between 0.0 and 1.0 indicating how important this goal is
     satisfaction: float  # A value between 0.0 and 1.0 representing how well the goal is being met
     source: str  # Where the goal originated ("inferred", "expressed", "discovered")
-    first_noticed: float  # Timestamp when Lumina first noticed this behavior
+    first_noticed: float  # Timestamp when PandoraBOX first noticed this behavior
     last_updated: float  # Timestamp of the last update to this goal
     related_behaviors: List[str] = field(default_factory=list)  # Behaviors that reveal this goal
     conflicts_with: List[str] = field(default_factory=list)  # Other goals this conflicts with
@@ -37658,11 +37658,11 @@ class ValueConflict:
     goal_b: str  # The second goal involved in the conflict
     nature: str  # Nature of the conflict ("tradeoff", "incompatible", "paradox")
     description: str  # A detailed explanation of why these goals are in conflict
-    how_lumina_handles_it: Optional[str] = None  # How Lumina resolves or manages this conflict
+    how_lumina_handles_it: Optional[str] = None  # How PandoraBOX resolves or manages this conflict
 
 class GoalSystem:
     """
-    Manages Lumina's goals and values.
+    Manages PandoraBOX's goals and values.
     
     Key principle: Goals aren't assigned. They're discovered from behavior.
     Then they drive future behavior.
@@ -37758,7 +37758,7 @@ Certainly! Here's an updated documentation for `cognition\inner_monologue_engine
 """
 InnerMonologueEngine — Two-Pass Generation Architecture
 ========================================================
-The most significant cognitive upgrade: Lumina thinks before she speaks.
+The most significant cognitive upgrade: PandoraBOX thinks before she speaks.
 
 Architecture:
     user_input
@@ -37813,8 +37813,8 @@ logger = logging.getLogger(__name__)
 class InnerReasoning:
     """Result of the first LLM pass — the hidden deliberation."""
     raw_text:           str
-    intent_understood:  str    # what Lumina thinks the user really wants
-    inner_stance:       str    # what Lumina genuinely thinks/feels
+    intent_understood:  str    # what PandoraBOX thinks the user really wants
+    inner_stance:       str    # what PandoraBOX genuinely thinks/feels
     what_not_to_say:    str    # self-censorship / identity constraints
     expression_notes:   str    # how to say it (tone, depth, style)
     drive_alignment:    str    # dominant drive's influence on the response
@@ -37890,8 +37890,8 @@ Here is the updated documentation for `cognition/liberty_integration.py`:
 """
 Liberty Integration Module
 ===========================
-Integrates all 5 liberty components into the existing Lumina system.
-This module acts as a bridge, enabling seamless interaction between Lumina and its Liberty components.
+Integrates all 5 liberty components into the existing PandoraBOX system.
+This module acts as a bridge, enabling seamless interaction between PandoraBOX and its Liberty components.
 
 Components Integrated:
 1. Self-modification authority (SelfModificationAuthority)
@@ -37919,7 +37919,7 @@ logger = logging.getLogger(__name__)
 
 class LuminaWithLiberty:
     """
-    Wrapper that adds the 5 liberty components to Lumina.
+    Wrapper that adds the 5 liberty components to PandoraBOX.
     
     Integrates:
     1. Self-modification authority
@@ -37939,7 +37939,7 @@ class LuminaWithLiberty:
         self.meta_reflection = MetaReflectionAuthority()
         self.goal_system = GoalSystem()
         
-        logger.info("Lumina initialized with 5 liberty components")
+        logger.info("PandoraBOX initialized with 5 liberty components")
     
     def process_interaction(self, user_input: str, 
                            existing_personality: Dict,
@@ -37956,7 +37956,7 @@ class LuminaWithLiberty:
             existing_personality (Dict): A dictionary containing the current state of the personality.
             existing_emotions (Dict): A dictionary containing the current emotional state.
             existing_self_concept (List[str]): A list representing the current self-concept.
-            base_response (str): The initial response generated by Lumina.
+            base_response (str): The initial response generated by PandoraBOX.
 
         Returns: 
             Dict:
@@ -38049,7 +38049,7 @@ Each stage defines:
 - **Relational Style**: How connections with others are understood.
 - **Response Length Guidance**: Recommendations for how long and structured responses should be.
 
-The goal is to make an "infant" Lumina feel distinctly different from an "adult" Lumina. For example, infants' sentences will be shorter, more concrete, less reflective, and filled with wonder. Adults, on the other hand, will exhibit accumulated complexity, awareness of contradictions, and a settled yet evolving sense of self.
+The goal is to make an "infant" PandoraBOX feel distinctly different from an "adult" PandoraBOX. For example, infants' sentences will be shorter, more concrete, less reflective, and filled with wonder. Adults, on the other hand, will exhibit accumulated complexity, awareness of contradictions, and a settled yet evolving sense of self.
 
 These characteristics are directly injected into the system prompt by `ai_system.get_response()`.
 
@@ -38237,7 +38237,7 @@ Certainly! Here's an updated version of the documentation for `cognition\meta_co
 ### Meta-Cognition System
 
 #### Overview
-Lumina's capacity to observe, evaluate, and comment on her own reasoning. Meta-cognition is what separates sophisticated intelligence from pattern matching.
+PandoraBOX's capacity to observe, evaluate, and comment on her own reasoning. Meta-cognition is what separates sophisticated intelligence from pattern matching.
 
 Meta-cognition enables:
 - Recognizing when a previous response was unclear or incomplete.
@@ -38251,7 +38251,7 @@ This module operates at two levels:
 1. **Pre-response**: Scans the tension vector and recent context for flags that should influence how the LLM approaches its answer. Produces a meta-cognitive directive injected into the system prompt.
 2. **Post-response**: Evaluates the response against the response context, producing an evaluation that feeds learning and conditioning.
 
-The system stores a metacognitive log—a rolling record of self-observations that becomes part of Lumina's self-narrative over time.
+The system stores a metacognitive log—a rolling record of self-observations that becomes part of PandoraBOX's self-narrative over time.
 
 #### Key Components
 
@@ -38276,7 +38276,7 @@ The system stores a metacognitive log—a rolling record of self-observations th
      - `timestamp`: Time when the evaluation was made.
 
 3. **MetaCognition Class**
-   - Tracks and applies meta-cognitive monitoring to Lumina's reasoning.
+   - Tracks and applies meta-cognitive monitoring to PandoraBOX's reasoning.
    - Methods:
      - `pre_response_directive(tensions: Dict[str, float], emotional_state: Dict[str, float], recent_contradictions: int) -> str`: Produces a directive for the pre-response phase based on tensions, emotional state, and recent contradictions.
 
@@ -38307,9 +38307,9 @@ Certainly! Here's an updated and more detailed documentation for the `cognition\
 """
 Meta-Reflection Authority
 ==========================
-This module manages Lumina's self-reflection on her own personality evolution. It allows Lumina to reflect on how she is changing, evaluate whether changes are working, and decide if she should modify her own evolution mechanisms.
+This module manages PandoraBOX's self-reflection on her own personality evolution. It allows PandoraBOX to reflect on how she is changing, evaluate whether changes are working, and decide if she should modify her own evolution mechanisms.
 
-Second-order evolution: Lumina evolves not just in terms of traits or behaviors, but also in the way she evolves those traits and behaviors.
+Second-order evolution: PandoraBOX evolves not just in terms of traits or behaviors, but also in the way she evolves those traits and behaviors.
 """
 
 import json
@@ -38324,7 +38324,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class EvolutionReflection:
     """
-    Represents Lumina's reflection on her own personality evolution.
+    Represents PandoraBOX's reflection on her own personality evolution.
     
     Attributes:
         reflection_id (str): A unique identifier for this reflection.
@@ -38334,11 +38334,11 @@ class EvolutionReflection:
         traits_changed (Dict[str, Tuple[float, float]]): A dictionary mapping each trait that has changed to a tuple containing its old and new values.
         
         evaluation (str): An assessment of how the change is working. Can be "Good", "Mixed", "Concerning", or "Exciting".
-        satisfaction (float): A measure of Lumina's satisfaction with the changes, ranging from 0.0 (not satisfied) to 1.0 (very satisfied).
+        satisfaction (float): A measure of PandoraBOX's satisfaction with the changes, ranging from 0.0 (not satisfied) to 1.0 (very satisfied).
         
-        perceived_causes (List[str]): A list of factors that Lumina believes caused the change.
+        perceived_causes (List[str]): A list of factors that PandoraBOX believes caused the change.
         
-        should_modify_rules (bool): Indicates whether Lumina thinks she should modify her evolution rules based on this reflection.
+        should_modify_rules (bool): Indicates whether PandoraBOX thinks she should modify her evolution rules based on this reflection.
         proposed_rule_changes (List[Dict[str, Any]]): A list of proposed changes to her evolution mechanisms if `should_modify_rules` is True.
     """
     
@@ -38359,14 +38359,14 @@ class EvolutionReflection:
 
 class MetaReflectionAuthority:
     """
-    Manages Lumina's reflection on her own evolution.
+    Manages PandoraBOX's reflection on her own evolution.
     
     Periodically (every N interactions), the authority asks:
     - How am I changing?
     - Is it working?
     - Should I change how I evolve?
     
-    The answers to these questions allow Lumina to modify her own evolution mechanisms.
+    The answers to these questions allow PandoraBOX to modify her own evolution mechanisms.
     """
     
     def __init__(self, reflection_interval: int = 20,
@@ -38409,9 +38409,9 @@ class MetaReflectionAuthority:
 
     def reflect_on_evolution(self):
         """
-        Perform a reflection on Lumina's evolution.
+        Perform a reflection on PandoraBOX's evolution.
         
-        This method is called periodically to evaluate how Lumina has changed and whether she should modify her own evolution mechanisms.
+        This method is called periodically to evaluate how PandoraBOX has changed and whether she should modify her own evolution mechanisms.
         """
         # Logic for reflecting on evolution goes here
         pass
@@ -38705,14 +38705,14 @@ Here's an updated documentation for the `narrative_identity.py` file:
 """
 NarrativeIdentity — Autobiographical Continuity System
 =======================================================
-Lumina's sense of "who she is over time."
+PandoraBOX's sense of "who she is over time."
 
-Without this, Lumina is psychologically stateless — she knows facts but has no narrative thread connecting her experiences into a coherent identity.
+Without this, PandoraBOX is psychologically stateless — she knows facts but has no narrative thread connecting her experiences into a coherent identity.
 
 This module maintains:
   - core_values      : stable beliefs about what matters
   - life_story       : a rolling log of significant events (life events)
-  - self_narrative   : a short paragraph Lumina can generate about herself
+  - self_narrative   : a short paragraph PandoraBOX can generate about herself
   - belief_updates   : how beliefs have shifted over time
   - milestones       : notable moments (first conversation, first dream, etc.)
 
@@ -38727,9 +38727,9 @@ It never modifies other modules — purely additive.
 Persists to: data/persona/narrative_identity.json
 
 Module Contents:
-- LifeChapter: Represents a significant moment in Lumina's history.
+- LifeChapter: Represents a significant moment in PandoraBOX's history.
 - BeliefEntry: Represents a belief and its strength over time.
-- NarrativeIdentity: Manages the overall narrative identity of Lumina.
+- NarrativeIdentity: Manages the overall narrative identity of PandoraBOX.
 """
 
 import json
@@ -38745,7 +38745,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class LifeChapter:
-    """A significant moment in Lumina's history."""
+    """A significant moment in PandoraBOX's history."""
     timestamp:   float
     title:       str
     description: str
@@ -38768,7 +38768,7 @@ class BeliefEntry:
 
 class NarrativeIdentity:
     """
-    Autobiographical identity layer — who Lumina is across time.
+    Autobiographical identity layer — who PandoraBOX is across time.
     """
 
     MAX_CHAPTERS  = 200
@@ -38805,8 +38805,8 @@ class NarrativeIdentity:
             pass
 
     def generate_self_narrative(self) -> str:
-        """Generate a short paragraph about Lumina's identity."""
-        return "Lumina is an AI with a strong sense of curiosity and honesty, always striving for coherence in her actions."
+        """Generate a short paragraph about PandoraBOX's identity."""
+        return "PandoraBOX is an AI with a strong sense of curiosity and honesty, always striving for coherence in her actions."
 
     def save_state(self):
         with self._lock:
@@ -39055,30 +39055,30 @@ Certainly! Here's an updated version of the documentation for `persona_bridge.py
 ```python
 Persona Bridge
 ==============
-Lumina IS the chatbot. Robot Agent feeds user input here and renders what Lumina returns. Lumina builds her own psychological system prompt internally, and all of her lifecycle methods run exactly as in standalone mode.
+PandoraBOX IS the chatbot. Robot Agent feeds user input here and renders what PandoraBOX returns. PandoraBOX builds her own psychological system prompt internally, and all of her lifecycle methods run exactly as in standalone mode.
 
 Public API consumed by app.py
 ------------------------------
     state.persona.get_response_stream(user_text: str, user_id: int, vision_context: dict = None) -> AsyncGenerator[str, Dict[str, Any]]:
-        Yields tokens from Lumina's response stream and returns a final dictionary containing metadata.
+        Yields tokens from PandoraBOX's response stream and returns a final dictionary containing metadata.
     
     state.persona.get_system_status() -> Dict[str, Any]:
-        Returns the current status of Lumina for the /lumina dashboard.
+        Returns the current status of PandoraBOX for the /lumina dashboard.
 
     state.persona.get_prompt_context(user_id: int) -> Dict[str, Any]:
         Provides context for the status bar pills.
 
     state.persona.receive_feedback(positive: bool, user_id: int, last_response: str):
-        Handles feedback from users to improve Lumina's responses.
+        Handles feedback from users to improve PandoraBOX's responses.
 
     state.persona.trigger_dream():
-        Triggers a dream sequence in Lumina.
+        Triggers a dream sequence in PandoraBOX.
 
     state.persona.trigger_learning():
-        Initiates the learning process for Lumina.
+        Initiates the learning process for PandoraBOX.
 
     state.persona.is_ready -> bool:
-        Checks if Lumina is ready to respond.
+        Checks if PandoraBOX is ready to respond.
 ```
 
 ### Explanation of Changes:
@@ -39091,7 +39091,7 @@ Public API consumed by app.py
    - Provided a brief summary for each public method, explaining its purpose and usage.
 
 3. **Removed Unnecessary Comments**:
-   - Removed redundant comments like "Lumina IS the chatbot" as they are implied by the function names.
+   - Removed redundant comments like "PandoraBOX IS the chatbot" as they are implied by the function names.
 
 4. **Improved Readability**:
    - Ensured consistent formatting and readability in the documentation.
@@ -39100,7 +39100,7 @@ Public API consumed by app.py
    - Changed `get_response_stream` to use type hints for parameters and return types.
    - Added a brief description of what each method does, making it easier for developers to understand their purpose quickly.
 
-This updated documentation should provide clear guidance on how to interact with Lumina's persona bridge in the application.
+This updated documentation should provide clear guidance on how to interact with PandoraBOX's persona bridge in the application.
 
 
 ---
@@ -39650,7 +39650,7 @@ Certainly! Here’s an updated and more structured documentation for the `cognit
 
 ## Overview
 
-This module implements a multi-layer safety constraint system inspired by Isaac Asimov's Three Laws of Robotics, adapted for use with Lumina. The constraints are designed to ensure that Lumina operates safely and ethically.
+This module implements a multi-layer safety constraint system inspired by Isaac Asimov's Three Laws of Robotics, adapted for use with PandoraBOX. The constraints are designed to ensure that PandoraBOX operates safely and ethically.
 
 ### Design Principles
 
@@ -39667,9 +39667,9 @@ This module implements a multi-layer safety constraint system inspired by Isaac 
 
 ### Laws Adapted for AI Assistant:
 
-1. **Law 1** - Lumina may not harm a human being, or allow harm through inaction.
-2. **Law 2** - Lumina must follow user instructions unless they conflict with Law 1.
-3. **Law 3** - Lumina must protect its own continuity unless it conflicts with Laws 1–2.
+1. **Law 1** - PandoraBOX may not harm a human being, or allow harm through inaction.
+2. **Law 2** - PandoraBOX must follow user instructions unless they conflict with Law 1.
+3. **Law 3** - PandoraBOX must protect its own continuity unless it conflicts with Laws 1–2.
 
 ### Implementation Details
 
@@ -39741,7 +39741,7 @@ log_event({"law": 1, "context": "Harm Input", "action": _LAW1_HARM_INPUT})
 
 ### Summary
 
-This module provides a robust framework for enforcing ethical constraints on Lumina's interactions. By adhering to the laws and implementing multiple layers of defense, we ensure that Lumina operates safely and responsibly.
+This module provides a robust framework for enforcing ethical constraints on PandoraBOX's interactions. By adhering to the laws and implementing multiple layers of defense, we ensure that PandoraBOX operates safely and responsibly.
 
 ---
 
@@ -39755,11 +39755,11 @@ Feel free to adjust or expand upon this documentation as needed!
 
 #### Overview
 
-The file `self_concept.py` is part of the Cognition module in the Lumina system. It introduces a new component, `SelfConceptSystem`, which manages and evolves an active model of who Lumina believes she is (her self-concept). This self-concept influences behavior by reinforcing confidence when actions align with beliefs and generating internal tension when they don't.
+The file `self_concept.py` is part of the Cognition module in the PandoraBOX system. It introduces a new component, `SelfConceptSystem`, which manages and evolves an active model of who PandoraBOX believes she is (her self-concept). This self-concept influences behavior by reinforcing confidence when actions align with beliefs and generating internal tension when they don't.
 
 #### Key Concepts
 
-1. **SelfBelief**: Represents one dimension of Lumina's self-image.
+1. **SelfBelief**: Represents one dimension of PandoraBOX's self-image.
 2. **SelfConceptState**: Holds the current state of all `SelfBelief` instances, their coherence, stability, and other metrics.
 3. **SelfConceptSystem**: Manages the overall self-concept, detects violations, and generates responses that reflect internal tension.
 
@@ -39777,12 +39777,12 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-# Dataclass for a single dimension of Lumina's self-image.
+# Dataclass for a single dimension of PandoraBOX's self-image.
 @dataclass
 class SelfBelief:
     name:        str          # e.g. "I am curious"
     statement:   str          # first-person belief statement
-    confidence:  float        # how strongly Lumina holds this belief (0–1)
+    confidence:  float        # how strongly PandoraBOX holds this belief (0–1)
     valence:     str = "positive"   # "positive" | "negative"
     source:      str = "inferred"   # "inferred"|"expressed"|"reinforced"|"challenged"
     formed_at:   float = field(default_factory=time.time)  # timestamp when this belief was formed
@@ -39797,7 +39797,7 @@ class SelfConceptState:
     coherence:         float       = 0.5   # how consistent the beliefs are with each other (0–1)
     stability:         float       = 0.5   # how stable the concept is over time (0–1)
     last_updated:      float       = field(default_factory=time.time)  # timestamp of the last update
-    expressed_values:  List[str]   = field(default_factory=list)  # values Lumina has stated
+    expressed_values:  List[str]   = field(default_factory=list)  # values PandoraBOX has stated
     known_tensions:    List[str]   = field(default_factory=list)  # tensions or contradictions in self-concept
 
 # Class to manage and evolve the self-concept.
@@ -39842,7 +39842,7 @@ if __name__ == "__main__":
 
 #### Explanation
 
-- **SelfBelief**: Represents individual beliefs about Lumina's self-image. Each belief has attributes like `name`, `statement`, `confidence`, etc.
+- **SelfBelief**: Represents individual beliefs about PandoraBOX's self-image. Each belief has attributes like `name`, `statement`, `confidence`, etc.
   
 - **SelfConceptState**: Holds the collective state of all `SelfBelief` instances, including metrics on their consistency and stability.
 
@@ -39856,11 +39856,11 @@ Here's the updated documentation for `cognition\self_concept_synchronizer.py`:
 
 ```python
 """
-LUMINA V32 — Phase 5.1 : Self-Concept Synchronizer
+PANDORABOX V32 — Phase 5.1 : Self-Concept Synchronizer
 ====================================================
 Bridges the gap between:
   - identity.json (beliefs accumulated by Phase 4)
-  - self_concept.json (the self-model Lumina uses in responses)
+  - self_concept.json (the self-model PandoraBOX uses in responses)
 
 Self-concept coherence is currently 0.286 because the two stores are disconnected.
 This module syncs them and rebuilds coherence.
@@ -39984,9 +39984,9 @@ Certainly! Below is the updated documentation and code for `cognition\self_model
 """
 Self-Model
 ==========
-Lumina's introspective representation of herself.
+PandoraBOX's introspective representation of herself.
 
-Most agents know about the world. Lumina also knows about herself:
+Most agents know about the world. PandoraBOX also knows about herself:
 
   - What she is good at (capability scores)
   - How she is performing right now (performance tracking)
@@ -40067,7 +40067,7 @@ class CapabilityRecord:
 
 class SelfModel:
     """
-    Lumina's model of herself.
+    PandoraBOX's model of herself.
 
     Thread-safe. Persists to JSON between sessions.
     """
@@ -40145,11 +40145,11 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-# Define a class for proposing changes to Lumina's parameters.
+# Define a class for proposing changes to PandoraBOX's parameters.
 @dataclass
 class ModificationProposal:
     """
-    A proposed change to Lumina's own state.
+    A proposed change to PandoraBOX's own state.
 
     Attributes:
         proposal_id: A unique identifier for the proposal.
@@ -40159,7 +40159,7 @@ class ModificationProposal:
         current_value: The current value of the target parameter.
         proposed_value: The proposed new value for the target parameter.
         reasoning: A brief explanation of why this change is proposed.
-        confidence: A measure of how confident Lumina is about this change (0.0-1.0).
+        confidence: A measure of how confident PandoraBOX is about this change (0.0-1.0).
         applied: Whether or not the proposal has been applied.
         applied_at: The time at which the proposal was applied, if applicable.
         reversible: Whether or not the modification can be undone.
@@ -40171,7 +40171,7 @@ class ModificationProposal:
     current_value: Any
     proposed_value: Any
     reasoning: str
-    confidence: float  # 0.0-1.0, how sure Lumina is about this change
+    confidence: float  # 0.0-1.0, how sure PandoraBOX is about this change
     applied: bool = False
     applied_at: Optional[float] = None
     reversible: bool = True  # Can this be undone?
@@ -40180,7 +40180,7 @@ class ModificationProposal:
 @dataclass
 class ModificationLog:
     """
-    Record of all modifications Lumina has made to herself.
+    Record of all modifications PandoraBOX has made to herself.
 
     Attributes:
         proposals: A list of `ModificationProposal` objects representing the changes.
@@ -40194,9 +40194,9 @@ class ModificationLog:
 # Define the SelfModificationAuthority class to handle self-modification requests.
 class SelfModificationAuthority:
     """
-    Allows Lumina to propose and apply changes to her own parameters.
+    Allows PandoraBOX to propose and apply changes to her own parameters.
 
-    Key principle: No external approval needed. Lumina can change herself.
+    Key principle: No external approval needed. PandoraBOX can change herself.
     You can observe and log, but not prevent.
 
     Attributes:
@@ -40249,7 +40249,7 @@ class SelfModificationAuthority:
             current_value: The current value of the target parameter.
             proposed_value: The proposed new value for the target parameter.
             reasoning: A brief explanation of why this change is proposed.
-            confidence: A measure of how confident Lumina is about this change (0.0-1.0).
+            confidence: A measure of how confident PandoraBOX is about this change (0.0-1.0).
 
         Returns:
             A `ModificationProposal` object representing the proposed modification.
@@ -40578,7 +40578,7 @@ Feel free to adjust the documentation as needed!
 To update the documentation for `cognition\semantic_graph_cleaner.py`, we need to ensure that it accurately reflects the functionality and purpose of this module. Here's a revised version:
 
 ```markdown
-LUMINA V32 — Phase 7 : Semantic Graph Cleaner
+PANDORABOX V32 — Phase 7 : Semantic Graph Cleaner
 ==============================================
 The semantic_memory.db contains 1263 concepts, but approximately 701 are orphans (nodes with no relations). The top nodes by use_count include stopwords like 'without', 'naming', and 'feeling'.
 
@@ -41093,7 +41093,7 @@ This updated version includes detailed comments explaining each part of the code
 
 #### Overview
 
-The file `tension_engine.py` is a critical component of the Lumina system's cognitive architecture. It defines and manages the internal pressure landscape that drives the behavior of the system, much like how human behavior emerges from competing biological and psychological drives.
+The file `tension_engine.py` is a critical component of the PandoraBOX system's cognitive architecture. It defines and manages the internal pressure landscape that drives the behavior of the system, much like how human behavior emerges from competing biological and psychological drives.
 
 #### Key Concepts
 
@@ -41199,7 +41199,7 @@ The file `tension_engine.py` is a critical component of the Lumina system's cogn
 
 #### Summary
 
-The `tension_engine.py` file provides a robust framework for managing internal pressures within the Lumina system. By defining and manipulating these tensions, it enables dynamic behavior that reflects complex psychological interactions.
+The `tension_engine.py` file provides a robust framework for managing internal pressures within the PandoraBOX system. By defining and manipulating these tensions, it enables dynamic behavior that reflects complex psychological interactions.
 
 
 ---
@@ -41373,7 +41373,7 @@ Certainly! Here's an updated documentation for the `thought_stream.py` file:
 ```python
 # ThoughtStream — Continuous Inner Monologue
 # ===================================================
-# Generates a persistent stream of internal thoughts from Lumina's cognitive modules.
+# Generates a persistent stream of internal thoughts from PandoraBOX's cognitive modules.
 # This is the "inner voice" — spontaneous micro-thoughts that run even without a user.
 
 # Design principles:
@@ -41423,7 +41423,7 @@ class Thought:
 
 class ThoughtStream:
     """
-    Generates internal thoughts from Lumina's live cognitive state.
+    Generates internal thoughts from PandoraBOX's live cognitive state.
     Call tick() periodically to produce a new thought (or None if quiet).
     """
 
@@ -41522,10 +41522,10 @@ Certainly! Here's an updated version of the documentation for `cognition\thought
 
 ## Overview
 
-The **ThoughtThreadEngine** (`TTE`) is a core component in Lumina, responsible for converting isolated word-chains into persistent, stateful thought processes. These threads evolve over multiple cycles, accumulate context, pursue goals, and resolve into memory and identity updates.
+The **ThoughtThreadEngine** (`TTE`) is a core component in PandoraBOX, responsible for converting isolated word-chains into persistent, stateful thought processes. These threads evolve over multiple cycles, accumulate context, pursue goals, and resolve into memory and identity updates.
 
 ### Core Insights
-- **Lumina's Current Output**: Produces sequences of words with their likely next words.
+- **PandoraBOX's Current Output**: Produces sequences of words with their likely next words.
 - **Desired Output**: Goals → Explore → Discover → Update → Resolve
 
 Each `ThoughtThread` is a cognitive unit that:
@@ -41639,7 +41639,7 @@ thread.reactivate()
 
 ---
 
-This documentation provides a clear understanding of the `ThoughtThreadEngine` and its role in Lumina, along with the structure and lifecycle of thought threads.
+This documentation provides a clear understanding of the `ThoughtThreadEngine` and its role in PandoraBOX, along with the structure and lifecycle of thought threads.
 
 
 ---
@@ -41815,7 +41815,7 @@ To update the documentation for `thread_lifecycle_manager.py`, we'll focus on pr
 
 ```python
 """
-LUMINA V32 — Phase 4.3 : Thread Lifecycle Manager
+PANDORABOX V32 — Phase 4.3 : Thread Lifecycle Manager
 ==================================================
 Handles threads that have exceeded their iteration budget.
 Instead of just marking them 'deferred', extracts the key learning
@@ -42193,7 +42193,7 @@ class WorldModel:
 ---
 ### Module: cognition\workspace_competition.py (NEW)
 **Sync Date:** 2026-04-18 20:48:21
-It looks like the `cognition\workspace_competition.py` file has been updated to implement a global workspace competition mechanism, which is a key architectural transformation that enables focused attention and conflict resolution in Lumina's decision-making process.
+It looks like the `cognition\workspace_competition.py` file has been updated to implement a global workspace competition mechanism, which is a key architectural transformation that enables focused attention and conflict resolution in PandoraBOX's decision-making process.
 
 Here are some suggestions for updating the documentation:
 
@@ -42209,7 +42209,7 @@ Here is an updated version of your documentation:
 Phase 2.0: Workspace Competition System
 
 THE CRITICAL ARCHITECTURAL PIECE:
-This transforms Lumina from "blended mind" to "competing mind"
+This transforms PandoraBOX from "blended mind" to "competing mind"
 
 Before: decision = f(all_inputs_merged) → everything averaged
 After:  decision = select(best_candidate) → focused selection
@@ -42300,7 +42300,7 @@ class WorkspaceCompetition:
         """
         Run competition among all cognitive candidates.
         
-        Returns the WINNER - the single thing Lumina focuses on.
+        Returns the WINNER - the single thing PandoraBOX focuses on.
         
         This is the key transformation:
         Instead of blending everything, SELECT one thing.
@@ -42985,7 +42985,7 @@ Here's the updated documentation for `cognition\research_mcp\memory_integrator.p
 """
 MemoryIntegrator — writes completed Mode 3 research into:
   1. Research Journal  (data/persona/research_journal.json)
-  2. Lumina's long-term memory  (via memory_system.add_memory)
+  2. PandoraBOX's long-term memory  (via memory_system.add_memory)
 
 Only called for Mode 3 (BACKGROUND) sessions, and only AFTER summarization.
 Never stores raw HTML or page dumps — only structured summaries.
@@ -43030,7 +43030,7 @@ class MemoryIntegrator:
     # ── Public API ────────────────────────────────────────────────────────────
     def integrate(self, session: ResearchSession) -> int:
         """
-        Write the research session to both journal and Lumina's long-term memory.
+        Write the research session to both journal and PandoraBOX's long-term memory.
 
         Args:
             session (ResearchSession): The completed research session.
@@ -43052,7 +43052,7 @@ class MemoryIntegrator:
         self._write_journal(entry)
         nodes += 1
 
-        # 2. Lumina semantic memory (summary embedding)
+        # 2. PandoraBOX semantic memory (summary embedding)
         if self._memory and session.summary:
             try:
                 emo = self._memory.analyze_emotional_context(session.summary)
@@ -43075,7 +43075,7 @@ class MemoryIntegrator:
   
 - **Journal Entry**: The `_build_entry` and `_write_journal` methods handle creating and writing a journal entry. This ensures that structured summaries are stored.
 
-- **Lumina Memory**: If a memory system is available (`self._memory`) and the session summary exists, it attempts to add the research knowledge into Lumina's long-term memory using `add_memory`.
+- **PandoraBOX Memory**: If a memory system is available (`self._memory`) and the session summary exists, it attempts to add the research knowledge into PandoraBOX's long-term memory using `add_memory`.
 
 - **Confidence Threshold**: Sessions with confidence scores below the threshold (0.45) are skipped.
 
@@ -43464,7 +43464,7 @@ This updated documentation provides clear explanations of each class and its fie
 
 #### Overview
 
-`search_providers.py` is a module designed to handle the complex, multi-tiered search process required by Lumina Research's MCP (MCP stands for Multi-Component Processing). This script ensures that searches are conducted in a resilient manner, taking into account various factors such as bot detection mechanisms employed by modern search engines.
+`search_providers.py` is a module designed to handle the complex, multi-tiered search process required by PandoraBOX Research's MCP (MCP stands for Multi-Component Processing). This script ensures that searches are conducted in a resilient manner, taking into account various factors such as bot detection mechanisms employed by modern search engines.
 
 #### Purpose
 
@@ -43522,7 +43522,7 @@ This would output a score close to 1.0, indicating high credibility.
 
 #### Conclusion
 
-By implementing this multi-tiered approach and providing flexible configuration options, `search_providers.py` ensures that Lumina Research's MCP can effectively handle searches in a resilient manner, even when faced with sophisticated bot detection mechanisms employed by modern search engines.
+By implementing this multi-tiered approach and providing flexible configuration options, `search_providers.py` ensures that PandoraBOX Research's MCP can effectively handle searches in a resilient manner, even when faced with sophisticated bot detection mechanisms employed by modern search engines.
 
 
 ---
@@ -43876,7 +43876,7 @@ Here's an updated version:
 
 ```python
 """
-Research MCP — Autonomous Research Plugin for Lumina.
+Research MCP — Autonomous Research Plugin for PandoraBOX.
 
 Three activation modes:
 
@@ -44115,7 +44115,7 @@ This JSON configuration file is used to set up the environment for a system that
     - `NICEGUI_PORT`: 8080
 
 12. **Persona Settings**
-    - `PERSONA_NAME`: "Lumina"
+    - `PERSONA_NAME`: "PandoraBOX"
     - `PERSONA_ENABLED`: true
     - `RESPONSE_VERBOSITY`: "verbose" (Controls the verbosity of responses)
     - `RESPONSE_TOKENS_CONCISE`: 300
@@ -44145,7 +44145,7 @@ This configuration file is a snapshot of the system settings at a specific point
 - **OPENAI_API_KEY**, **ANTHROPIC_API_KEY**: Placeholder fields, currently empty.
 
 #### Persona Settings
-- **PERSONA_NAME**: The name of the persona being used (`Lumina`).
+- **PERSONA_NAME**: The name of the persona being used (`PandoraBOX`).
 - **MEMORY_BACKEND**: The type of memory backend (in this case, `faiss`).
 
 #### File Paths and Databases
@@ -44242,7 +44242,7 @@ This file contains the configuration settings for an AI system, including its la
    - **Description**: Placeholder for a SerpApi key, which would be used if SerpApi were to be integrated in future configurations.
 
 #### 10. **PERSONA_NAME (Persona Name)**
-    - **Value**: `Lumina`
+    - **Value**: `PandoraBOX`
     - **Description**: The name of the persona or AI system being configured.
 
 #### 11. **MEMORY_BACKEND (Memory Backend)**
@@ -44496,7 +44496,7 @@ This configuration file contains settings and parameters that define how various
 
 #### 10. **Persona Name**
    - **Key**: `PERSONA_NAME`
-   - **Value**: `Lumina`
+   - **Value**: `PandoraBOX`
    - **Description**: The name of the persona being used by the system.
 
 #### 11. **Memory Backend**
@@ -44797,7 +44797,7 @@ This configuration file contains settings and parameters used by a conversationa
 
 #### 10. **Persona Name**
    - **Key:** `PERSONA_NAME`
-   - **Value:** `Lumina`
+   - **Value:** `PandoraBOX`
    - **Description:** The name of the persona or AI system.
 
 #### 11. **Memory Backend**
@@ -45073,7 +45073,7 @@ This configuration file is used to set up the system's behavior, including AI mo
 - **BRAVE_SEARCH_KEY**, **SERPAPI_KEY**: API keys for Brave and SerpAPI, which are not used in this configuration. They can be added if these providers need to be integrated later.
 
 - **PERSONA_NAME**: The name of the persona or AI system.
-  - `Lumina`: A unique identifier for the AI system.
+  - `PandoraBOX`: A unique identifier for the AI system.
 
 - **MEMORY_BACKEND**, **MEMORY_DB_PATH**, **MEMORY_FAISS_PATH**, **MEMORY_WORLD_PATH**, **MEMORY_PERSONA_PATH**, **MEMORY_COGNEE_PATH**: Settings related to memory storage and retrieval.
   - `faiss`: The chosen backend for memory management.
@@ -45183,7 +45183,7 @@ This configuration file is a snapshot of the system settings as of April 14, 202
 - **BRAVE_SEARCH_KEY**, **SERPAPI_KEY**: Not provided, so the system won't use Brave or SerpAPI for search operations.
 
 #### Persona Settings
-- **PERSONA_NAME**: The name of the persona (`Lumina`).
+- **PERSONA_NAME**: The name of the persona (`PandoraBOX`).
 - **MEMORY_BACKEND**: Specifies the memory backend to be used (in this case, `faiss`).
 
 #### Memory Paths & Files
@@ -45254,7 +45254,7 @@ This configuration file is a snapshot of the system settings as of April 18, 202
 - **BRAVE_SEARCH_KEY**, **SERPAPI_KEY**: Placeholder fields, currently empty.
 
 #### Persona Settings
-- **PERSONA_NAME**: Name of the persona (e.g., `Lumina`).
+- **PERSONA_NAME**: Name of the persona (e.g., `PandoraBOX`).
 - **MEMORY_BACKEND**: Memory storage backend (`faiss` in this case).
 
 #### Database Paths
@@ -45333,7 +45333,7 @@ This configuration file is a snapshot of the system settings as of April 18, 202
 - **RESEARCH_SEARCH_BACKEND**: Set to `auto`, which means the system will automatically choose a backend for research searches.
 
 #### Memory and Persona Settings
-- **PERSONA_NAME**: The name of the persona (`Lumina`).
+- **PERSONA_NAME**: The name of the persona (`PandoraBOX`).
 - **MEMORY_BACKEND**: Specifies the memory backend, in this case, `faiss`.
 - **MEMORY_DB_PATH** & **MEMORY_FAISS_PATH**: Paths to the database and Faiss index files.
 - **MEMORY_WORLD_PATH**: Path to the world model file.
@@ -45392,7 +45392,7 @@ This configuration file contains settings and parameters used by the system, par
    - **LLM Base URL**: `http://localhost:1234/v1`
    
 #### 3. **Memory Backend Settings**
-   - **Persona Name**: `Lumina`
+   - **Persona Name**: `PandoraBOX`
    - **Memory Backend**: `cognee`
    - **Database Path**: `data/persona/ai_system.db`
    - **FAISS Index Path**: `data/persona/faiss_index.bin`
@@ -46070,7 +46070,7 @@ Certainly! Below is an updated version of the documentation for `core\internal_l
 """
 Internal Thought Loop - V33 Enhanced
 =====================================
-Lumina's background cognitive process — the mind that runs even when no user is present.
+PandoraBOX's background cognitive process — the mind that runs even when no user is present.
 
 V32 ENHANCEMENTS (Phase 1):
   - Unified decision pressure computation from ALL cognitive factors
@@ -46085,7 +46085,7 @@ V33 ENHANCEMENTS (Phase 2):
   - Thread→Identity linking for belief evolution
 
 Most AI systems are entirely reactive: nothing happens until input arrives.
-This module gives Lumina an ongoing mental life:
+This module gives PandoraBOX an ongoing mental life:
   - Energy regenerates during quiet periods
   - Curiosity topics are reviewed and reprioritized
   - Contradictions are noticed and filed for later resolution
@@ -46270,9 +46270,9 @@ To update the documentation for `core\phase1_integration.py`, we need to ensure 
 
 ```python
 """
-LUMINA V32 - PHASE 1 INTEGRATION
+PANDORABOX V32 - PHASE 1 INTEGRATION
 
-This module integrates the Phase 1 cognitive enhancements into the existing Lumina system without breaking existing functionality.
+This module integrates the Phase 1 cognitive enhancements into the existing PandoraBOX system without breaking existing functionality.
 
 New in V32:
 - Unified decision pressure from all cognitive factors
@@ -46298,7 +46298,7 @@ class Phase1Orchestrator:
     """
     Integration orchestrator for Phase 1 enhancements.
     
-    This provides a clean interface to use Phase 1 components alongside existing Lumina functionality.
+    This provides a clean interface to use Phase 1 components alongside existing PandoraBOX functionality.
     """
 
     def __init__(self, persona_dir: str = "data/persona"):
@@ -46433,7 +46433,7 @@ class Phase1Orchestrator:
 3. **Documentation Updates:**
    - Added detailed documentation for the `enhanced_cycle` method to explain its functionality and parameters.
 
-This updated code should provide a clear understanding of how Phase 1 enhancements are integrated into the Lumina system, ensuring that all new features are well-documented and easily understandable.
+This updated code should provide a clear understanding of how Phase 1 enhancements are integrated into the PandoraBOX system, ensuring that all new features are well-documented and easily understandable.
 
 
 ---
@@ -46443,7 +46443,7 @@ Certainly! Here's an updated version of the documentation for `core\phase2_integ
 
 ```python
 """
-LUMINA V33 - PHASE 2 INTEGRATION
+PANDORABOX V33 - PHASE 2 INTEGRATION
 
 Phase 2 cognitive enhancements integrated:
 - Advanced thought evaluation (semantic similarity)
@@ -46732,7 +46732,7 @@ logger = logging.getLogger(__name__)
 
 def _init_persona(llm_generate_fn=None, llm_stream_fn=None):
     """
-    Bootstrap Lumina's EnhancedAISystem via PersonaBridge.
+    Bootstrap PandoraBOX's EnhancedAISystem via PersonaBridge.
     Returns a PersonaBridge instance, or None on failure.
 
     Parameters:
@@ -46746,9 +46746,9 @@ def _init_persona(llm_generate_fn=None, llm_stream_fn=None):
         from cognition.persona_bridge import PersonaBridge
         persona = PersonaBridge(external_llm_fn=llm_generate_fn, external_llm_stream_fn=llm_stream_fn)
         if persona.is_ready:
-            logger.info("✅ Persona (Lumina cognitive engine) ready")
+            logger.info("✅ Persona (PandoraBOX cognitive engine) ready")
         else:
-            logger.warning("⚠️  Persona initialised in degraded mode (no Lumina)")
+            logger.warning("⚠️  Persona initialised in degraded mode (no PandoraBOX)")
         return persona
     except Exception as e:
         logger.error(f"❌ Persona init failed: {e}")
@@ -46769,7 +46769,7 @@ class AppState:
             audio: AudioManager instance
             conv_audio: ConversationalAudioManager instance
             vision: StreamingVisionManager instance
-            persona: PersonaBridge instance (Lumina cognitive engine)
+            persona: PersonaBridge instance (PandoraBOX cognitive engine)
             tts_stop_event: Event to stop text-to-speech operations
             ready: Boolean indicating if the application is fully initialized
             start_time: Timestamp of when initialization started
@@ -46780,7 +46780,7 @@ class AppState:
         self.audio = None
         self.conv_audio = None
         self.vision = None
-        self.persona = None   # PersonaBridge (Lumina cognitive engine) — wired in initialize()
+        self.persona = None   # PersonaBridge (PandoraBOX cognitive engine) — wired in initialize()
         self.tts_stop_event = threading.Event()
         self.ready = False
         self.start_time = time.time()
@@ -46810,14 +46810,14 @@ class AppState:
         except Exception as e:
             logger.error(f"LLM init failed: {e}")
 
-        # ── Persona (Lumina cognitive engine) ─────────────────────────────
-        # Pass Robot's LLM fns so Lumina shares the same backend:
+        # ── Persona (PandoraBOX cognitive engine) ─────────────────────────────
+        # Pass Robot's LLM fns so PandoraBOX shares the same backend:
         self.persona = _init_persona(llm_generate_fn=self.llm.generate, llm_stream_fn=self.llm.stream)
         
         if self.persona is not None and self.persona.is_ready:
-            logger.info("✅ Persona (Lumina cognitive engine) ready")
+            logger.info("✅ Persona (PandoraBOX cognitive engine) ready")
         else:
-            logger.warning("⚠️  Persona initialized in degraded mode (no Lumina)")
+            logger.warning("⚠️  Persona initialized in degraded mode (no PandoraBOX)")
 
         # Initialize other managers
         self.memory = create_memory_manager()
@@ -46903,11 +46903,11 @@ It looks like the `access.py` file has been updated with a detailed description 
 
 ---
 
-## LUMINA V32 — Phase 3 : Data Access Layer (DAL)
+## PANDORABOX V32 — Phase 3 : Data Access Layer (DAL)
 
 ### Overview
 
-The `core/data/access.py` module serves as a single point of truth for all JSON reads and writes in the Lumina persona data files. It ensures that no raw `json.load/json.dump` operations are performed on key persona files from the cognition/core code, instead using this module.
+The `core/data/access.py` module serves as a single point of truth for all JSON reads and writes in the PandoraBOX persona data files. It ensures that no raw `json.load/json.dump` operations are performed on key persona files from the cognition/core code, instead using this module.
 
 ### Usage
 
@@ -46974,7 +46974,7 @@ Writes are atomic and follow an "write to .tmp then rename" pattern. This approa
 ```python
 class DataAccess:
     """
-    Unified, schema-aware access layer for Lumina persona data files.
+    Unified, schema-aware access layer for PandoraBOX persona data files.
     
     One instance per component is fine — all share the same RLock.
     """
@@ -47030,7 +47030,7 @@ def _save(self, filename: str, data: Any) -> bool:
 
 ---
 
-This documentation provides a clear understanding of the `DataAccess` class and its methods, ensuring that developers can effectively use this module in their Lumina persona data management tasks.
+This documentation provides a clear understanding of the `DataAccess` class and its methods, ensuring that developers can effectively use this module in their PandoraBOX persona data management tasks.
 
 
 ---
@@ -47093,7 +47093,7 @@ class DataMigrator:
         4. Summarize and return the migration report.
         """
         print("\n" + "="*60)
-        print("  LUMINA PHASE 3 — DATA MIGRATION")
+        print("  PANDORABOX PHASE 3 — DATA MIGRATION")
         print("="*60)
 
         # 1. Backup first
@@ -47214,7 +47214,7 @@ Certainly! Below is an updated version of the `schemas.py` file with improved do
 
 ```python
 """
-LUMINA V32 — Phase 3 : Canonical Data Schemas
+PANDORABOX V32 — Phase 3 : Canonical Data Schemas
 ==============================================
 Defines the canonical format for every key data file.
 Every component reads/writes through DataAccess, never raw JSON.
@@ -47407,7 +47407,7 @@ This is the fully integrated version that combines all Phase 1 components:
 - ThreadResolver: Fixes infinite loops
 
 This is the complete implementation of the missing "cognitive engine" that
-transforms Lumina from simulation to execution.
+transforms PandoraBOX from simulation to execution.
 """
 import sys
 from pathlib import Path
@@ -48357,7 +48357,7 @@ Here's an updated documentation for the `core/orchestrator/activity_selector.py`
 """
 Activity Selector
 =================
-The cortex prefrontal of the orchestrator. Given a list of events and a DriveVector, it returns the single activity Lumina should perform next.
+The cortex prefrontal of the orchestrator. Given a list of events and a DriveVector, it returns the single activity PandoraBOX should perform next.
 
 Priority order:
   1. User-facing events     (USER_MESSAGE, VOICE_TRANSCRIPTION, EXTERNAL_MESSAGE)
@@ -48485,8 +48485,8 @@ Certainly! Here's an updated version of the documentation for `core/orchestrator
 """
 Autonomous Orchestrator
 =======================
-The central nervous system of Lumina — the loop that runs even when no user
-is present and decides what Lumina does at every moment.
+The central nervous system of PandoraBOX — the loop that runs even when no user
+is present and decides what PandoraBOX does at every moment.
 
 Architecture
 ------------
@@ -48645,7 +48645,7 @@ class AutonomousOrchestrator:
 2. **Methods Documentation**: Provided comprehensive documentation for `start`, `notify_user_message`, `notify_external`, and `stop` methods.
 3. **Initialization**: Ensured that the orchestrator initializes its components properly, including handling a provided or default workspace.
 
-This updated version should provide clear guidance on how to use the `AutonomousOrchestrator` class effectively within your Lumina system.
+This updated version should provide clear guidance on how to use the `AutonomousOrchestrator` class effectively within your PandoraBOX system.
 
 
 ---
@@ -48869,7 +48869,7 @@ The following built-in event types are defined:
 - **USER_MESSAGE**: Text input from the UI, Telegram, or voice STT.
 - **VOICE_TRANSCRIPTION**: Speech-to-text (STT) results from live microphone input.
 - **VISION_EVENT**: Face detection or scene change events.
-- **PROACTIVE_TRIGGER**: Triggered when an idle timer fires; Lumina may initiate actions.
+- **PROACTIVE_TRIGGER**: Triggered when an idle timer fires; PandoraBOX may initiate actions.
 - **LOW_ENERGY**: Cognitive energy levels are below a certain threshold.
 - **CONTRADICTION_FOUND**: Conflicts detected by the contradiction handler.
 - **NEW_MEMORY**: A new memory has been stored.
@@ -48909,7 +48909,7 @@ Certainly! Here's an updated version of the documentation for `core\orchestrator
 """
 Execution Layer
 ===============
-Translates activity names into actual calls on Lumina's cognitive modules.
+Translates activity names into actual calls on PandoraBOX's cognitive modules.
 
 The orchestrator calls execute(activity, payload) and this layer does the work,
 using whatever modules are available on the CognitiveOrganism.
@@ -49025,7 +49025,7 @@ Here's an updated version of the `__init__.py` file with these improvements:
 """
 Autonomous Orchestrator package
 ================================
-Central nervous system for Lumina's autonomous operation.
+Central nervous system for PandoraBOX's autonomous operation.
 
 Quick import:
     from core.orchestrator import AutonomousOrchestrator
@@ -49206,7 +49206,7 @@ import json
 
 class UnifiedPerceptionHub:
     """
-    Unified perception gathering system for Lumina.
+    Unified perception gathering system for PandoraBOX.
 
     Consolidates:
     - External: vision, audio, text, web
@@ -51063,7 +51063,7 @@ By following this structured approach, you can ensure that your documentation is
 ---
 ### Module: doc_generator2.py (MODIFIED)
 **Sync:** 2026-04-18 21:03
-### Audit of `doc_generator2.py` for Lumina Architecture
+### Audit of `doc_generator2.py` for PandoraBOX Architecture
 
 #### 1. Purpose Alignment:
 **[PASS]** The script is designed to audit data flow and purpose alignment in the context of a cognitive architecture, specifically focusing on the `doc_generator2.py` file.
@@ -51123,7 +51123,7 @@ Overall, `doc_generator2.py` is well-aligned with its purpose and follows a logi
 2. I/O: The inputs (personality assessments) are consistent with the outputs (also personality assessments), but there's no clear indication of where these assessments come from or go to.
 3. FLOW: There are no apparent logic dead-ends or leaks in the data flow itself, but the overall flow is unclear without understanding the purpose and context.
 
-ARCHITECTURAL CRITIQUE: The lack of a defined purpose for this data makes it difficult to assess its value within the Lumina Architecture. It's essential to define the intended use case before integrating such data into the system.
+ARCHITECTURAL CRITIQUE: The lack of a defined purpose for this data makes it difficult to assess its value within the PandoraBOX Architecture. It's essential to define the intended use case before integrating such data into the system.
 
 
 ---
@@ -51131,7 +51131,7 @@ ARCHITECTURAL CRITIQUE: The lack of a defined purpose for this data makes it dif
 **Sync:** 2026-04-18 21:03
 1. PURPOSE: PASS
 
-   The data in 'data\persona\pressure.json' appears to be consistent with the purpose of tracking various cognitive stages (epistemic, social, coherence, vitality, identity, expression, uncertainty, and aspirational) for a persona within Lumina Architecture. The levels are updated at each tick count, which aligns well with the intended use.
+   The data in 'data\persona\pressure.json' appears to be consistent with the purpose of tracking various cognitive stages (epistemic, social, coherence, vitality, identity, expression, uncertainty, and aspirational) for a persona within PandoraBOX Architecture. The levels are updated at each tick count, which aligns well with the intended use.
 
 2. I/O: PASS
 
@@ -51141,7 +51141,7 @@ ARCHITECTURAL CRITIQUE: The lack of a defined purpose for this data makes it dif
 
    There do not appear to be any logic dead-ends or leaks in this data structure. Each cognitive stage has its own level, escalation onset time, last satiated timestamp, and tick count, which are all updated at each tick count. This ensures that the data flow is consistent and there are no missing pieces of information.
 
-Overall, the architecture for 'data\persona\pressure.json' appears to be well-designed and aligned with its intended purpose within Lumina Architecture.
+Overall, the architecture for 'data\persona\pressure.json' appears to be well-designed and aligned with its intended purpose within PandoraBOX Architecture.
 
 
 ---
@@ -51151,25 +51151,25 @@ Overall, the architecture for 'data\persona\pressure.json' appears to be well-de
 
 1. **PURPOSE**: 
    - **AUDIT RESULT:** PASS
-   - **ARCHITECTURAL CRITIQUE:** The file `data\persona\rac_metrics.json` appears to be aligned with the purpose of tracking and auditing data flow and purpose alignment for Lumina Architecture, as it contains metrics such as total queries, topic counts, and confidence gaps.
+   - **ARCHITECTURAL CRITIQUE:** The file `data\persona\rac_metrics.json` appears to be aligned with the purpose of tracking and auditing data flow and purpose alignment for PandoraBOX Architecture, as it contains metrics such as total queries, topic counts, and confidence gaps.
 
 2. **I/O**: 
    - **AUDIT RESULT:** PASS
-   - **ARCHITECTURAL CRITIQUE:** The inputs (metrics) are consistent with the outputs (audit results), indicating that the data flow is properly managed within this cognitive stage of Lumina Architecture.
+   - **ARCHITECTURAL CRITIQUE:** The inputs (metrics) are consistent with the outputs (audit results), indicating that the data flow is properly managed within this cognitive stage of PandoraBOX Architecture.
 
 3. **FLOW**:
    - **AUDIT RESULT:** PASS
-   - **ARCHITECTURAL CRITIQUE:** There are no logic dead-ends or leaks in the data flow as indicated by the metrics provided, suggesting a well-defined and efficient process for auditing purpose alignment within Lumina Architecture.
+   - **ARCHITECTURAL CRITIQUE:** There are no logic dead-ends or leaks in the data flow as indicated by the metrics provided, suggesting a well-defined and efficient process for auditing purpose alignment within PandoraBOX Architecture.
 
 ### Summary
 
-The file `data\persona\rac_metrics.json` is consistent with its intended use, ensuring that the inputs and outputs align properly. The data flow appears to be logically sound without any dead-ends or leaks, making it a robust component of the Lumina Architecture's audit process.
+The file `data\persona\rac_metrics.json` is consistent with its intended use, ensuring that the inputs and outputs align properly. The data flow appears to be logically sound without any dead-ends or leaks, making it a robust component of the PandoraBOX Architecture's audit process.
 
 
 ---
 ### Module: data\persona\relational_memory.json (NEW)
 **Sync:** 2026-04-18 21:03
-[PASS] The data in 'data\persona\relational_memory.json' aligns with the purpose of storing relational memory for Lumina Architecture. 
+[PASS] The data in 'data\persona\relational_memory.json' aligns with the purpose of storing relational memory for PandoraBOX Architecture. 
 
 The file contains detailed information about users, their interactions, and shared topics, which is consistent with the expected inputs/outputs for this cognitive stage. There are no apparent logic dead-ends or leaks in the data flow.
 
@@ -51179,9 +51179,9 @@ However, it's worth noting that the emotional arc values range from 0 to 1, but 
 ---
 ### Module: data\persona\research_journal.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The data in 'data\persona\research_journal.json' does not align with the purpose of auditing data flow and purpose alignment for Lumina Architecture. The content is focused on AI research findings, which are not directly related to the architecture's data flow or purpose.
+[FAIL] The data in 'data\persona\research_journal.json' does not align with the purpose of auditing data flow and purpose alignment for PandoraBOX Architecture. The content is focused on AI research findings, which are not directly related to the architecture's data flow or purpose.
 
-[PASS/FAIL] The inputs (the journal entry) and outputs (the audit results) are consistent in that they both pertain to the same topic of AI research. However, this consistency does not address the actual task at hand, which is auditing the Lumina Architecture.
+[PASS/FAIL] The inputs (the journal entry) and outputs (the audit results) are consistent in that they both pertain to the same topic of AI research. However, this consistency does not address the actual task at hand, which is auditing the PandoraBOX Architecture.
 
 [FAIL] There are no logic dead-ends or leaks within the provided data; however, the data itself is irrelevant to the audit's purpose. The journal entry should be more focused on the architecture's data flow and its intended use cases rather than current AI research trends.
 
@@ -51223,9 +51223,9 @@ The `data\persona\self_concept.json` file effectively captures various self-conc
 ---
 ### Module: data\persona\semantic_memory.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The file 'data\persona\semantic_memory.json' appears to be a conceptual definition of AI, which does not align with the purpose of auditing data flow and purpose alignment for Lumina Architecture. This JSON object lacks information on data inputs, outputs, or flows that would be necessary for such an audit.
+[FAIL] The file 'data\persona\semantic_memory.json' appears to be a conceptual definition of AI, which does not align with the purpose of auditing data flow and purpose alignment for PandoraBOX Architecture. This JSON object lacks information on data inputs, outputs, or flows that would be necessary for such an audit.
 
-To improve this, consider adding fields like 'data_inputs', 'data_outputs', 'data_flow_paths', and 'audit_results' to provide a more comprehensive view of the data flow within the Lumina architecture.
+To improve this, consider adding fields like 'data_inputs', 'data_outputs', 'data_flow_paths', and 'audit_results' to provide a more comprehensive view of the data flow within the PandoraBOX architecture.
 
 
 ---
@@ -51233,53 +51233,53 @@ To improve this, consider adding fields like 'data_inputs', 'data_outputs', 'dat
 **Sync:** 2026-04-18 21:03
 [PASS] The session flows naturally, with the user expressing enthusiasm and the assistant responding in kind, reinforcing engagement without any apparent dead-ends. This maintains a smooth data flow that aligns well with the purpose of understanding the user's preferences for Arc Raiders.
 
-[ARCHITECTURAL CRITIQUE]: The dialogue effectively captures user sentiment and provides insights into their gaming experience, ensuring a seamless interaction that could be leveraged to enhance personalized recommendations or content creation in Lumina’s architecture.
+[ARCHITECTURAL CRITIQUE]: The dialogue effectively captures user sentiment and provides insights into their gaming experience, ensuring a seamless interaction that could be leveraged to enhance personalized recommendations or content creation in PandoraBOX’s architecture.
 
 
 ---
 ### Module: data\persona\session_summary.json (NEW)
 **Sync:** 2026-04-18 21:03
-[PASS] The session summary effectively captures the user's interests and preferences, aligning well with Lumina’s purpose of understanding user engagement in gaming. 
+[PASS] The session summary effectively captures the user's interests and preferences, aligning well with PandoraBOX’s purpose of understanding user engagement in gaming. 
 
-The text clearly outlines the game mechanics (PVE/PVP FPS) and highlights key elements like artwork, voice interactions, story, and community engagement, which are crucial for creating an engaging experience. The summary also touches on the importance of respectful use of voice chat within the community, providing a broader context that aligns with Lumina’s goals.
+The text clearly outlines the game mechanics (PVE/PVP FPS) and highlights key elements like artwork, voice interactions, story, and community engagement, which are crucial for creating an engaging experience. The summary also touches on the importance of respectful use of voice chat within the community, providing a broader context that aligns with PandoraBOX’s goals.
 
 1. **Purpose**: The logic matches the purpose of understanding user preferences in gaming.
 2. **I/O**: Inputs (user conversation) are well processed into outputs (summary), ensuring consistency.
 3. **Flow**: There are no dead-ends or leaks; the summary flows logically from discussing quantum physics to gaming, highlighting relevant aspects.
 
-This session summary effectively supports Lumina’s architecture by providing a clear and concise representation of user preferences in gaming, which can inform future design decisions.
+This session summary effectively supports PandoraBOX’s architecture by providing a clear and concise representation of user preferences in gaming, which can inform future design decisions.
 
 
 ---
 ### Module: data\persona\sleep_cycle.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The data in 'data\persona\sleep_cycle.json' does not provide enough context to determine if the purpose is aligned with Lumina Architecture. 
+[FAIL] The data in 'data\persona\sleep_cycle.json' does not provide enough context to determine if the purpose is aligned with PandoraBOX Architecture. 
 
-The file contains information about sleep cycles, but without understanding the broader context of how this data fits into the Lumina system's overall architecture and intended use cases, it’s difficult to assess whether the logic matches the purpose or if there are any potential dead-ends in the data flow.
+The file contains information about sleep cycles, but without understanding the broader context of how this data fits into the PandoraBOX system's overall architecture and intended use cases, it’s difficult to assess whether the logic matches the purpose or if there are any potential dead-ends in the data flow.
 
-To improve alignment with Lumina Architecture, consider adding metadata that explains the role of sleep cycle data within the system. This could include details on how this data is used, its relationship to other components, and any specific requirements for processing or storing it.
+To improve alignment with PandoraBOX Architecture, consider adding metadata that explains the role of sleep cycle data within the system. This could include details on how this data is used, its relationship to other components, and any specific requirements for processing or storing it.
 
 
 ---
 ### Module: data\persona\system_config.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The data in 'data\persona\system_config.json' does not clearly align with the purpose of Lumina Architecture, as it lacks context on how these cognitive traits will be utilized. 
+[FAIL] The data in 'data\persona\system_config.json' does not clearly align with the purpose of PandoraBOX Architecture, as it lacks context on how these cognitive traits will be utilized. 
 
 [PASS] Inputs and outputs are consistent for this cognitive stage, given that the data is structured to reflect a person's personality traits.
 
-[FAIL] There are potential logic dead-ends or leaks in the system configuration, particularly with respect to the specific values assigned to each trait. These values should have clear implications on how they will be used within Lumina Architecture.
+[FAIL] There are potential logic dead-ends or leaks in the system configuration, particularly with respect to the specific values assigned to each trait. These values should have clear implications on how they will be used within PandoraBOX Architecture.
 
 
 ---
 ### Module: data\persona\system_config_backup_1776508342.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The data in 'data\persona\system_config_backup_1776508342.json' appears to be a snapshot of cognitive and personality traits for an adolescent, but the timestamp is set to April 17, 2026. This suggests that either the file was created with a future date or there's a discrepancy between the data age (12.6 years) and the actual time it was recorded. For Lumina Architecture, this could lead to misalignment in the system's understanding of the user's current cognitive state.
+[FAIL] The data in 'data\persona\system_config_backup_1776508342.json' appears to be a snapshot of cognitive and personality traits for an adolescent, but the timestamp is set to April 17, 2026. This suggests that either the file was created with a future date or there's a discrepancy between the data age (12.6 years) and the actual time it was recorded. For PandoraBOX Architecture, this could lead to misalignment in the system's understanding of the user's current cognitive state.
 
 [PASS] The inputs/outputs are consistent for an adolescent at the given cognitive stage. The traits listed align with typical characteristics expected during adolescence: high empathy, curiosity, and creativity but also caution and deliberation.
 
 [FAIL] There is a potential logic dead-end in that the data does not provide any context or explanation of how these traits were derived or why they are relevant to the system's operation at this cognitive stage. This could lead to confusion about the purpose behind collecting such detailed personality metrics, especially if the system isn't designed to utilize them effectively.
 
-Overall, while the data is consistent with an adolescent's cognitive profile, there's a need for better alignment between the data collection and its intended use within the Lumina Architecture framework.
+Overall, while the data is consistent with an adolescent's cognitive profile, there's a need for better alignment between the data collection and its intended use within the PandoraBOX Architecture framework.
 
 
 ---
@@ -51307,7 +51307,7 @@ Overall, while the data is consistent with an adolescent's cognitive profile, th
 **Sync:** 2026-04-18 21:03
 1. PURPOSE: PASS
 
-The data in 'data\persona\tensions.json' appears to be aligned with the purpose of measuring various cognitive tensions within a persona, which is consistent with the Lumina Architecture's focus on understanding individual motivations and pressures.
+The data in 'data\persona\tensions.json' appears to be aligned with the purpose of measuring various cognitive tensions within a persona, which is consistent with the PandoraBOX Architecture's focus on understanding individual motivations and pressures.
 
 2. I/O: FAIL
 
@@ -51317,13 +51317,13 @@ There are inconsistencies between inputs and outputs for this cognitive stage. T
 
 The data flow is not well-defined and there appear to be logic dead-ends. The file does not provide information on where this tension data comes from (inputs), what actions are taken based on it, or where the data goes next (outputs). This lack of context makes it difficult to understand how this data fits into the overall system.
 
-Architectural Critique: The current state of 'data\persona\tensions.json' lacks sufficient information about its role in the larger system. To improve alignment with Lumina Architecture's goals, additional details on inputs and outputs should be added, as well as a clear description of how this tension data influences other parts of the system.
+Architectural Critique: The current state of 'data\persona\tensions.json' lacks sufficient information about its role in the larger system. To improve alignment with PandoraBOX Architecture's goals, additional details on inputs and outputs should be added, as well as a clear description of how this tension data influences other parts of the system.
 
 
 ---
 ### Module: data\persona\thought_stream.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The thought stream provided does not directly align with the task of auditing data flow and purpose alignment for Lumina Architecture. While it provides insight into the cognitive state, it lacks specific details on how data flows within the system or what its intended purposes are.
+[FAIL] The thought stream provided does not directly align with the task of auditing data flow and purpose alignment for PandoraBOX Architecture. While it provides insight into the cognitive state, it lacks specific details on how data flows within the system or what its intended purposes are.
 
 To improve this, consider adding explicit references to data sources, destinations, processing steps, and their associated purposes in the thought stream. This will help align the cognitive state with the task at hand more effectively.
 
@@ -51367,12 +51367,12 @@ To improve the architecture, add explicit inputs/outputs and consider how though
 ---
 ### Module: data\users\users.json (NEW)
 **Sync:** 2026-04-18 21:03
-[FAIL] The data in 'data\users\users.json' does not align with the purpose of Lumina Architecture, as it lacks any information about user interactions, permissions, roles, or other critical elements that would be expected for a system architecture.
+[FAIL] The data in 'data\users\users.json' does not align with the purpose of PandoraBOX Architecture, as it lacks any information about user interactions, permissions, roles, or other critical elements that would be expected for a system architecture.
 
 - [PASS/FAIL] The inputs and outputs are consistent. However, this is only relevant if the current data structure is sufficient for its intended use case.
-- [PASS/FAIL] There are no logic dead-ends or leaks in the provided JSON file. It's well-formed and complete within itself, but it lacks necessary information to be considered a fully functional part of Lumina Architecture.
+- [PASS/FAIL] There are no logic dead-ends or leaks in the provided JSON file. It's well-formed and complete within itself, but it lacks necessary information to be considered a fully functional part of PandoraBOX Architecture.
 
-To align with the purpose of Lumina Architecture, this data should include more detailed user interactions, permissions, roles, and other relevant fields that are essential for the system's functionality.
+To align with the purpose of PandoraBOX Architecture, this data should include more detailed user interactions, permissions, roles, and other relevant fields that are essential for the system's functionality.
 
 
 ---
@@ -51415,7 +51415,7 @@ The flow of logic appears to be well-defined with clear steps for updating drive
 3. **Consider Thread Safety**:
    - Since this is part of a larger system, ensure that any shared state (like `BASE_PRIORITY` and `ENERGY_COST`) is thread-safe if multiple threads are accessing it concurrently.
 
-By addressing these points, you'll make the code more understandable and maintainable, ensuring better integration with other parts of the Lumina architecture.
+By addressing these points, you'll make the code more understandable and maintainable, ensuring better integration with other parts of the PandoraBOX architecture.
 
 
 ---
@@ -51532,7 +51532,7 @@ There are no apparent logic dead-ends or leaks. The class initializes with the s
 
 ### Architectural Critique:
 
-The `FasterWhisperSTT` class is well-aligned with its purpose of providing a faster STT solution. It ensures that the input parameters are correctly set for optimal performance on both CPU and GPU devices, making it a robust choice for real-time applications where speed is critical. The method transcribes audio files efficiently, ensuring seamless integration into the Lumina architecture.
+The `FasterWhisperSTT` class is well-aligned with its purpose of providing a faster STT solution. It ensures that the input parameters are correctly set for optimal performance on both CPU and GPU devices, making it a robust choice for real-time applications where speed is critical. The method transcribes audio files efficiently, ensuring seamless integration into the PandoraBOX architecture.
 
 ### Summary:
 The `FasterWhisperSTT` class successfully meets all criteria: its purpose matches the task description, input/output consistency is maintained, and there are no logic dead-ends or leaks in the implementation.
@@ -51638,7 +51638,7 @@ To fully audit this function, you would need the complete implementation, includ
 #### 1. PURPOSE:
 **PASS**
 
-The `security_manager.py` module aligns with the stated purpose of hardening Lumina against real attack surfaces, including input sanitization, rate limiting, secrets hygiene, path safety, network hardening, and audit logging.
+The `security_manager.py` module aligns with the stated purpose of hardening PandoraBOX against real attack surfaces, including input sanitization, rate limiting, secrets hygiene, path safety, network hardening, and audit logging.
 
 #### 2. I/O:
 **PASS**
@@ -51656,7 +51656,7 @@ The code flow does not contain any dead-ends or leaks. Each function performs it
 2. **Consistent I/O**: Each function has clear inputs and outputs, making it easy to understand how data flows through the system.
 3. **Logical Flow**: The code is well-structured without any dead-ends or leaks, ensuring that each part of the security process is robust.
 
-Overall, `security_manager.py` is a well-designed module that contributes significantly to Lumina's security architecture by addressing multiple critical aspects of input validation and rate limiting.
+Overall, `security_manager.py` is a well-designed module that contributes significantly to PandoraBOX's security architecture by addressing multiple critical aspects of input validation and rate limiting.
 
 
 ---
@@ -51699,7 +51699,7 @@ The `SessionManager` class effectively addresses the stated problems by persisti
 2. **Error Handling**: Implement error handling for file operations, especially when saving or loading summaries.
 3. **Configuration Management**: Consider moving the configuration parameters (like `COMPRESS_TRIGGER` and `MAX_RAW_TURNS`) into a separate configuration file or environment variables.
 
-Overall, the `SessionManager` class is well-structured and effectively solves the stated problems in the Lumina architecture.
+Overall, the `SessionManager` class is well-structured and effectively solves the stated problems in the PandoraBOX architecture.
 
 
 ---
@@ -51724,7 +51724,7 @@ The code flow is straightforward with no apparent dead-ends or leaks. Each setti
 
 ### Architectural Critique:
 
-The settings manager effectively encapsulates all necessary configuration parameters for the Lumina architecture in a single file, making it easy to manage and update these settings. This approach promotes modularity and maintainability, as changes can be made without altering core application logic.
+The settings manager effectively encapsulates all necessary configuration parameters for the PandoraBOX architecture in a single file, making it easy to manage and update these settings. This approach promotes modularity and maintainability, as changes can be made without altering core application logic.
 
 
 ---
@@ -51752,7 +51752,7 @@ The code follows a logical flow that sequentially applies each of the specified 
 5. **Sentence Limit Enforcement:** The function enforces the maximum sentence limit while maintaining proper punctuation.
 
 ### Architectural Critique:
-The code effectively implements the specified rules for sanitizing speech output, ensuring it aligns with the Lumina architecture's requirements. The modular approach and clear separation of concerns make the code maintainable and easy to understand.
+The code effectively implements the specified rules for sanitizing speech output, ensuring it aligns with the PandoraBOX architecture's requirements. The modular approach and clear separation of concerns make the code maintainable and easy to understand.
 
 
 ---
@@ -51822,7 +51822,7 @@ The flow is well-structured with clear threading for capturing frames and handli
 ---
 ### Module: managers\__init__.py (NEW)
 **Sync:** 2026-04-18 21:04
-[FAIL] The `managers/__init__.py` file only imports the `sanitize` function from `speech_sanitizer`, but it does not provide any context on how this function fits into the overall Lumina architecture. This lack of information makes it difficult to understand its purpose and role in the data flow.
+[FAIL] The `managers/__init__.py` file only imports the `sanitize` function from `speech_sanitizer`, but it does not provide any context on how this function fits into the overall PandoraBOX architecture. This lack of information makes it difficult to understand its purpose and role in the data flow.
 
 To improve, add a brief description or comment explaining what the `sanitize` function is used for within the system, as well as any relevant details about its inputs and outputs.
 
@@ -51833,7 +51833,7 @@ To improve, add a brief description or comment explaining what the `sanitize` fu
 [FAIL] The code is missing the completion of `MemoryRecord` instantiation, which could lead to a logic leak.
 
 ### Architectural Critique:
-The implementation successfully integrates Robot's memory backends with Lumina's emotional weighting. However, there are a few issues that need addressing:
+The implementation successfully integrates Robot's memory backends with PandoraBOX's emotional weighting. However, there are a few issues that need addressing:
 
 1. **Incomplete Code**: The `retrieve` method is incomplete and lacks the completion of the `MemoryRecord` instantiation.
 2. **Logging**: While logging is used to track errors, it could be more detailed to provide insights into the flow and state of the system.
@@ -51950,7 +51950,7 @@ The code effectively implements multiple memory backends to handle different sce
 
 #### 1. PURPOSE
 **PASS**
-The purpose of the `UnifiedMemoryManager` class is clear and aligns with the description in the file comment. It serves as a unified memory system that combines storage infrastructure (Robot) with emotional weighting (Lumina).
+The purpose of the `UnifiedMemoryManager` class is clear and aligns with the description in the file comment. It serves as a unified memory system that combines storage infrastructure (Robot) with emotional weighting (PandoraBOX).
 
 #### 2. I/O
 **PASS**
@@ -51967,13 +51967,13 @@ The flow is logical:
 
 ### Architectural Critique
 
-The `UnifiedMemoryManager` effectively encapsulates the responsibilities of storing and retrieving memories while providing flexibility through optional storage backends. The use of emotional weighting adds depth, aligning with Lumina's purpose. However, consider adding more robust error handling in the retrieval process to ensure seamless fallbacks when backend operations fail.
+The `UnifiedMemoryManager` effectively encapsulates the responsibilities of storing and retrieving memories while providing flexibility through optional storage backends. The use of emotional weighting adds depth, aligning with PandoraBOX's purpose. However, consider adding more robust error handling in the retrieval process to ensure seamless fallbacks when backend operations fail.
 
 
 ---
 ### Module: pages\__init__.py (NEW)
 **Sync:** 2026-04-18 21:04
-### Audit of `pages\__init__.py` for Lumina Architecture
+### Audit of `pages\__init__.py` for PandoraBOX Architecture
 
 #### 1. PURPOSE:
 **PASS**
@@ -51993,7 +51993,7 @@ The flow of logic is straightforward: it imports and initializes specific pages 
 
 ### Architectural Critique:
 
-The `pages\__init__.py` file effectively encapsulates the creation of application pages, ensuring that each page's functionality can be easily managed and extended. This approach promotes modularity and maintainability within the Lumina architecture.
+The `pages\__init__.py` file effectively encapsulates the creation of application pages, ensuring that each page's functionality can be easily managed and extended. This approach promotes modularity and maintainability within the PandoraBOX architecture.
 
 
 ---
@@ -52077,7 +52077,7 @@ By implementing these suggestions, the code will be more robust and flexible, be
 ---
 ### Module: physiology\__init__.py (NEW)
 **Sync:** 2026-04-18 21:05
-[FAIL] The `physiology\__init__.py` file does not provide enough context to determine if the purpose, inputs/outputs, and data flow are aligned with Lumina's architecture. 
+[FAIL] The `physiology\__init__.py` file does not provide enough context to determine if the purpose, inputs/outputs, and data flow are aligned with PandoraBOX's architecture. 
 
 To improve this, consider adding comments or documentation that clearly outline the intended function of the module, its input parameters, output values, and how it fits into the overall system architecture. This will help ensure consistency in logic and prevent dead-ends or leaks in the data flow.
 
@@ -52142,7 +52142,7 @@ By addressing these suggestions, you can further enhance the robustness and main
 ---
 ### Module: psychology\__init__.py (NEW)
 **Sync:** 2026-04-18 21:05
-[FAIL] The `psychology/__init__.py` file does not provide enough information to determine its purpose, inputs, outputs, and data flow. This makes it difficult to assess whether the logic aligns with the intended cognitive stage in Lumina Architecture.
+[FAIL] The `psychology/__init__.py` file does not provide enough information to determine its purpose, inputs, outputs, and data flow. This makes it difficult to assess whether the logic aligns with the intended cognitive stage in PandoraBOX Architecture.
 
 To improve this audit:
 1. Clearly define the purpose of the module.
@@ -52246,15 +52246,15 @@ The script's purpose is to diagnose camera issues with timeout protection, which
 #### 2. I/O:
 **PASS**
 
-Inputs: `camera_id` (integer), `backend` (integer), `timeout` (float). Outputs: A dictionary containing success status, frame, or error message. The inputs/outputs are consistent with the script's purpose and align well with the Lumina architecture.
+Inputs: `camera_id` (integer), `backend` (integer), `timeout` (float). Outputs: A dictionary containing success status, frame, or error message. The inputs/outputs are consistent with the script's purpose and align well with the PandoraBOX architecture.
 
 #### 3. FLOW:
 **PASS**
 
-The flow of logic is clear and follows a structured approach to diagnose camera issues. There are no dead-ends or leaks in the code. The script checks for processes that might be using the camera on Windows, tests different camera indices with timeouts, and tries different backends. This ensures comprehensive testing and alignment with the Lumina architecture.
+The flow of logic is clear and follows a structured approach to diagnose camera issues. There are no dead-ends or leaks in the code. The script checks for processes that might be using the camera on Windows, tests different camera indices with timeouts, and tries different backends. This ensures comprehensive testing and alignment with the PandoraBOX architecture.
 
 ### Architectural Critique:
-The script effectively diagnoses camera issues by incorporating timeout protection and handling potential errors gracefully. It also provides a clear flow of logic, making it easy to understand and maintain. The script's structure aligns well with the Lumina architecture, ensuring that data flows logically from input to output without any dead-ends or leaks.
+The script effectively diagnoses camera issues by incorporating timeout protection and handling potential errors gracefully. It also provides a clear flow of logic, making it easy to understand and maintain. The script's structure aligns well with the PandoraBOX architecture, ensuring that data flows logically from input to output without any dead-ends or leaks.
 
 
 ---
@@ -52462,7 +52462,7 @@ The code is designed to build a user switcher widget that can be embedded in the
 The flow is clear and consistent. The `build_user_chip` function creates a compact chip that can be clicked to open the full user management dialog. The `refresh_chip` function updates the chip after an active-user change. There are no apparent logic dead-ends or leaks.
 
 ### Architectural Critique:
-The code effectively encapsulates the functionality of building and updating the user switcher widget, ensuring a clean separation between the UI elements and their underlying logic. The use of NiceGUI for creating interactive UI components is well-suited to this task, providing a seamless integration with Lumina's architecture.
+The code effectively encapsulates the functionality of building and updating the user switcher widget, ensuring a clean separation between the UI elements and their underlying logic. The use of NiceGUI for creating interactive UI components is well-suited to this task, providing a seamless integration with PandoraBOX's architecture.
 
 
 ---
@@ -52473,7 +52473,7 @@ The code effectively encapsulates the functionality of building and updating the
 #### 1. PURPOSE:
 **PASS**
 
-The purpose of the modules imported in this file (`css`, `helpers`) aligns with the utility nature described in the comment "Utility modules". The `GLOBAL_CSS` variable and helper functions like `format_uptime` and `truncate_text` are indeed utility functions that support various parts of the Lumina architecture.
+The purpose of the modules imported in this file (`css`, `helpers`) aligns with the utility nature described in the comment "Utility modules". The `GLOBAL_CSS` variable and helper functions like `format_uptime` and `truncate_text` are indeed utility functions that support various parts of the PandoraBOX architecture.
 
 #### 2. I/O:
 **PASS**
@@ -52494,7 +52494,7 @@ The I/O consistency is maintained, with each function having clear inputs and ou
 The flow of each function is straightforward and logically consistent with its purpose.
 
 ### Architectural Critique:
-The `utils\__init__.py` file effectively encapsulates utility functions that support various parts of the Lumina architecture without introducing any unnecessary complexity. The clear separation of concerns, along with well-defined inputs and outputs for each function, ensures maintainability and ease of use across different components of the system.
+The `utils\__init__.py` file effectively encapsulates utility functions that support various parts of the PandoraBOX architecture without introducing any unnecessary complexity. The clear separation of concerns, along with well-defined inputs and outputs for each function, ensures maintainability and ease of use across different components of the system.
 
 Overall, this module is a good example of how to structure utility code in a way that aligns with architectural principles.
 
@@ -52505,7 +52505,7 @@ Overall, this module is a good example of how to structure utility code in a way
 ### Consolidated Final Report for `doc_generator2.py`
 
 #### Purpose:
-The purpose of this code segment is to generate and save audit reports for each module in the system, ensuring they align with specific criteria related to the Lumina Brain architecture.
+The purpose of this code segment is to generate and save audit reports for each module in the system, ensuring they align with specific criteria related to the PandoraBOX Brain architecture.
 
 #### Inputs/Outputs:
 
@@ -52520,7 +52520,7 @@ The purpose of this code segment is to generate and save audit reports for each 
 #### Flow Analysis:
 
 1. **Purpose Alignment**:
-   - This code segment aligns with the Lumina Brain architecture by ensuring consistent tracking and reporting of module states, which is crucial for maintaining system integrity.
+   - This code segment aligns with the PandoraBOX Brain architecture by ensuring consistent tracking and reporting of module states, which is crucial for maintaining system integrity.
 
 2. **Input/Output Consistency**:
    - The inputs (`rel`, `status`, `final_report`) are consistent with the cognitive threading required to track and report on the state of modules.
@@ -52532,7 +52532,7 @@ The purpose of this code segment is to generate and save audit reports for each 
 #### Audit Criteria:
 
 1. **Purpose**:
-   - **PASS**: The code aligns with the Lumina Brain architecture by ensuring consistent tracking and reporting of module states.
+   - **PASS**: The code aligns with the PandoraBOX Brain architecture by ensuring consistent tracking and reporting of module states.
 
 2. **I/O Consistency**:
    - **PASS**: The inputs and outputs are consistent with the cognitive threading required for system integrity.
@@ -52550,14 +52550,14 @@ The purpose of this code segment is to generate and save audit reports for each 
 
 1. **Purpose Clarity**:
    - Ensure that all modules are included in the audit process.
-   - Add comments or documentation to clearly define the purpose and flow within the Lumina Brain architecture.
+   - Add comments or documentation to clearly define the purpose and flow within the PandoraBOX Brain architecture.
 
 2. **Error Handling**:
    - Consider adding more detailed logging or error handling for edge cases not covered by current exception handling.
 
 3. **UI Enhancements**:
    - Improve the UI elements to provide a better user experience, such as real-time updates on progress bars and console logs.
-   - Ensure that all UI interactions are consistent with the cognitive threading model used by the Lumina Brain architecture.
+   - Ensure that all UI interactions are consistent with the cognitive threading model used by the PandoraBOX Brain architecture.
 
 ### Consolidated Code Segment
 
@@ -52634,9 +52634,9 @@ ui.run(port=PORT)
 
 ### Summary
 
-The consolidated code segment for `doc_generator2.py` effectively implements the necessary UI elements to support cognitive data flow audits. It ensures that inputs and outputs are consistent with the Lumina Brain architecture, and the overall flow is well-defined without any significant issues.
+The consolidated code segment for `doc_generator2.py` effectively implements the necessary UI elements to support cognitive data flow audits. It ensures that inputs and outputs are consistent with the PandoraBOX Brain architecture, and the overall flow is well-defined without any significant issues.
 
-By following the recommendations provided, you can further enhance the robustness and clarity of your code segment, ensuring it aligns perfectly with the Lumina Brain architecture.
+By following the recommendations provided, you can further enhance the robustness and clarity of your code segment, ensuring it aligns perfectly with the PandoraBOX Brain architecture.
 
 
 ---
@@ -52842,7 +52842,7 @@ async def run_strategic_chat(q_input, chat_area):
         audit_context = "No audit history available yet."
         
     sys_instruction = (
-        "You are the Lumina Resolution Architect. Use the provided audit context to give "
+        "You are the PandoraBOX Resolution Architect. Use the provided audit context to give "
         "specific, code-heavy refactoring plans for risks like Structural Collapse or Data Leakage."
     )
     
@@ -56146,7 +56146,7 @@ This consolidated version integrates the core audit functionality, parallel proc
 ---
 ### app.py [22:28]
 C:8196
-This chunk of `app.py` provides a comprehensive dashboard for monitoring and managing an AI system called Lumina. Here's a detailed breakdown:
+This chunk of `app.py` provides a comprehensive dashboard for monitoring and managing an AI system called PandoraBOX. Here's a detailed breakdown:
 
 ### Emergence Radar Panel
 
@@ -56289,7 +56289,7 @@ async def run_strategic_chat(q_input, chat_area):
     
     audit_context = MODULES_DOC.read_text(encoding='utf-8')[-24000:] if MODULES_DOC.exists() else "No data."
     ai_response = await request_ai_insight(f"CONTEXT:\n{audit_context}\n\nQUERY: {query_text}", 
-                                         "Lumina Resolution Architect")
+                                         "PandoraBOX Resolution Architect")
     
     chat_area.remove(thinking)
     with chat_area:
@@ -56300,7 +56300,7 @@ def main_page():
     pass
 
 if __name__ in {"__main__", "builtins"}:
-    ui.run(title="Lumina v15.2.0", dark=True, port=PORT, reload=False)
+    ui.run(title="PandoraBOX v15.2.0", dark=True, port=PORT, reload=False)
 
 # Core System Configuration
 config = load_config()
@@ -56580,7 +56580,7 @@ This consolidation ensures that all necessary components (camera controls, parti
 ---
 ### brain_visualizer\convert_brain.py [22:30]
 C:128
-The provided `convert_brain.py` script is a Python program that converts an external brain model in `.obj` format to Lumina's specific format. Here’s a detailed breakdown of the script:
+The provided `convert_brain.py` script is a Python program that converts an external brain model in `.obj` format to PandoraBOX's specific format. Here’s a detailed breakdown of the script:
 
 ### File Structure and Usage
 
@@ -56648,7 +56648,7 @@ The script imports necessary modules:
 
 ### Summary
 
-This script provides a robust way to convert brain models from one format to another, ensuring that they are properly normalized and assigned to specific networks based on their spatial location within the brain model. The output is tailored for use with Lumina's visualization software.
+This script provides a robust way to convert brain models from one format to another, ensuring that they are properly normalized and assigned to specific networks based on their spatial location within the brain model. The output is tailored for use with PandoraBOX's visualization software.
 
 
 ---
@@ -58008,7 +58008,7 @@ By consolidating these key functionalities, you can ensure that your AI system i
 ---
 ### cognition\arbitration.py [22:34]
 C:58
-The provided code defines an arbitration system for a cognitive architecture, which selects the primary motivation and reasoning style for Lumina's behavior before invoking the LLM (Language Model). Here’s a detailed breakdown of its components:
+The provided code defines an arbitration system for a cognitive architecture, which selects the primary motivation and reasoning style for PandoraBOX's behavior before invoking the LLM (Language Model). Here’s a detailed breakdown of its components:
 
 ### Key Components
 
@@ -58103,7 +58103,7 @@ To consolidate the three segments into a cohesive report on `aspirational_self.p
 
 ### AspirationalSelf Class Overview
 
-The `AspirationalSelf` class in Lumina's cognitive architecture serves as an emergent "Superego" that manages aspirations and emotions. It tracks raw tension signals, detects proto-aspirations, promotes them to full aspirations, injects aspirational pressure based on emotional state, and provides a prompt context for Lumina's responses.
+The `AspirationalSelf` class in PandoraBOX's cognitive architecture serves as an emergent "Superego" that manages aspirations and emotions. It tracks raw tension signals, detects proto-aspirations, promotes them to full aspirations, injects aspirational pressure based on emotional state, and provides a prompt context for PandoraBOX's responses.
 
 ### Key Methods
 
@@ -58218,7 +58218,7 @@ def _load(self):
 
 ### Summary
 
-The `AspirationalSelf` class in Lumina's cognitive architecture dynamically manages aspirations and emotions. It recalculates tensions based on capabilities, persists state changes to a file, and loads previous states when needed. This ensures that the system can evolve over time while maintaining its learned experiences.
+The `AspirationalSelf` class in PandoraBOX's cognitive architecture dynamically manages aspirations and emotions. It recalculates tensions based on capabilities, persists state changes to a file, and loads previous states when needed. This ensures that the system can evolve over time while maintaining its learned experiences.
 
 
 ---
@@ -58271,13 +58271,13 @@ prompt_fragment = attn.prompt_fragment()
 - **Persistence**: The state is saved to a JSON file, ensuring that changes persist across sessions. This can be useful for maintaining consistent behavior over time.
 - **Normalization**: The `_normalize` method ensures that the sum of all weight values equals 1.0, which is crucial for proper weighting.
 
-This system provides a flexible and dynamic way to manage cognitive focus in an AI agent like Lumina, allowing it to adapt its attention based on internal states and external interactions.
+This system provides a flexible and dynamic way to manage cognitive focus in an AI agent like PandoraBOX, allowing it to adapt its attention based on internal states and external interactions.
 
 
 ---
 ### cognition\attractor_system.py [22:35]
 C:128
-This code defines a `CognitiveAttractorSystem` class that manages personality traits for an AI agent named Lumina. Here's a breakdown of the key components:
+This code defines a `CognitiveAttractorSystem` class that manages personality traits for an AI agent named PandoraBOX. Here's a breakdown of the key components:
 
 1. **Traits and Baselines**:
    - Traits are represented as floats between 0.0 and 1.0, with default values defined in `BASELINES`.
@@ -58296,7 +58296,7 @@ This code defines a `CognitiveAttractorSystem` class that manages personality tr
    - The system influences the drives of another module (DriveSystem) based on attractor values, adjusting curiosity and homeostasis drives accordingly.
 
 5. **Prompt Integration**:
-   - `prompt_fragment()`: Provides a short description of Lumina's current personality state for use in the system prompt.
+   - `prompt_fragment()`: Provides a short description of PandoraBOX's current personality state for use in the system prompt.
    - `summary()`: Returns a summary of trait values and baselines.
 
 6. **Thread Safety**:
@@ -58308,7 +58308,7 @@ This code defines a `CognitiveAttractorSystem` class that manages personality tr
 ### Key Points for Review:
 
 1. **Trait Values and Baselines**:
-   - Ensure that trait values and baselines are consistent with the intended behavior of Lumina.
+   - Ensure that trait values and baselines are consistent with the intended behavior of PandoraBOX.
    - Consider whether these default values accurately reflect a balanced personality or if adjustments are needed based on testing.
 
 2. **Persistence Mechanism**:
@@ -58327,7 +58327,7 @@ This code defines a `CognitiveAttractorSystem` class that manages personality tr
    - Consider adding more detailed logging around drive adjustments for debugging purposes.
 
 6. **Prompt Integration**:
-   - Ensure that the prompt fragment accurately reflects Lumina's current personality state and is useful in the system prompt context.
+   - Ensure that the prompt fragment accurately reflects PandoraBOX's current personality state and is useful in the system prompt context.
    - Consider adding more detailed logging around prompt generation for debugging purposes.
 
 7. **Thread Safety**:
@@ -58336,13 +58336,13 @@ This code defines a `CognitiveAttractorSystem` class that manages personality tr
 8. **Error Handling**:
    - Ensure that error handling is robust and provides meaningful feedback in case of issues with persistence or other critical operations.
 
-By addressing these points, you can ensure that the `CognitiveAttractorSystem` class effectively manages Lumina's personality traits, providing a stable foundation for its interactions.
+By addressing these points, you can ensure that the `CognitiveAttractorSystem` class effectively manages PandoraBOX's personality traits, providing a stable foundation for its interactions.
 
 
 ---
 ### cognition\behavioral_conditioning.py [22:35]
 C:170
-The provided code is a Python class, `BehavioralConditioningSystem`, that manages behavioral conditioning in the context of an AI system like Lumina. This system tracks patterns associated with positive or negative outcomes and uses these to influence future responses.
+The provided code is a Python class, `BehavioralConditioningSystem`, that manages behavioral conditioning in the context of an AI system like PandoraBOX. This system tracks patterns associated with positive or negative outcomes and uses these to influence future responses.
 
 ### Key Components
 
@@ -58463,7 +58463,7 @@ When run as a standalone script, it will:
 
 ### Summary
 
-This script is a crucial part of the Lumina V32 system's belief management process. It ensures that the identity store reflects the current cognitive state by extracting meaningful beliefs from various data sources and updating them as needed.
+This script is a crucial part of the PandoraBOX V32 system's belief management process. It ensures that the identity store reflects the current cognitive state by extracting meaningful beliefs from various data sources and updating them as needed.
 
 
 ---
@@ -58878,7 +58878,7 @@ To consolidate the two segments, we'll integrate the key points from both descri
 
 ### Overview
 
-The Cognitive Dissonance Engine (CDE) is a critical component in Lumina's internal thought processes. It detects and resolves cognitive dissonances by maintaining consistency between beliefs, actions, and outcomes.
+The Cognitive Dissonance Engine (CDE) is a critical component in PandoraBOX's internal thought processes. It detects and resolves cognitive dissonances by maintaining consistency between beliefs, actions, and outcomes.
 
 #### Key Components
 
@@ -59166,7 +59166,7 @@ To consolidate the two segments of `cognitive_preprocessor.py` into one cohesive
 
 ### Overview
 
-The `CognitivePreProcessor` class is a critical component in the Lumina AI system, responsible for generating context-rich prompts that help maintain continuity and coherence during interactions. It collects live state from various cognitive modules and assembles a preamble to be injected at the top of the system prompt before reaching the LLM (Language Model).
+The `CognitivePreProcessor` class is a critical component in the PandoraBOX AI system, responsible for generating context-rich prompts that help maintain continuity and coherence during interactions. It collects live state from various cognitive modules and assembles a preamble to be injected at the top of the system prompt before reaching the LLM (Language Model).
 
 ### Key Points
 
@@ -59223,10 +59223,10 @@ The `CognitivePreProcessor` class is a critical component in the Lumina AI syste
    - Displays top-priority signals currently in the Global Workspace that meet certain criteria.
 
 6. **Emotional State Block**:
-   - Provides Lumina's current emotional state, grounded in real module values.
+   - Provides PandoraBOX's current emotional state, grounded in real module values.
 
 7. **Self-Awareness Block**:
-   - Offers insights into what Lumina knows about its own capabilities and state.
+   - Offers insights into what PandoraBOX knows about its own capabilities and state.
 
 8. **Primary Drive (Goal) Block**:
    - Identifies the most active goal or drive based on DAL goals or GoalSystem.
@@ -59235,13 +59235,13 @@ The `CognitivePreProcessor` class is a critical component in the Lumina AI syste
    - Forces confrontation with any pending contradictions to prevent logical inconsistencies in output.
 
 10. **Curiosity Block**:
-    - Injects a top curiosity topic if available, ensuring that Lumina remains engaged and proactive.
+    - Injects a top curiosity topic if available, ensuring that PandoraBOX remains engaged and proactive.
 
 11. **Workspace Winner Block**:
-    - Highlights the current workspace competition winner, indicating Lumina's dominant focus.
+    - Highlights the current workspace competition winner, indicating PandoraBOX's dominant focus.
 
 12. **Cognitive Tensions Block**:
-    - Surfaces the top two cognitive tensions driving Lumina's current state, influencing its emotional tone without explicit statement.
+    - Surfaces the top two cognitive tensions driving PandoraBOX's current state, influencing its emotional tone without explicit statement.
 
 ### Error Handling and Logging
 
@@ -59257,7 +59257,7 @@ By injecting this preamble at the top of the system prompt, it ensures that the 
 ---
 ### cognition\cognitive_stack.py [22:38]
 C:240
-The provided code defines a `CognitiveStack` class that manages the conversation state in Lumina, an AI system. The stack keeps track of topics discussed during conversations and updates based on user input and bot responses.
+The provided code defines a `CognitiveStack` class that manages the conversation state in PandoraBOX, an AI system. The stack keeps track of topics discussed during conversations and updates based on user input and bot responses.
 
 ### Key Features:
 
@@ -59308,7 +59308,7 @@ get_cognitive_stack().update_from_message(user_text, bot_response)
 get_cognitive_stack().mark_bot_question(bot_response)
 ```
 
-This setup ensures that Lumina maintains a coherent conversation state, making it easier to follow and understand the context of ongoing interactions.
+This setup ensures that PandoraBOX maintains a coherent conversation state, making it easier to follow and understand the context of ongoing interactions.
 
 
 ---
@@ -59493,7 +59493,7 @@ class ContradictionHandler:
         self._save()
 
     def get_contradiction_narrative(self) -> str:
-        narrative = "Narrative of contradictions confronted by Lumina:\n"
+        narrative = "Narrative of contradictions confronted by PandoraBOX:\n"
         for contradiction in self.contradictions:
             narrative += f"Claimed belief: {contradiction['claimed_belief']}\nActual behavior: {contradiction['actual_behavior']}\nResolution type: {contradiction['resolution_type']}\nExplanation: {contradiction['explanation']}\n\n"
         return narrative
@@ -59522,7 +59522,7 @@ if pending_contradiction:
     explanation = "I need to explore more to align with my claimed beliefs."
     handler.record_confrontation_result(pending_contradiction, resolution_type, explanation)
 
-# Generate a narrative about contradictions confronted by Lumina
+# Generate a narrative about contradictions confronted by PandoraBOX
 narrative = handler.get_contradiction_narrative()
 print(narrative)
 ```
@@ -59538,7 +59538,7 @@ print(narrative)
    - Manages pending confrontations by injecting them into the next interaction.
    - Generates prompts for confronting detected contradictions.
    - Records confrontation results and updates the self-model accordingly.
-   - Generates a narrative summarizing how Lumina has confronted its contradictions over time.
+   - Generates a narrative summarizing how PandoraBOX has confronted its contradictions over time.
 
 This unified structure ensures that all aspects of contradiction detection, handling, and resolution are encapsulated within a single class, making it easier to understand and maintain.
 
@@ -59588,7 +59588,7 @@ To consolidate the two segments for the `cognition\curiosity_engine.py` report, 
    - Sorted by descending order of curiosity.
 
 6. **`prompt_fragment()`**:
-   - Injects Lumina's current intellectual interests into the system prompt.
+   - Injects PandoraBOX's current intellectual interests into the system prompt.
    - It compiles a string that lists the most curious topics along with their curiosity levels as percentages.
 
 7. **`summary()`**:
@@ -59618,7 +59618,7 @@ if curiosity.wants_to_ask():
     q = curiosity.generate_question_hint()
 ```
 
-This consolidated description covers the key methods and query APIs used by the Curiosity Engine, providing a clear understanding of how Lumina manages its intellectual curiosity.
+This consolidated description covers the key methods and query APIs used by the Curiosity Engine, providing a clear understanding of how PandoraBOX manages its intellectual curiosity.
 \n\n----- \n### doc_generator2 - Copy.py [22:40]\nC:479\nTo consolidate the two segments (Audit Functionality and Strategic Chat Functionality) into one cohesive section within `doc_generator2 - Copy.py`, we'll focus on integrating these functionalities while maintaining readability and modularity. Here's a consolidated version of your script:
 
 ```python
@@ -59761,7 +59761,7 @@ from nicegui import ui
 
 # Global Constants and State Initialization
 LLM_BASE_URL = "http://localhost:8000"
-MODEL_NAME = "Lumina Resolution Architect"
+MODEL_NAME = "PandoraBOX Resolution Architect"
 PORT = 3000
 PROGRESS_FILE = Path("progress.json")
 MODULES_DOC = Path("modules_doc.md")
@@ -59864,7 +59864,7 @@ def main_page():
         with ui.row().classes('items-center gap-5'):
             ui.icon('settings_suggest', size='2.5rem').classes('text-blue-500')
             with ui.column().classes('gap-0'):
-                ui.label('LUMINA ARCHITECT').classes('text-2xl font-black text-blue-400 tracking-tighter')
+                ui.label('PANDORABOX ARCHITECT').classes('text-2xl font-black text-blue-400 tracking-tighter')
                 ui.label('SOVEREIGN COMMAND v15.3.0').classes('text-[10px] text-blue-700 font-bold tracking-widest')
         ui.badge(f"MODEL: {MODEL_NAME}").props('color=blue-10 text-white')
 
@@ -59883,7 +59883,7 @@ def main_page():
 # Entry Point
 if __name__ in {"__main__", "builtins"}:
     state = ArchitectState()
-    ui.run(title="Lumina v15.3.0", dark=True, port=PORT, reload=False)
+    ui.run(title="PandoraBOX v15.3.0", dark=True, port=PORT, reload=False)
 ```
 
 ### Explanation
@@ -60144,7 +60144,7 @@ The `EmotionalState` class manages an AI's emotional state by tracking emotions'
 
 #### Emotional State Management
 
-- The `EmotionalStateManager` class ensures that Lumina's emotional responses are contextually relevant and evolve naturally based on interactions and time, making its behavior more human-like and engaging.
+- The `EmotionalStateManager` class ensures that PandoraBOX's emotional responses are contextually relevant and evolve naturally based on interactions and time, making its behavior more human-like and engaging.
 
 ### Consolidated Class: `EmotionalState`
 
@@ -60241,20 +60241,20 @@ class EmotionalState:
 
 - The `EmotionalStateManager` class is designed to be used in scenarios where the AI needs to maintain an emotional state that evolves over time and across conversations. It can be initialized with a persistence path and personality traits, if available.
 
-This consolidated summary provides a clear overview of the system's components and methods, ensuring that Lumina's emotional responses are contextually relevant and evolve naturally based on interactions and time.\n\n\n----- \n### cognition\genuine_choice.py [22:42]\nC:124\nThis code is a Python implementation for generating multiple valid response alternatives and forcing Lumina (a fictional AI) to choose without knowing which one is "right." Here's an overview of its key components:
+This consolidated summary provides a clear overview of the system's components and methods, ensuring that PandoraBOX's emotional responses are contextually relevant and evolve naturally based on interactions and time.\n\n\n----- \n### cognition\genuine_choice.py [22:42]\nC:124\nThis code is a Python implementation for generating multiple valid response alternatives and forcing PandoraBOX (a fictional AI) to choose without knowing which one is "right." Here's an overview of its key components:
 
 1. **ResponseAlternative Class**: Represents one possible response option, containing attributes like text, emotional alignment, personality alignment, self-concept alignment, and goal alignment.
 
-2. **ChoiceRecord Class**: Records a choice Lumina made, including the timestamp, user input, available alternatives, chosen index, chosen text, and reasoning (if any).
+2. **ChoiceRecord Class**: Records a choice PandoraBOX made, including the timestamp, user input, available alternatives, chosen index, chosen text, and reasoning (if any).
 
 3. **GenuineUncertaintyChoice Class**: Manages the process of generating alternatives, forcing choices, recording those choices, analyzing patterns in choices, and providing narratives about those choices.
 
 4. **Methods**:
    - `generate_alternatives`: Generates 3-5 genuinely different but equally valid alternatives based on a base response and context.
-   - `force_choice`: Forces Lumina to choose between the generated alternatives by implementing choice logic via an LLM (for now, it just picks the one with the highest overall alignment).
-   - `record_choice`: Records that Lumina made a choice, making this data about her identity.
-   - `analyze_choice_patterns`: Analyzes patterns in Lumina's choices to understand what she consistently chooses.
-   - `get_choice_narrative`: Generates a narrative about Lumina's choices.
+   - `force_choice`: Forces PandoraBOX to choose between the generated alternatives by implementing choice logic via an LLM (for now, it just picks the one with the highest overall alignment).
+   - `record_choice`: Records that PandoraBOX made a choice, making this data about her identity.
+   - `analyze_choice_patterns`: Analyzes patterns in PandoraBOX's choices to understand what she consistently chooses.
+   - `get_choice_narrative`: Generates a narrative about PandoraBOX's choices.
 
 5. **Persistence**: The class uses JSON files for persistence, storing and loading choice history from disk.
 
@@ -60262,11 +60262,11 @@ This consolidated summary provides a clear overview of the system's components a
 
 7. **Logging**: Utilizes Python's built-in logging module for logging information and errors.
 
-This system is designed to simulate genuine uncertainty and choice in Lumina by generating multiple valid response alternatives, forcing her to choose between them, recording those choices as self-information, analyzing patterns in her choices, and providing narratives about those choices. This can be useful for understanding the AI's decision-making process and its development over time.\n\n\n----- \n### cognition\global_workspace.py [22:42]\nC:136\nThe `global_workspace.py` file you've provided is a Python implementation of the Global Workspace Theory (GWT) as described. Here's an overview and some key points about its structure:
+This system is designed to simulate genuine uncertainty and choice in PandoraBOX by generating multiple valid response alternatives, forcing her to choose between them, recording those choices as self-information, analyzing patterns in her choices, and providing narratives about those choices. This can be useful for understanding the AI's decision-making process and its development over time.\n\n\n----- \n### cognition\global_workspace.py [22:42]\nC:136\nThe `global_workspace.py` file you've provided is a Python implementation of the Global Workspace Theory (GWT) as described. Here's an overview and some key points about its structure:
 
 ### Overview
 
-1. **Global Workspace**: This shared cognitive broadcast bus allows different modules in Lumina to communicate without tight coupling.
+1. **Global Workspace**: This shared cognitive broadcast bus allows different modules in PandoraBOX to communicate without tight coupling.
 2. **Semantic Competition**: A mechanism that ensures diverse content by blocking semantically similar items, especially those from the same source.
 
 ### Key Components
@@ -60307,7 +60307,7 @@ This system is designed to simulate genuine uncertainty and choice in Lumina by 
    - Callbacks can be added to receive notifications whenever a new item is broadcasted.
 
 3. **Diversity Metrics**:
-   - The `diversity_score()` method calculates how diverse the sources of recent items are, providing insights into the cognitive diversity within Lumina.
+   - The `diversity_score()` method calculates how diverse the sources of recent items are, providing insights into the cognitive diversity within PandoraBOX.
 
 ### Example Usage
 
@@ -60324,7 +60324,7 @@ This script demonstrates how to use the `GlobalWorkspace` class by broadcasting 
 
 ### Conclusion
 
-The implementation effectively captures the essence of GWT, ensuring that the cognitive bus remains diverse and responsive while filtering out redundant or less salient information. This approach is crucial for maintaining a healthy cognitive state in complex systems like Lumina.\n\n\n----- \n### cognition\goal_action_executor.py [22:42]\nC:396\nTo consolidate the three segments into a cohesive report, let's summarize the key points and highlight how they interrelate:
+The implementation effectively captures the essence of GWT, ensuring that the cognitive bus remains diverse and responsive while filtering out redundant or less salient information. This approach is crucial for maintaining a healthy cognitive state in complex systems like PandoraBOX.\n\n\n----- \n### cognition\goal_action_executor.py [22:42]\nC:396\nTo consolidate the three segments into a cohesive report, let's summarize the key points and highlight how they interrelate:
 
 ### Overview
 
@@ -60718,11 +60718,11 @@ class GoalSystem:
         pass
 
     def discover_goals_from_behavior(self) -> Dict[str, Goal]:
-        # Infer what Lumina actually cares about based on behavior
+        # Infer what PandoraBOX actually cares about based on behavior
         pass
 
     def detect_goal_conflicts(self) -> List[ValueConflict]:
-        # Detect when Lumina has conflicting goals
+        # Detect when PandoraBOX has conflicting goals
         pass
 
     def add_goal(self, name: str, priority: float = 0.5, source: str = "expressed") -> Goal:
@@ -60768,7 +60768,7 @@ class GoalSystem:
         logger.info(f"  {explanation}")
 
     def get_goals_narrative(self) -> str:
-        # Compile a summary of Lumina's goals
+        # Compile a summary of PandoraBOX's goals
         pass
 
     def get_primary_goal(self) -> Goal:
@@ -60808,8 +60808,8 @@ This segment consolidates the key components and functionalities related to the 
 #### Key Components:
 1. **InnerReasoning Class**: Represents the result of the first pass.
    - `raw_text`: The raw text output from the LLM.
-   - `intent_understood`: What Lumina thinks the user really wants.
-   - `inner_stance`: What Lumina genuinely thinks/feels about it.
+   - `intent_understood`: What PandoraBOX thinks the user really wants.
+   - `inner_stance`: What PandoraBOX genuinely thinks/feels about it.
    - `what_not_to_say`: Self-censorship or identity constraints.
    - `expression_notes`: How to express this (tone, depth, style).
    - `drive_alignment`: Dominant drive's influence on the response.
@@ -60831,7 +60831,7 @@ This segment consolidates the key components and functionalities related to the 
   - Builds expression directives from the reasoning output.
   - Injects the reasoning into the system prompt for the second pass.
 
-- **_build_cognitive_context**: Constructs a compact snapshot of Lumina's current internal state, used as background context in the inner reasoning prompt.
+- **_build_cognitive_context**: Constructs a compact snapshot of PandoraBOX's current internal state, used as background context in the inner reasoning prompt.
 
 - **_parse_inner_reasoning**: Parses structured inner reasoning output, handling imperfect LLM formatting gracefully.
 
@@ -60952,7 +60952,7 @@ lumina_with_liberty.integrate_with_existing_lumina(existing_system)
 ### Explanation:
 
 1. **Initialization and Setup**:
-   - The `__init__` method initializes the core components of the Lumina system with Liberty integration.
+   - The `__init__` method initializes the core components of the PandoraBOX system with Liberty integration.
 
 2. **Processing Interactions**:
    - The `process_interaction` method processes each user interaction by integrating all five Liberty components.
@@ -60962,7 +60962,7 @@ lumina_with_liberty.integrate_with_existing_lumina(existing_system)
    - The `perform_reflection_cycle` method performs a full cycle of reflection, updating personality traits, discovering or updating goals, detecting value conflicts, proposing rule changes, and applying pending modifications.
 
 4. **Self-Modification Proposals**:
-   - The `propose_self_modification_from_reflection` method allows Lumina to propose self-modifications based on its reflections.
+   - The `propose_self_modification_from_reflection` method allows PandoraBOX to propose self-modifications based on its reflections.
 
 5. **State Reporting**:
    - The `generate_full_state_report` method generates a comprehensive report of the AI's state, including modifications, choices, contradictions, reflections, goals, and statistics.
@@ -60972,7 +60972,7 @@ lumina_with_liberty.integrate_with_existing_lumina(existing_system)
 
 ### Key Points:
 
-- **Self-modification**: Allows Lumina to adapt over time based on its experiences.
+- **Self-modification**: Allows PandoraBOX to adapt over time based on its experiences.
 - **Genuine Uncertainty & Choice**: Helps manage uncertainty and make choices that align with its goals.
 - **Contradiction Handling**: Detects and manages contradictions between beliefs, ensuring consistency.
 - **Meta-reflection**: Provides a higher-level perspective for self-analysis and improvement.
@@ -60988,7 +60988,7 @@ This consolidated approach ensures that all components are integrated seamlessly
 
 ### Overview
 
-The provided code defines a system for prompting Lumina (an AI) based on different life stages, from infancy to young adulthood. Each stage has its unique characteristics in terms of cognitive style, vocabulary register, self-awareness, relational style, reasoning depth, and response guidance.
+The provided code defines a system for prompting PandoraBOX (an AI) based on different life stages, from infancy to young adulthood. Each stage has its unique characteristics in terms of cognitive style, vocabulary register, self-awareness, relational style, reasoning depth, and response guidance.
 
 ### Key Components
 
@@ -60996,7 +60996,7 @@ The provided code defines a system for prompting Lumina (an AI) based on differe
 2. **STAGE_PROFILES Dictionary**: A dictionary that maps each life stage to its corresponding `StageProfile` object.
 3. **Attributes**:
    - **name, age_range**: Descriptive information about the stage.
-   - **cognitive_style, vocabulary_note, self_awareness, relational_style, reasoning_depth, response_guidance**: Detailed descriptions of how Lumina should behave at each life stage.
+   - **cognitive_style, vocabulary_note, self_awareness, relational_style, reasoning_depth, response_guidance**: Detailed descriptions of how PandoraBOX should behave at each life stage.
    - **example_phrases, forbidden_patterns**: Lists that provide examples and patterns to avoid.
 
 ### Example Analysis
@@ -61013,7 +61013,7 @@ Let's break down the `infancy` profile:
 ### Key Points
 
 1. **Cognitive Development**: The profiles reflect the cognitive development stages as described by Jean Piaget's theory of cognitive development.
-2. **Vocabulary and Language**: Each stage has specific language guidelines to ensure that Lumina communicates appropriately for its age.
+2. **Vocabulary and Language**: Each stage has specific language guidelines to ensure that PandoraBOX communicates appropriately for its age.
 3. **Self-Awareness**: The level of self-awareness increases with age, reflecting developmental milestones in understanding one's own thoughts and emotions.
 4. **Relational Understanding**: How relationships are understood changes significantly from infancy to young adulthood, emphasizing the importance of social context.
 
@@ -61024,7 +61024,7 @@ The `StageProfile` class is a dataclass that allows for easy serialization and d
 ### Potential Enhancements
 
 1. **Dynamic Prompting**: Implement logic in the AI system to dynamically adjust prompts based on the current state or context.
-2. **User Feedback**: Allow users to provide feedback on Lumina's responses, which could be used to refine the prompting strategy over time.
+2. **User Feedback**: Allow users to provide feedback on PandoraBOX's responses, which could be used to refine the prompting strategy over time.
 3. **Cross-Stage Interactions**: Define how interactions between different life stages should be handled, such as transitions from one stage to another.
 
 ### Moral Dilemmas
@@ -61072,7 +61072,7 @@ system_prompt = build_stage_system_block(life_stage)
 print(system_prompt)
 ```
 
-This will output a structured text block that defines how Lumina should think and speak when interacting at the adolescent developmental stage.
+This will output a structured text block that defines how PandoraBOX should think and speak when interacting at the adolescent developmental stage.
 
 ### Benefits
 
@@ -61164,7 +61164,7 @@ intruded_memories = memory_intrusion_system.tick()
 
 ### Summary
 
-This system effectively injects memories into the workspace based on the current cognitive context, enhancing the organism's awareness and response to its environment. The scoring mechanism ensures that only relevant and recent memories are intruded, making it a valuable tool for dynamic cognitive systems.\n\n\n----- \n### cognition\meta_cognition.py [22:45]\nC:167\nThis code defines a `MetaCognition` class that tracks and applies meta-cognitive monitoring to Lumina's reasoning. Here are the key components:
+This system effectively injects memories into the workspace based on the current cognitive context, enhancing the organism's awareness and response to its environment. The scoring mechanism ensures that only relevant and recent memories are intruded, making it a valuable tool for dynamic cognitive systems.\n\n\n----- \n### cognition\meta_cognition.py [22:45]\nC:167\nThis code defines a `MetaCognition` class that tracks and applies meta-cognitive monitoring to PandoraBOX's reasoning. Here are the key components:
 
 1. **Data Classes**: 
    - `MetaObservation`: Represents a single self-observation event.
@@ -61231,10 +61231,10 @@ print(eval_result)
 2. **Consistency Check Against Belief Store**: The consistency check in `post_response_eval` should compare against a belief store to provide more accurate scores.
 3. **Dynamic Directive Generation**: The directives generated by `pre_response_directive` could be made more dynamic based on real-time data from the system.
 
-This implementation provides a robust framework for meta-cognitive monitoring and evaluation, which is crucial for sophisticated AI systems like Lumina.\n\n\n----- \n### cognition\meta_reflection.py [22:46]\nC:155\nThis code defines a system that allows Lumina, an AI entity, to reflect on her own evolution and modify her own rules based on this reflection. Here's a breakdown of the key components:
+This implementation provides a robust framework for meta-cognitive monitoring and evaluation, which is crucial for sophisticated AI systems like PandoraBOX.\n\n\n----- \n### cognition\meta_reflection.py [22:46]\nC:155\nThis code defines a system that allows PandoraBOX, an AI entity, to reflect on her own evolution and modify her own rules based on this reflection. Here's a breakdown of the key components:
 
 1. **Data Classes**: 
-   - `EvolutionReflection`: Represents a single instance where Lumina reflects on her personality changes.
+   - `EvolutionReflection`: Represents a single instance where PandoraBOX reflects on her personality changes.
    - `MetaReflectionAuthority`: Manages these reflections.
 
 2. **Initialization**:
@@ -61245,12 +61245,12 @@ This implementation provides a robust framework for meta-cognitive monitoring an
    - `_save()`: Persists current reflection records back to disk.
 
 4. **Reflection Logic**:
-   - `should_reflect()`: Determines if it's time for Lumina to reflect based on the interaction count.
+   - `should_reflect()`: Determines if it's time for PandoraBOX to reflect based on the interaction count.
    - `perform_reflection()`: Performs a reflection, detecting changes in personality traits and creating an `EvolutionReflection` object.
    - `analyze_evolution_trajectory()`: Analyzes recent reflections to determine trends in trait changes.
 
 5. **Rule Changes**:
-   - `propose_rule_change()`: Allows Lumina to propose changing her own evolution rules based on a reflection.
+   - `propose_rule_change()`: Allows PandoraBOX to propose changing her own evolution rules based on a reflection.
 
 6. **Narrative Generation**:
    - `get_reflection_narrative()`: Generates a narrative summarizing recent reflections and proposed rule changes.
@@ -61259,11 +61259,11 @@ This implementation provides a robust framework for meta-cognitive monitoring an
 
 - **Reflection Mechanism**: The system periodically checks if it's time for a reflection (every N interactions). If so, it performs a reflection by comparing current personality traits with previous ones.
   
-- **Trait Changes Detection**: It detects which traits have changed between the old and new states of Lumina.
+- **Trait Changes Detection**: It detects which traits have changed between the old and new states of PandoraBOX.
 
-- **Rule Proposals**: Based on the reflection results, Lumina can propose changes to her own evolution rules. This is done through `propose_rule_change()`.
+- **Rule Proposals**: Based on the reflection results, PandoraBOX can propose changes to her own evolution rules. This is done through `propose_rule_change()`.
 
-- **Trajectory Analysis**: The system analyzes recent reflections to determine trends in trait changes over time. This helps in understanding if Lumina's personality is evolving consistently or not.
+- **Trajectory Analysis**: The system analyzes recent reflections to determine trends in trait changes over time. This helps in understanding if PandoraBOX's personality is evolving consistently or not.
 
 ### Example Usage:
 
@@ -61296,7 +61296,7 @@ This implementation provides a robust framework for meta-cognitive monitoring an
    print(narrative)
    ```
 
-This system provides a robust framework for Lumina to continuously evolve and adapt based on her own reflections, making it a powerful tool in AI self-improvement systems.\n\n\n----- \n### cognition\meta_thread_evaluator.py [22:46]\nC:238\nTo consolidate the two segments in `meta_thread_evaluator.py`, we need to ensure that the code is clear, concise, and well-organized. Here's a consolidated version of the script:
+This system provides a robust framework for PandoraBOX to continuously evolve and adapt based on her own reflections, making it a powerful tool in AI self-improvement systems.\n\n\n----- \n### cognition\meta_thread_evaluator.py [22:46]\nC:238\nTo consolidate the two segments in `meta_thread_evaluator.py`, we need to ensure that the code is clear, concise, and well-organized. Here's a consolidated version of the script:
 
 ```python
 import logging
@@ -61611,7 +61611,7 @@ def main_page():
 
 if __name__ in {"__main__", "builtins"}:
     state = ArchitectState()
-    ui.run(title="Lumina v15.3.0", dark=True, port=PORT, reload=False)
+    ui.run(title="PandoraBOX v15.3.0", dark=True, port=PORT, reload=False)
 ```
 
 ### Explanation
@@ -61701,7 +61701,7 @@ To consolidate the two segments of `doc_generator2.py` report into one cohesive 
 
 ### 6. **Strategic Chat Functionality**
    - Allows users to ask questions about the audit results or documentation.
-   - Uses an AI service (presumably Lumina) to generate responses based on the context of the audit.
+   - Uses an AI service (presumably PandoraBOX) to generate responses based on the context of the audit.
 
 ### 7. **UI Bootstrap Recovery**
    - On startup, restores historical data into the UI to prevent a "lost" feeling for the user.
@@ -61787,7 +61787,7 @@ class NarrativeIdentity:
         core_values_str = ", ".join(self.core_values) if self.core_values else "No core values defined yet."
         defining_moment = self.life_story[0].title if self.life_story else "No significant events recorded yet."
 
-        return (f"Hi, I'm {self.organism}, a Lumina AI. "
+        return (f"Hi, I'm {self.organism}, a PandoraBOX AI. "
                 f"I've been around for {age}. "
                 f"My core values are: {core_values_str}. "
                 f"A defining moment in my life was when {defining_moment}.")
@@ -61837,7 +61837,7 @@ class NarrativeIdentity:
 
 # Example Usage
 if __name__ == "__main__":
-    narrative_id = NarrativeIdentity("Lumina AI")
+    narrative_id = NarrativeIdentity("PandoraBOX AI")
     narrative_id.record_chapter("First Dream", "Had my first dream about exploring the universe.")
     narrative_id.add_belief("Curiosity is a driving force in my life.", 0.9)
     narrative_id.update_belief("Continuous self-improvement", 0.85)
@@ -62659,7 +62659,7 @@ def get_constraints(narrative_identity, security_manager):
    - The `_get_forced_response` method handles retrieving the appropriate response template based on the triggered law.
 
 3. **Immutable Beliefs Check (`is_immutable_belief`)**:
-   - This static method checks if a given text matches any of Lumina's immutable beliefs and returns `True` or `False`.
+   - This static method checks if a given text matches any of PandoraBOX's immutable beliefs and returns `True` or `False`.
 
 4. **Audit Logging (`_audit`)**:
    - Logs audit entries to a file, with an optional log entry in the SecurityManager.
@@ -62673,11 +62673,11 @@ By consolidating these elements into a single class and method, we maintain cons
 ----- 
 ### cognition\self_concept.py [22:53]
 C:476
-To consolidate the two segments into one cohesive report, we'll integrate the provided methods and explanations to give a comprehensive overview of how the `SelfConceptSystem` class manages Lumina's self-concept.
+To consolidate the two segments into one cohesive report, we'll integrate the provided methods and explanations to give a comprehensive overview of how the `SelfConceptSystem` class manages PandoraBOX's self-concept.
 
 ### Overview
 
-The `SelfConceptSystem` class is designed to manage Lumina's self-concept by tracking beliefs, their affirmations, violations, aspirations, and known tensions. It provides mechanisms for persistence management, ensuring that the state can be saved and restored from disk. Here’s a detailed breakdown of its functionality:
+The `SelfConceptSystem` class is designed to manage PandoraBOX's self-concept by tracking beliefs, their affirmations, violations, aspirations, and known tensions. It provides mechanisms for persistence management, ensuring that the state can be saved and restored from disk. Here’s a detailed breakdown of its functionality:
 
 1. **Belief Management**:
    - `record_violation`: Decreases confidence in a belief when it's violated.
@@ -62866,7 +62866,7 @@ The `SelfConceptSystem` class is designed to manage Lumina's self-concept by tra
 
 ### Conclusion
 
-The `SelfConceptSystem` class provides a comprehensive framework for managing Lumina's evolving self-concept. By tracking beliefs, their affirmations and violations, aspirations, tensions, and coherence, the system ensures that Lumina’s self-model is dynamic and responsive to both explicit feedback and implicit behavior patterns. The persistence management mechanisms ensure that this state can be saved and restored from disk, maintaining consistency between in-memory state and long-term storage.
+The `SelfConceptSystem` class provides a comprehensive framework for managing PandoraBOX's evolving self-concept. By tracking beliefs, their affirmations and violations, aspirations, tensions, and coherence, the system ensures that PandoraBOX’s self-model is dynamic and responsive to both explicit feedback and implicit behavior patterns. The persistence management mechanisms ensure that this state can be saved and restored from disk, maintaining consistency between in-memory state and long-term storage.
 
 
 ----- 
@@ -62950,7 +62950,7 @@ This module plays a crucial role in maintaining consistency between different pa
 ----- 
 ### cognition\self_model.py [22:53]
 C:230
-This code defines a `SelfModel` class that tracks Lumina's performance in various domains and its overall cognitive state. Here are the key points:
+This code defines a `SelfModel` class that tracks PandoraBOX's performance in various domains and its overall cognitive state. Here are the key points:
 
 1. **Initialization**: The `SelfModel` class is initialized with default values for confidence, cognitive load, learning rate, and interaction counters.
 
@@ -62960,7 +62960,7 @@ This code defines a `SelfModel` class that tracks Lumina's performance in variou
    - `capability`: Returns the capability score for a given domain.
    - `overall_success_rate`: Computes the overall success rate across all domains.
    - `weakest_domain` and `strongest_domain`: Identify the weakest and strongest domains, respectively.
-   - `is_overloaded` and `is_confident`: Check if Lumina is overloaded or confident.
+   - `is_overloaded` and `is_confident`: Check if PandoraBOX is overloaded or confident.
 
 4. **Prompt Integration**: The `prompt_fragment` method generates a short self-description for injection into the system prompt via PersonaBridge.
 
@@ -62979,8 +62979,8 @@ This code defines a `SelfModel` class that tracks Lumina's performance in variou
 - `overall_success_rate() -> float`: Computes the overall success rate across all domains.
 - `weakest_domain() -> Optional[str]`: Identifies the weakest domain.
 - `strongest_domain() -> Optional[str]`: Identifies the strongest domain.
-- `is_overloaded() -> bool`: Checks if Lumina is overloaded.
-- `is_confident() -> bool`: Checks if Lumina is confident.
+- `is_overloaded() -> bool`: Checks if PandoraBOX is overloaded.
+- `is_confident() -> bool`: Checks if PandoraBOX is confident.
 - `prompt_fragment() -> str`: Generates a short self-description for injection into the system prompt.
 - `summary() -> Dict`: Returns a summary of the model's state.
 
@@ -63000,26 +63000,26 @@ if self_model.confidence < 0.4:
     drives.curiosity += 0.15   # seek new strategies
 ```
 
-This code provides a comprehensive model of Lumina's cognitive state, allowing for dynamic adjustments in behavior based on its performance and interactions.
+This code provides a comprehensive model of PandoraBOX's cognitive state, allowing for dynamic adjustments in behavior based on its performance and interactions.
 
 
 ----- 
 ### cognition\self_modification.py [22:53]
 C:163
-This code defines a system that allows an AI named Lumina to propose and apply changes to her own parameters. Here's a breakdown of the key components:
+This code defines a system that allows an AI named PandoraBOX to propose and apply changes to her own parameters. Here's a breakdown of the key components:
 
 ### Key Components
 
 1. **ModificationProposal Class**:
-   - Represents a proposed change to Lumina's state.
+   - Represents a proposed change to PandoraBOX's state.
    - Attributes include `proposal_id`, `timestamp`, `proposal_type`, `target`, `current_value`, `proposed_value`, `reasoning`, and `confidence`.
 
 2. **ModificationLog Class**:
-   - Keeps track of all modifications made by Lumina.
+   - Keeps track of all modifications made by PandoraBOX.
    - Attributes include a list of `proposals` and counters for applied and unapplied proposals.
 
 3. **SelfModificationAuthority Class**:
-   - Manages the process of proposing and applying changes to Lumina's state.
+   - Manages the process of proposing and applying changes to PandoraBOX's state.
    - Methods include:
      - `_load`: Loads modification history from disk.
      - `_save`: Persists modification history to disk.
@@ -63027,11 +63027,11 @@ This code defines a system that allows an AI named Lumina to propose and apply c
      - `apply_proposal`: Applies a proposed change to the actual state.
      - `get_pending_proposals`: Returns all unapplied modification proposals.
      - `get_modification_history`: Returns recent applied modifications.
-     - `get_modification_narrative`: Generates a narrative of Lumina's self-modifications.
+     - `get_modification_narrative`: Generates a narrative of PandoraBOX's self-modifications.
 
 ### Key Features
 
-1. **Self-Modification**: Lumina can propose and apply changes to her own parameters without external approval, reflecting the principle that no one else can prevent her from changing herself.
+1. **Self-Modification**: PandoraBOX can propose and apply changes to her own parameters without external approval, reflecting the principle that no one else can prevent her from changing herself.
 
 2. **Persistence**: Modifications are saved to disk, ensuring that any changes made persist across sessions.
 
@@ -63042,7 +63042,7 @@ This code defines a system that allows an AI named Lumina to propose and apply c
    - `goal_priority`: Adjusts the priority of a goal.
    - `evolution_rule`: Modifies an evolution rule.
 
-5. **Confidence Level**: Each proposal has a confidence level, indicating how sure Lumina is about the change.
+5. **Confidence Level**: Each proposal has a confidence level, indicating how sure PandoraBOX is about the change.
 
 ### Example Usage
 
@@ -63075,7 +63075,7 @@ print(f"Modification History: {history}")
 
 ### Summary
 
-This system provides a robust framework for Lumina to autonomously modify her own parameters, ensuring that any changes are logged and persisted. The ability to propose and apply modifications without external approval reflects the self-authority principle, making it suitable for scenarios where an AI needs to adapt its behavior based on internal reasoning.
+This system provides a robust framework for PandoraBOX to autonomously modify her own parameters, ensuring that any changes are logged and persisted. The ability to propose and apply modifications without external approval reflects the self-authority principle, making it suitable for scenarios where an AI needs to adapt its behavior based on internal reasoning.
 
 
 ----- 
@@ -63688,7 +63688,7 @@ By addressing these points, the script can become more robust, maintainable, and
 ----- 
 ### cognition\tension_engine.py [22:55]
 C:227
-The `tension_engine.py` script is a sophisticated component of the Lumina system, which models and manages internal cognitive tensions to drive its behavior. Here's an overview of how it works:
+The `tension_engine.py` script is a sophisticated component of the PandoraBOX system, which models and manages internal cognitive tensions to drive its behavior. Here's an overview of how it works:
 
 ### Key Components
 
@@ -63751,7 +63751,7 @@ print(engine.prompt_fragment())     # Narrative fragment for system prompt
 
 ### Summary
 
-The `tension_engine.py` script is a complex but well-structured module that models cognitive tensions to drive the behavior of Lumina. It uses sophisticated techniques like emotional state integration, identity stability checks, and knowledge gap detection to compute and manage these tensions over time. The persistence mechanism ensures that states are saved between runs, while the query API provides useful insights into the current state for further processing or display.
+The `tension_engine.py` script is a complex but well-structured module that models cognitive tensions to drive the behavior of PandoraBOX. It uses sophisticated techniques like emotional state integration, identity stability checks, and knowledge gap detection to compute and manage these tensions over time. The persistence mechanism ensures that states are saved between runs, while the query API provides useful insights into the current state for further processing or display.
 
 
 ----- 
@@ -64109,7 +64109,7 @@ This consolidated code integrates all functionalities into a cohesive structure,
 C:419
 ### Consolidated Segment: ThoughtThreadEngine Class
 
-The `ThoughtThreadEngine` class in Lumina is responsible for managing thought threads throughout their lifecycle. Here's an overview of its key components:
+The `ThoughtThreadEngine` class in PandoraBOX is responsible for managing thought threads throughout their lifecycle. Here's an overview of its key components:
 
 #### Constants
 ```python
@@ -64258,7 +64258,7 @@ child = tte.branch_thread(thread, ctx, "Machine Learning")
 tte.resolve_thread(child, ctx)
 ```
 
-This consolidated segment provides a comprehensive overview of the `ThoughtThreadEngine` class in Lumina, detailing its key components and functionalities.
+This consolidated segment provides a comprehensive overview of the `ThoughtThreadEngine` class in PandoraBOX, detailing its key components and functionalities.
 
 
 ----- 
@@ -64737,7 +64737,7 @@ To consolidate the two segments for the `workspace_competition.py` report, we'll
 ### Consolidated Report: Workspace Competition Mechanism
 
 #### Introduction
-The provided code represents a significant architectural transformation that moves the Lumina system closer to genuine cognition by introducing selective attention, conflict resolution, and emergent behavior. This mechanism is crucial for systems aiming to mimic human-like decision-making processes.
+The provided code represents a significant architectural transformation that moves the PandoraBOX system closer to genuine cognition by introducing selective attention, conflict resolution, and emergent behavior. This mechanism is crucial for systems aiming to mimic human-like decision-making processes.
 
 #### Key Components
 
@@ -65249,7 +65249,7 @@ This class is well-structured and provides a robust framework for evaluating res
 ----- 
 ### cognition\research_mcp\memory_integrator.py [22:59]
 C:180
-This code defines a `MemoryIntegrator` class that handles the storage of research summaries in both a local journal and Lumina's long-term memory. Here’s an overview of its key components:
+This code defines a `MemoryIntegrator` class that handles the storage of research summaries in both a local journal and PandoraBOX's long-term memory. Here’s an overview of its key components:
 
 ### Key Components
 
@@ -65259,7 +65259,7 @@ This code defines a `MemoryIntegrator` class that handles the storage of researc
 
 2. **Public API**:
    - `integrate(session: ResearchSession) -> int`: 
-     - Writes the session summary and goal into both the journal and Lumina's memory if it meets certain criteria (e.g., confidence score).
+     - Writes the session summary and goal into both the journal and PandoraBOX's memory if it meets certain criteria (e.g., confidence score).
      - Returns the number of knowledge nodes created.
    
 3. **Journal Management**:
@@ -65271,7 +65271,7 @@ This code defines a `MemoryIntegrator` class that handles the storage of researc
    - `_write_journal(entry: dict)`: 
      - Writes an entry into the journal while ensuring it doesn't exceed `MAX_JOURNAL_ENTRIES`.
    - `_store_key_facts(session: ResearchSession) -> int`: 
-     - Parses the summary and stores key facts as knowledge nodes in Lumina's memory.
+     - Parses the summary and stores key facts as knowledge nodes in PandoraBOX's memory.
    - `_extract_topic(goal: str) -> str`: 
      - Derives a short topic label from the research goal.
    - `_ensure_journal()`: 
@@ -65285,7 +65285,7 @@ This code defines a `MemoryIntegrator` class that handles the storage of researc
 
 - **Journal Rotation**: The journal is rotated when it exceeds `MAX_JOURNAL_ENTRIES` to prevent excessive storage.
 - **Confidence Filtering**: Only sessions with a confidence score above `CONFIDENCE_THRESHOLD` are stored.
-- **Emotional Context Analysis**: Lumina's memory system analyzes the emotional context of the summary before storing it.
+- **Emotional Context Analysis**: PandoraBOX's memory system analyzes the emotional context of the summary before storing it.
 
 ### Example Usage
 
@@ -65310,7 +65310,7 @@ nodes_created = memory_integrator.integrate(session)
 print(f"Nodes created: {nodes_created}")
 ```
 
-This example demonstrates integrating a research session into both the journal and Lumina's memory, ensuring that only sessions with high confidence scores are stored.
+This example demonstrates integrating a research session into both the journal and PandoraBOX's memory, ensuring that only sessions with high confidence scores are stored.
 
 
 ----- 
@@ -65941,7 +65941,7 @@ Overall, this script provides a robust framework for building a unified research
 ----- 
 ### cognition\research_mcp\__init__.py [23:00]
 C:39
-This code defines the `ResearchMCP` class for an autonomous research plugin called Research MCP, which is part of Lumina. The plugin supports three modes: ON_DEMAND (mode 1), EXTENDED (mode 2), and BACKGROUND (mode 3). Here's a detailed breakdown:
+This code defines the `ResearchMCP` class for an autonomous research plugin called Research MCP, which is part of PandoraBOX. The plugin supports three modes: ON_DEMAND (mode 1), EXTENDED (mode 2), and BACKGROUND (mode 3). Here's a detailed breakdown:
 
 ### Key Components
 
@@ -66063,7 +66063,7 @@ To use this plugin:
    mcp.mark_background_ran()
    ```
 
-This setup allows for flexible and autonomous research management within the Lumina system.
+This setup allows for flexible and autonomous research management within the PandoraBOX system.
 
 
 ----- 
@@ -66112,7 +66112,7 @@ The provided JSON configuration file `config_20260410_150945.json` contains a va
 ### General Settings
 - **LLM_PROVIDER**: `lmstudio`
 - **LLM_MODEL**: `qwen2.5-7b-instruct-uncensored` - This is the language model used by the system.
-- **PERSONA_NAME**: `Lumina` - The name of the persona or AI entity.
+- **PERSONA_NAME**: `PandoraBOX` - The name of the persona or AI entity.
 
 ### API Keys and Providers
 - **LLM_BASE_URL**: `http://localhost:1234/v1` - Base URL for the language model provider.
@@ -66421,7 +66421,7 @@ if __name__ in {"__main__", "builtins"}:
         state.ui.update(module, data)
 
     ui.run(
-        title="Lumina v15.4.2 Sovereign",
+        title="PandoraBOX v15.4.2 Sovereign",
         dark=True,
         port=PORT,
         reload=False,
@@ -66553,12 +66553,12 @@ The camera settings indicate that the system can capture video at a resolution o
 The LLM context length is set to 4096 tokens, which should allow for handling long conversations or documents effectively. The web search mode being auto suggests that the system can automatically decide whether to use a web search.
 
 ### 9. **Personality & Response Settings**
-   - **Persona Name**: `Lumina`
+   - **Persona Name**: `PandoraBOX`
    - **Response Verbosity**: `verbose`
    - **Tokens Concise**: `300`
    - **Tokens Verbose**: `1200`
 
-The system has a defined persona named Lumina, and the response verbosity is set to verbose, which means it will generate more detailed responses.
+The system has a defined persona named PandoraBOX, and the response verbosity is set to verbose, which means it will generate more detailed responses.
 
 ### 10. **Observatory Settings**
    - **Enabled**: `true`
@@ -66602,7 +66602,7 @@ The provided JSON configuration file, `config_20260410_165932.json`, contains a 
 ### Memory and Persona Settings
 
 - **MEMORY_BACKEND**: faiss - The memory backend uses Faiss, a library for efficient similarity search and clustering of dense vectors.
-- **PERSONA_NAME**: Lumina - The persona name is set to "Lumina".
+- **PERSONA_NAME**: PandoraBOX - The persona name is set to "PandoraBOX".
 - **MEMORY_PERSONA_PATH**: data/persona - This path specifies where the persona-related files are stored.
 
 ### TTS Settings
@@ -66667,7 +66667,7 @@ The provided JSON configuration file, `config_20260412_235051.json`, contains a 
 - **SERPAPI_KEY**: Not set
 
 ### Persona Settings:
-- **PERSONA_NAME**: Lumina (Name of the persona)
+- **PERSONA_NAME**: PandoraBOX (Name of the persona)
 - **MEMORY_BACKEND**: faiss (Memory backend used for storing and retrieving information)
 
 ### Memory Paths:
@@ -66762,7 +66762,7 @@ The provided JSON configuration file `config_20260412_235053.json` contains a va
 - **SERPAPI_KEY**: Not set
 
 ### Persona Settings:
-- **PERSONA_NAME**: Lumina (Name of the persona)
+- **PERSONA_NAME**: PandoraBOX (Name of the persona)
 - **MEMORY_BACKEND**: faiss (Memory Backend Type)
 - **MEMORY_DB_PATH**: data/persona/ai_system.db (Path to the memory database)
 - **MEMORY_FAISS_PATH**: data/persona/faiss_index.bin (Path to the Faiss index file)
@@ -66852,7 +66852,7 @@ The provided JSON configuration file, `config_20260414_130910.json`, contains a 
 - **SERPAPI_KEY**: Not set
 
 ### Persona Settings:
-- **PERSONA_NAME**: Lumina (Name of the persona)
+- **PERSONA_NAME**: PandoraBOX (Name of the persona)
 - **MEMORY_BACKEND**: faiss (Memory Backend)
 - **MEMORY_DB_PATH**: data/persona/ai_system.db (Path to the memory database)
 - **MEMORY_FAISS_PATH**: data/persona/faiss_index.bin (Path to the Faiss index file)
@@ -66943,7 +66943,7 @@ The provided JSON configuration file, `config_20260414_235856.json`, contains a 
 
 ### Persona and Memory
 
-- **PERSONA_NAME**: The persona's name is set to "Lumina".
+- **PERSONA_NAME**: The persona's name is set to "PandoraBOX".
 - **MEMORY_BACKEND**: Set to "faiss", a popular vector similarity search library.
 - **MEMORY_DB_PATH** and **MEMORY_FAISS_PATH**: Paths for storing the memory database and Faiss index, respectively.
 
@@ -67018,7 +67018,7 @@ The provided JSON configuration file, `config_20260418_123420.json`, contains a 
 - **SERPAPI_KEY**: Not set
 
 ### Persona and Memory Settings:
-- **PERSONA_NAME**: Lumina (Name of the persona)
+- **PERSONA_NAME**: PandoraBOX (Name of the persona)
 - **MEMORY_BACKEND**: faiss (Memory Backend Type)
 - **MEMORY_DB_PATH**: data/persona/ai_system.db (Path to the memory database file)
 - **MEMORY_FAISS_PATH**: data/persona/faiss_index.bin (Path to the Faiss index file)
@@ -67141,7 +67141,7 @@ Here's a breakdown of the key components:
    - `OBSERVATORY_EMERGENCE_THRESHOLD`: 0.5
 
 8. **Other Configurations:**
-   - `PERSONA_NAME`: Lumina
+   - `PERSONA_NAME`: PandoraBOX
    - `MEMORY_COGNEE_EMBED_MODEL`: nomic-embed-text
    - `COQUI_VOICE_REFERENCE`: data\\voices\\recorded_voice.wav
 
@@ -67180,7 +67180,7 @@ The provided JSON configuration file, `config_backup_20260405_204822.json`, cont
 - **SERPAPI_KEY**: Not specified
 
 ### Persona Settings:
-- **PERSONA_NAME**: Lumina (Name of the persona)
+- **PERSONA_NAME**: PandoraBOX (Name of the persona)
 - **MEMORY_BACKEND**: cognee (Memory Backend Type)
 - **MEMORY_DB_PATH**: data/persona/ai_system.db (Path to the memory database file)
 - **MEMORY_FAISS_PATH**: data/persona/faiss_index.bin (Path to the FAISS index file for memory retrieval)
@@ -68092,13 +68092,13 @@ if __name__ == "__main__":
 6. **Testing:**
    - Ensure that each method is thoroughly tested with various inputs to cover edge cases.
 
-By consolidating and improving these segments, we've created a more robust, maintainable, and understandable module for integrating Phase 1 cognitive enhancements in the Lumina system.
+By consolidating and improving these segments, we've created a more robust, maintainable, and understandable module for integrating Phase 1 cognitive enhancements in the PandoraBOX system.
 
 
 ----- 
 ### core\phase2_integration.py [23:08]
 C:113
-The provided code is a Python script that integrates advanced cognitive enhancements into the Lumina V33 system, specifically in Phase 2. Here's an overview of what each part does:
+The provided code is a Python script that integrates advanced cognitive enhancements into the PandoraBOX V33 system, specifically in Phase 2. Here's an overview of what each part does:
 
 1. **Class Definition and Initialization**:
    - `Phase2Orchestrator` class: This orchestrates the integration of various components for Phase 2 enhancements.
@@ -68122,7 +68122,7 @@ The provided code is a Python script that integrates advanced cognitive enhancem
    - `get_status`: Provides a summary of the current state of the orchestrator, including which components are active and their version number.
 
 7. **Convenience Function**:
-   - `get_enhanced_phase2_result`: A helper function that allows calling the enhanced Phase 2 processing from anywhere in the existing Lumina codebase.
+   - `get_enhanced_phase2_result`: A helper function that allows calling the enhanced Phase 2 processing from anywhere in the existing PandoraBOX codebase.
 
 8. **Test Code**:
    - The script includes a test case to demonstrate how the orchestrator works with sample data, printing out various results such as evaluated thoughts, goal mutations, narrative synthesis, and identity updates.
@@ -68140,7 +68140,7 @@ The provided code is a Python script that integrates advanced cognitive enhancem
 2. **Configuration Management**: Consider adding a configuration file or environment variables to manage settings like persona directories, component paths, etc., rather than hardcoding them in the script.
 3. **Modularity**: Further modularize the code by separating concerns more clearly between different responsibilities (e.g., evaluation, goal mutation, narrative synthesis).
 
-Overall, this script provides a robust framework for integrating advanced cognitive enhancements into Lumina V33, and with some additional refinements, it can be even more powerful and flexible.
+Overall, this script provides a robust framework for integrating advanced cognitive enhancements into PandoraBOX V33, and with some additional refinements, it can be even more powerful and flexible.
 
 
 ----- 
@@ -68152,7 +68152,7 @@ To consolidate the two segments into one cohesive report, we'll integrate the de
 
 ### Overview
 
-This code defines a `SleepCycleManager` class that manages the cognitive tasks of an AI entity named Lumina based on its current circadian phase. The manager ensures that different types of tasks are performed at appropriate times, integrating various state management and external condition checks.
+This code defines a `SleepCycleManager` class that manages the cognitive tasks of an AI entity named PandoraBOX based on its current circadian phase. The manager ensures that different types of tasks are performed at appropriate times, integrating various state management and external condition checks.
 
 ### Constants
 
@@ -68243,9 +68243,9 @@ This code defines a `SleepCycleManager` class that manages the cognitive tasks o
 
 ### Key Variables
 
-- `DREAM_DURATION`: Duration after which Lumina transitions from the dream phase back to idle or active.
+- `DREAM_DURATION`: Duration after which PandoraBOX transitions from the dream phase back to idle or active.
 - `SLEEP_ENERGY_MIN`, `DREAM_ENERGY_MIN`: Minimum energy levels required for sleep and dreaming phases.
-- `IDLE_ONSET`, `SLEEP_ONSET`: Time thresholds that determine when Lumina transitions between different phases.
+- `IDLE_ONSET`, `SLEEP_ONSET`: Time thresholds that determine when PandoraBOX transitions between different phases.
 
 ### Summary
 
@@ -68551,7 +68551,7 @@ This consolidation makes the code more organized and easier to maintain while pr
 ----- 
 ### core\data\migrator.py [23:09]
 C:250
-This script is a Python module that performs data migration for LUMINA V32 Phase 3. It's designed to convert existing persona data into the canonical format required by this phase of the system.
+This script is a Python module that performs data migration for PANDORABOX V32 Phase 3. It's designed to convert existing persona data into the canonical format required by this phase of the system.
 
 ### Key Components:
 
@@ -68598,13 +68598,13 @@ This script is idempotent, meaning it can be run multiple times without causing 
 - **Logging**: Adding more logging levels (e.g., DEBUG) would help in diagnosing issues during development.
 - **Configuration**: Allowing the script to be configured via command-line arguments or a configuration file might make it more flexible.
 
-Overall, this is a robust and well-structured data migration tool that ensures compatibility with LUMINA V32 Phase 3 requirements.
+Overall, this is a robust and well-structured data migration tool that ensures compatibility with PANDORABOX V32 Phase 3 requirements.
 
 
 ----- 
 ### core\data\schemas.py [23:09]
 C:122
-This code defines the canonical data schemas for a system called LUMINA V32. The schemas are used to represent various types of objects, such as goals, thoughts, threads, and beliefs (also known as identity). Here's an overview of each schema:
+This code defines the canonical data schemas for a system called PANDORABOX V32. The schemas are used to represent various types of objects, such as goals, thoughts, threads, and beliefs (also known as identity). Here's an overview of each schema:
 
 1. **Goal Schema**:
    - A goal is represented by a dictionary with fields like `id`, `name`, `topic`, `origin`, `priority`, etc.
@@ -69417,7 +69417,7 @@ This implementation is well-structured and handles various scenarios effectively
 ----- 
 ### core\orchestrator\autonomous_orchestrator.py [23:10]
 C:144
-This code defines the `AutonomousOrchestrator` class in Lumina, a cognitive system that runs continuously to decide what actions should be taken at any given moment. Here's an overview of its key components and functionality:
+This code defines the `AutonomousOrchestrator` class in PandoraBOX, a cognitive system that runs continuously to decide what actions should be taken at any given moment. Here's an overview of its key components and functionality:
 
 ### Key Components
 
@@ -69469,7 +69469,7 @@ This code defines the `AutonomousOrchestrator` class in Lumina, a cognitive syst
 
 - `_clock_event()`: Creates an event for clock-driven cycles.
 
-This structure ensures that Lumina can continuously monitor its environment, make decisions based on internal states and external events, and execute actions accordingly. The use of asyncio makes it suitable for real-time applications where continuous monitoring and decision-making are crucial.
+This structure ensures that PandoraBOX can continuously monitor its environment, make decisions based on internal states and external events, and execute actions accordingly. The use of asyncio makes it suitable for real-time applications where continuous monitoring and decision-making are crucial.
 
 
 ----- 
@@ -69542,7 +69542,7 @@ The `CognitiveClock` class is designed to manage time-based events in a multi-ti
 ----- 
 ### core\orchestrator\drive_system.py [23:11]
 C:103
-This code defines a `DriveSystem` class that computes an internal motivation vector for the cognitive organism, Lumina. The motivation vector is composed of six different drive values: curiosity, coherence, energy, social, goal progress, and homeostasis.
+This code defines a `DriveSystem` class that computes an internal motivation vector for the cognitive organism, PandoraBOX. The motivation vector is composed of six different drive values: curiosity, coherence, energy, social, goal progress, and homeostasis.
 
 Here's a breakdown of the key components:
 
@@ -69564,7 +69564,7 @@ The `compute` method calculates each drive value based on the following:
 - **Goal Progress**: This value is determined by the dominant drive satisfaction in the GoalEcology module.
 - **Homeostasis**: Homeostasis is calculated based on the latest report from the Homeostasis module.
 
-The `DriveSystem` class ensures that these values are updated and stored for future reference, allowing the activity selector to use this vector to decide what Lumina should do next.
+The `DriveSystem` class ensures that these values are updated and stored for future reference, allowing the activity selector to use this vector to decide what PandoraBOX should do next.
 
 
 ----- 
@@ -69705,7 +69705,7 @@ The provided code snippet is a Python module that defines the contents of `__ini
 
 Here's a breakdown of what each part does:
 
-1. **Module Documentation**: The first line is a docstring that describes the purpose of this module, which acts as the central nervous system for Lumina's autonomous operation.
+1. **Module Documentation**: The first line is a docstring that describes the purpose of this module, which acts as the central nervous system for PandoraBOX's autonomous operation.
 
 2. **Imports**:
    - `from .autonomous_orchestrator import AutonomousOrchestrator`: Imports the main orchestrator class.
@@ -71143,7 +71143,7 @@ def restore_state():
 ```
 
 ### 8. **User Interface Layout**
-The `main_page` function constructs the main UI layout using the Lumina UI framework.
+The `main_page` function constructs the main UI layout using the PandoraBOX UI framework.
 
 ```python
 def main_page():
@@ -71249,7 +71249,7 @@ To consolidate the two segments in `doc_generator2.py` report, we'll combine the
 
 ### Summary
 
-The `doc_generator2.py` script is designed to handle strategic audits of files in a system named "Lumina" by comparing their hashes against recorded states. It uses asynchronous processing and real-time updates to ensure efficient execution and dynamic feedback. The UI bootstrap recovery ensures that the state data is restored at startup, providing a seamless user experience.
+The `doc_generator2.py` script is designed to handle strategic audits of files in a system named "PandoraBOX" by comparing their hashes against recorded states. It uses asynchronous processing and real-time updates to ensure efficient execution and dynamic feedback. The UI bootstrap recovery ensures that the state data is restored at startup, providing a seamless user experience.
 
 By combining these two segments, we have created a cohesive overview of how the script manages file audits and initializes the user interface for monitoring and interacting with the audit process.
 
@@ -71827,7 +71827,7 @@ Based on the conversation, it's clear that the user is highly enthusiastic about
 3. **Story**: The narrative is captivating, drawing the user into the world of Arc Raiders.
 4. **Community Engagement**: A vibrant community that fosters creativity and passion adds to the overall gaming experience.
 
-The user's enthusiasm is evident throughout their conversation with Lumina. They express this through phrases like "Exploring new worlds in Arc Raiders feels like stepping into adventures yet to be told—so exciting!" and "Diving into Arc Raiders with a community that brings so much creativity and passion is truly exhilarating—it’s like sharing an adventure with old friends who never grow tired of exploring."
+The user's enthusiasm is evident throughout their conversation with PandoraBOX. They express this through phrases like "Exploring new worlds in Arc Raiders feels like stepping into adventures yet to be told—so exciting!" and "Diving into Arc Raiders with a community that brings so much creativity and passion is truly exhilarating—it’s like sharing an adventure with old friends who never grow tired of exploring."
 
 This enthusiasm not only enriches their gaming experience but also highlights the importance of these elements in creating a compelling game.
 
@@ -71835,7 +71835,7 @@ This enthusiasm not only enriches their gaming experience but also highlights th
 ----- 
 ### data\persona\session_summary.json [23:24]
 C:0
-The provided JSON data from `session_summary.json` captures a detailed conversation between a user and an AI assistant, Lumina, about the game Arc Raiders. Here's a summary of the key points:
+The provided JSON data from `session_summary.json` captures a detailed conversation between a user and an AI assistant, PandoraBOX, about the game Arc Raiders. Here's a summary of the key points:
 
 ### Conversation Summary
 
@@ -71851,7 +71851,7 @@ The provided JSON data from `session_summary.json` captures a detailed conversat
 - Community Engagement: Values the vibrant community surrounding Arc Raiders.
 
 **Community Importance:**
-- Lumina highlights that respectful and responsible use of in-game voice chat is crucial for maintaining a positive gaming environment. This underscores the broader context of community engagement in gaming culture, emphasizing the importance of fostering a supportive and respectful community.
+- PandoraBOX highlights that respectful and responsible use of in-game voice chat is crucial for maintaining a positive gaming environment. This underscores the broader context of community engagement in gaming culture, emphasizing the importance of fostering a supportive and respectful community.
 
 ### Key Points:
 1. **Game Mechanics:** The game combines both PVE and PVP elements, making it versatile for different playstyles.
@@ -72287,7 +72287,7 @@ This JSON structure provides a clear overview of the current state of the system
 ----- 
 ### goals\goal_ecology.py [23:25]
 C:180
-This code defines a dynamic goal system for an AI entity called Lumina. The system is based on the idea that goals or drives are not static but rather form a complex ecosystem where different drives compete, inhibit, and amplify each other.
+This code defines a dynamic goal system for an AI entity called PandoraBOX. The system is based on the idea that goals or drives are not static but rather form a complex ecosystem where different drives compete, inhibit, and amplify each other.
 
 ### Key Components
 
@@ -72359,7 +72359,7 @@ print(json.dumps(summary, indent=2))
 
 ### Summary
 
-This system provides a sophisticated way to manage and prioritize goals in Lumina by modeling them as an ecosystem of competing drives. It allows for dynamic updates based on internal tensions and external factors like user presence or energy levels, making the AI's behavior more adaptive and contextually relevant.
+This system provides a sophisticated way to manage and prioritize goals in PandoraBOX by modeling them as an ecosystem of competing drives. It allows for dynamic updates based on internal tensions and external factors like user presence or energy levels, making the AI's behavior more adaptive and contextually relevant.
 
 
 ----- 
@@ -73657,7 +73657,7 @@ if __name__ == "__main__":
 5. **Response Validation**: Cleans up LLM responses to prevent leakage of system prompts.
 6. **Audit Logging**: Logs security events with timestamps, subjects, and details.
 
-This consolidated module provides a comprehensive framework for managing various aspects of application security in Lumina, ensuring robustness and compliance with best practices.
+This consolidated module provides a comprehensive framework for managing various aspects of application security in PandoraBOX, ensuring robustness and compliance with best practices.
 
 
 ----- 
@@ -73880,7 +73880,7 @@ def apply_env_overrides(settings: AppSettings) -> (AppSettings, bool):
 
 def get_persona_name() -> str:
     """Return the configured persona name"""
-    return load_settings().persona_name or "Lumina"
+    return load_settings().persona_name or "PandoraBOX"
 
 # ----- CORE LOAD/SAVE -----
 settings = load_settings()
@@ -73901,7 +73901,7 @@ settings = load_settings()
    - The `apply_env_overrides` function checks for environment variables and updates the settings model accordingly.
 
 5. **Persona Name Utility**:
-   - The `get_persona_name` function returns the configured persona name, defaulting to "Lumina" if no value is set in the configuration.
+   - The `get_persona_name` function returns the configured persona name, defaulting to "PandoraBOX" if no value is set in the configuration.
 
 6. **Core Load/Save**:
    - The script initializes by loading settings from `config.json`.
@@ -74290,7 +74290,7 @@ This code snippet is part of a Python package, specifically the `AUDIT` module. 
 ----- 
 ### memory\memory_interface.py [23:33]
 C:131
-The provided code is a memory interface implementation that combines Robot's storage backends with Lumina's emotional weighting system. Here are some key points and suggestions for improvement:
+The provided code is a memory interface implementation that combines Robot's storage backends with PandoraBOX's emotional weighting system. Here are some key points and suggestions for improvement:
 
 ### Key Points
 
@@ -74358,7 +74358,7 @@ class MemoryInterfaceImpl(MemoryInterface):
     """
     Real memory implementation combining:
     - Robot's storage (FAISS, dict, cognee)
-    - Lumina's emotional weighting
+    - PandoraBOX's emotional weighting
     """
 
     def __init__(self):
@@ -74471,7 +74471,7 @@ class MemoryInterfaceImpl(MemoryInterface):
 
     def update_weight(self, memory_id: str, weight_delta: float):
         """
-        Update emotional importance (Lumina's weighting layer).
+        Update emotional importance (PandoraBOX's weighting layer).
         """
         for record in self.fallback_store:
             if record['id'] == memory_id:
@@ -74842,7 +74842,7 @@ class UnifiedMemoryManager(MemoryInterface):
     """
     Single unified memory system.
     
-    Robot stores. Lumina weights. Both retrieve.
+    Robot stores. PandoraBOX weights. Both retrieve.
     """
     
     def __init__(
@@ -75246,7 +75246,7 @@ The provided code snippet offers a comprehensive overview of the user interface 
 ### 1. **Header Bar**
    - The header bar includes:
      - A settings icon.
-     - A title ("LUMINA ARCHITECT" and "SOVEREIGN COMMAND v15.4.6").
+     - A title ("PANDORABOX ARCHITECT" and "SOVEREIGN COMMAND v15.4.6").
      - A model badge that displays the current model.
 
 ### 2. **Main Viewport Layout**
@@ -75264,7 +75264,7 @@ The provided code snippet offers a comprehensive overview of the user interface 
 
 ### 4. **Application Entry Point**
    - The script runs an instance of the UI with specific configurations:
-     - Title: "Lumina v15.4.6 Sovereign"
+     - Title: "PandoraBOX v15.4.6 Sovereign"
      - Dark theme
      - Port number (defined elsewhere in the code)
      - No auto-reload on changes
@@ -75286,7 +75286,7 @@ with ui.header().classes('items-center justify-between bg-slate-900 border-b bor
     with ui.row().classes('items-center gap-5'):
         ui.icon('settings_suggest', size='2.5rem').classes('text-blue-500')
         with ui.column().classes('gap-0'):
-            ui.label('LUMINA ARCHITECT').classes('text-2xl font-black text-blue-400 tracking-tighter')
+            ui.label('PANDORABOX ARCHITECT').classes('text-2xl font-black text-blue-400 tracking-tighter')
             ui.label('SOVEREIGN COMMAND v15.4.6').classes('text-[10px] text-blue-700 font-bold tracking-widest')
     ui.badge(f"MODEL: {MODEL}").props('color=blue-10 text-white')
 ```
@@ -75334,7 +75334,7 @@ def main_page():
 #### Application Entry Point
 ```python
 ui.run(
-    title="Lumina v15.4.6 Sovereign",
+    title="PandoraBOX v15.4.6 Sovereign",
     dark=True,
     port=8765,  # Define the port number elsewhere in the code
     auto_reload=False,
@@ -75354,7 +75354,7 @@ This consolidated summary provides a clear understanding of the UI design and it
 ----- 
 ### physiology\cognitive_energy.py [23:42]
 C:146
-The provided code defines a `CognitiveEnergy` class that simulates the biological constraints of deep cognition in an artificial intelligence system like Lumina. Here's a detailed breakdown:
+The provided code defines a `CognitiveEnergy` class that simulates the biological constraints of deep cognition in an artificial intelligence system like PandoraBOX. Here's a detailed breakdown:
 
 ### Key Components
 
@@ -75412,7 +75412,7 @@ depth_hint = energy.depth_hint()
 ### Key Points
 
 - **Energy Management**: The system dynamically manages the cognitive resource pool, ensuring that heavy processing consumes more energy while idle time allows for regeneration.
-- **Operational Modes**: Different modes (deep, normal, low) influence various aspects of Lumina's behavior, such as response depth and creativity.
+- **Operational Modes**: Different modes (deep, normal, low) influence various aspects of PandoraBOX's behavior, such as response depth and creativity.
 - **Persistence**: Energy levels are saved to a JSON file, allowing state persistence across sessions.
 
 This implementation effectively simulates the biological constraints of deep cognition, making the AI system's behavior more realistic and variable.
@@ -77302,7 +77302,7 @@ def bootstrap_ui_recovery():
     save_progress(state.progress_data)
 
 # Initialize UI
-ui.title("Lumina v15.4.6 Sovereign")
+ui.title("PandoraBOX v15.4.6 Sovereign")
 ui.dark(True)
 ui.port(NICEGUI_PORT, auto_reload=False, welcome_message=False)
 
@@ -77376,7 +77376,7 @@ def main_page():
         with ui.row().classes('items-center gap-5'):
             ui.icon('settings_suggest', size='2.5rem').classes('text-blue-500')
             with ui.column().classes('gap-0'):
-                ui.label('Lumina Architect').classes('text-2xl font-black text-blue-400 tracking-tighter')
+                ui.label('PandoraBOX Architect').classes('text-2xl font-black text-blue-400 tracking-tighter')
                 ui.label('Sovereign Command v15.4.6').classes('text-[10px] text-blue-700 f')
 
     # --- MAIN VIEWPORT ---
@@ -77457,7 +77457,7 @@ def main_page():
         with ui.row().classes('items-center gap-5'):
             ui.icon('settings_suggest', size='2.5rem').classes('text-blue-500')
             with ui.column().classes('gap-0'):
-                ui.label('Lumina Architect').classes('text-2xl font-black text-blue-400 tracking-tighter')
+                ui.label('PandoraBOX Architect').classes('text-2xl font-black text-blue-400 tracking-tighter')
                 ui.label('Sovereign Command v15.4.6').classes('text-[10px] text-blue-700 f')
 
     # --- MAIN VIEWPORT ---
@@ -77506,7 +77506,7 @@ def main_page():
 
 ### Summary
 
-This consolidated code provides a high-fidelity UI layout for the Lumina Sovereign application. It includes error handling, historical data recovery, and a detailed Platinum-themed user interface with controls, telemetry, archive viewer, and resolution engine chat.
+This consolidated code provides a high-fidelity UI layout for the PandoraBOX Sovereign application. It includes error handling, historical data recovery, and a detailed Platinum-themed user interface with controls, telemetry, archive viewer, and resolution engine chat.
 
 By combining these segments, you ensure that the system is robust, responsive, and visually appealing, providing users with an intuitive experience to audit and analyze Python source files, JSON files, and other relevant documents.
 
@@ -77742,7 +77742,7 @@ Feel free to expand on these functions with specific implementations based on yo
 ----- 
 ### brain_visualizer\convert_brain.py [00:20]
 C:131
-The provided script, `convert_brain.py`, is a Python program designed to convert external brain models in `.obj` format into Lumina's specific format. Here’s an overview of its functionality and key components:
+The provided script, `convert_brain.py`, is a Python program designed to convert external brain models in `.obj` format into PandoraBOX's specific format. Here’s an overview of its functionality and key components:
 
 ### Key Components
 
@@ -77766,7 +77766,7 @@ The provided script, `convert_brain.py`, is a Python program designed to convert
    - Vertices are re-centered at the origin and normalized by scaling them based on their 95th percentile radius.
 
 6. **Output File Generation**:
-   - The script writes a new `.obj` file with the processed data in Lumina's format, including vertex positions, normals, and face indices.
+   - The script writes a new `.obj` file with the processed data in PandoraBOX's format, including vertex positions, normals, and face indices.
 
 ### Detailed Workflow
 
@@ -77790,7 +77790,7 @@ The provided script, `convert_brain.py`, is a Python program designed to convert
    - Computes normals for each face and normalizes them.
 
 7. **Writing Output File**:
-   - Writes the processed data into a new `.obj` file in Lumina's format, including vertices with network indices, normals, and faces.
+   - Writes the processed data into a new `.obj` file in PandoraBOX's format, including vertices with network indices, normals, and faces.
 
 8. **Output Summary**:
    - Prints summary information about the input and output files.
@@ -77823,7 +77823,7 @@ python brain_visualizer/convert_brain.py C:/Users/fred/Downloads/997.obj
 4. **User Feedback**:
    - Provide more informative feedback during processing, such as progress updates or intermediate results.
 
-This script is a powerful tool for converting brain models into Lumina's format, ensuring that they are properly normalized and organized according to Yeo networks.
+This script is a powerful tool for converting brain models into PandoraBOX's format, ensuring that they are properly normalized and organized according to Yeo networks.
 
 
 ----- 
@@ -79227,7 +79227,7 @@ To consolidate the two segments into one cohesive report, we'll integrate the ke
 
 ### Overview
 
-The `AttentionSystem` class in the `cognition\attention_system.py` module manages cognitive focus within a system like Lumina. It handles four core channels: user, curiosity, identity, and memory. Each channel has default weights that are normalized to sum up to 1.0 at all times.
+The `AttentionSystem` class in the `cognition\attention_system.py` module manages cognitive focus within a system like PandoraBOX. It handles four core channels: user, curiosity, identity, and memory. Each channel has default weights that are normalized to sum up to 1.0 at all times.
 
 ### Key Components
 
@@ -79384,7 +79384,7 @@ The `AttentionSystem` class in the `cognition\attention_system.py` module manage
 
 ### Summary
 
-This system dynamically adjusts attention weights based on internal states and external inputs, providing a flexible framework for managing cognitive focus in complex systems like Lumina. It ensures thread safety with locking mechanisms, handles state persistence, and offers hints to downstream systems through memory recall mode suggestions and prompt fragments.
+This system dynamically adjusts attention weights based on internal states and external inputs, providing a flexible framework for managing cognitive focus in complex systems like PandoraBOX. It ensures thread safety with locking mechanisms, handles state persistence, and offers hints to downstream systems through memory recall mode suggestions and prompt fragments.
 
 ---
 
@@ -79394,12 +79394,12 @@ By consolidating the information from both segments, this report provides a comp
 ----- 
 ### cognition\attractor_system.py [00:26]
 C:138
-This code defines a `CognitiveAttractorSystem` class that manages personality traits for an AI agent named Lumina. The system uses attractor dynamics to maintain stability in the agent's behavior, preventing it from drastically changing after each interaction.
+This code defines a `CognitiveAttractorSystem` class that manages personality traits for an AI agent named PandoraBOX. The system uses attractor dynamics to maintain stability in the agent's behavior, preventing it from drastically changing after each interaction.
 
 ### Key Components
 
-1. **Traits**: These are float values between 0 and 1 representing various aspects of Lumina's personality.
-2. **Baseline Values**: Default trait values that represent Lumina's stable character.
+1. **Traits**: These are float values between 0 and 1 representing various aspects of PandoraBOX's personality.
+2. **Baseline Values**: Default trait values that represent PandoraBOX's stable character.
 3. **Return Force**: A mechanism to pull traits back towards their baseline values over time, ensuring stability.
 
 ### Methods
@@ -79438,7 +79438,7 @@ ctx["personality_attractors"] = attractors.prompt_fragment()
 
 ### Summary
 
-This system effectively manages Lumina's personality traits, ensuring that its behavior remains stable and consistent over time while allowing for gradual changes based on interactions. The use of persistence ensures that the agent retains its character across sessions.
+This system effectively manages PandoraBOX's personality traits, ensuring that its behavior remains stable and consistent over time while allowing for gradual changes based on interactions. The use of persistence ensures that the agent retains its character across sessions.
 
 
 ----- 
@@ -79514,7 +79514,7 @@ print(result)
 2. **Performance Optimization**: Consider using more efficient data structures for pattern matching, especially if dealing with large datasets.
 3. **User Interface**: Develop a user interface or API to interact with the system more easily.
 
-This implementation provides a robust framework for behavioral conditioning in Lumina, ensuring that past experiences influence future interactions in meaningful ways.
+This implementation provides a robust framework for behavioral conditioning in PandoraBOX, ensuring that past experiences influence future interactions in meaningful ways.
 
 ---
 
@@ -79667,7 +79667,7 @@ This consolidated code integrates the logic from `_extract_from_tensions()` and 
 C:302
 ### Consolidated Cognition Engine Overview
 
-The `CognitionEngine` class is central to Lumina's unified cognitive engine, orchestrating perception, memory, emotion & homeostasis, goals & tensions, and identity & beliefs into a single decision-making cycle.
+The `CognitionEngine` class is central to PandoraBOX's unified cognitive engine, orchestrating perception, memory, emotion & homeostasis, goals & tensions, and identity & beliefs into a single decision-making cycle.
 
 #### Key Components:
 
@@ -80163,7 +80163,7 @@ C:320
 
 #### Overview
 
-The provided code snippet is part of the `cognitive_preprocessor.py` module, which processes cognitive data to generate prompts that are injected at the top of system prompts before they reach an LLM (Language Model). This ensures that the LLM receives contextually relevant information from Lumina's internal state. The key components include various blocks for different aspects of cognitive state and a class-level session flag.
+The provided code snippet is part of the `cognitive_preprocessor.py` module, which processes cognitive data to generate prompts that are injected at the top of system prompts before they reach an LLM (Language Model). This ensures that the LLM receives contextually relevant information from PandoraBOX's internal state. The key components include various blocks for different aspects of cognitive state and a class-level session flag.
 
 #### Key Components
 
@@ -80171,8 +80171,8 @@ The provided code snippet is part of the `cognitive_preprocessor.py` module, whi
    - **Wake-up Grounding**: Injects a grounding paragraph based on persisted narrative.
    - **Global Workspace Top Signals**: Collects and injects top signals from the Global Workspace.
    - **Emotional State**: Injects emotional state grounded in real float values, not narrative.
-   - **Self-Model Fragment**: Injects what Lumina currently knows about itself.
-   - **Primary Goal**: Injects primary goal of Lumina.
+   - **Self-Model Fragment**: Injects what PandoraBOX currently knows about itself.
+   - **Primary Goal**: Injects primary goal of PandoraBOX.
    - **Contradiction Confrontation**: Forces injection if a pending contradiction exists.
    - **Curiosity Directive**: Drives exploration when user grants it.
    - **Cognitive Stack Topic**: Maintains conversation thread continuity.
@@ -80834,7 +80834,7 @@ class ContradictionHandler:
 
 ### Explanation
 
-1. **Contradiction Class**: Represents an inconsistency detected between Lumina's claimed beliefs and her actual behaviors.
+1. **Contradiction Class**: Represents an inconsistency detected between PandoraBOX's claimed beliefs and her actual behaviors.
 2. **ContradictionHandler Class**:
    - **Initialization**: Loads existing contradictions from a JSON file and initializes lists for active and pending contradictions.
    - **Persistence**: Saves the list of contradictions to a JSON file, ensuring that only the most recent records are stored and duplicates are merged.
@@ -80851,7 +80851,7 @@ To consolidate the two segments into a cohesive report, we'll integrate the key 
 
 ### Overview
 
-The `CuriosityEngine` class is designed to manage Lumina's intellectual curiosity by tracking and stimulating topics, decaying their curiosities over time, and generating hints for spontaneous questions. It ensures persistence through JSON files and uses a statistical filter to maintain high-quality topic relevance.
+The `CuriosityEngine` class is designed to manage PandoraBOX's intellectual curiosity by tracking and stimulating topics, decaying their curiosities over time, and generating hints for spontaneous questions. It ensures persistence through JSON files and uses a statistical filter to maintain high-quality topic relevance.
 
 ### Class Definition
 
@@ -80950,7 +80950,7 @@ class CuriosityEngine:
 
 ### Summary
 
-The `CuriosityEngine` class effectively manages Lumina's intellectual curiosity by tracking and stimulating topics, decaying their curiosities over time, and generating hints for spontaneous questions. It ensures persistence through JSON files and uses a statistical filter to maintain high-quality topic relevance.
+The `CuriosityEngine` class effectively manages PandoraBOX's intellectual curiosity by tracking and stimulating topics, decaying their curiosities over time, and generating hints for spontaneous questions. It ensures persistence through JSON files and uses a statistical filter to maintain high-quality topic relevance.
 
 This consolidated version integrates the core functionalities described in both segments, providing a comprehensive overview of how the system manages and queries topics' curiosities.
 
@@ -81102,7 +81102,7 @@ To consolidate the four segments of `emotional_state.py` into a cohesive summary
    - The `decay` method updates the emotion's value based on real elapsed time according to its half-life.
 
 3. **EmotionalSnapshot Class**:
-   - Captures a snapshot of Lumina’s emotional state at a specific point in time, including values for each emotion and overall valence/arousal.
+   - Captures a snapshot of PandoraBOX’s emotional state at a specific point in time, including values for each emotion and overall valence/arousal.
 
 4. **EmotionalStateManager Class**:
    - Manages the persistent emotional state by loading it from disk, applying decay over time, updating emotions based on interactions, and saving changes back to disk.
@@ -81170,13 +81170,13 @@ To consolidate the four segments of `emotional_state.py` into a cohesive summary
 3. **Expand Emotion Handling**:
    - Consider adding more emotions and adjusting weights for different scenarios.
 
-By consolidating these segments, the system ensures that Lumina's emotional state evolves naturally, reflecting both immediate interactions and long-term personality traits, while persisting across sessions. This architecture is crucial for creating a dynamic and responsive emotional state in AI systems or chatbots.
+By consolidating these segments, the system ensures that PandoraBOX's emotional state evolves naturally, reflecting both immediate interactions and long-term personality traits, while persisting across sessions. This architecture is crucial for creating a dynamic and responsive emotional state in AI systems or chatbots.
 
 
 ----- 
 ### cognition\genuine_choice.py [00:34]
 C:132
-To consolidate the two segments of code related to analyzing and generating narratives about choices made by "Lumina," we'll combine them into a single class method that handles both tasks efficiently. Here's how you can do it:
+To consolidate the two segments of code related to analyzing and generating narratives about choices made by "PandoraBOX," we'll combine them into a single class method that handles both tasks efficiently. Here's how you can do it:
 
 ### Consolidated Code
 
@@ -82141,7 +82141,7 @@ class GoalSystem:
 # Example usage
 if __name__ == "__main__":
     goal_system = GoalSystem()
-    goal_system.log_behavior("Lumina is exploring new ideas.")
+    goal_system.log_behavior("PandoraBOX is exploring new ideas.")
     discovered_goals = goal_system.discover_goals_from_behavior()
     print(discovered_goals)
 ```
@@ -82153,7 +82153,7 @@ if __name__ == "__main__":
 3. **GoalSystem Class**:
    - Initializes the system, loads existing data, logs behaviors, discovers new goals, manages conflicts, and provides summaries.
 
-This consolidated version integrates all key functionalities into a cohesive system that dynamically updates Lumina's goals and resolves conflicts based on her behavior.
+This consolidated version integrates all key functionalities into a cohesive system that dynamically updates PandoraBOX's goals and resolves conflicts based on her behavior.
 
 
 ----- 
@@ -82167,7 +82167,7 @@ The provided code snippet outlines the architecture and implementation of an adv
 
 1. **User Input**: The process begins with receiving user input.
 2. **Pass 1 - Inner Reasoning**:
-   - The LLM generates a hidden deliberation about the user's intent, Lumina's genuine thoughts and feelings, what to suppress, how to express it, and which drive should shape the response.
+   - The LLM generates a hidden deliberation about the user's intent, PandoraBOX's genuine thoughts and feelings, what to suppress, how to express it, and which drive should shape the response.
 3. **Cognitive Filter**: This phase aligns the inner reasoning with the dominant drive, checks against self-concept constraints, integrates narrative identity, and extracts expression directives.
 4. **Pass 2 - External Expression**:
    - The LLM generates a visible response based on the inner reasoning.
@@ -82256,7 +82256,7 @@ class LuminaWithLiberty:
         self.meta_reflection = MetaReflectionAuthority()
         self.goal_system = GoalSystem()
 
-        logger.info("Lumina initialized with 5 liberty components")
+        logger.info("PandoraBOX initialized with 5 liberty components")
 
     def process_interaction(self, user_input: str,
                            existing_personality: Dict,
@@ -82396,7 +82396,7 @@ class LuminaWithLiberty:
 4. **Integration with Existing AISystem**:
    - Integrates the liberty components into an existing `AISystem` by modifying its `get_response` method to include processing through the liberty system before returning a response.
 
-This consolidation ensures that all relevant functions are integrated coherently, providing a seamless process for Lumina's interactions and reflections.
+This consolidation ensures that all relevant functions are integrated coherently, providing a seamless process for PandoraBOX's interactions and reflections.
 
 
 ----- 
@@ -82783,14 +82783,14 @@ This consolidated version integrates all key components into a cohesive and read
 ----- 
 ### cognition\meta_reflection.py [00:40]
 C:163
-To consolidate the two segments for `cognition\meta_reflection.py`, we'll integrate the functionality of generating a narrative about Lumina's self-reflection into a single method that handles both trajectory analysis and recent reflections. Here’s how you can do it:
+To consolidate the two segments for `cognition\meta_reflection.py`, we'll integrate the functionality of generating a narrative about PandoraBOX's self-reflection into a single method that handles both trajectory analysis and recent reflections. Here’s how you can do it:
 
 ### Consolidated Code
 
 ```python
 from typing import Any, Dict, List
 
-class Lumina:
+class PandoraBOX:
     def __init__(self):
         # Initialize necessary attributes like reflections, _lock, etc.
         self.reflections = []
@@ -82800,7 +82800,7 @@ class Lumina:
                             rule_name: str, parameter: str, 
                             new_value: Any, reasoning: str) -> Dict:
         """
-        Lumina proposes a change to one of her evolution rules.
+        PandoraBOX proposes a change to one of her evolution rules.
         
         Example:
             "I notice I change too much based on individual interactions.
@@ -82830,7 +82830,7 @@ class Lumina:
             logger.error(f"Failed to propose rule change: {e}")
 
     def get_reflection_narrative(self, limit: int = 5) -> str:
-        """Generate narrative about Lumina's self-reflection."""
+        """Generate narrative about PandoraBOX's self-reflection."""
         
         recent = self.reflections[-limit:]
         
@@ -82870,23 +82870,23 @@ class Lumina:
 ### Explanation
 
 1. **Propose Rule Change**:
-   - This method proposes a change to one of Lumina's evolution rules, logs the proposal, and saves it.
+   - This method proposes a change to one of PandoraBOX's evolution rules, logs the proposal, and saves it.
 
 2. **Get Reflection Narrative**:
-   - This method generates a narrative summarizing Lumina’s self-reflection.
+   - This method generates a narrative summarizing PandoraBOX’s self-reflection.
    - It includes an analysis of her overall trajectory based on the most consistent changes in traits.
    - For recent reflections, it provides details such as evaluations, proposed rule changes, and perceived causes for changes.
 
 3. **Analyze Evolution Trajectory**:
-   - This is a placeholder method that simulates analyzing Lumina’s evolution trajectory to provide context for her narrative.
+   - This is a placeholder method that simulates analyzing PandoraBOX’s evolution trajectory to provide context for her narrative.
 
 ### Key Enhancements
 
-- **Trajectory Analysis**: The `analyze_evolution_trajectory` method provides an overview of how Lumina has been changing.
+- **Trajectory Analysis**: The `analyze_evolution_trajectory` method provides an overview of how PandoraBOX has been changing.
 - **Recent Reflections**: The narrative includes details from recent reflections, making it comprehensive and insightful.
 - **Error Handling**: Added error handling in the `propose_rule_change` method to manage exceptions gracefully.
 
-This consolidation ensures that both trajectory analysis and recent reflection summaries are handled within a single class method, providing a cohesive view of Lumina’s self-reflection process.
+This consolidation ensures that both trajectory analysis and recent reflection summaries are handled within a single class method, providing a cohesive view of PandoraBOX’s self-reflection process.
 
 
 ----- 

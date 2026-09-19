@@ -134,7 +134,7 @@ class LLMConfig:
     # NOTE: Do NOT rely on this default when running inside Robot Agent.
     # PersonaBridge._init_lumina() always overrides model_name from
     # Robot Agent's config.json (config.LLM_MODEL) before instantiating
-    # EnhancedAISystem, so Lumina always uses the user-configured model.
+    # EnhancedAISystem, so PandoraBOX always uses the user-configured model.
     model_name: str = "llama3.2:latest"
     timeout: float = 30.0
     max_retries: int = 3
@@ -1726,9 +1726,9 @@ class ExternalLLMAdapter:
         Convert messages list → (prompt, system_prompt) and call the external fn.
 
         Temperature and max_tokens are forwarded as kwargs so Robot Agent's
-        LLM provider honours Lumina's emotional modulation and doesn't truncate.
+        LLM provider honours PandoraBOX's emotional modulation and doesn't truncate.
         This uses generate_bare() (no history pollution) when available, so
-        Lumina's internal dream/learning/reflection calls never appear in the
+        PandoraBOX's internal dream/learning/reflection calls never appear in the
         user's visible chat history.
         """
         system = next((m["content"] for m in messages if m["role"] == "system"), "")
@@ -1928,7 +1928,7 @@ class EnhancedAISystem:
     def current_age(self) -> float:
         """Elapsed real time since self._birth_date, in age-units
         (age_units_per_day). Always live — progresses whether or not
-        Lumina is actively used, unlike the old usage/idle-gated model."""
+        PandoraBOX is actively used, unlike the old usage/idle-gated model."""
         if not getattr(self, '_birth_date', None):
             return 0.0
         elapsed_days = (datetime.datetime.now() - self._birth_date).total_seconds() / 86400.0
@@ -2298,7 +2298,7 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
                 {"role": "user",   "content": user_input},
             ]
 
-            # ── Debug: dump the exact assembled prompt Lumina/the LLM sees ──
+            # ── Debug: dump the exact assembled prompt PandoraBOX/the LLM sees ──
             try:
                 from managers.settings_manager import config as _pcfg
                 if getattr(_pcfg, 'LOG_FULL_PROMPTS', False):
@@ -2434,7 +2434,7 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
                 self.evolution_engine.queue_experience("negative_interaction", intensity=impact)
 
             # Multi-factor creativity scoring — prevents self-reinforcing loop where
-            # Lumina's own language style inflates creativity_divergent indefinitely.
+            # PandoraBOX's own language style inflates creativity_divergent indefinitely.
             # All three factors must combine above threshold (0.40) to queue the experience.
             #   Factor 1 (0.35 weight): creative language markers in the response
             #   Factor 2 (0.45 weight): user engagement = positive + high arousal
@@ -2646,7 +2646,7 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
     def _apply_pending_liberty_modifications(self):
         """
         Check for and apply any pending self-modifications.
-        This allows Lumina to change her own parameters based on reflection.
+        This allows PandoraBOX to change her own parameters based on reflection.
 
         Phase 6.13 — every proposal now routes through
         UnifiedRevisionGateway.review_and_clamp() before being applied.
@@ -2728,7 +2728,7 @@ Every response must feel genuinely new — avoid repeating phrases, sentences, o
         Useful for debugging and observing emergence.
         """
         report = "╔════════════════════════════════════════════════════════════╗\n"
-        report += "║         LUMINA LIBERTY COMPONENTS REPORT                  ║\n"
+        report += "║         PANDORABOX LIBERTY COMPONENTS REPORT                  ║\n"
         report += "╚════════════════════════════════════════════════════════════╝\n\n"
 
         if self.liberty_self_mod:
@@ -3202,7 +3202,7 @@ Write a first-person journal reflection (2-4 sentences)."""},
         intensity    : 0.0–1.0, how emotionally significant the exchange was
         """
         try:
-            # Map Robot Agent emotion tags → Lumina valence / arousal format
+            # Map Robot Agent emotion tags → PandoraBOX valence / arousal format
             valence_map = {
                 "happy":    "Positive", "curious":  "Positive", "excited": "Positive",
                 "sad":      "Negative", "angry":    "Negative", "anxious": "Negative",

@@ -1,5 +1,5 @@
 # =============================================================================
-#  Lumina Cognitive Organism — Python 3.11 Requirements
+#  PandoraBOX Cognitive Organism — Python 3.11 Requirements
 #  Validated stack: Python 3.11.9 / Windows 11 + Ubuntu 22.04
 #
 #  READ BEFORE pip install -r requirements.txt:
@@ -100,7 +100,7 @@ coqui-tts==0.25.3
 librosa>=0.10.0
 pydub>=0.25.1
 
-# -- Lumina Cognitive Engine --------------------------------------------------
+# -- PandoraBOX Cognitive Engine --------------------------------------------------
 ollama>=0.1.0
 aiosqlite>=0.19.0
 scipy>=1.11.0,<2.0.0

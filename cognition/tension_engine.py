@@ -1,7 +1,7 @@
 """
 Cognitive Tension Engine
 ========================
-Computes the internal pressure landscape that drives Lumina's behavior.
+Computes the internal pressure landscape that drives PandoraBOX's behavior.
 
 This is the central dynamic engine. Instead of behavior being dictated by
 a static prompt, it emerges from the continuous interaction of internal

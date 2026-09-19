@@ -16,7 +16,7 @@ STRUCTURED, already-real signals instead:
     question / hypotheses text, when present — the actual structured
     self-inquiry content from v87, not regex-matched prose)
 
-This trades "open-ended absorption from anything Lumina says" for
+This trades "open-ended absorption from anything PandoraBOX says" for
 "absorption only from things the architecture already treats as
 significant self-referential events" — narrower, but the symbols that
 do get created are backed by a real signal rather than a phrasing

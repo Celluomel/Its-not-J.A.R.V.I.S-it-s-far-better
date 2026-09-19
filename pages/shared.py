@@ -155,7 +155,7 @@ body:has(.settings-page-content) .right-panel {
 
 def _build_proactive_prompt(state) -> str:
     """
-    Build a proactive prompt grounded in Lumina's real cognitive state.
+    Build a proactive prompt grounded in PandoraBOX's real cognitive state.
     Priority: ThoughtStream thought > curiosity topic > memory intrusion
               > emotional colour > minimal fallback.
     """

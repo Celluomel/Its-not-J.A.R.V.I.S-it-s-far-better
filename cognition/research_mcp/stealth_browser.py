@@ -1,4 +1,4 @@
-"""Web Agent for Lumina - Real DuckDuckGo Search with Stealth Mode"""
+"""Web Agent for PandoraBOX - Real DuckDuckGo Search with Stealth Mode"""
 import asyncio
 import random
 import time

@@ -5,7 +5,7 @@ PreferenceEngine — stable aesthetic and intellectual stances.
 
 The gap this closes
 ────────────────────
-Lumina has:
+PandoraBOX has:
   - CuriosityEngine: stimulates toward topics
   - GoalEcology: active drives (what I'm trying to do)
   - EthicalReasoningEngine: values (what I think is right)
@@ -21,7 +21,7 @@ orientation, not through values or goals.
 What this adds
 ──────────────
   1. Preference — a stable stance on a topic/domain/aesthetic with
-     a strength score (0–1) and a characteristic phrase Lumina uses
+     a strength score (0–1) and a characteristic phrase PandoraBOX uses
      when referencing it.
 
   2. Preference formation — accumulated from:
@@ -82,7 +82,7 @@ MAX_PREFERENCES              = 30
 class Preference:
     """A stable intellectual or aesthetic orientation."""
     domain:            str
-    characteristic_phrase: str  = ""   # how Lumina references this preference
+    characteristic_phrase: str  = ""   # how PandoraBOX references this preference
     strength:          float = 0.4
     formation_count:   int   = 0       # how many times reinforced
     last_activated:    float = field(default_factory=time.time)

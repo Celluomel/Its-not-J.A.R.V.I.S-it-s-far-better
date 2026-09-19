@@ -68,7 +68,7 @@ BASE_IDENTITY = (
 def _grounded_affective_directive(app_state) -> str:
     """
     Return a short directive constraining affective language to match actual
-    emotional_state.py values. Prevents narrative illusion where Lumina says
+    emotional_state.py values. Prevents narrative illusion where PandoraBOX says
     "I love this!" when curiosity=0.1.
 
     Returns empty string when emotional state is unavailable (graceful).
@@ -286,7 +286,7 @@ class AgentController:
 
         # ── User + persona context ────────────────────────────────────────
         # user_context: always available (user_manager singleton)
-        # rel_context / persona_context: filled from Lumina's cognitive engine
+        # rel_context / persona_context: filled from PandoraBOX's cognitive engine
         user_ctx = user_manager.active_context_for_prompt()
         rel_ctx     = ""
         persona_ctx = ""
@@ -665,7 +665,7 @@ class AgentController:
         except Exception:
             pass  # never crash memory storage over curiosity update
 
-        # ── Persona post-turn processing (Lumina cognitive update) ───────────
+        # ── Persona post-turn processing (PandoraBOX cognitive update) ───────────
         if self.app.persona:
             try:
                 import asyncio as _asyncio

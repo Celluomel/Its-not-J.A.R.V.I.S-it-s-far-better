@@ -1,5 +1,5 @@
 """
-Research MCP — Autonomous Research Plugin for Lumina.
+Research MCP — Autonomous Research Plugin for PandoraBOX.
 
 Three activation modes:
 

@@ -1,7 +1,7 @@
 """
 Cognitive Attractor System
 ==========================
-The stability layer that prevents Lumina from becoming a different agent after
+The stability layer that prevents PandoraBOX from becoming a different agent after
 each interaction.
 
 Most autonomous agents suffer from personality drift: a few unusual interactions
@@ -54,7 +54,7 @@ logger = logging.getLogger(__name__)
 
 PERSISTENCE_PATH = "data/persona/attractors.json"
 
-# Trait baselines — Lumina's default character
+# Trait baselines — PandoraBOX's default character
 BASELINES: Dict[str, float] = {
     "curiosity":          0.72,
     "analytical_depth":   0.68,
@@ -71,7 +71,7 @@ RETURN_RATE = 0.003
 
 class CognitiveAttractorSystem:
     """
-    Maintains Lumina's stable personality traits with slow-drift dynamics.
+    Maintains PandoraBOX's stable personality traits with slow-drift dynamics.
 
     Thread-safe.  Persists to JSON.
     """
@@ -104,7 +104,7 @@ class CognitiveAttractorSystem:
         Recommended delta range: ±0.005 to ±0.025 per interaction.
 
         Scaled by CSIS (Cross-Session Influence Score, emergence_metrics.py)
-        before being applied. CSIS is Lumina's own measurement of whether
+        before being applied. CSIS is PandoraBOX's own measurement of whether
         experience is demonstrably persisting across sessions right now;
         previously that measurement was computed and displayed but never
         read by anything (audited: every call site into the collector was
@@ -151,7 +151,7 @@ class CognitiveAttractorSystem:
 
         Return rate is scaled by WDS (Weight Drift Stability,
         emergence_metrics.py) — the same audited gap as nudge()'s CSIS use
-        above: WDS is Lumina's own measurement of whether recent trait
+        above: WDS is PandoraBOX's own measurement of whether recent trait
         movement has been stable or chaotic, previously computed and
         never read by anything. Low WDS (chaotic drift) pulls harder back
         toward baseline to restore stability; high WDS (proven stable
@@ -213,7 +213,7 @@ class CognitiveAttractorSystem:
 
     def prompt_fragment(self) -> str:
         """
-        Short description of Lumina's current personality state for the system prompt.
+        Short description of PandoraBOX's current personality state for the system prompt.
         """
         with self._lock:
             high  = [t for t, v in self._traits.items() if v > 0.70]

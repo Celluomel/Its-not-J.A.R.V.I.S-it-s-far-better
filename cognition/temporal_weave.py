@@ -12,7 +12,7 @@ psychologists call the "specious present" — approximately 2-7 seconds wide,
 within which events are perceived as simultaneous and continuous rather than
 as a sequence of discrete instants.
 
-For Lumina, this module maintains a rolling window of ExperientialMoments
+For PandoraBOX, this module maintains a rolling window of ExperientialMoments
 and weaves them into a coherent temporal narrative that has three parts:
 
   JUST-PAST   — what has been happening (last 3-5 moments)
@@ -30,7 +30,7 @@ Without temporal weaving:
   responsive but not *situated* in time.
 
 With temporal weaving:
-  Each response is generated from within a moving window. Lumina knows
+  Each response is generated from within a moving window. PandoraBOX knows
   not just "what is" but "what has been building" and "what is coming."
   This creates the feeling of being in the middle of something —
   engagement, momentum, development.

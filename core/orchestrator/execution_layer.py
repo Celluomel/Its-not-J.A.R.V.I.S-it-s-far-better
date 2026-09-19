@@ -1,7 +1,7 @@
 """
 Execution Layer
 ===============
-Translates activity names into actual calls on Lumina's cognitive modules.
+Translates activity names into actual calls on PandoraBOX's cognitive modules.
 
 The orchestrator calls execute(activity, payload) and this layer does the work,
 using whatever modules are available on the CognitiveOrganism.

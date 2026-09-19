@@ -1,7 +1,7 @@
 """
 Meta-Reflection Authority
 ==========================
-Lets Lumina reflect on how she's changing and modify her own evolution rules.
+Lets PandoraBOX reflect on how she's changing and modify her own evolution rules.
 Second-order evolution: she evolves how she evolves.
 """
 
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class EvolutionReflection:
-    """Lumina's reflection on her own personality evolution."""
+    """PandoraBOX's reflection on her own personality evolution."""
     reflection_id: str
     timestamp: float
     interaction_count: int
@@ -40,7 +40,7 @@ class EvolutionReflection:
 
 class MetaReflectionAuthority:
     """
-    Manages Lumina's reflection on her own evolution.
+    Manages PandoraBOX's reflection on her own evolution.
     
     Periodically (every N interactions), asks:
     - How am I changing?
@@ -142,7 +142,7 @@ class MetaReflectionAuthority:
     
     def analyze_evolution_trajectory(self, limit: int = 50) -> Dict:
         """
-        Analyze Lumina's evolution trajectory.
+        Analyze PandoraBOX's evolution trajectory.
         Is she consistently becoming something?
         """
         recent = self.reflections[-limit:]
@@ -179,7 +179,7 @@ class MetaReflectionAuthority:
                            rule_name: str, parameter: str, 
                            new_value: Any, reasoning: str) -> Dict:
         """
-        Lumina proposes a change to one of her evolution rules.
+        PandoraBOX proposes a change to one of her evolution rules.
         
         Example:
             "I notice I change too much based on individual interactions.
@@ -206,7 +206,7 @@ class MetaReflectionAuthority:
         return proposal
     
     def get_reflection_narrative(self, limit: int = 5) -> str:
-        """Generate narrative about Lumina's self-reflection."""
+        """Generate narrative about PandoraBOX's self-reflection."""
         recent = self.reflections[-limit:]
         
         if not recent:

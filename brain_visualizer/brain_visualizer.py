@@ -90,7 +90,7 @@ class GLResources:
     num_indices = 0
     ulocs: Dict[str, int] = None
 
-def _init_glfw(w=1280, h=720, title="Lumina — Cognitive Brain"):
+def _init_glfw(w=1280, h=720, title="PandoraBOX — Cognitive Brain"):
     if not glfw.init():
         raise RuntimeError("GLFW init failed")
     glfw.window_hint(glfw.CONTEXT_VERSION_MAJOR, 3)
@@ -270,7 +270,7 @@ void main(){ FragColor = texture(uTex, vUV); }
 _hud_prog = _hud_vao = _hud_tex = _hud_vbo = None
 _hud_W = _hud_H = 0   # window size at last HUD build
 
-# Lumina-specific network labels (cognitive meaning, not just anatomical name)
+# PandoraBOX-specific network labels (cognitive meaning, not just anatomical name)
 NETWORK_LABELS = {
     "DMN": "Inner Monologue / Narrative",
     "DAN": "Curiosity / Epistemic Drive",

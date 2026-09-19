@@ -78,7 +78,7 @@ class PresenceIdentityLanguageTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             manager = users.UserManager(Path(directory) / "users.json")
             fred = manager.create("Fred")
-            settings = SimpleNamespace(get_persona_name=lambda: "Lumina")
+            settings = SimpleNamespace(get_persona_name=lambda: "PandoraBOX")
             boundary = SimpleNamespace(
                 claims_persona_identity=lambda text, name: "je suis la lumina" in text.casefold()
             )
@@ -88,7 +88,7 @@ class PresenceIdentityLanguageTests(unittest.TestCase):
                 "cognition.identity_boundary": boundary,
             }):
                 changed = manager.learn_from_message(
-                    fred.id, "Je suis la Lumina, je travaille sur ton code."
+                    fred.id, "Je suis la PandoraBOX, je travaille sur ton code."
                 )
 
             self.assertFalse(changed)

@@ -1,7 +1,7 @@
 """
 Arbitration System
 ==================
-Decides which drive controls Lumina's behavior before the LLM is invoked.
+Decides which drive controls PandoraBOX's behavior before the LLM is invoked.
 
 This is the final decision layer between the cognitive subsystems and the
 reasoning engine. Without it, all drives simply pile into the prompt and

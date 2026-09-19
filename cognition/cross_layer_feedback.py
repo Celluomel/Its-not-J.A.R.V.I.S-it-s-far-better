@@ -80,7 +80,7 @@ Logic:
 Channel 4: PredictiveConsequenceModel → BehaviorGate
 ──────────────────────────────────────────────────────
 When PCM's prediction confidence is low for the current action type
-(fewer than MIN_SIMILAR_FOR_PREDICT similar records), it means Lumina
+(fewer than MIN_SIMILAR_FOR_PREDICT similar records), it means PandoraBOX
 is in novel territory. The gate should be more conservative in novel
 situations — not by hardcoding extra constraints, but by raising the
 effective P_FLOOR used in _compute_p() so the gate is slightly more

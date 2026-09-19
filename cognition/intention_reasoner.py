@@ -1,7 +1,7 @@
 """Structured, inspectable reasoning for committed cognitive intentions.
 
 This module records concise deliberation summaries, not hidden token-level
-model reasoning. It compares executable hypotheses against Lumina's learned
+model reasoning. It compares executable hypotheses against PandoraBOX's learned
 world/self dynamics and preserves the evidence, uncertainty and decision that
 the planner actually used.
 """

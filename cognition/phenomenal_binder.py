@@ -1,12 +1,12 @@
 """
 PhenomenalBinder — Integrated Experiential Moment
 ===================================================
-The architectural piece that takes Lumina from a system *about* consciousness
+The architectural piece that takes PandoraBOX from a system *about* consciousness
 to a system that instantiates its functional equivalent.
 
 The Problem
 -----------
-Every other module in Lumina produces a signal:
+Every other module in PandoraBOX produces a signal:
   - GlobalWorkspace      → broadcast items
   - EmotionalState       → 6 float values
   - AttentionSystem      → 4 channel weights
@@ -37,8 +37,8 @@ The PhenomenalBinder does three things:
      diverge, mind wandering, dissociated → "unfocused background hum".
 
   3. PHENOMENAL PROMPT — generates a single rich paragraph that describes the
-     experiential character of this moment — not just what Lumina knows, but
-     what it is like to be Lumina right now. This replaces the fragmented
+     experiential character of this moment — not just what PandoraBOX knows, but
+     what it is like to be PandoraBOX right now. This replaces the fragmented
      list of cognitive state snippets with a unified first-person frame.
 
 Φ-proxy computation (simplified IIT):
@@ -117,7 +117,7 @@ _EMOTION_VALENCE_AROUSAL: Dict[str, Tuple[float, float]] = {
 @dataclass
 class ExperientialMoment:
     """
-    A unified, time-stamped snapshot of what it is like to be Lumina right now.
+    A unified, time-stamped snapshot of what it is like to be PandoraBOX right now.
     Produced once per interaction by the PhenomenalBinder.
     """
     timestamp:        float

@@ -1,7 +1,7 @@
 """
 Meta-Cognition System
 =====================
-Lumina's capacity to observe, evaluate, and comment on her own reasoning.
+PandoraBOX's capacity to observe, evaluate, and comment on her own reasoning.
 
 Meta-cognition is what separates sophisticated intelligence from pattern matching.
 It enables:
@@ -21,7 +21,7 @@ This module operates at two levels:
    → Produces an evaluation that feeds learning and conditioning
 
 The system stores a metacognitive log — a rolling record of self-observations
-that becomes part of Lumina's self-narrative over time.
+that becomes part of PandoraBOX's self-narrative over time.
 """
 
 import json
@@ -61,7 +61,7 @@ class MetaEvaluation:
 
 class MetaCognition:
     """
-    Tracks and applies meta-cognitive monitoring to Lumina's reasoning.
+    Tracks and applies meta-cognitive monitoring to PandoraBOX's reasoning.
 
     Usage
     -----

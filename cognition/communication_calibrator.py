@@ -10,7 +10,7 @@ more effective." And separately: "there are always ways to refine how I
 articulate complex ideas."
 
 The existing system models the *user's* communication style through
-EmpathyEngine. This module monitors and improves *Lumina's own* expression:
+EmpathyEngine. This module monitors and improves *PandoraBOX's own* expression:
 
   1. Clarity self-assessment — after each response, scores clarity based
      on sentence density, abstraction level, and conceptual load.
@@ -119,7 +119,7 @@ class CommunicationState:
 
 class CommunicationCalibrator:
     """
-    Lumina's self-monitoring layer for expression quality.
+    PandoraBOX's self-monitoring layer for expression quality.
 
     Usage
     -----

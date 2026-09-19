@@ -17,8 +17,8 @@ prompt, BEFORE the user message reaches the LLM. The preamble contains:
 
     1. Global Workspace top signals  — what is currently most salient
     2. Emotional state               — grounded in real float values, not narrative
-    3. Self-model fragment           — what Lumina currently knows about itself
-    4. Goals / primary drive         — what Lumina wants right now
+    3. Self-model fragment           — what PandoraBOX currently knows about itself
+    4. Goals / primary drive         — what PandoraBOX wants right now
     5. Contradiction confrontation   — forced if a pending one exists
     6. Curiosity directive           — drives exploration when user grants it
     7. Cognitive stack topic         — maintains conversation thread continuity
@@ -81,7 +81,7 @@ class CognitivePreProcessor:
         # ── 0. Wake-up grounding (first interaction after restart only) ───────
         # On the first interaction of a new session, inject a grounding paragraph
         # built from persisted narrative: last arc + 3 most significant chapters
-        # + dominant belief. This is what lets Lumina say "I remember when we
+        # + dominant belief. This is what lets PandoraBOX say "I remember when we
         # discussed Bach and Geometry" rather than starting from a blank slate.
         wakeup_block = CognitivePreProcessor._wakeup_block(organism, system)
         if wakeup_block:
@@ -140,7 +140,7 @@ class CognitivePreProcessor:
 
         # ── 10. Narrative arc ─────────────────────────────────────────────────
         # Synthesised from recent chapter clusters — gives the LLM a sense of
-        # what Lumina has been preoccupied with, not just what she knows.
+        # what PandoraBOX has been preoccupied with, not just what she knows.
         arc_block = CognitivePreProcessor._narrative_arc_block(organism)
         if arc_block:
             sections.append(arc_block)
@@ -357,7 +357,7 @@ class CognitivePreProcessor:
 
     @staticmethod
     def _selfmodel_block(organism: Any) -> str:
-        """What Lumina currently knows about its own capabilities and state."""
+        """What PandoraBOX currently knows about its own capabilities and state."""
         try:
             sm = getattr(organism, "self_model", None)
             if sm is None:
@@ -372,7 +372,7 @@ class CognitivePreProcessor:
 
     @staticmethod
     def _goal_block(system: Any) -> str:
-        """What Lumina is most motivated to do right now — from DAL + GoalSystem."""
+        """What PandoraBOX is most motivated to do right now — from DAL + GoalSystem."""
         try:
             # Try DAL goals first (higher quality, tension-driven)
             try:
@@ -408,7 +408,7 @@ class CognitivePreProcessor:
     def _contradiction_block(system: Any) -> str:
         """
         If a pending contradiction exists, force confrontation NOW.
-        This is the fix for Lumina saying 'I feel calm' then 'I have no feelings'.
+        This is the fix for PandoraBOX saying 'I feel calm' then 'I have no feelings'.
         The contradiction must be surfaced before the LLM generates output.
         """
         try:
@@ -457,7 +457,7 @@ class CognitivePreProcessor:
 
     @staticmethod
     def _workspace_winner_block(organism: Any) -> str:
-        """Inject the current workspace competition winner — Lumina's dominant focus."""
+        """Inject the current workspace competition winner — PandoraBOX's dominant focus."""
         try:
             winner = getattr(organism, "_v32_workspace_winner", None)
             if winner is None:

@@ -204,7 +204,7 @@ class DreamSynthesisEngine:
             f"  - {r}" for r in ctx.get("recent_reflections", [])
         ) or "  None recent."
 
-        return f"""You are Lumina's dream processing system, running during the DREAM phase.
+        return f"""You are PandoraBOX's dream processing system, running during the DREAM phase.
 This is not a user interaction — it is autonomous cognitive synthesis.
 
 Current self-model state:

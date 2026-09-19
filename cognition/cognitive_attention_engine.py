@@ -176,7 +176,7 @@ class CognitiveAttentionEngine:
         reads:
           - curiosity → CuriosityEngine.global_level()
           - identity  → SelfConcept._state.coherence (best proxy:
-                        how consistent/stable Lumina's self-model is)
+                        how consistent/stable PandoraBOX's self-model is)
         """
         state: Dict = {}
         o  = self._o

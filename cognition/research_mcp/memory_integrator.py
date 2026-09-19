@@ -1,7 +1,7 @@
 """
 MemoryIntegrator — writes completed Mode 3 research into:
   1. Research Journal  (data/persona/research_journal.json)
-  2. Lumina's long-term memory  (via memory_system.add_memory)
+  2. PandoraBOX's long-term memory  (via memory_system.add_memory)
 
 Only called for Mode 3 (BACKGROUND) sessions, and only AFTER summarization.
 Never stores raw HTML or page dumps — only structured summaries.
@@ -37,7 +37,7 @@ class MemoryIntegrator:
     # ── Public API ────────────────────────────────────────────────────────────
     def integrate(self, session: ResearchSession) -> int:
         """
-        Write session to journal and Lumina memory.
+        Write session to journal and PandoraBOX memory.
         Returns number of knowledge nodes created.
         """
         if session.confidence_score < CONFIDENCE_THRESHOLD:
@@ -54,7 +54,7 @@ class MemoryIntegrator:
         self._write_journal(entry)
         nodes += 1
 
-        # 2. Lumina semantic memory (summary embedding)
+        # 2. PandoraBOX semantic memory (summary embedding)
         if self._memory and session.summary:
             try:
                 emo = self._memory.analyze_emotional_context(session.summary)
@@ -67,9 +67,9 @@ class MemoryIntegrator:
                 )
                 if ok:
                     nodes += 1
-                    logger.info(f"MemoryIntegrator: stored summary in Lumina memory")
+                    logger.info(f"MemoryIntegrator: stored summary in PandoraBOX memory")
             except Exception as e:
-                logger.error(f"MemoryIntegrator: Lumina memory write failed: {e}")
+                logger.error(f"MemoryIntegrator: PandoraBOX memory write failed: {e}")
 
         # 3. Per-fact memory nodes (high confidence only)
         if session.confidence_score >= 0.70 and self._memory:

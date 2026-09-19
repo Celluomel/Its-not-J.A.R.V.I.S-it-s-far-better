@@ -1,7 +1,7 @@
 """
 pages/lumina_page.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Lumina inner-world.
+PandoraBOX inner-world.
 """
 import logging
 import threading
@@ -98,7 +98,7 @@ async def lumina_page():
                      display:flex;align-items:center;justify-content:center;
                      font-size:20px">✨</div>
             ''')
-            ui.label('Lumina Mind').classes('app-title')
+            ui.label('PandoraBOX Mind').classes('app-title')
         with ui.row().classes('items-center gap-2 ml-auto'):
             ui.button(
                 icon='settings', on_click=lambda: ui.navigate.to('/settings?tab=lumina')
@@ -108,7 +108,7 @@ async def lumina_page():
 
         if not (state.persona and state.persona.is_ready):
             with ui.element('div').classes('info-card'):
-                ui.html('<p class="text-yellow-400 text-lg">⚠️ Lumina is not yet active.</p>'
+                ui.html('<p class="text-yellow-400 text-lg">⚠️ PandoraBOX is not yet active.</p>'
                         '<p class="text-slate-400 mt-2">Start a conversation on the main page to '
                         'wake her up. The cognitive dashboard will populate after the first exchange.</p>')
             ui.button('← Back to Chat', on_click=lambda: ui.navigate.to('/')).props('flat')
@@ -295,7 +295,7 @@ async def lumina_page():
                         for ins in insights:
                             ui.label(f'• {ins}').classes('text-sm text-slate-200 mb-1')
                     else:
-                        ui.label('Dream cycle ran — no new insights this time (Lumina may need more memories first).').classes('text-slate-400 text-sm')
+                        ui.label('Dream cycle ran — no new insights this time (PandoraBOX may need more memories first).').classes('text-slate-400 text-sm')
                     ui.button('Close', on_click=_dr.close).classes('mt-4').props('color=purple')
                 _dr.open()
 
@@ -359,13 +359,13 @@ async def lumina_page():
                                     ui.label('🌱 Life Event').classes('font-semibold text-lg text-green-400 mb-3')
                                     ui.label('What happened:').classes('text-slate-400 text-xs uppercase tracking-wide mb-1')
                                     ui.label(scenario).classes('text-sm text-slate-200 mb-4')
-                                    ui.label("Lumina's Reflection:").classes('text-slate-400 text-xs uppercase tracking-wide mb-1')
+                                    ui.label("PandoraBOX's Reflection:").classes('text-slate-400 text-xs uppercase tracking-wide mb-1')
                                     ui.label(reaction).classes('text-sm text-slate-200')
                                     ui.button('Close', on_click=_d2.close).classes('mt-5').props('color=green')
                                 _d2.open()
                                 # Refresh dashboard ONLY after user closes the result dialog
                             else:
-                                ui.notify('Life event could not be generated — Lumina may need more context first.', type='warning', timeout=6000)
+                                ui.notify('Life event could not be generated — PandoraBOX may need more context first.', type='warning', timeout=6000)
                         ui.button('Simulate', on_click=_go).props('color=purple')
                 _d.open()
 

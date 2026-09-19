@@ -2,7 +2,7 @@
 Phase 2.0: Workspace Competition System
 
 THE CRITICAL ARCHITECTURAL PIECE:
-This transforms Lumina from "blended mind" to "competing mind"
+This transforms PandoraBOX from "blended mind" to "competing mind"
 
 Before: decision = f(all_inputs_merged) → everything averaged
 After:  decision = select(best_candidate) → focused selection
@@ -68,7 +68,7 @@ class WorkspaceCompetition:
         """
         Run competition among all cognitive candidates.
         
-        Returns the WINNER - the single thing Lumina focuses on.
+        Returns the WINNER - the single thing PandoraBOX focuses on.
         
         This is the key transformation:
         Instead of blending everything, SELECT one thing.
@@ -325,7 +325,7 @@ class WorkspaceCompetition:
                     # downstream consumer of a winning candidate had no
                     # cheap way to check its provenance — directly
                     # relevant to the peer-cognition architecture's own
-                    # stated goal of measuring "Flux -> Lumina" causal
+                    # stated goal of measuring "Flux -> PandoraBOX" causal
                     # attribution.
                     'source': thought.get("source", "thought"),
                     'score': min(1.5, final_score * 0.75),

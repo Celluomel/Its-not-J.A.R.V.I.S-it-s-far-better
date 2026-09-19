@@ -1,4 +1,4 @@
-# Lumina Security Hardening Guide
+# PandoraBOX Security Hardening Guide
 
 ## What's protected by default (after this update)
 
@@ -30,7 +30,7 @@ TELEGRAM_TOKEN=...
 LUMINA_SESSION_SECRET=<random-32-char-string>
 ```
 
-**Step 2** — load it before starting Lumina:
+**Step 2** — load it before starting PandoraBOX:
 ```bash
 # Linux / macOS
 export $(cat .env | xargs) && python app.py
@@ -78,7 +78,7 @@ Add this to your `.env` file so it persists across restarts.
 
 ## Network access
 
-Lumina binds to `127.0.0.1` by default — only accessible from the local machine.
+PandoraBOX binds to `127.0.0.1` by default — only accessible from the local machine.
 
 If you need LAN access (e.g. from another device on your network):
 ```python
@@ -125,7 +125,7 @@ Review this log periodically. The orchestrator dashboard shows the last 8 events
 
 ## LLM-specific risks
 
-**Prompt injection via memory** — if Lumina stores malicious content in memory 
+**Prompt injection via memory** — if PandoraBOX stores malicious content in memory 
 (e.g. from web research) and later injects it into the system prompt, it could 
 affect behaviour. Mitigation: the sanitiser runs on user input, but web-scraped 
 content bypasses it by design. Monitor web research results in the Research page.

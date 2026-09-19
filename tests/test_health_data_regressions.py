@@ -1,4 +1,4 @@
-"""Health data regressions, without starting Lumina or calling an LLM."""
+"""Health data regressions, without starting PandoraBOX or calling an LLM."""
 import ast
 import json
 import sys

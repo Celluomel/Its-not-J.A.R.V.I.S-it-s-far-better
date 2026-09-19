@@ -269,7 +269,7 @@ class SleepCycleManager:
     # ── Phase logic ───────────────────────────────────────────────────────────
 
     def _compute_target_phase(self) -> Phase:
-        """Determine which phase Lumina should be in right now."""
+        """Determine which phase PandoraBOX should be in right now."""
         now        = time.time()
         idle_s     = now - self._state.last_user_activity
         energy     = self._get_energy()

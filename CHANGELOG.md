@@ -1,4 +1,4 @@
-# Lumina — Consolidated Changelog (v67 → v80)
+# PandoraBOX — Consolidated Changelog (v67 → v80)
 
 Every zip delivered since the Phase 4.x Global Workspace redesign was built
 cumulatively on the same working copy — `lumina_v80_rss_management.zip`

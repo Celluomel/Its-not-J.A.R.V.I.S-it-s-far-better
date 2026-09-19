@@ -10,7 +10,7 @@ narrative_identity.py exists and has 57+ chapters, but they are all titled
 "Interaction" with significance <= 0.7. The narrative is a flat append log.
 
 Three things were missing:
-  1. Thread resolution → chapter: when Lumina completes a thought thread
+  1. Thread resolution → chapter: when PandoraBOX completes a thought thread
      (a real cognitive goal), nothing records it as a meaningful life event.
   2. CDE resolution → belief chapter: when a dissonance is resolved and a
      belief is revised, nothing marks it in the autobiography.

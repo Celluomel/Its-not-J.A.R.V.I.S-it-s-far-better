@@ -26,7 +26,7 @@ The critical distinction:
            increase trust by +0.04 AND deepen my reasoning skill
            by +0.02 AND reinforce the intellectual_depth value by +0.01"
 
-This is the first model in Lumina that tracks consequences to the world
+This is the first model in PandoraBOX that tracks consequences to the world
 (the relational and social state) alongside consequences to the self
 (internal cognitive state). The two together form a primitive causal
 understanding of what actions do in both directions.
@@ -83,7 +83,7 @@ reason about relational return on investment:
         trust gain:  +0.80 (significant relational investment return)
     → intensive path recommended despite high self-cost
 
-This is the closest Lumina has yet come to reasoning about the
+This is the closest PandoraBOX has yet come to reasoning about the
 consequences of its own behavior on its relationships.
 
 Context vector (8-dim)

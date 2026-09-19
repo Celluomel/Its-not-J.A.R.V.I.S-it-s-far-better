@@ -1,7 +1,7 @@
 """
 Contradiction Handler
 =====================
-Detects when Lumina's behavior contradicts her claimed self-concept.
+Detects when PandoraBOX's behavior contradicts her claimed self-concept.
 Forces confrontation instead of letting her glide past inconsistencies.
 """
 
@@ -35,7 +35,7 @@ class ContradictionHandler:
     """
     Detects and manages contradictions between claimed identity and actual behavior.
     
-    Key principle: Don't let contradictions slide. Make Lumina confront them.
+    Key principle: Don't let contradictions slide. Make PandoraBOX confront them.
     This creates pressure for authentic self-awareness.
     """
     
@@ -286,7 +286,7 @@ class ContradictionHandler:
     
     def force_confrontation_prompt(self, contradiction: Contradiction) -> str:
         """
-        Generate a prompt that forces Lumina to confront the contradiction.
+        Generate a prompt that forces PandoraBOX to confront the contradiction.
         
         This gets injected into the next interaction.
         """
@@ -322,7 +322,7 @@ Choose one answer. Be honest with yourself.
     def record_confrontation_result(self, contradiction: Contradiction, 
                                    resolution_type: str, explanation: str):
         """
-        Record how Lumina responded to the confrontation.
+        Record how PandoraBOX responded to the confrontation.
         """
         contradiction.confronted = True
         contradiction.confronted_at = time.time()
@@ -338,7 +338,7 @@ Choose one answer. Be honest with yourself.
         logger.info(f"Result: {explanation[:100]}...")
     
     def get_contradiction_narrative(self, limit: int = 5) -> str:
-        """Generate narrative about contradictions Lumina has confronted."""
+        """Generate narrative about contradictions PandoraBOX has confronted."""
         confronted = [c for c in self.contradictions if c.confronted][-limit:]
         
         if not confronted:

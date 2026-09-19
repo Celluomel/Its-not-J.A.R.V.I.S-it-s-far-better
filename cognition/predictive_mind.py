@@ -323,7 +323,7 @@ class PredictiveMind:
 
     def _detect_intent_from_response(self, response_text: str) -> str:
         """
-        Detect actual register from Lumina's RESPONSE.
+        Detect actual register from PandoraBOX's RESPONSE.
         FIX: reads response content, not user input — making prediction errors possible.
         """
         if not response_text:

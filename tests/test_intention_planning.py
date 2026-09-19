@@ -1,4 +1,4 @@
-"""Regression tests for Lumina's intention -> plan -> outcome loop."""
+"""Regression tests for PandoraBOX's intention -> plan -> outcome loop."""
 import tempfile
 import threading
 import unittest

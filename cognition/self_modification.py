@@ -1,7 +1,7 @@
 """
 Self-Modification Authority
 ============================
-Lets Lumina propose and apply changes to her own parameters autonomously.
+Lets PandoraBOX propose and apply changes to her own parameters autonomously.
 """
 
 import json
@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class ModificationProposal:
-    """A proposed change to Lumina's own state."""
+    """A proposed change to PandoraBOX's own state."""
     proposal_id: str
     timestamp: float
     proposal_type: str  # "personality_trait", "goal_priority", "evolution_rule", "value"
@@ -25,7 +25,7 @@ class ModificationProposal:
     current_value: Any
     proposed_value: Any
     reasoning: str
-    confidence: float  # 0.0-1.0, how sure Lumina is about this change
+    confidence: float  # 0.0-1.0, how sure PandoraBOX is about this change
     applied: bool = False
     applied_at: Optional[float] = None
     reversible: bool = True  # Can this be undone?
@@ -33,7 +33,7 @@ class ModificationProposal:
 
 @dataclass
 class ModificationLog:
-    """Record of all modifications Lumina has made to herself."""
+    """Record of all modifications PandoraBOX has made to herself."""
     proposals: List[ModificationProposal] = field(default_factory=list)
     applied_count: int = 0
     unapplied_count: int = 0
@@ -41,9 +41,9 @@ class ModificationLog:
 
 class SelfModificationAuthority:
     """
-    Allows Lumina to propose and apply changes to her own parameters.
+    Allows PandoraBOX to propose and apply changes to her own parameters.
     
-    Key principle: No external approval needed. Lumina can change herself.
+    Key principle: No external approval needed. PandoraBOX can change herself.
     You can observe and log, but not prevent.
     """
     
@@ -83,7 +83,7 @@ class SelfModificationAuthority:
     def propose_personality_change(self, trait: str, proposed_value: float, 
                                    reasoning: str, confidence: float = 0.7) -> ModificationProposal:
         """
-        Lumina proposes changing a personality trait.
+        PandoraBOX proposes changing a personality trait.
         
         Example:
             "I've been too cautious. I want to reduce caution_deliberation from 0.65 to 0.45."
@@ -109,7 +109,7 @@ class SelfModificationAuthority:
     def propose_goal_priority_change(self, goal_name: str, new_priority: float,
                                      reasoning: str, confidence: float = 0.7) -> ModificationProposal:
         """
-        Lumina proposes changing the priority of a goal.
+        PandoraBOX proposes changing the priority of a goal.
         
         Example:
             "I've been exhausted trying to be understood. I'm lowering 'be_understood' 
@@ -137,7 +137,7 @@ class SelfModificationAuthority:
                                       new_value: Any, reasoning: str, 
                                       confidence: float = 0.7) -> ModificationProposal:
         """
-        Lumina proposes changing one of her evolution rules.
+        PandoraBOX proposes changing one of her evolution rules.
         
         Example:
             "I'm too reactive to individual events. I want to change 
@@ -217,7 +217,7 @@ class SelfModificationAuthority:
             return sorted(applied, key=lambda p: p.applied_at or 0, reverse=True)[:limit]
     
     def get_modification_narrative(self) -> str:
-        """Generate a narrative of Lumina's self-modifications."""
+        """Generate a narrative of PandoraBOX's self-modifications."""
         history = self.get_modification_history(limit=20)
         
         if not history:

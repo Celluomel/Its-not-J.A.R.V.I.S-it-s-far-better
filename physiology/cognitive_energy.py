@@ -3,7 +3,7 @@ Cognitive Energy System
 =======================
 Simulates the biological constraint that deep cognition is costly.
 
-Lumina cannot reason at full depth indefinitely. Energy drains during heavy
+PandoraBOX cannot reason at full depth indefinitely. Energy drains during heavy
 processing and regenerates during idle time or light tasks.
 
 Architecture:
@@ -58,7 +58,7 @@ class EnergySnapshot:
 
 class CognitiveEnergy:
     """
-    Manages Lumina's cognitive energy pool.
+    Manages PandoraBOX's cognitive energy pool.
 
     Usage
     -----
@@ -179,7 +179,7 @@ class CognitiveEnergy:
         return self.level() > 45.0
 
     def verbose_ok(self) -> bool:
-        """Whether Lumina should permit long elaborated answers."""
+        """Whether PandoraBOX should permit long elaborated answers."""
         return self.level() > 50.0
 
     # ── Summary ──────────────────────────────────────────────────────────────

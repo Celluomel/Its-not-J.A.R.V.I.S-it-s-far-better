@@ -223,14 +223,14 @@ function Body({ energy, reduced, mode }: { energy: number; reduced: boolean; mod
 class GraphicsBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() { return { failed: true }; }
-  render() { return this.state.failed ? <div className="graphics-fallback">Lumina<span>Graphics unavailable</span></div> : this.props.children; }
+  render() { return this.state.failed ? <div className="graphics-fallback">PandoraBOX<span>Graphics unavailable</span></div> : this.props.children; }
 }
 
 export default function Organism({ active, energy = 0, reduced, mode = active ? 'processing' : 'idle' }: { active: boolean; energy?: number; reduced: boolean; mode?: OrganismMode }) {
   const [visible, setVisible] = useState(!document.hidden);
   const [lost, setLost] = useState(false);
   useEffect(() => { const change = () => setVisible(!document.hidden); document.addEventListener('visibilitychange', change); return () => document.removeEventListener('visibilitychange', change); }, []);
-  return <div className="organism" role="img" aria-label={`Lumina visual organism, ${mode}`}>
-    {lost ? <div className="graphics-fallback">Lumina<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl, scene}) => { gl.toneMappingExposure = 1.12; scene.background = new THREE.Color('#060d12'); scene.fog = new THREE.Fog('#060d12', 4.5, 8); gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.18}/><SculpturalLighting energy={active ? .65 : energy} reduced={reduced}/><Atmosphere energy={active ? .65 : energy} reduced={reduced}/><GroundShadow energy={active ? .65 : energy} reduced={reduced}/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
+  return <div className="organism" role="img" aria-label={`PandoraBOX visual organism, ${mode}`}>
+    {lost ? <div className="graphics-fallback">PandoraBOX<span>Graphics paused. Reload to restore.</span></div> : <GraphicsBoundary><Canvas camera={{ position: [0, 0, 4.9], fov: 43 }} dpr={[1, 1.5]} frameloop={!visible ? 'never' : reduced ? 'demand' : 'always'} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({gl, scene}) => { gl.toneMappingExposure = 1.12; scene.background = new THREE.Color('#060d12'); scene.fog = new THREE.Fog('#060d12', 4.5, 8); gl.domElement.addEventListener('webglcontextlost', () => setLost(true), { once: true }); }}><ambientLight intensity={.18}/><SculpturalLighting energy={active ? .65 : energy} reduced={reduced}/><Atmosphere energy={active ? .65 : energy} reduced={reduced}/><GroundShadow energy={active ? .65 : energy} reduced={reduced}/><Body energy={active ? .65 : energy} mode={mode} reduced={reduced}/></Canvas></GraphicsBoundary>}
   </div>;
 }

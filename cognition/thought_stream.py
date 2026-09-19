@@ -1,7 +1,7 @@
 """
 ThoughtStream — Continuous Inner Monologue
 ==========================================
-Generates a persistent stream of internal thoughts from Lumina's cognitive modules.
+Generates a persistent stream of internal thoughts from PandoraBOX's cognitive modules.
 This is the "inner voice" — spontaneous micro-thoughts that run even without a user.
 
 Design principles:
@@ -196,7 +196,7 @@ class _AssociativeChain:
 
 class ThoughtStream:
     """
-    Generates internal thoughts from Lumina's live cognitive state.
+    Generates internal thoughts from PandoraBOX's live cognitive state.
     Call tick() periodically to produce a new thought (or None if quiet).
     """
 
@@ -902,7 +902,7 @@ class ThoughtStream:
 
     def _aging_thought(self) -> Optional["Thought"]:
         """
-        A rare, low-priority thought about Lumina's own sense of passing time
+        A rare, low-priority thought about PandoraBOX's own sense of passing time
         and accumulated experience. Calibrated to life stage — never explicit,
         always felt from the inside.
         """

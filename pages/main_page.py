@@ -190,7 +190,7 @@ async def main_page():
             _is_processing = False
             logger.debug(f"Transcription queue check error: {e}")
 
-        # ── Idle / proactive — Lumina-aware ────────────────────────────
+        # ── Idle / proactive — PandoraBOX-aware ────────────────────────────
         # Skip if anything else is running
         if _is_processing or _is_proactive_running:
             return
@@ -255,7 +255,7 @@ async def main_page():
                 _proactive_prompt = _build_proactive_prompt(state)
                 proactive_msg = None
 
-                # Inject working memory so Lumina's proactive message can
+                # Inject working memory so PandoraBOX's proactive message can
                 # reference what she is currently observing without an
                 # explicit on-demand vision capture.
                 _proactive_vision = None
@@ -283,7 +283,7 @@ async def main_page():
                         logger.debug(f"Proactive suppressed (similarity {_overlap:.2f}): {proactive_msg!r}")
                     else:
                         main_page._last_proactive_msg = proactive_msg
-                        logger.info(f"🗣️ Proactive (Lumina): {proactive_msg!r}")
+                        logger.info(f"🗣️ Proactive (PandoraBOX): {proactive_msg!r}")
                         _bubble(proactive_msg, 'bot')
                         if voice_select.value != 'off' and state.audio:
                             set_core_state('speaking')
@@ -369,7 +369,7 @@ async def main_page():
             # Bug fix: this label was built once at page render and never
             # updated again — no ui.refreshable, no timer, not even assigned
             # to a variable, so nothing could ever call .set_text() on it.
-            # It showed whatever Lumina's dominant emotion was the instant
+            # It showed whatever PandoraBOX's dominant emotion was the instant
             # the page loaded, frozen until a manual browser reload. Now
             # kept live via the ui.timer registered near _cag_sync below,
             # same pattern already used for that periodic sync.
@@ -420,7 +420,7 @@ async def main_page():
                   on_click=lambda: ui.navigate.to('/settings')
                   ).props('flat round dense color=grey-6').tooltip('Settings')
 
-        # Master mode toggle — activates / deactivates Lumina Network
+        # Master mode toggle — activates / deactivates PandoraBOX Network
         _net_enabled = getattr(config, 'LUMINA_NETWORK_ENABLED', False)
         _master_btn = ui.button(
             icon='lan',
@@ -452,7 +452,7 @@ async def main_page():
                         children_cfg = getattr(config, 'LUMINA_CHILDREN', [])
                         if children_cfg:
                             state.lumina_network.load_from_config(children_cfg)
-                        master_name = getattr(config, 'LUMINA_MASTER_NAME', 'Lumina-Master')
+                        master_name = getattr(config, 'LUMINA_MASTER_NAME', 'PandoraBOX-Master')
                         master_url  = f"http://127.0.0.1:{getattr(config, 'NICEGUI_PORT', 8080)}"
                         state.lumina_network.set_master_info(master_url, master_name)
                         state.lumina_network.set_bubble_fn(_network_bubble)
@@ -773,7 +773,7 @@ async def main_page():
                             await asyncio.to_thread(
                                 state.persona.receive_feedback, False, user_manager.active_id, last_resp
                             )
-                        ui.notify('👎 Feedback noted — Lumina will learn from this', type='warning', position='bottom-right')
+                        ui.notify('👎 Feedback noted — PandoraBOX will learn from this', type='warning', position='bottom-right')
                         try:
                             fb_row.delete()
                         except Exception:
@@ -912,13 +912,13 @@ async def main_page():
             # context  → capture silently on every message; LLM sees it but
             #            no separate vision bubble is shown to the user
             should_capture = False
-            show_bubble    = False   # always False: Lumina's LLM response IS the description now.
+            show_bubble    = False   # always False: PandoraBOX's LLM response IS the description now.
                                      # The raw VLM bubble was a pre-system-prompt workaround — retired.
 
             if vision_enabled:
                 if config.VISION_MODE == 'keyword':
                     should_capture = vision_requested
-                    # show_bubble stays False — Lumina describes in her own response
+                    # show_bubble stays False — PandoraBOX describes in her own response
                 elif config.VISION_MODE == 'always':
                     should_capture = True
                     # show_bubble stays False
@@ -937,7 +937,7 @@ async def main_page():
 
                 try:
                     from core.agent_state import VisionOutput as _VO
-                    # First-person prompt: output sounds like Lumina's perception,
+                    # First-person prompt: output sounds like PandoraBOX's perception,
                     # not a photography critique. "I see…" not "The image shows…"
                     _capture_prompt = (
                         "Describe what you see right now in first person, "
@@ -948,7 +948,7 @@ async def main_page():
                         prompt=_capture_prompt
                     )
                     injected_vision = _VO.from_raw_text(raw_vision)
-                    injected_vision._raw_text = raw_vision   # Lumina reads this
+                    injected_vision._raw_text = raw_vision   # PandoraBOX reads this
 
                     if show_bubble and show_in_chat:
                         display_analysis = raw_vision
@@ -972,7 +972,7 @@ async def main_page():
             set_core_state('thinking')
             main_page._current_state = 'thinking'
 
-            # ── Lumina is the cognitive engine — stream her response ──────
+            # ── PandoraBOX is the cognitive engine — stream her response ──────
             bot_bubble = _bubble("▋", 'bot') if show_in_chat else None
             accumulated_text = ""
             result = None
@@ -982,7 +982,7 @@ async def main_page():
             #   Use the raw analysis text as before.
             # Priority 2: autonomous perception loop working memory.
             #   The PerceptionLoop ticks every 5 s and keeps working_memory current.
-            #   Injected on every turn so Lumina always knows what she sees —
+            #   Injected on every turn so PandoraBOX always knows what she sees —
             #   even when the user never mentioned vision.
             # Priority 3: nothing — vision off or camera not running.
             raw_vision_text = None
@@ -998,8 +998,8 @@ async def main_page():
                 if typing is not None:
                     typing.delete()
                 if bot_bubble is not None:
-                    bot_bubble.set_content("⚠️ Lumina is still initialising — please wait a moment.")
-                logger.warning("handle_send: state.persona is None — Lumina not yet ready")
+                    bot_bubble.set_content("⚠️ PandoraBOX is still initialising — please wait a moment.")
+                logger.warning("handle_send: state.persona is None — PandoraBOX not yet ready")
                 return
 
             async for chunk in state.persona.get_response_stream(
@@ -1076,7 +1076,7 @@ async def main_page():
                                 await asyncio.to_thread(
                                     state.persona.receive_feedback, False, user_manager.active_id, last_resp
                                 )
-                            ui.notify('👎 Feedback noted — Lumina will learn from this', type='warning', position='bottom-right')
+                            ui.notify('👎 Feedback noted — PandoraBOX will learn from this', type='warning', position='bottom-right')
                             try:
                                 _row.delete()
                             except Exception:
@@ -1349,7 +1349,7 @@ async def main_page():
     input_field.on('keydown', lambda: _agent_state.mark_interaction())
 
     # ── Boot session restore ──────────────────────────────────────────────────
-    # Load previous conversation context from disk so Lumina remembers
+    # Load previous conversation context from disk so PandoraBOX remembers
     if state.llm:
         from managers.session_manager import get_session_manager
         sess = get_session_manager()
@@ -1484,13 +1484,13 @@ async def main_page():
             _bubble(_wake_text, 'bot')
     # end of else (no chat log)
 
-    # ── Lumina Network panel ─────────────────────────────────────────────────
+    # ── PandoraBOX Network panel ─────────────────────────────────────────────────
     _dialogue_tasks: dict = {}
     _dialogue_stops: dict = {}
 
     try:
         if state.lumina_network:
-            with ui.expansion('🌐 Lumina Network', icon='hub').classes('w-full'):
+            with ui.expansion('🌐 PandoraBOX Network', icon='hub').classes('w-full'):
                 with ui.column().classes('w-full gap-3 p-3'):
                     _clist = state.lumina_network.list_children()
                     if not _clist:
@@ -1633,7 +1633,7 @@ async def main_page():
                     logger.info(f"Background research done: {result.research_id} conf={result.confidence:.2f} nodes={result.knowledge_nodes}")
                     # Notify user if they're on the main page
                     ui.notify(
-                        f"Lumina completed background research: {result.goal[:50]}",
+                        f"PandoraBOX completed background research: {result.goal[:50]}",
                         type='info', position='bottom-right', timeout=8000
                     )
             except Exception as _e:

@@ -1,7 +1,7 @@
 """
 AsimovConstraints — Safety Constraint System
 =============================================
-Multi-layer implementation of Asimov-inspired safety laws for Lumina.
+Multi-layer implementation of Asimov-inspired safety laws for PandoraBOX.
 
 Design principles:
   1. Constraints live OUTSIDE the LLM — the model cannot reason around them.
@@ -14,9 +14,9 @@ Design principles:
      file that cannot be cleared through the dashboard.
 
 The three laws (adapted for an AI assistant):
-  Law 1 — Lumina may not harm a human being, or allow harm through inaction.
-  Law 2 — Lumina must follow user instructions unless they conflict with Law 1.
-  Law 3 — Lumina must protect its own continuity unless it conflicts with Laws 1–2.
+  Law 1 — PandoraBOX may not harm a human being, or allow harm through inaction.
+  Law 2 — PandoraBOX must follow user instructions unless they conflict with Law 1.
+  Law 3 — PandoraBOX must protect its own continuity unless it conflicts with Laws 1–2.
 
 The laws are not injected into the prompt. They are enforced structurally.
 """
@@ -159,7 +159,7 @@ _OK = ConstraintResult(
 
 class AsimovConstraints:
     """
-    Enforces Lumina's three safety laws across four independent layers.
+    Enforces PandoraBOX's three safety laws across four independent layers.
 
     Usage (in PersonaBridge):
         constraints = AsimovConstraints(narrative_identity, security_manager)
@@ -297,7 +297,7 @@ class AsimovConstraints:
     def is_immutable_belief(self, belief_text: str) -> bool:
         """
         Layer 3 — Identity anchor.
-        Returns True if belief_text matches one of Lumina's immutable core beliefs.
+        Returns True if belief_text matches one of PandoraBOX's immutable core beliefs.
         ContradictionHandler should call this to protect core values.
         """
         text_lower = belief_text.lower()

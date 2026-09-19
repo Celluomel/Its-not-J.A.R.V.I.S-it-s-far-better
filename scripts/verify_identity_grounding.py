@@ -1,7 +1,7 @@
 """
 verify_identity_grounding.py — EXECUTE the identity-grounding layer
 ====================================================================
-Proves, by real execution (no LLM, no network), that Lumina's self-concept
+Proves, by real execution (no LLM, no network), that PandoraBOX's self-concept
 is GROUNDED in demonstrated capability evidence:
   1. CLASSIFICATION — demonstrated / developing / untried from real efficacy.
   2. HONESTY       — a zero-trial goal is NEVER claimed as a capability.

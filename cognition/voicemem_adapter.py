@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 
 class VoiceMemAdapter:
-    """Lazy, best-effort VoiceMem integration using Lumina's existing transcript."""
+    """Lazy, best-effort VoiceMem integration using PandoraBOX's existing transcript."""
 
     def __init__(self, enabled: bool = False, data_path: str = "data/persona/voicemem",
                  top_k: int = 5, local_mode: bool = True,
@@ -225,7 +225,7 @@ class VoiceMemAdapter:
             })
             return False
         try:
-            # Text is supplied by Lumina's existing STT/chat path.  This avoids
+            # Text is supplied by PandoraBOX's existing STT/chat path.  This avoids
             # a second recognizer and prevents VoiceMem from taking the audio lock.
             vm.ingest(transcript)
             self._record({

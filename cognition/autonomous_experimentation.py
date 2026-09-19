@@ -5,11 +5,11 @@ AutonomousExperimentationEngine — hypothesis, test, measure, revise.
 
 The gap this closes
 ────────────────────
-Current Lumina: observe → think → remember
+Current PandoraBOX: observe → think → remember
 Missing:        observe → hypothesize → test → compare → revise
 
 This is the difference between a reflective system and one that
-actively learns from interventions. Without it, Lumina can accumulate
+actively learns from interventions. Without it, PandoraBOX can accumulate
 beliefs but cannot verify them against reality.
 
 What an Experiment is
@@ -24,7 +24,7 @@ What an Experiment is
     outcome:          "confirmed" | "disconfirmed" | "inconclusive" | "pending"
   )
 
-Example experiments Lumina can run autonomously:
+Example experiments PandoraBOX can run autonomously:
   - "Shorter responses increase user engagement"
     Action: reduce avg response length by 20% for 5 interactions
     Measure: user follow-up rate, message length

@@ -1,5 +1,5 @@
 """
-LUMINA — STEP 6: CONSOLIDATE REPORT (intent-based, not blind-prune)
+PANDORABOX — STEP 6: CONSOLIDATE REPORT (intent-based, not blind-prune)
 ====================================================================
 Inventories every subsystem and measures what is live vs decorative.
 For orphaned code it does NOT just say "delete" — it records WHY the
@@ -263,7 +263,7 @@ def main():
             dormant.append({"file": f, "days": round(days), "owners": own_wired or own})
 
     # ── PRINT ──────────────────────────────────────────────────────────────
-    banner(f"LUMINA PRUNE / CONSOLIDATE REPORT   (modules={len(mm)}, "
+    banner(f"PANDORABOX PRUNE / CONSOLIDATE REPORT   (modules={len(mm)}, "
            f"brain-wired={len(brain)}, gui-wired={len(gui)}, cycles={Ncyc})")
 
     banner("① BUDGET-STARVED — runs every cycle, prompt section dropped (live code, ~zero effect)")

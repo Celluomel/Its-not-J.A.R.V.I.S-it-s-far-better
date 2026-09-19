@@ -98,8 +98,8 @@ async def llm_page():
             with ui.grid(columns=2).classes('w-full gap-4 mb-4'):
                 persona_name_input = ui.input(
                     'Persona Name',
-                    value=getattr(config, 'PERSONA_NAME', 'Lumina'),
-                    placeholder='Lumina'
+                    value=getattr(config, 'PERSONA_NAME', 'PandoraBOX'),
+                    placeholder='PandoraBOX'
                 ).props('outlined dense').classes('dark-input')
                 with ui.element('div').classes('flex items-center'):
                     ui.html(
@@ -290,7 +290,7 @@ async def llm_page():
                 ).style('font-size:0.78rem;color:#94a3b8;line-height:1.6')
 
         async def save_llm():
-            config.PERSONA_NAME   = (persona_name_input.value or "Lumina").strip()
+            config.PERSONA_NAME   = (persona_name_input.value or "PandoraBOX").strip()
             config.LLM_PROVIDER   = llm_prov.value
             config.LLM_MODEL      = llm_model.value
             config.LLM_CTX        = int(llm_ctx.value or 4096)
@@ -323,7 +323,7 @@ async def llm_page():
             ui.notify('Applying LLM settings...', type='info', position='bottom-right')
             loop = asyncio.get_running_loop()
             await loop.run_in_executor(None, state.reload_llm)
-            # Update Lumina's adapter model label to match
+            # Update PandoraBOX's adapter model label to match
             if state.persona and state.persona.is_ready:
                 try:
                     state.persona._system.llm.config.model_name = llm_model.value

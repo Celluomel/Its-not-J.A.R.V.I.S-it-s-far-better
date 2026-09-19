@@ -5,13 +5,13 @@ SkillRegistry — persistent competencies that deepen with use.
 
 The gap this closes
 ────────────────────
-Lumina can research topics and store results as FAISS memories, but
+PandoraBOX can research topics and store results as FAISS memories, but
 has no mechanism to develop *skills* — persistent, callable competencies
 that improve with use. Research results accumulate as facts, not as
 evolving capability.
 
 A human who repeatedly engages with music theory develops intuitions
-about harmony that shape how they hear new pieces. Lumina's engagement
+about harmony that shape how they hear new pieces. PandoraBOX's engagement
 with a topic should similarly build structured capability, not just
 add entries to a vector store.
 
@@ -158,7 +158,7 @@ class SkillState:
 
 class SkillRegistry:
     """
-    Maintains Lumina's growing competency map.
+    Maintains PandoraBOX's growing competency map.
 
     Usage
     -----
@@ -639,7 +639,7 @@ class SkillRegistry:
                 return
 
             prompt = (
-                f"Lumina has deepened her competency in: {skill.domain}\n"
+                f"PandoraBOX has deepened her competency in: {skill.domain}\n"
                 f"Description: {skill.description}\n"
                 f"Current depth: {skill.depth_label()} "
                 f"({skill.verified_practices} verified outcomes; "
@@ -910,7 +910,7 @@ class SkillRegistry:
         success: Optional[bool], feedback_only: bool = False,
     ) -> None:
         # The model's completed answer is included only for semantic matching;
-        # learned aliases always come from the user's wording so Lumina can
+        # learned aliases always come from the user's wording so PandoraBOX can
         # recognise that person's vocabulary on a later turn.
         combined = f"{user_input}\n{response[:1200]}"
         matches = self.relevant_skills(
