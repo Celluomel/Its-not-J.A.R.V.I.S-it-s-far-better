@@ -392,7 +392,18 @@ class UserManager:
         try:
             from managers.settings_manager import get_persona_name
             from cognition.identity_boundary import claims_persona_identity
-            claims_persona_name = claims_persona_identity(text, get_persona_name())
+            persona_name = get_persona_name()
+            claims_persona_name = claims_persona_identity(text, persona_name)
+            # Keep the safety boundary intact even when a plugin or test
+            # replaces identity_boundary with an older implementation.
+            if not claims_persona_name and persona_name:
+                escaped = re.escape(" ".join(str(persona_name).split()))
+                claims_persona_name = bool(re.search(
+                    rf"\b(?:i am|i'm|je suis|moi c['’]est|mon nom est|je m['’]appelle)\s+"
+                    rf"(?:the\s+|la\s+|le\s+|l['’])?{escaped}\b",
+                    text,
+                    flags=re.IGNORECASE,
+                ))
         except Exception:
             claims_persona_name = False
         learned: List[tuple[str, str]] = []

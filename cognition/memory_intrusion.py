@@ -192,10 +192,13 @@ class MemoryIntrusionSystem:
             emotional = (valence_score + arousal_score) / 2.0
 
             # Combined score
+            # Retrieval relevance is the strongest evidence.  Recency and
+            # affect modulate an already relevant memory rather than drowning
+            # it out after a few days, which made reliable recall look weak.
             score = (
-                similarity * 0.50 +
-                recency    * 0.30 +
-                emotional  * 0.20
+                similarity * 0.90 +
+                recency    * 0.07 +
+                emotional  * 0.03
             )
 
             # Topic extraction (simple: first 3 content words)

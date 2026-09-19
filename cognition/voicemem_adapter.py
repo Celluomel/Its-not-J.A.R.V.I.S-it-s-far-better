@@ -100,34 +100,33 @@ class VoiceMemAdapter:
                 if cls is None:
                     raise RuntimeError("VoiceMem package exposes no VoiceMem class")
                 if self.local_mode:
-                    # The default VoiceMem constructor selects OpenAI-backed
-                    # components. Inject local embedding and slot routing.
-                    from voicemem.leftbrain.local_e5_embedder import LocalE5Embedder, shared_e5
-                    from voicemem.leftbrain.cognitive_graph.local_query_classifier import LocalQueryClassifier
-                    # Some VoiceMem subcomponents (notably ConflictResolver)
-                    # read these settings from the environment instead of
-                    # the top-level constructor arguments.
-                    os.environ["OPENAI_API_KEY"] = "lm-studio-local"
-                    os.environ["OPENAI_BASE_URL"] = self.local_base_url
-                    os.environ["OPENAI_MODEL"] = self.local_model
-                    self._vm = cls(
-                        mode="text_mode", memory_root=str(self.data_path),
-                        user_id="default", embedding=lambda: LocalE5Embedder(),
-                        schema=lambda: LocalQueryClassifier(model=shared_e5()),
-                        enable_emotion=False,
-                        # OpenAI-compatible clients validate that a key value
-                        # exists even for local servers. This is not a real
-                        # credential and is sent only to the configured local
-                        # endpoint.
-                        api_key="lm-studio-local",
-                        base_url=self.local_base_url,
-                    )
-                    self._backend_mode = "local"
-                    return self._vm
+                    try:
+                        # The default VoiceMem constructor selects OpenAI-backed
+                        # components. Inject local embedding and slot routing.
+                        from voicemem.leftbrain.local_e5_embedder import LocalE5Embedder, shared_e5
+                        from voicemem.leftbrain.cognitive_graph.local_query_classifier import LocalQueryClassifier
+                        os.environ["OPENAI_API_KEY"] = "lm-studio-local"
+                        os.environ["OPENAI_BASE_URL"] = self.local_base_url
+                        os.environ["OPENAI_MODEL"] = self.local_model
+                        self._vm = cls(
+                            mode="text_mode", memory_root=str(self.data_path),
+                            user_id="default", embedding=lambda: LocalE5Embedder(),
+                            schema=lambda: LocalQueryClassifier(model=shared_e5()),
+                            enable_emotion=False,
+                            api_key="lm-studio-local",
+                            base_url=self.local_base_url,
+                        )
+                        self._backend_mode = "local"
+                        return self._vm
+                    except (ImportError, ModuleNotFoundError) as exc:
+                        # Keep lightweight adapters and test doubles usable.
+                        # A package may expose VoiceMem without the optional
+                        # local_e5 submodules.
+                        logger.debug("VoiceMem local wiring unavailable: %s", exc)
                 # Keep construction permissive across upstream API revisions.
                 for kwargs in (
-                    {"persist_dir": str(self.data_path)},
-                    {"storage_path": str(self.data_path)},
+                    {"persist_dir": str(self.data_path), "mode": "text_mode"},
+                    {"storage_path": str(self.data_path), "mode": "text_mode"},
                     {},
                 ):
                     try:
@@ -137,6 +136,7 @@ class VoiceMemAdapter:
                         continue
                 if self._vm is None:
                     raise RuntimeError("unsupported VoiceMem constructor")
+                self._backend_mode = "package_fallback" if self.local_mode else "package"
                 return self._vm
             except Exception as exc:
                 self._error = str(exc)

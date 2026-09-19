@@ -1100,7 +1100,14 @@ Speak directly. No quotes. No stage directions."""
             for _, previous in self._recent_utterances[-4:]
         )
 
-    def _fallback(self, name: str, event: str, emotion: str, language: str = "auto") -> str:
+    @staticmethod
+    def _fallback(name: str, event: str, emotion: str, language: str = "auto") -> str:
+        """Return a deterministic localized fallback without engine state.
+
+        Repetition suppression belongs to the caller's live reaction path.  A
+        static fallback is also useful for startup/error paths and makes the
+        language contract independently testable.
+        """
         n = name if name not in ("Unknown Person", "Unknown", "") else "there"
         if language == "fr":
             n = name if name not in ("Unknown Person", "Unknown", "") else "toi"
@@ -1120,7 +1127,7 @@ Speak directly. No quotes. No stage directions."""
                 ("EXIT",    "pensive"):  ("Le calme revient.", "Je garde ce moment en mémoire.",),
             }
             choices = fallbacks_fr.get((event, emotion), fallbacks_fr.get((event, "neutral"), ()))
-            return next((choice for choice in choices if not self._is_repeated_utterance(choice)), choices[0] if choices else "")
+            return choices[0] if choices else ""
         fallbacks = {
             ("ENTER",   "joyful"):   (f"Oh — {n}! Good to see you.", f"It's good to have you here, {n}."),
             ("ENTER",   "curious"):  (f"Ah, {n}. I was just in the middle of a thought.", f"Hello {n}. Something was on my mind."),
@@ -1137,4 +1144,4 @@ Speak directly. No quotes. No stage directions."""
             ("EXIT",    "pensive"):  ("Quiet again.", "I'll hold onto this moment."),
         }
         choices = fallbacks.get((event, emotion), fallbacks.get((event, "neutral"), ()))
-        return next((choice for choice in choices if not self._is_repeated_utterance(choice)), choices[0] if choices else "")
+        return choices[0] if choices else ""

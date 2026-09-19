@@ -727,15 +727,24 @@ class LongHorizonPlanner:
             if plan.source == "goal" and plan.status == "active"
             and plan.source_id in active_ids
         ]
+        # User turns can create short-lived goal plans. They must not replace
+        # an autonomous aspiration in the organism's self-report or make a
+        # long-running plan appear to restart at 0/4 after every chat turn.
+        aspiration_plans = [
+            plan for plan in self._plans.values()
+            if plan.source == "aspiration" and plan.status == "active"
+        ]
         plans_by_goal = {plan.source_id: plan for plan in goal_plans}
-        plan = next(
-            (
-                plans_by_goal[str(getattr(goal, "id", ""))]
-                for goal in active_goals
-                if str(getattr(goal, "id", "")) in plans_by_goal
-            ),
-            None,
-        )
+        plan = max(aspiration_plans, key=lambda item: item.last_revised or item.created_at, default=None)
+        if plan is None:
+            plan = next(
+                (
+                    plans_by_goal[str(getattr(goal, "id", ""))]
+                    for goal in active_goals
+                    if str(getattr(goal, "id", "")) in plans_by_goal
+                ),
+                None,
+            )
         if plan is None and goal_plans:
             plan = max(goal_plans, key=lambda item: item.created_at)
 

@@ -291,11 +291,16 @@ class GoalEngine:
             topic_filter = get_topic_filter()
             words = normalized.split()
             return (
+                not GoalEngine._looks_like_extracted_fragment(normalized)
+                and
                 topic_filter.is_valid(normalized)
                 and all(topic_filter.is_valid(word) for word in words)
             )
         except Exception:
-            return not any(char in normalized for char in "'’`")
+            return (
+                not GoalEngine._looks_like_extracted_fragment(normalized)
+                and not any(char in normalized for char in "'’`")
+            )
 
     @staticmethod
     def _looks_like_extracted_fragment(topic: str) -> bool:
