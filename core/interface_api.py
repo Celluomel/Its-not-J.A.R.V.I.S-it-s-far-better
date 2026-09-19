@@ -624,7 +624,6 @@ _SETTING_FIELDS = {
     'BRAVE_SEARCH_KEY', 'SERPAPI_KEY', 'MEMORY_BACKEND', 'MEMORY_DB_PATH',
     'MEMORY_FAISS_PATH', 'MEMORY_WORLD_PATH', 'MEMORY_PERSONA_PATH',
     'MEMORY_COGNEE_PATH', 'MEMORY_COGNEE_EMBED_MODEL', 'TTS_PROVIDER',
-    'VOICEMEM_ENABLED', 'VOICEMEM_DATA_PATH', 'VOICEMEM_TOP_K', 'VOICEMEM_LOCAL_MODE',
     'STT_PROVIDER', 'WHISPER_MODEL', 'ELEVENLABS_API_KEY', 'ELEVENLABS_VOICE_ID', 'COQUI_VOICE_REFERENCE',
     'VOICE_LANGUAGE', 'RESPONSE_LANGUAGE', 'VAD_AGGRESSIVENESS',
     'VAD_ONSET_CHUNKS', 'VAD_SILENCE_DURATION', 'VAD_MIN_SPEECH_DURATION',
@@ -1038,66 +1037,9 @@ async def settings_snapshot():
     return {'values': _settings_snapshot(), 'secret_fields': sorted(_SECRET_FIELDS)}
 
 
-@router.get('/voicemem/status')
-async def voicemem_status():
-    """Report optional VoiceMem availability without importing it at boot."""
-    try:
-        from cognition.voicemem_adapter import VoiceMemAdapter
-        from managers.settings_manager import config
-        adapter = VoiceMemAdapter(
-            enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
-            data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
-            top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
-            local_mode=bool(getattr(config, 'VOICEMEM_LOCAL_MODE', True)),
-            local_base_url=getattr(config, 'LLM_BASE_URL', 'http://localhost:1234/v1'),
-            local_model=getattr(config, 'TEXT_MODEL', '') or getattr(config, 'LLM_MODEL', 'local-model'),
-        )
-        result = adapter.status()
-        result['evaluation'] = adapter.evaluation()
-        return result
-    except Exception as exc:
-        logger.debug('VoiceMem status unavailable: %s', exc)
-        return {'enabled': False, 'available': False, 'ready': False, 'error': str(exc)}
-
-
-@router.get('/voicemem/space')
-async def voicemem_space():
-    """Expose the active local VoiceMem space for the main interface."""
-    try:
-        from cognition.voicemem_adapter import VoiceMemAdapter
-        from managers.settings_manager import config
-        adapter = VoiceMemAdapter(
-            enabled=bool(getattr(config, 'VOICEMEM_ENABLED', False)),
-            data_path=getattr(config, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
-            top_k=getattr(config, 'VOICEMEM_TOP_K', 5),
-            local_mode=bool(getattr(config, 'VOICEMEM_LOCAL_MODE', True)),
-            local_base_url=getattr(config, 'LLM_BASE_URL', 'http://localhost:1234/v1'),
-            local_model=getattr(config, 'TEXT_MODEL', '') or getattr(config, 'LLM_MODEL', 'local-model'),
-        )
-        return _json_safe(adapter.space_snapshot())
-    except Exception as exc:
-        logger.debug('VoiceMem space unavailable: %s', exc)
-        return {'status': {'enabled': False, 'available': False, 'ready': False, 'error': str(exc)},
-                'evaluation': {}, 'observations': [], 'retrievals': [], 'cached': []}
-
-
 @router.post('/settings')
 async def update_settings(payload: SettingsUpdate):
     from managers.settings_manager import config, save_settings
-    # Do not persist an enabled VoiceMem state that cannot work.  This keeps
-    # config.json truthful and avoids a confusing silent fallback on restart.
-    if 'VOICEMEM_ENABLED' in payload.values and bool(payload.values.get('VOICEMEM_ENABLED')):
-        try:
-            from importlib.util import find_spec
-            if find_spec('voicemem') is None:
-                raise HTTPException(
-                    400,
-                    'VoiceMem is not installed. Set LUMINA_INSTALL_VOICEMEM=1 and rerun setup, then enable it.'
-                )
-        except HTTPException:
-            raise
-        except Exception as exc:
-            raise HTTPException(400, f'VoiceMem availability check failed: {exc}') from exc
     changed = []
     for name, value in payload.values.items():
         if name not in _SETTING_FIELDS:

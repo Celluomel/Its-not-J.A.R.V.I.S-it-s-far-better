@@ -186,20 +186,6 @@ class PersonaBridge:
         self._MAX_SESSION_VISUALS = 20
         self._pending_vision_context: str | None = None  # set per-turn, cleared in _build_prompt_and_cache
         self._recent_goal_means: dict = {}
-        self._voicemem = None
-        try:
-            from managers.settings_manager import config as _voice_cfg
-            from cognition.voicemem_adapter import VoiceMemAdapter
-            self._voicemem = VoiceMemAdapter(
-                enabled=bool(getattr(_voice_cfg, 'VOICEMEM_ENABLED', False)),
-                data_path=getattr(_voice_cfg, 'VOICEMEM_DATA_PATH', 'data/persona/voicemem'),
-                top_k=getattr(_voice_cfg, 'VOICEMEM_TOP_K', 5),
-                local_mode=bool(getattr(_voice_cfg, 'VOICEMEM_LOCAL_MODE', True)),
-                local_base_url=getattr(_voice_cfg, 'LLM_BASE_URL', 'http://localhost:1234/v1'),
-                local_model=getattr(_voice_cfg, 'TEXT_MODEL', '') or getattr(_voice_cfg, 'LLM_MODEL', 'local-model'),
-            )
-        except Exception as _vme:
-            logger.debug("VoiceMem adapter unavailable: %s", _vme)
         self._init_lumina(external_llm_fn)
         # Wire CognitiveOrganism once ai_system is ready
         if self._system is not None:
@@ -373,43 +359,10 @@ class PersonaBridge:
                 return
 
         try:
-            # Some providers do not expose a streaming function and use this
-            # blocking compatibility path. Keep VoiceMem active there too;
-            # otherwise ingestion works but retrieval remains at zero and
-            # the response model never sees the stored voice context.
-            _voicemem_context = ""
-            if self._voicemem is not None:
-                try:
-                    _voice_mems = await asyncio.to_thread(
-                        self._voicemem.search, effective_input, user_id
-                    )
-                    if not _voice_mems:
-                        _voice_mems = self._voicemem.cached(user_id)
-                    if _voice_mems:
-                        _voicemem_context = (
-                            "━━ VOICEMEM RETRIEVED CONTEXT ━━\n"
-                            "These are stored observations from the user's prior speech. "
-                            "Use them as factual context, but do not mention VoiceMem.\n"
-                            + "\n".join(
-                                f"- {item.get('text', '').strip()}"
-                                for item in _voice_mems[:5]
-                                if item.get('text', '').strip()
-                            )
-                        )
-                    logger.info(
-                        "[VoiceMem] blocking retrieval query=%r user=%r results=%d",
-                        effective_input[:80], user_id, len(_voice_mems),
-                    )
-                except Exception as _voice_retrieval_error:
-                    logger.warning(
-                        "[VoiceMem] blocking retrieval failed for user %r: %s",
-                        user_id, _voice_retrieval_error,
-                    )
             response = await asyncio.to_thread(
                 self._system.get_response,
                 effective_input,
                 user_id,
-                _voicemem_context,
             )
         except Exception as e:
             logger.error(f"PandoraBOX get_response failed: {e}")
@@ -1757,32 +1710,6 @@ The telemetry's "next pending" operation is queued, not executing. Do not claim 
                 return f"- [{mtype}]{tag_str} {text}"
 
             top_memories = memories[:8] if _surprised else memories[:5]
-            # VoiceMem is a secondary cache populated after prior turns.  It
-            # never starts another STT/TTS engine and therefore cannot take the
-            # audio lock or add a network/LLM call to the chat hot path.
-            if self._voicemem is not None:
-                try:
-                    # Retrieval is opt-in and runs in this existing prompt
-                    # worker thread. Native memory remains the first source.
-                    # Use the request identity directly. The relationship
-                    # object is not the VoiceMem identity boundary and can
-                    # otherwise make retrieval silently disappear when its
-                    # shape changes between chat paths.
-                    _voice_mems = self._voicemem.search(user_input, user_id=user_id)
-                    if not _voice_mems:
-                        _voice_mems = self._voicemem.cached(user_id)
-                    _known = {m.get('text', '') for m in top_memories}
-                    top_memories.extend(m for m in _voice_mems if m.get('text', '') not in _known)
-                    top_memories = top_memories[:8]
-                    logger.info(
-                        "[VoiceMem] retrieval query=%r user=%r results=%d",
-                        user_input[:80], user_id, len(_voice_mems),
-                    )
-                except Exception as _voice_retrieval_error:
-                    logger.warning(
-                        "[VoiceMem] retrieval path failed for user %r: %s",
-                        user_id, _voice_retrieval_error,
-                    )
             mem_ctx = "\n".join(_fmt_memory(m) for m in top_memories) if top_memories else ""
 
             cond_section = ("━━ EXPERIENCE-BASED CAUTION ━━\n" + cond_dict["prompt_note"]) if cond_dict.get("prompt_note") else ""
@@ -2309,15 +2236,6 @@ Memory honesty — two distinct cases:
         """
         s = self._system
         try:
-            # Ingest the transcript only after the user-visible response has
-            # completed. This keeps VoiceMem entirely outside chat latency and
-            # reuses the transcript produced by the existing STT/chat path.
-            if self._voicemem is not None:
-                try:
-                    self._voicemem.ingest_text(user_input, user_id=user_id)
-                except Exception:
-                    logger.debug("VoiceMem post-turn ingestion failed", exc_info=True)
-
             # 9 + 10: repetition tracking
             if not hasattr(s, '_last_responses'):
                 s._last_responses = []

@@ -171,32 +171,6 @@ echo "[*] Installing project dependencies..."
 pip install -r requirements.txt -q
 echo "[OK] Dependencies installed"
 
-###########################################
-# Optional VoiceMem
-###########################################
-
-VOICEMEM_CONFIG_ENABLED=0
-if python -c "import json,sys; from pathlib import Path; p=Path(sys.argv[1]); d=json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}; raise SystemExit(0 if d.get('VOICEMEM_ENABLED', False) else 1)" "$PROJECT_DIR/config.json" >/dev/null 2>&1; then
-    VOICEMEM_CONFIG_ENABLED=1
-fi
-if [ "${LUMINA_INSTALL_VOICEMEM:-0}" = "1" ] || [ "$VOICEMEM_CONFIG_ENABLED" = "1" ]; then
-    echo "[*] VoiceMem installation requested by config.json or environment..."
-    if ! python -c "import voicemem" >/dev/null 2>&1; then
-        # VoiceMem currently pins transformers==4.52.3, while Coqui-TTS
-        # 0.25.3 requires <=4.46.2. Preserve PandoraBOX's existing audio stack.
-        if pip install voicemem --no-deps -q; then
-            pip install "transformers>=4.43.0,<=4.46.2" -q || true
-            echo "[i] VoiceMem kept without dependency replacement; optional audio components may require separate isolation."
-        else
-            echo "[WARN] VoiceMem install failed — native memory remains available"
-        fi
-    else
-        echo "[OK] VoiceMem already installed"
-    fi
-else
-    echo "[i] VoiceMem is optional and disabled. Enable VOICEMEM_ENABLED in Memory settings to install it on startup."
-fi
-
 if ! python -c "import spacy; spacy.load('en_core_web_sm')" >/dev/null 2>&1; then
     echo "[*] Installing spaCy English POS model for insight validation..."
     python -m spacy download en_core_web_sm -q

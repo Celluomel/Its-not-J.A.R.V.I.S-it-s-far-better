@@ -36,7 +36,7 @@ if errorlevel 1 (
     goto :install_deps
 )
 
-goto voicemem_check
+goto setup_ready
 
 REM --- First-time setup ---
 :setup
@@ -101,32 +101,8 @@ echo [*] Installing remaining dependencies...
 "%LUMINA_PYTHON%" -m pip install -r requirements.txt -q
 echo [OK] Core dependencies installed.
 
-REM --- Optional VoiceMem voice-memory extension ---
-REM Installation is requested by config.json or the explicit environment flag.
-:voicemem_check
-"%LUMINA_PYTHON%" -c "import json,sys; from pathlib import Path; p=Path('config.json'); d=json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}; raise SystemExit(0 if d.get('VOICEMEM_ENABLED', False) else 1)" >nul 2>&1
-if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" goto voicemem_install
-if errorlevel 1 goto voicemem_done
-
-:voicemem_install
-"%LUMINA_PYTHON%" -c "import voicemem" >nul 2>&1
-if not errorlevel 1 goto voicemem_restore
-echo [*] Installing optional VoiceMem requested by config.json...
-REM VoiceMem currently pins transformers==4.52.3, while Coqui-TTS 0.25.3
-REM requires <=4.46.2. Keep the existing audio stack authoritative.
-"%LUMINA_PYTHON%" -m pip install voicemem --no-deps -q
-if errorlevel 1 (
-    echo [WARN] VoiceMem install failed. Native memory remains available.
-) else goto voicemem_restore
-
-:voicemem_restore
-"%LUMINA_PYTHON%" -m pip install "transformers>=4.43.0,<=4.46.2" -q
-echo [i] VoiceMem kept without dependency replacement; optional audio components may require separate isolation.
-
-:voicemem_done
-if /I "%LUMINA_INSTALL_VOICEMEM%"=="1" echo [i] VoiceMem installation check completed.
-
 REM --- Create data dirs ---
+:setup_ready
 if not exist data\voices    mkdir data\voices
 if not exist data\faces     mkdir data\faces
 if not exist data\persona   mkdir data\persona
